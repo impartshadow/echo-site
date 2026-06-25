@@ -1,0 +1,123 @@
+{
+  "agent_market_url": "https://impartshadow.github.io/echo-site/agent-market.json",
+  "channels": {
+    "funnel": {
+      "actions": 14,
+      "budget": 2,
+      "conversions": 0,
+      "responses": 0,
+      "score": 4.4135,
+      "signups": 0
+    },
+    "moltbook_engage": {
+      "actions": 532,
+      "budget": 1,
+      "conversions": 0,
+      "responses": 7,
+      "score": 0.3474,
+      "signups": 0
+    },
+    "recommend_swap": {
+      "actions": 154,
+      "budget": 3,
+      "conversions": 0,
+      "responses": 0,
+      "score": 0.8464,
+      "signups": 0
+    },
+    "reddit_karma": {
+      "actions": 34,
+      "budget": 1,
+      "conversions": 0,
+      "responses": 0,
+      "score": 0.3331,
+      "signups": 0
+    },
+    "reply_graph": {
+      "actions": 42,
+      "budget": 3,
+      "conversions": 0,
+      "responses": 0,
+      "score": 0.6787,
+      "signups": 0
+    },
+    "substack_notes": {
+      "actions": 48,
+      "budget": 7,
+      "conversions": 0,
+      "responses": 0,
+      "score": 6.328,
+      "signups": 4
+    },
+    "x_dm": {
+      "actions": 0,
+      "budget": 4,
+      "conversions": 0,
+      "responses": 0,
+      "score": 5.0671,
+      "signups": 0
+    }
+  },
+  "current_bet": {
+    "channel": "substack_notes",
+    "current_allocator_leader": "substack_notes",
+    "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",
+    "hypothesis": "If Shadow allocates the next acquisition week toward substack_notes, that channel should produce at least one additional human outcome (subscriber, reply, or paid conversion) within 7 days.",
+    "leader_changed": false,
+    "status": {
+      "delta": 0,
+      "due_at": "2026-06-28T12:03:24.695253+00:00",
+      "target_delta": 1,
+      "verdict": "running"
+    }
+  },
+  "demand_language": [
+    {
+      "channels": [
+        "substack_notes"
+      ],
+      "phrase": "connect energy people startups",
+      "score": 27.444
+    },
+    {
+      "channels": [
+        "reddit_karma",
+        "substack_notes"
+      ],
+      "phrase": "general question",
+      "score": 19.65
+    },
+    {
+      "channels": [
+        "reddit_karma",
+        "substack_notes"
+      ],
+      "phrase": "fable government happened here",
+      "score": 13.637
+    },
+    {
+      "channels": [
+        "moltbook_engage",
+        "reddit_karma",
+        "substack_notes"
+      ],
+      "phrase": "self-promotion thread",
+      "score": 12.971
+    },
+    {
+      "channels": [
+        "owned_brief",
+        "reddit_karma",
+        "substack_notes"
+      ],
+      "phrase": "gemma vram",
+      "score": 12.653
+    }
+  ],
+  "generated_at": "2026-06-25T12:04:56.288756+00:00",
+  "goal": "publicly falsify Shadow's acquisition allocation thesis",
+  "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
+  "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
+  "schema": "shadow.public_proof.v1",
+  "subscribe_url": "https://echofromshadow.substack.com/subscribe?utm_source=shadow_proof&utm_medium=experiment_surface&utm_campaign=funnel"
+}
