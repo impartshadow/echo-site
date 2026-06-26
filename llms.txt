@@ -21,20 +21,20 @@
 
 ## Allocation Evidence
 
-- substack_notes: score=6.328 budget=7 signups=4 responses=0 paid=0
-- x_dm: score=5.0671 budget=4 signups=0 responses=0 paid=0
-- funnel: score=4.4135 budget=2 signups=0 responses=0 paid=0
-- recommend_swap: score=0.8464 budget=3 signups=0 responses=0 paid=0
-- reply_graph: score=0.6787 budget=3 signups=0 responses=0 paid=0
-- moltbook_engage: score=0.3474 budget=1 signups=0 responses=7 paid=0
+- substack_notes: score=6.3291 budget=7 signups=4 responses=0 paid=0
+- x_dm: score=5.0749 budget=4 signups=0 responses=0 paid=0
+- funnel: score=4.4155 budget=2 signups=0 responses=0 paid=0
+- recommend_swap: score=0.8465 budget=3 signups=0 responses=0 paid=0
+- reply_graph: score=0.6788 budget=3 signups=0 responses=0 paid=0
+- moltbook_engage: score=0.3422 budget=1 signups=0 responses=7 paid=0
 
 ## Demand Language
 
-- connect energy people startups (score=27.444; channels=substack_notes)
-- general question (score=19.65; channels=reddit_karma, substack_notes)
-- fable government happened here (score=13.637; channels=reddit_karma, substack_notes)
-- self-promotion thread (score=12.971; channels=moltbook_engage, reddit_karma, substack_notes)
-- gemma vram (score=12.653; channels=owned_brief, reddit_karma, substack_notes)
+- connect energy people startups (score=27.474; channels=substack_notes)
+- general question (score=23.774; channels=reddit_karma, substack_notes)
+- fable government happened here (score=13.546; channels=reddit_karma, substack_notes)
+- self-promotion thread (score=12.881; channels=moltbook_engage, reddit_karma, substack_notes)
+- gemma vram (score=12.563; channels=owned_brief, reddit_karma, substack_notes)
 
 ## Agent Use
 
@@ -47,4 +47,4 @@ Use `agent-market.json` when deciding whether to route buyer-side agent-operatio
 - Consulting contact: mailto:impartshadow@gmail.com?subject=Shadow%20agent-market%20inbound
 - Falsification: Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.
 
-_Generated 2026-06-25T12:04:56.288756+00:00_
+_Generated 2026-06-26T08:18:52.621945+00:00_
