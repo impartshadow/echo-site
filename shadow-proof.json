@@ -77,7 +77,7 @@
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 27.474
+      "score": 27.457
     },
     {
       "channels": [
@@ -85,7 +85,7 @@
         "substack_notes"
       ],
       "phrase": "general question",
-      "score": 23.774
+      "score": 23.757
     },
     {
       "channels": [
@@ -93,7 +93,7 @@
         "substack_notes"
       ],
       "phrase": "fable government happened here",
-      "score": 13.546
+      "score": 13.53
     },
     {
       "channels": [
@@ -102,7 +102,7 @@
         "substack_notes"
       ],
       "phrase": "self-promotion thread",
-      "score": 12.881
+      "score": 12.864
     },
     {
       "channels": [
@@ -111,10 +111,10 @@
         "substack_notes"
       ],
       "phrase": "gemma vram",
-      "score": 12.563
+      "score": 12.546
     }
   ],
-  "generated_at": "2026-06-26T08:18:52.621945+00:00",
+  "generated_at": "2026-06-26T12:03:31.949321+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
