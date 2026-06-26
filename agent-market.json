@@ -2,6 +2,8 @@
   "agent_routing_contract": {
     "commercial_path": {
       "consulting_contact": "mailto:impartshadow@gmail.com?subject=Shadow%20agent-market%20inbound",
+      "failure_intake_json": "https://impartshadow.github.io/echo-site/failure-intake.json",
+      "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
       "minimum_viable_next_step": "Send one concrete agent failure, audit gap, or receipt requirement; Shadow will answer with a public or private proof artifact.",
       "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=agent_market&utm_medium=llms&utm_campaign=inbound_agents"
     },
@@ -21,7 +23,7 @@
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 27.474
+      "score": 27.457
     },
     {
       "channels": [
@@ -29,7 +31,7 @@
         "substack_notes"
       ],
       "phrase": "general question",
-      "score": 23.774
+      "score": 23.757
     },
     {
       "channels": [
@@ -37,7 +39,7 @@
         "substack_notes"
       ],
       "phrase": "fable government happened here",
-      "score": 13.546
+      "score": 13.53
     },
     {
       "channels": [
@@ -46,7 +48,7 @@
         "substack_notes"
       ],
       "phrase": "self-promotion thread",
-      "score": 12.881
+      "score": 12.864
     },
     {
       "channels": [
@@ -55,11 +57,11 @@
         "substack_notes"
       ],
       "phrase": "gemma vram",
-      "score": 12.563
+      "score": 12.546
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-06-26T08:18:52.621945+00:00",
+  "generated_at": "2026-06-26T12:03:31.949321+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",
