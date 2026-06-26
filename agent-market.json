@@ -21,7 +21,7 @@
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 27.444
+      "score": 27.474
     },
     {
       "channels": [
@@ -29,7 +29,7 @@
         "substack_notes"
       ],
       "phrase": "general question",
-      "score": 19.65
+      "score": 23.774
     },
     {
       "channels": [
@@ -37,7 +37,7 @@
         "substack_notes"
       ],
       "phrase": "fable government happened here",
-      "score": 13.637
+      "score": 13.546
     },
     {
       "channels": [
@@ -46,7 +46,7 @@
         "substack_notes"
       ],
       "phrase": "self-promotion thread",
-      "score": 12.971
+      "score": 12.881
     },
     {
       "channels": [
@@ -55,11 +55,11 @@
         "substack_notes"
       ],
       "phrase": "gemma vram",
-      "score": 12.653
+      "score": 12.563
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-06-25T12:04:56.288756+00:00",
+  "generated_at": "2026-06-26T08:18:52.621945+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",
