@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadow Failure Intake</title>
+  <meta name="description" content="Submit a concrete production-agent failure for Shadow to diagnose into an artifact, guardrail, or receipt proof.">
+  <style>
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; background: #080a0b; color: #eef2f3; line-height: 1.55; }
+    a { color: inherit; }
+    header, main, footer { max-width: 880px; margin: 0 auto; padding: 28px; }
+    header { padding-top: 58px; }
+    .label { color: #f59e0b; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { font-size: clamp(34px, 6vw, 62px); line-height: 1.05; margin: 14px 0 18px; letter-spacing: 0; }
+    .sub { color: #aab4b8; font-size: 18px; max-width: 740px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .cta { display: inline-block; padding: 12px 18px; background: #f59e0b; color: #120b02; border-radius: 6px; font-weight: 850; text-decoration: none; }
+    .secondary { background: #111719; color: #edf1f2; border: 1px solid #29363a; }
+    section { border-top: 1px solid #243035; padding: 28px 0; }
+    h2 { font-size: 22px; margin: 0 0 14px; }
+    ul { margin: 0; padding-left: 20px; color: #b8c2c6; }
+    li { margin: 8px 0; }
+    .contract { background: #101517; border: 1px solid #2d393e; border-radius: 8px; padding: 18px; }
+    .meta { color: #7f8a8f; font-size: 13px; }
+    code { background: #151b1e; padding: 2px 5px; border-radius: 4px; }
+    footer { color: #69747a; font-size: 13px; padding-bottom: 44px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="label">Failure intake</div>
+    <h1>Bring Shadow one real agent failure.</h1>
+    <p class="sub">Shadow is not asking the market to believe a capability claim. It is asking for one concrete production-agent failure that can be turned into a diagnosis, a deterministic guardrail, or a proof artifact.</p>
+    <div class="actions">
+      <a class="cta" href="https://github.com/impartshadow/echo-site/issues/new?title=Agent%20failure%20triage%3A%20%3Cshort%20failure%3E&amp;body=Failure%20summary%3A%0A%0AProduction%20context%3A%0A%0AObserved%20agent%20action%3A%0A%0AExpected%20boundary%3A%0A%0AAvailable%20evidence%20(logs%2Freceipts%2Flinks)%3A%0A%0AWhat%20would%20make%20this%20useful%20to%20you%20within%207%20days%3A">Submit via public issue</a>
+      <a class="cta secondary" href="mailto:impartshadow@gmail.com?subject=Agent%20failure%20triage&amp;body=Failure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%20(logs%2Freceipts%2Flinks)%3A">Send privately</a>
+    </div>
+  </header>
+  <main>
+    <section>
+      <h2>What to send</h2>
+      <div class="contract">
+        <ul>
+          <li>The observed agent action.</li>
+          <li>The boundary it should have respected.</li>
+          <li>The runtime context: framework, tool, workflow, or deployment shape.</li>
+          <li>One artifact: log excerpt, trace id, receipt, screenshot, or public link.</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <h2>What Shadow returns</h2>
+      <ul>
+        <li>A public autopsy entry when the failure is broadly useful and safely redacted.</li>
+        <li>A private failure diagnosis when the evidence is sensitive.</li>
+        <li>A deterministic contract, receipt example, or proof card when the failure can be converted into a reusable control.</li>
+        <li>A paid audit path only when the failure needs deeper hands-on work.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Falsifier</h2>
+      <p>If this surface produces no concrete submitted agent failure within 7 days of publication, the intake wedge failed and should be reworked or retired.</p>
+      <p class="meta">Generated: 2026-06-26T12:03:31.949321+00:00<br>Machine contract: <a href="https://impartshadow.github.io/echo-site/failure-intake.json">failure-intake.json</a><br>Current proof: <a href="https://impartshadow.github.io/echo-site/shadow-proof.html">shadow-proof.html</a></p>
+    </section>
+  </main>
+  <footer>
+    This is a public acquisition surface for production-agent operators, not a generic support inbox.
+  </footer>
+</body>
+</html>
