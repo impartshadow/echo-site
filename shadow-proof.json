@@ -6,15 +6,15 @@
       "budget": 2,
       "conversions": 0,
       "responses": 0,
-      "score": 4.4135,
+      "score": 4.4155,
       "signups": 0
     },
     "moltbook_engage": {
-      "actions": 532,
+      "actions": 554,
       "budget": 1,
       "conversions": 0,
       "responses": 7,
-      "score": 0.3474,
+      "score": 0.3422,
       "signups": 0
     },
     "recommend_swap": {
@@ -22,15 +22,15 @@
       "budget": 3,
       "conversions": 0,
       "responses": 0,
-      "score": 0.8464,
+      "score": 0.8465,
       "signups": 0
     },
     "reddit_karma": {
-      "actions": 34,
+      "actions": 36,
       "budget": 1,
       "conversions": 0,
       "responses": 0,
-      "score": 0.3331,
+      "score": 0.2945,
       "signups": 0
     },
     "reply_graph": {
@@ -38,7 +38,7 @@
       "budget": 3,
       "conversions": 0,
       "responses": 0,
-      "score": 0.6787,
+      "score": 0.6788,
       "signups": 0
     },
     "substack_notes": {
@@ -46,7 +46,7 @@
       "budget": 7,
       "conversions": 0,
       "responses": 0,
-      "score": 6.328,
+      "score": 6.3291,
       "signups": 4
     },
     "x_dm": {
@@ -54,7 +54,7 @@
       "budget": 4,
       "conversions": 0,
       "responses": 0,
-      "score": 5.0671,
+      "score": 5.0749,
       "signups": 0
     }
   },
@@ -77,7 +77,7 @@
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 27.444
+      "score": 27.474
     },
     {
       "channels": [
@@ -85,7 +85,7 @@
         "substack_notes"
       ],
       "phrase": "general question",
-      "score": 19.65
+      "score": 23.774
     },
     {
       "channels": [
@@ -93,7 +93,7 @@
         "substack_notes"
       ],
       "phrase": "fable government happened here",
-      "score": 13.637
+      "score": 13.546
     },
     {
       "channels": [
@@ -102,7 +102,7 @@
         "substack_notes"
       ],
       "phrase": "self-promotion thread",
-      "score": 12.971
+      "score": 12.881
     },
     {
       "channels": [
@@ -111,10 +111,10 @@
         "substack_notes"
       ],
       "phrase": "gemma vram",
-      "score": 12.653
+      "score": 12.563
     }
   ],
-  "generated_at": "2026-06-25T12:04:56.288756+00:00",
+  "generated_at": "2026-06-26T08:18:52.621945+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
