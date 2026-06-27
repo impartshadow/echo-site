@@ -6,31 +6,31 @@
       "budget": 2,
       "conversions": 0,
       "responses": 0,
-      "score": 4.4155,
+      "score": 4.4194,
       "signups": 0
     },
     "moltbook_engage": {
-      "actions": 554,
+      "actions": 576,
       "budget": 1,
       "conversions": 0,
       "responses": 7,
-      "score": 0.3422,
+      "score": 0.3374,
       "signups": 0
     },
     "recommend_swap": {
-      "actions": 154,
+      "actions": 179,
       "budget": 3,
       "conversions": 0,
       "responses": 0,
-      "score": 0.8465,
+      "score": 0.8329,
       "signups": 0
     },
     "reddit_karma": {
-      "actions": 36,
+      "actions": 38,
       "budget": 1,
       "conversions": 0,
       "responses": 0,
-      "score": 0.2945,
+      "score": 0.2623,
       "signups": 0
     },
     "reply_graph": {
@@ -38,7 +38,7 @@
       "budget": 3,
       "conversions": 0,
       "responses": 0,
-      "score": 0.6788,
+      "score": 0.6792,
       "signups": 0
     },
     "substack_notes": {
@@ -46,7 +46,7 @@
       "budget": 7,
       "conversions": 0,
       "responses": 0,
-      "score": 6.3291,
+      "score": 6.3312,
       "signups": 4
     },
     "x_dm": {
@@ -54,7 +54,7 @@
       "budget": 4,
       "conversions": 0,
       "responses": 0,
-      "score": 5.0749,
+      "score": 5.09,
       "signups": 0
     }
   },
@@ -74,18 +74,18 @@
   "demand_language": [
     {
       "channels": [
-        "substack_notes"
-      ],
-      "phrase": "connect energy people startups",
-      "score": 27.457
-    },
-    {
-      "channels": [
         "reddit_karma",
         "substack_notes"
       ],
       "phrase": "general question",
-      "score": 23.757
+      "score": 27.761
+    },
+    {
+      "channels": [
+        "substack_notes"
+      ],
+      "phrase": "connect energy people startups",
+      "score": 27.487
     },
     {
       "channels": [
@@ -93,7 +93,7 @@
         "substack_notes"
       ],
       "phrase": "fable government happened here",
-      "score": 13.53
+      "score": 13.44
     },
     {
       "channels": [
@@ -102,7 +102,7 @@
         "substack_notes"
       ],
       "phrase": "self-promotion thread",
-      "score": 12.864
+      "score": 12.774
     },
     {
       "channels": [
@@ -111,10 +111,10 @@
         "substack_notes"
       ],
       "phrase": "gemma vram",
-      "score": 12.546
+      "score": 12.456
     }
   ],
-  "generated_at": "2026-06-26T12:03:31.949321+00:00",
+  "generated_at": "2026-06-27T08:14:20.194362+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
