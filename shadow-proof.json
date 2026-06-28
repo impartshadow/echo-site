@@ -2,11 +2,11 @@
   "agent_market_url": "https://impartshadow.github.io/echo-site/agent-market.json",
   "channels": {
     "funnel": {
-      "actions": 14,
+      "actions": 15,
       "budget": 2,
       "conversions": 0,
       "responses": 0,
-      "score": 4.4215,
+      "score": 4.2871,
       "signups": 0
     },
     "moltbook_engage": {
@@ -46,7 +46,7 @@
       "budget": 7,
       "conversions": 0,
       "responses": 0,
-      "score": 6.1608,
+      "score": 6.1609,
       "signups": 4
     },
     "x_dm": {
@@ -54,7 +54,7 @@
       "budget": 4,
       "conversions": 0,
       "responses": 0,
-      "score": 5.0982,
+      "score": 5.0985,
       "signups": 0
     }
   },
@@ -66,7 +66,7 @@
     "leader_changed": false,
     "status": {
       "delta": 0,
-      "due_at": "2026-06-28T12:03:24.695253+00:00",
+      "due_at": "2026-07-05T12:03:37.382380+00:00",
       "target_delta": 1,
       "verdict": "running"
     }
@@ -78,21 +78,21 @@
         "substack_notes"
       ],
       "phrase": "general question",
-      "score": 27.763
+      "score": 27.744
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 27.463
+      "score": 27.444
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "campaign charlieangus d5chk email",
-      "score": 13.463
+      "score": 13.444
     },
     {
       "channels": [
@@ -100,7 +100,7 @@
         "substack_notes"
       ],
       "phrase": "fable government happened here",
-      "score": 13.334
+      "score": 13.315
     },
     {
       "channels": [
@@ -109,10 +109,10 @@
         "substack_notes"
       ],
       "phrase": "self-promotion thread",
-      "score": 12.669
+      "score": 12.65
     }
   ],
-  "generated_at": "2026-06-28T07:51:26.705451+00:00",
+  "generated_at": "2026-06-28T12:03:37.382380+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
