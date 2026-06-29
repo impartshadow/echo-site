@@ -6,15 +6,15 @@
       "budget": 2,
       "conversions": 0,
       "responses": 0,
-      "score": 4.2871,
+      "score": 4.2889,
       "signups": 0
     },
     "moltbook_engage": {
-      "actions": 598,
+      "actions": 620,
       "budget": 1,
       "conversions": 0,
       "responses": 8,
-      "score": 0.3462,
+      "score": 0.3415,
       "signups": 0
     },
     "recommend_swap": {
@@ -22,15 +22,15 @@
       "budget": 3,
       "conversions": 0,
       "responses": 0,
-      "score": 0.833,
+      "score": 0.8331,
       "signups": 0
     },
     "reddit_karma": {
-      "actions": 40,
+      "actions": 42,
       "budget": 1,
       "conversions": 0,
       "responses": 0,
-      "score": 0.2505,
+      "score": 0.2487,
       "signups": 0
     },
     "reply_graph": {
@@ -38,15 +38,15 @@
       "budget": 3,
       "conversions": 0,
       "responses": 0,
-      "score": 0.6794,
+      "score": 0.6795,
       "signups": 0
     },
     "substack_notes": {
-      "actions": 52,
+      "actions": 53,
       "budget": 7,
       "conversions": 0,
       "responses": 0,
-      "score": 6.1609,
+      "score": 6.1228,
       "signups": 4
     },
     "x_dm": {
@@ -54,7 +54,7 @@
       "budget": 4,
       "conversions": 0,
       "responses": 0,
-      "score": 5.0985,
+      "score": 5.1056,
       "signups": 0
     }
   },
@@ -78,21 +78,30 @@
         "substack_notes"
       ],
       "phrase": "general question",
-      "score": 27.744
+      "score": 31.776
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 27.444
+      "score": 27.436
+    },
+    {
+      "channels": [
+        "moltbook_engage",
+        "owned_brief",
+        "substack_notes"
+      ],
+      "phrase": "reliability will between biggest",
+      "score": 17.249
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "campaign charlieangus d5chk email",
-      "score": 13.444
+      "score": 15.449
     },
     {
       "channels": [
@@ -100,19 +109,10 @@
         "substack_notes"
       ],
       "phrase": "fable government happened here",
-      "score": 13.315
-    },
-    {
-      "channels": [
-        "moltbook_engage",
-        "reddit_karma",
-        "substack_notes"
-      ],
-      "phrase": "self-promotion thread",
-      "score": 12.65
+      "score": 13.227
     }
   ],
-  "generated_at": "2026-06-28T12:03:37.382380+00:00",
+  "generated_at": "2026-06-29T07:51:19.724393+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
