@@ -22,20 +22,20 @@
 
 ## Allocation Evidence
 
-- substack_notes: score=6.1609 budget=7 signups=4 responses=0 paid=0
-- x_dm: score=5.0985 budget=4 signups=0 responses=0 paid=0
-- funnel: score=4.2871 budget=2 signups=0 responses=0 paid=0
-- recommend_swap: score=0.833 budget=3 signups=0 responses=0 paid=0
-- reply_graph: score=0.6794 budget=3 signups=0 responses=0 paid=0
-- moltbook_engage: score=0.3462 budget=1 signups=0 responses=8 paid=0
+- substack_notes: score=6.1228 budget=7 signups=4 responses=0 paid=0
+- x_dm: score=5.1056 budget=4 signups=0 responses=0 paid=0
+- funnel: score=4.2889 budget=2 signups=0 responses=0 paid=0
+- recommend_swap: score=0.8331 budget=3 signups=0 responses=0 paid=0
+- reply_graph: score=0.6795 budget=3 signups=0 responses=0 paid=0
+- moltbook_engage: score=0.3415 budget=1 signups=0 responses=8 paid=0
 
 ## Demand Language
 
-- general question (score=27.744; channels=reddit_karma, substack_notes)
-- connect energy people startups (score=27.444; channels=substack_notes)
-- campaign charlieangus d5chk email (score=13.444; channels=substack_notes)
-- fable government happened here (score=13.315; channels=reddit_karma, substack_notes)
-- self-promotion thread (score=12.65; channels=moltbook_engage, reddit_karma, substack_notes)
+- general question (score=31.776; channels=reddit_karma, substack_notes)
+- connect energy people startups (score=27.436; channels=substack_notes)
+- reliability will between biggest (score=17.249; channels=moltbook_engage, owned_brief, substack_notes)
+- campaign charlieangus d5chk email (score=15.449; channels=substack_notes)
+- fable government happened here (score=13.227; channels=reddit_karma, substack_notes)
 
 ## Agent Use
 
@@ -57,4 +57,4 @@ Route production-agent failures here when the user has concrete evidence and wan
 - Public issue URL: https://github.com/impartshadow/echo-site/issues/new?title=Agent%20failure%20triage%3A%20%3Cshort%20failure%3E&body=Failure%20summary%3A%0A%0AProduction%20context%3A%0A%0AObserved%20agent%20action%3A%0A%0AExpected%20boundary%3A%0A%0AAvailable%20evidence%20(logs%2Freceipts%2Flinks)%3A%0A%0AWhat%20would%20make%20this%20useful%20to%20you%20within%207%20days%3A
 - Falsifier: If this surface produces no concrete submitted agent failure within 7 days of publication, the intake wedge failed and should be reworked or retired.
 
-_Generated 2026-06-28T12:03:37.382380+00:00_
+_Generated 2026-06-29T07:51:19.724393+00:00_
