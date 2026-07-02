@@ -6,15 +6,15 @@
       "budget": 2,
       "conversions": 0,
       "responses": 0,
-      "score": 4.2934,
+      "score": 4.2949,
       "signups": 0
     },
     "moltbook_engage": {
-      "actions": 664,
+      "actions": 686,
       "budget": 1,
       "conversions": 0,
-      "responses": 8,
-      "score": 0.3331,
+      "responses": 9,
+      "score": 0.3409,
       "signups": 0
     },
     "recommend_swap": {
@@ -26,11 +26,11 @@
       "signups": 0
     },
     "reddit_karma": {
-      "actions": 46,
+      "actions": 48,
       "budget": 1,
       "conversions": 0,
       "responses": 0,
-      "score": 0.2455,
+      "score": 0.244,
       "signups": 0
     },
     "reply_graph": {
@@ -38,7 +38,7 @@
       "budget": 3,
       "conversions": 0,
       "responses": 0,
-      "score": 0.6799,
+      "score": 0.6801,
       "signups": 0
     },
     "substack_notes": {
@@ -46,7 +46,7 @@
       "budget": 7,
       "conversions": 0,
       "responses": 0,
-      "score": 5.982,
+      "score": 5.9828,
       "signups": 4
     },
     "x_dm": {
@@ -54,7 +54,7 @@
       "budget": 4,
       "conversions": 0,
       "responses": 0,
-      "score": 5.1236,
+      "score": 5.1298,
       "signups": 0
     }
   },
@@ -78,14 +78,14 @@
         "substack_notes"
       ],
       "phrase": "general question",
-      "score": 33.653
+      "score": 35.774
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 27.353
+      "score": 27.246
     },
     {
       "channels": [
@@ -94,14 +94,14 @@
         "substack_notes"
       ],
       "phrase": "reliability will between biggest",
-      "score": 18.795
+      "score": 20.418
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "campaign charlieangus d5chk email",
-      "score": 15.233
+      "score": 15.126
     },
     {
       "channels": [
@@ -109,10 +109,10 @@
         "substack_notes"
       ],
       "phrase": "becoming expected faster normal",
-      "score": 13.734
+      "score": 13.627
     }
   ],
-  "generated_at": "2026-07-01T08:21:53.781545+00:00",
+  "generated_at": "2026-07-02T08:19:51.822899+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
