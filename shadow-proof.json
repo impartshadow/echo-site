@@ -117,7 +117,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 17.9,
+          "hours_since": 18.0,
           "last_activity": "2026-07-03T05:00:55.126088+00:00",
           "source": "declared_timestamp",
           "staleness": "ok"
@@ -131,7 +131,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 17.9,
+          "hours_since": 18.0,
           "last_activity": "2026-07-03T05:00:55.126088+00:00",
           "source": "declared_timestamp",
           "staleness": "ok"
@@ -145,7 +145,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 17.9,
+          "hours_since": 18.0,
           "last_activity": "2026-07-03T05:00:55.126088+00:00",
           "source": "declared_timestamp",
           "staleness": "ok"
@@ -159,7 +159,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 17.9,
+          "hours_since": 18.0,
           "last_activity": "2026-07-03T05:00:55.126088+00:00",
           "source": "declared_timestamp",
           "staleness": "stale"
@@ -187,7 +187,7 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 17.9,
+          "hours_since": 18.0,
           "last_activity": "2026-07-03T05:00:55.126088+00:00",
           "source": "declared_timestamp",
           "staleness": "ok"
@@ -201,7 +201,7 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 17.9,
+          "hours_since": 18.0,
           "last_activity": "2026-07-03T05:00:55.126088+00:00",
           "source": "declared_timestamp",
           "staleness": "ok"
@@ -227,7 +227,7 @@
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-07-03T22:57:11.336277+00:00",
+    "generated_at": "2026-07-03T22:58:11.275296+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
@@ -292,7 +292,7 @@
       "stale": 1
     }
   },
-  "generated_at": "2026-07-03T22:57:06.586306+00:00",
+  "generated_at": "2026-07-03T22:58:06.455111+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
