@@ -173,7 +173,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 2.6,
+          "hours_since": 2.7,
           "last_activity": "2026-07-03T20:15:23.491505+00:00",
           "source": "action_log",
           "staleness": "expected_quiet"
@@ -215,7 +215,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 17.7,
+          "hours_since": 17.8,
           "last_activity": "2026-07-03T05:09:42.705992+00:00",
           "source": "action_log",
           "staleness": "ok"
@@ -227,7 +227,63 @@
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-07-03T22:53:12.474498+00:00",
+    "generated_at": "2026-07-03T22:57:11.336277+00:00",
+    "remediation_queue": [
+      {
+        "action": "produce_or_attach_external_receipt",
+        "evidence_source": "declared_timestamp",
+        "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
+        "loop_id": "content-biz",
+        "missing_receipts": [
+          "external_post_receipt",
+          "subscriber_receipt",
+          "reply_receipt",
+          "meeting_receipt"
+        ],
+        "priority": 90,
+        "verdict": "no_external_reach"
+      },
+      {
+        "action": "produce_or_attach_external_receipt",
+        "evidence_source": "declared_timestamp",
+        "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
+        "loop_id": "echo",
+        "missing_receipts": [
+          "external_post_receipt",
+          "subscriber_receipt",
+          "reply_receipt",
+          "meeting_receipt"
+        ],
+        "priority": 90,
+        "verdict": "no_external_reach"
+      },
+      {
+        "action": "produce_or_attach_external_receipt",
+        "evidence_source": "declared_timestamp",
+        "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
+        "loop_id": "shadow-presence",
+        "missing_receipts": [
+          "external_post_receipt",
+          "subscriber_receipt",
+          "reply_receipt",
+          "meeting_receipt"
+        ],
+        "priority": 90,
+        "verdict": "no_external_reach"
+      },
+      {
+        "action": "refresh_liveness_or_pause_loop",
+        "evidence_source": "declared_timestamp",
+        "instruction": "Run the loop once, attach a fresh verifier receipt, or pause the loop explicitly.",
+        "loop_id": "tenant-ops",
+        "missing_receipts": [
+          "fresh_action_log",
+          "verifier_receipt"
+        ],
+        "priority": 70,
+        "verdict": "stale"
+      }
+    ],
     "rule": "Declared loop state is not proof. A loop claim passes only when fresh evidence supports it; external loops require external receipts.",
     "schema": "shadow.agent_flight_recorder.v1",
     "summary": {
@@ -236,7 +292,7 @@
       "stale": 1
     }
   },
-  "generated_at": "2026-07-03T22:53:07.712467+00:00",
+  "generated_at": "2026-07-03T22:57:06.586306+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
