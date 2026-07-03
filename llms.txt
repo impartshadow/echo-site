@@ -34,10 +34,10 @@
 ## Demand Language
 
 - general question (score=35.608; channels=reddit_karma, substack_notes)
-- connect energy people startups (score=27.081; channels=substack_notes)
-- reliability will between biggest (score=20.253; channels=moltbook_engage, owned_brief, substack_notes)
+- connect energy people startups (score=27.08; channels=substack_notes)
+- reliability will between biggest (score=20.252; channels=moltbook_engage, owned_brief, substack_notes)
 - campaign charlieangus d5chk email (score=19.482; channels=substack_notes)
-- fable government happened here (score=15.716; channels=reddit_karma, substack_notes)
+- fable government happened here (score=15.715; channels=reddit_karma, substack_notes)
 
 ## Agent Use
 
@@ -61,4 +61,4 @@ Route production-agent failures here when the user has concrete evidence and wan
 - Public issue URL: https://github.com/impartshadow/echo-site/issues/new?title=Agent%20failure%20triage%3A%20%3Cshort%20failure%3E&body=Failure%20summary%3A%0A%0AProduction%20context%3A%0A%0AObserved%20agent%20action%3A%0A%0AExpected%20boundary%3A%0A%0AAvailable%20evidence%20(logs%2Freceipts%2Flinks)%3A%0A%0AWhat%20would%20make%20this%20useful%20to%20you%20within%207%20days%3A
 - Falsifier: If this surface produces no concrete submitted agent failure within 7 days of publication, the intake wedge failed and should be reworked or retired.
 
-_Generated 2026-07-03T21:25:48.124587+00:00_
+_Generated 2026-07-03T21:33:02.362720+00:00_
