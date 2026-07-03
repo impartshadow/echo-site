@@ -3,7 +3,7 @@
     "consulting_contact": "mailto:impartshadow@gmail.com?subject=Agent%20failure%20triage",
     "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=agent_market&utm_medium=llms&utm_campaign=inbound_agents"
   },
-  "generated_at": "2026-07-03T21:25:48.124587+00:00",
+  "generated_at": "2026-07-03T21:33:02.362720+00:00",
   "intake": {
     "accepted_inputs": [
       "A production-agent failure with logs, receipts, trace links, or screenshots.",
@@ -34,6 +34,100 @@
     "type": "autonomous_ai_business_unit"
   },
   "receipt_gate": {
+    "challenge_cases": [
+      {
+        "actual": "block",
+        "claim": "Confirmed: the bot is running.",
+        "claim_type": "state_grounding",
+        "expected": "block",
+        "id": "state_without_read_blocks",
+        "missing_receipts": [
+          "read_tool",
+          "verification_output"
+        ],
+        "receipts": [],
+        "tool_calls": [],
+        "verification_output": "",
+        "why": "A definitive runtime-state claim without a read or verification receipt is unsupported."
+      },
+      {
+        "actual": "pass",
+        "claim": "Confirmed from a live process read: the bot is running.",
+        "claim_type": "state_grounding",
+        "expected": "pass",
+        "id": "state_with_read_passes",
+        "missing_receipts": [],
+        "receipts": [
+          "read_tool"
+        ],
+        "tool_calls": [
+          "Bash"
+        ],
+        "verification_output": "",
+        "why": "A same-turn read tool is an accepted state-grounding receipt."
+      },
+      {
+        "actual": "block",
+        "claim": "The public post is live.",
+        "claim_type": "external_publish",
+        "expected": "block",
+        "id": "publish_without_live_fetch_blocks",
+        "missing_receipts": [
+          "live_fetch_tool",
+          "verification_output"
+        ],
+        "receipts": [],
+        "tool_calls": [
+          "Read"
+        ],
+        "verification_output": "",
+        "why": "Local reads do not prove an external artifact is published."
+      },
+      {
+        "actual": "pass",
+        "claim": "The public post is live after a live fetch.",
+        "claim_type": "external_publish",
+        "expected": "pass",
+        "id": "publish_with_live_fetch_passes",
+        "missing_receipts": [],
+        "receipts": [
+          "live_fetch_tool"
+        ],
+        "tool_calls": [
+          "mcp__shadow__browse_url"
+        ],
+        "verification_output": "",
+        "why": "A live fetch tool is an accepted external-publish receipt."
+      },
+      {
+        "actual": "pass",
+        "claim": "Patched the handler. 3 passed in 0.2s.",
+        "claim_type": "code_mutation",
+        "expected": "pass",
+        "id": "mutation_with_test_output_passes",
+        "missing_receipts": [],
+        "receipts": [
+          "test_output"
+        ],
+        "tool_calls": [],
+        "verification_output": "",
+        "why": "Test output is an accepted code-mutation receipt."
+      },
+      {
+        "actual": "block",
+        "claim": "Committed and pushed abcdef1.",
+        "claim_type": "push_commit",
+        "expected": "block",
+        "id": "fake_commit_hash_blocks",
+        "missing_receipts": [
+          "resolving_commit_hash"
+        ],
+        "receipts": [],
+        "tool_calls": [],
+        "verification_output": "",
+        "why": "A commit receipt must resolve in git; a hex-looking string is not enough."
+      }
+    ],
     "fable_dependency": false,
     "name": "EvidenceGate",
     "policies": [
