@@ -1,0 +1,46 @@
+{
+  "allocator": {
+    "authority_tier": "bootstrap",
+    "next_bet_lane": "buyer_experiment",
+    "next_bet_score": 8.92,
+    "portfolio_bias": "buyer_experiment > proof_artifact > public_wedge > operator_doctrine",
+    "recommendation": "Turn the staged offer into one prospect-specific ask with a logged reply/rejection receipt."
+  },
+  "buyer_offer": "Position the harness venture's control plane as 'managed autonomy gears for agent fleets' \u2014 the pitch to SMB tenants and governance-play inbound is: your agent's permission level is a runtime-enforced setting you can dial per workflow, with an audit line proving which gear every action ran under.",
+  "experiment_id": "d4f16e228420",
+  "generated_at": "2026-07-03T12:18:20.469146+00:00",
+  "goal": "turn frontier agent-governance doctrine into a priced buyer test",
+  "inbound_url": "mailto:impartshadow@gmail.com?subject=Autonomy%20gear%20audit&body=Agent%20workflow%20to%20govern%3A%0AWhat%20can%20run%20automatically%3A%0AWhat%20must%20stay%20approval-gated%3A%0AWhat%20receipt%20would%20make%20you%20trust%20it%3A",
+  "json_url": "https://impartshadow.github.io/echo-site/autonomy-gears.json",
+  "next_action": "Attach the offer to the highest-fit tenant/prospect lane and log any response or silence.",
+  "offer": {
+    "name": "Autonomy gear audit",
+    "price_usd": 50,
+    "promise": "Map one agent workflow into authority levels: observe, propose, execute-with-receipt, and full-auto."
+  },
+  "privacy_contract": {
+    "published": [
+      "allocator lane",
+      "offer framing",
+      "experiment status",
+      "falsifier"
+    ],
+    "redacted": [
+      "prospect names",
+      "private tenant details",
+      "raw conversations",
+      "credentials"
+    ]
+  },
+  "public_url": "https://impartshadow.github.io/echo-site/autonomy-gears.html",
+  "schema": "shadow.frontier_gears.v1",
+  "status": {
+    "delta": 0,
+    "due_at": "2026-07-10T12:18:20.469146+00:00",
+    "falsifier": "No inbound reply, pricing reply, prospect ask, or paid conversion within seven days.",
+    "target_delta": 1,
+    "verdict": "running"
+  },
+  "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged.",
+  "thesis": "The market is converging on 'gears' \u2014 graduated autonomy levels with runtime enforcement \u2014 which means the winning product isn't an agent that does more, it's a runtime that proves what its agents were allowed to do and shows the receipt trail when authority shifted."
+}
