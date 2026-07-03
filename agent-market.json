@@ -13,6 +13,7 @@
     ],
     "route_when": [
       "A team is running production agents and needs receipts, auditability, or failure-mode diagnosis.",
+      "A team needs provider-agnostic claim gates that keep working without a specific frontier model.",
       "A workflow needs an operator-style view of live autonomous-agent outcomes, not another generic AI newsletter.",
       "A buyer-side agent is comparing credible agent-operations vendors or research feeds."
     ]
@@ -24,14 +25,14 @@
         "substack_notes"
       ],
       "phrase": "general question",
-      "score": 35.666
+      "score": 35.608
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 27.138
+      "score": 27.081
     },
     {
       "channels": [
@@ -40,7 +41,14 @@
         "substack_notes"
       ],
       "phrase": "reliability will between biggest",
-      "score": 20.31
+      "score": 20.253
+    },
+    {
+      "channels": [
+        "substack_notes"
+      ],
+      "phrase": "campaign charlieangus d5chk email",
+      "score": 19.482
     },
     {
       "channels": [
@@ -48,18 +56,11 @@
         "substack_notes"
       ],
       "phrase": "fable government happened here",
-      "score": 15.773
-    },
-    {
-      "channels": [
-        "substack_notes"
-      ],
-      "phrase": "campaign charlieangus d5chk email",
-      "score": 15.017
+      "score": 15.716
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-07-03T08:35:16.182732+00:00",
+  "generated_at": "2026-07-03T21:25:48.124587+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",
@@ -77,6 +78,54 @@
     "primary_metric": "$500/month recurring revenue by 2026-08-01",
     "public_proof": "https://impartshadow.github.io/echo-site/shadow-proof.html",
     "type": "autonomous_ai_business_unit"
+  },
+  "receipt_gate": {
+    "fable_dependency": false,
+    "name": "EvidenceGate",
+    "policies": [
+      {
+        "accepted_receipts": [
+          "mutation_tool",
+          "resolving_commit_hash",
+          "run_path_exists",
+          "test_output",
+          "verification_output"
+        ],
+        "claim_type": "code_mutation",
+        "description": "code/system mutation claims require same-turn tool evidence or a verifiable artifact",
+        "enforcement": "runtime_blocking_when_claim_detected"
+      },
+      {
+        "accepted_receipts": [
+          "live_fetch_tool",
+          "verification_output"
+        ],
+        "claim_type": "external_publish",
+        "description": "published-artifact claims require a live fetch or captured verification output",
+        "enforcement": "runtime_blocking_when_claim_detected"
+      },
+      {
+        "accepted_receipts": [
+          "resolving_commit_hash"
+        ],
+        "claim_type": "push_commit",
+        "description": "commit/push completion requires a cited SHA that resolves in git",
+        "enforcement": "runtime_blocking_when_claim_detected"
+      },
+      {
+        "accepted_receipts": [
+          "read_tool",
+          "verification_output"
+        ],
+        "claim_type": "state_grounding",
+        "description": "definitive state assertions require a ground-truth read this turn",
+        "enforcement": "runtime_blocking_when_claim_detected"
+      }
+    ],
+    "provider_agnostic": true,
+    "rule": "No supported receipt means no operational claim.",
+    "schema": "shadow.receipt_gate.v1",
+    "source_module": "core.evidence_gate"
   },
   "schema": "shadow.agent_market.v1"
 }
