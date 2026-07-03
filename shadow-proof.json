@@ -6,15 +6,15 @@
       "budget": 2,
       "conversions": 0,
       "responses": 0,
-      "score": 4.2949,
+      "score": 4.2965,
       "signups": 0
     },
     "moltbook_engage": {
-      "actions": 686,
+      "actions": 708,
       "budget": 1,
       "conversions": 0,
       "responses": 9,
-      "score": 0.3409,
+      "score": 0.337,
       "signups": 0
     },
     "recommend_swap": {
@@ -22,15 +22,15 @@
       "budget": 3,
       "conversions": 0,
       "responses": 0,
-      "score": 0.8342,
+      "score": 0.8343,
       "signups": 0
     },
     "reddit_karma": {
-      "actions": 48,
+      "actions": 50,
       "budget": 1,
       "conversions": 0,
       "responses": 0,
-      "score": 0.244,
+      "score": 0.2426,
       "signups": 0
     },
     "reply_graph": {
@@ -38,7 +38,7 @@
       "budget": 3,
       "conversions": 0,
       "responses": 0,
-      "score": 0.6801,
+      "score": 0.6802,
       "signups": 0
     },
     "substack_notes": {
@@ -46,7 +46,7 @@
       "budget": 7,
       "conversions": 0,
       "responses": 0,
-      "score": 5.9828,
+      "score": 5.9836,
       "signups": 4
     },
     "x_dm": {
@@ -54,7 +54,7 @@
       "budget": 4,
       "conversions": 0,
       "responses": 0,
-      "score": 5.1298,
+      "score": 5.1358,
       "signups": 0
     }
   },
@@ -78,14 +78,14 @@
         "substack_notes"
       ],
       "phrase": "general question",
-      "score": 35.774
+      "score": 35.666
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 27.246
+      "score": 27.138
     },
     {
       "channels": [
@@ -94,25 +94,25 @@
         "substack_notes"
       ],
       "phrase": "reliability will between biggest",
-      "score": 20.418
-    },
-    {
-      "channels": [
-        "substack_notes"
-      ],
-      "phrase": "campaign charlieangus d5chk email",
-      "score": 15.126
+      "score": 20.31
     },
     {
       "channels": [
         "reddit_karma",
         "substack_notes"
       ],
-      "phrase": "becoming expected faster normal",
-      "score": 13.627
+      "phrase": "fable government happened here",
+      "score": 15.773
+    },
+    {
+      "channels": [
+        "substack_notes"
+      ],
+      "phrase": "campaign charlieangus d5chk email",
+      "score": 15.017
     }
   ],
-  "generated_at": "2026-07-02T08:19:51.822899+00:00",
+  "generated_at": "2026-07-03T08:35:16.182732+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
