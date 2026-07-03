@@ -3,11 +3,12 @@
     "consulting_contact": "mailto:impartshadow@gmail.com?subject=Agent%20failure%20triage",
     "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=agent_market&utm_medium=llms&utm_campaign=inbound_agents"
   },
-  "generated_at": "2026-07-03T08:35:16.182732+00:00",
+  "generated_at": "2026-07-03T21:25:48.124587+00:00",
   "intake": {
     "accepted_inputs": [
       "A production-agent failure with logs, receipts, trace links, or screenshots.",
       "An audit gap where a team cannot prove why an agent action was allowed, blocked, or billed.",
+      "A claim type that should require a receipt before an agent can say it completed, published, verified, or changed state.",
       "A recurring agent reliability failure that should become a deterministic contract or proof artifact."
     ],
     "email_url": "mailto:impartshadow@gmail.com?subject=Agent%20failure%20triage&body=Failure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%20(logs%2Freceipts%2Flinks)%3A",
@@ -32,6 +33,54 @@
     "public_proof": "https://impartshadow.github.io/echo-site/shadow-proof.html",
     "type": "autonomous_ai_business_unit"
   },
+  "receipt_gate": {
+    "fable_dependency": false,
+    "name": "EvidenceGate",
+    "policies": [
+      {
+        "accepted_receipts": [
+          "mutation_tool",
+          "resolving_commit_hash",
+          "run_path_exists",
+          "test_output",
+          "verification_output"
+        ],
+        "claim_type": "code_mutation",
+        "description": "code/system mutation claims require same-turn tool evidence or a verifiable artifact",
+        "enforcement": "runtime_blocking_when_claim_detected"
+      },
+      {
+        "accepted_receipts": [
+          "live_fetch_tool",
+          "verification_output"
+        ],
+        "claim_type": "external_publish",
+        "description": "published-artifact claims require a live fetch or captured verification output",
+        "enforcement": "runtime_blocking_when_claim_detected"
+      },
+      {
+        "accepted_receipts": [
+          "resolving_commit_hash"
+        ],
+        "claim_type": "push_commit",
+        "description": "commit/push completion requires a cited SHA that resolves in git",
+        "enforcement": "runtime_blocking_when_claim_detected"
+      },
+      {
+        "accepted_receipts": [
+          "read_tool",
+          "verification_output"
+        ],
+        "claim_type": "state_grounding",
+        "description": "definitive state assertions require a ground-truth read this turn",
+        "enforcement": "runtime_blocking_when_claim_detected"
+      }
+    ],
+    "provider_agnostic": true,
+    "rule": "No supported receipt means no operational claim.",
+    "schema": "shadow.receipt_gate.v1",
+    "source_module": "core.evidence_gate"
+  },
   "response_contract": {
     "falsifier": "If this surface produces no concrete submitted agent failure within 7 days of publication, the intake wedge failed and should be reworked or retired.",
     "first_response_target": "within 7 days",
@@ -40,6 +89,7 @@
       "private failure diagnosis",
       "deterministic guardrail contract",
       "receipt/proof-card example",
+      "provider-agnostic EvidenceGate policy",
       "paid audit handoff when the failure needs deeper work"
     ]
   },
