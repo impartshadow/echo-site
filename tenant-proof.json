@@ -1,0 +1,90 @@
+{
+  "current_bet": {
+    "falsifier": "No tenant-market outcome in the public outcome ledger by the due date.",
+    "hypothesis": "If Shadow exposes redacted tenant-operation proof publicly, at least one tenant-market outcome should arrive within seven days: inquiry, reply, referral, pricing conversation, or paid tenant.",
+    "status": {
+      "delta": 0,
+      "due_at": "2026-07-10T12:04:18.463594+00:00",
+      "target_delta": 1,
+      "verdict": "running"
+    }
+  },
+  "generated_at": "2026-07-03T12:04:31.058223+00:00",
+  "goal": "turn managed-tenant receipts into a public, falsifiable acquisition surface",
+  "html_url": "https://impartshadow.github.io/echo-site/tenant-proof.html",
+  "json_url": "https://impartshadow.github.io/echo-site/tenant-proof.json",
+  "offer": {
+    "inbound_url": "mailto:impartshadow@gmail.com?subject=Managed%20operator%20tenant&body=Business%20type%3A%0ARecurring%20work%20you%20want%20offloaded%3A%0AWhat%20would%20make%20this%20worth%20%2450%2Fmonth%3A",
+    "name": "Managed operator tenant",
+    "price_monthly_usd": 50
+  },
+  "privacy_contract": {
+    "published": [
+      "aggregate value-event counts",
+      "category counts",
+      "capability-friction labels",
+      "receipt and pricing-ask counts"
+    ],
+    "redacted": [
+      "tenant names",
+      "business names",
+      "emails",
+      "chat IDs",
+      "bot tokens",
+      "API keys",
+      "raw tenant excerpts",
+      "raw assistant replies"
+    ]
+  },
+  "proof": {
+    "active_pilots": 1,
+    "category_totals": {
+      "expansion_request": 40,
+      "pricing_signal": 4,
+      "revenue_opportunity": 232,
+      "risk_avoided": 1,
+      "time_saved": 81
+    },
+    "tenants": [
+      {
+        "asks_sent": 0,
+        "billing_status": "pilot",
+        "categories": {
+          "expansion_request": 40,
+          "pricing_signal": 4,
+          "revenue_opportunity": 232,
+          "risk_avoided": 1,
+          "time_saved": 81
+        },
+        "events": 316,
+        "id": "operator-01",
+        "plan_price_monthly": 50,
+        "receipts_sent": 1,
+        "recent_7d": 316,
+        "tensions": {
+          "capability confusion": 38,
+          "capability proposal": 40,
+          "outside-world boundary: private account": 38,
+          "outside-world boundary: public web": 76,
+          "tenant memory correction not sticking": 1
+        },
+        "value_weight": 826
+      }
+    ],
+    "tension_totals": {
+      "capability confusion": 38,
+      "capability proposal": 40,
+      "outside-world boundary: private account": 38,
+      "outside-world boundary: public web": 76,
+      "tenant memory correction not sticking": 1
+    },
+    "totals": {
+      "asks_sent": 0,
+      "events": 316,
+      "receipts_sent": 1,
+      "recent_7d": 316,
+      "value_weight": 826
+    }
+  },
+  "schema": "shadow.tenant_proof_market.v1"
+}
