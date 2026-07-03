@@ -6,15 +6,15 @@
       "budget": 2,
       "conversions": 0,
       "responses": 0,
-      "score": 4.2965,
+      "score": 4.2979,
       "signups": 0
     },
     "moltbook_engage": {
-      "actions": 708,
+      "actions": 730,
       "budget": 1,
       "conversions": 0,
       "responses": 9,
-      "score": 0.337,
+      "score": 0.3333,
       "signups": 0
     },
     "recommend_swap": {
@@ -22,15 +22,15 @@
       "budget": 3,
       "conversions": 0,
       "responses": 0,
-      "score": 0.8343,
+      "score": 0.8344,
       "signups": 0
     },
     "reddit_karma": {
-      "actions": 50,
+      "actions": 51,
       "budget": 1,
       "conversions": 0,
       "responses": 0,
-      "score": 0.2426,
+      "score": 0.242,
       "signups": 0
     },
     "reply_graph": {
@@ -38,7 +38,7 @@
       "budget": 3,
       "conversions": 0,
       "responses": 0,
-      "score": 0.6802,
+      "score": 0.6804,
       "signups": 0
     },
     "substack_notes": {
@@ -46,7 +46,7 @@
       "budget": 7,
       "conversions": 0,
       "responses": 0,
-      "score": 5.9836,
+      "score": 5.9844,
       "signups": 4
     },
     "x_dm": {
@@ -54,7 +54,7 @@
       "budget": 4,
       "conversions": 0,
       "responses": 0,
-      "score": 5.1358,
+      "score": 5.1415,
       "signups": 0
     }
   },
@@ -78,14 +78,14 @@
         "substack_notes"
       ],
       "phrase": "general question",
-      "score": 35.666
+      "score": 35.608
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 27.138
+      "score": 27.081
     },
     {
       "channels": [
@@ -94,7 +94,14 @@
         "substack_notes"
       ],
       "phrase": "reliability will between biggest",
-      "score": 20.31
+      "score": 20.253
+    },
+    {
+      "channels": [
+        "substack_notes"
+      ],
+      "phrase": "campaign charlieangus d5chk email",
+      "score": 19.482
     },
     {
       "channels": [
@@ -102,20 +109,61 @@
         "substack_notes"
       ],
       "phrase": "fable government happened here",
-      "score": 15.773
-    },
-    {
-      "channels": [
-        "substack_notes"
-      ],
-      "phrase": "campaign charlieangus d5chk email",
-      "score": 15.017
+      "score": 15.716
     }
   ],
-  "generated_at": "2026-07-03T08:35:16.182732+00:00",
+  "generated_at": "2026-07-03T21:25:48.124587+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
+  "receipt_gate": {
+    "fable_dependency": false,
+    "name": "EvidenceGate",
+    "policies": [
+      {
+        "accepted_receipts": [
+          "mutation_tool",
+          "resolving_commit_hash",
+          "run_path_exists",
+          "test_output",
+          "verification_output"
+        ],
+        "claim_type": "code_mutation",
+        "description": "code/system mutation claims require same-turn tool evidence or a verifiable artifact",
+        "enforcement": "runtime_blocking_when_claim_detected"
+      },
+      {
+        "accepted_receipts": [
+          "live_fetch_tool",
+          "verification_output"
+        ],
+        "claim_type": "external_publish",
+        "description": "published-artifact claims require a live fetch or captured verification output",
+        "enforcement": "runtime_blocking_when_claim_detected"
+      },
+      {
+        "accepted_receipts": [
+          "resolving_commit_hash"
+        ],
+        "claim_type": "push_commit",
+        "description": "commit/push completion requires a cited SHA that resolves in git",
+        "enforcement": "runtime_blocking_when_claim_detected"
+      },
+      {
+        "accepted_receipts": [
+          "read_tool",
+          "verification_output"
+        ],
+        "claim_type": "state_grounding",
+        "description": "definitive state assertions require a ground-truth read this turn",
+        "enforcement": "runtime_blocking_when_claim_detected"
+      }
+    ],
+    "provider_agnostic": true,
+    "rule": "No supported receipt means no operational claim.",
+    "schema": "shadow.receipt_gate.v1",
+    "source_module": "core.evidence_gate"
+  },
   "schema": "shadow.public_proof.v1",
   "subscribe_url": "https://echofromshadow.substack.com/subscribe?utm_source=shadow_proof&utm_medium=experiment_surface&utm_campaign=funnel"
 }
