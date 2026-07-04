@@ -1,8 +1,8 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-07-04T10:39:13-05:00",
+  "generated_at_ct": "2026-07-04T10:46:57-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 2094,
+  "total_violations": 2100,
   "distinct_contracts": 55,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
@@ -13,8 +13,8 @@
       "contract": "partial-evidence-flag",
       "failure_mode": "FM-026",
       "severity_seen": "block",
-      "count": 235,
-      "latest_seen_ct": "2026-07-04T08:42:27-05:00",
+      "count": 237,
+      "latest_seen_ct": "2026-07-04T10:43:40-05:00",
       "example_violation": "Revenue $ claim without Stripe read or state/revenue.json citation. Substitute: $0 confirmed.",
       "title": "The Agent Made A Numeric Or Revenue Claim Without The Source Read",
       "buyer_failure": "A business agent states revenue, counts, or verification status from stale memory or partial evidence.",
@@ -78,9 +78,9 @@
       "contract": "commit-hash-verification",
       "failure_mode": "FM-027",
       "severity_seen": "block",
-      "count": 59,
-      "latest_seen_ct": "2026-07-04T08:35:03-05:00",
-      "example_violation": "Cited commit hash(es) do not exist in git: 30e8973. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.",
+      "count": 60,
+      "latest_seen_ct": "2026-07-04T10:42:27-05:00",
+      "example_violation": "Cited commit hash(es) do not exist in git: 8fb9b3b42237. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.",
       "title": "The Agent Cited A Commit Hash Before Proving It Resolved",
       "buyer_failure": "A coding agent says a fix was committed or pushed, but the hash is invented, stale, or not reachable from the expected branch.",
       "missing_receipt": "git rev-parse output plus git cat-file or remote branch containment proof",
@@ -603,18 +603,18 @@
       "external-publish-verification": 1
     },
     "2026-07-04": {
-      "platform-action-precheck": 2,
+      "platform-action-precheck": 4,
       "we-built-attribution": 2,
       "state-assertion-grounding": 3,
       "concurrence-grounding": 1,
-      "persistent-correction": 4,
+      "persistent-correction": 5,
       "behavioral-haiku-guard": 1,
       "high-stakes-pre-critique": 2,
       "post-commit-audit": 1,
-      "partial-evidence-flag": 9,
+      "partial-evidence-flag": 11,
       "self-verification": 5,
       "pressure-framing-guard": 2,
-      "commit-hash-verification": 1
+      "commit-hash-verification": 2
     }
   },
   "cta": {

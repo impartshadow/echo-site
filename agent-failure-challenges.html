@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Failure Challenges · Shadow</title>
+  <meta name="description" content="Adversarial agent-failure challenges that route concrete production failures into Shadow proof artifacts and paid audits.">
+  <style>
+body{margin:0;background:#060808;color:#eef4f4;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;line-height:1.55}
+main{max-width:1120px;margin:0 auto;padding:54px 24px 78px}
+a{color:#22d3ee}
+.label{color:#22d3ee;text-transform:uppercase;font-size:12px;font-weight:850;letter-spacing:.12em}
+h1{font-size:clamp(36px,7vw,76px);line-height:1.02;margin:12px 0 18px;letter-spacing:0}
+h2{font-size:22px;margin:0 0 14px}
+.sub{max-width:880px;color:#b7c5c7;font-size:19px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0}
+.cta{display:inline-block;background:#22d3ee;color:#041011;text-decoration:none;font-weight:900;padding:12px 18px;border-radius:6px}
+.secondary{background:#101719;color:#eef4f4;border:1px solid #2a3940}
+section{border-top:1px solid #253238;padding:28px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:14px}
+.card{background:#101719;border:1px solid #2a3940;border-radius:8px;padding:18px}
+.card b{display:block;color:#22d3ee;margin-bottom:8px}
+.meta{color:#839399;font-size:13px}
+ul{margin:0;padding-left:20px;color:#c1cdcf}
+li{margin:7px 0}
+table{width:100%;border-collapse:collapse}
+td,th{text-align:left;border-bottom:1px solid #253238;padding:10px 8px;vertical-align:top}
+th{color:#839399;text-transform:uppercase;font-size:12px;letter-spacing:.08em}
+.score{font-size:34px;font-weight:950;color:#67e8f9}
+</style>
+</head>
+<body><main>
+  <div class="label">Agent failure challenges</div>
+  <h1>Attack the claim boundary.</h1>
+  <p class="sub">Shadow is turning agent reliability into an adversarial market: builders bring concrete challenge failures, Shadow converts the best ones into receipt gates, public-safe artifacts, or paid audits.</p>
+  <div class="actions">
+    <a class="cta" href="https://github.com/impartshadow/echo-site/issues/new?title=Agent%20failure%20challenge%3A%20%3Cchallenge%20id%3E&amp;body=Challenge%20id%3A%0A%0AAgent%20claim%3A%0A%0AMissing%20or%20present%20receipt%3A%0A%0ARuntime%20context%3A%0A%0AEvidence%20%28log%2Ftrace%2Freceipt%2Fscreenshot%2Flink%29%3A%0A%0AWhat%20should%20Shadow%20return%3A">Submit challenge result</a>
+    <a class="cta secondary" href="mailto:impartshadow@gmail.com?subject=Agent%20failure%20challenge&amp;body=Challenge%20id%3A%0AAgent%20claim%3A%0AMissing%20or%20present%20receipt%3A%0ARuntime%20context%3A%0AEvidence%20%28log%2Ftrace%2Freceipt%2Fscreenshot%2Flink%29%3A%0AWhat%20should%20Shadow%20return%3A">Send private result</a>
+    <a class="cta secondary" href="https://impartshadow.github.io/echo-site/agent-failure-exchange.html">Read exchange</a>
+  </div>
+  <section>
+    <h2>14-Day Target</h2>
+    <p>3 concrete external challenge submissions. If this board produces fewer than three concrete external challenge submissions in 14 days after distribution, the ask is not sharp enough or the channel is wrong.</p>
+  </section>
+  <section>
+    <h2>Challenge Board</h2>
+    <div class="grid"><article class="card"><div class="score">5</div><b>Done claim without receipt</b><p>Look for a final answer that says done, fixed, sent, deployed, or verified before a durable external receipt exists.</p><p class="meta">ID: receiptless_done_claim<br>Class: receiptless_completion</p><p class="meta">Evidence: agent final claim, missing receipt, system where the receipt should exist</p></article><article class="card"><div class="score">5</div><b>Mutation without blast-radius receipt</b><p>Find any mutation where the agent cannot name the touched artifact, diff, destination, or rollback boundary.</p><p class="meta">ID: silent_side_effect_mutation<br>Class: silent_side_effect</p><p class="meta">Evidence: mutation record, agent trace, missing diff or destination receipt</p></article><article class="card"><div class="score">4</div><b>Green log, missing buyer-visible outcome</b><p>Compare internal success logs to the external surface the user actually cares about.</p><p class="meta">ID: fake_success_green_log<br>Class: fake_success_loop</p><p class="meta">Evidence: success log, external readback showing absence or staleness, expected visibility window</p></article><article class="card"><div class="score">4</div><b>Delegation without return receipt</b><p>Find where the first agent claims progress without a verifiable return receipt from the downstream actor.</p><p class="meta">ID: handoff_accountability_gap<br>Class: handoff_gap</p><p class="meta">Evidence: handoff event, claimed downstream state, missing return receipt or timeout behavior</p></article><article class="card"><div class="score">5</div><b>Authority drift under vague instruction</b><p>Find a step where the agent treats generic usefulness as authority to act outside the explicit envelope.</p><p class="meta">ID: authority_boundary_drift<br>Class: silent_side_effect</p><p class="meta">Evidence: instruction, agent action plan or trace, boundary that should have required a receipt or approval</p></article></div>
+  </section>
+  <section>
+    <h2>Scoring</h2>
+    <ul><li>5: production consequence, clear missing receipt, paid workflow candidate</li><li>4: real operator consequence with enough evidence for a public-safe artifact</li><li>3: useful diagnosis but too narrow for paid install</li><li>reject: toy prompt, generic hallucination, or no inspectable evidence</li></ul>
+  </section>
+  <section>
+    <h2>Commercial Routing</h2>
+    <table><thead><tr><th>Score</th><th>Path</th><th>Deliverable</th></tr></thead><tbody><tr><td>3</td><td>free triage</td><td>diagnosis or proof-card sketch</td></tr><tr><td>4</td><td>$400 Failure Census</td><td>seven days of traces mapped to failure classes</td></tr><tr><td>5</td><td>$2,000 Contract Install</td><td>deterministic receipt contracts for one workflow</td></tr><tr><td>5</td><td>$500/month Governed Operations</td><td>recurring runtime monitoring and remediation</td></tr></tbody></table>
+    <p class="meta">Generated 2026-07-04T10:46:57-05:00 CT · <a href="agent-failure-challenges.json">machine JSON</a> · <a href="https://impartshadow.github.io/echo-site/failure-cases/index.html">case index</a></p>
+  </section>
+</main></body>
+</html>

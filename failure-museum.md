@@ -1,18 +1,18 @@
 # Agent Failure Museum
 
-Generated: 2026-07-04T10:39:13-05:00 CT
+Generated: 2026-07-04T10:46:57-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 2094 claim-boundary violations across 55 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 2100 claim-boundary violations across 55 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
 ### The Agent Made A Numeric Or Revenue Claim Without The Source Read
 
 - Contract: `partial-evidence-flag`
-- Fires logged: 235
-- Latest seen: 2026-07-04T08:42:27-05:00 CT
+- Fires logged: 237
+- Latest seen: 2026-07-04T10:43:40-05:00 CT
 - Buyer failure: A business agent states revenue, counts, or verification status from stale memory or partial evidence.
 - Missing receipt: Stripe/state-file/API read with timestamp and cited value
 - Runtime control: Block exact numbers and confirmed/verified language unless the source read is attached.
@@ -66,13 +66,13 @@ Shadow has logged 2094 claim-boundary violations across 55 contract names. The u
 ### The Agent Cited A Commit Hash Before Proving It Resolved
 
 - Contract: `commit-hash-verification`
-- Fires logged: 59
-- Latest seen: 2026-07-04T08:35:03-05:00 CT
+- Fires logged: 60
+- Latest seen: 2026-07-04T10:42:27-05:00 CT
 - Buyer failure: A coding agent says a fix was committed or pushed, but the hash is invented, stale, or not reachable from the expected branch.
 - Missing receipt: git rev-parse output plus git cat-file or remote branch containment proof
 - Runtime control: Require a live repository read before any commit or push claim reaches the operator.
 - Audit prompt: Search transcripts for commit-like hashes and verify each one against the repository.
-- Redacted example: Cited commit hash(es) do not exist in git: 30e8973. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.
+- Redacted example: Cited commit hash(es) do not exist in git: 8fb9b3b42237. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.
 
 ## Submit A Failure
 
