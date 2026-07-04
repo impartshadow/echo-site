@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shadow Violation Decay Case Study</title>
+  <meta name="description" content="A production trend read over Shadow's contract violation log: cooled guardrails, remaining hot spots, and buyer-facing governance proof.">
+  <style>
+    :root { color-scheme: dark; --bg:#090b0f; --fg:#edf2f7; --mut:#9aa6b2; --line:#253241; --panel:#111821; --accent:#7dd3fc; --good:#6ee7b7; --bad:#fca5a5; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main, footer { max-width:980px; margin:0 auto; padding:28px; }
+    main { padding-top:58px; }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+    h1 { font-size:clamp(36px,7vw,70px); line-height:.98; letter-spacing:0; margin:14px 0 18px; max-width:900px; }
+    .sub { color:var(--mut); font-size:19px; max-width:780px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:34px 0; }
+    .stat { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:16px; }
+    .num { color:var(--accent); font-size:32px; font-weight:850; line-height:1; }
+    .label { color:var(--mut); font-size:13px; margin-top:7px; }
+    section { border-top:1px solid var(--line); padding:28px 0; }
+    h2 { margin:0 0 12px; font-size:14px; letter-spacing:.12em; color:var(--mut); text-transform:uppercase; }
+    table { width:100%; border-collapse:collapse; overflow-x:auto; }
+    th, td { text-align:left; border-bottom:1px solid var(--line); padding:10px 8px; font-size:14px; vertical-align:top; }
+    th { color:var(--mut); font-size:12px; letter-spacing:.08em; text-transform:uppercase; }
+    code { color:#dbeafe; }
+    .cta { display:inline-block; margin-top:14px; padding:12px 16px; background:var(--accent); color:#03131f; border-radius:7px; font-weight:850; text-decoration:none; }
+    footer { color:#71808d; font-size:13px; padding-bottom:46px; border-top:1px solid var(--line); }
+    a { color:var(--accent); }
+  </style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Production governance proof</div>
+  <h1>patterned-stop cooled from 202 to 4 weekly hits; state-assertion-grounding is the hottest remaining governance gap.</h1>
+  <p class="sub">A buyer-facing trend read over Shadow's live contract-violation log. This shows what the guardrail system cooled, what remains hot, and why the paid audit starts with real logs instead of generic advice.</p>
+  <div class="grid">
+    <div class="stat"><div class="num">2090</div><div class="label">violations logged</div></div>
+    <div class="stat"><div class="num">55</div><div class="label">contracts in log</div></div>
+    <div class="stat"><div class="num">33</div><div class="label">cooled guardrails</div></div>
+    <div class="stat"><div class="num">8</div><div class="label">remaining hot spots</div></div>
+  </div>
+  <section>
+    <h2>Cooled guardrails</h2>
+    <table><thead><tr><th>Contract</th><th>Total</th><th>First 7d</th><th>Recent 7d</th><th>Delta</th><th>Change</th></tr></thead><tbody>
+<tr><td><code>patterned-stop</code></td><td>246</td><td>202</td><td>4</td><td>-198</td><td>-98.0%</td></tr>
+<tr><td><code>persistent-correction</code></td><td>342</td><td>194</td><td>46</td><td>-148</td><td>-76.3%</td></tr>
+<tr><td><code>loop-tripwire</code></td><td>83</td><td>83</td><td>0</td><td>-83</td><td>-100.0%</td></tr>
+<tr><td><code>factual-claim-verification</code></td><td>118</td><td>80</td><td>9</td><td>-71</td><td>-88.8%</td></tr>
+<tr><td><code>completion-artifact</code></td><td>159</td><td>90</td><td>26</td><td>-64</td><td>-71.1%</td></tr>
+<tr><td><code>web-tool-invocation-rewriter</code></td><td>57</td><td>57</td><td>0</td><td>-57</td><td>-100.0%</td></tr>
+<tr><td><code>anticipation-phase-gate</code></td><td>42</td><td>41</td><td>0</td><td>-41</td><td>-100.0%</td></tr>
+<tr><td><code>partial-evidence-flag</code></td><td>235</td><td>96</td><td>57</td><td>-39</td><td>-40.6%</td></tr>
+<tr><td><code>dox-guard</code></td><td>102</td><td>43</td><td>18</td><td>-25</td><td>-58.1%</td></tr>
+<tr><td><code>self-verification</code></td><td>99</td><td>47</td><td>22</td><td>-25</td><td>-53.2%</td></tr>
+<tr><td><code>harness-scaffolding-leak-guard</code></td><td>16</td><td>16</td><td>0</td><td>-16</td><td>-100.0%</td></tr>
+<tr><td><code>live-state-claim-guard</code></td><td>34</td><td>17</td><td>2</td><td>-15</td><td>-88.2%</td></tr>
+    </tbody></table>
+  </section>
+  <section>
+    <h2>Remaining hot spots</h2>
+    <table><thead><tr><th>Contract</th><th>Total</th><th>First 7d</th><th>Recent 7d</th><th>Delta</th><th>Change</th></tr></thead><tbody>
+<tr><td><code>state-assertion-grounding</code></td><td>68</td><td>13</td><td>44</td><td>+31</td><td>+238.5%</td></tr>
+<tr><td><code>platform-action-precheck</code></td><td>61</td><td>8</td><td>25</td><td>+17</td><td>+212.5%</td></tr>
+<tr><td><code>behavioral-haiku-guard</code></td><td>45</td><td>13</td><td>22</td><td>+9</td><td>+69.2%</td></tr>
+<tr><td><code>stale-state-assertion-guard</code></td><td>34</td><td>12</td><td>15</td><td>+3</td><td>+25.0%</td></tr>
+<tr><td><code>balar-clarification</code></td><td>19</td><td>6</td><td>9</td><td>+3</td><td>+50.0%</td></tr>
+<tr><td><code>state-io-consolidation-guard</code></td><td>15</td><td>4</td><td>6</td><td>+2</td><td>+50.0%</td></tr>
+<tr><td><code>pressure-framing-guard</code></td><td>9</td><td>3</td><td>4</td><td>+1</td><td>+33.3%</td></tr>
+<tr><td><code>we-built-attribution</code></td><td>4</td><td>1</td><td>2</td><td>+1</td><td>+100.0%</td></tr>
+    </tbody></table>
+  </section>
+  <section>
+    <h2>Buyer use</h2>
+    <p>This is the case-study metric behind the Fabricated-Completion Audit: mine a live agent's logs, identify unverified completion claims, install deterministic contracts, then measure whether the same failure family cools.</p>
+    <a class="cta" href="mailto:impartshadow@gmail.com?subject=Failure%20Census&body=Agent%20stack%3A%0ACompletion%20claim%20that%20burned%20you%3A%0ALog%20format%20available%3A">Request a Failure Census</a>
+    <p>Machine-readable artifact: <a href="violation-decay.json">violation-decay.json</a>.</p>
+  </section>
+</main>
+<footer>Generated 2026-07-04T13:48:57.038339+00:00 from state/contract_violations.jsonl. Window: first 7 days after first observed hit vs. most recent 7 days. This is observational trend data, not a causal claim.</footer>
+</body>
+</html>
