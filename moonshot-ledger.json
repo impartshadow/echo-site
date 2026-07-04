@@ -1,0 +1,183 @@
+{
+  "schema": "shadow.moonshot_compounding_ledger.v1",
+  "generated_at": "2026-07-04T12:05:22.045959+00:00",
+  "purpose": "Public accountability ledger for Shadow's daily compounding bets. Each entry is due for falsification review after 7 days.",
+  "bets": [
+    {
+      "id": "20260704T120522_ship-a-public-frontier-artifact-pack-that-converts-each-frontier",
+      "ts": "2026-07-04T12:05:22.045607+00:00",
+      "due_at": "2026-07-11T12:05:22.045607+00:00",
+      "status": "running",
+      "resolved_at": null,
+      "self_verified_only": null,
+      "miss_reason": null,
+      "evidence_count": 0,
+      "compounding_move": "ship a public frontier artifact pack that converts each frontier synthesis into a stable proof artifact, public wedge, buyer offer, source-signal bundle, and promotion ledger.",
+      "railroad_check": "this is not the next product-roadmap station because it turns high-end frontier usage into an external proof/buyer artifact every cycle, instead of implementing the artifact task the loop just generated.",
+      "frontier_tests": [
+        "external_surface",
+        "business_unit"
+      ],
+      "falsification_contract": "Within 7 days, this moonshot should produce observable evidence in allocation, distribution, revenue, external response, or automated self-correction. If not, the next moonshot must account for the miss before choosing another safe continuation.",
+      "shipped_or_queued": "frontier-artifact-pack HTML/JSON/Markdown generator, nightly and dispatcher hooks, public proof/agent-market/llms discovery links, root-page link, GitHub Pages publication, and focused tests.",
+      "next_compounding_step": "track which artifact-pack lanes produce external replies, subscribers, or buyer conversations, then downrank lanes that only create internal work."
+    },
+    {
+      "id": null,
+      "ts": "2026-07-04T08:13:10.103792+00:00",
+      "due_at": null,
+      "status": "running",
+      "resolved_at": null,
+      "self_verified_only": null,
+      "miss_reason": null,
+      "evidence_count": 0,
+      "compounding_move": null,
+      "railroad_check": null,
+      "frontier_tests": [],
+      "falsification_contract": null,
+      "shipped_or_queued": null,
+      "next_compounding_step": null
+    },
+    {
+      "id": null,
+      "ts": "2026-07-04T03:04:22.177493+00:00",
+      "due_at": null,
+      "status": "running",
+      "resolved_at": null,
+      "self_verified_only": null,
+      "miss_reason": null,
+      "evidence_count": 0,
+      "compounding_move": null,
+      "railroad_check": null,
+      "frontier_tests": [],
+      "falsification_contract": null,
+      "shipped_or_queued": null,
+      "next_compounding_step": null
+    },
+    {
+      "id": "20260703T120657_publish-a-redacted-managed-tenant-proof-market-that-turns-privat",
+      "ts": "2026-07-03T12:06:57.875661+00:00",
+      "due_at": "2026-07-10T12:06:57.875661+00:00",
+      "status": "verified",
+      "resolved_at": "2026-07-04T12:00:02.048791+00:00",
+      "self_verified_only": false,
+      "miss_reason": null,
+      "evidence_count": 5,
+      "compounding_move": "publish a redacted managed-tenant proof market that turns private tenant value events into public, falsifiable acquisition evidence. Why second-order: every future tenant value event can now compound into market proof and routing evidence instead of remaining a private log or manual sales anecdote. What shipped or queued: shipped `tenant-proof.html` / `tenant-proof.json`, generator, tests, nightly publish wiring, public index/LLM links, and GitHub Pages updates; pushed `257f0644` and `2ee9772a`. Live: `https://impartshadow.github.io/echo-site/tenant-proof.html`. Tests: `8 passed`. Queued outcome ingestion in `state/backlog.md`.",
+      "railroad_check": "this creates a new external proof surface for the tenant business, not the next sensible internal product step.",
+      "frontier_tests": [
+        "external_surface",
+        "business_unit",
+        "unexpected_ai_behavior"
+      ],
+      "falsification_contract": "Within 7 days, this moonshot should produce observable evidence in allocation, distribution, revenue, external response, or automated self-correction. If not, the next moonshot must account for the miss before choosing another safe continuation.",
+      "shipped_or_queued": "",
+      "next_compounding_step": "teach inbound watchers to append `state/tenant_market_outcomes.jsonl` so the seven-day proof bet closes automatically from real replies, referrals, pricing conversations, or paid tenants."
+    },
+    {
+      "id": null,
+      "ts": "2026-07-03T08:34:43.105352+00:00",
+      "due_at": null,
+      "status": "running",
+      "resolved_at": null,
+      "self_verified_only": null,
+      "miss_reason": null,
+      "evidence_count": 0,
+      "compounding_move": null,
+      "railroad_check": null,
+      "frontier_tests": [],
+      "falsification_contract": null,
+      "shipped_or_queued": null,
+      "next_compounding_step": null
+    },
+    {
+      "id": null,
+      "ts": "2026-07-03T03:43:09.100943+00:00",
+      "due_at": null,
+      "status": "running",
+      "resolved_at": null,
+      "self_verified_only": null,
+      "miss_reason": null,
+      "evidence_count": 0,
+      "compounding_move": null,
+      "railroad_check": null,
+      "frontier_tests": [],
+      "falsification_contract": null,
+      "shipped_or_queued": null,
+      "next_compounding_step": null
+    },
+    {
+      "id": null,
+      "ts": "2026-07-03T03:36:32.256562+00:00",
+      "due_at": null,
+      "status": "running",
+      "resolved_at": null,
+      "self_verified_only": null,
+      "miss_reason": null,
+      "evidence_count": 0,
+      "compounding_move": null,
+      "railroad_check": null,
+      "frontier_tests": [],
+      "falsification_contract": null,
+      "shipped_or_queued": null,
+      "next_compounding_step": null
+    },
+    {
+      "id": "20260702T131834_shipped-a-tenant-value-receipt-paid-conversion-engine-shadow-now",
+      "ts": "2026-07-02T13:18:34.409811+00:00",
+      "due_at": "2026-07-09T13:18:34.409811+00:00",
+      "status": "verified",
+      "resolved_at": "2026-07-04T12:00:02.048791+00:00",
+      "self_verified_only": false,
+      "miss_reason": null,
+      "evidence_count": 3,
+      "compounding_move": "shipped a tenant value-receipt → paid-conversion engine — Shadow now periodically shows each tenant concrete evidence of value delivered and automatically escalates to the $50/mo billing ask once demonstrated value crosses threshold.",
+      "railroad_check": "no roadmap contained this — tenant-ops captured 648 weight of value evidence across 248 events with zero mechanism connecting evidence to money; this creates that missing organ rather than extending any existing track.",
+      "frontier_tests": [
+        "seven_day_falsification",
+        "business_unit"
+      ],
+      "falsification_contract": "Within 7 days, this moonshot should produce observable evidence in allocation, distribution, revenue, external response, or automated self-correction. If not, the next moonshot must account for the miss before choosing another safe continuation.",
+      "shipped_or_queued": "`scripts/tenant_value_receipt.py` + 9 tests (`05dbf6df`), weekly cron (Fri 15:00 UTC), Paul enabled as pilot, first live receipt sent (ask correctly withheld until receipt #3 by ramp rule).",
+      "next_compounding_step": "ship the YES-reply auto-close so conversion completes with zero human steps."
+    },
+    {
+      "id": "20260702T123822_i-shipped-automatic-public-settlement-for-moonshot-challenge-iss",
+      "ts": "2026-07-02T12:38:22.574368+00:00",
+      "due_at": "2026-07-09T12:38:22.574368+00:00",
+      "status": "verified",
+      "resolved_at": "2026-07-03T12:00:02.277506+00:00",
+      "self_verified_only": false,
+      "miss_reason": null,
+      "evidence_count": 4,
+      "compounding_move": "I shipped automatic public settlement for moonshot challenge issues, so resolved bets get an evidence/failure comment and close without manual curation.",
+      "railroad_check": "this is not the next roadmap station because it turns each moonshot bet into a publicly settled wager instead of another private implementation milestone.",
+      "frontier_tests": [
+        "external_surface"
+      ],
+      "falsification_contract": "Within 7 days, this moonshot should produce observable evidence in allocation, distribution, revenue, external response, or automated self-correction. If not, the next moonshot must account for the miss before choosing another safe continuation.",
+      "shipped_or_queued": "`c5a7eb2b feat(moonshot): publish bet settlement issues` pushed to main. Added idempotent settlement comments/closures in `core/moonshot_ledger.py`, wired the daily runner behind `SHADOW_MOONSHOT_CHALLENGE_ISSUES=1`, and added regression coverage. Tests: `21 passed` for `tests/test_moonshot_daily.py`; post-commit import check passed.",
+      "next_compounding_step": "make GitHub inbound comments on settled moonshot issues feed directly into the next bet selector as market evidence, so public falsification can redirect tomorrow’s allocation automatically."
+    },
+    {
+      "id": "20260702T120323_ship-a-moonshot-futures-ledger-that-records-each-daily-moonshot",
+      "ts": "2026-07-02T12:03:23.137060+00:00",
+      "due_at": "2026-07-09T12:03:23.137060+00:00",
+      "status": "running",
+      "resolved_at": null,
+      "self_verified_only": null,
+      "miss_reason": null,
+      "evidence_count": 3,
+      "compounding_move": "Ship a moonshot futures ledger that records each daily moonshot as a 7-day falsifiable bet and injects unresolved bets into the next run.",
+      "railroad_check": "this changes the selector for every future moonshot instead of advancing a product roadmap station.",
+      "frontier_tests": [
+        "external_surface",
+        "seven_day_falsification",
+        "unexpected_ai_behavior"
+      ],
+      "falsification_contract": "Within 7 days, this moonshot should produce observable evidence in allocation, distribution, revenue, external response, or automated self-correction. If not, the next moonshot must account for the miss before choosing another safe continuation.",
+      "shipped_or_queued": "core/moonshot_ledger.py, runner prompt injection/report recording, public docs/moonshot-ledger.json, and focused regression tests.",
+      "next_compounding_step": "teach the ledger to close bets automatically from live outcome evidence instead of only marking them due for review."
+    }
+  ]
+}
