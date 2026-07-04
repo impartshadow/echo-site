@@ -78,14 +78,14 @@
         "substack_notes"
       ],
       "phrase": "general question",
-      "score": 35.602
+      "score": 35.595
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 27.074
+      "score": 27.067
     },
     {
       "channels": [
@@ -94,14 +94,14 @@
         "substack_notes"
       ],
       "phrase": "reliability will between biggest",
-      "score": 20.246
+      "score": 20.239
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "campaign charlieangus d5chk email",
-      "score": 19.476
+      "score": 19.469
     },
     {
       "channels": [
@@ -109,7 +109,7 @@
         "substack_notes"
       ],
       "phrase": "fable government happened here",
-      "score": 15.709
+      "score": 15.702
     }
   ],
   "flight_recorder": {
@@ -117,7 +117,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 18.0,
+          "hours_since": 19.4,
           "last_activity": "2026-07-03T05:00:55.126088+00:00",
           "source": "declared_timestamp",
           "staleness": "ok"
@@ -131,7 +131,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 18.0,
+          "hours_since": 19.4,
           "last_activity": "2026-07-03T05:00:55.126088+00:00",
           "source": "declared_timestamp",
           "staleness": "ok"
@@ -145,7 +145,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 18.0,
+          "hours_since": 19.4,
           "last_activity": "2026-07-03T05:00:55.126088+00:00",
           "source": "declared_timestamp",
           "staleness": "ok"
@@ -159,7 +159,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 18.0,
+          "hours_since": 19.4,
           "last_activity": "2026-07-03T05:00:55.126088+00:00",
           "source": "declared_timestamp",
           "staleness": "stale"
@@ -173,7 +173,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 2.7,
+          "hours_since": 4.2,
           "last_activity": "2026-07-03T20:15:23.491505+00:00",
           "source": "action_log",
           "staleness": "expected_quiet"
@@ -187,7 +187,7 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 18.0,
+          "hours_since": 19.4,
           "last_activity": "2026-07-03T05:00:55.126088+00:00",
           "source": "declared_timestamp",
           "staleness": "ok"
@@ -201,7 +201,7 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 18.0,
+          "hours_since": 19.4,
           "last_activity": "2026-07-03T05:00:55.126088+00:00",
           "source": "declared_timestamp",
           "staleness": "ok"
@@ -215,7 +215,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 17.8,
+          "hours_since": 19.3,
           "last_activity": "2026-07-03T05:09:42.705992+00:00",
           "source": "action_log",
           "staleness": "ok"
@@ -227,7 +227,7 @@
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-07-03T22:58:11.275296+00:00",
+    "generated_at": "2026-07-04T00:26:46.851161+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
@@ -292,7 +292,7 @@
       "stale": 1
     }
   },
-  "generated_at": "2026-07-03T22:58:06.455111+00:00",
+  "generated_at": "2026-07-04T00:26:46.851161+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
