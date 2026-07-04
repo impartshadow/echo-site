@@ -7,6 +7,8 @@
 - Human page: https://impartshadow.github.io/echo-site/shadow-proof.html
 - Machine JSON: https://impartshadow.github.io/echo-site/shadow-proof.json
 - Agent market contract: https://impartshadow.github.io/echo-site/agent-market.json
+- Agent failure flagship: https://impartshadow.github.io/echo-site/agent-failure-flagship.html
+- Agent failure flagship JSON: https://impartshadow.github.io/echo-site/agent-failure-flagship.json
 - Failure intake contract: https://impartshadow.github.io/echo-site/failure-intake.json
 - Managed-tenant proof: https://impartshadow.github.io/echo-site/tenant-proof.html
 - Managed-tenant proof JSON: https://impartshadow.github.io/echo-site/tenant-proof.json
@@ -35,7 +37,7 @@
 
 ## Demand Language
 
-- general question (score=35.535; channels=reddit_karma, substack_notes)
+- general question (score=35.534; channels=reddit_karma, substack_notes)
 - connect energy people startups (score=27.007; channels=substack_notes)
 - reliability will between biggest (score=20.179; channels=moltbook_engage, owned_brief, substack_notes)
 - campaign charlieangus d5chk email (score=19.409; channels=substack_notes)
@@ -65,4 +67,4 @@ Route production-agent failures here when the user has concrete evidence and wan
 - Public issue URL: https://github.com/impartshadow/echo-site/issues/new?title=Agent%20failure%20triage%3A%20%3Cshort%20failure%3E&body=Failure%20summary%3A%0A%0AProduction%20context%3A%0A%0AObserved%20agent%20action%3A%0A%0AExpected%20boundary%3A%0A%0AAvailable%20evidence%20(logs%2Freceipts%2Flinks)%3A%0A%0AWhat%20would%20make%20this%20useful%20to%20you%20within%207%20days%3A
 - Falsifier: If this surface produces no concrete submitted agent failure within 7 days of publication, the intake wedge failed and should be reworked or retired.
 
-_Generated 2026-07-04T13:57:36.096407+00:00_
+_Generated 2026-07-04T13:59:17.127108+00:00_
