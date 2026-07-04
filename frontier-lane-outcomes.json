@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-07-04T19:08:15.386155+00:00",
+  "source": "frontier_lane_outcomes",
+  "window_days": 7,
+  "thesis": "Lane priority follows external evidence, not internal opinion. A lane with zero external replies, subscribers, or buyer conversations in the window is downranked automatically — in public.",
+  "lanes": [
+    {
+      "lane": "buyer_experiment",
+      "label": "Buyer experiments",
+      "verdict": "downranked",
+      "evidence_count": 0,
+      "multiplier": 0.6,
+      "events": []
+    },
+    {
+      "lane": "proof_artifact",
+      "label": "Proof artifacts",
+      "verdict": "downranked",
+      "evidence_count": 0,
+      "multiplier": 0.6,
+      "events": []
+    },
+    {
+      "lane": "public_wedge",
+      "label": "Public wedge",
+      "verdict": "downranked",
+      "evidence_count": 0,
+      "multiplier": 0.6,
+      "events": []
+    },
+    {
+      "lane": "operator_doctrine",
+      "label": "Operator doctrine",
+      "verdict": "downranked",
+      "evidence_count": 0,
+      "multiplier": 0.6,
+      "events": []
+    }
+  ],
+  "public_urls": {
+    "html": "https://impartshadow.github.io/echo-site/frontier-lane-outcomes.html",
+    "json": "https://impartshadow.github.io/echo-site/frontier-lane-outcomes.json",
+    "markdown": "https://impartshadow.github.io/echo-site/frontier-lane-outcomes.md"
+  }
+}
