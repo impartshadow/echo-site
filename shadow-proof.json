@@ -26,11 +26,11 @@
       "signups": 0
     },
     "reddit_karma": {
-      "actions": 51,
+      "actions": 52,
       "budget": 1,
       "conversions": 0,
       "responses": 0,
-      "score": 0.242,
+      "score": 0.2412,
       "signups": 0
     },
     "reply_graph": {
@@ -54,7 +54,7 @@
       "budget": 4,
       "conversions": 0,
       "responses": 0,
-      "score": 5.1415,
+      "score": 5.1417,
       "signups": 0
     }
   },
@@ -78,14 +78,14 @@
         "substack_notes"
       ],
       "phrase": "general question",
-      "score": 35.594
+      "score": 35.56
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 27.066
+      "score": 27.032
     },
     {
       "channels": [
@@ -94,22 +94,22 @@
         "substack_notes"
       ],
       "phrase": "reliability will between biggest",
-      "score": 20.238
+      "score": 20.204
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "campaign charlieangus d5chk email",
-      "score": 19.468
+      "score": 19.434
     },
     {
       "channels": [
         "reddit_karma",
         "substack_notes"
       ],
-      "phrase": "fable government happened here",
-      "score": 15.701
+      "phrase": "shadow government happened here",
+      "score": 15.667
     }
   ],
   "flight_recorder": {
@@ -117,8 +117,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 13.3,
-          "last_activity": "2026-07-03T11:21:34.984091+00:00",
+          "hours_since": 0.5,
+          "last_activity": "2026-07-04T07:41:42.017854+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -131,7 +131,21 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 19.7,
+          "hours_since": 0.5,
+          "last_activity": "2026-07-04T07:41:42.015290+00:00",
+          "source": "verifier_receipt",
+          "staleness": "ok"
+        },
+        "loop_id": "echo",
+        "name": "Echo Content",
+        "reason": "fresh evidence is internal-only: verifier_receipt",
+        "requires_external_reach": true,
+        "verdict": "no_external_reach"
+      },
+      {
+        "declared_state": "running",
+        "evidence": {
+          "hours_since": 27.2,
           "last_activity": "2026-07-03T05:01:14.789376+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
@@ -145,7 +159,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 19.6,
+          "hours_since": 27.2,
           "last_activity": "2026-07-03T05:02:48.892642+00:00",
           "source": "verifier_receipt",
           "staleness": "stale"
@@ -159,7 +173,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 4.4,
+          "hours_since": 12.0,
           "last_activity": "2026-07-03T20:15:23.491505+00:00",
           "source": "action_log",
           "staleness": "expected_quiet"
@@ -173,7 +187,7 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 19.7,
+          "hours_since": 27.2,
           "last_activity": "2026-07-03T05:01:04.777630+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
@@ -187,7 +201,7 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 19.6,
+          "hours_since": 27.2,
           "last_activity": "2026-07-03T05:02:18.367682+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
@@ -201,21 +215,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 1.6,
-          "last_activity": "2026-07-03T23:03:08.209471+00:00",
-          "source": "external_post_receipt",
-          "staleness": "ok"
-        },
-        "loop_id": "echo",
-        "name": "Echo Content",
-        "reason": "fresh evidence from external_post_receipt",
-        "requires_external_reach": true,
-        "verdict": "pass"
-      },
-      {
-        "declared_state": "running",
-        "evidence": {
-          "hours_since": 19.5,
+          "hours_since": 27.1,
           "last_activity": "2026-07-03T05:09:42.705992+00:00",
           "source": "action_log",
           "staleness": "ok"
@@ -227,13 +227,27 @@
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-07-04T00:41:00.117793+00:00",
+    "generated_at": "2026-07-04T08:13:43.206046+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
         "evidence_source": "verifier_receipt",
         "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
         "loop_id": "content-biz",
+        "missing_receipts": [
+          "external_post_receipt",
+          "subscriber_receipt",
+          "reply_receipt",
+          "meeting_receipt"
+        ],
+        "priority": 90,
+        "verdict": "no_external_reach"
+      },
+      {
+        "action": "produce_or_attach_external_receipt",
+        "evidence_source": "verifier_receipt",
+        "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
+        "loop_id": "echo",
         "missing_receipts": [
           "external_post_receipt",
           "subscriber_receipt",
@@ -273,12 +287,12 @@
     "rule": "Declared loop state is not proof. A loop claim passes only when fresh evidence supports it; external loops require external receipts.",
     "schema": "shadow.agent_flight_recorder.v1",
     "summary": {
-      "no_external_reach": 2,
-      "pass": 5,
+      "no_external_reach": 3,
+      "pass": 4,
       "stale": 1
     }
   },
-  "generated_at": "2026-07-04T00:41:00.117793+00:00",
+  "generated_at": "2026-07-04T08:13:43.206046+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
@@ -377,7 +391,7 @@
         "why": "A commit receipt must resolve in git; a hex-looking string is not enough."
       }
     ],
-    "fable_dependency": false,
+    "model_dependency": false,
     "name": "EvidenceGate",
     "policies": [
       {
