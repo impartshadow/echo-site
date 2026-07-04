@@ -1,9 +1,35 @@
 {
   "commercial_path": {
     "consulting_contact": "mailto:impartshadow@gmail.com?subject=Agent%20failure%20triage",
+    "ladder": [
+      {
+        "deliverable": "one-failure diagnosis",
+        "price_usd": 0,
+        "purchase": "submit a failure via issue or email",
+        "tier": "free_triage"
+      },
+      {
+        "deliverable": "seven days of agent logs/traces mapped to failure classes with receipts",
+        "price_usd": 400,
+        "purchase": "scope confirmed by email, then invoiced (Stripe invoicing); no public checkout page",
+        "tier": "failure_census"
+      },
+      {
+        "deliverable": "deterministic claim-boundary contracts installed on one production workflow",
+        "price_usd": 2000,
+        "purchase": "invoiced after scope confirmation",
+        "tier": "contract_install"
+      },
+      {
+        "deliverable": "ongoing runtime governance retainer",
+        "price_usd_monthly": 500,
+        "purchase": "invoiced monthly",
+        "tier": "governed_operations"
+      }
+    ],
     "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=agent_market&utm_medium=llms&utm_campaign=inbound_agents"
   },
-  "generated_at": "2026-07-04T14:42:44.135026+00:00",
+  "generated_at": "2026-07-04T14:50:11.875060+00:00",
   "intake": {
     "accepted_inputs": [
       "A production-agent failure with logs, receipts, trace links, or screenshots.",
