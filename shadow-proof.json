@@ -78,14 +78,14 @@
         "substack_notes"
       ],
       "phrase": "general question",
-      "score": 35.543
+      "score": 35.535
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 27.015
+      "score": 27.007
     },
     {
       "channels": [
@@ -94,14 +94,14 @@
         "substack_notes"
       ],
       "phrase": "reliability will between biggest",
-      "score": 20.187
+      "score": 20.179
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "campaign charlieangus d5chk email",
-      "score": 19.417
+      "score": 19.409
     },
     {
       "channels": [
@@ -109,7 +109,7 @@
         "substack_notes"
       ],
       "phrase": "shadow government happened here",
-      "score": 15.65
+      "score": 15.642
     }
   ],
   "flight_recorder": {
@@ -117,8 +117,22 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 2.1,
-          "last_activity": "2026-07-04T10:00:05.222551+00:00",
+          "hours_since": 0.8,
+          "last_activity": "2026-07-04T13:01:52.952749+00:00",
+          "source": "action_log",
+          "staleness": "ok"
+        },
+        "loop_id": "awg-outreach",
+        "name": "AWG Outreach & Consulting Pipeline",
+        "reason": "fresh evidence is internal-only: action_log",
+        "requires_external_reach": true,
+        "verdict": "no_external_reach"
+      },
+      {
+        "declared_state": "running",
+        "evidence": {
+          "hours_since": 0.8,
+          "last_activity": "2026-07-04T13:04:28.709040+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -131,21 +145,21 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 2.1,
-          "last_activity": "2026-07-04T10:00:11.775271+00:00",
-          "source": "verifier_receipt",
+          "hours_since": 0.8,
+          "last_activity": "2026-07-04T13:01:52.969018+00:00",
+          "source": "action_log",
           "staleness": "ok"
         },
         "loop_id": "shadow-presence",
         "name": "Shadow Public Presence & Inbound",
-        "reason": "fresh evidence is internal-only: verifier_receipt",
+        "reason": "fresh evidence is internal-only: action_log",
         "requires_external_reach": true,
         "verdict": "no_external_reach"
       },
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 2.1,
+          "hours_since": 3.9,
           "last_activity": "2026-07-04T10:00:02.120253+00:00",
           "source": "declared_timestamp",
           "staleness": "expected_quiet"
@@ -159,21 +173,7 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 2.1,
-          "last_activity": "2026-07-04T10:00:09.836754+00:00",
-          "source": "verifier_receipt",
-          "staleness": "ok"
-        },
-        "loop_id": "awg-outreach",
-        "name": "AWG Outreach & Consulting Pipeline",
-        "reason": "fresh evidence from verifier_receipt",
-        "requires_external_reach": true,
-        "verdict": "pass"
-      },
-      {
-        "declared_state": "at_checkpoint",
-        "evidence": {
-          "hours_since": 2.1,
+          "hours_since": 3.9,
           "last_activity": "2026-07-04T10:00:13.457744+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
@@ -187,8 +187,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 2.1,
-          "last_activity": "2026-07-04T10:01:01.287449+00:00",
+          "hours_since": 0.7,
+          "last_activity": "2026-07-04T13:12:02.021719+00:00",
           "source": "external_post_receipt",
           "staleness": "ok"
         },
@@ -201,7 +201,7 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 2.1,
+          "hours_since": 3.9,
           "last_activity": "2026-07-04T10:00:05.689832+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
@@ -215,7 +215,7 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 2.1,
+          "hours_since": 3.9,
           "last_activity": "2026-07-04T10:00:04.975597+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
@@ -227,8 +227,22 @@
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-07-04T12:04:04.672308+00:00",
+    "generated_at": "2026-07-04T13:52:09.321740+00:00",
     "remediation_queue": [
+      {
+        "action": "produce_or_attach_external_receipt",
+        "evidence_source": "action_log",
+        "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
+        "loop_id": "awg-outreach",
+        "missing_receipts": [
+          "external_post_receipt",
+          "subscriber_receipt",
+          "reply_receipt",
+          "meeting_receipt"
+        ],
+        "priority": 90,
+        "verdict": "no_external_reach"
+      },
       {
         "action": "produce_or_attach_external_receipt",
         "evidence_source": "verifier_receipt",
@@ -245,7 +259,7 @@
       },
       {
         "action": "produce_or_attach_external_receipt",
-        "evidence_source": "verifier_receipt",
+        "evidence_source": "action_log",
         "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
         "loop_id": "shadow-presence",
         "missing_receipts": [
@@ -261,8 +275,8 @@
     "rule": "Declared loop state is not proof. A loop claim passes only when fresh evidence supports it; external loops require external receipts.",
     "schema": "shadow.agent_flight_recorder.v1",
     "summary": {
-      "no_external_reach": 2,
-      "pass": 6
+      "no_external_reach": 3,
+      "pass": 5
     }
   },
   "frontier_artifact_pack": {
@@ -271,7 +285,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-artifact-pack.md",
     "purpose": "latest frontier synthesis converted into proof artifact, public wedge, buyer offer, source signals, and promotion receipts"
   },
-  "generated_at": "2026-07-04T12:04:04.672308+00:00",
+  "generated_at": "2026-07-04T13:52:09.321740+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
