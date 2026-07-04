@@ -30,7 +30,7 @@
     ],
     "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=agent_market&utm_medium=llms&utm_campaign=inbound_agents"
   },
-  "generated_at": "2026-07-04T15:46:52.134510+00:00",
+  "generated_at": "2026-07-04T15:50:53.640531+00:00",
   "intake": {
     "accepted_inputs": [
       "A production-agent failure with logs, receipts, trace links, or screenshots.",

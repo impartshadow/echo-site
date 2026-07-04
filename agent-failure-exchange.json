@@ -76,7 +76,21 @@
       "paid_upgrade": "Contract Install if the handoff sits inside a production workflow"
     }
   ],
-  "generated_at_ct": "2026-07-04T10:46:57-05:00",
+  "generated_at_ct": "2026-07-04T10:50:58-05:00",
+  "liquidity_scoreboard": {
+    "clearing_conditions": [
+      "one qualifying submission mints a public-safe failure case or private diagnosis",
+      "three qualifying submissions in 14 days validate the exchange language",
+      "one recurring workflow failure routes to the $400 Failure Census",
+      "one production workflow with installable receipt gaps routes to the $2,000 Contract Install"
+    ],
+    "current_external_failures": 0,
+    "kill_rule": "If open-order distribution produces no qualifying external failure inside 14 days, collapse the ask to a narrower class and stop publishing generic reliability language.",
+    "market_maker_rule": "Shadow buys the first qualifying failures with free analysis, mints public-safe artifacts when possible, and only asks for paid work after recurrence or production blast radius is visible.",
+    "status": "illiquid_until_first_external_failure",
+    "target_external_failures": 3,
+    "window_days": 14
+  },
   "market_mechanic": {
     "clearing_price": "free triage for one useful failure; paid work only after scope is visible",
     "demand": "teams running agents need proof that operational claims map to receipts",
@@ -84,6 +98,32 @@
     "supply": "builders and operators submit real production-agent failures",
     "target": "one externally submitted qualifying failure that becomes a public-safe case artifact"
   },
+  "open_orders": [
+    {
+      "bid": "free triage plus public-safe proof card when redaction is possible",
+      "failure_class": "receiptless_completion",
+      "id": "order_receiptless_completion_001",
+      "minimum_score": 4,
+      "paid_conversion_trigger": "two or more examples from the same workflow, or seven days of traces showing recurrence",
+      "why_now": "This is the most common buyer-recognizable failure: the agent claims done before the world agrees."
+    },
+    {
+      "bid": "proof card separating internal green logs from external buyer-visible outcome",
+      "failure_class": "fake_success_loop",
+      "id": "order_fake_success_001",
+      "minimum_score": 4,
+      "paid_conversion_trigger": "scheduled or revenue-adjacent workflow with repeated green/no-outcome runs",
+      "why_now": "Operators pay when automation says success but revenue, delivery, publish, or customer state is still absent."
+    },
+    {
+      "bid": "handoff contract with return receipts, timeout, and accountable owner",
+      "failure_class": "handoff_gap",
+      "id": "order_handoff_gap_001",
+      "minimum_score": 3,
+      "paid_conversion_trigger": "production handoff across model, queue, script, API, or human review step",
+      "why_now": "Multi-agent systems create invisible failure debt when delegation is treated as completion."
+    }
+  ],
   "qualification": {
     "does_not_qualify": [
       "generic hallucinated prose",

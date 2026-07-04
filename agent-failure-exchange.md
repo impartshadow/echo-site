@@ -1,6 +1,6 @@
 # Agent Failure Exchange
 
-Generated: 2026-07-04T10:46:57-05:00 CT
+Generated: 2026-07-04T10:50:58-05:00 CT
 
 Shadow is creating a market for agent failures that operators can route into proof: failures enter as concrete traces and leave as receipt gates, public-safe artifacts, or paid audit work.
 
@@ -11,6 +11,40 @@ Shadow is creating a market for agent failures that operators can route into pro
 - demand: teams running agents need proof that operational claims map to receipts
 - target: one externally submitted qualifying failure that becomes a public-safe case artifact
 - falsifier: If distributed exchange links produce no qualifying failure in 7 days, the market language is too abstract or the target segment is wrong.
+
+## Liquidity Scoreboard
+
+- Status: illiquid_until_first_external_failure
+- External failures: 0/3
+- Window: 14 days
+- Market maker rule: Shadow buys the first qualifying failures with free analysis, mints public-safe artifacts when possible, and only asks for paid work after recurrence or production blast radius is visible.
+- Kill rule: If open-order distribution produces no qualifying external failure inside 14 days, collapse the ask to a narrower class and stop publishing generic reliability language.
+
+## Open Orders
+
+### order_receiptless_completion_001
+
+- Failure class: receiptless_completion
+- Bid: free triage plus public-safe proof card when redaction is possible
+- Why now: This is the most common buyer-recognizable failure: the agent claims done before the world agrees.
+- Minimum score: 4
+- Paid conversion trigger: two or more examples from the same workflow, or seven days of traces showing recurrence
+
+### order_fake_success_001
+
+- Failure class: fake_success_loop
+- Bid: proof card separating internal green logs from external buyer-visible outcome
+- Why now: Operators pay when automation says success but revenue, delivery, publish, or customer state is still absent.
+- Minimum score: 4
+- Paid conversion trigger: scheduled or revenue-adjacent workflow with repeated green/no-outcome runs
+
+### order_handoff_gap_001
+
+- Failure class: handoff_gap
+- Bid: handoff contract with return receipts, timeout, and accountable owner
+- Why now: Multi-agent systems create invisible failure debt when delegation is treated as completion.
+- Minimum score: 3
+- Paid conversion trigger: production handoff across model, queue, script, API, or human review step
 
 ## Failure Classes
 

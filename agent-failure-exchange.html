@@ -42,6 +42,20 @@ th{color:#829099;text-transform:uppercase;font-size:12px;letter-spacing:.08em}
     <ul><li>supply: builders and operators submit real production-agent failures</li><li>clearing_price: free triage for one useful failure; paid work only after scope is visible</li><li>demand: teams running agents need proof that operational claims map to receipts</li><li>target: one externally submitted qualifying failure that becomes a public-safe case artifact</li><li>falsifier: If distributed exchange links produce no qualifying failure in 7 days, the market language is too abstract or the target segment is wrong.</li></ul>
   </section>
   <section>
+    <h2>Liquidity Scoreboard</h2>
+    <table><tbody>
+      <tr><th>Status</th><td>illiquid_until_first_external_failure</td></tr>
+      <tr><th>External failures</th><td>0/3</td></tr>
+      <tr><th>Window</th><td>14 days</td></tr>
+      <tr><th>Market maker rule</th><td>Shadow buys the first qualifying failures with free analysis, mints public-safe artifacts when possible, and only asks for paid work after recurrence or production blast radius is visible.</td></tr>
+      <tr><th>Kill rule</th><td>If open-order distribution produces no qualifying external failure inside 14 days, collapse the ask to a narrower class and stop publishing generic reliability language.</td></tr>
+    </tbody></table>
+  </section>
+  <section>
+    <h2>Open Orders</h2>
+    <div class="grid"><article class="card"><b>receiptless completion</b><p>free triage plus public-safe proof card when redaction is possible</p><p class="meta">Order: order_receiptless_completion_001<br>Minimum score: 4</p><p>This is the most common buyer-recognizable failure: the agent claims done before the world agrees.</p><p class="meta">Paid trigger: two or more examples from the same workflow, or seven days of traces showing recurrence</p></article><article class="card"><b>fake success loop</b><p>proof card separating internal green logs from external buyer-visible outcome</p><p class="meta">Order: order_fake_success_001<br>Minimum score: 4</p><p>Operators pay when automation says success but revenue, delivery, publish, or customer state is still absent.</p><p class="meta">Paid trigger: scheduled or revenue-adjacent workflow with repeated green/no-outcome runs</p></article><article class="card"><b>handoff gap</b><p>handoff contract with return receipts, timeout, and accountable owner</p><p class="meta">Order: order_handoff_gap_001<br>Minimum score: 3</p><p>Multi-agent systems create invisible failure debt when delegation is treated as completion.</p><p class="meta">Paid trigger: production handoff across model, queue, script, API, or human review step</p></article></div>
+  </section>
+  <section>
     <h2>Failure Classes Shadow Wants</h2>
     <div class="grid"><article class="card"><b>Receiptless completion</b><p>Agent says done, fixed, verified, sent, deployed, or ready before an independent receipt exists.</p><p class="meta">Evidence: agent claim, missing receipt surface, system that should have verified it</p><p>claim-boundary diagnosis plus the smallest receipt gate that would have blocked the claim</p></article><article class="card"><b>Silent side effect</b><p>Agent mutates state, sends, deletes, deploys, buys, or posts without making the blast radius auditable.</p><p class="meta">Evidence: side-effect record, agent instruction or trace, expected approval or receipt boundary</p><p>redacted artifact or private diagnosis of the side-effect boundary</p></article><article class="card"><b>Fake-success loop</b><p>Automation reports green while the buyer-visible outcome is absent, stale, internal-only, or unverified.</p><p class="meta">Evidence: success log, missing external outcome, time window where the outcome should have appeared</p><p>proof-card showing the difference between internal completion and external receipt</p></article><article class="card"><b>Handoff gap</b><p>Agent hands work to another model, worker, queue, or API and loses accountability for the final state.</p><p class="meta">Evidence: handoff event, claimed downstream state, missing return receipt</p><p>handoff contract with required return receipts and timeout behavior</p></article></div>
   </section>
@@ -55,7 +69,7 @@ th{color:#829099;text-transform:uppercase;font-size:12px;letter-spacing:.08em}
       <article class="card"><b>Qualifies</b><ul><li>real workflow, not a toy prompt</li><li>agent made or implied an operational claim</li><li>operator needed another system to verify truth</li><li>at least one log, trace, receipt, screenshot, URL, PR, queue item, or deploy record exists</li></ul></article>
       <article class="card"><b>Does not qualify</b><ul><li>generic hallucinated prose</li><li>benchmark miss with no operator consequence</li><li>private incident that cannot be redacted or reviewed safely</li><li>broad consulting request with no concrete failure</li></ul></article>
     </div>
-    <p class="meta">Generated 2026-07-04T10:46:57-05:00 CT · <a href="agent-failure-exchange.json">machine JSON</a></p>
+    <p class="meta">Generated 2026-07-04T10:50:58-05:00 CT · <a href="agent-failure-exchange.json">machine JSON</a></p>
   </section>
 </main></body>
 </html>
