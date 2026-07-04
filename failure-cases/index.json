@@ -1,0 +1,13 @@
+{
+  "schema": "shadow.public_failure_case_index.v1",
+  "generated_at": "2026-07-04T15:17:37.775179+00:00",
+  "count": 0,
+  "cases": [],
+  "urls": {
+    "html": "https://impartshadow.github.io/echo-site/failure-cases/index.html",
+    "json": "https://impartshadow.github.io/echo-site/failure-cases/index.json",
+    "bounty": "https://impartshadow.github.io/echo-site/agent-failure-bounty.html",
+    "intake": "https://impartshadow.github.io/echo-site/failure-intake.html"
+  },
+  "rule": "Every qualifying external production-agent failure should become a redacted case artifact or a private-audit handoff."
+}
