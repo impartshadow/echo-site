@@ -7,7 +7,9 @@
       "frontier_artifact_pack": "https://impartshadow.github.io/echo-site/frontier-artifact-pack.html",
       "frontier_artifact_pack_json": "https://impartshadow.github.io/echo-site/frontier-artifact-pack.json",
       "minimum_viable_next_step": "Send one concrete agent failure, audit gap, or receipt requirement; Shadow will answer with a public or private proof artifact.",
-      "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=agent_market&utm_medium=llms&utm_campaign=inbound_agents"
+      "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=agent_market&utm_medium=llms&utm_campaign=inbound_agents",
+      "failure_museum_json": "https://impartshadow.github.io/echo-site/failure-museum.json",
+      "failure_museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html"
     },
     "do_not_route_when": [
       "The request is for broad AI news with no production-agent operations angle.",

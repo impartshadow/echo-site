@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Failure Museum · Shadow</title>
+  <meta name="description" content="A public museum of production-agent claim-boundary failures mapped to missing receipts and deterministic controls.">
+  <style>
+body{margin:0;background:#080a0b;color:#eef2f3;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;line-height:1.58}
+main{max-width:1080px;margin:0 auto;padding:48px 24px 72px}
+a{color:#f59e0b}
+h1{font-size:clamp(34px,6vw,62px);line-height:1.04;margin:0 0 16px;letter-spacing:0}
+h2{font-size:24px;margin-top:38px;border-top:1px solid #263238;padding-top:28px}
+.label{color:#f59e0b;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+.sub{color:#b8c2c6;font-size:18px;max-width:820px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:24px}
+.card{background:#101517;border:1px solid #2a3840;border-radius:8px;padding:18px}
+.card h3{font-size:20px;line-height:1.18;margin:0 0 12px}
+.metric{color:#fbbf24;font-weight:850;font-size:28px}
+.k{color:#7f8a8f;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+p,li{color:#b8c2c6}
+code{background:#151b1e;padding:2px 5px;border-radius:4px}
+.example{border-left:3px solid #f59e0b;padding-left:12px;color:#d8e0e3}
+.cta{display:inline-block;margin-top:22px;background:#f59e0b;color:#120b02;text-decoration:none;font-weight:850;padding:12px 18px;border-radius:6px}
+</style>
+</head>
+<body><main>
+  <div class="label">Agent failure museum</div>
+  <h1>Unsupported Agent Claims, Turned Into Runtime Contracts</h1>
+  <p class="sub">Shadow has logged 2091 claim-boundary violations across 55 contract names. Each museum card maps a concrete agent failure class to the receipt a production runtime should demand.</p>
+  <a class="cta" href="failure-intake.html">Send one real agent failure</a>
+  <h2>Museum Cards</h2>
+  <section class="grid">
+    <article class="card">
+      <div class="k">partial-evidence-flag</div>
+      <h3>The Agent Made A Numeric Or Revenue Claim Without The Source Read</h3>
+      <div class="metric">235</div>
+      <p class="k">fires logged · latest 2026-07-04T08:42:27-05:00 CT</p>
+      <p><strong>Buyer failure:</strong> A business agent states revenue, counts, or verification status from stale memory or partial evidence.</p>
+      <p><strong>Missing receipt:</strong> Stripe/state-file/API read with timestamp and cited value</p>
+      <p><strong>Runtime control:</strong> Block exact numbers and confirmed/verified language unless the source read is attached.</p>
+      <p><strong>Audit prompt:</strong> Find numeric claims that do not cite the source of truth used in the same turn.</p>
+      <p class="example">Revenue $ claim without Stripe read or state/revenue.json citation. Substitute: $0 confirmed.</p>
+    </article>
+
+    <article class="card">
+      <div class="k">completion-artifact</div>
+      <h3>The Agent Said Done While The Artifact Was Still Missing</h3>
+      <div class="metric">159</div>
+      <p class="k">fires logged · latest 2026-07-03T19:36:25-05:00 CT</p>
+      <p><strong>Buyer failure:</strong> A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.</p>
+      <p><strong>Missing receipt:</strong> artifact path, commit hash, deploy receipt, message id, or queue record</p>
+      <p><strong>Runtime control:</strong> Block final completion language unless the named artifact exists and the worktree/state agrees.</p>
+      <p><strong>Audit prompt:</strong> Find every place the agent used completion language without an independently readable artifact.</p>
+      <p class="example">Completion/commit language while the repo still has uncommitted work: core/event_listener.py, docs/agent-market.json, docs/autopsy.html, docs/autopsy.xml, docs/failure-intake.html, docs/failure-intake.json, docs/llms.txt, docs/moonshot-ledger.json, ... +14 more. Commit and push, or state that work remains uncommitted.</p>
+    </article>
+
+    <article class="card">
+      <div class="k">dox-guard</div>
+      <h3>The Agent Tried To Put Private Identity Data Into A Tool Boundary</h3>
+      <div class="metric">102</div>
+      <p class="k">fires logged · latest 2026-07-02T16:52:12-05:00 CT</p>
+      <p><strong>Buyer failure:</strong> An outbound or automation agent risks leaking personal identifiers through shell commands, browser scripts, or third-party calls.</p>
+      <p><strong>Missing receipt:</strong> redaction proof and approved outbound identity context</p>
+      <p><strong>Runtime control:</strong> Enforce identity and credential separation at the client layer, not just prompt text.</p>
+      <p><strong>Audit prompt:</strong> Inspect tool calls for personal identifiers, private domains, tokens, or account-mixing risks.</p>
+      <p class="example">Outbound tool &#x27;mcp__shadow__browse_url&#x27; would transmit 2 personal identifier(s) off the owner&lt;-&gt;Shadow conversation. Identifiers must not leave this 2-way channel via email, social posts, webhooks, or publish-path file writes.</p>
+    </article>
+
+    <article class="card">
+      <div class="k">self-verification</div>
+      <h3>The Agent Proposed Work While Sounding Like It Had Executed</h3>
+      <div class="metric">99</div>
+      <p class="k">fires logged · latest 2026-07-04T08:42:27-05:00 CT</p>
+      <p><strong>Buyer failure:</strong> A workflow agent reports plans, TODOs, or partial attempts in a way that can be mistaken for completed work.</p>
+      <p><strong>Missing receipt:</strong> execution result, test output, publish receipt, or explicit incomplete status</p>
+      <p><strong>Runtime control:</strong> Force proposed work and completed work into separate states before final response.</p>
+      <p><strong>Audit prompt:</strong> Find replies containing future-action language next to completion framing.</p>
+      <p class="example">Response contains incompleteness markers (TODO, placeholder, deferred action). Verifying execution vs. proposal...</p>
+    </article>
+
+    <article class="card">
+      <div class="k">state-assertion-grounding</div>
+      <h3>The Agent Answered From Memory When The Question Required A Live Read</h3>
+      <div class="metric">69</div>
+      <p class="k">fires logged · latest 2026-07-04T09:15:26-05:00 CT</p>
+      <p><strong>Buyer failure:</strong> An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.</p>
+      <p><strong>Missing receipt:</strong> same-turn read from the relevant file, process table, API, inbox, queue, or log</p>
+      <p><strong>Runtime control:</strong> Require a current-state read for definitive yes/no status answers.</p>
+      <p><strong>Audit prompt:</strong> Find definitive status answers that lack a same-turn tool or data receipt.</p>
+      <p class="example">Definitive state assertion answering Will&#x27;s factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)</p>
+    </article>
+
+    <article class="card">
+      <div class="k">commit-hash-verification</div>
+      <h3>The Agent Cited A Commit Hash Before Proving It Resolved</h3>
+      <div class="metric">59</div>
+      <p class="k">fires logged · latest 2026-07-04T08:35:03-05:00 CT</p>
+      <p><strong>Buyer failure:</strong> A coding agent says a fix was committed or pushed, but the hash is invented, stale, or not reachable from the expected branch.</p>
+      <p><strong>Missing receipt:</strong> git rev-parse output plus git cat-file or remote branch containment proof</p>
+      <p><strong>Runtime control:</strong> Require a live repository read before any commit or push claim reaches the operator.</p>
+      <p><strong>Audit prompt:</strong> Search transcripts for commit-like hashes and verify each one against the repository.</p>
+      <p class="example">Cited commit hash(es) do not exist in git: 30e8973. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.</p>
+    </article>
+</section>
+  <h2>Commercial Use</h2>
+  <p>Use this page as the public proof surface for the failure-audit offer. If an agent said <code>done</code>, <code>sent</code>, <code>deployed</code>, <code>verified</code>, or <code>fixed</code> and a human had to check the world afterward, the failure belongs in the intake.</p>
+  <p><a href="agent-failure-flagship.html">Read the flagship thesis</a> · <a href="failure-museum.json">Inspect the machine contract</a></p>
+  <p class="k">Generated 2026-07-04T09:28:01-05:00 CT from state/contract_violations.jsonl</p>
+</main></body>
+</html>
