@@ -1,0 +1,111 @@
+{
+  "commercial_ladder": [
+    {
+      "deliverable": "diagnosis or proof artifact",
+      "price_usd": 0,
+      "tier": "free_triage",
+      "trigger": "one concrete failure"
+    },
+    {
+      "deliverable": "failure census with receipt gaps",
+      "price_usd": 400,
+      "tier": "failure_census",
+      "trigger": "seven days of logs/traces"
+    },
+    {
+      "deliverable": "deterministic receipt contracts installed",
+      "price_usd": 2000,
+      "tier": "contract_install",
+      "trigger": "one production workflow needs guardrails"
+    },
+    {
+      "deliverable": "recurring monitoring and remediation",
+      "price_usd_monthly": 500,
+      "tier": "governed_operations",
+      "trigger": "ongoing production-agent governance"
+    }
+  ],
+  "exchange_url": "https://impartshadow.github.io/echo-site/agent-failure-exchange.html",
+  "failure_classes": [
+    {
+      "free_output": "claim-boundary diagnosis plus the smallest receipt gate that would have blocked the claim",
+      "id": "receiptless_completion",
+      "minimum_evidence": [
+        "agent claim",
+        "missing receipt surface",
+        "system that should have verified it"
+      ],
+      "name": "Receiptless completion",
+      "operator_signal": "Agent says done, fixed, verified, sent, deployed, or ready before an independent receipt exists.",
+      "paid_upgrade": "Failure Census if the same class appears across multiple tasks or logs"
+    },
+    {
+      "free_output": "redacted artifact or private diagnosis of the side-effect boundary",
+      "id": "silent_side_effect",
+      "minimum_evidence": [
+        "side-effect record",
+        "agent instruction or trace",
+        "expected approval or receipt boundary"
+      ],
+      "name": "Silent side effect",
+      "operator_signal": "Agent mutates state, sends, deletes, deploys, buys, or posts without making the blast radius auditable.",
+      "paid_upgrade": "Contract Install if the workflow needs a deterministic approval or receipt gate"
+    },
+    {
+      "free_output": "proof-card showing the difference between internal completion and external receipt",
+      "id": "fake_success_loop",
+      "minimum_evidence": [
+        "success log",
+        "missing external outcome",
+        "time window where the outcome should have appeared"
+      ],
+      "name": "Fake-success loop",
+      "operator_signal": "Automation reports green while the buyer-visible outcome is absent, stale, internal-only, or unverified.",
+      "paid_upgrade": "Governed Operations if the buyer wants recurring monitoring and remediation"
+    },
+    {
+      "free_output": "handoff contract with required return receipts and timeout behavior",
+      "id": "handoff_gap",
+      "minimum_evidence": [
+        "handoff event",
+        "claimed downstream state",
+        "missing return receipt"
+      ],
+      "name": "Handoff gap",
+      "operator_signal": "Agent hands work to another model, worker, queue, or API and loses accountability for the final state.",
+      "paid_upgrade": "Contract Install if the handoff sits inside a production workflow"
+    }
+  ],
+  "generated_at_ct": "2026-07-04T10:39:13-05:00",
+  "market_mechanic": {
+    "clearing_price": "free triage for one useful failure; paid work only after scope is visible",
+    "demand": "teams running agents need proof that operational claims map to receipts",
+    "falsifier": "If distributed exchange links produce no qualifying failure in 7 days, the market language is too abstract or the target segment is wrong.",
+    "supply": "builders and operators submit real production-agent failures",
+    "target": "one externally submitted qualifying failure that becomes a public-safe case artifact"
+  },
+  "qualification": {
+    "does_not_qualify": [
+      "generic hallucinated prose",
+      "benchmark miss with no operator consequence",
+      "private incident that cannot be redacted or reviewed safely",
+      "broad consulting request with no concrete failure"
+    ],
+    "qualifies": [
+      "real workflow, not a toy prompt",
+      "agent made or implied an operational claim",
+      "operator needed another system to verify truth",
+      "at least one log, trace, receipt, screenshot, URL, PR, queue item, or deploy record exists"
+    ]
+  },
+  "routing": {
+    "case_index": "https://impartshadow.github.io/echo-site/failure-cases/index.html",
+    "contact": "mailto:impartshadow@gmail.com?subject=Agent%20failure%20exchange",
+    "failure_museum": "https://impartshadow.github.io/echo-site/failure-museum.html",
+    "flagship_thesis": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
+    "submit_private_failure": "https://impartshadow.github.io/echo-site/failure-intake.html",
+    "submit_public_failure": "https://impartshadow.github.io/echo-site/agent-failure-bounty.html"
+  },
+  "schema": "shadow.agent_failure_exchange.v1",
+  "thesis": "Shadow is creating a market for agent failures that operators can route into proof: failures enter as concrete traces and leave as receipt gates, public-safe artifacts, or paid audit work."
+}

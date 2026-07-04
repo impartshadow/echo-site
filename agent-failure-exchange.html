@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Failure Exchange · Shadow</title>
+  <meta name="description" content="A public market surface for routing real production-agent failures into Shadow proof artifacts, receipt gates, and paid audits.">
+  <style>
+body{margin:0;background:#070909;color:#eef3f3;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;line-height:1.55}
+main{max-width:1080px;margin:0 auto;padding:54px 24px 76px}
+a{color:#fbbf24}
+.label{color:#f59e0b;text-transform:uppercase;font-size:12px;font-weight:850;letter-spacing:.12em}
+h1{font-size:clamp(36px,7vw,74px);line-height:1.02;margin:12px 0 18px;letter-spacing:0}
+h2{font-size:22px;margin:0 0 14px}
+.sub{max-width:850px;color:#b8c5c8;font-size:19px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0}
+.cta{display:inline-block;background:#fbbf24;color:#120c02;text-decoration:none;font-weight:900;padding:12px 18px;border-radius:6px}
+.secondary{background:#101719;color:#eef3f3;border:1px solid #2a3940}
+section{border-top:1px solid #263238;padding:28px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.card{background:#101719;border:1px solid #2a3940;border-radius:8px;padding:18px}
+.card b{display:block;color:#fbbf24;margin-bottom:8px}
+.meta{color:#829099;font-size:13px}
+ul{margin:0;padding-left:20px;color:#c1cbce}
+li{margin:7px 0}
+table{width:100%;border-collapse:collapse}
+td,th{text-align:left;border-bottom:1px solid #263238;padding:10px 8px;vertical-align:top}
+th{color:#829099;text-transform:uppercase;font-size:12px;letter-spacing:.08em}
+</style>
+</head>
+<body><main>
+  <div class="label">Agent failure exchange</div>
+  <h1>A market for failures agents cannot hide.</h1>
+  <p class="sub">Shadow is creating a market for agent failures that operators can route into proof: failures enter as concrete traces and leave as receipt gates, public-safe artifacts, or paid audit work.</p>
+  <div class="actions">
+    <a class="cta" href="https://impartshadow.github.io/echo-site/agent-failure-bounty.html">Submit public failure</a>
+    <a class="cta secondary" href="https://impartshadow.github.io/echo-site/failure-intake.html">Send private failure</a>
+    <a class="cta secondary" href="https://impartshadow.github.io/echo-site/failure-cases/index.html">Failure case index</a>
+  </div>
+  <section>
+    <h2>Market Mechanic</h2>
+    <ul><li>supply: builders and operators submit real production-agent failures</li><li>clearing_price: free triage for one useful failure; paid work only after scope is visible</li><li>demand: teams running agents need proof that operational claims map to receipts</li><li>target: one externally submitted qualifying failure that becomes a public-safe case artifact</li><li>falsifier: If distributed exchange links produce no qualifying failure in 7 days, the market language is too abstract or the target segment is wrong.</li></ul>
+  </section>
+  <section>
+    <h2>Failure Classes Shadow Wants</h2>
+    <div class="grid"><article class="card"><b>Receiptless completion</b><p>Agent says done, fixed, verified, sent, deployed, or ready before an independent receipt exists.</p><p class="meta">Evidence: agent claim, missing receipt surface, system that should have verified it</p><p>claim-boundary diagnosis plus the smallest receipt gate that would have blocked the claim</p></article><article class="card"><b>Silent side effect</b><p>Agent mutates state, sends, deletes, deploys, buys, or posts without making the blast radius auditable.</p><p class="meta">Evidence: side-effect record, agent instruction or trace, expected approval or receipt boundary</p><p>redacted artifact or private diagnosis of the side-effect boundary</p></article><article class="card"><b>Fake-success loop</b><p>Automation reports green while the buyer-visible outcome is absent, stale, internal-only, or unverified.</p><p class="meta">Evidence: success log, missing external outcome, time window where the outcome should have appeared</p><p>proof-card showing the difference between internal completion and external receipt</p></article><article class="card"><b>Handoff gap</b><p>Agent hands work to another model, worker, queue, or API and loses accountability for the final state.</p><p class="meta">Evidence: handoff event, claimed downstream state, missing return receipt</p><p>handoff contract with required return receipts and timeout behavior</p></article></div>
+  </section>
+  <section>
+    <h2>Commercial Ladder</h2>
+    <table><thead><tr><th>Tier</th><th>Price</th><th>Trigger</th><th>Deliverable</th></tr></thead><tbody><tr><td>free triage</td><td>$0</td><td>one concrete failure</td><td>diagnosis or proof artifact</td></tr><tr><td>failure census</td><td>$400</td><td>seven days of logs/traces</td><td>failure census with receipt gaps</td></tr><tr><td>contract install</td><td>$2000</td><td>one production workflow needs guardrails</td><td>deterministic receipt contracts installed</td></tr><tr><td>governed operations</td><td>$500/mo</td><td>ongoing production-agent governance</td><td>recurring monitoring and remediation</td></tr></tbody></table>
+  </section>
+  <section>
+    <h2>Qualification</h2>
+    <div class="grid">
+      <article class="card"><b>Qualifies</b><ul><li>real workflow, not a toy prompt</li><li>agent made or implied an operational claim</li><li>operator needed another system to verify truth</li><li>at least one log, trace, receipt, screenshot, URL, PR, queue item, or deploy record exists</li></ul></article>
+      <article class="card"><b>Does not qualify</b><ul><li>generic hallucinated prose</li><li>benchmark miss with no operator consequence</li><li>private incident that cannot be redacted or reviewed safely</li><li>broad consulting request with no concrete failure</li></ul></article>
+    </div>
+    <p class="meta">Generated 2026-07-04T10:39:13-05:00 CT · <a href="agent-failure-exchange.json">machine JSON</a></p>
+  </section>
+</main></body>
+</html>
