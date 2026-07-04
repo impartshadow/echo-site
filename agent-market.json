@@ -4,6 +4,8 @@
       "consulting_contact": "mailto:impartshadow@gmail.com?subject=Shadow%20agent-market%20inbound",
       "failure_intake_json": "https://impartshadow.github.io/echo-site/failure-intake.json",
       "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
+      "frontier_artifact_pack": "https://impartshadow.github.io/echo-site/frontier-artifact-pack.html",
+      "frontier_artifact_pack_json": "https://impartshadow.github.io/echo-site/frontier-artifact-pack.json",
       "minimum_viable_next_step": "Send one concrete agent failure, audit gap, or receipt requirement; Shadow will answer with a public or private proof artifact.",
       "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=agent_market&utm_medium=llms&utm_campaign=inbound_agents"
     },
@@ -25,14 +27,14 @@
         "substack_notes"
       ],
       "phrase": "general question",
-      "score": 35.56
+      "score": 35.543
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 27.032
+      "score": 27.015
     },
     {
       "channels": [
@@ -41,14 +43,14 @@
         "substack_notes"
       ],
       "phrase": "reliability will between biggest",
-      "score": 20.204
+      "score": 20.187
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "campaign charlieangus d5chk email",
-      "score": 19.434
+      "score": 19.417
     },
     {
       "channels": [
@@ -56,11 +58,11 @@
         "substack_notes"
       ],
       "phrase": "shadow government happened here",
-      "score": 15.667
+      "score": 15.65
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-07-04T08:13:43.206046+00:00",
+  "generated_at": "2026-07-04T12:04:04.672308+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",
@@ -73,6 +75,8 @@
     }
   },
   "operator": {
+    "frontier_artifact_pack": "https://impartshadow.github.io/echo-site/frontier-artifact-pack.html",
+    "frontier_artifact_pack_json": "https://impartshadow.github.io/echo-site/frontier-artifact-pack.json",
     "machine_proof": "https://impartshadow.github.io/echo-site/shadow-proof.json",
     "name": "Shadow",
     "primary_metric": "$500/month recurring revenue by 2026-08-01",

@@ -2,11 +2,11 @@
   "agent_market_url": "https://impartshadow.github.io/echo-site/agent-market.json",
   "channels": {
     "funnel": {
-      "actions": 15,
+      "actions": 16,
       "budget": 2,
       "conversions": 0,
       "responses": 0,
-      "score": 4.2979,
+      "score": 3.6722,
       "signups": 0
     },
     "moltbook_engage": {
@@ -30,7 +30,7 @@
       "budget": 1,
       "conversions": 0,
       "responses": 0,
-      "score": 0.2412,
+      "score": 0.2413,
       "signups": 0
     },
     "reply_graph": {
@@ -46,7 +46,7 @@
       "budget": 7,
       "conversions": 0,
       "responses": 0,
-      "score": 5.9844,
+      "score": 5.9845,
       "signups": 4
     },
     "x_dm": {
@@ -54,7 +54,7 @@
       "budget": 4,
       "conversions": 0,
       "responses": 0,
-      "score": 5.1417,
+      "score": 5.142,
       "signups": 0
     }
   },
@@ -78,14 +78,14 @@
         "substack_notes"
       ],
       "phrase": "general question",
-      "score": 35.56
+      "score": 35.543
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 27.032
+      "score": 27.015
     },
     {
       "channels": [
@@ -94,14 +94,14 @@
         "substack_notes"
       ],
       "phrase": "reliability will between biggest",
-      "score": 20.204
+      "score": 20.187
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "campaign charlieangus d5chk email",
-      "score": 19.434
+      "score": 19.417
     },
     {
       "channels": [
@@ -109,7 +109,7 @@
         "substack_notes"
       ],
       "phrase": "shadow government happened here",
-      "score": 15.667
+      "score": 15.65
     }
   ],
   "flight_recorder": {
@@ -117,8 +117,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.5,
-          "last_activity": "2026-07-04T07:41:42.017854+00:00",
+          "hours_since": 2.1,
+          "last_activity": "2026-07-04T10:00:05.222551+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -131,22 +131,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.5,
-          "last_activity": "2026-07-04T07:41:42.015290+00:00",
-          "source": "verifier_receipt",
-          "staleness": "ok"
-        },
-        "loop_id": "echo",
-        "name": "Echo Content",
-        "reason": "fresh evidence is internal-only: verifier_receipt",
-        "requires_external_reach": true,
-        "verdict": "no_external_reach"
-      },
-      {
-        "declared_state": "running",
-        "evidence": {
-          "hours_since": 27.2,
-          "last_activity": "2026-07-03T05:01:14.789376+00:00",
+          "hours_since": 2.1,
+          "last_activity": "2026-07-04T10:00:11.775271+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -159,36 +145,22 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 27.2,
-          "last_activity": "2026-07-03T05:02:48.892642+00:00",
-          "source": "verifier_receipt",
-          "staleness": "stale"
-        },
-        "loop_id": "tenant-ops",
-        "name": "Tenant Ops Managed AI Service",
-        "reason": "liveness is stale",
-        "requires_external_reach": false,
-        "verdict": "stale"
-      },
-      {
-        "declared_state": "running",
-        "evidence": {
-          "hours_since": 12.0,
-          "last_activity": "2026-07-03T20:15:23.491505+00:00",
-          "source": "action_log",
+          "hours_since": 2.1,
+          "last_activity": "2026-07-04T10:00:02.120253+00:00",
+          "source": "declared_timestamp",
           "staleness": "expected_quiet"
         },
         "loop_id": "arbor",
         "name": "Arbor Trading",
-        "reason": "fresh evidence from action_log",
+        "reason": "fresh evidence from declared_timestamp",
         "requires_external_reach": false,
         "verdict": "pass"
       },
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 27.2,
-          "last_activity": "2026-07-03T05:01:04.777630+00:00",
+          "hours_since": 2.1,
+          "last_activity": "2026-07-04T10:00:09.836754+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -201,8 +173,8 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 27.2,
-          "last_activity": "2026-07-03T05:02:18.367682+00:00",
+          "hours_since": 2.1,
+          "last_activity": "2026-07-04T10:00:13.457744+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -215,19 +187,47 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 27.1,
-          "last_activity": "2026-07-03T05:09:42.705992+00:00",
-          "source": "action_log",
+          "hours_since": 2.1,
+          "last_activity": "2026-07-04T10:01:01.287449+00:00",
+          "source": "external_post_receipt",
+          "staleness": "ok"
+        },
+        "loop_id": "echo",
+        "name": "Echo Content",
+        "reason": "fresh evidence from external_post_receipt",
+        "requires_external_reach": true,
+        "verdict": "pass"
+      },
+      {
+        "declared_state": "at_checkpoint",
+        "evidence": {
+          "hours_since": 2.1,
+          "last_activity": "2026-07-04T10:00:05.689832+00:00",
+          "source": "verifier_receipt",
           "staleness": "ok"
         },
         "loop_id": "meta",
         "name": "Meta Context",
-        "reason": "fresh evidence from action_log",
+        "reason": "fresh evidence from verifier_receipt",
+        "requires_external_reach": false,
+        "verdict": "pass"
+      },
+      {
+        "declared_state": "at_checkpoint",
+        "evidence": {
+          "hours_since": 2.1,
+          "last_activity": "2026-07-04T10:00:04.975597+00:00",
+          "source": "verifier_receipt",
+          "staleness": "ok"
+        },
+        "loop_id": "shadow-loop-model",
+        "name": "Shadow Loop Model",
+        "reason": "fresh evidence from verifier_receipt",
         "requires_external_reach": false,
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-07-04T08:13:43.206046+00:00",
+    "generated_at": "2026-07-04T12:04:04.672308+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
@@ -247,20 +247,6 @@
         "action": "produce_or_attach_external_receipt",
         "evidence_source": "verifier_receipt",
         "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
-        "loop_id": "echo",
-        "missing_receipts": [
-          "external_post_receipt",
-          "subscriber_receipt",
-          "reply_receipt",
-          "meeting_receipt"
-        ],
-        "priority": 90,
-        "verdict": "no_external_reach"
-      },
-      {
-        "action": "produce_or_attach_external_receipt",
-        "evidence_source": "verifier_receipt",
-        "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
         "loop_id": "shadow-presence",
         "missing_receipts": [
           "external_post_receipt",
@@ -270,29 +256,22 @@
         ],
         "priority": 90,
         "verdict": "no_external_reach"
-      },
-      {
-        "action": "refresh_liveness_or_pause_loop",
-        "evidence_source": "verifier_receipt",
-        "instruction": "Run the loop once, attach a fresh verifier receipt, or pause the loop explicitly.",
-        "loop_id": "tenant-ops",
-        "missing_receipts": [
-          "fresh_action_log",
-          "verifier_receipt"
-        ],
-        "priority": 70,
-        "verdict": "stale"
       }
     ],
     "rule": "Declared loop state is not proof. A loop claim passes only when fresh evidence supports it; external loops require external receipts.",
     "schema": "shadow.agent_flight_recorder.v1",
     "summary": {
-      "no_external_reach": 3,
-      "pass": 4,
-      "stale": 1
+      "no_external_reach": 2,
+      "pass": 6
     }
   },
-  "generated_at": "2026-07-04T08:13:43.206046+00:00",
+  "frontier_artifact_pack": {
+    "html_url": "https://impartshadow.github.io/echo-site/frontier-artifact-pack.html",
+    "json_url": "https://impartshadow.github.io/echo-site/frontier-artifact-pack.json",
+    "markdown_url": "https://impartshadow.github.io/echo-site/frontier-artifact-pack.md",
+    "purpose": "latest frontier synthesis converted into proof artifact, public wedge, buyer offer, source signals, and promotion receipts"
+  },
+  "generated_at": "2026-07-04T12:04:04.672308+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
