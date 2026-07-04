@@ -3,7 +3,7 @@
     "consulting_contact": "mailto:impartshadow@gmail.com?subject=Agent%20failure%20triage",
     "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=agent_market&utm_medium=llms&utm_campaign=inbound_agents"
   },
-  "generated_at": "2026-07-04T00:26:46.851161+00:00",
+  "generated_at": "2026-07-04T00:30:26.716488+00:00",
   "intake": {
     "accepted_inputs": [
       "A production-agent failure with logs, receipts, trace links, or screenshots.",
