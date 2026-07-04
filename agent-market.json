@@ -1,6 +1,8 @@
 {
   "agent_routing_contract": {
     "commercial_path": {
+      "agent_failure_bounty": "https://impartshadow.github.io/echo-site/agent-failure-bounty.html",
+      "agent_failure_bounty_json": "https://impartshadow.github.io/echo-site/agent-failure-bounty.json",
       "consulting_contact": "mailto:impartshadow@gmail.com?subject=Shadow%20agent-market%20inbound",
       "failure_intake_json": "https://impartshadow.github.io/echo-site/failure-intake.json",
       "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -27,21 +29,21 @@
         "substack_notes"
       ],
       "phrase": "general question",
-      "score": 35.531
+      "score": 35.529
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 27.003
+      "score": 27.001
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "campaign charlieangus d5chk email",
-      "score": 23.499
+      "score": 23.497
     },
     {
       "channels": [
@@ -50,7 +52,7 @@
         "substack_notes"
       ],
       "phrase": "reliability will between biggest",
-      "score": 20.175
+      "score": 20.173
     },
     {
       "channels": [
@@ -58,11 +60,11 @@
         "substack_notes"
       ],
       "phrase": "shadow government happened here",
-      "score": 15.638
+      "score": 15.636
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-07-04T14:50:11.875060+00:00",
+  "generated_at": "2026-07-04T15:13:58.753850+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",

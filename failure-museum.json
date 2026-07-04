@@ -1,8 +1,8 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-07-04T09:50:16-05:00",
+  "generated_at_ct": "2026-07-04T10:14:03-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 2091,
+  "total_violations": 2092,
   "distinct_contracts": 55,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
@@ -52,8 +52,8 @@
       "contract": "self-verification",
       "failure_mode": "FM-011",
       "severity_seen": "warn",
-      "count": 99,
-      "latest_seen_ct": "2026-07-04T08:42:27-05:00",
+      "count": 100,
+      "latest_seen_ct": "2026-07-04T09:57:06-05:00",
       "example_violation": "Response contains incompleteness markers (TODO, placeholder, deferred action). Verifying execution vs. proposal...",
       "title": "The Agent Proposed Work While Sounding Like It Had Executed",
       "buyer_failure": "A workflow agent reports plans, TODOs, or partial attempts in a way that can be mistaken for completed work.",
@@ -612,7 +612,7 @@
       "high-stakes-pre-critique": 1,
       "post-commit-audit": 1,
       "partial-evidence-flag": 9,
-      "self-verification": 3,
+      "self-verification": 4,
       "pressure-framing-guard": 2,
       "commit-hash-verification": 1
     }

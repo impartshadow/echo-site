@@ -1,10 +1,10 @@
 # Agent Failure Museum
 
-Generated: 2026-07-04T09:50:16-05:00 CT
+Generated: 2026-07-04T10:14:03-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 2091 claim-boundary violations across 55 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 2092 claim-boundary violations across 55 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
@@ -44,8 +44,8 @@ Shadow has logged 2091 claim-boundary violations across 55 contract names. The u
 ### The Agent Proposed Work While Sounding Like It Had Executed
 
 - Contract: `self-verification`
-- Fires logged: 99
-- Latest seen: 2026-07-04T08:42:27-05:00 CT
+- Fires logged: 100
+- Latest seen: 2026-07-04T09:57:06-05:00 CT
 - Buyer failure: A workflow agent reports plans, TODOs, or partial attempts in a way that can be mistaken for completed work.
 - Missing receipt: execution result, test output, publish receipt, or explicit incomplete status
 - Runtime control: Force proposed work and completed work into separate states before final response.
