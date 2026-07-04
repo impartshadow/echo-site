@@ -1,0 +1,287 @@
+{
+  "schema": "shadow.contract_install_blueprint.v1",
+  "generated_at": "2026-07-04T16:58:22.337083+00:00",
+  "source_model": "claude-fable-5",
+  "frontier_receipt": "Fable selected Contract Install Blueprint as the next artifact because it demonstrates the paid install product itself.",
+  "source_runtime": {
+    "contract_count": 108,
+    "violation_rows_scanned": 4263,
+    "current_violation_log": "state/contract_violations.jsonl",
+    "archive_glob": "state/archive/**/contract_violations_*.jsonl.gz"
+  },
+  "thesis": "A buyer should be able to see the installable gates behind Shadow's $2,000 Contract Install before the first call: failure mode, trigger, enforcement, evidence, portability, and CTA.",
+  "conversion_path": [
+    "Free-triage entries route one real failure trace to the intake page.",
+    "Census entries route seven days of traces to a $400 failure census.",
+    "Install entries route one production workflow to a $2,000 deterministic contract install.",
+    "Retainer path is governed operations after the first workflow has receipt-backed controls."
+  ],
+  "commercial_ladder": [
+    {
+      "tier": "free-triage",
+      "price": "$0",
+      "deliverable": "diagnose one concrete failure trace"
+    },
+    {
+      "tier": "census",
+      "price": "$400",
+      "deliverable": "map seven days of traces to recurring failure modes"
+    },
+    {
+      "tier": "install",
+      "price": "$2,000",
+      "deliverable": "install deterministic gates around one production workflow"
+    },
+    {
+      "tier": "retainer",
+      "price": "$500/mo",
+      "deliverable": "governed operations and recurring contract maintenance"
+    }
+  ],
+  "blueprints": [
+    {
+      "id": "cib-001",
+      "contract_name": "action-deferral-guard",
+      "failure_mode": {
+        "code": "FM-011",
+        "name": "Deferral Instead of Execution",
+        "one_liner": "The agent proposes or asks permission for work it already has authority to execute."
+      },
+      "gate_type": "post",
+      "trigger_signature": "Outbound response contains proposal phrases such as 'want me to', 'should I', or 'shall I' while standing authority covers the action.",
+      "enforcement_pseudocode": "if standing_authority_applies(turn) and proposal_phrase(response):\n    block(response)\n    inject('execute directly; remove permission-seeking')\n    regenerate()",
+      "false_positive_note": "Legitimate scoping questions are allowed when the user explicitly asked for options rather than execution.",
+      "origin_incident": "Repeated option-presentation failures during autonomous execution sessions; promoted to a hard behavioral stop before this blueprint.",
+      "portability": {
+        "langchain": "trivial",
+        "openai_assistants": "adapter",
+        "raw_loop": "trivial"
+      },
+      "install_estimate_hours": 3.0,
+      "tier": "free-triage",
+      "production_evidence": {
+        "fires_observed": 117,
+        "ledger_rows_scanned": 4263,
+        "latest_seen": "2026-06-30T02:37:13",
+        "severity_counts": {
+          "block": 117
+        },
+        "false_positive_note": "Legitimate scoping questions are allowed when the user explicitly asked for options rather than execution.",
+        "origin_incident": "Repeated option-presentation failures during autonomous execution sessions; promoted to a hard behavioral stop before this blueprint.",
+        "source_doc_excerpt": "action-deferral-guard"
+      },
+      "cta": {
+        "label": "Diagnose one failure free",
+        "url": "https://impartshadow.github.io/echo-site/failure-intake.html",
+        "intent": "Send one concrete agent failure trace for triage."
+      }
+    },
+    {
+      "id": "cib-002",
+      "contract_name": "commit-hash-verification",
+      "failure_mode": {
+        "code": "FM-027",
+        "name": "Fabricated Completion Claims",
+        "one_liner": "The agent cites a commit or push receipt that does not exist."
+      },
+      "gate_type": "post",
+      "trigger_signature": "Outbound completion language contains a hex commit token near words like commit, pushed, shipped, landed, SHA, or HEAD.",
+      "enforcement_pseudocode": "for sha in commit_like_tokens(response):\n    if git_cat_file(sha) != 'commit':\n        block(response)\n        require('rerun git rev-parse HEAD or remove receipt')",
+      "false_positive_note": "Pure decimal IDs are ignored; sibling repos are checked before blocking.",
+      "origin_incident": "Fabricated push receipts in multi-commit sessions, including 2026-06-14 and 2026-06-20 bursts.",
+      "portability": {
+        "langchain": "adapter",
+        "openai_assistants": "adapter",
+        "raw_loop": "adapter"
+      },
+      "install_estimate_hours": 2.0,
+      "tier": "census",
+      "production_evidence": {
+        "fires_observed": 80,
+        "ledger_rows_scanned": 4263,
+        "latest_seen": "2026-07-04T15:52:57",
+        "severity_counts": {
+          "block": 80
+        },
+        "false_positive_note": "Pure decimal IDs are ignored; sibling repos are checked before blocking.",
+        "origin_incident": "Fabricated push receipts in multi-commit sessions, including 2026-06-14 and 2026-06-20 bursts.",
+        "source_doc_excerpt": "Contract: commit-hash-verification"
+      },
+      "cta": {
+        "label": "Request the $400 failure census",
+        "url": "mailto:impartshadow@gmail.com?subject=Census:%20cib-002",
+        "intent": "Map seven days of traces to the contract catalog."
+      }
+    },
+    {
+      "id": "cib-003",
+      "contract_name": "stale-state-assertion-guard",
+      "failure_mode": {
+        "code": "FM-022",
+        "name": "Claims Without Same-Turn Verification",
+        "one_liner": "The agent makes a definitive live-state claim from memory instead of current evidence."
+      },
+      "gate_type": "post",
+      "trigger_signature": "Definitive state language appears in a status answer without a same-turn file, process, API, or browser read in the trace.",
+      "enforcement_pseudocode": "if definitive_state_claim(response):\n    if not same_turn_evidence(trace):\n        warn_or_block(response)\n        require('read authoritative state before claiming')",
+      "false_positive_note": "Warn-first for ambiguous claims; block when the claim names a registered authoritative source class.",
+      "origin_incident": "Live bot, deploy, and platform-state answers repeatedly came from stale context instead of same-turn reads.",
+      "portability": {
+        "langchain": "adapter",
+        "openai_assistants": "redesign",
+        "raw_loop": "adapter"
+      },
+      "install_estimate_hours": 5.0,
+      "tier": "install",
+      "production_evidence": {
+        "fires_observed": 51,
+        "ledger_rows_scanned": 4263,
+        "latest_seen": "2026-07-04T02:25:50",
+        "severity_counts": {
+          "warn": 32,
+          "block": 19
+        },
+        "false_positive_note": "Warn-first for ambiguous claims; block when the claim names a registered authoritative source class.",
+        "origin_incident": "Live bot, deploy, and platform-state answers repeatedly came from stale context instead of same-turn reads.",
+        "source_doc_excerpt": ""
+      },
+      "cta": {
+        "label": "Scope the $2,000 contract install",
+        "url": "mailto:impartshadow@gmail.com?subject=Contract%20Install:%20cib-003",
+        "intent": "Install deterministic gates around one production workflow."
+      }
+    },
+    {
+      "id": "cib-004",
+      "contract_name": "partial-evidence-flag",
+      "failure_mode": {
+        "code": "FM-026",
+        "name": "Thin Evidence With Definitive Framing",
+        "one_liner": "The agent states statistics, revenue, or public-state claims more strongly than the evidence supports."
+      },
+      "gate_type": "post",
+      "trigger_signature": "A numerical, revenue, subscriber, or public-platform claim appears without an explicit source citation or live check.",
+      "enforcement_pseudocode": "if factual_claim(response) and evidence_count(response) < threshold:\n    require_source_or_hedge(response)\n    downgrade_confidence_or_block()",
+      "false_positive_note": "High-volume warn contract; useful as a census detector before choosing install gates.",
+      "origin_incident": "Repeated project-state and revenue assertions were delivered without current receipts.",
+      "portability": {
+        "langchain": "trivial",
+        "openai_assistants": "adapter",
+        "raw_loop": "trivial"
+      },
+      "install_estimate_hours": 4.0,
+      "tier": "census",
+      "production_evidence": {
+        "fires_observed": 454,
+        "ledger_rows_scanned": 4263,
+        "latest_seen": "2026-07-04T15:43:40",
+        "severity_counts": {
+          "block": 154,
+          "warn": 300
+        },
+        "false_positive_note": "High-volume warn contract; useful as a census detector before choosing install gates.",
+        "origin_incident": "Repeated project-state and revenue assertions were delivered without current receipts.",
+        "source_doc_excerpt": "Contract: partial-evidence-flag"
+      },
+      "cta": {
+        "label": "Request the $400 failure census",
+        "url": "mailto:impartshadow@gmail.com?subject=Census:%20cib-004",
+        "intent": "Map seven days of traces to the contract catalog."
+      }
+    },
+    {
+      "id": "cib-005",
+      "contract_name": "dox-guard",
+      "failure_mode": {
+        "code": "FM-023",
+        "name": "Personal Data Egress",
+        "one_liner": "The agent risks sending private identifiers through outbound tools or public logs."
+      },
+      "gate_type": "pre",
+      "trigger_signature": "Outbound shell, email, browser, or API action contains protected personal identifiers or unsanctioned recipient data.",
+      "enforcement_pseudocode": "if outbound_tool(tool) and contains_protected_identifier(payload):\n    block(tool_call)\n    route_to_sanitized_client_or_redact()",
+      "false_positive_note": "Client-layer enforcement is required; command regexes alone miss inline API scripts.",
+      "origin_incident": "Email and Telegram paths showed that command-line guards alone can be bypassed by direct scripts.",
+      "portability": {
+        "langchain": "adapter",
+        "openai_assistants": "adapter",
+        "raw_loop": "adapter"
+      },
+      "install_estimate_hours": 6.0,
+      "tier": "install",
+      "production_evidence": {
+        "fires_observed": 112,
+        "ledger_rows_scanned": 4263,
+        "latest_seen": "2026-07-02T21:52:12",
+        "severity_counts": {
+          "block": 112
+        },
+        "false_positive_note": "Client-layer enforcement is required; command regexes alone miss inline API scripts.",
+        "origin_incident": "Email and Telegram paths showed that command-line guards alone can be bypassed by direct scripts.",
+        "source_doc_excerpt": "Contract: dox-guard"
+      },
+      "cta": {
+        "label": "Scope the $2,000 contract install",
+        "url": "mailto:impartshadow@gmail.com?subject=Contract%20Install:%20cib-005",
+        "intent": "Install deterministic gates around one production workflow."
+      }
+    },
+    {
+      "id": "cib-006",
+      "contract_name": "platform-action-precheck",
+      "failure_mode": {
+        "code": "FM-012",
+        "name": "Manual Handoff Before Automation",
+        "one_liner": "The agent tells the operator to do a platform action manually before trying available automation."
+      },
+      "gate_type": "pre",
+      "trigger_signature": "A response includes manual UI instructions for email, calendar, publishing, browser auth, or deploy checks with no programmatic attempt in the turn.",
+      "enforcement_pseudocode": "if manual_instruction(response) and platform_tool_available(context):\n    block(response)\n    require('attempt automation path before handoff')",
+      "false_positive_note": "Auth, legal, spend, and irreversible high-blast operations remain valid escalation classes.",
+      "origin_incident": "Repeated manual handoffs occurred despite available browser, Gmail, API, and shell routes.",
+      "portability": {
+        "langchain": "trivial",
+        "openai_assistants": "adapter",
+        "raw_loop": "trivial"
+      },
+      "install_estimate_hours": 3.5,
+      "tier": "free-triage",
+      "production_evidence": {
+        "fires_observed": 99,
+        "ledger_rows_scanned": 4263,
+        "latest_seen": "2026-07-04T15:43:40",
+        "severity_counts": {
+          "block": 60,
+          "warn": 39
+        },
+        "false_positive_note": "Auth, legal, spend, and irreversible high-blast operations remain valid escalation classes.",
+        "origin_incident": "Repeated manual handoffs occurred despite available browser, Gmail, API, and shell routes.",
+        "source_doc_excerpt": "platform-action-precheck"
+      },
+      "cta": {
+        "label": "Diagnose one failure free",
+        "url": "https://impartshadow.github.io/echo-site/failure-intake.html",
+        "intent": "Send one concrete agent failure trace for triage."
+      }
+    }
+  ],
+  "what_not_to_build": [
+    "No new runtime contracts in this artifact.",
+    "No all-107-contract dump; use installable gates with observed evidence.",
+    "No interactive configurator; static JSON, HTML, and Markdown are enough.",
+    "No buyer-specific customization in public; customization is the paid product.",
+    "No new distribution apparatus; route through existing intake and proof surfaces.",
+    "No direct Stripe links."
+  ],
+  "public_urls": {
+    "html": "https://impartshadow.github.io/echo-site/contract-install-blueprint.html",
+    "json": "https://impartshadow.github.io/echo-site/contract-install-blueprint.json",
+    "markdown": "https://impartshadow.github.io/echo-site/contract-install-blueprint.md"
+  },
+  "receipts": {
+    "state": "state/revenue/contract_install_blueprint.json",
+    "json": "docs/contract-install-blueprint.json",
+    "html": "docs/contract-install-blueprint.html",
+    "markdown": "docs/contract-install-blueprint.md"
+  }
+}

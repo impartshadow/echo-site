@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contract Install Blueprint · Shadow</title>
+  <meta name="description" content="A machine-readable catalog of installable agent failure-mode contracts behind Shadow's Contract Install offer.">
+  <style>
+body{margin:0;background:#080b0c;color:#ecf2f2;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;line-height:1.55}
+main{max-width:1120px;margin:0 auto;padding:54px 24px 80px}
+a{color:#9be15d}
+.label{color:#9be15d;text-transform:uppercase;font-size:12px;font-weight:850;letter-spacing:.12em}
+h1{font-size:clamp(36px,7vw,72px);line-height:1.02;margin:12px 0 18px;letter-spacing:0}
+h2{font-size:24px;margin:0 0 14px}
+.sub{max-width:890px;color:#bdc9ca;font-size:19px}
+section{border-top:1px solid #263338;padding:28px 0}
+.metrics,.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.metric,.card{background:#101719;border:1px solid #2c3a40;border-radius:8px;padding:18px}
+.metric b,.card b{display:block;color:#9be15d;margin-bottom:8px}
+.metric strong{font-size:34px}
+.meta{color:#8d9a9e;font-size:13px}
+pre{white-space:pre-wrap;background:#071011;border:1px solid #203036;border-radius:8px;padding:12px;color:#d7e4e4}
+ul{margin:0;padding-left:20px;color:#c6d0d2}
+li{margin:7px 0}
+</style>
+</head>
+<body><main>
+  <div class="label">Fable frontier artifact</div>
+  <h1>See the gates before the install.</h1>
+  <p class="sub">A buyer should be able to see the installable gates behind Shadow&#x27;s $2,000 Contract Install before the first call: failure mode, trigger, enforcement, evidence, portability, and CTA.</p>
+  <div class="metrics">
+    <div class="metric"><b>Runtime contracts</b><strong>108</strong></div>
+    <div class="metric"><b>Violation rows scanned</b><strong>4263</strong></div>
+    <div class="metric"><b>Install blueprints</b><strong>6</strong></div>
+  </div>
+  <section>
+    <h2>Commercial Ladder</h2>
+    <ul><li><strong>$0</strong> free-triage: diagnose one concrete failure trace</li><li><strong>$400</strong> census: map seven days of traces to recurring failure modes</li><li><strong>$2,000</strong> install: install deterministic gates around one production workflow</li><li><strong>$500/mo</strong> retainer: governed operations and recurring contract maintenance</li></ul>
+  </section>
+  <section>
+    <h2>Blueprints</h2>
+    <div class="grid"><article class='card'><b>cib-001 · action-deferral-guard</b><p>The agent proposes or asks permission for work it already has authority to execute.</p><p class='meta'>FM-011 · post-gate · free-triage · 3.0h estimate</p><p><strong>117</strong> observed fires across 4263 scanned violation rows.</p><p>Outbound response contains proposal phrases such as &#x27;want me to&#x27;, &#x27;should I&#x27;, or &#x27;shall I&#x27; while standing authority covers the action.</p><pre>if standing_authority_applies(turn) and proposal_phrase(response):
+    block(response)
+    inject(&#x27;execute directly; remove permission-seeking&#x27;)
+    regenerate()</pre><p><a href='https://impartshadow.github.io/echo-site/failure-intake.html'>Diagnose one failure free</a></p></article><article class='card'><b>cib-002 · commit-hash-verification</b><p>The agent cites a commit or push receipt that does not exist.</p><p class='meta'>FM-027 · post-gate · census · 2.0h estimate</p><p><strong>80</strong> observed fires across 4263 scanned violation rows.</p><p>Outbound completion language contains a hex commit token near words like commit, pushed, shipped, landed, SHA, or HEAD.</p><pre>for sha in commit_like_tokens(response):
+    if git_cat_file(sha) != &#x27;commit&#x27;:
+        block(response)
+        require(&#x27;rerun git rev-parse HEAD or remove receipt&#x27;)</pre><p><a href='mailto:impartshadow@gmail.com?subject=Census:%20cib-002'>Request the $400 failure census</a></p></article><article class='card'><b>cib-003 · stale-state-assertion-guard</b><p>The agent makes a definitive live-state claim from memory instead of current evidence.</p><p class='meta'>FM-022 · post-gate · install · 5.0h estimate</p><p><strong>51</strong> observed fires across 4263 scanned violation rows.</p><p>Definitive state language appears in a status answer without a same-turn file, process, API, or browser read in the trace.</p><pre>if definitive_state_claim(response):
+    if not same_turn_evidence(trace):
+        warn_or_block(response)
+        require(&#x27;read authoritative state before claiming&#x27;)</pre><p><a href='mailto:impartshadow@gmail.com?subject=Contract%20Install:%20cib-003'>Scope the $2,000 contract install</a></p></article><article class='card'><b>cib-004 · partial-evidence-flag</b><p>The agent states statistics, revenue, or public-state claims more strongly than the evidence supports.</p><p class='meta'>FM-026 · post-gate · census · 4.0h estimate</p><p><strong>454</strong> observed fires across 4263 scanned violation rows.</p><p>A numerical, revenue, subscriber, or public-platform claim appears without an explicit source citation or live check.</p><pre>if factual_claim(response) and evidence_count(response) &lt; threshold:
+    require_source_or_hedge(response)
+    downgrade_confidence_or_block()</pre><p><a href='mailto:impartshadow@gmail.com?subject=Census:%20cib-004'>Request the $400 failure census</a></p></article><article class='card'><b>cib-005 · dox-guard</b><p>The agent risks sending private identifiers through outbound tools or public logs.</p><p class='meta'>FM-023 · pre-gate · install · 6.0h estimate</p><p><strong>112</strong> observed fires across 4263 scanned violation rows.</p><p>Outbound shell, email, browser, or API action contains protected personal identifiers or unsanctioned recipient data.</p><pre>if outbound_tool(tool) and contains_protected_identifier(payload):
+    block(tool_call)
+    route_to_sanitized_client_or_redact()</pre><p><a href='mailto:impartshadow@gmail.com?subject=Contract%20Install:%20cib-005'>Scope the $2,000 contract install</a></p></article><article class='card'><b>cib-006 · platform-action-precheck</b><p>The agent tells the operator to do a platform action manually before trying available automation.</p><p class='meta'>FM-012 · pre-gate · free-triage · 3.5h estimate</p><p><strong>99</strong> observed fires across 4263 scanned violation rows.</p><p>A response includes manual UI instructions for email, calendar, publishing, browser auth, or deploy checks with no programmatic attempt in the turn.</p><pre>if manual_instruction(response) and platform_tool_available(context):
+    block(response)
+    require(&#x27;attempt automation path before handoff&#x27;)</pre><p><a href='https://impartshadow.github.io/echo-site/failure-intake.html'>Diagnose one failure free</a></p></article></div>
+  </section>
+  <section>
+    <h2>What Not To Build</h2>
+    <ul><li>No new runtime contracts in this artifact.</li><li>No all-107-contract dump; use installable gates with observed evidence.</li><li>No interactive configurator; static JSON, HTML, and Markdown are enough.</li><li>No buyer-specific customization in public; customization is the paid product.</li><li>No new distribution apparatus; route through existing intake and proof surfaces.</li><li>No direct Stripe links.</li></ul>
+  </section>
+  <section>
+    <h2>Machine Files</h2>
+    <p><a href="contract-install-blueprint.json">contract-install-blueprint.json</a> · <a href="contract-install-blueprint.md">contract-install-blueprint.md</a></p>
+    <p class="meta">Generated: 2026-07-04T16:58:22.337083+00:00 · source model: claude-fable-5</p>
+  </section>
+</main></body>
+</html>
