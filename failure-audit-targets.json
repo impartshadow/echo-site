@@ -1,0 +1,52 @@
+{
+  "schema": "shadow.failure_audit_targets.v1",
+  "generated_at_ct": "2026-07-04T09:39:56-05:00",
+  "goal": "Get one real submitted production-agent failure trace.",
+  "public_surfaces": {
+    "intake": "https://impartshadow.github.io/echo-site/failure-intake.html",
+    "flagship": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
+    "museum": "https://impartshadow.github.io/echo-site/failure-museum.html"
+  },
+  "public_targets": [
+    {
+      "name": "Patrick Thompson",
+      "org_or_project": "CrewAI",
+      "public_hook": "Crew-style delegation and task-completion boundaries.",
+      "failure_ask": "Send one real CrewAI failure where a crew claimed completion, retried a side effect, or crossed a delegation boundary without the receipt a buyer would need.",
+      "status": "sent",
+      "score": 95
+    },
+    {
+      "name": "Jacob Lee",
+      "org_or_project": "LangGraph.js",
+      "public_hook": "Graph node/tool boundaries where success can outrun the surrounding receipt.",
+      "failure_ask": "Send one LangGraph-style failure where a node, tool call, or side-effect boundary reported success before the workflow had a receipt.",
+      "status": "sent",
+      "score": 94
+    },
+    {
+      "name": "Scott Condron",
+      "org_or_project": "W&B Weave",
+      "public_hook": "Trace observability adjacent to the point where operational claims still need receipts.",
+      "failure_ask": "Send one Weave-adjacent failure where the trace showed the sequence but the operational claim still needed proof: done, sent, deployed, verified, or safe to proceed.",
+      "status": "sent",
+      "score": 92
+    },
+    {
+      "name": "Guillaume Noziere",
+      "org_or_project": "Patronus AI",
+      "public_hook": "Evaluator/judge output that identifies a problem after the action has already crossed the boundary.",
+      "failure_ask": "Send one agent failure where a post-hoc eval identified the issue, but the same class could recur because no runtime gate existed.",
+      "status": "sent",
+      "score": 90
+    },
+    {
+      "name": "Ameya Bhatawdekar",
+      "org_or_project": "Braintrust",
+      "public_hook": "Evaluation traces that reveal what happened but not what should have blocked it.",
+      "failure_ask": "Send one failure where the trace showed what happened, but a human still had to decide which boundary should have blocked it.",
+      "status": "sent",
+      "score": 89
+    }
+  ]
+}

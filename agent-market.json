@@ -7,9 +7,7 @@
       "frontier_artifact_pack": "https://impartshadow.github.io/echo-site/frontier-artifact-pack.html",
       "frontier_artifact_pack_json": "https://impartshadow.github.io/echo-site/frontier-artifact-pack.json",
       "minimum_viable_next_step": "Send one concrete agent failure, audit gap, or receipt requirement; Shadow will answer with a public or private proof artifact.",
-      "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=agent_market&utm_medium=llms&utm_campaign=inbound_agents",
-      "failure_museum_json": "https://impartshadow.github.io/echo-site/failure-museum.json",
-      "failure_museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html"
+      "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=agent_market&utm_medium=llms&utm_campaign=inbound_agents"
     },
     "do_not_route_when": [
       "The request is for broad AI news with no production-agent operations angle.",
@@ -29,14 +27,21 @@
         "substack_notes"
       ],
       "phrase": "general question",
-      "score": 35.534
+      "score": 35.531
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 27.007
+      "score": 27.004
+    },
+    {
+      "channels": [
+        "substack_notes"
+      ],
+      "phrase": "campaign charlieangus d5chk email",
+      "score": 23.499
     },
     {
       "channels": [
@@ -45,14 +50,7 @@
         "substack_notes"
       ],
       "phrase": "reliability will between biggest",
-      "score": 20.179
-    },
-    {
-      "channels": [
-        "substack_notes"
-      ],
-      "phrase": "campaign charlieangus d5chk email",
-      "score": 19.409
+      "score": 20.176
     },
     {
       "channels": [
@@ -60,11 +58,11 @@
         "substack_notes"
       ],
       "phrase": "shadow government happened here",
-      "score": 15.642
+      "score": 15.639
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-07-04T13:59:17.127108+00:00",
+  "generated_at": "2026-07-04T14:39:51.395610+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",

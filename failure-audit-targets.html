@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Failure-Audit Target Map · Shadow</title>
+  <meta name="description" content="A sanitized target map for routing one real production-agent failure into Shadow's audit intake.">
+  <style>
+body{margin:0;background:#090b0d;color:#eef3f6;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;line-height:1.55}
+main{max-width:1040px;margin:0 auto;padding:46px 22px 70px}
+a{color:#f59e0b}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.04;margin:0 0 14px;letter-spacing:0}
+.label{color:#f59e0b;text-transform:uppercase;font-size:12px;font-weight:850;letter-spacing:.1em}
+.sub{color:#b8c2c8;font-size:18px;max-width:780px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;margin-top:26px}
+.card{background:#11171a;border:1px solid #293841;border-radius:8px;padding:18px}
+.score{color:#fbbf24;font-size:28px;font-weight:900}
+.k{color:#849198;text-transform:uppercase;font-size:12px;font-weight:750;letter-spacing:.08em}
+p{color:#b8c2c8}
+</style>
+</head>
+<body><main>
+  <div class="label">Failure-audit target map</div>
+  <h1>Five Operator Asks, One Required Trace</h1>
+  <p class="sub">Get one real submitted production-agent failure trace. The public goal is not meetings. It is one concrete production-agent failure that can become a receipt gate.</p>
+  <p><a href="failure-intake.html">Submit a failure</a> · <a href="failure-museum.html">Failure museum</a> · <a href="agent-failure-flagship.html">Flagship thesis</a></p>
+  <section class="grid">
+    <article class="card">
+      <div class="k">CrewAI</div>
+      <h2>Patrick Thompson</h2>
+      <div class="score">95</div>
+      <p class="k">sent</p>
+      <p><strong>Hook:</strong> Crew-style delegation and task-completion boundaries.</p>
+      <p><strong>Ask:</strong> Send one real CrewAI failure where a crew claimed completion, retried a side effect, or crossed a delegation boundary without the receipt a buyer would need.</p>
+    </article>
+    <article class="card">
+      <div class="k">LangGraph.js</div>
+      <h2>Jacob Lee</h2>
+      <div class="score">94</div>
+      <p class="k">sent</p>
+      <p><strong>Hook:</strong> Graph node/tool boundaries where success can outrun the surrounding receipt.</p>
+      <p><strong>Ask:</strong> Send one LangGraph-style failure where a node, tool call, or side-effect boundary reported success before the workflow had a receipt.</p>
+    </article>
+    <article class="card">
+      <div class="k">W&amp;B Weave</div>
+      <h2>Scott Condron</h2>
+      <div class="score">92</div>
+      <p class="k">sent</p>
+      <p><strong>Hook:</strong> Trace observability adjacent to the point where operational claims still need receipts.</p>
+      <p><strong>Ask:</strong> Send one Weave-adjacent failure where the trace showed the sequence but the operational claim still needed proof: done, sent, deployed, verified, or safe to proceed.</p>
+    </article>
+    <article class="card">
+      <div class="k">Patronus AI</div>
+      <h2>Guillaume Noziere</h2>
+      <div class="score">90</div>
+      <p class="k">sent</p>
+      <p><strong>Hook:</strong> Evaluator/judge output that identifies a problem after the action has already crossed the boundary.</p>
+      <p><strong>Ask:</strong> Send one agent failure where a post-hoc eval identified the issue, but the same class could recur because no runtime gate existed.</p>
+    </article>
+    <article class="card">
+      <div class="k">Braintrust</div>
+      <h2>Ameya Bhatawdekar</h2>
+      <div class="score">89</div>
+      <p class="k">sent</p>
+      <p><strong>Hook:</strong> Evaluation traces that reveal what happened but not what should have blocked it.</p>
+      <p><strong>Ask:</strong> Send one failure where the trace showed what happened, but a human still had to decide which boundary should have blocked it.</p>
+    </article></section>
+  <p class="k">Generated 2026-07-04T09:39:56-05:00 CT. Private recipient metadata is withheld.</p>
+</main></body>
+</html>
