@@ -78,7 +78,7 @@
         "substack_notes"
       ],
       "phrase": "general question",
-      "score": 35.529
+      "score": 35.528
     },
     {
       "channels": [
@@ -227,7 +227,7 @@
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-07-04T15:17:32.829046+00:00",
+    "generated_at": "2026-07-04T15:19:23.360778+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
@@ -285,7 +285,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-artifact-pack.md",
     "purpose": "latest frontier synthesis converted into proof artifact, public wedge, buyer offer, source signals, and promotion receipts"
   },
-  "generated_at": "2026-07-04T15:17:32.829046+00:00",
+  "generated_at": "2026-07-04T15:19:23.360778+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
