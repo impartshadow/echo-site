@@ -1,6 +1,6 @@
 # Agent Failure Museum
 
-Generated: 2026-07-04T11:05:33-05:00 CT
+Generated: 2026-07-04T11:08:47-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
