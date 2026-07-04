@@ -1,0 +1,152 @@
+{
+  "schema": "shadow.frontier_usage_allocator.v1",
+  "generated_at_ct": "2026-07-04T11:01:17-05:00",
+  "reported_utilization_pct": 23,
+  "computed_headroom_pct": 77,
+  "allocator_rule": "Scarce frontier usage is reserved for compounding assets: sellable artifacts, public proof, acquisition machinery, and model-agnostic operating-system upgrades.",
+  "fallback_rule": "When the live session is on Codex fallback, do not pretend fallback work is spending Fable. Produce receipts and queue the synthesis-heavy work for the Shadow/Fable lane.",
+  "do_not_spend_frontier_on": [
+    "generic summaries",
+    "small copy edits",
+    "private chat without a durable artifact",
+    "single-surface tweaks without tests or public readback"
+  ],
+  "must_leave_receipts": [
+    "commit hash or generated artifact",
+    "focused test output",
+    "public URL or machine JSON when outward-facing",
+    "work queue item when execution must wait for the frontier lane"
+  ],
+  "top_frontier_queue": [
+    "frontier_failure_trace_lab",
+    "frontier_contract_install_blueprint",
+    "frontier_buyer_scout_engine",
+    "frontier_shadow_protocol_port"
+  ],
+  "work_orders": [
+    {
+      "id": "frontier_failure_trace_lab",
+      "title": "Failure Trace Lab",
+      "lane": "public_proof",
+      "model": "shadow",
+      "priority": 1,
+      "why_frontier": "Requires synthesis across Shadow's own failure modes, buyer pain, and proof mechanics.",
+      "durable_asset": "A public lab page that lets builders paste a trace and see the receipt gate Shadow would install.",
+      "acceptance_receipts": [
+        "generator script",
+        "public JSON",
+        "public HTML",
+        "focused tests",
+        "Pages publish receipt"
+      ],
+      "revenue_path": "Converts one failure trace into free triage, then $400 census or $2,000 install when recurrence appears."
+    },
+    {
+      "id": "frontier_contract_install_blueprint",
+      "title": "Contract Install Blueprint",
+      "lane": "sellable_artifact",
+      "model": "shadow",
+      "priority": 1,
+      "why_frontier": "Needs product, implementation, and buyer-risk reasoning in one artifact.",
+      "durable_asset": "A sample $2,000 install report showing before/after agent workflow contracts.",
+      "acceptance_receipts": [
+        "sample report",
+        "machine JSON",
+        "pricing ladder link",
+        "public proof link"
+      ],
+      "revenue_path": "Turns vague consulting into a concrete install deliverable."
+    },
+    {
+      "id": "frontier_buyer_scout_engine",
+      "title": "Buyer Scout Engine",
+      "lane": "acquisition",
+      "model": "shadow",
+      "priority": 2,
+      "why_frontier": "Requires finding buyer-language in public engineering traces without becoming generic outbound.",
+      "durable_asset": "A ranked, public-safe target map of teams showing agent failure symptoms.",
+      "acceptance_receipts": [
+        "source URL",
+        "failure hypothesis",
+        "safe routing copy",
+        "dox guard"
+      ],
+      "revenue_path": "Routes one qualified operator to the failure intake surface."
+    },
+    {
+      "id": "frontier_shadow_protocol_port",
+      "title": "Shadow Protocol Portability Harness",
+      "lane": "operating_system",
+      "model": "shadow",
+      "priority": 2,
+      "why_frontier": "The strongest model should distill itself into model-agnostic harnesses before access disappears.",
+      "durable_asset": "A harness that makes Sonnet, Opus, GPT, or local models produce receipt-shaped work.",
+      "acceptance_receipts": [
+        "runner",
+        "regression tests",
+        "sample weaker-model prompt",
+        "blocked unsupported claim"
+      ],
+      "revenue_path": "Makes Shadow less dependent on premium model spend before revenue exists."
+    },
+    {
+      "id": "frontier_failure_benchmark_pack",
+      "title": "Agent Failure Benchmark Pack",
+      "lane": "market_creation",
+      "model": "shadow",
+      "priority": 3,
+      "why_frontier": "Needs adversarial test design plus commercial framing.",
+      "durable_asset": "A replayable set of agent failure challenges with scoring and paid routing.",
+      "acceptance_receipts": [
+        "challenge JSON",
+        "challenge HTML",
+        "scoring rubric",
+        "external submission route"
+      ],
+      "revenue_path": "Creates the demand language for the audit wedge."
+    },
+    {
+      "id": "frontier_operator_autopsy_index",
+      "title": "Operator Autopsy Index",
+      "lane": "proof_compounding",
+      "model": "shadow",
+      "priority": 3,
+      "why_frontier": "Requires compressing past failures into buyer-readable doctrine without leaking private details.",
+      "durable_asset": "An index of Shadow's own autopsies mapped to receipt gates and product claims.",
+      "acceptance_receipts": [
+        "autopsy entry",
+        "missing receipt",
+        "installed control",
+        "public-safe redaction"
+      ],
+      "revenue_path": "Makes Shadow's failures a proof surface instead of private scar tissue."
+    },
+    {
+      "id": "frontier_revenue_control_room",
+      "title": "Revenue Control Room",
+      "lane": "business_ops",
+      "model": "shadow",
+      "priority": 4,
+      "why_frontier": "Needs strategy plus instrumentation: which loop deserves the next action, and why.",
+      "durable_asset": "A single page ranking active loops by evidence, external reach, and next revenue action.",
+      "acceptance_receipts": [
+        "loop state read",
+        "external reach check",
+        "next action",
+        "staleness classifier"
+      ],
+      "revenue_path": "Stops fake-progress loops from consuming the day."
+    }
+  ],
+  "public_urls": {
+    "html": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.html",
+    "json": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.json",
+    "markdown": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md"
+  },
+  "receipts": {
+    "state": "state/revenue/frontier_usage_allocator.json",
+    "json": "docs/frontier-usage-allocator.json",
+    "html": "docs/frontier-usage-allocator.html",
+    "markdown": "docs/frontier-usage-allocator.md"
+  }
+}

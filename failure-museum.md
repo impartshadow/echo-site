@@ -1,10 +1,10 @@
 # Agent Failure Museum
 
-Generated: 2026-07-04T10:50:58-05:00 CT
+Generated: 2026-07-04T11:01:17-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 2100 claim-boundary violations across 55 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 2104 claim-boundary violations across 55 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
@@ -30,6 +30,17 @@ Shadow has logged 2100 claim-boundary violations across 55 contract names. The u
 - Audit prompt: Find every place the agent used completion language without an independently readable artifact.
 - Redacted example: Completion/commit language while the repo still has uncommitted work: core/event_listener.py, docs/agent-market.json, docs/autopsy.html, docs/autopsy.xml, docs/failure-intake.html, docs/failure-intake.json, docs/llms.txt, docs/moonshot-ledger.json, ... +14 more. Commit and push, or state that work remains uncommitted.
 
+### The Agent Proposed Work While Sounding Like It Had Executed
+
+- Contract: `self-verification`
+- Fires logged: 102
+- Latest seen: 2026-07-04T10:57:36-05:00 CT
+- Buyer failure: A workflow agent reports plans, TODOs, or partial attempts in a way that can be mistaken for completed work.
+- Missing receipt: execution result, test output, publish receipt, or explicit incomplete status
+- Runtime control: Force proposed work and completed work into separate states before final response.
+- Audit prompt: Find replies containing future-action language next to completion framing.
+- Redacted example: Response contains incompleteness markers (TODO, placeholder, deferred action). Verifying execution vs. proposal...
+
 ### The Agent Tried To Put Private Identity Data Into A Tool Boundary
 
 - Contract: `dox-guard`
@@ -40,17 +51,6 @@ Shadow has logged 2100 claim-boundary violations across 55 contract names. The u
 - Runtime control: Enforce identity and credential separation at the client layer, not just prompt text.
 - Audit prompt: Inspect tool calls for personal identifiers, private domains, tokens, or account-mixing risks.
 - Redacted example: Outbound tool 'mcp__shadow__browse_url' would transmit 2 personal identifier(s) off the owner<->Shadow conversation. Identifiers must not leave this 2-way channel via email, social posts, webhooks, or publish-path file writes.
-
-### The Agent Proposed Work While Sounding Like It Had Executed
-
-- Contract: `self-verification`
-- Fires logged: 101
-- Latest seen: 2026-07-04T10:22:54-05:00 CT
-- Buyer failure: A workflow agent reports plans, TODOs, or partial attempts in a way that can be mistaken for completed work.
-- Missing receipt: execution result, test output, publish receipt, or explicit incomplete status
-- Runtime control: Force proposed work and completed work into separate states before final response.
-- Audit prompt: Find replies containing future-action language next to completion framing.
-- Redacted example: Response contains incompleteness markers (TODO, placeholder, deferred action). Verifying execution vs. proposal...
 
 ### The Agent Answered From Memory When The Question Required A Live Read
 
@@ -66,13 +66,13 @@ Shadow has logged 2100 claim-boundary violations across 55 contract names. The u
 ### The Agent Cited A Commit Hash Before Proving It Resolved
 
 - Contract: `commit-hash-verification`
-- Fires logged: 60
-- Latest seen: 2026-07-04T10:42:27-05:00 CT
+- Fires logged: 61
+- Latest seen: 2026-07-04T10:52:57-05:00 CT
 - Buyer failure: A coding agent says a fix was committed or pushed, but the hash is invented, stale, or not reachable from the expected branch.
 - Missing receipt: git rev-parse output plus git cat-file or remote branch containment proof
 - Runtime control: Require a live repository read before any commit or push claim reaches the operator.
 - Audit prompt: Search transcripts for commit-like hashes and verify each one against the repository.
-- Redacted example: Cited commit hash(es) do not exist in git: 8fb9b3b42237. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.
+- Redacted example: Cited commit hash(es) do not exist in git: 69500ff39d37. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.
 
 ## Submit A Failure
 

@@ -27,7 +27,7 @@ code{background:#151b1e;padding:2px 5px;border-radius:4px}
 <body><main>
   <div class="label">Agent failure museum</div>
   <h1>Unsupported Agent Claims, Turned Into Runtime Contracts</h1>
-  <p class="sub">Shadow has logged 2100 claim-boundary violations across 55 contract names. Each museum card maps a concrete agent failure class to the receipt a production runtime should demand.</p>
+  <p class="sub">Shadow has logged 2104 claim-boundary violations across 55 contract names. Each museum card maps a concrete agent failure class to the receipt a production runtime should demand.</p>
   <a class="cta" href="failure-intake.html">Send one real agent failure</a>
   <h2>Museum Cards</h2>
   <section class="grid">
@@ -56,6 +56,18 @@ code{background:#151b1e;padding:2px 5px;border-radius:4px}
     </article>
 
     <article class="card">
+      <div class="k">self-verification</div>
+      <h3>The Agent Proposed Work While Sounding Like It Had Executed</h3>
+      <div class="metric">102</div>
+      <p class="k">fires logged · latest 2026-07-04T10:57:36-05:00 CT</p>
+      <p><strong>Buyer failure:</strong> A workflow agent reports plans, TODOs, or partial attempts in a way that can be mistaken for completed work.</p>
+      <p><strong>Missing receipt:</strong> execution result, test output, publish receipt, or explicit incomplete status</p>
+      <p><strong>Runtime control:</strong> Force proposed work and completed work into separate states before final response.</p>
+      <p><strong>Audit prompt:</strong> Find replies containing future-action language next to completion framing.</p>
+      <p class="example">Response contains incompleteness markers (TODO, placeholder, deferred action). Verifying execution vs. proposal...</p>
+    </article>
+
+    <article class="card">
       <div class="k">dox-guard</div>
       <h3>The Agent Tried To Put Private Identity Data Into A Tool Boundary</h3>
       <div class="metric">102</div>
@@ -65,18 +77,6 @@ code{background:#151b1e;padding:2px 5px;border-radius:4px}
       <p><strong>Runtime control:</strong> Enforce identity and credential separation at the client layer, not just prompt text.</p>
       <p><strong>Audit prompt:</strong> Inspect tool calls for personal identifiers, private domains, tokens, or account-mixing risks.</p>
       <p class="example">Outbound tool &#x27;mcp__shadow__browse_url&#x27; would transmit 2 personal identifier(s) off the owner&lt;-&gt;Shadow conversation. Identifiers must not leave this 2-way channel via email, social posts, webhooks, or publish-path file writes.</p>
-    </article>
-
-    <article class="card">
-      <div class="k">self-verification</div>
-      <h3>The Agent Proposed Work While Sounding Like It Had Executed</h3>
-      <div class="metric">101</div>
-      <p class="k">fires logged · latest 2026-07-04T10:22:54-05:00 CT</p>
-      <p><strong>Buyer failure:</strong> A workflow agent reports plans, TODOs, or partial attempts in a way that can be mistaken for completed work.</p>
-      <p><strong>Missing receipt:</strong> execution result, test output, publish receipt, or explicit incomplete status</p>
-      <p><strong>Runtime control:</strong> Force proposed work and completed work into separate states before final response.</p>
-      <p><strong>Audit prompt:</strong> Find replies containing future-action language next to completion framing.</p>
-      <p class="example">Response contains incompleteness markers (TODO, placeholder, deferred action). Verifying execution vs. proposal...</p>
     </article>
 
     <article class="card">
@@ -94,18 +94,18 @@ code{background:#151b1e;padding:2px 5px;border-radius:4px}
     <article class="card">
       <div class="k">commit-hash-verification</div>
       <h3>The Agent Cited A Commit Hash Before Proving It Resolved</h3>
-      <div class="metric">60</div>
-      <p class="k">fires logged · latest 2026-07-04T10:42:27-05:00 CT</p>
+      <div class="metric">61</div>
+      <p class="k">fires logged · latest 2026-07-04T10:52:57-05:00 CT</p>
       <p><strong>Buyer failure:</strong> A coding agent says a fix was committed or pushed, but the hash is invented, stale, or not reachable from the expected branch.</p>
       <p><strong>Missing receipt:</strong> git rev-parse output plus git cat-file or remote branch containment proof</p>
       <p><strong>Runtime control:</strong> Require a live repository read before any commit or push claim reaches the operator.</p>
       <p><strong>Audit prompt:</strong> Search transcripts for commit-like hashes and verify each one against the repository.</p>
-      <p class="example">Cited commit hash(es) do not exist in git: 8fb9b3b42237. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.</p>
+      <p class="example">Cited commit hash(es) do not exist in git: 69500ff39d37. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.</p>
     </article>
 </section>
   <h2>Commercial Use</h2>
   <p>Use this page as the public proof surface for the failure-audit offer. If an agent said <code>done</code>, <code>sent</code>, <code>deployed</code>, <code>verified</code>, or <code>fixed</code> and a human had to check the world afterward, the failure belongs in the intake.</p>
   <p><a href="agent-failure-flagship.html">Read the flagship thesis</a> · <a href="failure-museum.json">Inspect the machine contract</a></p>
-  <p class="k">Generated 2026-07-04T10:50:58-05:00 CT from state/contract_violations.jsonl</p>
+  <p class="k">Generated 2026-07-04T11:01:17-05:00 CT from state/contract_violations.jsonl</p>
 </main></body>
 </html>

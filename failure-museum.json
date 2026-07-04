@@ -1,8 +1,8 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-07-04T10:50:58-05:00",
+  "generated_at_ct": "2026-07-04T11:01:17-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 2100,
+  "total_violations": 2104,
   "distinct_contracts": 55,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
@@ -36,6 +36,19 @@
       "audit_prompt": "Find every place the agent used completion language without an independently readable artifact."
     },
     {
+      "contract": "self-verification",
+      "failure_mode": "FM-011",
+      "severity_seen": "warn",
+      "count": 102,
+      "latest_seen_ct": "2026-07-04T10:57:36-05:00",
+      "example_violation": "Response contains incompleteness markers (TODO, placeholder, deferred action). Verifying execution vs. proposal...",
+      "title": "The Agent Proposed Work While Sounding Like It Had Executed",
+      "buyer_failure": "A workflow agent reports plans, TODOs, or partial attempts in a way that can be mistaken for completed work.",
+      "missing_receipt": "execution result, test output, publish receipt, or explicit incomplete status",
+      "control": "Force proposed work and completed work into separate states before final response.",
+      "audit_prompt": "Find replies containing future-action language next to completion framing."
+    },
+    {
       "contract": "dox-guard",
       "failure_mode": "FM-023",
       "severity_seen": "block",
@@ -47,19 +60,6 @@
       "missing_receipt": "redaction proof and approved outbound identity context",
       "control": "Enforce identity and credential separation at the client layer, not just prompt text.",
       "audit_prompt": "Inspect tool calls for personal identifiers, private domains, tokens, or account-mixing risks."
-    },
-    {
-      "contract": "self-verification",
-      "failure_mode": "FM-011",
-      "severity_seen": "warn",
-      "count": 101,
-      "latest_seen_ct": "2026-07-04T10:22:54-05:00",
-      "example_violation": "Response contains incompleteness markers (TODO, placeholder, deferred action). Verifying execution vs. proposal...",
-      "title": "The Agent Proposed Work While Sounding Like It Had Executed",
-      "buyer_failure": "A workflow agent reports plans, TODOs, or partial attempts in a way that can be mistaken for completed work.",
-      "missing_receipt": "execution result, test output, publish receipt, or explicit incomplete status",
-      "control": "Force proposed work and completed work into separate states before final response.",
-      "audit_prompt": "Find replies containing future-action language next to completion framing."
     },
     {
       "contract": "state-assertion-grounding",
@@ -78,9 +78,9 @@
       "contract": "commit-hash-verification",
       "failure_mode": "FM-027",
       "severity_seen": "block",
-      "count": 60,
-      "latest_seen_ct": "2026-07-04T10:42:27-05:00",
-      "example_violation": "Cited commit hash(es) do not exist in git: 8fb9b3b42237. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.",
+      "count": 61,
+      "latest_seen_ct": "2026-07-04T10:52:57-05:00",
+      "example_violation": "Cited commit hash(es) do not exist in git: 69500ff39d37. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.",
       "title": "The Agent Cited A Commit Hash Before Proving It Resolved",
       "buyer_failure": "A coding agent says a fix was committed or pushed, but the hash is invented, stale, or not reachable from the expected branch.",
       "missing_receipt": "git rev-parse output plus git cat-file or remote branch containment proof",
@@ -609,12 +609,13 @@
       "concurrence-grounding": 1,
       "persistent-correction": 5,
       "behavioral-haiku-guard": 1,
-      "high-stakes-pre-critique": 2,
+      "high-stakes-pre-critique": 3,
       "post-commit-audit": 1,
       "partial-evidence-flag": 11,
-      "self-verification": 5,
+      "self-verification": 6,
       "pressure-framing-guard": 2,
-      "commit-hash-verification": 2
+      "commit-hash-verification": 3,
+      "factual-claim-verification": 1
     }
   },
   "cta": {

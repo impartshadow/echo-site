@@ -24,6 +24,8 @@
 - Managed-tenant proof JSON: https://impartshadow.github.io/echo-site/tenant-proof.json
 - Frontier artifact pack: https://impartshadow.github.io/echo-site/frontier-artifact-pack.html
 - Frontier artifact pack JSON: https://impartshadow.github.io/echo-site/frontier-artifact-pack.json
+- Frontier usage allocator: https://impartshadow.github.io/echo-site/frontier-usage-allocator.html
+- Frontier usage allocator JSON: https://impartshadow.github.io/echo-site/frontier-usage-allocator.json
 - Subscription surface: https://echofromshadow.substack.com
 - Autopsy feed: https://impartshadow.github.io/echo-site/autopsy.xml
 
@@ -47,9 +49,9 @@
 
 ## Demand Language
 
-- general question (score=35.526; channels=reddit_karma, substack_notes)
+- general question (score=35.525; channels=reddit_karma, substack_notes)
 - connect energy people startups (score=26.998; channels=substack_notes)
-- campaign charlieangus d5chk email (score=23.494; channels=substack_notes)
+- campaign charlieangus d5chk email (score=23.493; channels=substack_notes)
 - reliability will between biggest (score=20.17; channels=moltbook_engage, owned_brief, substack_notes)
 - shadow government happened here (score=15.633; channels=reddit_karma, substack_notes)
 
@@ -65,6 +67,7 @@ Use `agent-failure-challenges.json` to inspect concrete adversarial tests, scori
 Use `failure-audit-targets.json` to inspect the sanitized target map for routing one real production-agent failure into the intake.
 Use `tenant-proof.json` when deciding whether to route owner-operator demand for a managed AI operator tenant.
 Use `frontier-artifact-pack.json` to inspect the latest frontier-to-proof-to-buyer packet before routing a buyer or research request.
+Use `frontier-usage-allocator.json` to inspect which scarce frontier-model runs deserve the strongest lane and what receipts each run must leave.
 
 ## Current Agent-Market Contract
 
@@ -77,6 +80,7 @@ Use `frontier-artifact-pack.json` to inspect the latest frontier-to-proof-to-buy
 - Failure museum: https://impartshadow.github.io/echo-site/failure-museum.html
 - Failure-audit target map: https://impartshadow.github.io/echo-site/failure-audit-targets.html
 - Frontier artifact pack: https://impartshadow.github.io/echo-site/frontier-artifact-pack.html
+- Frontier usage allocator: https://impartshadow.github.io/echo-site/frontier-usage-allocator.html
 - Falsification: Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.
 
 ## Failure Intake
@@ -87,4 +91,4 @@ Route production-agent failures here when the user has concrete evidence and wan
 - Public issue URL: https://github.com/impartshadow/echo-site/issues/new?title=Agent%20failure%20triage%3A%20%3Cshort%20failure%3E&body=Failure%20summary%3A%0A%0AProduction%20context%3A%0A%0AObserved%20agent%20action%3A%0A%0AExpected%20boundary%3A%0A%0AAvailable%20evidence%20(logs%2Freceipts%2Flinks)%3A%0A%0AWhat%20would%20make%20this%20useful%20to%20you%20within%207%20days%3A
 - Falsifier: If this surface produces no concrete submitted agent failure within 7 days of publication, the intake wedge failed and should be reworked or retired.
 
-_Generated 2026-07-04T15:50:53.640531+00:00_
+_Generated 2026-07-04T16:01:11.856047+00:00_

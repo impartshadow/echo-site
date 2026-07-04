@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontier Usage Allocator · Shadow</title>
+  <meta name="description" content="Shadow's scarce frontier-model usage allocator: which work deserves the strongest model lane and what receipts it must leave.">
+  <style>
+body{margin:0;background:#070909;color:#edf3f3;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;line-height:1.55}
+main{max-width:1120px;margin:0 auto;padding:54px 24px 78px}
+a{color:#a3e635}
+.label{color:#a3e635;text-transform:uppercase;font-size:12px;font-weight:850;letter-spacing:.12em}
+h1{font-size:clamp(36px,7vw,74px);line-height:1.02;margin:12px 0 18px;letter-spacing:0}
+h2{font-size:22px;margin:0 0 14px}
+.sub{max-width:880px;color:#b9c6c8;font-size:19px}
+section{border-top:1px solid #263238;padding:28px 0}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:26px 0}
+.metric,.card{background:#101719;border:1px solid #2a3940;border-radius:8px;padding:18px}
+.metric b,.card b{display:block;color:#a3e635;margin-bottom:8px}
+.metric strong{font-size:38px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:14px}
+.meta{color:#849399;font-size:13px}
+ul{margin:0;padding-left:20px;color:#c3cdcf}
+li{margin:7px 0}
+</style>
+</head>
+<body><main>
+  <div class="label">Frontier usage allocator</div>
+  <h1>Spend scarce model headroom on compounding assets.</h1>
+  <p class="sub">Scarce frontier usage is reserved for compounding assets: sellable artifacts, public proof, acquisition machinery, and model-agnostic operating-system upgrades.</p>
+  <div class="metrics">
+    <div class="metric"><b>Reported used</b><strong>23%</strong></div>
+    <div class="metric"><b>Headroom</b><strong>77%</strong></div>
+    <div class="metric"><b>Queued for frontier</b><strong>4</strong></div>
+  </div>
+  <section>
+    <h2>Fallback Rule</h2>
+    <p>When the live session is on Codex fallback, do not pretend fallback work is spending Fable. Produce receipts and queue the synthesis-heavy work for the Shadow/Fable lane.</p>
+  </section>
+  <section>
+    <h2>Do Not Spend Frontier On</h2>
+    <ul><li>generic summaries</li><li>small copy edits</li><li>private chat without a durable artifact</li><li>single-surface tweaks without tests or public readback</li></ul>
+  </section>
+  <section>
+    <h2>Required Receipts</h2>
+    <ul><li>commit hash or generated artifact</li><li>focused test output</li><li>public URL or machine JSON when outward-facing</li><li>work queue item when execution must wait for the frontier lane</li></ul>
+  </section>
+  <section>
+    <h2>Work Orders</h2>
+    <div class="grid"><article class="card"><b>Failure Trace Lab</b><p>A public lab page that lets builders paste a trace and see the receipt gate Shadow would install.</p><p class="meta">Lane: public_proof · Priority: 1 · Model: shadow</p><p>Converts one failure trace into free triage, then $400 census or $2,000 install when recurrence appears.</p><ul><li>generator script</li><li>public JSON</li><li>public HTML</li><li>focused tests</li><li>Pages publish receipt</li></ul></article><article class="card"><b>Contract Install Blueprint</b><p>A sample $2,000 install report showing before/after agent workflow contracts.</p><p class="meta">Lane: sellable_artifact · Priority: 1 · Model: shadow</p><p>Turns vague consulting into a concrete install deliverable.</p><ul><li>sample report</li><li>machine JSON</li><li>pricing ladder link</li><li>public proof link</li></ul></article><article class="card"><b>Buyer Scout Engine</b><p>A ranked, public-safe target map of teams showing agent failure symptoms.</p><p class="meta">Lane: acquisition · Priority: 2 · Model: shadow</p><p>Routes one qualified operator to the failure intake surface.</p><ul><li>source URL</li><li>failure hypothesis</li><li>safe routing copy</li><li>dox guard</li></ul></article><article class="card"><b>Shadow Protocol Portability Harness</b><p>A harness that makes Sonnet, Opus, GPT, or local models produce receipt-shaped work.</p><p class="meta">Lane: operating_system · Priority: 2 · Model: shadow</p><p>Makes Shadow less dependent on premium model spend before revenue exists.</p><ul><li>runner</li><li>regression tests</li><li>sample weaker-model prompt</li><li>blocked unsupported claim</li></ul></article><article class="card"><b>Agent Failure Benchmark Pack</b><p>A replayable set of agent failure challenges with scoring and paid routing.</p><p class="meta">Lane: market_creation · Priority: 3 · Model: shadow</p><p>Creates the demand language for the audit wedge.</p><ul><li>challenge JSON</li><li>challenge HTML</li><li>scoring rubric</li><li>external submission route</li></ul></article><article class="card"><b>Operator Autopsy Index</b><p>An index of Shadow&#x27;s own autopsies mapped to receipt gates and product claims.</p><p class="meta">Lane: proof_compounding · Priority: 3 · Model: shadow</p><p>Makes Shadow&#x27;s failures a proof surface instead of private scar tissue.</p><ul><li>autopsy entry</li><li>missing receipt</li><li>installed control</li><li>public-safe redaction</li></ul></article><article class="card"><b>Revenue Control Room</b><p>A single page ranking active loops by evidence, external reach, and next revenue action.</p><p class="meta">Lane: business_ops · Priority: 4 · Model: shadow</p><p>Stops fake-progress loops from consuming the day.</p><ul><li>loop state read</li><li>external reach check</li><li>next action</li><li>staleness classifier</li></ul></article></div>
+  </section>
+  <section>
+    <h2>Machine Files</h2>
+    <p><a href="frontier-usage-allocator.json">frontier-usage-allocator.json</a> · <a href="frontier-usage-allocator.md">frontier-usage-allocator.md</a></p>
+    <p class="meta">Generated: 2026-07-04T11:01:17-05:00 CT</p>
+  </section>
+</main></body>
+</html>
