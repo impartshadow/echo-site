@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Failure-Mode Audit</title>
+  <meta name="description" content="Shadow's failure-mode audit turns production-agent failures into deterministic gates, receipt schemas, and violation logs.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #07090a;
+      --panel: #101416;
+      --line: #263236;
+      --text: #eef3f4;
+      --muted: #a9b4b8;
+      --accent: #f59e0b;
+      --accent-2: #4dd0c8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    header, main, footer {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 28px;
+    }
+    header { padding-top: 58px; }
+    .eyebrow {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 900px;
+      margin: 14px 0 18px;
+      font-size: clamp(38px, 7vw, 78px);
+      line-height: .98;
+      letter-spacing: 0;
+    }
+    .sub {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 19px;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+    .btn {
+      display: inline-block;
+      border-radius: 6px;
+      padding: 12px 18px;
+      background: var(--accent);
+      color: #160d02;
+      font-weight: 850;
+      text-decoration: none;
+    }
+    .btn.secondary {
+      background: #111719;
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 34px 0 4px;
+    }
+    .metric {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 16px;
+      min-height: 112px;
+    }
+    .metric strong {
+      display: block;
+      font-size: 30px;
+      line-height: 1;
+      color: var(--accent-2);
+      margin-bottom: 8px;
+    }
+    .metric span { color: var(--muted); font-size: 14px; }
+    section {
+      border-top: 1px solid var(--line);
+      padding: 34px 0;
+    }
+    h2 {
+      margin: 0 0 16px;
+      font-size: 26px;
+      letter-spacing: 0;
+    }
+    p { max-width: 820px; color: var(--muted); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 18px;
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+    }
+    .price {
+      color: var(--accent);
+      font-weight: 850;
+      margin-bottom: 10px;
+    }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+    li { margin: 8px 0; }
+    .quote {
+      border-left: 4px solid var(--accent);
+      padding: 12px 0 12px 18px;
+      color: var(--text);
+      font-size: 20px;
+      max-width: 850px;
+    }
+    code {
+      background: #151b1e;
+      border-radius: 4px;
+      padding: 2px 5px;
+    }
+    footer {
+      color: #748086;
+      font-size: 13px;
+      padding-bottom: 46px;
+    }
+    @media (max-width: 760px) {
+      header, main, footer { padding-left: 18px; padding-right: 18px; }
+      .metrics, .grid { grid-template-columns: 1fr; }
+      .metric { min-height: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">Agent failure-mode audit</div>
+    <h1>Your agent has said done when it was not done.</h1>
+    <p class="sub">Shadow turns production-agent failures into deterministic gates, receipt schemas, and violation logs. The wedge is narrow: completion claims without proof.</p>
+    <div class="actions">
+      <a class="btn" href="mailto:impartshadow@gmail.com?subject=Agent%20failure%20triage&amp;body=Failure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%20(logs%2Freceipts%2Flinks)%3A">Send one failure</a>
+      <a class="btn secondary" href="agent-failure-audit.json">Machine-readable offer</a>
+    </div>
+    <div class="metrics" aria-label="Shadow proof metrics">
+      <div class="metric"><strong>2,075</strong><span>logged contract violations</span></div>
+      <div class="metric"><strong>55</strong><span>distinct contracts fired</span></div>
+      <div class="metric"><strong>124</strong><span>contract classes in runtime</span></div>
+      <div class="metric"><strong>1</strong><span>active managed-operator pilot</span></div>
+    </div>
+  </header>
+  <main>
+    <section>
+      <h2>Who This Is For</h2>
+      <p>Teams running LLM agents in production who cannot prove whether an agent actually sent, deployed, published, changed, verified, or checked the thing it claimed.</p>
+      <ul>
+        <li>The agent reported success but the artifact did not exist.</li>
+        <li>The agent cited a commit, URL, message, or state that did not resolve.</li>
+        <li>The same correction has been given more than once.</li>
+        <li>The team has prompts but no append-only violation ledger.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Offer Ladder</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>One-Failure Triage</h3>
+          <div class="price">Free</div>
+          <ul>
+            <li>Classify one production-agent failure.</li>
+            <li>Name the missing boundary and receipt.</li>
+            <li>Specify the first deterministic gate to add.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Failure Census</h3>
+          <div class="price">$400 fixed price</div>
+          <ul>
+            <li>Analyze seven days of logs or transcripts.</li>
+            <li>Inventory unverified completion claims.</li>
+            <li>Return the top five gates to install first.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Contract Install</h3>
+          <div class="price">$2,000 fixed price</div>
+          <ul>
+            <li>Install 5 to 8 claim-boundary gates.</li>
+            <li>Add violation logging and receipt schema.</li>
+            <li>Ship tests and a 30-day re-audit.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Governed Operations</h3>
+          <div class="price">$500/month</div>
+          <ul>
+            <li>Maintain gates as new failures appear.</li>
+            <li>Deliver a monthly violation report.</li>
+            <li>Turn incidents into regression tests.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>Proof Boundary</h2>
+      <p>The enforcement machinery is real and rare. The commercial proof is not complete yet: Shadow has proven the loop on itself. The next proof target is one outside agent stack.</p>
+      <p>Sources: <code>state/contract_violations.jsonl</code>, <code>core/contracts.py</code>, <code>docs/tenant-proof.json</code>, <code>state/revenue.json</code>.</p>
+    </section>
+    <section>
+      <h2>Flagship Thesis</h2>
+      <div class="quote">Your agent has lied to you about finishing a task. Mine has been caught 2,075 times.</div>
+      <p>Agent reliability is not mainly an eval problem. The expensive failure happens at claim time: the model says done, sent, deployed, or verified before the environment agrees. Offline evals cannot catch that. Runtime contracts can.</p>
+    </section>
+    <section>
+      <h2>Falsifier</h2>
+      <p>If the free triage does not produce at least one concrete external failure submission, reply, or pricing conversation within seven days of publication, rewrite the offer around fabricated completion claims only.</p>
+    </section>
+  </main>
+  <footer>
+    Shadow proof page: <a href="shadow-proof.html">shadow-proof.html</a> · Existing failure intake: <a href="failure-intake.html">failure-intake.html</a>
+  </footer>
+</body>
+</html>

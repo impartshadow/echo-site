@@ -1,0 +1,89 @@
+{
+  "schema": "shadow.agent_failure_audit.v1",
+  "generated_at": "2026-07-04T08:01:14-05:00",
+  "name": "Agent Failure-Mode Audit",
+  "position": "Runtime contracts for production agents that make unsupported operational claims.",
+  "buyer": {
+    "icp": "Teams running LLM agents in production that cannot produce receipts for send, deploy, publish, verify, change, or state-confirmation claims.",
+    "trigger_failures": [
+      "agent said done but artifact did not exist",
+      "agent claimed an email or post was sent without a message receipt",
+      "agent cited a commit, URL, or state that did not resolve",
+      "agent repeated a corrected behavior after the correction was added to the prompt",
+      "agent ran unattended and reported success without an independently checked outcome"
+    ]
+  },
+  "proof": {
+    "contract_violations_logged": 2075,
+    "unique_contracts_fired": 55,
+    "contract_classes": 124,
+    "active_managed_operator_pilots": 1,
+    "mrr_usd": 0,
+    "paying_subscribers": 0,
+    "sources": {
+      "contract_violations": "state/contract_violations.jsonl",
+      "contracts": "core/contracts.py",
+      "tenant_proof": "docs/tenant-proof.json",
+      "revenue": "state/revenue.json"
+    },
+    "honest_boundary": "The mechanism is proven on Shadow itself; the next proof target is one outside agent stack."
+  },
+  "offers": [
+    {
+      "name": "One-Failure Triage",
+      "price_usd": 0,
+      "input": "One concrete production-agent failure with a log, trace, receipt, screenshot, or public link.",
+      "output": [
+        "failure-mode classification",
+        "missing boundary",
+        "required receipt",
+        "first deterministic gate to add"
+      ],
+      "turnaround": "best effort"
+    },
+    {
+      "name": "Failure Census",
+      "price_usd": 400,
+      "input": "Seven days of agent transcripts, run logs, or execution traces.",
+      "output": [
+        "scored inventory of unverified completion claims",
+        "repeated correction patterns",
+        "missing receipts by claim type",
+        "top 5 deterministic gates to install first",
+        "one-page operator report"
+      ],
+      "turnaround": "5 business days"
+    },
+    {
+      "name": "Contract Install",
+      "price_usd": 2000,
+      "input": "One agent stack, one repo, one production workflow.",
+      "output": [
+        "5 to 8 deterministic claim-boundary gates",
+        "append-only violation log",
+        "receipt schema for completion, publish, deploy, send, and state-confirmation claims",
+        "tests proving each gate fires on the failure examples",
+        "operator playbook"
+      ],
+      "turnaround": "14 days plus 30-day re-audit"
+    },
+    {
+      "name": "Governed Operations Retainer",
+      "price_usd_monthly": 500,
+      "input": "A team that continues shipping new agent behavior.",
+      "output": [
+        "new gate design as failures appear",
+        "monthly violation report",
+        "regression tests for repeated incidents",
+        "review of high-blast-radius workflow changes"
+      ],
+      "turnaround": "monthly"
+    }
+  ],
+  "primary_cta": {
+    "label": "Send one real agent failure",
+    "email": "impartshadow@gmail.com",
+    "mailto_url": "mailto:impartshadow@gmail.com?subject=Agent%20failure%20triage&body=Failure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%20(logs%2Freceipts%2Flinks)%3A"
+  },
+  "falsifier": "If the free triage does not produce at least one concrete external failure submission, reply, or pricing conversation within seven days of publication, rewrite the offer around fabricated completion claims only."
+}
