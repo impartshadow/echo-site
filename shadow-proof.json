@@ -101,7 +101,7 @@
         "substack_notes"
       ],
       "phrase": "reliability will between biggest",
-      "score": 20.176
+      "score": 20.175
     },
     {
       "channels": [
@@ -109,7 +109,7 @@
         "substack_notes"
       ],
       "phrase": "shadow government happened here",
-      "score": 15.639
+      "score": 15.638
     }
   ],
   "flight_recorder": {
@@ -117,7 +117,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 1.6,
+          "hours_since": 1.7,
           "last_activity": "2026-07-04T13:01:52.952749+00:00",
           "source": "action_log",
           "staleness": "ok"
@@ -145,7 +145,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 1.6,
+          "hours_since": 1.7,
           "last_activity": "2026-07-04T13:01:52.969018+00:00",
           "source": "action_log",
           "staleness": "ok"
@@ -187,7 +187,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.1,
+          "hours_since": 0.2,
           "last_activity": "2026-07-04T14:31:14.493785+00:00",
           "source": "external_post_receipt",
           "staleness": "ok"
@@ -227,7 +227,7 @@
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-07-04T14:39:51.395610+00:00",
+    "generated_at": "2026-07-04T14:42:44.135026+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
@@ -285,7 +285,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-artifact-pack.md",
     "purpose": "latest frontier synthesis converted into proof artifact, public wedge, buyer offer, source signals, and promotion receipts"
   },
-  "generated_at": "2026-07-04T14:39:51.395610+00:00",
+  "generated_at": "2026-07-04T14:42:44.135026+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
