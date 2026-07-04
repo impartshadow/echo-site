@@ -117,7 +117,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.8,
+          "hours_since": 0.9,
           "last_activity": "2026-07-04T13:01:52.952749+00:00",
           "source": "action_log",
           "staleness": "ok"
@@ -131,7 +131,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.8,
+          "hours_since": 0.9,
           "last_activity": "2026-07-04T13:04:28.709040+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
@@ -145,7 +145,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.8,
+          "hours_since": 0.9,
           "last_activity": "2026-07-04T13:01:52.969018+00:00",
           "source": "action_log",
           "staleness": "ok"
@@ -159,7 +159,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 3.9,
+          "hours_since": 4.0,
           "last_activity": "2026-07-04T10:00:02.120253+00:00",
           "source": "declared_timestamp",
           "staleness": "expected_quiet"
@@ -173,7 +173,7 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 3.9,
+          "hours_since": 4.0,
           "last_activity": "2026-07-04T10:00:13.457744+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
@@ -187,7 +187,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.7,
+          "hours_since": 0.8,
           "last_activity": "2026-07-04T13:12:02.021719+00:00",
           "source": "external_post_receipt",
           "staleness": "ok"
@@ -201,7 +201,7 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 3.9,
+          "hours_since": 4.0,
           "last_activity": "2026-07-04T10:00:05.689832+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
@@ -215,7 +215,7 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 3.9,
+          "hours_since": 4.0,
           "last_activity": "2026-07-04T10:00:04.975597+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
@@ -227,7 +227,7 @@
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-07-04T13:52:09.321740+00:00",
+    "generated_at": "2026-07-04T13:57:36.096407+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
@@ -285,7 +285,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-artifact-pack.md",
     "purpose": "latest frontier synthesis converted into proof artifact, public wedge, buyer offer, source signals, and promotion receipts"
   },
-  "generated_at": "2026-07-04T13:52:09.321740+00:00",
+  "generated_at": "2026-07-04T13:57:36.096407+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
