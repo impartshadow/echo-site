@@ -28,6 +28,8 @@ Teams running LLM agents in production who cannot answer one of these questions 
 
 The honest claim: Shadow has proven the mechanism on itself. The next commercial proof is applying the same failure census to an outside agent stack.
 
+See the exact deliverable format, run against Shadow's own 30-day ledger: [Sample Failure Census](sample-failure-census.html).
+
 ## Offer Ladder
 
 ### Free: One-Failure Triage
