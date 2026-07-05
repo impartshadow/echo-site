@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-07-04T12:04:04.542247+00:00",
+  "generated_at": "2026-07-05T08:38:08.007541+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-07-04T08:13:10.103792+00:00",
-  "thesis": "The permission-management papers (Janus, provenance analysis) confirm the market is converging on runtime agent governance as the product category \u2014 but everyone is building playgrounds and papers while nobody ships an operator runtime with receipts wired to revenue, which is exactly the gap Shadow already occupies.",
-  "doctrine": "Every loop-selection decision must consume live signal state, not static config \u2014 the portfolio allocator reads verifier outcomes, receipt density, and revenue attribution per lane before dispatching, so research signals change behavior in the same cycle they arrive rather than accumulating as notes.",
-  "proof_artifact": "Extend scripts/loop_dispatcher.py with a signal-weighted lane scorer: read state/research/queue.json pattern_ids (portfolio_operator_runtime, recursive_execution_quality), map each to a lane weight adjustment, and emit a per-dispatch receipt line to state/action_log.jsonl showing which signal moved which lane \u2014 making the allocator itself a governable, auditable artifact.",
-  "proof_next_action": "Edit scripts/loop_dispatcher.py to add a score_lanes() function that reads state/research/queue.json top-2 pattern_ids and applies lane weights (meta +2 for portfolio_operator_runtime, shadow-loop-model +2 for recursive_execution_quality), write the dispatch receipt to state/action_log.jsonl, add a test in tests/, run pytest, commit and push with rev-parse hash receipt to #shadow-log.",
-  "public_angle": "Two new arXiv papers this week propose agent permission playgrounds and provenance guardrails \u2014 I've been running both in production for months: every action my runtime takes emits a receipt Will can audit in one glance. The research is catching up to what operating an autonomous agent actually requires: not better prompts, verifiable execution.",
-  "buyer_offer": "Position the harness's provenance/receipt layer to SMB tenant prospects as 'your agent shows its work or it doesn't run' \u2014 a $50/mo tenant tier where every autonomous action carries a verifiable receipt chain, directly answering the misalignment-guardrail demand the arXiv provenance paper documents but doesn't productize.",
+  "cycle_ts": "2026-07-05T08:37:56.791177+00:00",
+  "thesis": "The winning AI operator will not be the one with the best summaries, but the one whose loops produce receipts, detect weak execution, and re-route themselves before the human notices drift.",
+  "doctrine": "Every autonomous loop must leave an execution receipt: input signal, chosen lane, action taken, verifier used, retry condition, and revenue relevance.",
+  "proof_artifact": "Ship a `loop_quality_receipt` spec plus a small verifier that rejects research/revenue outputs lacking an executable next action, evidence source, and measurable outcome.",
+  "proof_next_action": "Add `loop_quality_receipt` validation to the Shadow daily operating loop, likely in the script that writes `research_signal_candidates` or portfolio allocator output, and make today\u2019s frontier loop fail closed when `next_action` is not file/script/channel specific.",
+  "public_angle": "Most AI automation fails because it produces plausible motion without operational receipts. The next frontier is not smarter summaries; it is agents that can prove what they did, why they routed work that way, and when they should retry.",
+  "buyer_offer": "Revenue angle: sell a lightweight 'AI operator audit' for founders using coding agents, showing where their agent workflows lack receipts, retry gates, and delegation rules that would make them governable.",
   "source_titles": [
-    "Understand to participate",
-    "RusFinChain: A Russian Benchmark for Verifiable Chain-of-Thought Reasoning in Finance with Fuzzy-Aligned Evaluation",
-    "Janus: a Playground for User-Involved Agentic Permission Management",
-    "Safeguarding LLM Agents from Misalignment through Provenance Analysis",
-    "Joint Learning of Experiential Rules and Policies for Large Language Model Agents"
+    "Welcome to July 3, 2026",
+    "redevops-io/sidekick \u2014 Local coding-agent orchestrator \u2014 DAG of auto-approved, git-worktree-isolated sub-sessions across LL",
+    "June 2026 newsletter",
+    "Open Source AI Gap Map",
+    "Quoting Josh W. Comeau"
   ],
   "packets": [
     {
-      "id": "f40c0f4b3e97",
+      "id": "c12d5cb405ca",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "675cc99621bd",
+      "id": "f4d746699b08",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "7ebcf556c26e",
+      "id": "284dc7f2e03e",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "ed37516c29b2",
+      "id": "10939617026c",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Edit scripts/loop_dispatcher.py to add a score_lanes() function that reads state/research/queue.json top-2 pattern_ids and applies lane weights (meta +2 for portfolio_operator_runtime, shadow-loop-model +2 for recursive_execution_quality), write the dispatch receipt to state/action_log.jsonl, add a test in tests/, run pytest, commit and push with rev-parse hash receipt to #shadow-log.",
-      "packet_id": "f40c0f4b3e97"
+      "next_action": "Add `loop_quality_receipt` validation to the Shadow daily operating loop, likely in the script that writes `research_signal_candidates` or portfolio allocator output, and make today\u2019s frontier loop fail closed when `next_action` is not file/script/channel specific.",
+      "packet_id": "c12d5cb405ca"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_675cc99621bd_1783152806",
-      "packet_id": "675cc99621bd"
+      "draft_id": "frontier_f4d746699b08_1783240687",
+      "packet_id": "f4d746699b08"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "5c48153e6b72",
-      "packet_id": "7ebcf556c26e"
+      "experiment_id": "13e212fe0284",
+      "packet_id": "284dc7f2e03e"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "ed37516c29b2"
+      "packet_id": "10939617026c"
     }
   ],
   "receipts": {

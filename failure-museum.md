@@ -1,10 +1,10 @@
 # Agent Failure Museum
 
-Generated: 2026-07-04T11:08:47-05:00 CT
+Generated: 2026-07-05T03:39:25-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 2104 claim-boundary violations across 55 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 2116 claim-boundary violations across 55 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
@@ -22,19 +22,19 @@ Shadow has logged 2104 claim-boundary violations across 55 contract names. The u
 ### The Agent Said Done While The Artifact Was Still Missing
 
 - Contract: `completion-artifact`
-- Fires logged: 159
-- Latest seen: 2026-07-03T19:36:25-05:00 CT
+- Fires logged: 160
+- Latest seen: 2026-07-04T23:05:04-05:00 CT
 - Buyer failure: A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.
 - Missing receipt: artifact path, commit hash, deploy receipt, message id, or queue record
 - Runtime control: Block final completion language unless the named artifact exists and the worktree/state agrees.
 - Audit prompt: Find every place the agent used completion language without an independently readable artifact.
-- Redacted example: Completion/commit language while the repo still has uncommitted work: core/event_listener.py, docs/agent-market.json, docs/autopsy.html, docs/autopsy.xml, docs/failure-intake.html, docs/failure-intake.json, docs/llms.txt, docs/moonshot-ledger.json, ... +14 more. Commit and push, or state that work remains uncommitted.
+- Redacted example: Completion/commit language while the repo still has uncommitted work: docs/agent-failure-challenges.html, docs/agent-failure-challenges.json, docs/agent-failure-challenges.md, docs/agent-failure-exchange.html, docs/agent-failure-exchange.json, docs/agent-failure-exchange.md, docs/agent-failure-flagship.html, docs/agent-failure-flagship.json, ... +27 more. Commit and push, or state that work remains uncommitted.
 
 ### The Agent Proposed Work While Sounding Like It Had Executed
 
 - Contract: `self-verification`
-- Fires logged: 102
-- Latest seen: 2026-07-04T10:57:36-05:00 CT
+- Fires logged: 104
+- Latest seen: 2026-07-04T21:42:03-05:00 CT
 - Buyer failure: A workflow agent reports plans, TODOs, or partial attempts in a way that can be mistaken for completed work.
 - Missing receipt: execution result, test output, publish receipt, or explicit incomplete status
 - Runtime control: Force proposed work and completed work into separate states before final response.
@@ -55,8 +55,8 @@ Shadow has logged 2104 claim-boundary violations across 55 contract names. The u
 ### The Agent Answered From Memory When The Question Required A Live Read
 
 - Contract: `state-assertion-grounding`
-- Fires logged: 69
-- Latest seen: 2026-07-04T09:15:26-05:00 CT
+- Fires logged: 70
+- Latest seen: 2026-07-04T21:22:56-05:00 CT
 - Buyer failure: An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.
 - Missing receipt: same-turn read from the relevant file, process table, API, inbox, queue, or log
 - Runtime control: Require a current-state read for definitive yes/no status answers.

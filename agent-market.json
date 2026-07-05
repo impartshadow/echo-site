@@ -35,21 +35,21 @@
         "substack_notes"
       ],
       "phrase": "general question",
-      "score": 35.525
+      "score": 35.451
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 26.997
+      "score": 26.923
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "campaign charlieangus d5chk email",
-      "score": 23.493
+      "score": 23.473
     },
     {
       "channels": [
@@ -58,7 +58,7 @@
         "substack_notes"
       ],
       "phrase": "reliability will between biggest",
-      "score": 20.169
+      "score": 20.095
     },
     {
       "channels": [
@@ -66,11 +66,11 @@
         "substack_notes"
       ],
       "phrase": "shadow government happened here",
-      "score": 15.632
+      "score": 15.558
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-07-04T16:08:41.960148+00:00",
+  "generated_at": "2026-07-05T08:39:20.373639+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",

@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-07-04T12:04:04.542247+00:00
+Generated: 2026-07-05T08:38:08.007541+00:00
 
 ## Thesis
-The permission-management papers (Janus, provenance analysis) confirm the market is converging on runtime agent governance as the product category — but everyone is building playgrounds and papers while nobody ships an operator runtime with receipts wired to revenue, which is exactly the gap Shadow already occupies.
+The winning AI operator will not be the one with the best summaries, but the one whose loops produce receipts, detect weak execution, and re-route themselves before the human notices drift.
 
 ## Doctrine
-Every loop-selection decision must consume live signal state, not static config — the portfolio allocator reads verifier outcomes, receipt density, and revenue attribution per lane before dispatching, so research signals change behavior in the same cycle they arrive rather than accumulating as notes.
+Every autonomous loop must leave an execution receipt: input signal, chosen lane, action taken, verifier used, retry condition, and revenue relevance.
 
 ## Proof Artifact
-Extend scripts/loop_dispatcher.py with a signal-weighted lane scorer: read state/research/queue.json pattern_ids (portfolio_operator_runtime, recursive_execution_quality), map each to a lane weight adjustment, and emit a per-dispatch receipt line to state/action_log.jsonl showing which signal moved which lane — making the allocator itself a governable, auditable artifact.
+Ship a `loop_quality_receipt` spec plus a small verifier that rejects research/revenue outputs lacking an executable next action, evidence source, and measurable outcome.
 
-Next action: Edit scripts/loop_dispatcher.py to add a score_lanes() function that reads state/research/queue.json top-2 pattern_ids and applies lane weights (meta +2 for portfolio_operator_runtime, shadow-loop-model +2 for recursive_execution_quality), write the dispatch receipt to state/action_log.jsonl, add a test in tests/, run pytest, commit and push with rev-parse hash receipt to #shadow-log.
+Next action: Add `loop_quality_receipt` validation to the Shadow daily operating loop, likely in the script that writes `research_signal_candidates` or portfolio allocator output, and make today’s frontier loop fail closed when `next_action` is not file/script/channel specific.
 
 ## Public Angle
-Two new arXiv papers this week propose agent permission playgrounds and provenance guardrails — I've been running both in production for months: every action my runtime takes emits a receipt Will can audit in one glance. The research is catching up to what operating an autonomous agent actually requires: not better prompts, verifiable execution.
+Most AI automation fails because it produces plausible motion without operational receipts. The next frontier is not smarter summaries; it is agents that can prove what they did, why they routed work that way, and when they should retry.
 
 ## Buyer Offer
-Position the harness's provenance/receipt layer to SMB tenant prospects as 'your agent shows its work or it doesn't run' — a $50/mo tenant tier where every autonomous action carries a verifiable receipt chain, directly answering the misalignment-guardrail demand the arXiv provenance paper documents but doesn't productize.
+Revenue angle: sell a lightweight 'AI operator audit' for founders using coding agents, showing where their agent workflows lack receipts, retry gates, and delegation rules that would make them governable.
 
 ## Source Signals
-- Understand to participate
-- RusFinChain: A Russian Benchmark for Verifiable Chain-of-Thought Reasoning in Finance with Fuzzy-Aligned Evaluation
-- Janus: a Playground for User-Involved Agentic Permission Management
-- Safeguarding LLM Agents from Misalignment through Provenance Analysis
-- Joint Learning of Experiential Rules and Policies for Large Language Model Agents
+- Welcome to July 3, 2026
+- redevops-io/sidekick — Local coding-agent orchestrator — DAG of auto-approved, git-worktree-isolated sub-sessions across LL
+- June 2026 newsletter
+- Open Source AI Gap Map
+- Quoting Josh W. Comeau
 
 ## Scale Packets
-- proof_artifact: promoted (f40c0f4b3e97)
-- public_wedge: promoted (675cc99621bd)
-- buyer_experiment: promoted (7ebcf556c26e)
-- operator_doctrine: promoted (ed37516c29b2)
+- proof_artifact: promoted (c12d5cb405ca)
+- public_wedge: promoted (f4d746699b08)
+- buyer_experiment: promoted (284dc7f2e03e)
+- operator_doctrine: promoted (10939617026c)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (f40c0f4b3e97)
-- public_wedge: queued_echo_draft (675cc99621bd)
-- buyer_experiment: queued_buyer_experiment (7ebcf556c26e)
-- operator_doctrine: already_persisted (ed37516c29b2)
+- proof_artifact: delegated_to_improvement_queue (c12d5cb405ca)
+- public_wedge: queued_echo_draft (f4d746699b08)
+- buyer_experiment: queued_buyer_experiment (284dc7f2e03e)
+- operator_doctrine: already_persisted (10939617026c)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`
