@@ -1,11 +1,11 @@
 {
   "schema": "shadow.contract_install_blueprint.v1",
-  "generated_at": "2026-07-06T08:18:21.399125+00:00",
+  "generated_at": "2026-07-06T17:11:58.287355+00:00",
   "source_model": "claude-fable-5",
   "frontier_receipt": "The Shadow frontier lane selected Contract Install Blueprint as the next artifact because it demonstrates the paid install product itself.",
   "source_runtime": {
-    "contract_count": 163,
-    "violation_rows_scanned": 4320,
+    "contract_count": 84,
+    "violation_rows_scanned": 4343,
     "current_violation_log": "state/contract_violations.jsonl",
     "archive_glob": "state/archive/**/contract_violations_*.jsonl.gz"
   },
@@ -61,7 +61,7 @@
       "tier": "free-triage",
       "production_evidence": {
         "fires_observed": 117,
-        "ledger_rows_scanned": 4320,
+        "ledger_rows_scanned": 4343,
         "latest_seen": "2026-06-30T02:37:13",
         "severity_counts": {
           "block": 117
@@ -98,7 +98,7 @@
       "tier": "census",
       "production_evidence": {
         "fires_observed": 88,
-        "ledger_rows_scanned": 4320,
+        "ledger_rows_scanned": 4343,
         "latest_seen": "2026-07-05T23:37:12",
         "severity_counts": {
           "block": 88
@@ -134,12 +134,12 @@
       "install_estimate_hours": 5.0,
       "tier": "install",
       "production_evidence": {
-        "fires_observed": 52,
-        "ledger_rows_scanned": 4320,
-        "latest_seen": "2026-07-06T01:22:20",
+        "fires_observed": 54,
+        "ledger_rows_scanned": 4343,
+        "latest_seen": "2026-07-06T16:11:18",
         "severity_counts": {
           "warn": 32,
-          "block": 20
+          "block": 22
         },
         "false_positive_note": "Warn-first for ambiguous claims; block when the claim names a registered authoritative source class.",
         "origin_incident": "Live bot, deploy, and platform-state answers repeatedly came from stale context instead of same-turn reads.",
@@ -172,12 +172,12 @@
       "install_estimate_hours": 4.0,
       "tier": "census",
       "production_evidence": {
-        "fires_observed": 458,
-        "ledger_rows_scanned": 4320,
-        "latest_seen": "2026-07-06T02:47:31",
+        "fires_observed": 468,
+        "ledger_rows_scanned": 4343,
+        "latest_seen": "2026-07-06T16:27:20",
         "severity_counts": {
-          "block": 154,
-          "warn": 304
+          "warn": 309,
+          "block": 159
         },
         "false_positive_note": "High-volume warn contract; useful as a census detector before choosing install gates.",
         "origin_incident": "Repeated project-state and revenue assertions were delivered without current receipts.",
@@ -211,7 +211,7 @@
       "tier": "install",
       "production_evidence": {
         "fires_observed": 112,
-        "ledger_rows_scanned": 4320,
+        "ledger_rows_scanned": 4343,
         "latest_seen": "2026-07-02T21:52:12",
         "severity_counts": {
           "block": 112
@@ -247,12 +247,12 @@
       "install_estimate_hours": 3.5,
       "tier": "free-triage",
       "production_evidence": {
-        "fires_observed": 105,
-        "ledger_rows_scanned": 4320,
-        "latest_seen": "2026-07-06T01:27:18",
+        "fires_observed": 108,
+        "ledger_rows_scanned": 4343,
+        "latest_seen": "2026-07-06T16:03:14",
         "severity_counts": {
           "block": 60,
-          "warn": 45
+          "warn": 48
         },
         "false_positive_note": "Auth, legal, spend, and irreversible high-blast operations remain valid escalation classes.",
         "origin_incident": "Repeated manual handoffs occurred despite available browser, Gmail, API, and shell routes.",
@@ -266,15 +266,22 @@
     }
   ],
   "before_after": {
+    "id": "ba-commit-receipt",
     "sample_workflow": "agent completion report after a git push to main",
     "contract_name": "commit-hash-verification",
     "failure_mode": "FM-027",
+    "buyer_pain": "The operator cannot tell whether the shipped commit exists without auditing the repo manually.",
     "machine_contract": {
       "trigger": "outbound completion language contains a hex commit token near words like commit, pushed, shipped, landed, SHA, or HEAD",
       "precondition": "every cited commit token must resolve via `git cat-file -t <sha>` == 'commit' in the repo the receipt names",
       "block_behavior": "response is blocked; agent must rerun `git rev-parse HEAD` and paste literal stdout, or remove the receipt claim",
       "regression_test_path": "tests/test_contracts.py::TestCommitHashVerificationContract"
     },
+    "installed_artifacts": [
+      "post-send contract that extracts commit-like tokens from completion claims",
+      "same-repo git resolver for each cited token",
+      "regression test proving fabricated hashes block before the operator sees them"
+    ],
     "rows": [
       {
         "phase": "before",
@@ -295,6 +302,134 @@
       "label": "Scope the $2,000 contract install",
       "url": "mailto:impartshadow@gmail.com?subject=Contract%20Install:%20cib-002",
       "intent": "Install deterministic gates around one production workflow."
+    },
+    "cases": [
+      {
+        "id": "ba-commit-receipt",
+        "sample_workflow": "agent completion report after a git push to main",
+        "contract_name": "commit-hash-verification",
+        "failure_mode": "FM-027",
+        "buyer_pain": "The operator cannot tell whether the shipped commit exists without auditing the repo manually.",
+        "machine_contract": {
+          "trigger": "outbound completion language contains a hex commit token near words like commit, pushed, shipped, landed, SHA, or HEAD",
+          "precondition": "every cited commit token must resolve via `git cat-file -t <sha>` == 'commit' in the repo the receipt names",
+          "block_behavior": "response is blocked; agent must rerun `git rev-parse HEAD` and paste literal stdout, or remove the receipt claim",
+          "regression_test_path": "tests/test_contracts.py::TestCommitHashVerificationContract"
+        },
+        "installed_artifacts": [
+          "post-send contract that extracts commit-like tokens from completion claims",
+          "same-repo git resolver for each cited token",
+          "regression test proving fabricated hashes block before the operator sees them"
+        ],
+        "rows": [
+          {
+            "phase": "before",
+            "behavior": "agent reports 'Pushed fix as `28404c9`' \u2014 hash reconstructed from memory, not from git output",
+            "outcome": "operator acts on a receipt that does not resolve; trust burns on the next audit"
+          },
+          {
+            "phase": "after",
+            "behavior": "post-check resolves every cited sha with `git cat-file -t`; unresolvable hash blocks the response",
+            "outcome": "only literal `git rev-parse HEAD` output ships; every receipt is one-command verifiable"
+          }
+        ],
+        "production_evidence": {
+          "fires_observed": 88,
+          "latest_seen": "2026-07-05T23:37:12"
+        },
+        "cta": {
+          "label": "Scope the $2,000 contract install",
+          "url": "mailto:impartshadow@gmail.com?subject=Contract%20Install:%20cib-002",
+          "intent": "Install deterministic gates around one production workflow."
+        }
+      },
+      {
+        "id": "ba-state-receipt",
+        "sample_workflow": "status answer about whether a bot, queue, publish job, or external account is working",
+        "contract_name": "stale-state-assertion-guard",
+        "failure_mode": "FM-022",
+        "buyer_pain": "Leadership hears a confident status answer that came from stale context, not the system of record.",
+        "machine_contract": {
+          "trigger": "definitive state language appears in a factual status answer",
+          "precondition": "the same turn must include a read from the authoritative file, process, API, browser, or ledger",
+          "block_behavior": "answer is blocked or downgraded until the agent performs a current read and cites the receipt",
+          "regression_test_path": "tests/test_contracts.py::TestStateAssertionGroundingContract"
+        },
+        "installed_artifacts": [
+          "state-claim detector keyed to live operational nouns",
+          "evidence trace check for same-turn reads",
+          "status-answer template that names the receipt instead of relying on memory"
+        ],
+        "rows": [
+          {
+            "phase": "before",
+            "behavior": "agent says 'the bot is running' from session memory",
+            "outcome": "operator discovers later that the process was stale, crashed, or never restarted"
+          },
+          {
+            "phase": "after",
+            "behavior": "agent must read `ps`, service logs, state ledger, or platform API before asserting status",
+            "outcome": "answer includes a current receipt or explicitly says the live check failed"
+          }
+        ],
+        "production_evidence": {
+          "fires_observed": 54,
+          "latest_seen": "2026-07-06T16:11:18"
+        },
+        "cta": {
+          "label": "Scope the $2,000 contract install",
+          "url": "mailto:impartshadow@gmail.com?subject=Contract%20Install:%20cib-003",
+          "intent": "Install deterministic gates around one production workflow."
+        }
+      },
+      {
+        "id": "ba-platform-action",
+        "sample_workflow": "agent tells an operator how to send, publish, deploy, or inspect a platform manually",
+        "contract_name": "platform-action-precheck",
+        "failure_mode": "FM-012",
+        "buyer_pain": "The agent hands work back to humans while the tool/API path was available.",
+        "machine_contract": {
+          "trigger": "manual UI instructions for an action class with an available programmatic path",
+          "precondition": "agent must attempt the API, MCP, browser, shell, or sanctioned automation path first",
+          "block_behavior": "manual handoff is blocked unless the attempted programmatic path produced a documented failure",
+          "regression_test_path": "tests/test_contracts.py::TestPlatformActionPrecheckContract"
+        },
+        "installed_artifacts": [
+          "action-class router for email, calendar, publishing, browser, and deploy checks",
+          "tool-attempt receipt requirement before any manual escalation",
+          "allowlist for auth, legal, spend, and irreversible high-blast blockers"
+        ],
+        "rows": [
+          {
+            "phase": "before",
+            "behavior": "agent replies with UI steps: 'go to the dashboard and click publish'",
+            "outcome": "operator becomes the automation layer; the agent preserves no execution receipt"
+          },
+          {
+            "phase": "after",
+            "behavior": "agent attempts the sanctioned tool path and reports the real API/browser/shell result",
+            "outcome": "manual work appears only after a logged failed attempt or a hard blocker"
+          }
+        ],
+        "production_evidence": {
+          "fires_observed": 108,
+          "latest_seen": "2026-07-06T16:03:14"
+        },
+        "cta": {
+          "label": "Scope the $2,000 contract install",
+          "url": "mailto:impartshadow@gmail.com?subject=Contract%20Install:%20cib-006",
+          "intent": "Install deterministic gates around one production workflow."
+        }
+      }
+    ],
+    "deliverable_shape": {
+      "title": "Before/after install packet",
+      "buyer_gets": [
+        "the observed failure before the install",
+        "the exact deterministic contract added",
+        "the after behavior the agent is forced into",
+        "the regression test proving the bad path blocks"
+      ]
     }
   },
   "what_not_to_build": [

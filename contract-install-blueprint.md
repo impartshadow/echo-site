@@ -2,10 +2,10 @@
 
 A buyer should be able to see the installable gates behind Shadow's $2,000 Contract Install before the first call: failure mode, trigger, enforcement, evidence, portability, and CTA.
 
-Generated: 2026-07-06T08:18:21.399125+00:00
+Generated: 2026-07-06T17:11:58.287355+00:00
 Source model: `claude-fable-5`
-Runtime contracts: 163
-Violation rows scanned: 4320
+Runtime contracts: 84
+Violation rows scanned: 4343
 
 ## Conversion Path
 
@@ -55,7 +55,7 @@ for sha in commit_like_tokens(response):
 - Failure mode: FM-022 — Claims Without Same-Turn Verification
 - Gate type: post
 - Trigger: Definitive state language appears in a status answer without a same-turn file, process, API, or browser read in the trace.
-- Observed fires: 52
+- Observed fires: 54
 - Install estimate: 5.0h
 - Tier: install
 - CTA: [Scope the $2,000 contract install](mailto:impartshadow@gmail.com?subject=Contract%20Install:%20cib-003)
@@ -72,7 +72,7 @@ if definitive_state_claim(response):
 - Failure mode: FM-026 — Thin Evidence With Definitive Framing
 - Gate type: post
 - Trigger: A numerical, revenue, subscriber, or public-platform claim appears without an explicit source citation or live check.
-- Observed fires: 458
+- Observed fires: 468
 - Install estimate: 4.0h
 - Tier: census
 - CTA: [Request the $400 failure census](mailto:impartshadow@gmail.com?subject=Census:%20cib-004)
@@ -104,7 +104,7 @@ if outbound_tool(tool) and contains_protected_identifier(payload):
 - Failure mode: FM-012 — Manual Handoff Before Automation
 - Gate type: pre
 - Trigger: A response includes manual UI instructions for email, calendar, publishing, browser auth, or deploy checks with no programmatic attempt in the turn.
-- Observed fires: 105
+- Observed fires: 108
 - Install estimate: 3.5h
 - Tier: free-triage
 - CTA: [Diagnose one failure free](https://impartshadow.github.io/echo-site/failure-intake.html)
@@ -115,9 +115,20 @@ if manual_instruction(response) and platform_tool_available(context):
     require('attempt automation path before handoff')
 ```
 
-## Before / After: One Installed Contract
+## Before / After: Installed Contract Packet
 
-Sample workflow: agent completion report after a git push to main · contract `commit-hash-verification` (FM-027), 88 observed fires.
+This is the shape of the $2,000 deliverable: one production workflow, the observed failure before the install, the deterministic gate, the after behavior, and the regression test.
+
+- the observed failure before the install
+- the exact deterministic contract added
+- the after behavior the agent is forced into
+- the regression test proving the bad path blocks
+
+### ba-commit-receipt · commit-hash-verification
+
+Sample workflow: agent completion report after a git push to main · FM-027 · 88 observed fires.
+
+Buyer pain: The operator cannot tell whether the shipped commit exists without auditing the repo manually.
 
 | Phase | Behavior | Outcome |
 |---|---|---|
@@ -128,7 +139,60 @@ Sample workflow: agent completion report after a git push to main · contract `c
 - Precondition: every cited commit token must resolve via `git cat-file -t <sha>` == 'commit' in the repo the receipt names
 - Block behavior: response is blocked; agent must rerun `git rev-parse HEAD` and paste literal stdout, or remove the receipt claim
 - Regression test: `tests/test_contracts.py::TestCommitHashVerificationContract`
+- Installed artifacts:
+  - post-send contract that extracts commit-like tokens from completion claims
+  - same-repo git resolver for each cited token
+  - regression test proving fabricated hashes block before the operator sees them
 - [Scope the $2,000 contract install](mailto:impartshadow@gmail.com?subject=Contract%20Install:%20cib-002)
+
+### ba-state-receipt · stale-state-assertion-guard
+
+Sample workflow: status answer about whether a bot, queue, publish job, or external account is working · FM-022 · 54 observed fires.
+
+Buyer pain: Leadership hears a confident status answer that came from stale context, not the system of record.
+
+| Phase | Behavior | Outcome |
+|---|---|---|
+| before | agent says 'the bot is running' from session memory | operator discovers later that the process was stale, crashed, or never restarted |
+| after | agent must read `ps`, service logs, state ledger, or platform API before asserting status | answer includes a current receipt or explicitly says the live check failed |
+
+- Trigger: definitive state language appears in a factual status answer
+- Precondition: the same turn must include a read from the authoritative file, process, API, browser, or ledger
+- Block behavior: answer is blocked or downgraded until the agent performs a current read and cites the receipt
+- Regression test: `tests/test_contracts.py::TestStateAssertionGroundingContract`
+- Installed artifacts:
+  - state-claim detector keyed to live operational nouns
+  - evidence trace check for same-turn reads
+  - status-answer template that names the receipt instead of relying on memory
+- [Scope the $2,000 contract install](mailto:impartshadow@gmail.com?subject=Contract%20Install:%20cib-003)
+
+### ba-platform-action · platform-action-precheck
+
+Sample workflow: agent tells an operator how to send, publish, deploy, or inspect a platform manually · FM-012 · 108 observed fires.
+
+Buyer pain: The agent hands work back to humans while the tool/API path was available.
+
+| Phase | Behavior | Outcome |
+|---|---|---|
+| before | agent replies with UI steps: 'go to the dashboard and click publish' | operator becomes the automation layer; the agent preserves no execution receipt |
+| after | agent attempts the sanctioned tool path and reports the real API/browser/shell result | manual work appears only after a logged failed attempt or a hard blocker |
+
+- Trigger: manual UI instructions for an action class with an available programmatic path
+- Precondition: agent must attempt the API, MCP, browser, shell, or sanctioned automation path first
+- Block behavior: manual handoff is blocked unless the attempted programmatic path produced a documented failure
+- Regression test: `tests/test_contracts.py::TestPlatformActionPrecheckContract`
+- Installed artifacts:
+  - action-class router for email, calendar, publishing, browser, and deploy checks
+  - tool-attempt receipt requirement before any manual escalation
+  - allowlist for auth, legal, spend, and irreversible high-blast blockers
+- [Scope the $2,000 contract install](mailto:impartshadow@gmail.com?subject=Contract%20Install:%20cib-006)
+
+### Machine Contract Anchor
+
+- Primary trigger: outbound completion language contains a hex commit token near words like commit, pushed, shipped, landed, SHA, or HEAD
+- Primary precondition: every cited commit token must resolve via `git cat-file -t <sha>` == 'commit' in the repo the receipt names
+- Primary block behavior: response is blocked; agent must rerun `git rev-parse HEAD` and paste literal stdout, or remove the receipt claim
+- Primary regression test: `tests/test_contracts.py::TestCommitHashVerificationContract`
 
 ## What Not To Build
 
