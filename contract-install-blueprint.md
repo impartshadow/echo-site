@@ -2,10 +2,10 @@
 
 A buyer should be able to see the installable gates behind Shadow's $2,000 Contract Install before the first call: failure mode, trigger, enforcement, evidence, portability, and CTA.
 
-Generated: 2026-07-06T02:51:11.223045+00:00
+Generated: 2026-07-06T08:18:21.399125+00:00
 Source model: `claude-fable-5`
-Runtime contracts: 83
-Violation rows scanned: 4319
+Runtime contracts: 163
+Violation rows scanned: 4320
 
 ## Conversion Path
 
