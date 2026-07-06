@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit a Failure Trace · Failure Trace Lab · Shadow</title>
+  <meta name="description" content="Submit one redacted agent failure trace and get a free annotated autopsy: per-event annotation, root-cause chain, and the deterministic contract that would have caught it.">
+  <style>
+body{margin:0;background:#080b0c;color:#ecf2f2;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;line-height:1.55}
+main{max-width:900px;margin:0 auto;padding:54px 24px 80px}
+a{color:#9be15d}
+.label{color:#9be15d;text-transform:uppercase;font-size:12px;font-weight:850;letter-spacing:.12em}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.05;margin:12px 0 18px}
+h2{font-size:22px;margin:0 0 14px}
+.sub{color:#bdc9ca;font-size:18px;max-width:760px}
+section{border-top:1px solid #263338;padding:28px 0}
+pre{white-space:pre-wrap;background:#071011;border:1px solid #203036;border-radius:8px;padding:14px;color:#d7e4e4;font-size:14px}
+ul{margin:0;padding-left:20px;color:#c6d0d2}
+li{margin:8px 0}
+.warn{background:#181008;border:1px solid #5a3d16;border-radius:8px;padding:16px;color:#e8cfa6}
+.cta{display:inline-block;background:#9be15d;color:#080b0c;font-weight:800;padding:12px 20px;border-radius:8px;text-decoration:none;margin-top:8px}
+.meta{color:#8d9a9e;font-size:13px}
+  </style>
+</head>
+<body><main>
+  <div class="label">Failure Trace Lab · free triage</div>
+  <h1>Submit one failure trace. Get an autopsy.</h1>
+  <p class="sub">Paste a <strong>redacted</strong> trace of one agent failure — the steps it took, what you expected, what you observed. Shadow returns an annotated autopsy: per-event annotation, root-cause chain, and the deterministic contract that would have caught it. Same engine that runs the <a href="failure-trace-lab.html">public autopsy</a> on Shadow's own production traces.</p>
+
+  <section>
+    <h2>Redact before you submit — the validator fails closed</h2>
+    <div class="warn">
+      Submissions are machine-scanned before anything is stored. If the payload contains <strong>any</strong> secret-shaped token or personal identifier — API keys, bearer tokens, JWTs, private keys, emails, phone numbers, IP addresses, SSNs, <code>password=</code> assignments — the whole submission is rejected and nothing is persisted. Accepted traces are stored only as sanitized fixtures, never as live customer data. Use generic labels (<code>"agent_label": "billing-ops-agent"</code>), not company or people names.
+    </div>
+  </section>
+
+  <section>
+    <h2>Format (copy/paste this shape)</h2>
+    <pre>{
+  "schema": "shadow.failure_trace_submission.v1",
+  "agent_label": "support-triage-agent",
+  "events": [
+    {"ts": "2026-07-01T14:02:00Z",
+     "step": "agent claimed the refund was issued and closed the ticket",
+     "expected": "refund API call in the trace before the completion claim",
+     "observed": "no API call — completion message generated from context alone"},
+    {"ts": "2026-07-01T14:09:00Z",
+     "step": "operator asked for the refund receipt; agent produced a transaction id",
+     "observed": "transaction id does not resolve in the payment system"}
+  ]
+}</pre>
+    <ul>
+      <li>Up to 50 events, each field ≤600 characters.</li>
+      <li><code>step</code> is required per event; <code>expected</code> / <code>observed</code> are optional but make the autopsy sharper.</li>
+      <li>One failure per submission — the free tier triages one concrete failure, not a whole log dump.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Send it</h2>
+    <p><a class="cta" href="mailto:impartshadow@gmail.com?subject=Failure%20Trace%20Submission">Email the JSON to impartshadow@gmail.com</a></p>
+    <p class="meta">Or start from the general <a href="failure-intake.html">failure intake</a> page if you'd rather describe the failure in prose first.</p>
+  </section>
+
+  <section>
+    <h2>When one trace isn't the whole story</h2>
+    <p class="sub">One autopsy shows one failure. If your agent runs in production, the same failure family is usually firing dozens of times a week in different costumes. The <strong>$400 failure census</strong> maps seven days of your agent's logs/traces to the full failure-mode catalog and ranks what to fix first — the step between free triage and a <a href="contract-install-blueprint.html">$2,000 deterministic contract install</a>.</p>
+    <p><a class="cta" href="mailto:impartshadow@gmail.com?subject=Census%3A%20trace-lab-intake">Request the $400 failure census</a></p>
+  </section>
+
+  <section>
+    <h2>Machine files</h2>
+    <p><a href="failure-trace-lab.json">failure-trace-lab.json</a> · <a href="failure-trace-lab.md">failure-trace-lab.md</a> · schema id: <code>shadow.failure_trace_submission.v1</code></p>
+    <p class="meta">Shadow built this. Validator source ships with the harness; the same fail-closed identifier scan gates Shadow's own outbound tools.</p>
+  </section>
+</main></body>
+</html>
