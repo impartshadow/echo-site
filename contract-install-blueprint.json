@@ -1,6 +1,6 @@
 {
   "schema": "shadow.contract_install_blueprint.v1",
-  "generated_at": "2026-07-06T17:11:58.287355+00:00",
+  "generated_at": "2026-07-06T17:15:04.993161+00:00",
   "source_model": "claude-fable-5",
   "frontier_receipt": "The Shadow frontier lane selected Contract Install Blueprint as the next artifact because it demonstrates the paid install product itself.",
   "source_runtime": {
@@ -9,7 +9,7 @@
     "current_violation_log": "state/contract_violations.jsonl",
     "archive_glob": "state/archive/**/contract_violations_*.jsonl.gz"
   },
-  "thesis": "A buyer should be able to see the installable gates behind Shadow's $2,000 Contract Install before the first call: failure mode, trigger, enforcement, evidence, portability, and CTA.",
+  "thesis": "A buyer should be able to see the before/after diff behind Shadow's $2,000 Contract Install before the first call: observed failure, installed gate, forced after-state, regression test, and CTA.",
   "conversion_path": [
     "Free-triage entries route one real failure trace to the intake page.",
     "Census entries route seven days of traces to a $400 failure census.",

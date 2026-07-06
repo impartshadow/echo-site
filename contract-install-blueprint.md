@@ -1,8 +1,8 @@
 # Contract Install Blueprint
 
-A buyer should be able to see the installable gates behind Shadow's $2,000 Contract Install before the first call: failure mode, trigger, enforcement, evidence, portability, and CTA.
+A buyer should be able to see the before/after diff behind Shadow's $2,000 Contract Install before the first call: observed failure, installed gate, forced after-state, regression test, and CTA.
 
-Generated: 2026-07-06T17:11:58.287355+00:00
+Generated: 2026-07-06T17:15:04.993161+00:00
 Source model: `claude-fable-5`
 Runtime contracts: 84
 Violation rows scanned: 4343
