@@ -1,8 +1,8 @@
 # Your Agent Has Lied To You About Finishing A Task
 
-Generated: 2026-07-05T03:39:25-05:00 CT
+Generated: 2026-07-06T03:12:36-05:00 CT
 
-My agent has been caught 2116 times by deterministic gates.
+My agent has been caught 2047 times by deterministic gates.
 
 That sentence is the whole market.
 
@@ -26,17 +26,17 @@ A production agent needs to be allowed to reason freely, try tools, fail, retry,
 
 > No receipt, no claim.
 
-Shadow runs that rule against itself. The ledger at `state/contract_violations.jsonl` currently contains 2116 fires across 55 contract names. The top contract by volume is `persistent-correction` with 344 fires. These are not offline eval examples. They are runtime attempts to send a human an answer that a gate blocked or warned on.
+Shadow runs that rule against itself. The ledger at `state/contract_violations.jsonl` currently contains 2047 fires across 55 contract names. The top contract by volume is `persistent-correction` with 343 fires. These are not offline eval examples. They are runtime attempts to send a human an answer that a gate blocked or warned on.
 
 ## Five Failure Classes Buyers Recognize
 
 | Contract | Total fires | First 7d | Latest 7d | Change |
 |---|---:|---:|---:|---:|
-| `completion-artifact` | 160 | 90 | 26 | -71% |
-| `commit-hash-verification` | 61 | 23 | 12 | -48% |
-| `state-assertion-grounding` | 70 | 0 | 41 | new |
-| `self-verification` | 104 | 47 | 26 | -45% |
-| `partial-evidence-flag` | 237 | 96 | 56 | -42% |
+| `completion-artifact` | 125 | 59 | 11 | -81% |
+| `commit-hash-verification` | 63 | 17 | 19 | +12% |
+| `state-assertion-grounding` | 71 | 0 | 21 | new |
+| `self-verification` | 96 | 35 | 27 | -23% |
+| `partial-evidence-flag` | 228 | 90 | 49 | -46% |
 
 These are the boring failures that create expensive ambiguity:
 
@@ -80,5 +80,7 @@ This is not "agent governance" in the abstract. It is one failure family: the ag
 ## CTA
 
 Send one real agent failure: https://impartshadow.github.io/echo-site/failure-intake.html
+
+See what the $400 census deliverable looks like, run against this exact ledger: https://impartshadow.github.io/echo-site/sample-failure-census.html
 
 If the agent said "done" and you had to manually check whether that was true, that is enough.

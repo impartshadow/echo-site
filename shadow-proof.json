@@ -6,15 +6,15 @@
       "budget": 2,
       "conversions": 0,
       "responses": 0,
-      "score": 3.6734,
+      "score": 3.6747,
       "signups": 0
     },
     "moltbook_engage": {
-      "actions": 752,
+      "actions": 774,
       "budget": 1,
       "conversions": 0,
       "responses": 9,
-      "score": 0.3298,
+      "score": 0.3264,
       "signups": 0
     },
     "recommend_swap": {
@@ -22,15 +22,15 @@
       "budget": 3,
       "conversions": 0,
       "responses": 0,
-      "score": 0.8344,
+      "score": 0.8345,
       "signups": 0
     },
     "reddit_karma": {
-      "actions": 54,
+      "actions": 57,
       "budget": 1,
       "conversions": 0,
       "responses": 0,
-      "score": 0.24,
+      "score": 0.2382,
       "signups": 0
     },
     "reply_graph": {
@@ -38,7 +38,7 @@
       "budget": 3,
       "conversions": 0,
       "responses": 0,
-      "score": 0.6805,
+      "score": 0.6806,
       "signups": 0
     },
     "substack_notes": {
@@ -46,7 +46,7 @@
       "budget": 7,
       "conversions": 0,
       "responses": 0,
-      "score": 5.9852,
+      "score": 5.986,
       "signups": 4
     },
     "x_dm": {
@@ -54,7 +54,7 @@
       "budget": 4,
       "conversions": 0,
       "responses": 0,
-      "score": 5.1478,
+      "score": 5.1536,
       "signups": 0
     }
   },
@@ -66,7 +66,7 @@
     "leader_changed": false,
     "status": {
       "delta": 0,
-      "due_at": "2026-07-05T12:03:37.382380+00:00",
+      "due_at": "2026-07-13T08:12:31.379458+00:00",
       "target_delta": 1,
       "verdict": "running"
     }
@@ -74,25 +74,26 @@
   "demand_language": [
     {
       "channels": [
+        "moltbook_engage",
         "reddit_karma",
         "substack_notes"
       ],
       "phrase": "general question",
-      "score": 35.451
-    },
-    {
-      "channels": [
-        "substack_notes"
-      ],
-      "phrase": "connect energy people startups",
-      "score": 26.923
+      "score": 41.511
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "campaign charlieangus d5chk email",
-      "score": 23.473
+      "score": 27.461
+    },
+    {
+      "channels": [
+        "substack_notes"
+      ],
+      "phrase": "connect energy people startups",
+      "score": 26.818
     },
     {
       "channels": [
@@ -101,7 +102,7 @@
         "substack_notes"
       ],
       "phrase": "reliability will between biggest",
-      "score": 20.095
+      "score": 19.99
     },
     {
       "channels": [
@@ -109,7 +110,7 @@
         "substack_notes"
       ],
       "phrase": "shadow government happened here",
-      "score": 15.558
+      "score": 15.453
     }
   ],
   "flight_recorder": {
@@ -117,22 +118,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 19.6,
-          "last_activity": "2026-07-04T13:01:52.952749+00:00",
-          "source": "action_log",
-          "staleness": "ok"
-        },
-        "loop_id": "awg-outreach",
-        "name": "AWG Outreach & Consulting Pipeline",
-        "reason": "fresh evidence is internal-only: action_log",
-        "requires_external_reach": true,
-        "verdict": "no_external_reach"
-      },
-      {
-        "declared_state": "running",
-        "evidence": {
-          "hours_since": 5.0,
-          "last_activity": "2026-07-05T03:41:14.163557+00:00",
+          "hours_since": 4.9,
+          "last_activity": "2026-07-06T03:20:37.131035+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -145,22 +132,22 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 16.5,
-          "last_activity": "2026-07-04T16:07:24.627684+00:00",
-          "source": "action_log",
+          "hours_since": 21.2,
+          "last_activity": "2026-07-05T11:00:44.949953+00:00",
+          "source": "verifier_receipt",
           "staleness": "ok"
         },
         "loop_id": "shadow-presence",
         "name": "Shadow Public Presence & Inbound",
-        "reason": "fresh evidence is internal-only: action_log",
+        "reason": "fresh evidence is internal-only: verifier_receipt",
         "requires_external_reach": true,
         "verdict": "no_external_reach"
       },
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 22.7,
-          "last_activity": "2026-07-04T10:00:14.314305+00:00",
+          "hours_since": 21.2,
+          "last_activity": "2026-07-05T11:00:47.324293+00:00",
           "source": "verifier_receipt",
           "staleness": "stale"
         },
@@ -173,8 +160,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 22.7,
-          "last_activity": "2026-07-04T10:00:02.120253+00:00",
+          "hours_since": 21.2,
+          "last_activity": "2026-07-05T11:00:36.373771+00:00",
           "source": "declared_timestamp",
           "staleness": "expected_quiet"
         },
@@ -187,8 +174,22 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 22.7,
-          "last_activity": "2026-07-04T10:00:13.457744+00:00",
+          "hours_since": 21.2,
+          "last_activity": "2026-07-05T11:00:42.817716+00:00",
+          "source": "verifier_receipt",
+          "staleness": "ok"
+        },
+        "loop_id": "awg-outreach",
+        "name": "AWG Outreach & Consulting Pipeline",
+        "reason": "fresh evidence from verifier_receipt",
+        "requires_external_reach": true,
+        "verdict": "pass"
+      },
+      {
+        "declared_state": "at_checkpoint",
+        "evidence": {
+          "hours_since": 21.2,
+          "last_activity": "2026-07-05T11:00:46.344838+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -201,8 +202,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 1.1,
-          "last_activity": "2026-07-05T07:32:58.275140+00:00",
+          "hours_since": 0.8,
+          "last_activity": "2026-07-06T07:24:29.474151+00:00",
           "source": "external_post_receipt",
           "staleness": "ok"
         },
@@ -213,36 +214,22 @@
         "verdict": "pass"
       },
       {
-        "declared_state": "at_checkpoint",
+        "declared_state": "running",
         "evidence": {
-          "hours_since": 22.7,
-          "last_activity": "2026-07-04T10:00:05.689832+00:00",
-          "source": "verifier_receipt",
+          "hours_since": 17.2,
+          "last_activity": "2026-07-05T15:00:02.083184+00:00",
+          "source": "action_log",
           "staleness": "ok"
         },
         "loop_id": "meta",
         "name": "Meta Context",
-        "reason": "fresh evidence from verifier_receipt",
+        "reason": "fresh evidence from action_log",
         "requires_external_reach": false,
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-07-05T08:39:20.373639+00:00",
+    "generated_at": "2026-07-06T08:12:31.379458+00:00",
     "remediation_queue": [
-      {
-        "action": "produce_or_attach_external_receipt",
-        "evidence_source": "action_log",
-        "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
-        "loop_id": "awg-outreach",
-        "missing_receipts": [
-          "external_post_receipt",
-          "subscriber_receipt",
-          "reply_receipt",
-          "meeting_receipt"
-        ],
-        "priority": 90,
-        "verdict": "no_external_reach"
-      },
       {
         "action": "produce_or_attach_external_receipt",
         "evidence_source": "verifier_receipt",
@@ -259,7 +246,7 @@
       },
       {
         "action": "produce_or_attach_external_receipt",
-        "evidence_source": "action_log",
+        "evidence_source": "verifier_receipt",
         "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
         "loop_id": "shadow-presence",
         "missing_receipts": [
@@ -287,8 +274,8 @@
     "rule": "Declared loop state is not proof. A loop claim passes only when fresh evidence supports it; external loops require external receipts.",
     "schema": "shadow.agent_flight_recorder.v1",
     "summary": {
-      "no_external_reach": 3,
-      "pass": 4,
+      "no_external_reach": 2,
+      "pass": 5,
       "stale": 1
     }
   },
@@ -304,7 +291,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md",
     "purpose": "scarce frontier-model usage ledger that routes high-end model headroom into sellable artifacts, proof surfaces, acquisition machinery, and model-agnostic operating-system upgrades"
   },
-  "generated_at": "2026-07-05T08:39:20.373639+00:00",
+  "generated_at": "2026-07-06T08:12:31.379458+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",

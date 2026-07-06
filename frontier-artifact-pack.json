@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-07-05T08:38:08.007541+00:00",
+  "generated_at": "2026-07-06T08:11:17.341105+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-07-05T08:37:56.791177+00:00",
-  "thesis": "The winning AI operator will not be the one with the best summaries, but the one whose loops produce receipts, detect weak execution, and re-route themselves before the human notices drift.",
-  "doctrine": "Every autonomous loop must leave an execution receipt: input signal, chosen lane, action taken, verifier used, retry condition, and revenue relevance.",
-  "proof_artifact": "Ship a `loop_quality_receipt` spec plus a small verifier that rejects research/revenue outputs lacking an executable next action, evidence source, and measurable outcome.",
-  "proof_next_action": "Add `loop_quality_receipt` validation to the Shadow daily operating loop, likely in the script that writes `research_signal_candidates` or portfolio allocator output, and make today\u2019s frontier loop fail closed when `next_action` is not file/script/channel specific.",
-  "public_angle": "Most AI automation fails because it produces plausible motion without operational receipts. The next frontier is not smarter summaries; it is agents that can prove what they did, why they routed work that way, and when they should retry.",
-  "buyer_offer": "Revenue angle: sell a lightweight 'AI operator audit' for founders using coding agents, showing where their agent workflows lack receipts, retry gates, and delegation rules that would make them governable.",
+  "cycle_ts": "2026-07-06T08:10:38.725370+00:00",
+  "thesis": "The edge is not smarter prompts or more agents; it is an operator runtime that refuses to count research, delegation, or autonomy as real until a receipt changes the next loop decision.",
+  "doctrine": "Every high-scoring frontier signal must either alter allocation, authority, retry behavior, or revenue routing within one sweep, or be discarded as non-operational.",
+  "proof_artifact": "Ship a research-signal operator gate in `scripts/authority_sweep.py` that promotes high-score meta/shadow-loop signals into executable lanes and fails the sweep when `state/loop_verifier_log.jsonl` shows zero committed outcomes.",
+  "proof_next_action": "Edit `scripts/authority_sweep.py` in `_build_lanes()` to add a `research_signal_operator_runtime` lane running `.venv/bin/python3 scripts/research_implement_loop.py`, then make `_execute_lanes()` read the latest `research-implement` verifier receipt and mark the lane failed when `analyzed > 0` and `committed == 0`.",
+  "public_angle": "Most teams are optimizing prompts; the real leverage is making the agent prove its work changed the next operating decision.",
+  "buyer_offer": "Sell a governed-agent audit: 'I will find where your AI workflow claims progress without receipts, then install the smallest gate that makes false completion impossible.'",
   "source_titles": [
-    "Welcome to July 3, 2026",
-    "redevops-io/sidekick \u2014 Local coding-agent orchestrator \u2014 DAG of auto-approved, git-worktree-isolated sub-sessions across LL",
-    "June 2026 newsletter",
-    "Open Source AI Gap Map",
-    "Quoting Josh W. Comeau"
+    "MAS-PromptBench: When Does Prompt Optimization Improve Multi-Agent LLM Systems?",
+    "Welcome to July 4, 2026",
+    "QueenBee Planner: Skill-Evolving Communication Topologies for Token-Efficient LLM Multi-Agent Systems",
+    "Self-Evolution for Multi-Turn Tool-Calling Agents via Divergence-Point Preference Learning",
+    "Tool Use Enables Undetectable Steganography in Multi-Agent LLM Systems"
   ],
   "packets": [
     {
-      "id": "c12d5cb405ca",
+      "id": "9e3ea62bfe64",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "f4d746699b08",
+      "id": "7d9ab62f053f",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "284dc7f2e03e",
+      "id": "021bfb91aba7",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "10939617026c",
+      "id": "49860c764468",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Add `loop_quality_receipt` validation to the Shadow daily operating loop, likely in the script that writes `research_signal_candidates` or portfolio allocator output, and make today\u2019s frontier loop fail closed when `next_action` is not file/script/channel specific.",
-      "packet_id": "c12d5cb405ca"
+      "next_action": "Edit `scripts/authority_sweep.py` in `_build_lanes()` to add a `research_signal_operator_runtime` lane running `.venv/bin/python3 scripts/research_implement_loop.py`, then make `_execute_lanes()` read the latest `research-implement` verifier receipt and mark the lane failed when `analyzed > 0` and `committed == 0`.",
+      "packet_id": "9e3ea62bfe64"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_f4d746699b08_1783240687",
-      "packet_id": "f4d746699b08"
+      "draft_id": "frontier_7d9ab62f053f_1783325477",
+      "packet_id": "7d9ab62f053f"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "13e212fe0284",
-      "packet_id": "284dc7f2e03e"
+      "experiment_id": "1c5dfa1a2199",
+      "packet_id": "021bfb91aba7"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "10939617026c"
+      "packet_id": "49860c764468"
     }
   ],
   "receipts": {

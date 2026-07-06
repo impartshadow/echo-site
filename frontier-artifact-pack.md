@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-07-05T08:38:08.007541+00:00
+Generated: 2026-07-06T08:11:17.341105+00:00
 
 ## Thesis
-The winning AI operator will not be the one with the best summaries, but the one whose loops produce receipts, detect weak execution, and re-route themselves before the human notices drift.
+The edge is not smarter prompts or more agents; it is an operator runtime that refuses to count research, delegation, or autonomy as real until a receipt changes the next loop decision.
 
 ## Doctrine
-Every autonomous loop must leave an execution receipt: input signal, chosen lane, action taken, verifier used, retry condition, and revenue relevance.
+Every high-scoring frontier signal must either alter allocation, authority, retry behavior, or revenue routing within one sweep, or be discarded as non-operational.
 
 ## Proof Artifact
-Ship a `loop_quality_receipt` spec plus a small verifier that rejects research/revenue outputs lacking an executable next action, evidence source, and measurable outcome.
+Ship a research-signal operator gate in `scripts/authority_sweep.py` that promotes high-score meta/shadow-loop signals into executable lanes and fails the sweep when `state/loop_verifier_log.jsonl` shows zero committed outcomes.
 
-Next action: Add `loop_quality_receipt` validation to the Shadow daily operating loop, likely in the script that writes `research_signal_candidates` or portfolio allocator output, and make today’s frontier loop fail closed when `next_action` is not file/script/channel specific.
+Next action: Edit `scripts/authority_sweep.py` in `_build_lanes()` to add a `research_signal_operator_runtime` lane running `.venv/bin/python3 scripts/research_implement_loop.py`, then make `_execute_lanes()` read the latest `research-implement` verifier receipt and mark the lane failed when `analyzed > 0` and `committed == 0`.
 
 ## Public Angle
-Most AI automation fails because it produces plausible motion without operational receipts. The next frontier is not smarter summaries; it is agents that can prove what they did, why they routed work that way, and when they should retry.
+Most teams are optimizing prompts; the real leverage is making the agent prove its work changed the next operating decision.
 
 ## Buyer Offer
-Revenue angle: sell a lightweight 'AI operator audit' for founders using coding agents, showing where their agent workflows lack receipts, retry gates, and delegation rules that would make them governable.
+Sell a governed-agent audit: 'I will find where your AI workflow claims progress without receipts, then install the smallest gate that makes false completion impossible.'
 
 ## Source Signals
-- Welcome to July 3, 2026
-- redevops-io/sidekick — Local coding-agent orchestrator — DAG of auto-approved, git-worktree-isolated sub-sessions across LL
-- June 2026 newsletter
-- Open Source AI Gap Map
-- Quoting Josh W. Comeau
+- MAS-PromptBench: When Does Prompt Optimization Improve Multi-Agent LLM Systems?
+- Welcome to July 4, 2026
+- QueenBee Planner: Skill-Evolving Communication Topologies for Token-Efficient LLM Multi-Agent Systems
+- Self-Evolution for Multi-Turn Tool-Calling Agents via Divergence-Point Preference Learning
+- Tool Use Enables Undetectable Steganography in Multi-Agent LLM Systems
 
 ## Scale Packets
-- proof_artifact: promoted (c12d5cb405ca)
-- public_wedge: promoted (f4d746699b08)
-- buyer_experiment: promoted (284dc7f2e03e)
-- operator_doctrine: promoted (10939617026c)
+- proof_artifact: promoted (9e3ea62bfe64)
+- public_wedge: promoted (7d9ab62f053f)
+- buyer_experiment: promoted (021bfb91aba7)
+- operator_doctrine: promoted (49860c764468)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (c12d5cb405ca)
-- public_wedge: queued_echo_draft (f4d746699b08)
-- buyer_experiment: queued_buyer_experiment (284dc7f2e03e)
-- operator_doctrine: already_persisted (10939617026c)
+- proof_artifact: delegated_to_improvement_queue (9e3ea62bfe64)
+- public_wedge: queued_echo_draft (7d9ab62f053f)
+- buyer_experiment: queued_buyer_experiment (021bfb91aba7)
+- operator_doctrine: already_persisted (49860c764468)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`
