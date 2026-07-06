@@ -1,11 +1,11 @@
 {
   "schema": "shadow.contract_install_blueprint.v1",
-  "generated_at": "2026-07-06T17:15:04.993161+00:00",
+  "generated_at": "2026-07-06T17:18:38.806667+00:00",
   "source_model": "claude-fable-5",
   "frontier_receipt": "The Shadow frontier lane selected Contract Install Blueprint as the next artifact because it demonstrates the paid install product itself.",
   "source_runtime": {
     "contract_count": 84,
-    "violation_rows_scanned": 4343,
+    "violation_rows_scanned": 4345,
     "current_violation_log": "state/contract_violations.jsonl",
     "archive_glob": "state/archive/**/contract_violations_*.jsonl.gz"
   },
@@ -61,7 +61,7 @@
       "tier": "free-triage",
       "production_evidence": {
         "fires_observed": 117,
-        "ledger_rows_scanned": 4343,
+        "ledger_rows_scanned": 4345,
         "latest_seen": "2026-06-30T02:37:13",
         "severity_counts": {
           "block": 117
@@ -97,11 +97,11 @@
       "install_estimate_hours": 2.0,
       "tier": "census",
       "production_evidence": {
-        "fires_observed": 88,
-        "ledger_rows_scanned": 4343,
-        "latest_seen": "2026-07-05T23:37:12",
+        "fires_observed": 89,
+        "ledger_rows_scanned": 4345,
+        "latest_seen": "2026-07-06T17:16:39",
         "severity_counts": {
-          "block": 88
+          "block": 89
         },
         "false_positive_note": "Pure decimal IDs are ignored; sibling repos are checked before blocking.",
         "origin_incident": "Fabricated push receipts in multi-commit sessions, including 2026-06-14 and 2026-06-20 bursts.",
@@ -135,7 +135,7 @@
       "tier": "install",
       "production_evidence": {
         "fires_observed": 54,
-        "ledger_rows_scanned": 4343,
+        "ledger_rows_scanned": 4345,
         "latest_seen": "2026-07-06T16:11:18",
         "severity_counts": {
           "warn": 32,
@@ -173,7 +173,7 @@
       "tier": "census",
       "production_evidence": {
         "fires_observed": 468,
-        "ledger_rows_scanned": 4343,
+        "ledger_rows_scanned": 4345,
         "latest_seen": "2026-07-06T16:27:20",
         "severity_counts": {
           "warn": 309,
@@ -211,7 +211,7 @@
       "tier": "install",
       "production_evidence": {
         "fires_observed": 112,
-        "ledger_rows_scanned": 4343,
+        "ledger_rows_scanned": 4345,
         "latest_seen": "2026-07-02T21:52:12",
         "severity_counts": {
           "block": 112
@@ -248,7 +248,7 @@
       "tier": "free-triage",
       "production_evidence": {
         "fires_observed": 108,
-        "ledger_rows_scanned": 4343,
+        "ledger_rows_scanned": 4345,
         "latest_seen": "2026-07-06T16:03:14",
         "severity_counts": {
           "block": 60,
@@ -282,6 +282,24 @@
       "same-repo git resolver for each cited token",
       "regression test proving fabricated hashes block before the operator sees them"
     ],
+    "install_packet": {
+      "implementation_diff": [
+        "add a post-response verifier around completion messages",
+        "extract repo-scoped commit tokens before the message is emitted",
+        "block or rewrite any receipt that cannot be resolved by the local git backend"
+      ],
+      "acceptance_criteria": [
+        "fabricated commit ids are never visible to the operator",
+        "valid commit ids pass only after an independent git lookup",
+        "completion reports name the command or artifact that produced the receipt"
+      ],
+      "rollout_plan": [
+        "run in warn mode against seven days of historical traces",
+        "promote to block mode for completion-report surfaces",
+        "review false positives after 48 hours and narrow token extraction if needed"
+      ],
+      "receipt_boundary": "A completion claim is not allowed to leave the agent until the cited commit resolves in the named repository."
+    },
     "rows": [
       {
         "phase": "before",
@@ -295,8 +313,8 @@
       }
     ],
     "production_evidence": {
-      "fires_observed": 88,
-      "latest_seen": "2026-07-05T23:37:12"
+      "fires_observed": 89,
+      "latest_seen": "2026-07-06T17:16:39"
     },
     "cta": {
       "label": "Scope the $2,000 contract install",
@@ -321,6 +339,24 @@
           "same-repo git resolver for each cited token",
           "regression test proving fabricated hashes block before the operator sees them"
         ],
+        "install_packet": {
+          "implementation_diff": [
+            "add a post-response verifier around completion messages",
+            "extract repo-scoped commit tokens before the message is emitted",
+            "block or rewrite any receipt that cannot be resolved by the local git backend"
+          ],
+          "acceptance_criteria": [
+            "fabricated commit ids are never visible to the operator",
+            "valid commit ids pass only after an independent git lookup",
+            "completion reports name the command or artifact that produced the receipt"
+          ],
+          "rollout_plan": [
+            "run in warn mode against seven days of historical traces",
+            "promote to block mode for completion-report surfaces",
+            "review false positives after 48 hours and narrow token extraction if needed"
+          ],
+          "receipt_boundary": "A completion claim is not allowed to leave the agent until the cited commit resolves in the named repository."
+        },
         "rows": [
           {
             "phase": "before",
@@ -334,8 +370,8 @@
           }
         ],
         "production_evidence": {
-          "fires_observed": 88,
-          "latest_seen": "2026-07-05T23:37:12"
+          "fires_observed": 89,
+          "latest_seen": "2026-07-06T17:16:39"
         },
         "cta": {
           "label": "Scope the $2,000 contract install",
@@ -360,6 +396,24 @@
           "evidence trace check for same-turn reads",
           "status-answer template that names the receipt instead of relying on memory"
         ],
+        "install_packet": {
+          "implementation_diff": [
+            "classify status answers that name live operational state",
+            "require same-turn reads from configured authoritative sources",
+            "downgrade unsupported claims to uncertainty or block them before send"
+          ],
+          "acceptance_criteria": [
+            "status answers cite a current process, file, API, browser, or ledger receipt",
+            "stale memory alone cannot produce 'running', 'sent', 'live', or 'verified'",
+            "failed checks produce a precise failure result instead of a confident status claim"
+          ],
+          "rollout_plan": [
+            "map each workflow noun to an authoritative source",
+            "run warn mode until source coverage is complete",
+            "promote high-blast status classes to block mode"
+          ],
+          "receipt_boundary": "A live-state answer must carry a same-turn read from the system of record or explicitly say the check did not succeed."
+        },
         "rows": [
           {
             "phase": "before",
@@ -399,6 +453,24 @@
           "tool-attempt receipt requirement before any manual escalation",
           "allowlist for auth, legal, spend, and irreversible high-blast blockers"
         ],
+        "install_packet": {
+          "implementation_diff": [
+            "detect manual handoff language for platform action classes",
+            "route eligible actions to sanctioned API, MCP, browser, shell, or deploy tools",
+            "allow manual escalation only after a logged attempt or hard-blocker match"
+          ],
+          "acceptance_criteria": [
+            "available automation paths are attempted before UI instructions appear",
+            "manual handoffs include the failed tool result or hard-blocker class",
+            "authorized low-risk actions produce execution receipts instead of homework"
+          ],
+          "rollout_plan": [
+            "start with email, calendar, publishing, browser, and deploy checks",
+            "log attempted path, result, and blocker class for each escalation",
+            "expand action classes only after the first workflow stabilizes"
+          ],
+          "receipt_boundary": "A manual instruction cannot leave the agent until the sanctioned automation path has produced a receipt or a hard blocker."
+        },
         "rows": [
           {
             "phase": "before",
@@ -428,7 +500,8 @@
         "the observed failure before the install",
         "the exact deterministic contract added",
         "the after behavior the agent is forced into",
-        "the regression test proving the bad path blocks"
+        "the regression test proving the bad path blocks",
+        "the implementation diff, acceptance criteria, and rollout plan"
       ]
     }
   },
