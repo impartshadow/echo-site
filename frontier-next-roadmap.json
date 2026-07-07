@@ -1,6 +1,6 @@
 {
   "schema": "shadow.frontier_next_roadmap.v1",
-  "generated_at_ct": "2026-07-06T03:22:19-05:00",
+  "generated_at_ct": "2026-07-07T04:05:22-05:00",
   "premise": "If the frontier lane disappears, preserve the synthesis in executable work orders: each item names the asset, how to build it, where it wires into Shadow, and what receipt proves it is not a loose end.",
   "public_urls": {
     "html": "https://impartshadow.github.io/echo-site/frontier-next-roadmap.html",
