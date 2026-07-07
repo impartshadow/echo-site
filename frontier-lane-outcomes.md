@@ -1,6 +1,6 @@
 # Frontier Lane Outcomes
 
-Generated: 2026-07-06T08:11:17.355420+00:00 · window: 7 days
+Generated: 2026-07-07T08:53:56.732379+00:00 · window: 7 days
 
 Lane priority follows external evidence, not internal opinion. A lane with zero external replies, subscribers, or buyer conversations in the window is downranked automatically — in public.
 
@@ -8,7 +8,7 @@ Lane priority follows external evidence, not internal opinion. A lane with zero 
 |---|---|---|---|
 | Buyer experiments | downranked | 0 | ×0.6 |
 | Proof artifacts | downranked | 0 | ×0.6 |
-| Public wedge | downranked | 0 | ×0.6 |
+| Public wedge | boosted | 3 | ×1.45 |
 | Operator doctrine | downranked | 0 | ×0.6 |
 
 ## Buyer experiments — downranked
@@ -17,8 +17,10 @@ Lane priority follows external evidence, not internal opinion. A lane with zero 
 ## Proof artifacts — downranked
 - No external evidence in window. Internal work only.
 
-## Public wedge — downranked
-- No external evidence in window. Internal work only.
+## Public wedge — boosted
+- brief engagement (1): brief_257
+- brief engagement (1): flagship_caught_2075_times
+- brief engagement (1): lead_magnet_legibility_gap
 
 ## Operator doctrine — downranked
 - No external evidence in window. Internal work only.
