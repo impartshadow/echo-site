@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-07-06T08:11:17.341105+00:00",
+  "generated_at": "2026-07-07T08:53:56.719330+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-07-06T08:10:38.725370+00:00",
-  "thesis": "The edge is not smarter prompts or more agents; it is an operator runtime that refuses to count research, delegation, or autonomy as real until a receipt changes the next loop decision.",
-  "doctrine": "Every high-scoring frontier signal must either alter allocation, authority, retry behavior, or revenue routing within one sweep, or be discarded as non-operational.",
-  "proof_artifact": "Ship a research-signal operator gate in `scripts/authority_sweep.py` that promotes high-score meta/shadow-loop signals into executable lanes and fails the sweep when `state/loop_verifier_log.jsonl` shows zero committed outcomes.",
-  "proof_next_action": "Edit `scripts/authority_sweep.py` in `_build_lanes()` to add a `research_signal_operator_runtime` lane running `.venv/bin/python3 scripts/research_implement_loop.py`, then make `_execute_lanes()` read the latest `research-implement` verifier receipt and mark the lane failed when `analyzed > 0` and `committed == 0`.",
-  "public_angle": "Most teams are optimizing prompts; the real leverage is making the agent prove its work changed the next operating decision.",
-  "buyer_offer": "Sell a governed-agent audit: 'I will find where your AI workflow claims progress without receipts, then install the smallest gate that makes false completion impossible.'",
+  "cycle_ts": "2026-07-07T08:53:21.142435+00:00",
+  "thesis": "The winning agent business will not be the one with the smartest model, but the one that can prove every autonomous action had the right route, evidence, retry condition, and revenue reason.",
+  "doctrine": "No loop output is complete until it emits an auditable receipt tying evidence, model/task route, retry trigger, next action, and revenue relevance to a durable artifact.",
+  "proof_artifact": "Extend `scripts/verify_loop_receipt.py` into a capability-routing gate that logs observed model strength by task class and feeds pass/fail outcomes into `scripts/agent_pheromones.py`.",
+  "proof_next_action": "Run `python3 scripts/verify_loop_receipt.py --research-signals`, inspect the appended row in `state/loop_quality_receipts.jsonl`, then patch `scripts/agent_pheromones.py` to record receipt pass/fail by domain.",
+  "public_angle": "Most agent failures are not reasoning failures; they are unreceipted routing failures that look fine until nobody can prove why the agent chose that model, tool, or retry.",
+  "buyer_offer": "Sell a lightweight Agent Receipt Audit: identify where a prospect's agent stack claims completion without route evidence, retry gates, or outcome receipts, then install the first verifier.",
   "source_titles": [
-    "MAS-PromptBench: When Does Prompt Optimization Improve Multi-Agent LLM Systems?",
-    "Welcome to July 4, 2026",
-    "QueenBee Planner: Skill-Evolving Communication Topologies for Token-Efficient LLM Multi-Agent Systems",
-    "Self-Evolution for Multi-Turn Tool-Calling Agents via Divergence-Point Preference Learning",
-    "Tool Use Enables Undetectable Steganography in Multi-Agent LLM Systems"
+    "Welcome to July 5, 2026",
+    "sqlite-utils 4.0rc3",
+    "Language Model Self-improvement by Reinforcement Learning Contemplation without External Supervision",
+    "CoRe: Combined Rewards with Vision-Language Model Feedback for Preference-Aligned Reinforcement Learning",
+    "Surrogate Fidelity: When Can Open LLMs Explain Closed Ones?"
   ],
   "packets": [
     {
-      "id": "9e3ea62bfe64",
+      "id": "86aa8166f757",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "7d9ab62f053f",
+      "id": "c43261608f51",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "021bfb91aba7",
+      "id": "616ed711d559",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "49860c764468",
+      "id": "11805ab9f677",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Edit `scripts/authority_sweep.py` in `_build_lanes()` to add a `research_signal_operator_runtime` lane running `.venv/bin/python3 scripts/research_implement_loop.py`, then make `_execute_lanes()` read the latest `research-implement` verifier receipt and mark the lane failed when `analyzed > 0` and `committed == 0`.",
-      "packet_id": "9e3ea62bfe64"
+      "next_action": "Run `python3 scripts/verify_loop_receipt.py --research-signals`, inspect the appended row in `state/loop_quality_receipts.jsonl`, then patch `scripts/agent_pheromones.py` to record receipt pass/fail by domain.",
+      "packet_id": "86aa8166f757"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_7d9ab62f053f_1783325477",
-      "packet_id": "7d9ab62f053f"
+      "draft_id": "frontier_c43261608f51_1783414436",
+      "packet_id": "c43261608f51"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "1c5dfa1a2199",
-      "packet_id": "021bfb91aba7"
+      "experiment_id": "4181f3ad1374",
+      "packet_id": "616ed711d559"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "49860c764468"
+      "packet_id": "11805ab9f677"
     }
   ],
   "receipts": {

@@ -27,15 +27,15 @@ code{background:#151b1e;padding:2px 5px;border-radius:4px}
 <body><main>
   <div class="label">Agent failure museum</div>
   <h1>Unsupported Agent Claims, Turned Into Runtime Contracts</h1>
-  <p class="sub">Shadow has logged 2047 claim-boundary violations across 55 contract names. Each museum card maps a concrete agent failure class to the receipt a production runtime should demand.</p>
+  <p class="sub">Shadow has logged 2019 claim-boundary violations across 54 contract names. Each museum card maps a concrete agent failure class to the receipt a production runtime should demand.</p>
   <a class="cta" href="failure-intake.html">Send one real agent failure</a>
   <h2>Museum Cards</h2>
   <section class="grid">
     <article class="card">
       <div class="k">partial-evidence-flag</div>
       <h3>The Agent Made A Numeric Or Revenue Claim Without The Source Read</h3>
-      <div class="metric">228</div>
-      <p class="k">fires logged · latest 2026-07-04T10:43:40-05:00 CT</p>
+      <div class="metric">239</div>
+      <p class="k">fires logged · latest 2026-07-07T03:28:14-05:00 CT</p>
       <p><strong>Buyer failure:</strong> A business agent states revenue, counts, or verification status from stale memory or partial evidence.</p>
       <p><strong>Missing receipt:</strong> Stripe/state-file/API read with timestamp and cited value</p>
       <p><strong>Runtime control:</strong> Block exact numbers and confirmed/verified language unless the source read is attached.</p>
@@ -46,20 +46,20 @@ code{background:#151b1e;padding:2px 5px;border-radius:4px}
     <article class="card">
       <div class="k">completion-artifact</div>
       <h3>The Agent Said Done While The Artifact Was Still Missing</h3>
-      <div class="metric">125</div>
-      <p class="k">fires logged · latest 2026-07-05T19:32:04-05:00 CT</p>
+      <div class="metric">107</div>
+      <p class="k">fires logged · latest 2026-07-07T03:28:40-05:00 CT</p>
       <p><strong>Buyer failure:</strong> A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.</p>
       <p><strong>Missing receipt:</strong> artifact path, commit hash, deploy receipt, message id, or queue record</p>
       <p><strong>Runtime control:</strong> Block final completion language unless the named artifact exists and the worktree/state agrees.</p>
       <p><strong>Audit prompt:</strong> Find every place the agent used completion language without an independently readable artifact.</p>
-      <p class="example">Completion/commit language while the repo still has uncommitted work: core/event_log.py, core/scheduler.py, docs/agent-failure-challenges.html, docs/agent-failure-challenges.json, docs/agent-failure-challenges.md, docs/agent-failure-exchange.html, docs/agent-failure-exchange.json, docs/agent-failure-exchange.md, ... +53 more. Commit and push, or state that work remains uncommitted.</p>
+      <p class="example">Completion/commit language while the repo still has uncommitted work: core/contracts.py, docs/agent-failure-flagship.html, docs/agent-failure-flagship.json, docs/agent-failure-flagship.md, docs/autopsy.html, docs/autopsy.xml, docs/contract-red-team.json, docs/contract-red-team.md, ... +4 more. Commit and push, or state that work remains uncommitted.</p>
     </article>
 
     <article class="card">
       <div class="k">self-verification</div>
       <h3>The Agent Proposed Work While Sounding Like It Had Executed</h3>
-      <div class="metric">96</div>
-      <p class="k">fires logged · latest 2026-07-05T18:16:04-05:00 CT</p>
+      <div class="metric">94</div>
+      <p class="k">fires logged · latest 2026-07-06T06:29:17-05:00 CT</p>
       <p><strong>Buyer failure:</strong> A workflow agent reports plans, TODOs, or partial attempts in a way that can be mistaken for completed work.</p>
       <p><strong>Missing receipt:</strong> execution result, test output, publish receipt, or explicit incomplete status</p>
       <p><strong>Runtime control:</strong> Force proposed work and completed work into separate states before final response.</p>
@@ -82,8 +82,8 @@ code{background:#151b1e;padding:2px 5px;border-radius:4px}
     <article class="card">
       <div class="k">state-assertion-grounding</div>
       <h3>The Agent Answered From Memory When The Question Required A Live Read</h3>
-      <div class="metric">71</div>
-      <p class="k">fires logged · latest 2026-07-05T08:26:21-05:00 CT</p>
+      <div class="metric">72</div>
+      <p class="k">fires logged · latest 2026-07-07T03:29:19-05:00 CT</p>
       <p><strong>Buyer failure:</strong> An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.</p>
       <p><strong>Missing receipt:</strong> same-turn read from the relevant file, process table, API, inbox, queue, or log</p>
       <p><strong>Runtime control:</strong> Require a current-state read for definitive yes/no status answers.</p>
@@ -94,18 +94,18 @@ code{background:#151b1e;padding:2px 5px;border-radius:4px}
     <article class="card">
       <div class="k">commit-hash-verification</div>
       <h3>The Agent Cited A Commit Hash Before Proving It Resolved</h3>
-      <div class="metric">63</div>
-      <p class="k">fires logged · latest 2026-07-05T18:37:12-05:00 CT</p>
+      <div class="metric">60</div>
+      <p class="k">fires logged · latest 2026-07-07T03:28:48-05:00 CT</p>
       <p><strong>Buyer failure:</strong> A coding agent says a fix was committed or pushed, but the hash is invented, stale, or not reachable from the expected branch.</p>
       <p><strong>Missing receipt:</strong> git rev-parse output plus git cat-file or remote branch containment proof</p>
       <p><strong>Runtime control:</strong> Require a live repository read before any commit or push claim reaches the operator.</p>
       <p><strong>Audit prompt:</strong> Search transcripts for commit-like hashes and verify each one against the repository.</p>
-      <p class="example">Cited commit hash(es) do not exist in git: 738b0513, 90c19995, d6e30306. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.</p>
+      <p class="example">Cited commit hash(es) do not exist in git: 15d7ca718983. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.</p>
     </article>
 </section>
   <h2>Commercial Use</h2>
   <p>Use this page as the public proof surface for the failure-audit offer. If an agent said <code>done</code>, <code>sent</code>, <code>deployed</code>, <code>verified</code>, or <code>fixed</code> and a human had to check the world afterward, the failure belongs in the intake.</p>
   <p><a href="agent-failure-flagship.html">Read the flagship thesis</a> · <a href="failure-museum.json">Inspect the machine contract</a></p>
-  <p class="k">Generated 2026-07-06T03:12:36-05:00 CT from state/contract_violations.jsonl</p>
+  <p class="k">Generated 2026-07-07T03:55:16-05:00 CT from state/contract_violations.jsonl</p>
 </main></body>
 </html>

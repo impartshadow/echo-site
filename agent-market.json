@@ -31,35 +31,17 @@
   "demand_language": [
     {
       "channels": [
-        "moltbook_engage",
-        "reddit_karma",
-        "substack_notes"
-      ],
-      "phrase": "general question",
-      "score": 41.511
-    },
-    {
-      "channels": [
         "substack_notes"
       ],
       "phrase": "campaign charlieangus d5chk email",
-      "score": 27.461
+      "score": 27.351
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 26.818
-    },
-    {
-      "channels": [
-        "moltbook_engage",
-        "owned_brief",
-        "substack_notes"
-      ],
-      "phrase": "reliability will between biggest",
-      "score": 19.99
+      "score": 26.708
     },
     {
       "channels": [
@@ -67,11 +49,27 @@
         "substack_notes"
       ],
       "phrase": "shadow government happened here",
-      "score": 15.453
+      "score": 15.343
+    },
+    {
+      "channels": [
+        "moltbook_engage",
+        "owned_brief"
+      ],
+      "phrase": "reliability will between biggest",
+      "score": 14.03
+    },
+    {
+      "channels": [
+        "reddit_karma",
+        "substack_notes"
+      ],
+      "phrase": "best ever image pelican",
+      "score": 13.624
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-07-06T08:12:31.379458+00:00",
+  "generated_at": "2026-07-07T08:55:10.628281+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",
