@@ -1,0 +1,236 @@
+{
+  "schema": "shadow.artifact_offer_funnel.v1",
+  "generated_at": "2026-07-08T08:23:01.982524+00:00",
+  "public_base": "https://impartshadow.github.io/echo-site",
+  "artifact_count": 21,
+  "registry": [
+    {
+      "artifact": "agent-failure-flagship",
+      "url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
+      "target_buyer": "buyers evaluating the $400 census",
+      "offer_links": 5,
+      "age_days": 0.0,
+      "reach_mentions": 0,
+      "stale_no_offer": false,
+      "distribution_priority": 1.0
+    },
+    {
+      "artifact": "agent-failure-audit",
+      "url": "https://impartshadow.github.io/echo-site/agent-failure-audit.html",
+      "target_buyer": "teams running production LLM agents",
+      "offer_links": 3,
+      "age_days": 1.6,
+      "reach_mentions": 0,
+      "stale_no_offer": false,
+      "distribution_priority": 0.96
+    },
+    {
+      "artifact": "sample-failure-census",
+      "url": "https://impartshadow.github.io/echo-site/sample-failure-census.html",
+      "target_buyer": "buyers evaluating the $400 census",
+      "offer_links": 3,
+      "age_days": 1.6,
+      "reach_mentions": 0,
+      "stale_no_offer": false,
+      "distribution_priority": 0.96
+    },
+    {
+      "artifact": "failure-distribution-packet",
+      "url": "https://impartshadow.github.io/echo-site/failure-distribution-packet.html",
+      "target_buyer": "distribution partners",
+      "offer_links": 3,
+      "age_days": 2.2,
+      "reach_mentions": 0,
+      "stale_no_offer": false,
+      "distribution_priority": 0.945
+    },
+    {
+      "artifact": "contract-install-blueprint",
+      "url": "https://impartshadow.github.io/echo-site/contract-install-blueprint.html",
+      "target_buyer": "buyers evaluating the $2k install",
+      "offer_links": 2,
+      "age_days": 0.0,
+      "reach_mentions": 0,
+      "stale_no_offer": false,
+      "distribution_priority": 0.867
+    },
+    {
+      "artifact": "failure-intake",
+      "url": "https://impartshadow.github.io/echo-site/failure-intake.html",
+      "target_buyer": "inbound triage prospects",
+      "offer_links": 2,
+      "age_days": 0.0,
+      "reach_mentions": 0,
+      "stale_no_offer": false,
+      "distribution_priority": 0.867
+    },
+    {
+      "artifact": "agent-failure-exchange",
+      "url": "https://impartshadow.github.io/echo-site/agent-failure-exchange.html",
+      "target_buyer": "operators trading failure cases",
+      "offer_links": 1,
+      "age_days": 0.0,
+      "reach_mentions": 0,
+      "stale_no_offer": false,
+      "distribution_priority": 0.733
+    },
+    {
+      "artifact": "autopsy",
+      "url": "https://impartshadow.github.io/echo-site/autopsy.html",
+      "target_buyer": "operators wanting a worked failure autopsy",
+      "offer_links": 1,
+      "age_days": 0.0,
+      "reach_mentions": 0,
+      "stale_no_offer": false,
+      "distribution_priority": 0.733
+    },
+    {
+      "artifact": "failure-audit-targets",
+      "url": "https://impartshadow.github.io/echo-site/failure-audit-targets.html",
+      "target_buyer": "prospect teams named in the audit ranking",
+      "offer_links": 1,
+      "age_days": 0.0,
+      "reach_mentions": 0,
+      "stale_no_offer": false,
+      "distribution_priority": 0.733
+    },
+    {
+      "artifact": "failure-museum",
+      "url": "https://impartshadow.github.io/echo-site/failure-museum.html",
+      "target_buyer": "agent builders browsing failure taxonomy",
+      "offer_links": 1,
+      "age_days": 0.0,
+      "reach_mentions": 0,
+      "stale_no_offer": false,
+      "distribution_priority": 0.733
+    },
+    {
+      "artifact": "failure-trace-lab",
+      "url": "https://impartshadow.github.io/echo-site/failure-trace-lab.html",
+      "target_buyer": "operators with a redacted trace to triage",
+      "offer_links": 1,
+      "age_days": 0.0,
+      "reach_mentions": 0,
+      "stale_no_offer": false,
+      "distribution_priority": 0.733
+    },
+    {
+      "artifact": "failure-trace-lab-intake",
+      "url": "https://impartshadow.github.io/echo-site/failure-trace-lab-intake.html",
+      "target_buyer": "inbound triage prospects",
+      "offer_links": 1,
+      "age_days": 2.2,
+      "reach_mentions": 0,
+      "stale_no_offer": false,
+      "distribution_priority": 0.678
+    },
+    {
+      "artifact": "agent-failure-challenges",
+      "url": "https://impartshadow.github.io/echo-site/agent-failure-challenges.html",
+      "target_buyer": "agent builders benchmarking governance",
+      "offer_links": 0,
+      "age_days": 0.0,
+      "reach_mentions": 0,
+      "stale_no_offer": false,
+      "distribution_priority": 0.6
+    },
+    {
+      "artifact": "tenant-proof",
+      "url": "https://impartshadow.github.io/echo-site/tenant-proof.html",
+      "target_buyer": "SMB tenant prospects",
+      "offer_links": 0,
+      "age_days": 0.0,
+      "reach_mentions": 0,
+      "stale_no_offer": false,
+      "distribution_priority": 0.6
+    },
+    {
+      "artifact": "violation-decay",
+      "url": "https://impartshadow.github.io/echo-site/violation-decay.html",
+      "target_buyer": "governance buyers needing recurrence evidence",
+      "offer_links": 0,
+      "age_days": 0.0,
+      "reach_mentions": 0,
+      "stale_no_offer": false,
+      "distribution_priority": 0.6
+    },
+    {
+      "artifact": "agent-failure-bounty",
+      "url": "https://impartshadow.github.io/echo-site/agent-failure-bounty.html",
+      "target_buyer": "agent builders with unexplained failures",
+      "offer_links": 1,
+      "age_days": 0.0,
+      "reach_mentions": 2,
+      "stale_no_offer": false,
+      "distribution_priority": 0.567
+    },
+    {
+      "artifact": "shadow-proof",
+      "url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
+      "target_buyer": "skeptics needing live-system proof",
+      "offer_links": 1,
+      "age_days": 0.0,
+      "reach_mentions": 2,
+      "stale_no_offer": false,
+      "distribution_priority": 0.567
+    },
+    {
+      "artifact": "consulting-audit",
+      "url": "https://impartshadow.github.io/echo-site/consulting-audit.html",
+      "target_buyer": "consulting buyers for the $2k install",
+      "offer_links": 0,
+      "age_days": 1.9,
+      "reach_mentions": 0,
+      "stale_no_offer": false,
+      "distribution_priority": 0.552
+    },
+    {
+      "artifact": "autonomy-gears",
+      "url": "https://impartshadow.github.io/echo-site/autonomy-gears.html",
+      "target_buyer": "agent operators",
+      "offer_links": 0,
+      "age_days": 4.8,
+      "reach_mentions": 0,
+      "stale_no_offer": false,
+      "distribution_priority": 0.48
+    },
+    {
+      "artifact": "upgrade",
+      "url": "https://impartshadow.github.io/echo-site/upgrade.html",
+      "target_buyer": "existing tenants considering paid tier",
+      "offer_links": 0,
+      "age_days": 5.8,
+      "reach_mentions": 0,
+      "stale_no_offer": false,
+      "distribution_priority": 0.455
+    },
+    {
+      "artifact": "paid-agentic-infrastructure-blueprint",
+      "url": "https://impartshadow.github.io/echo-site/paid-agentic-infrastructure-blueprint.html",
+      "target_buyer": "agent operators",
+      "offer_links": 0,
+      "age_days": 8.6,
+      "reach_mentions": 0,
+      "stale_no_offer": true,
+      "distribution_priority": 0.385
+    }
+  ],
+  "no_offer_link": [
+    "agent-failure-challenges",
+    "tenant-proof",
+    "violation-decay",
+    "consulting-audit",
+    "autonomy-gears",
+    "upgrade",
+    "paid-agentic-infrastructure-blueprint"
+  ],
+  "stale_no_offer_flagged": [
+    "paid-agentic-infrastructure-blueprint"
+  ],
+  "next_distribution_action": {
+    "artifact": "agent-failure-flagship",
+    "url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
+    "channel": "echo",
+    "action": "Post agent-failure-flagship to #echo audience: buyers evaluating the $400 census (offer_links=5, reach_mentions=0)"
+  }
+}
