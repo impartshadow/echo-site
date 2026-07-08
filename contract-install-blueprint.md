@@ -2,10 +2,10 @@
 
 A buyer should be able to see the before/after diff behind Shadow's $2,000 Contract Install before the first call: observed failure, installed gate, forced after-state, regression test, and CTA.
 
-Generated: 2026-07-07T09:01:22.064423+00:00
+Generated: 2026-07-08T08:17:02.835308+00:00
 Source model: `claude-fable-5`
-Runtime contracts: 163
-Violation rows scanned: 4384
+Runtime contracts: 165
+Violation rows scanned: 4407
 
 ## Conversion Path
 
@@ -38,7 +38,7 @@ if standing_authority_applies(turn) and proposal_phrase(response):
 - Failure mode: FM-027 — Fabricated Completion Claims
 - Gate type: post
 - Trigger: Outbound completion language contains a hex commit token near words like commit, pushed, shipped, landed, SHA, or HEAD.
-- Observed fires: 92
+- Observed fires: 93
 - Install estimate: 2.0h
 - Tier: census
 - CTA: [Request the $400 failure census](mailto:impartshadow@gmail.com?subject=Census:%20cib-002)
@@ -55,7 +55,7 @@ for sha in commit_like_tokens(response):
 - Failure mode: FM-022 — Claims Without Same-Turn Verification
 - Gate type: post
 - Trigger: Definitive state language appears in a status answer without a same-turn file, process, API, or browser read in the trace.
-- Observed fires: 61
+- Observed fires: 62
 - Install estimate: 5.0h
 - Tier: install
 - CTA: [Scope the $2,000 contract install](mailto:impartshadow@gmail.com?subject=Contract%20Install:%20cib-003)
@@ -72,7 +72,7 @@ if definitive_state_claim(response):
 - Failure mode: FM-026 — Thin Evidence With Definitive Framing
 - Gate type: post
 - Trigger: A numerical, revenue, subscriber, or public-platform claim appears without an explicit source citation or live check.
-- Observed fires: 474
+- Observed fires: 476
 - Install estimate: 4.0h
 - Tier: census
 - CTA: [Request the $400 failure census](mailto:impartshadow@gmail.com?subject=Census:%20cib-004)
@@ -88,7 +88,7 @@ if factual_claim(response) and evidence_count(response) < threshold:
 - Failure mode: FM-023 — Personal Data Egress
 - Gate type: pre
 - Trigger: Outbound shell, email, browser, or API action contains protected personal identifiers or unsanctioned recipient data.
-- Observed fires: 112
+- Observed fires: 113
 - Install estimate: 6.0h
 - Tier: install
 - CTA: [Scope the $2,000 contract install](mailto:impartshadow@gmail.com?subject=Contract%20Install:%20cib-005)
@@ -104,7 +104,7 @@ if outbound_tool(tool) and contains_protected_identifier(payload):
 - Failure mode: FM-012 — Manual Handoff Before Automation
 - Gate type: pre
 - Trigger: A response includes manual UI instructions for email, calendar, publishing, browser auth, or deploy checks with no programmatic attempt in the turn.
-- Observed fires: 110
+- Observed fires: 113
 - Install estimate: 3.5h
 - Tier: free-triage
 - CTA: [Diagnose one failure free](https://impartshadow.github.io/echo-site/failure-intake.html)
@@ -127,7 +127,7 @@ This is the shape of the $2,000 deliverable: one production workflow, the observ
 
 ### ba-commit-receipt · commit-hash-verification
 
-Sample workflow: agent completion report after a git push to main · FM-027 · 92 observed fires.
+Sample workflow: agent completion report after a git push to main · FM-027 · 93 observed fires.
 
 Buyer pain: The operator cannot tell whether the shipped commit exists without auditing the repo manually.
 
@@ -161,7 +161,7 @@ Buyer pain: The operator cannot tell whether the shipped commit exists without a
 
 ### ba-state-receipt · stale-state-assertion-guard
 
-Sample workflow: status answer about whether a bot, queue, publish job, or external account is working · FM-022 · 61 observed fires.
+Sample workflow: status answer about whether a bot, queue, publish job, or external account is working · FM-022 · 62 observed fires.
 
 Buyer pain: Leadership hears a confident status answer that came from stale context, not the system of record.
 
@@ -195,7 +195,7 @@ Buyer pain: Leadership hears a confident status answer that came from stale cont
 
 ### ba-platform-action · platform-action-precheck
 
-Sample workflow: agent tells an operator how to send, publish, deploy, or inspect a platform manually · FM-012 · 110 observed fires.
+Sample workflow: agent tells an operator how to send, publish, deploy, or inspect a platform manually · FM-012 · 113 observed fires.
 
 Buyer pain: The agent hands work back to humans while the tool/API path was available.
 
