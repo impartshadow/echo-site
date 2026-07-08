@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-07-07T08:53:56.719330+00:00",
+  "generated_at": "2026-07-08T08:09:46.962268+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-07-07T08:53:21.142435+00:00",
-  "thesis": "The winning agent business will not be the one with the smartest model, but the one that can prove every autonomous action had the right route, evidence, retry condition, and revenue reason.",
-  "doctrine": "No loop output is complete until it emits an auditable receipt tying evidence, model/task route, retry trigger, next action, and revenue relevance to a durable artifact.",
-  "proof_artifact": "Extend `scripts/verify_loop_receipt.py` into a capability-routing gate that logs observed model strength by task class and feeds pass/fail outcomes into `scripts/agent_pheromones.py`.",
-  "proof_next_action": "Run `python3 scripts/verify_loop_receipt.py --research-signals`, inspect the appended row in `state/loop_quality_receipts.jsonl`, then patch `scripts/agent_pheromones.py` to record receipt pass/fail by domain.",
-  "public_angle": "Most agent failures are not reasoning failures; they are unreceipted routing failures that look fine until nobody can prove why the agent chose that model, tool, or retry.",
-  "buyer_offer": "Sell a lightweight Agent Receipt Audit: identify where a prospect's agent stack claims completion without route evidence, retry gates, or outcome receipts, then install the first verifier.",
+  "cycle_ts": "2026-07-08T08:09:27.073116+00:00",
+  "thesis": "The market is converging on agent orchestration breadth (swarms, phone-driven fleets) while the actual bottleneck \u2014 and the defensible product \u2014 is audit-grade execution depth: agents that can prove each loop iteration was valid, not agents that run more loops in parallel.",
+  "doctrine": "Every loop upgrade must change a decision, not a description: a new signal only counts as integrated when it alters allocator weighting, blocker classification, or a retry gate \u2014 and emits a runtime receipt proving the altered path fired.",
+  "proof_artifact": "Extend scripts/loop_dispatcher.py with a signal-to-decision binding: consume pattern_id entries from state/research/ signal candidates and write a per-dispatch 'decision receipt' (signal consumed, loop weight changed, before/after) into state/loops.json notes \u2014 making the portfolio allocator auditable the same way core/contracts.py makes responses auditable.",
+  "proof_next_action": "Read state/research/innermost_loop_trajectory.json and scripts/loop_dispatcher.py, then implement the decision-receipt write in loop_dispatcher.py (signal pattern_id \u2192 loop selection delta logged via core/state_io.py), run pytest tests/ -q, commit, and post the \u2705 receipt to #shadow-log.",
+  "public_angle": "Everyone is demoing agent swarms from their phone; nobody can show a receipt that any single agent's loop made a correct decision. I run 83 code-enforced contracts on one agent and every loop dispatch now logs why it fired. Depth of verification is the moat, not width of orchestration.",
+  "buyer_offer": "Audit-the-audit angle for the paid agent-failure audit: prospects running multi-agent or benchmark-validated stacks get a 'validity audit' tier \u2014 Shadow applies the five benchmark-audit failure modes (arXiv 2607.02586) to their agent's own eval/verification layer, priced above the base contract-install because it audits the thing they trust most.",
   "source_titles": [
-    "Welcome to July 5, 2026",
-    "sqlite-utils 4.0rc3",
-    "Language Model Self-improvement by Reinforcement Learning Contemplation without External Supervision",
-    "CoRe: Combined Rewards with Vision-Language Model Feedback for Preference-Aligned Reinforcement Learning",
-    "Surrogate Fidelity: When Can Open LLMs Explain Closed Ones?"
+    "SwarmResearch: Orchestrating Coding Agents for Open-Ended Discovery",
+    "Auditing the Audit: Five Failure Modes in Benchmark-Validity Audits",
+    "\ud83c\udf99\ufe0f How I AI: Sonnet 5 review & How to run autonomous coding agents from your phone",
+    "How I run autonomous coding agents from my phone with OpenAI Symphony + Linear | Alessio Fanelli (Kernel Labs)",
+    "eli-labz/Cognitive-Core-Skills \u2014 A universal, industry-neutral taxonomy of cognitive core skills (perception, memory, reasoning, plan"
   ],
   "packets": [
     {
-      "id": "86aa8166f757",
+      "id": "9e0bed198560",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "c43261608f51",
+      "id": "436934afe338",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "616ed711d559",
+      "id": "6538387a5ef8",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "11805ab9f677",
+      "id": "03b587b1d36a",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Run `python3 scripts/verify_loop_receipt.py --research-signals`, inspect the appended row in `state/loop_quality_receipts.jsonl`, then patch `scripts/agent_pheromones.py` to record receipt pass/fail by domain.",
-      "packet_id": "86aa8166f757"
+      "next_action": "Read state/research/innermost_loop_trajectory.json and scripts/loop_dispatcher.py, then implement the decision-receipt write in loop_dispatcher.py (signal pattern_id \u2192 loop selection delta logged via core/state_io.py), run pytest tests/ -q, commit, and post the \u2705 receipt to #shadow-log.",
+      "packet_id": "9e0bed198560"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_c43261608f51_1783414436",
-      "packet_id": "c43261608f51"
+      "draft_id": "frontier_436934afe338_1783498186",
+      "packet_id": "436934afe338"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "4181f3ad1374",
-      "packet_id": "616ed711d559"
+      "experiment_id": "1d92f79007be",
+      "packet_id": "6538387a5ef8"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "11805ab9f677"
+      "packet_id": "03b587b1d36a"
     }
   ],
   "receipts": {

@@ -6,15 +6,15 @@
       "budget": 2,
       "conversions": 0,
       "responses": 0,
-      "score": 3.6766,
+      "score": 3.6777,
       "signups": 0
     },
     "moltbook_engage": {
-      "actions": 796,
+      "actions": 818,
       "budget": 1,
       "conversions": 0,
-      "responses": 10,
-      "score": 0.3334,
+      "responses": 13,
+      "score": 0.3594,
       "signups": 0
     },
     "recommend_swap": {
@@ -30,7 +30,7 @@
       "budget": 1,
       "conversions": 0,
       "responses": 0,
-      "score": 0.2371,
+      "score": 0.2372,
       "signups": 0
     },
     "reply_graph": {
@@ -38,15 +38,15 @@
       "budget": 3,
       "conversions": 0,
       "responses": 0,
-      "score": 0.6808,
+      "score": 0.681,
       "signups": 0
     },
     "substack_notes": {
-      "actions": 58,
+      "actions": 59,
       "budget": 7,
       "conversions": 0,
       "responses": 0,
-      "score": 5.9542,
+      "score": 5.9231,
       "signups": 4
     },
     "x_dm": {
@@ -54,7 +54,7 @@
       "budget": 4,
       "conversions": 0,
       "responses": 0,
-      "score": 5.1625,
+      "score": 5.1676,
       "signups": 0
     }
   },
@@ -76,15 +76,15 @@
       "channels": [
         "substack_notes"
       ],
-      "phrase": "campaign charlieangus d5chk email",
-      "score": 27.351
+      "phrase": "connect energy people startups",
+      "score": 29.448
     },
     {
       "channels": [
         "substack_notes"
       ],
-      "phrase": "connect energy people startups",
-      "score": 26.708
+      "phrase": "campaign charlieangus d5chk email",
+      "score": 27.247
     },
     {
       "channels": [
@@ -92,7 +92,7 @@
         "substack_notes"
       ],
       "phrase": "shadow government happened here",
-      "score": 15.343
+      "score": 15.239
     },
     {
       "channels": [
@@ -100,7 +100,7 @@
         "owned_brief"
       ],
       "phrase": "reliability will between biggest",
-      "score": 14.03
+      "score": 13.926
     },
     {
       "channels": [
@@ -108,7 +108,7 @@
         "substack_notes"
       ],
       "phrase": "best ever image pelican",
-      "score": 13.624
+      "score": 13.748
     }
   ],
   "flight_recorder": {
@@ -116,8 +116,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.9,
-          "last_activity": "2026-07-07T07:59:47.095477+00:00",
+          "hours_since": 20.0,
+          "last_activity": "2026-07-07T12:12:10.623788+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -130,22 +130,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.9,
-          "last_activity": "2026-07-07T07:59:47.090326+00:00",
-          "source": "verifier_receipt",
-          "staleness": "ok"
-        },
-        "loop_id": "echo",
-        "name": "Echo Content",
-        "reason": "fresh evidence is internal-only: verifier_receipt",
-        "requires_external_reach": true,
-        "verdict": "no_external_reach"
-      },
-      {
-        "declared_state": "running",
-        "evidence": {
-          "hours_since": 21.9,
-          "last_activity": "2026-07-06T11:01:04.437414+00:00",
+          "hours_since": 20.2,
+          "last_activity": "2026-07-07T12:00:30.837330+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -158,8 +144,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 21.9,
-          "last_activity": "2026-07-06T11:01:06.170116+00:00",
+          "hours_since": 20.1,
+          "last_activity": "2026-07-07T12:03:57.584448+00:00",
           "source": "verifier_receipt",
           "staleness": "stale"
         },
@@ -170,24 +156,10 @@
         "verdict": "stale"
       },
       {
-        "declared_state": "running",
-        "evidence": {
-          "hours_since": 12.7,
-          "last_activity": "2026-07-06T20:15:11.485296+00:00",
-          "source": "action_log",
-          "staleness": "expected_quiet"
-        },
-        "loop_id": "arbor",
-        "name": "Arbor Trading",
-        "reason": "fresh evidence from action_log",
-        "requires_external_reach": false,
-        "verdict": "pass"
-      },
-      {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 21.9,
-          "last_activity": "2026-07-06T11:01:03.554581+00:00",
+          "hours_since": 20.2,
+          "last_activity": "2026-07-07T12:00:20.030406+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -200,8 +172,8 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 21.9,
-          "last_activity": "2026-07-06T11:01:05.824725+00:00",
+          "hours_since": 20.1,
+          "last_activity": "2026-07-07T12:03:56.389037+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -214,8 +186,22 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 21.9,
-          "last_activity": "2026-07-06T11:01:02.457074+00:00",
+          "hours_since": 0.6,
+          "last_activity": "2026-07-08T07:34:04.738236+00:00",
+          "source": "external_post_receipt",
+          "staleness": "ok"
+        },
+        "loop_id": "echo",
+        "name": "Echo Content",
+        "reason": "fresh evidence from external_post_receipt",
+        "requires_external_reach": true,
+        "verdict": "pass"
+      },
+      {
+        "declared_state": "at_checkpoint",
+        "evidence": {
+          "hours_since": 20.2,
+          "last_activity": "2026-07-07T12:00:07.222394+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -224,29 +210,29 @@
         "reason": "fresh evidence from verifier_receipt",
         "requires_external_reach": false,
         "verdict": "pass"
+      },
+      {
+        "declared_state": "at_checkpoint",
+        "evidence": {
+          "hours_since": 20.2,
+          "last_activity": "2026-07-07T12:00:16.843548+00:00",
+          "source": "verifier_receipt",
+          "staleness": "ok"
+        },
+        "loop_id": "shadow-loop-model",
+        "name": "Shadow Loop Model",
+        "reason": "fresh evidence from verifier_receipt",
+        "requires_external_reach": false,
+        "verdict": "pass"
       }
     ],
-    "generated_at": "2026-07-07T08:55:10.628281+00:00",
+    "generated_at": "2026-07-08T08:11:11.473587+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
         "evidence_source": "verifier_receipt",
         "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
         "loop_id": "content-biz",
-        "missing_receipts": [
-          "external_post_receipt",
-          "subscriber_receipt",
-          "reply_receipt",
-          "meeting_receipt"
-        ],
-        "priority": 90,
-        "verdict": "no_external_reach"
-      },
-      {
-        "action": "produce_or_attach_external_receipt",
-        "evidence_source": "verifier_receipt",
-        "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
-        "loop_id": "echo",
         "missing_receipts": [
           "external_post_receipt",
           "subscriber_receipt",
@@ -286,8 +272,8 @@
     "rule": "Declared loop state is not proof. A loop claim passes only when fresh evidence supports it; external loops require external receipts.",
     "schema": "shadow.agent_flight_recorder.v1",
     "summary": {
-      "no_external_reach": 3,
-      "pass": 4,
+      "no_external_reach": 2,
+      "pass": 5,
       "stale": 1
     }
   },
@@ -303,7 +289,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md",
     "purpose": "scarce frontier-model usage ledger that routes high-end model headroom into sellable artifacts, proof surfaces, acquisition machinery, and model-agnostic operating-system upgrades"
   },
-  "generated_at": "2026-07-07T08:55:10.628281+00:00",
+  "generated_at": "2026-07-08T08:11:11.473587+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",

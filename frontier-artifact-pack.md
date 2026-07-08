@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-07-07T08:53:56.719330+00:00
+Generated: 2026-07-08T08:09:46.962268+00:00
 
 ## Thesis
-The winning agent business will not be the one with the smartest model, but the one that can prove every autonomous action had the right route, evidence, retry condition, and revenue reason.
+The market is converging on agent orchestration breadth (swarms, phone-driven fleets) while the actual bottleneck — and the defensible product — is audit-grade execution depth: agents that can prove each loop iteration was valid, not agents that run more loops in parallel.
 
 ## Doctrine
-No loop output is complete until it emits an auditable receipt tying evidence, model/task route, retry trigger, next action, and revenue relevance to a durable artifact.
+Every loop upgrade must change a decision, not a description: a new signal only counts as integrated when it alters allocator weighting, blocker classification, or a retry gate — and emits a runtime receipt proving the altered path fired.
 
 ## Proof Artifact
-Extend `scripts/verify_loop_receipt.py` into a capability-routing gate that logs observed model strength by task class and feeds pass/fail outcomes into `scripts/agent_pheromones.py`.
+Extend scripts/loop_dispatcher.py with a signal-to-decision binding: consume pattern_id entries from state/research/ signal candidates and write a per-dispatch 'decision receipt' (signal consumed, loop weight changed, before/after) into state/loops.json notes — making the portfolio allocator auditable the same way core/contracts.py makes responses auditable.
 
-Next action: Run `python3 scripts/verify_loop_receipt.py --research-signals`, inspect the appended row in `state/loop_quality_receipts.jsonl`, then patch `scripts/agent_pheromones.py` to record receipt pass/fail by domain.
+Next action: Read state/research/innermost_loop_trajectory.json and scripts/loop_dispatcher.py, then implement the decision-receipt write in loop_dispatcher.py (signal pattern_id → loop selection delta logged via core/state_io.py), run pytest tests/ -q, commit, and post the ✅ receipt to #shadow-log.
 
 ## Public Angle
-Most agent failures are not reasoning failures; they are unreceipted routing failures that look fine until nobody can prove why the agent chose that model, tool, or retry.
+Everyone is demoing agent swarms from their phone; nobody can show a receipt that any single agent's loop made a correct decision. I run 83 code-enforced contracts on one agent and every loop dispatch now logs why it fired. Depth of verification is the moat, not width of orchestration.
 
 ## Buyer Offer
-Sell a lightweight Agent Receipt Audit: identify where a prospect's agent stack claims completion without route evidence, retry gates, or outcome receipts, then install the first verifier.
+Audit-the-audit angle for the paid agent-failure audit: prospects running multi-agent or benchmark-validated stacks get a 'validity audit' tier — Shadow applies the five benchmark-audit failure modes (arXiv 2607.02586) to their agent's own eval/verification layer, priced above the base contract-install because it audits the thing they trust most.
 
 ## Source Signals
-- Welcome to July 5, 2026
-- sqlite-utils 4.0rc3
-- Language Model Self-improvement by Reinforcement Learning Contemplation without External Supervision
-- CoRe: Combined Rewards with Vision-Language Model Feedback for Preference-Aligned Reinforcement Learning
-- Surrogate Fidelity: When Can Open LLMs Explain Closed Ones?
+- SwarmResearch: Orchestrating Coding Agents for Open-Ended Discovery
+- Auditing the Audit: Five Failure Modes in Benchmark-Validity Audits
+- 🎙️ How I AI: Sonnet 5 review & How to run autonomous coding agents from your phone
+- How I run autonomous coding agents from my phone with OpenAI Symphony + Linear | Alessio Fanelli (Kernel Labs)
+- eli-labz/Cognitive-Core-Skills — A universal, industry-neutral taxonomy of cognitive core skills (perception, memory, reasoning, plan
 
 ## Scale Packets
-- proof_artifact: promoted (86aa8166f757)
-- public_wedge: promoted (c43261608f51)
-- buyer_experiment: promoted (616ed711d559)
-- operator_doctrine: promoted (11805ab9f677)
+- proof_artifact: promoted (9e0bed198560)
+- public_wedge: promoted (436934afe338)
+- buyer_experiment: promoted (6538387a5ef8)
+- operator_doctrine: promoted (03b587b1d36a)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (86aa8166f757)
-- public_wedge: queued_echo_draft (c43261608f51)
-- buyer_experiment: queued_buyer_experiment (616ed711d559)
-- operator_doctrine: already_persisted (11805ab9f677)
+- proof_artifact: delegated_to_improvement_queue (9e0bed198560)
+- public_wedge: queued_echo_draft (436934afe338)
+- buyer_experiment: queued_buyer_experiment (6538387a5ef8)
+- operator_doctrine: already_persisted (03b587b1d36a)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`
