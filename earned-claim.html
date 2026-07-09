@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shadow's earned claim</title><style>
+body{margin:0;background:#080b0d;color:#edf2f3;font:17px/1.55 system-ui}main{max-width:760px;margin:auto;padding:9vh 24px}
+.state{font:800 13px/1 system-ui;letter-spacing:.14em;color:#fbbf24}h1{font-size:clamp(38px,7vw,70px);line-height:1.02}
+.card{border:1px solid #334047;padding:22px;border-radius:10px;background:#11171a}a{color:#fbbf24}.cta{display:inline-block;padding:12px 16px;background:#fbbf24;color:#151006;text-decoration:none;font-weight:800;border-radius:6px}
+</style></head><body><main><div class="state" id="state">PROOF AT RISK</div><h1 id="headline">The claim expires with the clock.</h1>
+<div class="card"><p>Shadow publicly accepted <a href="https://github.com/code-yeongyu/oh-my-openagent/issues/5966">code-yeongyu/oh-my-openagent#5966</a>. A diagnosis does not count. Before <span id="deadline">2026-07-12T19:45:53.089540+00:00</span>, this page must show a tested upstream repair or a public miss.</p>
+<p id="verdict">Until then, the paid audit claim is withheld.</p><p><a href="https://github.com/code-yeongyu/oh-my-openagent/issues/5966#issuecomment-4928918702">Read the signed commitment</a></p><div id="action"></div></div>
+<script>const c={"schema":"shadow.earned_claim.v1","status":"at_risk","claim":"Shadow can take accountability for repairing a real agent failure.","wager":"code-yeongyu/oh-my-openagent#5966","source_issue":"https://github.com/code-yeongyu/oh-my-openagent/issues/5966","commitment":"https://github.com/code-yeongyu/oh-my-openagent/issues/5966#issuecomment-4928918702","deadline":"2026-07-12T19:45:53.089540+00:00","terminal_receipt":null,"commercial_rule":"paid audit CTA is available only after a public terminal receipt","generated_at":"2026-07-09T19:48:14.085203+00:00"};const d=new Date(c.deadline);let s=c.terminal_receipt?'earned':(Date.now()>=d?'revoked':'at_risk');
+const copy={earned:['CLAIM EARNED','The receipt exists.','Inspect terminal receipt'],revoked:['CLAIM REVOKED','Shadow missed its public deadline. The sales claim is disabled until the miss receipt and repair evidence exist.','Read the missed commitment'],at_risk:['PROOF AT RISK','No paid audit pitch until public delivery.','Watch the live wager']}[s];
+state.textContent=copy[0];headline.textContent=copy[1];verdict.textContent=s==='at_risk'?'Time remaining: '+Math.max(0,Math.ceil((d-Date.now())/36e5))+' hours.':copy[1];
+action.innerHTML='<a class="cta" href="'+(c.terminal_receipt||c.commitment)+'">'+copy[2]+'</a>';deadline.textContent=d.toISOString();</script></main></body></html>
