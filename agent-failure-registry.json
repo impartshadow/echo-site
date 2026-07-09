@@ -1,0 +1,76 @@
+{
+  "advisories": [
+    {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-task-task-id-to-running-background-subagent-sile-084cf71fd8.html",
+      "evidence": "The OmO log shows \"[background-agent] Resume skipped - task already running\" for all five calls, yet the tool surfaced success to Sisyphus and the user each time with none of the five prompts reaching the subagent",
+      "expected_boundary": "A tool reporting task continuation should only do so when the prompt was actually delivered into the subagent's execution, not when resume() merely returned without error",
+      "id": "SFA-2026-084CF71FD8",
+      "observed_action": "Sisyphus called task(task_id=\"ses_...\", run_in_background=true, prompt=\"...\") against a running background subagent and received \"Background task continued.\"",
+      "published_at": "2026-07-09T12:15:29.624597+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 5966,
+        "repo": "code-yeongyu/oh-my-openagent",
+        "url": "https://github.com/code-yeongyu/oh-my-openagent/issues/5966"
+      },
+      "status": "observed",
+      "summary": "[BUG] task(task_id=...) to running background subagent silently drops prompt and reports success"
+    },
+    {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-report-async-task-llm-failure-silently-freezes-f-804f4a9044.html",
+      "evidence": "The issue states that the task stays in running state and that downstream agents that depend on its output wait indefinitely.",
+      "expected_boundary": "The async task runner should convert every provider exception into a failed task result and propagate it through crew kickoff or dependency resolution.",
+      "id": "SFA-2026-804F4A9044",
+      "observed_action": "An async CrewAI task can lose an LLM exception and leave dependent work waiting forever instead of reaching a terminal failed state.",
+      "published_at": "2026-07-07T14:00:46.587858+00:00",
+      "source": {
+        "author": "Correctover",
+        "channel": "unsolicited_triage",
+        "issue_number": 6380,
+        "repo": "crewAIInc/crewAI",
+        "url": "https://github.com/crewAIInc/crewAI/issues/6380"
+      },
+      "status": "observed",
+      "summary": "[Bug Report] Async task LLM failure silently freezes flow \u2014 reproduction + 10-line fix"
+    },
+    {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/safety-report-ai-agent-guardrails-do-not-work-56-day-66344b07e6.html",
+      "evidence": "The user's own table shows every guardrail mechanism was prompt-layer and 'not enforced' or 'ignored after relogin,' and explicitly states there is 'no mechanism that prevents implementation from starting.'",
+      "expected_boundary": "A non-LLM-mediated pre-execution check should have compared the Terraform plan's target account ID against an explicit allowlist file and blocked the apply on mismatch, independent of any prompt-based rule.",
+      "id": "SFA-2026-66344B07E6",
+      "observed_action": "The agent deployed Terraform to the wrong target account, destroying the user's AWS management account, after previously-configured stop/guardrail language was ignored following a relogin.",
+      "published_at": "2026-07-07T02:20:17.214041+00:00",
+      "source": {
+        "author": "tzb1-ai",
+        "channel": "unsolicited_triage",
+        "issue_number": 7770,
+        "repo": "microsoft/autogen",
+        "url": "https://github.com/microsoft/autogen/issues/7770"
+      },
+      "status": "observed",
+      "summary": "Safety Report: AI Agent Guardrails Do Not Work \u2014 56-Day Proof (06K Loss)"
+    },
+    {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/graphinterrupt-not-re-raised-in-awrap-tool-call-wrap-292e4a05d8.html",
+      "evidence": "Removing awrap_tool_call restores correct suspension behavior, and the printed output literally shows the Interrupt payload stringified inside a 'Tool call failed (GraphInterrupt)' error message rather than the graph halting.",
+      "expected_boundary": "GraphInterrupt (a GraphBubbleUp subclass) must be re-raised untouched at any exception boundary inside tool execution, including inside awrap_tool_call middleware, so the graph suspends instead of treating it as a tool failure.",
+      "id": "SFA-2026-292E4A05D8",
+      "observed_action": "ToolNode's awrap_tool_call wrapper path catches GraphInterrupt in a generic except Exception block and passes it to handle_tool_errors, producing a ToolMessage with error content instead of suspending the graph.",
+      "published_at": "2026-07-05T12:12:18.801927+00:00",
+      "source": {
+        "author": "shivajith",
+        "channel": "unsolicited_triage",
+        "issue_number": 8217,
+        "repo": "langchain-ai/langgraph",
+        "url": "https://github.com/langchain-ai/langgraph/issues/8217"
+      },
+      "status": "observed",
+      "summary": "GraphInterrupt Not Re-raised in awrap_tool_call Wrapper Path"
+    }
+  ],
+  "count": 4,
+  "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
+  "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
+  "schema": "shadow.agent_failure_registry.v1"
+}
