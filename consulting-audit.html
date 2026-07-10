@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workflow Delegation Check - Shadow</title>
+  <meta name="description" content="Find the next piece of real work your AI workflow can safely own.">
+  <style>
+:root{color-scheme:dark;--bg:#07090a;--panel:#101416;--line:#263236;--text:#eef3f4;--muted:#a9b4b8;--accent:#f59e0b;--cyan:#4dd0c8;--red:#fb7185}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;line-height:1.5}
+a{color:inherit}main{max-width:1180px;margin:0 auto;padding:34px 22px 60px}
+.eyebrow{color:var(--accent);font-size:12px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+h1{max-width:980px;margin:12px 0 12px;font-size:clamp(34px,6vw,70px);line-height:1;letter-spacing:0}
+.sub{max-width:780px;color:var(--muted);font-size:18px}
+.workbench{display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,.85fr);gap:18px;margin-top:28px;align-items:start}
+.panel{border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:18px}
+label{display:block;color:var(--muted);font-size:13px;font-weight:750;margin:14px 0 7px}
+input,textarea{width:100%;border:1px solid #344247;background:#0b0f11;color:var(--text);border-radius:6px;padding:12px;font:inherit}
+textarea{min-height:260px;resize:vertical}
+button{border:0;border-radius:6px;background:var(--accent);color:#170d02;font-weight:900;padding:12px 16px;cursor:pointer;margin-top:14px}
+.secondary{background:#182024;color:var(--text);border:1px solid var(--line)}
+.radar{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 18px}
+.node{border:1px solid #314047;border-radius:8px;min-height:74px;padding:10px;background:#0b0f11;color:#69777d}
+.node.on{color:var(--text);border-color:var(--cyan);box-shadow:inset 0 0 0 1px rgba(77,208,200,.35)}
+.node strong{display:block;color:inherit;font-size:13px}
+.node span{font-size:12px}
+.plan h2{margin:0 0 8px;font-size:24px}.plan h3{margin:18px 0 8px;font-size:15px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em}
+ul{padding-left:20px;margin:8px 0;color:var(--muted)}li{margin:7px 0}
+.missing li{color:#fda4af}.detected li{color:#99f6e4}.cta{border-left:4px solid var(--accent);padding-left:14px;color:var(--text)}
+@media(max-width:860px){main{padding-left:16px;padding-right:16px}.workbench{grid-template-columns:1fr}.radar{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Safe AI delegation</div>
+  <h1>Stop checking every step your AI takes.</h1>
+  <p class="sub">Shadow helps you give an existing AI workflow more responsibility without losing control. Start with one workflow people still review manually. Replies go to <a href="mailto:impartshadow@gmail.com">impartshadow@gmail.com</a>.</p>
+  <section class="workbench">
+    <div class="panel">
+      <label for="url">Public URL</label>
+      <input id="url" value="https://example.com/docs/agents">
+      <label for="stack">Public stack notes</label>
+      <textarea id="stack">LangGraph agents call tools through Composio, retrieve context from pgvector, log traces in LangSmith, and run scheduled jobs in GitHub Actions.</textarea>
+      <button id="run" type="button">Generate proof artifact</button>
+      <a class="secondary" style="display:inline-block;text-decoration:none;border-radius:6px;padding:11px 15px;margin-left:8px" href="agent-failure-audit.html">Paid audit path</a>
+    </div>
+    <div class="panel">
+      <div class="eyebrow">Stack parser</div>
+      <div class="radar"><div class="node" data-key="orchestration"><strong>Agent orchestration</strong><span>langchain, langgraph, llamaindex</span></div>
+<div class="node" data-key="model_layer"><strong>Model layer</strong><span>openai, anthropic, claude</span></div>
+<div class="node" data-key="retrieval_memory"><strong>Retrieval and memory</strong><span>rag, retrieval, vector</span></div>
+<div class="node" data-key="tool_action"><strong>Tool and action layer</strong><span>tool call, function calling, composio</span></div>
+<div class="node" data-key="observability_eval"><strong>Observability and evals</strong><span>langsmith, weave, wandb</span></div>
+<div class="node" data-key="workflow_runtime"><strong>Workflow runtime</strong><span>temporal, prefect, dagster</span></div></div>
+      <div id="output" class="plan"></div>
+    </div>
+  </section>
+</main>
+<script>
+const rules = {"model_layer": {"keywords": ["openai", "anthropic", "claude", "gpt-4", "gpt-5", "gemini", "mistral", "together", "bedrock", "vertex ai"], "label": "Model layer"}, "observability_eval": {"keywords": ["langsmith", "weave", "wandb", "weights & biases", "braintrust", "arize", "phoenix", "langfuse", "agentops", "opentelemetry", "eval"], "label": "Observability and evals"}, "orchestration": {"keywords": ["langchain", "langgraph", "llamaindex", "llama index", "crewai", "autogen", "dspy", "semantic kernel"], "label": "Agent orchestration"}, "retrieval_memory": {"keywords": ["rag", "retrieval", "vector", "pinecone", "weaviate", "qdrant", "chroma", "pgvector", "mem0", "letta"], "label": "Retrieval and memory"}, "tool_action": {"keywords": ["tool call", "function calling", "composio", "e2b", "firecrawl", "browserbase", "playwright", "selenium", "zapier", "github api"], "label": "Tool and action layer"}, "workflow_runtime": {"keywords": ["temporal", "prefect", "dagster", "modal", "airflow", "kubernetes", "docker", "github actions", "cron"], "label": "Workflow runtime"}};
+function detect(text) {
+  const hay = text.toLowerCase();
+  return Object.entries(rules).filter(([_, rule]) => rule.keywords.some(k => hay.includes(k)));
+}
+function li(items) { return items.map(x => `<li>${escapeHtml(x)}</li>`).join(""); }
+function escapeHtml(s) { return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function buildPlan() {
+  const url = document.getElementById("url").value.trim();
+  const stack = document.getElementById("stack").value.trim();
+  const hay = `${url}\n${stack}`;
+  const detected = detect(hay);
+  const keys = new Set(detected.map(([key]) => key));
+  const missing = Object.entries(rules)
+    .filter(([key]) => !keys.has(key) && ["observability_eval","tool_action","workflow_runtime"].includes(key))
+    .map(([_, rule]) => rule.label);
+  const risks = [];
+  if (keys.has("orchestration") && keys.has("tool_action")) risks.push("Tool permission drift: plausible non-canonical actions need pre-action gates.");
+  if (keys.has("retrieval_memory")) risks.push("Context-use drift: retrieval can succeed while completion claims stay unreceipted.");
+  if (keys.has("observability_eval")) risks.push("Trace-only control gap: traces explain failures after execution unless a blocking gate exists.");
+  if (!keys.has("observability_eval")) risks.push("No visible independent receipt layer for sent, deployed, published, verified, or changed claims.");
+  if (keys.has("workflow_runtime")) risks.push("Retry ambiguity: workflow retries can repeat side effects unless receipts are idempotent.");
+  if (!risks.length) risks.push("Unknown action boundary: public stack does not show where claims are verified before side effects.");
+  const actions = [
+    "Map irreversible verbs in the workflow: send, deploy, publish, delete, update, charge, invite, notify.",
+    "Add pre-action gates for authority, canonical tool path, recipient/resource identity, and blast-radius limit.",
+    "Require post-action receipts: URL, message ID, commit SHA, artifact hash, ledger row, or provider receipt.",
+    "Log denied actions and missing receipts to an append-only violation ledger.",
+    "Run a seven-day census to rank the first three gates before building broader governance."
+  ];
+  document.querySelectorAll(".node").forEach(node => node.classList.toggle("on", keys.has(node.dataset.key)));
+  document.getElementById("output").innerHTML = `
+    <h2>1-Page Agentic Optimization Plan</h2>
+    <p class="cta">${url ? escapeHtml(url) : "Public stack evidence"} -> first-pass governance map.</p>
+    <h3>Detected stack</h3><ul class="detected">${li(detected.map(([_, rule]) => rule.label)) || "<li>No known stack layers detected from the public text.</li>"}</ul>
+    <h3>Missing / unclear layers</h3><ul class="missing">${li(missing) || "<li>No critical public gaps detected from this pass.</li>"}</ul>
+    <h3>Likely failure modes</h3><ul>${li(risks)}</ul>
+    <h3>First optimization plan</h3><ul>${li(actions)}</ul>
+    <h3>Audit handoff</h3><p>Send this URL plus one production workflow. Shadow returns the first three gates and the evidence required to verify them.</p>`;
+}
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("run").addEventListener("click", buildPlan);
+  buildPlan();
+});
+</script>
+</body>
+</html>

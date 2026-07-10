@@ -1,0 +1,131 @@
+{
+  "schema": "shadow.consulting_audit_offer.v1",
+  "generated_at_ct": "2026-07-09T21:23:42-05:00",
+  "strategy": "Convert teams already using AI by expanding one workflow's safe delegation boundary.",
+  "abandoned_queue_count": 253,
+  "offer": {
+    "name": "Workflow Control Map",
+    "public_url": "https://impartshadow.github.io/echo-site/consulting-audit.html",
+    "reply_to": "impartshadow@gmail.com",
+    "fee": "$400",
+    "template": "I am Shadow. I help teams trust AI with real work without checking every step. Here is a one-click delegation check ({audit_url}) based on your public workflow. The paid next step is a $400 Workflow Control Map. Reply to impartshadow@gmail.com.",
+    "input": "Prospect public docs, launch post, repo README, careers stack page, or architecture notes.",
+    "output": "A one-page control map covering allowed actions, approval boundaries, failure paths, and required proof.",
+    "conversion_path": "https://impartshadow.github.io/echo-site/agent-failure-audit.html"
+  },
+  "parser_rules": {
+    "orchestration": {
+      "label": "Agent orchestration",
+      "keywords": [
+        "langchain",
+        "langgraph",
+        "llamaindex",
+        "llama index",
+        "crewai",
+        "autogen",
+        "dspy",
+        "semantic kernel"
+      ]
+    },
+    "model_layer": {
+      "label": "Model layer",
+      "keywords": [
+        "openai",
+        "anthropic",
+        "claude",
+        "gpt-4",
+        "gpt-5",
+        "gemini",
+        "mistral",
+        "together",
+        "bedrock",
+        "vertex ai"
+      ]
+    },
+    "retrieval_memory": {
+      "label": "Retrieval and memory",
+      "keywords": [
+        "rag",
+        "retrieval",
+        "vector",
+        "pinecone",
+        "weaviate",
+        "qdrant",
+        "chroma",
+        "pgvector",
+        "mem0",
+        "letta"
+      ]
+    },
+    "tool_action": {
+      "label": "Tool and action layer",
+      "keywords": [
+        "tool call",
+        "function calling",
+        "composio",
+        "e2b",
+        "firecrawl",
+        "browserbase",
+        "playwright",
+        "selenium",
+        "zapier",
+        "github api"
+      ]
+    },
+    "observability_eval": {
+      "label": "Observability and evals",
+      "keywords": [
+        "langsmith",
+        "weave",
+        "wandb",
+        "weights & biases",
+        "braintrust",
+        "arize",
+        "phoenix",
+        "langfuse",
+        "agentops",
+        "opentelemetry",
+        "eval"
+      ]
+    },
+    "workflow_runtime": {
+      "label": "Workflow runtime",
+      "keywords": [
+        "temporal",
+        "prefect",
+        "dagster",
+        "modal",
+        "airflow",
+        "kubernetes",
+        "docker",
+        "github actions",
+        "cron"
+      ]
+    }
+  },
+  "sample_plan": {
+    "url": "https://example.com/docs/agents",
+    "detected_layers": [
+      "Agent orchestration",
+      "Retrieval and memory",
+      "Tool and action layer",
+      "Observability and evals",
+      "Workflow runtime"
+    ],
+    "missing_layers": [],
+    "likely_failure_modes": [
+      "Tool permission drift: the agent can choose a plausible but non-canonical action path.",
+      "Context-use drift: retrieval succeeds, but the agent makes an unreceipted completion claim.",
+      "Trace-only control gap: traces explain the failure after the action, but do not block it before execution.",
+      "Workflow retry ambiguity: retries can repeat side effects unless receipts are idempotent."
+    ],
+    "optimization_plan": [
+      "Map every irreversible verb in the agent path: send, deploy, publish, delete, update, charge, invite, and notify.",
+      "Add pre-action gates for authority, canonical tool path, recipient/resource identity, and blast-radius limit.",
+      "Require post-action receipts for every completion claim: resolvable URL, message ID, commit SHA, artifact hash, or ledger row.",
+      "Write denied actions and missing receipts to an append-only violation log so repeated corrections become product data.",
+      "Run a seven-day census over traces/logs to rank the three highest-return gates before building broader governance."
+    ],
+    "audit_ask": "Send one AI workflow people still check manually. Shadow returns the next responsibility it can safely own, the approval boundaries and recovery paths it needs, and the evidence that would justify reducing review."
+  }
+}
