@@ -1,6 +1,6 @@
 {
   "schema": "shadow.artifact_offer_funnel.v1",
-  "generated_at": "2026-07-08T08:23:01.982524+00:00",
+  "generated_at": "2026-07-10T08:52:55.364698+00:00",
   "public_base": "https://impartshadow.github.io/echo-site",
   "artifact_count": 21,
   "registry": [
@@ -19,30 +19,30 @@
       "url": "https://impartshadow.github.io/echo-site/agent-failure-audit.html",
       "target_buyer": "teams running production LLM agents",
       "offer_links": 3,
-      "age_days": 1.6,
+      "age_days": 3.7,
       "reach_mentions": 0,
       "stale_no_offer": false,
-      "distribution_priority": 0.96
+      "distribution_priority": 0.907
     },
     {
       "artifact": "sample-failure-census",
       "url": "https://impartshadow.github.io/echo-site/sample-failure-census.html",
       "target_buyer": "buyers evaluating the $400 census",
       "offer_links": 3,
-      "age_days": 1.6,
+      "age_days": 3.7,
       "reach_mentions": 0,
       "stale_no_offer": false,
-      "distribution_priority": 0.96
+      "distribution_priority": 0.907
     },
     {
       "artifact": "failure-distribution-packet",
       "url": "https://impartshadow.github.io/echo-site/failure-distribution-packet.html",
       "target_buyer": "distribution partners",
       "offer_links": 3,
-      "age_days": 2.2,
+      "age_days": 4.2,
       "reach_mentions": 0,
       "stale_no_offer": false,
-      "distribution_priority": 0.945
+      "distribution_priority": 0.895
     },
     {
       "artifact": "contract-install-blueprint",
@@ -119,10 +119,10 @@
       "url": "https://impartshadow.github.io/echo-site/failure-trace-lab-intake.html",
       "target_buyer": "inbound triage prospects",
       "offer_links": 1,
-      "age_days": 2.2,
+      "age_days": 4.2,
       "reach_mentions": 0,
       "stale_no_offer": false,
-      "distribution_priority": 0.678
+      "distribution_priority": 0.628
     },
     {
       "artifact": "agent-failure-challenges",
@@ -155,6 +155,16 @@
       "distribution_priority": 0.6
     },
     {
+      "artifact": "consulting-audit",
+      "url": "https://impartshadow.github.io/echo-site/consulting-audit.html",
+      "target_buyer": "consulting buyers for the $2k install",
+      "offer_links": 0,
+      "age_days": 0.3,
+      "reach_mentions": 0,
+      "stale_no_offer": false,
+      "distribution_priority": 0.593
+    },
+    {
       "artifact": "agent-failure-bounty",
       "url": "https://impartshadow.github.io/echo-site/agent-failure-bounty.html",
       "target_buyer": "agent builders with unexplained failures",
@@ -175,44 +185,34 @@
       "distribution_priority": 0.567
     },
     {
-      "artifact": "consulting-audit",
-      "url": "https://impartshadow.github.io/echo-site/consulting-audit.html",
-      "target_buyer": "consulting buyers for the $2k install",
-      "offer_links": 0,
-      "age_days": 1.9,
-      "reach_mentions": 0,
-      "stale_no_offer": false,
-      "distribution_priority": 0.552
-    },
-    {
       "artifact": "autonomy-gears",
       "url": "https://impartshadow.github.io/echo-site/autonomy-gears.html",
       "target_buyer": "agent operators",
       "offer_links": 0,
-      "age_days": 4.8,
+      "age_days": 6.8,
       "reach_mentions": 0,
       "stale_no_offer": false,
-      "distribution_priority": 0.48
+      "distribution_priority": 0.43
     },
     {
       "artifact": "upgrade",
       "url": "https://impartshadow.github.io/echo-site/upgrade.html",
       "target_buyer": "existing tenants considering paid tier",
       "offer_links": 0,
-      "age_days": 5.8,
+      "age_days": 7.8,
       "reach_mentions": 0,
-      "stale_no_offer": false,
-      "distribution_priority": 0.455
+      "stale_no_offer": true,
+      "distribution_priority": 0.405
     },
     {
       "artifact": "paid-agentic-infrastructure-blueprint",
       "url": "https://impartshadow.github.io/echo-site/paid-agentic-infrastructure-blueprint.html",
       "target_buyer": "agent operators",
       "offer_links": 0,
-      "age_days": 8.6,
+      "age_days": 10.6,
       "reach_mentions": 0,
       "stale_no_offer": true,
-      "distribution_priority": 0.385
+      "distribution_priority": 0.335
     }
   ],
   "no_offer_link": [
@@ -225,6 +225,7 @@
     "paid-agentic-infrastructure-blueprint"
   ],
   "stale_no_offer_flagged": [
+    "upgrade",
     "paid-agentic-infrastructure-blueprint"
   ],
   "next_distribution_action": {
