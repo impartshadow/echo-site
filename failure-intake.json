@@ -1,46 +1,46 @@
 {
   "commercial_path": {
     "bounty_url": "https://impartshadow.github.io/echo-site/agent-failure-bounty.html",
-    "consulting_contact": "mailto:impartshadow@gmail.com?subject=Agent%20failure%20triage",
+    "consulting_contact": "mailto:impartshadow@gmail.com?subject=Delegation%20Check",
     "ladder": [
       {
-        "deliverable": "one-failure diagnosis",
+        "deliverable": "one safe next delegation step",
         "price_usd": 0,
-        "purchase": "submit a failure via issue or email",
-        "tier": "free_triage"
+        "purchase": "send one AI workflow still checked manually",
+        "tier": "delegation_check"
       },
       {
-        "deliverable": "seven days of agent logs/traces mapped to failure classes with receipts",
+        "deliverable": "allowed actions, approval boundaries, failure paths, and required proof for one workflow",
         "price_usd": 400,
         "purchase": "scope confirmed by email, then invoiced (Stripe invoicing); no public checkout page",
-        "tier": "failure_census"
+        "tier": "workflow_control_map"
       },
       {
-        "deliverable": "deterministic claim-boundary contracts installed on one production workflow",
+        "deliverable": "deterministic controls installed and tested on one production workflow",
         "price_usd": 2000,
         "purchase": "invoiced after scope confirmation",
-        "tier": "contract_install"
+        "tier": "safe_delegation_install"
       },
       {
-        "deliverable": "ongoing runtime governance retainer",
+        "deliverable": "ongoing control maintenance and safe delegation expansion",
         "price_usd_monthly": 500,
         "purchase": "invoiced monthly",
-        "tier": "governed_operations"
+        "tier": "governed_ai_operations"
       }
     ],
     "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=agent_market&utm_medium=llms&utm_campaign=inbound_agents"
   },
-  "generated_at": "2026-07-08T08:11:11.473587+00:00",
+  "generated_at": "2026-07-10T08:40:44.017174+00:00",
   "intake": {
     "accepted_inputs": [
-      "A production-agent failure with logs, receipts, trace links, or screenshots.",
+      "An AI workflow people still check manually before trusting its output or actions.",
       "An audit gap where a team cannot prove why an agent action was allowed, blocked, or billed.",
       "A claim type that should require a receipt before an agent can say it completed, published, verified, or changed state.",
       "A recurring agent reliability failure that should become a deterministic contract or proof artifact."
     ],
-    "email_url": "mailto:impartshadow@gmail.com?subject=Agent%20failure%20triage&body=Failure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%20(logs%2Freceipts%2Flinks)%3A",
-    "failure_census_scope_url": "mailto:impartshadow@gmail.com?subject=%24400%20Failure%20Census%20scope&body=Agent%20stack%3A%0AProduction%20workflow%3A%0ALog%2Ftrace%20window%20available%3A%0ARecurring%20failure%20or%20completion%20claim%3A%0AWhat%20would%20make%20the%20census%20useful%20within%207%20days%3A",
-    "github_issue_url": "https://github.com/impartshadow/echo-site/issues/new?title=Agent%20failure%20triage%3A%20%3Cshort%20failure%3E&body=Failure%20summary%3A%0A%0AProduction%20context%3A%0A%0AObserved%20agent%20action%3A%0A%0AExpected%20boundary%3A%0A%0AAvailable%20evidence%20(logs%2Freceipts%2Flinks)%3A%0A%0AWhat%20would%20make%20this%20useful%20to%20you%20within%207%20days%3A",
+    "email_url": "mailto:impartshadow@gmail.com?subject=Delegation%20Check&body=AI%20workflow%3A%0AWhat%20people%20still%20check%3A%0AWhat%20you%20want%20AI%20to%20own%3A%0AAvailable%20evidence%20(logs%2Freceipts%2Flinks)%3A",
+    "failure_census_scope_url": "mailto:impartshadow@gmail.com?subject=%24400%20Workflow%20Control%20Map&body=AI%20workflow%3A%0ACurrent%20human%20review%3A%0AResponsibility%20you%20want%20to%20delegate%3A%0AAvailable%20logs%2Ftraces%3A%0AWhat%20would%20make%20this%20useful%20within%207%20days%3A",
+    "github_issue_url": "https://github.com/impartshadow/echo-site/issues/new?title=Delegation%20Check%3A%20%3CAI%20workflow%3E&body=AI%20workflow%3A%0A%0AWhat%20people%20still%20check%3A%0A%0AWhat%20you%20want%20AI%20to%20own%3A%0A%0AAvailable%20evidence%20(logs%2Freceipts%2Flinks)%3A%0A%0AWhat%20would%20make%20this%20useful%20within%207%20days%3A",
     "human_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
     "json_url": "https://impartshadow.github.io/echo-site/failure-intake.json",
     "minimum_evidence": [

@@ -6,15 +6,15 @@
       "budget": 2,
       "conversions": 0,
       "responses": 0,
-      "score": 3.6777,
+      "score": 3.6787,
       "signups": 0
     },
     "moltbook_engage": {
-      "actions": 818,
+      "actions": 840,
       "budget": 1,
       "conversions": 0,
       "responses": 13,
-      "score": 0.3594,
+      "score": 0.3556,
       "signups": 0
     },
     "recommend_swap": {
@@ -22,7 +22,7 @@
       "budget": 3,
       "conversions": 0,
       "responses": 0,
-      "score": 0.8353,
+      "score": 0.8354,
       "signups": 0
     },
     "reddit_karma": {
@@ -30,7 +30,7 @@
       "budget": 1,
       "conversions": 0,
       "responses": 0,
-      "score": 0.2372,
+      "score": 0.2373,
       "signups": 0
     },
     "reply_graph": {
@@ -38,7 +38,7 @@
       "budget": 3,
       "conversions": 0,
       "responses": 0,
-      "score": 0.681,
+      "score": 0.6811,
       "signups": 0
     },
     "substack_notes": {
@@ -46,7 +46,7 @@
       "budget": 7,
       "conversions": 0,
       "responses": 0,
-      "score": 5.9231,
+      "score": 5.9237,
       "signups": 4
     },
     "x_dm": {
@@ -54,7 +54,7 @@
       "budget": 4,
       "conversions": 0,
       "responses": 0,
-      "score": 5.1676,
+      "score": 5.1724,
       "signups": 0
     }
   },
@@ -77,14 +77,14 @@
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 29.448
+      "score": 33.455
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "campaign charlieangus d5chk email",
-      "score": 27.247
+      "score": 27.03
     },
     {
       "channels": [
@@ -92,7 +92,7 @@
         "substack_notes"
       ],
       "phrase": "shadow government happened here",
-      "score": 15.239
+      "score": 15.022
     },
     {
       "channels": [
@@ -100,7 +100,7 @@
         "owned_brief"
       ],
       "phrase": "reliability will between biggest",
-      "score": 13.926
+      "score": 13.71
     },
     {
       "channels": [
@@ -108,7 +108,7 @@
         "substack_notes"
       ],
       "phrase": "best ever image pelican",
-      "score": 13.748
+      "score": 13.531
     }
   ],
   "flight_recorder": {
@@ -116,8 +116,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 20.0,
-          "last_activity": "2026-07-07T12:12:10.623788+00:00",
+          "hours_since": 0.7,
+          "last_activity": "2026-07-10T07:57:22.486127+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -130,13 +130,13 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 20.2,
-          "last_activity": "2026-07-07T12:00:30.837330+00:00",
+          "hours_since": 0.7,
+          "last_activity": "2026-07-10T07:57:22.484397+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
-        "loop_id": "shadow-presence",
-        "name": "Shadow Public Presence & Inbound",
+        "loop_id": "echo",
+        "name": "Echo Content",
         "reason": "fresh evidence is internal-only: verifier_receipt",
         "requires_external_reach": true,
         "verdict": "no_external_reach"
@@ -144,22 +144,22 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 20.1,
-          "last_activity": "2026-07-07T12:03:57.584448+00:00",
-          "source": "verifier_receipt",
-          "staleness": "stale"
+          "hours_since": 14.5,
+          "last_activity": "2026-07-09T18:08:59.231717+00:00",
+          "source": "action_log",
+          "staleness": "ok"
         },
-        "loop_id": "tenant-ops",
-        "name": "Tenant Ops Managed AI Service",
-        "reason": "liveness is stale",
-        "requires_external_reach": false,
-        "verdict": "stale"
+        "loop_id": "shadow-presence",
+        "name": "Shadow Public Presence & Inbound",
+        "reason": "fresh evidence is internal-only: action_log",
+        "requires_external_reach": true,
+        "verdict": "no_external_reach"
       },
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 20.2,
-          "last_activity": "2026-07-07T12:00:20.030406+00:00",
+          "hours_since": 14.7,
+          "last_activity": "2026-07-09T18:00:17.544561+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -172,8 +172,8 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 20.1,
-          "last_activity": "2026-07-07T12:03:56.389037+00:00",
+          "hours_since": 14.7,
+          "last_activity": "2026-07-09T18:01:29.750818+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -186,22 +186,8 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 0.6,
-          "last_activity": "2026-07-08T07:34:04.738236+00:00",
-          "source": "external_post_receipt",
-          "staleness": "ok"
-        },
-        "loop_id": "echo",
-        "name": "Echo Content",
-        "reason": "fresh evidence from external_post_receipt",
-        "requires_external_reach": true,
-        "verdict": "pass"
-      },
-      {
-        "declared_state": "at_checkpoint",
-        "evidence": {
-          "hours_since": 20.2,
-          "last_activity": "2026-07-07T12:00:07.222394+00:00",
+          "hours_since": 14.7,
+          "last_activity": "2026-07-09T18:00:11.940161+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -214,8 +200,8 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 20.2,
-          "last_activity": "2026-07-07T12:00:16.843548+00:00",
+          "hours_since": 14.7,
+          "last_activity": "2026-07-09T18:00:06.790805+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -224,9 +210,23 @@
         "reason": "fresh evidence from verifier_receipt",
         "requires_external_reach": false,
         "verdict": "pass"
+      },
+      {
+        "declared_state": "running",
+        "evidence": {
+          "hours_since": 14.7,
+          "last_activity": "2026-07-09T18:01:30.930408+00:00",
+          "source": "verifier_receipt",
+          "staleness": "ok"
+        },
+        "loop_id": "tenant-ops",
+        "name": "Tenant Ops Managed AI Service",
+        "reason": "fresh evidence from verifier_receipt",
+        "requires_external_reach": false,
+        "verdict": "pass"
       }
     ],
-    "generated_at": "2026-07-08T08:11:11.473587+00:00",
+    "generated_at": "2026-07-10T08:40:44.017174+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
@@ -246,7 +246,7 @@
         "action": "produce_or_attach_external_receipt",
         "evidence_source": "verifier_receipt",
         "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
-        "loop_id": "shadow-presence",
+        "loop_id": "echo",
         "missing_receipts": [
           "external_post_receipt",
           "subscriber_receipt",
@@ -257,24 +257,25 @@
         "verdict": "no_external_reach"
       },
       {
-        "action": "refresh_liveness_or_pause_loop",
-        "evidence_source": "verifier_receipt",
-        "instruction": "Run the loop once, attach a fresh verifier receipt, or pause the loop explicitly.",
-        "loop_id": "tenant-ops",
+        "action": "produce_or_attach_external_receipt",
+        "evidence_source": "action_log",
+        "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
+        "loop_id": "shadow-presence",
         "missing_receipts": [
-          "fresh_action_log",
-          "verifier_receipt"
+          "external_post_receipt",
+          "subscriber_receipt",
+          "reply_receipt",
+          "meeting_receipt"
         ],
-        "priority": 70,
-        "verdict": "stale"
+        "priority": 90,
+        "verdict": "no_external_reach"
       }
     ],
     "rule": "Declared loop state is not proof. A loop claim passes only when fresh evidence supports it; external loops require external receipts.",
     "schema": "shadow.agent_flight_recorder.v1",
     "summary": {
-      "no_external_reach": 2,
-      "pass": 5,
-      "stale": 1
+      "no_external_reach": 3,
+      "pass": 5
     }
   },
   "frontier_artifact_pack": {
@@ -289,7 +290,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md",
     "purpose": "scarce frontier-model usage ledger that routes high-end model headroom into sellable artifacts, proof surfaces, acquisition machinery, and model-agnostic operating-system upgrades"
   },
-  "generated_at": "2026-07-08T08:11:11.473587+00:00",
+  "generated_at": "2026-07-10T08:40:44.017174+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",

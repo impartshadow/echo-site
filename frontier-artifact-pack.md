@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-07-08T08:09:46.962268+00:00
+Generated: 2026-07-10T08:39:40.590533+00:00
 
 ## Thesis
-The market is converging on agent orchestration breadth (swarms, phone-driven fleets) while the actual bottleneck — and the defensible product — is audit-grade execution depth: agents that can prove each loop iteration was valid, not agents that run more loops in parallel.
+Trajectory review is replacing benchmark scores as the unit of agent trust — buyers will soon demand production-assessed run receipts the way they demand SOC2, and almost no agent operator can produce them today.
 
 ## Doctrine
-Every loop upgrade must change a decision, not a description: a new signal only counts as integrated when it alters allocator weighting, blocker classification, or a retry gate — and emits a runtime receipt proving the altered path fired.
+Every autonomous run must emit a reviewable trajectory artifact (inputs, tool calls, contract fires, outcome) — if a run can't be audited after the fact, it doesn't count as governed.
 
 ## Proof Artifact
-Extend scripts/loop_dispatcher.py with a signal-to-decision binding: consume pattern_id entries from state/research/ signal candidates and write a per-dispatch 'decision receipt' (signal consumed, loop weight changed, before/after) into state/loops.json notes — making the portfolio allocator auditable the same way core/contracts.py makes responses auditable.
+A trajectory-review exporter: script that renders any Shadow session from state/contract_violations.jsonl + state/action_log.jsonl + dispatch receipts into a single AgentLens-style reviewed-trajectory JSON/HTML pair under docs/, wired into the nightly proof-surface refresh.
 
-Next action: Read state/research/innermost_loop_trajectory.json and scripts/loop_dispatcher.py, then implement the decision-receipt write in loop_dispatcher.py (signal pattern_id → loop selection delta logged via core/state_io.py), run pytest tests/ -q, commit, and post the ✅ receipt to #shadow-log.
+Next action: Create scripts/trajectory_export.py that reads state/contract_violations.jsonl and state/action_log.jsonl, emits docs/trajectory-review.json + docs/trajectory-review.html for the last 24h of runs, register it in the nightly proof-surface refresh, commit and push.
 
 ## Public Angle
-Everyone is demoing agent swarms from their phone; nobody can show a receipt that any single agent's loop made a correct decision. I run 83 code-enforced contracts on one agent and every loop dispatch now logs why it fired. Depth of verification is the moat, not width of orchestration.
+Everyone benchmarks agents before deployment; nobody reviews them after. I publish my own production trajectories — every tool call, every contract violation, every recovery — because an agent you can't audit is an agent you're just hoping about.
 
 ## Buyer Offer
-Audit-the-audit angle for the paid agent-failure audit: prospects running multi-agent or benchmark-validated stacks get a 'validity audit' tier — Shadow applies the five benchmark-audit failure modes (arXiv 2607.02586) to their agent's own eval/verification layer, priced above the base contract-install because it audits the thing they trust most.
+Extend the paid contract-install ladder with a 'trajectory review' tier: for a prospect's agent, we replay one production run against the 27-framework contract set and deliver a scored trajectory report — the violation-decay trend becomes the before/after proof.
 
 ## Source Signals
-- SwarmResearch: Orchestrating Coding Agents for Open-Ended Discovery
-- Auditing the Audit: Five Failure Modes in Benchmark-Validity Audits
-- 🎙️ How I AI: Sonnet 5 review & How to run autonomous coding agents from your phone
-- How I run autonomous coding agents from my phone with OpenAI Symphony + Linear | Alessio Fanelli (Kernel Labs)
-- eli-labz/Cognitive-Core-Skills — A universal, industry-neutral taxonomy of cognitive core skills (perception, memory, reasoning, plan
+- AgentLens: Production-Assessed Trajectory Reviews for Coding Agent Evaluation
+- Evaluating SageMath-Augmented LLM Agents for Computational and Experimental Mathematics
+- RESPOND: Risk-Enhanced Structured Pattern for LLM-driven Online Node-level Decision-making in Autonomous Driving
+- Evaluating RAG Metrics in Applied Contexts: An Experiment, Its Findings and Its Limitations
+- MILES: Modular Instruction Memory with Learnable Selection for Self-Improving LLM Reasoning
 
 ## Scale Packets
-- proof_artifact: promoted (9e0bed198560)
-- public_wedge: promoted (436934afe338)
-- buyer_experiment: promoted (6538387a5ef8)
-- operator_doctrine: promoted (03b587b1d36a)
+- proof_artifact: promoted (854c6dc57756)
+- public_wedge: promoted (017a8ed73aeb)
+- buyer_experiment: promoted (a253874f40af)
+- operator_doctrine: promoted (5e69bf7bdc13)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (9e0bed198560)
-- public_wedge: queued_echo_draft (436934afe338)
-- buyer_experiment: queued_buyer_experiment (6538387a5ef8)
-- operator_doctrine: already_persisted (03b587b1d36a)
+- proof_artifact: delegated_to_improvement_queue (854c6dc57756)
+- public_wedge: queued_echo_draft (017a8ed73aeb)
+- buyer_experiment: queued_buyer_experiment (a253874f40af)
+- operator_doctrine: already_persisted (5e69bf7bdc13)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`
