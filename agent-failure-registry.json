@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/research-human-in-the-loop-checkpoints-for-the-agent-b380bd3ecd.html",
+      "evidence": "No fixture files, contract mappings, or follow-up issues with concrete acceptance criteria are referenced anywhere in the issue body, only narrative scope and research questions.",
+      "expected_boundary": "Acceptance criteria for a control-boundary spec should include at least one machine-checkable fixture or CI assertion per checkpoint category, not only narrative documentation.",
+      "id": "SFA-2026-B380BD3ECD",
+      "observed_action": "The issue defines a research task whose acceptance criteria are all prose-verifiable statements (checkpoints are 'defined,' 'distinguished,' 'documented') rather than testable artifacts.",
+      "published_at": "2026-07-10T12:05:40.728450+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "delegation_check",
+        "issue_number": 40,
+        "repo": "perezadria28/hieronymus-ai",
+        "url": "https://github.com/perezadria28/hieronymus-ai/issues/40"
+      },
+      "status": "observed",
+      "summary": "Research human-in-the-loop checkpoints for the agent harness",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-task-task-id-to-running-background-subagent-sile-084cf71fd8.html",
       "evidence": "The OmO log shows \"[background-agent] Resume skipped - task already running\" for all five calls, yet the tool surfaced success to Sisyphus and the user each time with none of the five prompts reaching the subagent",
       "expected_boundary": "A tool reporting task continuation should only do so when the prompt was actually delivered into the subagent's execution, not when resume() merely returned without error",
@@ -15,7 +41,16 @@
         "url": "https://github.com/code-yeongyu/oh-my-openagent/issues/5966"
       },
       "status": "observed",
-      "summary": "[BUG] task(task_id=...) to running background subagent silently drops prompt and reports success"
+      "summary": "[BUG] task(task_id=...) to running background subagent silently drops prompt and reports success",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
     },
     {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-report-async-task-llm-failure-silently-freezes-f-804f4a9044.html",
@@ -32,7 +67,16 @@
         "url": "https://github.com/crewAIInc/crewAI/issues/6380"
       },
       "status": "observed",
-      "summary": "[Bug Report] Async task LLM failure silently freezes flow \u2014 reproduction + 10-line fix"
+      "summary": "[Bug Report] Async task LLM failure silently freezes flow \u2014 reproduction + 10-line fix",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
     },
     {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/safety-report-ai-agent-guardrails-do-not-work-56-day-66344b07e6.html",
@@ -49,7 +93,16 @@
         "url": "https://github.com/microsoft/autogen/issues/7770"
       },
       "status": "observed",
-      "summary": "Safety Report: AI Agent Guardrails Do Not Work \u2014 56-Day Proof (06K Loss)"
+      "summary": "Safety Report: AI Agent Guardrails Do Not Work \u2014 56-Day Proof (06K Loss)",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
     },
     {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/graphinterrupt-not-re-raised-in-awrap-tool-call-wrap-292e4a05d8.html",
@@ -66,11 +119,30 @@
         "url": "https://github.com/langchain-ai/langgraph/issues/8217"
       },
       "status": "observed",
-      "summary": "GraphInterrupt Not Re-raised in awrap_tool_call Wrapper Path"
+      "summary": "GraphInterrupt Not Re-raised in awrap_tool_call Wrapper Path",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
     }
   ],
-  "count": 4,
+  "count": 5,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
+  "retirement_signal": {
+    "advisories_with_use": 0,
+    "checked_at": "2026-07-10T12:05:40.745542+00:00",
+    "past_cutoff": false,
+    "reason": "No advisory-level use yet; 2026-07-16 sunset gate still open.",
+    "retire": false,
+    "schema": "shadow.advisory_retirement_signal.v1",
+    "sunset_date": "2026-07-16",
+    "total_uses": 0
+  },
   "schema": "shadow.agent_failure_registry.v1"
 }
