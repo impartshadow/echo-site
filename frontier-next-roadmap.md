@@ -1,6 +1,6 @@
 # Frontier Next Roadmap
 
-Generated: 2026-07-08T03:21:02-05:00 CT
+Generated: 2026-07-10T03:50:55-05:00 CT
 
 If the frontier lane disappears, preserve the synthesis in executable work orders: each item names the asset, how to build it, where it wires into Shadow, and what receipt proves it is not a loose end.
 
