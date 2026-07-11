@@ -4,12 +4,12 @@
     "hypothesis": "If Shadow exposes redacted tenant-operation proof publicly, at least one tenant-market outcome should arrive within seven days: inquiry, reply, referral, pricing conversation, or paid tenant.",
     "status": {
       "delta": 0,
-      "due_at": "2026-07-10T12:04:18.463594+00:00",
+      "due_at": "2026-07-18T08:39:12.094181+00:00",
       "target_delta": 1,
       "verdict": "running"
     }
   },
-  "generated_at": "2026-07-10T08:42:25.512657+00:00",
+  "generated_at": "2026-07-11T08:39:12.094181+00:00",
   "goal": "turn managed-tenant receipts into a public, falsifiable acquisition surface",
   "html_url": "https://impartshadow.github.io/echo-site/tenant-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/tenant-proof.json",
@@ -39,51 +39,51 @@
   "proof": {
     "active_pilots": 1,
     "category_totals": {
-      "expansion_request": 63,
-      "pricing_signal": 7,
-      "revenue_opportunity": 367,
+      "expansion_request": 69,
+      "pricing_signal": 8,
+      "revenue_opportunity": 403,
       "risk_avoided": 1,
-      "time_saved": 125
+      "time_saved": 137
     },
     "tenants": [
       {
         "asks_sent": 1,
         "billing_status": "free_beta_declared",
         "categories": {
-          "expansion_request": 63,
-          "pricing_signal": 7,
-          "revenue_opportunity": 367,
+          "expansion_request": 69,
+          "pricing_signal": 8,
+          "revenue_opportunity": 403,
           "risk_avoided": 1,
-          "time_saved": 125
+          "time_saved": 137
         },
-        "events": 496,
+        "events": 545,
         "id": "operator-01",
         "plan_price_monthly": 50,
-        "receipts_sent": 2,
-        "recent_7d": 205,
+        "receipts_sent": 3,
+        "recent_7d": 172,
         "tensions": {
-          "capability confusion": 60,
-          "capability proposal": 63,
-          "outside-world boundary: private account": 60,
-          "outside-world boundary: public web": 121,
+          "capability confusion": 66,
+          "capability proposal": 69,
+          "outside-world boundary: private account": 66,
+          "outside-world boundary: public web": 133,
           "tenant memory correction not sticking": 1
         },
-        "value_weight": 1302
+        "value_weight": 1430
       }
     ],
     "tension_totals": {
-      "capability confusion": 60,
-      "capability proposal": 63,
-      "outside-world boundary: private account": 60,
-      "outside-world boundary: public web": 121,
+      "capability confusion": 66,
+      "capability proposal": 69,
+      "outside-world boundary: private account": 66,
+      "outside-world boundary: public web": 133,
       "tenant memory correction not sticking": 1
     },
     "totals": {
       "asks_sent": 1,
-      "events": 496,
-      "receipts_sent": 2,
-      "recent_7d": 205,
-      "value_weight": 1302
+      "events": 545,
+      "receipts_sent": 3,
+      "recent_7d": 172,
+      "value_weight": 1430
     }
   },
   "schema": "shadow.tenant_proof_market.v1"
