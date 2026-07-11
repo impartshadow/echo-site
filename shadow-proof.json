@@ -6,15 +6,15 @@
       "budget": 2,
       "conversions": 0,
       "responses": 0,
-      "score": 3.6787,
+      "score": 3.6792,
       "signups": 0
     },
     "moltbook_engage": {
-      "actions": 840,
+      "actions": 851,
       "budget": 1,
       "conversions": 0,
-      "responses": 13,
-      "score": 0.3556,
+      "responses": 14,
+      "score": 0.3631,
       "signups": 0
     },
     "recommend_swap": {
@@ -46,7 +46,7 @@
       "budget": 7,
       "conversions": 0,
       "responses": 0,
-      "score": 5.9237,
+      "score": 5.924,
       "signups": 4
     },
     "x_dm": {
@@ -54,7 +54,7 @@
       "budget": 4,
       "conversions": 0,
       "responses": 0,
-      "score": 5.1724,
+      "score": 5.1748,
       "signups": 0
     }
   },
@@ -77,14 +77,14 @@
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 33.455
+      "score": 33.348
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "campaign charlieangus d5chk email",
-      "score": 27.03
+      "score": 26.924
     },
     {
       "channels": [
@@ -92,7 +92,7 @@
         "substack_notes"
       ],
       "phrase": "shadow government happened here",
-      "score": 15.022
+      "score": 14.916
     },
     {
       "channels": [
@@ -100,7 +100,7 @@
         "owned_brief"
       ],
       "phrase": "reliability will between biggest",
-      "score": 13.71
+      "score": 13.603
     },
     {
       "channels": [
@@ -108,7 +108,7 @@
         "substack_notes"
       ],
       "phrase": "best ever image pelican",
-      "score": 13.531
+      "score": 13.424
     }
   ],
   "flight_recorder": {
@@ -116,27 +116,13 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.7,
-          "last_activity": "2026-07-10T07:57:22.486127+00:00",
+          "hours_since": 14.5,
+          "last_activity": "2026-07-10T18:09:25.914641+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
-        "loop_id": "content-biz",
-        "name": "Content Business",
-        "reason": "fresh evidence is internal-only: verifier_receipt",
-        "requires_external_reach": true,
-        "verdict": "no_external_reach"
-      },
-      {
-        "declared_state": "running",
-        "evidence": {
-          "hours_since": 0.7,
-          "last_activity": "2026-07-10T07:57:22.484397+00:00",
-          "source": "verifier_receipt",
-          "staleness": "ok"
-        },
-        "loop_id": "echo",
-        "name": "Echo Content",
+        "loop_id": "brief-production",
+        "name": "Research Brief Production",
         "reason": "fresh evidence is internal-only: verifier_receipt",
         "requires_external_reach": true,
         "verdict": "no_external_reach"
@@ -145,49 +131,49 @@
         "declared_state": "running",
         "evidence": {
           "hours_since": 14.5,
-          "last_activity": "2026-07-09T18:08:59.231717+00:00",
-          "source": "action_log",
+          "last_activity": "2026-07-10T18:08:19.940104+00:00",
+          "source": "verifier_receipt",
           "staleness": "ok"
         },
         "loop_id": "shadow-presence",
         "name": "Shadow Public Presence & Inbound",
-        "reason": "fresh evidence is internal-only: action_log",
+        "reason": "fresh evidence is internal-only: verifier_receipt",
         "requires_external_reach": true,
         "verdict": "no_external_reach"
       },
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 14.7,
-          "last_activity": "2026-07-09T18:00:17.544561+00:00",
+          "hours_since": 14.6,
+          "last_activity": "2026-07-10T18:04:06.310444+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
-        "loop_id": "awg-outreach",
-        "name": "AWG Outreach & Consulting Pipeline",
+        "loop_id": "content-biz",
+        "name": "Content Business",
         "reason": "fresh evidence from verifier_receipt",
+        "requires_external_reach": true,
+        "verdict": "pass"
+      },
+      {
+        "declared_state": "running",
+        "evidence": {
+          "hours_since": 1.1,
+          "last_activity": "2026-07-11T07:31:42.324667+00:00",
+          "source": "external_post_receipt",
+          "staleness": "ok"
+        },
+        "loop_id": "echo",
+        "name": "Echo Content",
+        "reason": "fresh evidence from external_post_receipt",
         "requires_external_reach": true,
         "verdict": "pass"
       },
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 14.7,
-          "last_activity": "2026-07-09T18:01:29.750818+00:00",
-          "source": "verifier_receipt",
-          "staleness": "ok"
-        },
-        "loop_id": "brief-production",
-        "name": "Research Brief Production",
-        "reason": "fresh evidence from verifier_receipt",
-        "requires_external_reach": true,
-        "verdict": "pass"
-      },
-      {
-        "declared_state": "at_checkpoint",
-        "evidence": {
-          "hours_since": 14.7,
-          "last_activity": "2026-07-09T18:00:11.940161+00:00",
+          "hours_since": 14.4,
+          "last_activity": "2026-07-10T18:16:06.366206+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -200,8 +186,8 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 14.7,
-          "last_activity": "2026-07-09T18:00:06.790805+00:00",
+          "hours_since": 14.6,
+          "last_activity": "2026-07-10T18:04:05.328879+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -214,8 +200,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 14.7,
-          "last_activity": "2026-07-09T18:01:30.930408+00:00",
+          "hours_since": 14.5,
+          "last_activity": "2026-07-10T18:09:00.197297+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -226,13 +212,13 @@
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-07-10T08:40:44.017174+00:00",
+    "generated_at": "2026-07-11T08:37:19.541355+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
         "evidence_source": "verifier_receipt",
         "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
-        "loop_id": "content-biz",
+        "loop_id": "brief-production",
         "missing_receipts": [
           "external_post_receipt",
           "subscriber_receipt",
@@ -245,20 +231,6 @@
       {
         "action": "produce_or_attach_external_receipt",
         "evidence_source": "verifier_receipt",
-        "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
-        "loop_id": "echo",
-        "missing_receipts": [
-          "external_post_receipt",
-          "subscriber_receipt",
-          "reply_receipt",
-          "meeting_receipt"
-        ],
-        "priority": 90,
-        "verdict": "no_external_reach"
-      },
-      {
-        "action": "produce_or_attach_external_receipt",
-        "evidence_source": "action_log",
         "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
         "loop_id": "shadow-presence",
         "missing_receipts": [
@@ -274,7 +246,7 @@
     "rule": "Declared loop state is not proof. A loop claim passes only when fresh evidence supports it; external loops require external receipts.",
     "schema": "shadow.agent_flight_recorder.v1",
     "summary": {
-      "no_external_reach": 3,
+      "no_external_reach": 2,
       "pass": 5
     }
   },
@@ -290,7 +262,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md",
     "purpose": "scarce frontier-model usage ledger that routes high-end model headroom into sellable artifacts, proof surfaces, acquisition machinery, and model-agnostic operating-system upgrades"
   },
-  "generated_at": "2026-07-10T08:40:44.017174+00:00",
+  "generated_at": "2026-07-11T08:37:19.541355+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",

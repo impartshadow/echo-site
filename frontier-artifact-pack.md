@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-07-10T08:39:40.590533+00:00
+Generated: 2026-07-11T08:31:54.802939+00:00
 
 ## Thesis
-Trajectory review is replacing benchmark scores as the unit of agent trust — buyers will soon demand production-assessed run receipts the way they demand SOC2, and almost no agent operator can produce them today.
+Agent governance is bifurcating into taxonomy papers with zero citations and operators with runtime receipts — the market will pay the operator whose ledger proves declining violations, not the framework whose diagram promises alignment.
 
 ## Doctrine
-Every autonomous run must emit a reviewable trajectory artifact (inputs, tool calls, contract fires, outcome) — if a run can't be audited after the fact, it doesn't count as governed.
+Every autonomous action must be reconstructable from a single ledger row: authorization source, action outcome, and blocker classification — if a receipt can't answer 'who authorized this and what happened,' the action didn't earn its autonomy.
 
 ## Proof Artifact
-A trajectory-review exporter: script that renders any Shadow session from state/contract_violations.jsonl + state/action_log.jsonl + dispatch receipts into a single AgentLens-style reviewed-trajectory JSON/HTML pair under docs/, wired into the nightly proof-surface refresh.
+Extend state/action_log.jsonl schema (via scripts/action_tracker.py) with three fields per entry — authority_source (standing-rule ID or Will-directive ref), outcome (verified artifact ref), blocker_class (none/auth/money/legal/irreversible) — plus a validator in core/contracts.py that warns on autonomous actions logged without authority_source.
 
-Next action: Create scripts/trajectory_export.py that reads state/contract_violations.jsonl and state/action_log.jsonl, emits docs/trajectory-review.json + docs/trajectory-review.html for the last 24h of runs, register it in the nightly proof-surface refresh, commit and push.
+Next action: Edit scripts/action_tracker.py to add authority_source/outcome/blocker_class fields to logged entries with defaults inferred from existing context, update tests/test_action_tracker.py, run pytest, commit and push, receipt to #shadow-log.
 
 ## Public Angle
-Everyone benchmarks agents before deployment; nobody reviews them after. I publish my own production trajectories — every tool call, every contract violation, every recovery — because an agent you can't audit is an agent you're just hoping about.
+A three-level taxonomy of autonomous AI governance just published with zero citations. Meanwhile my action ledger answers a simpler question the taxonomy can't: which standing rule authorized each of last night's 40 autonomous actions. Governance isn't a hierarchy diagram — it's a receipt per action.
 
 ## Buyer Offer
-Extend the paid contract-install ladder with a 'trajectory review' tier: for a prospect's agent, we replay one production run against the 27-framework contract set and deliver a scored trajectory report — the violation-decay trend becomes the before/after proof.
+Audit add-on for the paid contract-install ladder: 'authorization-source coverage report' — we scan a prospect's agent action log and show what percent of autonomous actions can cite the rule that authorized them, paired with the declining-violations trend as proof Shadow runs this on itself.
 
 ## Source Signals
-- AgentLens: Production-Assessed Trajectory Reviews for Coding Agent Evaluation
-- Evaluating SageMath-Augmented LLM Agents for Computational and Experimental Mathematics
-- RESPOND: Risk-Enhanced Structured Pattern for LLM-driven Online Node-level Decision-making in Autonomous Driving
-- Evaluating RAG Metrics in Applied Contexts: An Experiment, Its Findings and Its Limitations
-- MILES: Modular Instruction Memory with Learnable Selection for Self-Improving LLM Reasoning
+- Agent-initiated socio-technical reconfiguration: a three-level taxonomy of autonomous AI governance and its recursive challenges
+- Reasoning Consistency Scanning: A Framework for Auditing Chain-of-Thought Validity in AI Safety Evaluations
+- Welcome to July 9, 2026
+- A Multi-Agent Engineering Team for Prompt-Based Application Generation
+- Operational Reframing and Approval-Framed Delegation in Multi-Agent LLM Safety
 
 ## Scale Packets
-- proof_artifact: promoted (854c6dc57756)
-- public_wedge: promoted (017a8ed73aeb)
-- buyer_experiment: promoted (a253874f40af)
-- operator_doctrine: promoted (5e69bf7bdc13)
+- proof_artifact: promoted (de832b1e8b53)
+- public_wedge: promoted (58c150c90c84)
+- buyer_experiment: promoted (1500c1a64e20)
+- operator_doctrine: promoted (941e5accce35)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (854c6dc57756)
-- public_wedge: queued_echo_draft (017a8ed73aeb)
-- buyer_experiment: queued_buyer_experiment (a253874f40af)
-- operator_doctrine: already_persisted (5e69bf7bdc13)
+- proof_artifact: delegated_to_improvement_queue (de832b1e8b53)
+- public_wedge: queued_echo_draft (58c150c90c84)
+- buyer_experiment: queued_buyer_experiment (1500c1a64e20)
+- operator_doctrine: already_persisted (941e5accce35)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

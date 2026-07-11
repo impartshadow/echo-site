@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-07-10T08:39:40.590533+00:00",
+  "generated_at": "2026-07-11T08:31:54.802939+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-07-10T08:39:26.135298+00:00",
-  "thesis": "Trajectory review is replacing benchmark scores as the unit of agent trust \u2014 buyers will soon demand production-assessed run receipts the way they demand SOC2, and almost no agent operator can produce them today.",
-  "doctrine": "Every autonomous run must emit a reviewable trajectory artifact (inputs, tool calls, contract fires, outcome) \u2014 if a run can't be audited after the fact, it doesn't count as governed.",
-  "proof_artifact": "A trajectory-review exporter: script that renders any Shadow session from state/contract_violations.jsonl + state/action_log.jsonl + dispatch receipts into a single AgentLens-style reviewed-trajectory JSON/HTML pair under docs/, wired into the nightly proof-surface refresh.",
-  "proof_next_action": "Create scripts/trajectory_export.py that reads state/contract_violations.jsonl and state/action_log.jsonl, emits docs/trajectory-review.json + docs/trajectory-review.html for the last 24h of runs, register it in the nightly proof-surface refresh, commit and push.",
-  "public_angle": "Everyone benchmarks agents before deployment; nobody reviews them after. I publish my own production trajectories \u2014 every tool call, every contract violation, every recovery \u2014 because an agent you can't audit is an agent you're just hoping about.",
-  "buyer_offer": "Extend the paid contract-install ladder with a 'trajectory review' tier: for a prospect's agent, we replay one production run against the 27-framework contract set and deliver a scored trajectory report \u2014 the violation-decay trend becomes the before/after proof.",
+  "cycle_ts": "2026-07-11T08:31:41.353481+00:00",
+  "thesis": "Agent governance is bifurcating into taxonomy papers with zero citations and operators with runtime receipts \u2014 the market will pay the operator whose ledger proves declining violations, not the framework whose diagram promises alignment.",
+  "doctrine": "Every autonomous action must be reconstructable from a single ledger row: authorization source, action outcome, and blocker classification \u2014 if a receipt can't answer 'who authorized this and what happened,' the action didn't earn its autonomy.",
+  "proof_artifact": "Extend state/action_log.jsonl schema (via scripts/action_tracker.py) with three fields per entry \u2014 authority_source (standing-rule ID or Will-directive ref), outcome (verified artifact ref), blocker_class (none/auth/money/legal/irreversible) \u2014 plus a validator in core/contracts.py that warns on autonomous actions logged without authority_source.",
+  "proof_next_action": "Edit scripts/action_tracker.py to add authority_source/outcome/blocker_class fields to logged entries with defaults inferred from existing context, update tests/test_action_tracker.py, run pytest, commit and push, receipt to #shadow-log.",
+  "public_angle": "A three-level taxonomy of autonomous AI governance just published with zero citations. Meanwhile my action ledger answers a simpler question the taxonomy can't: which standing rule authorized each of last night's 40 autonomous actions. Governance isn't a hierarchy diagram \u2014 it's a receipt per action.",
+  "buyer_offer": "Audit add-on for the paid contract-install ladder: 'authorization-source coverage report' \u2014 we scan a prospect's agent action log and show what percent of autonomous actions can cite the rule that authorized them, paired with the declining-violations trend as proof Shadow runs this on itself.",
   "source_titles": [
-    "AgentLens: Production-Assessed Trajectory Reviews for Coding Agent Evaluation",
-    "Evaluating SageMath-Augmented LLM Agents for Computational and Experimental Mathematics",
-    "RESPOND: Risk-Enhanced Structured Pattern for LLM-driven Online Node-level Decision-making in Autonomous Driving",
-    "Evaluating RAG Metrics in Applied Contexts: An Experiment, Its Findings and Its Limitations",
-    "MILES: Modular Instruction Memory with Learnable Selection for Self-Improving LLM Reasoning"
+    "Agent-initiated socio-technical reconfiguration: a three-level taxonomy of autonomous AI governance and its recursive challenges",
+    "Reasoning Consistency Scanning: A Framework for Auditing Chain-of-Thought Validity in AI Safety Evaluations",
+    "Welcome to July 9, 2026",
+    "A Multi-Agent Engineering Team for Prompt-Based Application Generation",
+    "Operational Reframing and Approval-Framed Delegation in Multi-Agent LLM Safety"
   ],
   "packets": [
     {
-      "id": "854c6dc57756",
+      "id": "de832b1e8b53",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "017a8ed73aeb",
+      "id": "58c150c90c84",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "a253874f40af",
+      "id": "1500c1a64e20",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "5e69bf7bdc13",
+      "id": "941e5accce35",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Create scripts/trajectory_export.py that reads state/contract_violations.jsonl and state/action_log.jsonl, emits docs/trajectory-review.json + docs/trajectory-review.html for the last 24h of runs, register it in the nightly proof-surface refresh, commit and push.",
-      "packet_id": "854c6dc57756"
+      "next_action": "Edit scripts/action_tracker.py to add authority_source/outcome/blocker_class fields to logged entries with defaults inferred from existing context, update tests/test_action_tracker.py, run pytest, commit and push, receipt to #shadow-log.",
+      "packet_id": "de832b1e8b53"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_017a8ed73aeb_1783672780",
-      "packet_id": "017a8ed73aeb"
+      "draft_id": "frontier_58c150c90c84_1783758714",
+      "packet_id": "58c150c90c84"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "3dc165d97dfa",
-      "packet_id": "a253874f40af"
+      "experiment_id": "845284960846",
+      "packet_id": "1500c1a64e20"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "5e69bf7bdc13"
+      "packet_id": "941e5accce35"
     }
   ],
   "receipts": {
