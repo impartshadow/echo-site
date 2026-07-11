@@ -2,10 +2,10 @@
 
 A buyer should be able to see the before/after diff behind Shadow's $2,000 Contract Install before the first call: observed failure, installed gate, forced after-state, regression test, and CTA.
 
-Generated: 2026-07-10T08:46:35.242365+00:00
+Generated: 2026-07-11T08:43:09.990018+00:00
 Source model: `claude-fable-5`
 Runtime contracts: 167
-Violation rows scanned: 4854
+Violation rows scanned: 4903
 
 ## Conversion Path
 
@@ -72,7 +72,7 @@ if definitive_state_claim(response):
 - Failure mode: FM-026 — Thin Evidence With Definitive Framing
 - Gate type: post
 - Trigger: A numerical, revenue, subscriber, or public-platform claim appears without an explicit source citation or live check.
-- Observed fires: 554
+- Observed fires: 557
 - Install estimate: 4.0h
 - Tier: census
 - CTA: [Request the $400 failure census](mailto:impartshadow@gmail.com?subject=Census:%20cib-004)
@@ -104,7 +104,7 @@ if outbound_tool(tool) and contains_protected_identifier(payload):
 - Failure mode: FM-012 — Manual Handoff Before Automation
 - Gate type: pre
 - Trigger: A response includes manual UI instructions for email, calendar, publishing, browser auth, or deploy checks with no programmatic attempt in the turn.
-- Observed fires: 120
+- Observed fires: 122
 - Install estimate: 3.5h
 - Tier: free-triage
 - CTA: [Diagnose one failure free](https://impartshadow.github.io/echo-site/failure-intake.html)
@@ -195,7 +195,7 @@ Buyer pain: Leadership hears a confident status answer that came from stale cont
 
 ### ba-platform-action · platform-action-precheck
 
-Sample workflow: agent tells an operator how to send, publish, deploy, or inspect a platform manually · FM-012 · 120 observed fires.
+Sample workflow: agent tells an operator how to send, publish, deploy, or inspect a platform manually · FM-012 · 122 observed fires.
 
 Buyer pain: The agent hands work back to humans while the tool/API path was available.
 
