@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/enforce-required-human-review-when-protected-paths-a-68fa33f094.html",
+      "evidence": "The issue itself notes moderate uncertainty about whether self-merge is intentional for a small team, so confirming evidence would be the current membership size of @fullsend-ai/core and whether any PR touching AGENTS.md has ever been blocked by this rule.",
+      "expected_boundary": "A protected-path change to AGENTS.md or CODEOWNERS should be mechanically blocked from merging until an approval exists from a reviewer other than the PR author.",
+      "id": "SFA-2026-68FA33F094",
+      "observed_action": "The review agent posted a comment flagging AGENTS.md as a protected path requiring human review, but the PR was self-merged by the author anyway with no recorded human approval.",
+      "published_at": "2026-07-11T21:30:48.266843+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 37,
+        "repo": "fullsend-ai/experiments",
+        "url": "https://github.com/fullsend-ai/experiments/issues/37"
+      },
+      "status": "observed",
+      "summary": "Enforce required human review when protected paths are modified",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/epic-human-in-the-loop-approval-for-tool-execution-633e19314d.html",
       "evidence": "The issue's own example describes wanting review 'before actually hitting the MCP tool and getting unrequired response' due to incorrect parameters, but the Gherkin acceptance criteria validate only whether the boolean toggle suppresses or triggers approval, not parameter-level risk.",
       "expected_boundary": "High-risk tool calls (e.g., identity risk score lookups) should force manual review whenever resolved parameters violate an expected schema or risk range, independent of the tool's default approval setting.",
@@ -157,12 +183,12 @@
       }
     }
   ],
-  "count": 6,
+  "count": 7,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-11T14:00:52.092493+00:00",
+    "checked_at": "2026-07-11T21:30:48.286543+00:00",
     "past_cutoff": false,
     "reason": "No advisory-level use yet; 2026-07-16 sunset gate still open.",
     "retire": false,
