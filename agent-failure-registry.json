@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/epic-human-in-the-loop-approval-for-tool-execution-633e19314d.html",
+      "evidence": "The issue's own example describes wanting review 'before actually hitting the MCP tool and getting unrequired response' due to incorrect parameters, but the Gherkin acceptance criteria validate only whether the boolean toggle suppresses or triggers approval, not parameter-level risk.",
+      "expected_boundary": "High-risk tool calls (e.g., identity risk score lookups) should force manual review whenever resolved parameters violate an expected schema or risk range, independent of the tool's default approval setting.",
+      "id": "SFA-2026-633E19314D",
+      "observed_action": "The spec gates human approval on a static per-tool auto-approval flag rather than on the actual parameters passed at call time.",
+      "published_at": "2026-07-11T14:00:52.077107+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 5437,
+        "repo": "IBM/mcp-context-forge",
+        "url": "https://github.com/IBM/mcp-context-forge/issues/5437"
+      },
+      "status": "observed",
+      "summary": "[EPIC]: Human in the loop Approval for tool execution",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/research-human-in-the-loop-checkpoints-for-the-agent-b380bd3ecd.html",
       "evidence": "No fixture files, contract mappings, or follow-up issues with concrete acceptance criteria are referenced anywhere in the issue body, only narrative scope and research questions.",
       "expected_boundary": "Acceptance criteria for a control-boundary spec should include at least one machine-checkable fixture or CI assertion per checkpoint category, not only narrative documentation.",
@@ -131,12 +157,12 @@
       }
     }
   ],
-  "count": 5,
+  "count": 6,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-10T12:05:40.745542+00:00",
+    "checked_at": "2026-07-11T14:00:52.092493+00:00",
     "past_cutoff": false,
     "reason": "No advisory-level use yet; 2026-07-16 sunset gate still open.",
     "retire": false,
