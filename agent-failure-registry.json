@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/stategraph-silently-drops-node-output-keys-not-decla-694511dc77.html",
+      "evidence": "The user's minimal repro shows result == {\"x\": 1} instead of {\"x\": 1, \"undeclared_key\": \"this gets dropped silently\"}, with no exception or warning emitted anywhere in the run.",
+      "expected_boundary": "Node output should be validated against the declared TypedDict schema at the state-merge boundary, either warning on unknown keys or raising under a strict mode, before those keys are discarded.",
+      "id": "SFA-2026-694511DC77",
+      "observed_action": "A node returned a dict containing both a declared key (x) and an undeclared key (undeclared_key), and StateGraph.invoke silently dropped the undeclared key with no warning or error.",
+      "published_at": "2026-07-12T14:00:39.024069+00:00",
+      "source": {
+        "author": "harshitayadavv",
+        "channel": "unsolicited_triage",
+        "issue_number": 8320,
+        "repo": "langchain-ai/langgraph",
+        "url": "https://github.com/langchain-ai/langgraph/issues/8320"
+      },
+      "status": "observed",
+      "summary": "StateGraph silently drops node output keys not declared in TypedDict",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-update-policy-modes-do-not-map-to-distinct-upd-78a06d0d31.html",
       "evidence": "The issue reporter manually toggled all three modes in the live UI and observed that Automatic and Staged rollout trigger identical heartbeat/maintenance-window behavior while Manual approval blocks updates with no approval workflow exposed.",
       "expected_boundary": "Each enum value in the update-policy setting should map to a functionally distinct, testable code path with observable side effects on which devices get updated and when.",
@@ -209,12 +235,12 @@
       }
     }
   ],
-  "count": 8,
+  "count": 9,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-12T06:30:39.390285+00:00",
+    "checked_at": "2026-07-12T14:00:39.048931+00:00",
     "past_cutoff": false,
     "reason": "No advisory-level use yet; 2026-07-16 sunset gate still open.",
     "retire": false,
