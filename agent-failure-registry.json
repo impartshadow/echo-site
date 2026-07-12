@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/ai-models-lack-the-contextual-grounding-and-ontologi-bbfd4a9a2b.html",
+      "evidence": "The issue itself states outputs can 'look correct but violate business rules,' which shows model-side signals (including confidence) are not reliable indicators of compliance.",
+      "expected_boundary": "Escalation decisions should be gated purely by deterministic policy assertions on the structured action, independent of model-reported confidence.",
+      "id": "SFA-2026-BBFD4A9A2B",
+      "observed_action": "The proposed escalation engine routes actions to human review based on the model's own confidence signal alongside policy checks.",
+      "published_at": "2026-07-12T21:30:45.289013+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 136,
+        "repo": "nimius-debug/market-fit-research",
+        "url": "https://github.com/nimius-debug/market-fit-research/issues/136"
+      },
+      "status": "observed",
+      "summary": "AI models lack the contextual grounding and ontological structure needed for reliable full business automation, so they require human oversight and custom-built guardrails to be productive and safe. (7 reports, 7 people)",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/stategraph-silently-drops-node-output-keys-not-decla-694511dc77.html",
       "evidence": "The user's minimal repro shows result == {\"x\": 1} instead of {\"x\": 1, \"undeclared_key\": \"this gets dropped silently\"}, with no exception or warning emitted anywhere in the run.",
       "expected_boundary": "Node output should be validated against the declared TypedDict schema at the state-merge boundary, either warning on unknown keys or raising under a strict mode, before those keys are discarded.",
@@ -235,12 +261,12 @@
       }
     }
   ],
-  "count": 9,
+  "count": 10,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-12T14:00:39.048931+00:00",
+    "checked_at": "2026-07-12T21:30:45.309969+00:00",
     "past_cutoff": false,
     "reason": "No advisory-level use yet; 2026-07-16 sunset gate still open.",
     "retire": false,
