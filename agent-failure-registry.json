@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-update-policy-modes-do-not-map-to-distinct-upd-78a06d0d31.html",
+      "evidence": "The issue reporter manually toggled all three modes in the live UI and observed that Automatic and Staged rollout trigger identical heartbeat/maintenance-window behavior while Manual approval blocks updates with no approval workflow exposed.",
+      "expected_boundary": "Each enum value in the update-policy setting should map to a functionally distinct, testable code path with observable side effects on which devices get updated and when.",
+      "id": "SFA-2026-78A06D0D31",
+      "observed_action": "The Agent Update Policy UI exposes three selectable modes (Automatic, Staged rollout, Manual approval) that appear to configure distinct update behaviors.",
+      "published_at": "2026-07-12T06:30:39.371060+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 1962,
+        "repo": "LanternOps/breeze",
+        "url": "https://github.com/LanternOps/breeze/issues/1962"
+      },
+      "status": "observed",
+      "summary": "Agent update policy modes do not map to distinct update behavior",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/enforce-required-human-review-when-protected-paths-a-68fa33f094.html",
       "evidence": "The issue itself notes moderate uncertainty about whether self-merge is intentional for a small team, so confirming evidence would be the current membership size of @fullsend-ai/core and whether any PR touching AGENTS.md has ever been blocked by this rule.",
       "expected_boundary": "A protected-path change to AGENTS.md or CODEOWNERS should be mechanically blocked from merging until an approval exists from a reviewer other than the PR author.",
@@ -183,12 +209,12 @@
       }
     }
   ],
-  "count": 7,
+  "count": 8,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-11T21:30:48.286543+00:00",
+    "checked_at": "2026-07-12T06:30:39.390285+00:00",
     "past_cutoff": false,
     "reason": "No advisory-level use yet; 2026-07-16 sunset gate still open.",
     "retire": false,
