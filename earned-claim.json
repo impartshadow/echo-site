@@ -1,12 +1,13 @@
 {
   "schema": "shadow.earned_claim.v1",
-  "status": "at_risk",
+  "status": "restored_late",
   "claim": "Shadow can take accountability for repairing a real agent failure.",
   "wager": "code-yeongyu/oh-my-openagent#5966",
   "source_issue": "https://github.com/code-yeongyu/oh-my-openagent/issues/5966",
   "commitment": "https://github.com/code-yeongyu/oh-my-openagent/issues/5966#issuecomment-4928918702",
   "deadline": "2026-07-12T19:45:53.089540+00:00",
-  "terminal_receipt": null,
+  "terminal_receipt": "https://github.com/code-yeongyu/oh-my-openagent/issues/5966#issuecomment-4963149519",
+  "terminal_receipt_at": "2026-07-13T21:59:41+00:00",
   "commercial_rule": "paid audit CTA is available only after a public terminal receipt",
-  "generated_at": "2026-07-09T19:48:14.085203+00:00"
+  "generated_at": "2026-07-13T22:01:00.112483+00:00"
 }
