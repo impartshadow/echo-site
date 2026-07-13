@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/prescriptive-bug-fixes-with-tests-are-strong-candida-34a3208eb1.html",
+      "evidence": "The issue body explicitly states the review agent was never dispatched on PR #96, meaning the human reviewer approved without any review-agent signal, yet the PR is being used to justify a future policy that treats review-agent approval as a merge gate.",
+      "expected_boundary": "A merge-eligibility check should distinguish an explicit review-agent approval from the absence of any review-agent invocation, and should exclude PRs with no dispatch record from both the validation sample and auto-merge eligibility.",
+      "id": "SFA-2026-34A3208EB1",
+      "observed_action": "The proposed auto-merge policy counts review-agent approval as a merge criterion using PR #96 as its sole data point, even though the review agent was never dispatched on that PR due to a known dispatch gap (fullsend#3996).",
+      "published_at": "2026-07-13T06:30:41.656429+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 104,
+        "repo": "fullsend-ai/agents",
+        "url": "https://github.com/fullsend-ai/agents/issues/104"
+      },
+      "status": "observed",
+      "summary": "Prescriptive bug fixes with tests are strong candidates for reduced human review wait time",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/ai-models-lack-the-contextual-grounding-and-ontologi-bbfd4a9a2b.html",
       "evidence": "The issue itself states outputs can 'look correct but violate business rules,' which shows model-side signals (including confidence) are not reliable indicators of compliance.",
       "expected_boundary": "Escalation decisions should be gated purely by deterministic policy assertions on the structured action, independent of model-reported confidence.",
@@ -261,12 +287,12 @@
       }
     }
   ],
-  "count": 10,
+  "count": 11,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-12T21:30:45.309969+00:00",
+    "checked_at": "2026-07-13T06:30:41.692533+00:00",
     "past_cutoff": false,
     "reason": "No advisory-level use yet; 2026-07-16 sunset gate still open.",
     "retire": false,
