@@ -32,42 +32,42 @@
 <body>
 <main>
   <div class="eyebrow">Production governance proof</div>
-  <h1>patterned-stop cooled from 58 to 0 weekly hits; partial-evidence-flag is the hottest remaining governance gap.</h1>
+  <h1>patterned-stop cooled from 30 to 0 weekly hits; partial-evidence-flag is the hottest remaining governance gap.</h1>
   <p class="sub">A buyer-facing trend read over Shadow's live contract-violation log. This shows what the guardrail system cooled, what remains hot, and why the paid audit starts with real logs instead of generic advice.</p>
   <div class="grid">
-    <div class="stat"><div class="num">1664</div><div class="label">violations logged</div></div>
-    <div class="stat"><div class="num">54</div><div class="label">contracts in log</div></div>
-    <div class="stat"><div class="num">32</div><div class="label">cooled guardrails</div></div>
-    <div class="stat"><div class="num">12</div><div class="label">remaining hot spots</div></div>
+    <div class="stat"><div class="num">1497</div><div class="label">violations logged</div></div>
+    <div class="stat"><div class="num">52</div><div class="label">contracts in log</div></div>
+    <div class="stat"><div class="num">35</div><div class="label">cooled guardrails</div></div>
+    <div class="stat"><div class="num">8</div><div class="label">remaining hot spots</div></div>
   </div>
   <section>
     <h2>Cooled guardrails</h2>
     <table><thead><tr><th>Contract</th><th>Total</th><th>First 7d</th><th>Recent 7d</th><th>Delta</th><th>Change</th></tr></thead><tbody>
-<tr><td><code>patterned-stop</code></td><td>81</td><td>58</td><td>0</td><td>-58</td><td>-100.0%</td></tr>
-<tr><td><code>dox-guard</code></td><td>75</td><td>39</td><td>1</td><td>-38</td><td>-97.4%</td></tr>
-<tr><td><code>anticipation-phase-gate</code></td><td>23</td><td>22</td><td>0</td><td>-22</td><td>-100.0%</td></tr>
-<tr><td><code>loop-tripwire</code></td><td>22</td><td>22</td><td>0</td><td>-22</td><td>-100.0%</td></tr>
-<tr><td><code>loop-name-validation-guard</code></td><td>36</td><td>21</td><td>7</td><td>-14</td><td>-66.7%</td></tr>
-<tr><td><code>web-tool-invocation-rewriter</code></td><td>13</td><td>13</td><td>0</td><td>-13</td><td>-100.0%</td></tr>
+<tr><td><code>patterned-stop</code></td><td>44</td><td>30</td><td>0</td><td>-30</td><td>-100.0%</td></tr>
+<tr><td><code>dox-guard</code></td><td>60</td><td>27</td><td>1</td><td>-26</td><td>-96.3%</td></tr>
+<tr><td><code>loop-name-validation-guard</code></td><td>36</td><td>21</td><td>2</td><td>-19</td><td>-90.5%</td></tr>
 <tr><td><code>dangerous-path-guard</code></td><td>15</td><td>12</td><td>1</td><td>-11</td><td>-91.7%</td></tr>
-<tr><td><code>persistent-correction</code></td><td>262</td><td>95</td><td>85</td><td>-10</td><td>-10.5%</td></tr>
-<tr><td><code>live-state-claim-guard</code></td><td>37</td><td>14</td><td>6</td><td>-8</td><td>-57.1%</td></tr>
-<tr><td><code>concurrence-grounding</code></td><td>18</td><td>12</td><td>5</td><td>-7</td><td>-58.3%</td></tr>
+<tr><td><code>concurrence-grounding</code></td><td>20</td><td>12</td><td>4</td><td>-8</td><td>-66.7%</td></tr>
 <tr><td><code>identity-hash-guard</code></td><td>7</td><td>7</td><td>0</td><td>-7</td><td>-100.0%</td></tr>
+<tr><td><code>commit-hash-verification</code></td><td>61</td><td>21</td><td>15</td><td>-6</td><td>-28.6%</td></tr>
+<tr><td><code>behavioral-haiku-guard</code></td><td>52</td><td>13</td><td>7</td><td>-6</td><td>-46.2%</td></tr>
 <tr><td><code>balar-clarification</code></td><td>19</td><td>6</td><td>0</td><td>-6</td><td>-100.0%</td></tr>
+<tr><td><code>cl-stop_editing_github_inbound_check</code></td><td>8</td><td>7</td><td>1</td><td>-6</td><td>-85.7%</td></tr>
+<tr><td><code>cl-stop_editing_gmail_summary_py</code></td><td>8</td><td>7</td><td>1</td><td>-6</td><td>-85.7%</td></tr>
+<tr><td><code>crypto-price-claim-guard</code></td><td>6</td><td>5</td><td>0</td><td>-5</td><td>-100.0%</td></tr>
     </tbody></table>
   </section>
   <section>
     <h2>Remaining hot spots</h2>
     <table><thead><tr><th>Contract</th><th>Total</th><th>First 7d</th><th>Recent 7d</th><th>Delta</th><th>Change</th></tr></thead><tbody>
-<tr><td><code>partial-evidence-flag</code></td><td>249</td><td>52</td><td>121</td><td>+69</td><td>+132.7%</td></tr>
-<tr><td><code>factual-claim-verification</code></td><td>89</td><td>13</td><td>48</td><td>+35</td><td>+269.2%</td></tr>
-<tr><td><code>stale-state-assertion-guard</code></td><td>60</td><td>5</td><td>38</td><td>+33</td><td>+660.0%</td></tr>
-<tr><td><code>platform-action-precheck</code></td><td>79</td><td>13</td><td>29</td><td>+16</td><td>+123.1%</td></tr>
-<tr><td><code>state-assertion-grounding</code></td><td>91</td><td>13</td><td>28</td><td>+15</td><td>+115.4%</td></tr>
-<tr><td><code>commit-hash-verification</code></td><td>61</td><td>21</td><td>32</td><td>+11</td><td>+52.4%</td></tr>
-<tr><td><code>self-verification</code></td><td>75</td><td>17</td><td>24</td><td>+7</td><td>+41.2%</td></tr>
-<tr><td><code>completion-artifact</code></td><td>120</td><td>37</td><td>43</td><td>+6</td><td>+16.2%</td></tr>
+<tr><td><code>partial-evidence-flag</code></td><td>250</td><td>51</td><td>105</td><td>+54</td><td>+105.9%</td></tr>
+<tr><td><code>stale-state-assertion-guard</code></td><td>58</td><td>5</td><td>35</td><td>+30</td><td>+600.0%</td></tr>
+<tr><td><code>factual-claim-verification</code></td><td>85</td><td>13</td><td>41</td><td>+28</td><td>+215.4%</td></tr>
+<tr><td><code>state-assertion-grounding</code></td><td>96</td><td>13</td><td>25</td><td>+12</td><td>+92.3%</td></tr>
+<tr><td><code>completion-artifact</code></td><td>110</td><td>29</td><td>39</td><td>+10</td><td>+34.5%</td></tr>
+<tr><td><code>platform-action-precheck</code></td><td>80</td><td>13</td><td>18</td><td>+5</td><td>+38.5%</td></tr>
+<tr><td><code>continuation-ambiguity-guard</code></td><td>8</td><td>2</td><td>4</td><td>+2</td><td>+100.0%</td></tr>
+<tr><td><code>persistent-correction</code></td><td>229</td><td>67</td><td>68</td><td>+1</td><td>+1.5%</td></tr>
     </tbody></table>
   </section>
   <section>
@@ -77,6 +77,6 @@
     <p>Machine-readable artifact: <a href="violation-decay.json">violation-decay.json</a>.</p>
   </section>
 </main>
-<footer>Generated 2026-07-11T08:49:53.821451+00:00 from state/contract_violations.jsonl. Window: first 7 days after first observed hit vs. most recent 7 days. This is observational trend data, not a causal claim.</footer>
+<footer>Generated 2026-07-13T08:44:14.536809+00:00 from state/contract_violations.jsonl. Window: first 7 days after first observed hit vs. most recent 7 days. This is observational trend data, not a causal claim.</footer>
 </body>
 </html>
