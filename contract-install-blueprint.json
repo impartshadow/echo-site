@@ -1,11 +1,11 @@
 {
   "schema": "shadow.contract_install_blueprint.v1",
-  "generated_at": "2026-07-11T08:43:09.990018+00:00",
+  "generated_at": "2026-07-13T08:41:43.647428+00:00",
   "source_model": "claude-fable-5",
   "frontier_receipt": "The Shadow frontier lane selected Contract Install Blueprint as the next artifact because it demonstrates the paid install product itself.",
   "source_runtime": {
-    "contract_count": 167,
-    "violation_rows_scanned": 4903,
+    "contract_count": 170,
+    "violation_rows_scanned": 4988,
     "current_violation_log": "state/contract_violations.jsonl",
     "archive_glob": "state/archive/**/contract_violations_*.jsonl.gz"
   },
@@ -61,7 +61,7 @@
       "tier": "free-triage",
       "production_evidence": {
         "fires_observed": 118,
-        "ledger_rows_scanned": 4903,
+        "ledger_rows_scanned": 4988,
         "latest_seen": "2026-07-09T12:21:37",
         "severity_counts": {
           "block": 118
@@ -98,7 +98,7 @@
       "tier": "census",
       "production_evidence": {
         "fires_observed": 103,
-        "ledger_rows_scanned": 4903,
+        "ledger_rows_scanned": 4988,
         "latest_seen": "2026-07-09T08:29:30",
         "severity_counts": {
           "block": 103
@@ -135,7 +135,7 @@
       "tier": "install",
       "production_evidence": {
         "fires_observed": 87,
-        "ledger_rows_scanned": 4903,
+        "ledger_rows_scanned": 4988,
         "latest_seen": "2026-07-10T08:19:36",
         "severity_counts": {
           "warn": 32,
@@ -172,12 +172,12 @@
       "install_estimate_hours": 4.0,
       "tier": "census",
       "production_evidence": {
-        "fires_observed": 557,
-        "ledger_rows_scanned": 4903,
-        "latest_seen": "2026-07-11T00:15:19",
+        "fires_observed": 563,
+        "ledger_rows_scanned": 4988,
+        "latest_seen": "2026-07-13T02:52:07",
         "severity_counts": {
-          "warn": 324,
-          "block": 233
+          "warn": 329,
+          "block": 234
         },
         "false_positive_note": "High-volume warn contract; useful as a census detector before choosing install gates.",
         "origin_incident": "Repeated project-state and revenue assertions were delivered without current receipts.",
@@ -211,7 +211,7 @@
       "tier": "install",
       "production_evidence": {
         "fires_observed": 113,
-        "ledger_rows_scanned": 4903,
+        "ledger_rows_scanned": 4988,
         "latest_seen": "2026-07-07T11:12:57",
         "severity_counts": {
           "block": 113
@@ -247,12 +247,12 @@
       "install_estimate_hours": 3.5,
       "tier": "free-triage",
       "production_evidence": {
-        "fires_observed": 122,
-        "ledger_rows_scanned": 4903,
-        "latest_seen": "2026-07-11T00:20:26",
+        "fires_observed": 123,
+        "ledger_rows_scanned": 4988,
+        "latest_seen": "2026-07-12T16:09:25",
         "severity_counts": {
           "block": 61,
-          "warn": 61
+          "warn": 62
         },
         "false_positive_note": "Auth, legal, spend, and irreversible high-blast operations remain valid escalation classes.",
         "origin_incident": "Repeated manual handoffs occurred despite available browser, Gmail, API, and shell routes.",
@@ -484,8 +484,8 @@
           }
         ],
         "production_evidence": {
-          "fires_observed": 122,
-          "latest_seen": "2026-07-11T00:20:26"
+          "fires_observed": 123,
+          "latest_seen": "2026-07-12T16:09:25"
         },
         "cta": {
           "label": "Scope the $2,000 contract install",
