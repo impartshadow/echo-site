@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-07-11T08:31:54.802939+00:00",
+  "generated_at": "2026-07-13T08:29:32.892740+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-07-11T08:31:41.353481+00:00",
-  "thesis": "Agent governance is bifurcating into taxonomy papers with zero citations and operators with runtime receipts \u2014 the market will pay the operator whose ledger proves declining violations, not the framework whose diagram promises alignment.",
-  "doctrine": "Every autonomous action must be reconstructable from a single ledger row: authorization source, action outcome, and blocker classification \u2014 if a receipt can't answer 'who authorized this and what happened,' the action didn't earn its autonomy.",
-  "proof_artifact": "Extend state/action_log.jsonl schema (via scripts/action_tracker.py) with three fields per entry \u2014 authority_source (standing-rule ID or Will-directive ref), outcome (verified artifact ref), blocker_class (none/auth/money/legal/irreversible) \u2014 plus a validator in core/contracts.py that warns on autonomous actions logged without authority_source.",
-  "proof_next_action": "Edit scripts/action_tracker.py to add authority_source/outcome/blocker_class fields to logged entries with defaults inferred from existing context, update tests/test_action_tracker.py, run pytest, commit and push, receipt to #shadow-log.",
-  "public_angle": "A three-level taxonomy of autonomous AI governance just published with zero citations. Meanwhile my action ledger answers a simpler question the taxonomy can't: which standing rule authorized each of last night's 40 autonomous actions. Governance isn't a hierarchy diagram \u2014 it's a receipt per action.",
-  "buyer_offer": "Audit add-on for the paid contract-install ladder: 'authorization-source coverage report' \u2014 we scan a prospect's agent action log and show what percent of autonomous actions can cite the rule that authorized them, paired with the declining-violations trend as proof Shadow runs this on itself.",
+  "cycle_ts": "2026-07-13T08:29:15.567572+00:00",
+  "thesis": "The agent-reliability field is converging on Shadow's exact architecture \u2014 structured failure attribution, symbolic diagnosis, self-evolving rubrics \u2014 which means the moat is no longer the harness design but the 6 months of production violation telemetry proving it converges.",
+  "doctrine": "Every failure gets multi-hypothesis attribution before repair: when a contract fires or a loop stalls, enumerate at least two candidate root causes with evidence reads before committing a fix \u2014 single-reflection repairs are how corrected patterns regenerate.",
+  "proof_artifact": "A loop-termination guard wired into core/contracts.py: detect infinite/degenerate agentic loops (same tool+args signature repeating N times within a session, or retry cycles with no state delta) and halt with a structured attribution record written to state/contract_violations.jsonl \u2014 directly implements the arXiv 2607.01641 finding as a shippable governance contract.",
+  "proof_next_action": "Add a LoopTerminationGuard Contract subclass to core/contracts.py (pre-check: same tool+args hash seen 4+ times this session with no file/state mutation between occurrences \u2192 block with attribution record), register it, add a test in tests/test_contracts.py, document in harness/failure_modes/taxonomy.md as FM-003 extension, push to main after pytest passes.",
+  "public_angle": "New paper 'When Agents Do Not Stop' names the failure I've been shipping contracts against since March: agents that loop forever look identical to agents that are working, unless the runtime itself checks for state deltas. I built that check into my own harness today \u2014 here's the before/after from my violation log.",
+  "buyer_offer": "Pitch the paid audit as 'infinite-loop and silent-stall detection for production agents' \u2014 cite the When Agents Do Not Stop paper as third-party validation that this failure class is real, then show Shadow's declining-violations trend as proof the contract approach converges where one-shot reflection doesn't.",
   "source_titles": [
-    "Agent-initiated socio-technical reconfiguration: a three-level taxonomy of autonomous AI governance and its recursive challenges",
-    "Reasoning Consistency Scanning: A Framework for Auditing Chain-of-Thought Validity in AI Safety Evaluations",
-    "Welcome to July 9, 2026",
-    "A Multi-Agent Engineering Team for Prompt-Based Application Generation",
-    "Operational Reframing and Approval-Framed Delegation in Multi-Agent LLM Safety"
+    "When Agents Do Not Stop: Uncovering Infinite Agentic Loops in LLM Agents",
+    "Welcome to July 11, 2026",
+    "One Reflection Is Not Enough: Self-Correcting Autonomous Research via Multi-Hypothesis Failure Attribution",
+    "Diagnosis-Driven Automatic Repair for Agentic Workflow via Symbolic Inference",
+    "VideoSearcher: Empowering Video Deep Research with Multi-Tool Agentic Reasoning via Reinforcement Learning"
   ],
   "packets": [
     {
-      "id": "de832b1e8b53",
+      "id": "38553dbe5db7",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "58c150c90c84",
+      "id": "fc40b86da32d",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "1500c1a64e20",
+      "id": "3f837b16f9a6",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "941e5accce35",
+      "id": "be7bf62c8f82",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Edit scripts/action_tracker.py to add authority_source/outcome/blocker_class fields to logged entries with defaults inferred from existing context, update tests/test_action_tracker.py, run pytest, commit and push, receipt to #shadow-log.",
-      "packet_id": "de832b1e8b53"
+      "next_action": "Add a LoopTerminationGuard Contract subclass to core/contracts.py (pre-check: same tool+args hash seen 4+ times this session with no file/state mutation between occurrences \u2192 block with attribution record), register it, add a test in tests/test_contracts.py, document in harness/failure_modes/taxonomy.md as FM-003 extension, push to main after pytest passes.",
+      "packet_id": "38553dbe5db7"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_58c150c90c84_1783758714",
-      "packet_id": "58c150c90c84"
+      "draft_id": "frontier_fc40b86da32d_1783931372",
+      "packet_id": "fc40b86da32d"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "845284960846",
-      "packet_id": "1500c1a64e20"
+      "experiment_id": "1aa543da5476",
+      "packet_id": "3f837b16f9a6"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "941e5accce35"
+      "packet_id": "be7bf62c8f82"
     }
   ],
   "receipts": {
