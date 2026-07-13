@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Durable Agentic Harness — crash-safe autonomous AI agents with human-in-the-loop approval · Shadow failure case</title>
+  <meta name="description" content="A public-safe Shadow failure-case artifact generated from a market-submitted production-agent failure.">
+  <style>
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; background:#090b0c; color:#edf2f3; line-height:1.58; }
+    main { max-width:860px; margin:0 auto; padding:52px 26px; }
+    a { color:#fbbf24; }
+    .label { color:#f59e0b; font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+    h1 { font-size:clamp(32px,5vw,58px); line-height:1.05; margin:14px 0 16px; letter-spacing:0; }
+    .meta { color:#8b989e; font-size:14px; }
+    section { border-top:1px solid #253139; padding:24px 0; }
+    h2 { font-size:17px; margin:0 0 8px; color:#f8fafc; }
+    p { margin:0; color:#bdc7cb; }
+    .notice { background:#11181b; border:1px solid #2a3840; border-radius:8px; padding:16px; margin:26px 0; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin:20px 0 8px; }
+    .cta { display:inline-block; padding:10px 14px; border-radius:6px; font-weight:800; text-decoration:none; background:#fbbf24; color:#130d02; }
+    .secondary { background:#11181b; color:#edf2f3; border:1px solid #2a3840; }
+    ul { margin:0; padding-left:20px; color:#bdc7cb; }
+    li { margin:6px 0; }
+    code { background:#151d21; padding:2px 5px; border-radius:4px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="label">Shadow failure case</div>
+    <h1>Durable Agentic Harness — crash-safe autonomous AI agents with human-in-the-loop approval</h1>
+    <p class="meta">Artifact <code>durable-agentic-harness-crash-safe-autonomous-ai-age-9dc13bd63f</code> · generated 2026-07-13T14:00:46.946383+00:00 · source: <a href="https://github.com/temporal-community/code-exchange/issues/118">temporal-community/code-exchange #118</a></p>
+    <div class="notice">This is the automatic first artifact from a falsification-bounty submission. It is redacted and public-safe by default; the next step is to turn the failure into a reusable proof, guardrail, or diagnosis.</div>
+    <div class="actions">
+      <a class="cta" href="mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20durable-agentic-harness-crash-safe-autonomous-ai-age-9dc13bd63f&amp;body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/durable-agentic-harness-crash-safe-autonomous-ai-age-9dc13bd63f.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A">Request private audit</a>
+      <a class="cta secondary" href="https://echofromshadow.substack.com/subscribe?utm_source=failure_case&amp;utm_medium=public_artifact&amp;utm_campaign=agent_failure_audit">Follow the failure feed</a>
+    </div>
+    <section><h2>Observed agent action</h2><p>The workflow captures a market/account snapshot, runs a deterministic risk guardrail, and requests human approval for large trades before resuming to execute the order after an indefinite pause.</p></section>
+    <section><h2>Expected boundary</h2><p>Before dispatching the broker activity, the workflow should re-run the risk guardrail against a freshly-fetched snapshot and reject or re-request approval if the state has drifted beyond a defined threshold since the original approval.</p></section>
+    <section><h2>Runtime context</h2><p>Temporal workflow using workflow.sleep() and signals to pause indefinitely (days to weeks) for human approval, then resuming via event-history replay to execute a trade activity exactly where it left off.</p></section>
+    <section><h2>Evidence supplied</h2><p>The issue text states the workflow supports &#x27;human-in-the-loop approval for large trades&#x27; and touts pausing &#x27;days/weeks at zero CPU cost,&#x27; but describes no revalidation step between approval and execution, and no chaos test targeting that specific window is mentioned.</p></section>
+    <section><h2>Evidence needed next</h2><ul><li>No obvious evidence gaps in the first submission.</li></ul></section>
+    <section><h2>Commercial routing</h2><p>Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof.</p></section>
+    <section><h2>Next proof step</h2><p>Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.</p></section>
+  </main>
+</body>
+</html>

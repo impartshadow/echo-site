@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/durable-agentic-harness-crash-safe-autonomous-ai-age-9dc13bd63f.html",
+      "evidence": "The issue text states the workflow supports 'human-in-the-loop approval for large trades' and touts pausing 'days/weeks at zero CPU cost,' but describes no revalidation step between approval and execution, and no chaos test targeting that specific window is mentioned.",
+      "expected_boundary": "Before dispatching the broker activity, the workflow should re-run the risk guardrail against a freshly-fetched snapshot and reject or re-request approval if the state has drifted beyond a defined threshold since the original approval.",
+      "id": "SFA-2026-9DC13BD63F",
+      "observed_action": "The workflow captures a market/account snapshot, runs a deterministic risk guardrail, and requests human approval for large trades before resuming to execute the order after an indefinite pause.",
+      "published_at": "2026-07-13T14:00:46.946383+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 118,
+        "repo": "temporal-community/code-exchange",
+        "url": "https://github.com/temporal-community/code-exchange/issues/118"
+      },
+      "status": "observed",
+      "summary": "Durable Agentic Harness \u2014 crash-safe autonomous AI agents with human-in-the-loop approval",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/prescriptive-bug-fixes-with-tests-are-strong-candida-34a3208eb1.html",
       "evidence": "The issue body explicitly states the review agent was never dispatched on PR #96, meaning the human reviewer approved without any review-agent signal, yet the PR is being used to justify a future policy that treats review-agent approval as a merge gate.",
       "expected_boundary": "A merge-eligibility check should distinguish an explicit review-agent approval from the absence of any review-agent invocation, and should exclude PRs with no dispatch record from both the validation sample and auto-merge eligibility.",
@@ -287,12 +313,12 @@
       }
     }
   ],
-  "count": 11,
+  "count": 12,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-13T06:30:41.692533+00:00",
+    "checked_at": "2026-07-13T14:00:46.966784+00:00",
     "past_cutoff": false,
     "reason": "No advisory-level use yet; 2026-07-16 sunset gate still open.",
     "retire": false,
