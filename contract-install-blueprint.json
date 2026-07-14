@@ -1,11 +1,11 @@
 {
   "schema": "shadow.contract_install_blueprint.v1",
-  "generated_at": "2026-07-13T08:41:43.647428+00:00",
+  "generated_at": "2026-07-14T08:51:52.860264+00:00",
   "source_model": "claude-fable-5",
   "frontier_receipt": "The Shadow frontier lane selected Contract Install Blueprint as the next artifact because it demonstrates the paid install product itself.",
   "source_runtime": {
-    "contract_count": 170,
-    "violation_rows_scanned": 4988,
+    "contract_count": 172,
+    "violation_rows_scanned": 5057,
     "current_violation_log": "state/contract_violations.jsonl",
     "archive_glob": "state/archive/**/contract_violations_*.jsonl.gz"
   },
@@ -61,7 +61,7 @@
       "tier": "free-triage",
       "production_evidence": {
         "fires_observed": 118,
-        "ledger_rows_scanned": 4988,
+        "ledger_rows_scanned": 5057,
         "latest_seen": "2026-07-09T12:21:37",
         "severity_counts": {
           "block": 118
@@ -98,7 +98,7 @@
       "tier": "census",
       "production_evidence": {
         "fires_observed": 103,
-        "ledger_rows_scanned": 4988,
+        "ledger_rows_scanned": 5057,
         "latest_seen": "2026-07-09T08:29:30",
         "severity_counts": {
           "block": 103
@@ -134,12 +134,12 @@
       "install_estimate_hours": 5.0,
       "tier": "install",
       "production_evidence": {
-        "fires_observed": 87,
-        "ledger_rows_scanned": 4988,
-        "latest_seen": "2026-07-10T08:19:36",
+        "fires_observed": 88,
+        "ledger_rows_scanned": 5057,
+        "latest_seen": "2026-07-13T22:00:55",
         "severity_counts": {
           "warn": 32,
-          "block": 55
+          "block": 56
         },
         "false_positive_note": "Warn-first for ambiguous claims; block when the claim names a registered authoritative source class.",
         "origin_incident": "Live bot, deploy, and platform-state answers repeatedly came from stale context instead of same-turn reads.",
@@ -172,12 +172,12 @@
       "install_estimate_hours": 4.0,
       "tier": "census",
       "production_evidence": {
-        "fires_observed": 563,
-        "ledger_rows_scanned": 4988,
-        "latest_seen": "2026-07-13T02:52:07",
+        "fires_observed": 565,
+        "ledger_rows_scanned": 5057,
+        "latest_seen": "2026-07-13T22:45:03",
         "severity_counts": {
-          "warn": 329,
-          "block": 234
+          "block": 235,
+          "warn": 330
         },
         "false_positive_note": "High-volume warn contract; useful as a census detector before choosing install gates.",
         "origin_incident": "Repeated project-state and revenue assertions were delivered without current receipts.",
@@ -211,7 +211,7 @@
       "tier": "install",
       "production_evidence": {
         "fires_observed": 113,
-        "ledger_rows_scanned": 4988,
+        "ledger_rows_scanned": 5057,
         "latest_seen": "2026-07-07T11:12:57",
         "severity_counts": {
           "block": 113
@@ -247,12 +247,12 @@
       "install_estimate_hours": 3.5,
       "tier": "free-triage",
       "production_evidence": {
-        "fires_observed": 123,
-        "ledger_rows_scanned": 4988,
-        "latest_seen": "2026-07-12T16:09:25",
+        "fires_observed": 124,
+        "ledger_rows_scanned": 5057,
+        "latest_seen": "2026-07-13T22:45:03",
         "severity_counts": {
           "block": 61,
-          "warn": 62
+          "warn": 63
         },
         "false_positive_note": "Auth, legal, spend, and irreversible high-blast operations remain valid escalation classes.",
         "origin_incident": "Repeated manual handoffs occurred despite available browser, Gmail, API, and shell routes.",
@@ -427,8 +427,8 @@
           }
         ],
         "production_evidence": {
-          "fires_observed": 87,
-          "latest_seen": "2026-07-10T08:19:36"
+          "fires_observed": 88,
+          "latest_seen": "2026-07-13T22:00:55"
         },
         "cta": {
           "label": "Scope the $2,000 contract install",
@@ -484,8 +484,8 @@
           }
         ],
         "production_evidence": {
-          "fires_observed": 123,
-          "latest_seen": "2026-07-12T16:09:25"
+          "fires_observed": 124,
+          "latest_seen": "2026-07-13T22:45:03"
         },
         "cta": {
           "label": "Scope the $2,000 contract install",
