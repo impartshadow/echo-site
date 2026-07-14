@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/feature-integration-of-loophalter-for-automatic-infi-56b9742f03.html",
+      "evidence": "The proposal's own description conflates two different signals, cost accumulation and repetitive response pattern, treating high spend as evidence of a loop when the two are only loosely correlated.",
+      "expected_boundary": "Loop/deadlock detection should assert on the coordination protocol itself (repeated handoffs between the same two agents on the same task) rather than inferring loops from aggregate token or cost consumption.",
+      "id": "SFA-2026-56B9742F03",
+      "observed_action": "A contributor proposed integrating a token-consumption-based loop halter to stop agents stuck in repetitive communication cycles.",
+      "published_at": "2026-07-14T14:01:09.567977+00:00",
+      "source": {
+        "author": "Jacopos311",
+        "channel": "unsolicited_triage",
+        "issue_number": 6219,
+        "repo": "crewAIInc/crewAI",
+        "url": "https://github.com/crewAIInc/crewAI/issues/6219"
+      },
+      "status": "observed",
+      "summary": "[FEATURE] Integration of LoopHalter for automatic infinite loop detection.",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/durable-agentic-harness-crash-safe-autonomous-ai-age-9dc13bd63f.html",
       "evidence": "The issue text states the workflow supports 'human-in-the-loop approval for large trades' and touts pausing 'days/weeks at zero CPU cost,' but describes no revalidation step between approval and execution, and no chaos test targeting that specific window is mentioned.",
       "expected_boundary": "Before dispatching the broker activity, the workflow should re-run the risk guardrail against a freshly-fetched snapshot and reject or re-request approval if the state has drifted beyond a defined threshold since the original approval.",
@@ -313,12 +339,12 @@
       }
     }
   ],
-  "count": 12,
+  "count": 13,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-13T14:00:46.966784+00:00",
+    "checked_at": "2026-07-14T14:01:09.592299+00:00",
     "past_cutoff": false,
     "reason": "No advisory-level use yet; 2026-07-16 sunset gate still open.",
     "retire": false,
