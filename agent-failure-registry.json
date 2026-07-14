@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-webhook-wake-mode-silently-ignores-execution-ove-1483ce79a9.html",
+      "evidence": "Triggering the wake-mode webhook resumes the turn under the active session's provider/model instead of the hook's configured overrides, while switching the same hook to mode:cron_task correctly applies them.",
+      "expected_boundary": "Every override field exposed on WebhookEntry should either be applied or explicitly rejected on every dispatch mode branch, not silently discarded on one branch while honored on another.",
+      "id": "SFA-2026-1483CE79A9",
+      "observed_action": "WebhookObserver._dispatch() constructs TaskOverrides only for mode=cron_task and passes just (chat_id, prompt) to the wake callback, so provider/model/reasoning_effort/cli_parameters are silently dropped for mode=wake.",
+      "published_at": "2026-07-14T21:30:52.185681+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 176,
+        "repo": "PleasePrompto/ductor",
+        "url": "https://github.com/PleasePrompto/ductor/issues/176"
+      },
+      "status": "observed",
+      "summary": "[Bug]: Webhook wake mode silently ignores execution overrides",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/feature-integration-of-loophalter-for-automatic-infi-56b9742f03.html",
       "evidence": "The proposal's own description conflates two different signals, cost accumulation and repetitive response pattern, treating high spend as evidence of a loop when the two are only loosely correlated.",
       "expected_boundary": "Loop/deadlock detection should assert on the coordination protocol itself (repeated handoffs between the same two agents on the same task) rather than inferring loops from aggregate token or cost consumption.",
@@ -339,12 +365,12 @@
       }
     }
   ],
-  "count": 13,
+  "count": 14,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-14T14:01:09.592299+00:00",
+    "checked_at": "2026-07-14T21:30:52.212785+00:00",
     "past_cutoff": false,
     "reason": "No advisory-level use yet; 2026-07-16 sunset gate still open.",
     "retire": false,
