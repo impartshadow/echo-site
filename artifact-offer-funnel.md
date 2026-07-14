@@ -1,6 +1,6 @@
 # Artifact → Offer Funnel
 
-Generated: `2026-07-13T08:52:25.765268+00:00` · 21 public proof artifacts
+Generated: `2026-07-14T08:58:22.773387+00:00` · 21 public proof artifacts
 
 Which proof artifact creates buyer motion — ranked by offer adjacency,
 freshness, and untapped reach. Stale pages with no offer link are dead ends.
@@ -12,9 +12,9 @@ freshness, and untapped reach. Stale pages with no offer link are dead ends.
 | [agent-failure-flagship](https://impartshadow.github.io/echo-site/agent-failure-flagship.html) | 5 | 0.0 | 0 | 1.0 |  |
 | [contract-install-blueprint](https://impartshadow.github.io/echo-site/contract-install-blueprint.html) | 2 | 0.0 | 0 | 0.867 |  |
 | [failure-intake](https://impartshadow.github.io/echo-site/failure-intake.html) | 2 | 0.0 | 0 | 0.867 |  |
-| [agent-failure-audit](https://impartshadow.github.io/echo-site/agent-failure-audit.html) | 3 | 6.7 | 0 | 0.833 |  |
-| [sample-failure-census](https://impartshadow.github.io/echo-site/sample-failure-census.html) | 3 | 6.7 | 0 | 0.833 |  |
-| [failure-distribution-packet](https://impartshadow.github.io/echo-site/failure-distribution-packet.html) | 3 | 7.2 | 0 | 0.82 |  |
+| [agent-failure-audit](https://impartshadow.github.io/echo-site/agent-failure-audit.html) | 3 | 7.7 | 0 | 0.807 |  |
+| [sample-failure-census](https://impartshadow.github.io/echo-site/sample-failure-census.html) | 3 | 7.7 | 0 | 0.807 |  |
+| [failure-distribution-packet](https://impartshadow.github.io/echo-site/failure-distribution-packet.html) | 3 | 8.2 | 0 | 0.795 |  |
 | [agent-failure-exchange](https://impartshadow.github.io/echo-site/agent-failure-exchange.html) | 1 | 0.0 | 0 | 0.733 |  |
 | [autopsy](https://impartshadow.github.io/echo-site/autopsy.html) | 1 | 0.0 | 0 | 0.733 |  |
 | [failure-audit-targets](https://impartshadow.github.io/echo-site/failure-audit-targets.html) | 1 | 0.0 | 0 | 0.733 |  |
@@ -25,11 +25,11 @@ freshness, and untapped reach. Stale pages with no offer link are dead ends.
 | [violation-decay](https://impartshadow.github.io/echo-site/violation-decay.html) | 0 | 0.0 | 0 | 0.6 | no-offer |
 | [agent-failure-bounty](https://impartshadow.github.io/echo-site/agent-failure-bounty.html) | 1 | 0.0 | 2 | 0.567 |  |
 | [shadow-proof](https://impartshadow.github.io/echo-site/shadow-proof.html) | 1 | 0.0 | 2 | 0.567 |  |
-| [failure-trace-lab-intake](https://impartshadow.github.io/echo-site/failure-trace-lab-intake.html) | 1 | 7.2 | 0 | 0.553 |  |
-| [consulting-audit](https://impartshadow.github.io/echo-site/consulting-audit.html) | 0 | 3.3 | 0 | 0.517 | no-offer |
-| [autonomy-gears](https://impartshadow.github.io/echo-site/autonomy-gears.html) | 0 | 9.8 | 0 | 0.355 | STALE+NO-OFFER |
-| [upgrade](https://impartshadow.github.io/echo-site/upgrade.html) | 0 | 10.8 | 0 | 0.33 | STALE+NO-OFFER |
-| [paid-agentic-infrastructure-blueprint](https://impartshadow.github.io/echo-site/paid-agentic-infrastructure-blueprint.html) | 0 | 13.6 | 0 | 0.26 | STALE+NO-OFFER |
+| [failure-trace-lab-intake](https://impartshadow.github.io/echo-site/failure-trace-lab-intake.html) | 1 | 8.3 | 0 | 0.526 |  |
+| [consulting-audit](https://impartshadow.github.io/echo-site/consulting-audit.html) | 0 | 4.3 | 0 | 0.492 | no-offer |
+| [autonomy-gears](https://impartshadow.github.io/echo-site/autonomy-gears.html) | 0 | 10.9 | 0 | 0.328 | STALE+NO-OFFER |
+| [upgrade](https://impartshadow.github.io/echo-site/upgrade.html) | 0 | 11.8 | 0 | 0.305 | STALE+NO-OFFER |
+| [paid-agentic-infrastructure-blueprint](https://impartshadow.github.io/echo-site/paid-agentic-infrastructure-blueprint.html) | 0 | 14.6 | 0 | 0.25 | STALE+NO-OFFER |
 
 ## Dead ends (no offer link)
 
