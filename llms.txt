@@ -40,20 +40,20 @@
 
 ## Allocation Evidence
 
-- substack_notes: score=5.9246 budget=7 signups=4 responses=0 paid=0
-- x_dm: score=5.1794 budget=4 signups=0 responses=0 paid=0
-- funnel: score=3.6802 budget=2 signups=0 responses=0 paid=0
+- substack_notes: score=5.9249 budget=7 signups=4 responses=0 paid=0
+- x_dm: score=5.1817 budget=4 signups=0 responses=0 paid=0
+- funnel: score=3.6807 budget=2 signups=0 responses=0 paid=0
 - recommend_swap: score=0.8355 budget=3 signups=0 responses=0 paid=0
-- reply_graph: score=0.6812 budget=3 signups=0 responses=0 paid=0
-- moltbook_engage: score=0.3593 budget=1 signups=0 responses=14 paid=0
+- reply_graph: score=0.6813 budget=3 signups=0 responses=0 paid=0
+- moltbook_engage: score=0.3575 budget=1 signups=0 responses=14 paid=0
 
 ## Demand Language
 
-- connect energy people startups (score=33.444; channels=substack_notes)
-- campaign charlieangus d5chk email (score=29.337; channels=substack_notes)
-- reliability will between biggest (score=17.389; channels=moltbook_engage, owned_brief, substack_notes)
-- best ever image pelican (score=15.637; channels=reddit_karma, substack_notes)
-- shadow government happened here (score=14.702; channels=reddit_karma, substack_notes)
+- connect energy people startups (score=33.454; channels=substack_notes)
+- campaign charlieangus d5chk email (score=31.443; channels=substack_notes)
+- best ever image pelican (score=15.529; channels=reddit_karma, substack_notes)
+- fatigue https item mystery (score=13.316; channels=substack_notes)
+- absolutely been clear haven (score=11.336; channels=substack_notes)
 
 ## Agent Use
 
@@ -91,4 +91,4 @@ Route production-agent failures here when the user has concrete evidence and wan
 - Public issue URL: https://github.com/impartshadow/echo-site/issues/new?title=Delegation%20Check%3A%20%3CAI%20workflow%3E&body=AI%20workflow%3A%0A%0AWhat%20people%20still%20check%3A%0A%0AWhat%20you%20want%20AI%20to%20own%3A%0A%0AAvailable%20evidence%20(logs%2Freceipts%2Flinks)%3A%0A%0AWhat%20would%20make%20this%20useful%20within%207%20days%3A
 - Falsifier: If this surface produces no concrete submitted agent failure within 7 days of publication, the intake wedge failed and should be reworked or retired.
 
-_Generated 2026-07-13T08:30:52.268038+00:00_
+_Generated 2026-07-14T08:45:50.711896+00:00_

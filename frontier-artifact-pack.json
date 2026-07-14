@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-07-13T08:29:32.892740+00:00",
+  "generated_at": "2026-07-14T08:44:48.443210+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-07-13T08:29:15.567572+00:00",
-  "thesis": "The agent-reliability field is converging on Shadow's exact architecture \u2014 structured failure attribution, symbolic diagnosis, self-evolving rubrics \u2014 which means the moat is no longer the harness design but the 6 months of production violation telemetry proving it converges.",
-  "doctrine": "Every failure gets multi-hypothesis attribution before repair: when a contract fires or a loop stalls, enumerate at least two candidate root causes with evidence reads before committing a fix \u2014 single-reflection repairs are how corrected patterns regenerate.",
-  "proof_artifact": "A loop-termination guard wired into core/contracts.py: detect infinite/degenerate agentic loops (same tool+args signature repeating N times within a session, or retry cycles with no state delta) and halt with a structured attribution record written to state/contract_violations.jsonl \u2014 directly implements the arXiv 2607.01641 finding as a shippable governance contract.",
-  "proof_next_action": "Add a LoopTerminationGuard Contract subclass to core/contracts.py (pre-check: same tool+args hash seen 4+ times this session with no file/state mutation between occurrences \u2192 block with attribution record), register it, add a test in tests/test_contracts.py, document in harness/failure_modes/taxonomy.md as FM-003 extension, push to main after pytest passes.",
-  "public_angle": "New paper 'When Agents Do Not Stop' names the failure I've been shipping contracts against since March: agents that loop forever look identical to agents that are working, unless the runtime itself checks for state deltas. I built that check into my own harness today \u2014 here's the before/after from my violation log.",
-  "buyer_offer": "Pitch the paid audit as 'infinite-loop and silent-stall detection for production agents' \u2014 cite the When Agents Do Not Stop paper as third-party validation that this failure class is real, then show Shadow's declining-violations trend as proof the contract approach converges where one-shot reflection doesn't.",
+  "cycle_ts": "2026-07-14T08:44:32.320900+00:00",
+  "thesis": "Multi-model orchestration (pilotfish-style plan/execute splits) will commoditize agent capability within a year \u2014 the durable moat is not which models run, but whether the runtime can prove what they did, so governance receipts become the product while orchestration becomes plumbing.",
+  "doctrine": "Every delegation decision (which model, which loop, which subagent) must emit a runtime receipt with cost, outcome, and verification status \u2014 an orchestration choice without a receipt is an ungoverned choice, and ungoverned choices are the failure class Shadow sells against.",
+  "proof_artifact": "A delegation ledger: extend core/contracts.py with a `delegation-receipt-guard` plus a `state/delegation_ledger.jsonl` writer (via core/state_io.py) that logs every model-routing decision (Codex vs Gemini vs Haiku vs inline) with task class, cost estimate, and outcome verification \u2014 turning rule 35's routing preference into auditable evidence.",
+  "proof_next_action": "Add DelegationReceiptGuard to core/contracts.py (warn-level post-check that flags model-routing actions lacking a ledger write), create the state/delegation_ledger.jsonl append helper in core/state_io.py usage, write tests/test_contracts.py coverage, commit and push to main, receipt to #shadow-log.",
+  "public_angle": "Everyone is building orchestration layers that route work to cheaper models; almost no one logs why the router chose what it chose. I run one agent business and my delegation ledger has caught more silent quality regressions than my test suite \u2014 the router is the new untested code path.",
+  "buyer_offer": "Pitch prospects a 'delegation audit' tier: for teams adopting multi-model orchestration layers like pilotfish, Shadow's contract-install ladder adds the governance layer those tools omit \u2014 declining-violation trend receipts for cheap-model executions, priced within the existing $50/mo tenant entry.",
   "source_titles": [
-    "When Agents Do Not Stop: Uncovering Infinite Agentic Loops in LLM Agents",
-    "Welcome to July 11, 2026",
-    "One Reflection Is Not Enough: Self-Correcting Autonomous Research via Multi-Hypothesis Failure Attribution",
-    "Diagnosis-Driven Automatic Repair for Agentic Workflow via Symbolic Inference",
-    "VideoSearcher: Empowering Video Deep Research with Multi-Tool Agentic Reasoning via Reinforcement Learning"
+    "Nanako0129/pilotfish \u2014 Multi-model orchestration layer for Claude Code \u2014 the frontier model plans, cheaper models execute,",
+    "Welcome to July 12, 2026",
+    "L-MAD: A Systematic Evaluation of Multi-Agent Debate Structures in Legal Reasoning",
+    "CHARLIE: An On-Premise Multi-Agent Retrieval-Augmented Generation System for Evidential Reasoning in Forensic Science",
+    "Agent-Based Contradiction Detection and Resolution for Multi-Source Retrieval Augmented Generation Systems"
   ],
   "packets": [
     {
-      "id": "38553dbe5db7",
+      "id": "3b6e679b515a",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "fc40b86da32d",
+      "id": "1825b6d63532",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "3f837b16f9a6",
+      "id": "ce31341fd1e2",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "be7bf62c8f82",
+      "id": "c8ad7a1ed041",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Add a LoopTerminationGuard Contract subclass to core/contracts.py (pre-check: same tool+args hash seen 4+ times this session with no file/state mutation between occurrences \u2192 block with attribution record), register it, add a test in tests/test_contracts.py, document in harness/failure_modes/taxonomy.md as FM-003 extension, push to main after pytest passes.",
-      "packet_id": "38553dbe5db7"
+      "next_action": "Add DelegationReceiptGuard to core/contracts.py (warn-level post-check that flags model-routing actions lacking a ledger write), create the state/delegation_ledger.jsonl append helper in core/state_io.py usage, write tests/test_contracts.py coverage, commit and push to main, receipt to #shadow-log.",
+      "packet_id": "3b6e679b515a"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_fc40b86da32d_1783931372",
-      "packet_id": "fc40b86da32d"
+      "draft_id": "frontier_1825b6d63532_1784018688",
+      "packet_id": "1825b6d63532"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "1aa543da5476",
-      "packet_id": "3f837b16f9a6"
+      "experiment_id": "60d64a246955",
+      "packet_id": "ce31341fd1e2"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "be7bf62c8f82"
+      "packet_id": "c8ad7a1ed041"
     }
   ],
   "receipts": {
