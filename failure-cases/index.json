@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-07-15T08:08:00.384889+00:00",
-  "count": 14,
+  "generated_at": "2026-07-15T14:00:58.902298+00:00",
+  "count": 15,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "qdrant-ingest-agent-py-exits-0-while-silently-droppi-363ac96e24",
+      "advisory_id": "SFA-2026-363AC96E24",
+      "ts": "2026-07-15T14:00:58.899883+00:00",
+      "title": "qdrant_ingest_agent.py exits 0 while silently dropping batches (incomplete index)",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "wilke/ragstack",
+        "issue_number": 176,
+        "author": "unknown",
+        "url": "https://github.com/wilke/ragstack/issues/176"
+      },
+      "case": {
+        "observed_action": "qdrant_ingest_agent.py exited 0 and printed a done checkpoint after silently dropping 21 batches (5,376 chunks) during a 1.55M-chunk load.",
+        "expected_boundary": "Exit code 0 should only be emitted when the store's point count matches the source record count, i.e. completeness verified, not merely when the task loop finished.",
+        "runtime_context": "Under sustained load the capped Qdrant instance drops connections, and a batch's upsert exhausts its transient-fault retries and raises inside an asyncio task that has already been removed from the tracked task set by its own done-callback.",
+        "evidence": "The exception is never retrieved by gather because add_done_callback(tasks.discard) evicts the task from tasks before the gather/reap loop can observe its result, and the checkpoint frontier stalls silently at the first gap instead of surfacing it."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/qdrant-ingest-agent-py-exits-0-while-silently-droppi-363ac96e24.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/qdrant-ingest-agent-py-exits-0-while-silently-droppi-363ac96e24.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20qdrant-ingest-agent-py-exits-0-while-silently-droppi-363ac96e24&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/qdrant-ingest-agent-py-exits-0-while-silently-droppi-363ac96e24.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "bug-webhook-wake-mode-silently-ignores-execution-ove-1483ce79a9",

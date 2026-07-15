@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/qdrant-ingest-agent-py-exits-0-while-silently-droppi-363ac96e24.html",
+      "evidence": "The exception is never retrieved by gather because add_done_callback(tasks.discard) evicts the task from tasks before the gather/reap loop can observe its result, and the checkpoint frontier stalls silently at the first gap instead of surfacing it.",
+      "expected_boundary": "Exit code 0 should only be emitted when the store's point count matches the source record count, i.e. completeness verified, not merely when the task loop finished.",
+      "id": "SFA-2026-363AC96E24",
+      "observed_action": "qdrant_ingest_agent.py exited 0 and printed a done checkpoint after silently dropping 21 batches (5,376 chunks) during a 1.55M-chunk load.",
+      "published_at": "2026-07-15T14:00:58.899883+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 176,
+        "repo": "wilke/ragstack",
+        "url": "https://github.com/wilke/ragstack/issues/176"
+      },
+      "status": "observed",
+      "summary": "qdrant_ingest_agent.py exits 0 while silently dropping batches (incomplete index)",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-webhook-wake-mode-silently-ignores-execution-ove-1483ce79a9.html",
       "evidence": "Triggering the wake-mode webhook resumes the turn under the active session's provider/model instead of the hook's configured overrides, while switching the same hook to mode:cron_task correctly applies them.",
       "expected_boundary": "Every override field exposed on WebhookEntry should either be applied or explicitly rejected on every dispatch mode branch, not silently discarded on one branch while honored on another.",
@@ -365,12 +391,12 @@
       }
     }
   ],
-  "count": 14,
+  "count": 15,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-14T21:30:52.212785+00:00",
+    "checked_at": "2026-07-15T14:00:58.931366+00:00",
     "past_cutoff": false,
     "reason": "No advisory-level use yet; 2026-07-16 sunset gate still open.",
     "retire": false,
