@@ -1,6 +1,6 @@
 # Frontier Usage Allocator
 
-Generated: 2026-07-14T03:45:56-05:00 CT
+Generated: 2026-07-15T03:08:00-05:00 CT
 Reported utilization: 23%
 Computed headroom: 77%
 

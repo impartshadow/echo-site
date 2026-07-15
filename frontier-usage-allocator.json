@@ -1,6 +1,6 @@
 {
   "schema": "shadow.frontier_usage_allocator.v1",
-  "generated_at_ct": "2026-07-14T03:45:56-05:00",
+  "generated_at_ct": "2026-07-15T03:08:00-05:00",
   "reported_utilization_pct": 23,
   "computed_headroom_pct": 77,
   "allocator_rule": "Scarce frontier usage is reserved for compounding assets: sellable artifacts, public proof, acquisition machinery, and model-agnostic operating-system upgrades.",

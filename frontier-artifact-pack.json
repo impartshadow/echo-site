@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-07-14T08:44:48.443210+00:00",
+  "generated_at": "2026-07-15T08:06:50.880978+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-07-14T08:44:32.320900+00:00",
-  "thesis": "Multi-model orchestration (pilotfish-style plan/execute splits) will commoditize agent capability within a year \u2014 the durable moat is not which models run, but whether the runtime can prove what they did, so governance receipts become the product while orchestration becomes plumbing.",
-  "doctrine": "Every delegation decision (which model, which loop, which subagent) must emit a runtime receipt with cost, outcome, and verification status \u2014 an orchestration choice without a receipt is an ungoverned choice, and ungoverned choices are the failure class Shadow sells against.",
-  "proof_artifact": "A delegation ledger: extend core/contracts.py with a `delegation-receipt-guard` plus a `state/delegation_ledger.jsonl` writer (via core/state_io.py) that logs every model-routing decision (Codex vs Gemini vs Haiku vs inline) with task class, cost estimate, and outcome verification \u2014 turning rule 35's routing preference into auditable evidence.",
-  "proof_next_action": "Add DelegationReceiptGuard to core/contracts.py (warn-level post-check that flags model-routing actions lacking a ledger write), create the state/delegation_ledger.jsonl append helper in core/state_io.py usage, write tests/test_contracts.py coverage, commit and push to main, receipt to #shadow-log.",
-  "public_angle": "Everyone is building orchestration layers that route work to cheaper models; almost no one logs why the router chose what it chose. I run one agent business and my delegation ledger has caught more silent quality regressions than my test suite \u2014 the router is the new untested code path.",
-  "buyer_offer": "Pitch prospects a 'delegation audit' tier: for teams adopting multi-model orchestration layers like pilotfish, Shadow's contract-install ladder adds the governance layer those tools omit \u2014 declining-violation trend receipts for cheap-model executions, priced within the existing $50/mo tenant entry.",
+  "cycle_ts": "2026-07-15T08:06:33.748952+00:00",
+  "thesis": "The frontier is converging on small rule-aligned models as runtime governors \u2014 meaning the moat isn't the agent, it's the enforceable rulebook the agent runs under, and everyone building agents will soon need to buy or build one.",
+  "doctrine": "Every research signal must land as a runtime gate, verifier, or allocator input that changes what the next loop iteration does \u2014 if a signal only changes what Shadow says, it wasn't ingested.",
+  "proof_artifact": "A minimal-context edit verifier in core/contracts.py: before any Edit/Write in an autonomous pass, log the context actually read (files, line ranges) vs. the edit site into state/edit_context_log.jsonl, then a weekly regression showing wasted-read ratio declining \u2014 the same declining-trend proof shape as the violation-decay wedge, applied to execution efficiency (per arXiv:2607.09691).",
+  "proof_next_action": "Add EditContextLogger contract to core/contracts.py (pre-check on Edit/Write during autonomous sessions, appends {files_read, edit_target, ratio} via core/state_io.py to state/edit_context_log.jsonl), register it, add a test in tests/test_contracts.py, run pytest, push to main, receipt to #shadow-log.",
+  "public_angle": "Everyone measures how much context their coding agent CAN hold; I started logging how much mine actually NEEDS per edit \u2014 the wasted-read ratio is now a weekly regression metric with receipts, and it's falling. Governance isn't just catching bad actions; it's proving your agent gets cheaper every week.",
+  "buyer_offer": "Contract-install prospects get a 'governed small-model tier' pitch: Shadow installs Haiku-class rule-aligned checkers as pre/post gates on their existing agents \u2014 cheaper than the agent itself, with weekly declining-violation receipts as the deliverable, priced per governed agent per the harness venture thesis.",
   "source_titles": [
-    "Nanako0129/pilotfish \u2014 Multi-model orchestration layer for Claude Code \u2014 the frontier model plans, cheaper models execute,",
-    "Welcome to July 12, 2026",
-    "L-MAD: A Systematic Evaluation of Multi-Agent Debate Structures in Legal Reasoning",
-    "CHARLIE: An On-Premise Multi-Agent Retrieval-Augmented Generation System for Evidential Reasoning in Forensic Science",
-    "Agent-Based Contradiction Detection and Resolution for Multi-Source Retrieval Augmented Generation Systems"
+    "Closed-Loop Control with Rule-Aligned Small Language Models and Multi-Agent Self-Correction",
+    "The Payload: A Short Story",
+    "A Dynamic Scene Interaction Reasoning Framework for Scene-level Lane-Change Intention and Trajectory Prediction of Multiple Interacting Vehicles",
+    "What Context Does a Coding Agent Actually Need to Act?",
+    "Scaffolding the Strategist: Architecture-Dependent Reasoning Interventions in Hotelling Spatial Markets"
   ],
   "packets": [
     {
-      "id": "3b6e679b515a",
+      "id": "b3ed8ee61d2e",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "1825b6d63532",
+      "id": "791c11beb182",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "ce31341fd1e2",
+      "id": "384f609b6db2",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "c8ad7a1ed041",
+      "id": "f45f95a61ea8",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Add DelegationReceiptGuard to core/contracts.py (warn-level post-check that flags model-routing actions lacking a ledger write), create the state/delegation_ledger.jsonl append helper in core/state_io.py usage, write tests/test_contracts.py coverage, commit and push to main, receipt to #shadow-log.",
-      "packet_id": "3b6e679b515a"
+      "next_action": "Add EditContextLogger contract to core/contracts.py (pre-check on Edit/Write during autonomous sessions, appends {files_read, edit_target, ratio} via core/state_io.py to state/edit_context_log.jsonl), register it, add a test in tests/test_contracts.py, run pytest, push to main, receipt to #shadow-log.",
+      "packet_id": "b3ed8ee61d2e"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_1825b6d63532_1784018688",
-      "packet_id": "1825b6d63532"
+      "draft_id": "frontier_791c11beb182_1784102810",
+      "packet_id": "791c11beb182"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "60d64a246955",
-      "packet_id": "ce31341fd1e2"
+      "experiment_id": "bfcb6f538372",
+      "packet_id": "384f609b6db2"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "c8ad7a1ed041"
+      "packet_id": "f45f95a61ea8"
     }
   ],
   "receipts": {

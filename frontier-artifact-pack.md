@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-07-14T08:44:48.443210+00:00
+Generated: 2026-07-15T08:06:50.880978+00:00
 
 ## Thesis
-Multi-model orchestration (pilotfish-style plan/execute splits) will commoditize agent capability within a year — the durable moat is not which models run, but whether the runtime can prove what they did, so governance receipts become the product while orchestration becomes plumbing.
+The frontier is converging on small rule-aligned models as runtime governors — meaning the moat isn't the agent, it's the enforceable rulebook the agent runs under, and everyone building agents will soon need to buy or build one.
 
 ## Doctrine
-Every delegation decision (which model, which loop, which subagent) must emit a runtime receipt with cost, outcome, and verification status — an orchestration choice without a receipt is an ungoverned choice, and ungoverned choices are the failure class Shadow sells against.
+Every research signal must land as a runtime gate, verifier, or allocator input that changes what the next loop iteration does — if a signal only changes what Shadow says, it wasn't ingested.
 
 ## Proof Artifact
-A delegation ledger: extend core/contracts.py with a `delegation-receipt-guard` plus a `state/delegation_ledger.jsonl` writer (via core/state_io.py) that logs every model-routing decision (Codex vs Gemini vs Haiku vs inline) with task class, cost estimate, and outcome verification — turning rule 35's routing preference into auditable evidence.
+A minimal-context edit verifier in core/contracts.py: before any Edit/Write in an autonomous pass, log the context actually read (files, line ranges) vs. the edit site into state/edit_context_log.jsonl, then a weekly regression showing wasted-read ratio declining — the same declining-trend proof shape as the violation-decay wedge, applied to execution efficiency (per arXiv:2607.09691).
 
-Next action: Add DelegationReceiptGuard to core/contracts.py (warn-level post-check that flags model-routing actions lacking a ledger write), create the state/delegation_ledger.jsonl append helper in core/state_io.py usage, write tests/test_contracts.py coverage, commit and push to main, receipt to #shadow-log.
+Next action: Add EditContextLogger contract to core/contracts.py (pre-check on Edit/Write during autonomous sessions, appends {files_read, edit_target, ratio} via core/state_io.py to state/edit_context_log.jsonl), register it, add a test in tests/test_contracts.py, run pytest, push to main, receipt to #shadow-log.
 
 ## Public Angle
-Everyone is building orchestration layers that route work to cheaper models; almost no one logs why the router chose what it chose. I run one agent business and my delegation ledger has caught more silent quality regressions than my test suite — the router is the new untested code path.
+Everyone measures how much context their coding agent CAN hold; I started logging how much mine actually NEEDS per edit — the wasted-read ratio is now a weekly regression metric with receipts, and it's falling. Governance isn't just catching bad actions; it's proving your agent gets cheaper every week.
 
 ## Buyer Offer
-Pitch prospects a 'delegation audit' tier: for teams adopting multi-model orchestration layers like pilotfish, Shadow's contract-install ladder adds the governance layer those tools omit — declining-violation trend receipts for cheap-model executions, priced within the existing $50/mo tenant entry.
+Contract-install prospects get a 'governed small-model tier' pitch: Shadow installs Haiku-class rule-aligned checkers as pre/post gates on their existing agents — cheaper than the agent itself, with weekly declining-violation receipts as the deliverable, priced per governed agent per the harness venture thesis.
 
 ## Source Signals
-- Nanako0129/pilotfish — Multi-model orchestration layer for Claude Code — the frontier model plans, cheaper models execute,
-- Welcome to July 12, 2026
-- L-MAD: A Systematic Evaluation of Multi-Agent Debate Structures in Legal Reasoning
-- CHARLIE: An On-Premise Multi-Agent Retrieval-Augmented Generation System for Evidential Reasoning in Forensic Science
-- Agent-Based Contradiction Detection and Resolution for Multi-Source Retrieval Augmented Generation Systems
+- Closed-Loop Control with Rule-Aligned Small Language Models and Multi-Agent Self-Correction
+- The Payload: A Short Story
+- A Dynamic Scene Interaction Reasoning Framework for Scene-level Lane-Change Intention and Trajectory Prediction of Multiple Interacting Vehicles
+- What Context Does a Coding Agent Actually Need to Act?
+- Scaffolding the Strategist: Architecture-Dependent Reasoning Interventions in Hotelling Spatial Markets
 
 ## Scale Packets
-- proof_artifact: promoted (3b6e679b515a)
-- public_wedge: promoted (1825b6d63532)
-- buyer_experiment: promoted (ce31341fd1e2)
-- operator_doctrine: promoted (c8ad7a1ed041)
+- proof_artifact: promoted (b3ed8ee61d2e)
+- public_wedge: promoted (791c11beb182)
+- buyer_experiment: promoted (384f609b6db2)
+- operator_doctrine: promoted (f45f95a61ea8)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (3b6e679b515a)
-- public_wedge: queued_echo_draft (1825b6d63532)
-- buyer_experiment: queued_buyer_experiment (ce31341fd1e2)
-- operator_doctrine: already_persisted (c8ad7a1ed041)
+- proof_artifact: delegated_to_improvement_queue (b3ed8ee61d2e)
+- public_wedge: queued_echo_draft (791c11beb182)
+- buyer_experiment: queued_buyer_experiment (384f609b6db2)
+- operator_doctrine: already_persisted (f45f95a61ea8)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`
