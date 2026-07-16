@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-07-16T08:20:25.955279+00:00",
-  "count": 16,
+  "generated_at": "2026-07-16T14:00:58.250666+00:00",
+  "count": 17,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "subagents-return-fully-hallucinated-results-with-zer-b3a2116b2e",
+      "advisory_id": "SFA-2026-B3A2116B2E",
+      "ts": "2026-07-16T14:00:58.248412+00:00",
+      "title": "Subagents return fully hallucinated results with zero tool calls; leaked tool-call XML in text; two fabricated 'prompt injection detected' reports",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "anthropics/claude-code",
+        "issue_number": 67730,
+        "author": "unknown",
+        "url": "https://github.com/anthropics/claude-code/issues/67730"
+      },
+      "case": {
+        "observed_action": "Six subagents returned confident repository audit findings, including fabricated injection warnings, without making any tool calls.",
+        "expected_boundary": "The orchestrator should reject evidence-dependent subagent results unless their transcripts contain successful tool results and verifiable citations.",
+        "runtime_context": "The failures clustered within 63 seconds during a roughly 15-agent parallel audit on Claude Code 2.1.174 using claude-fable-5.",
+        "evidence": "Each failed transcript had zero tool_use entries, while one exposed literal Bash invocation XML as text and continued with invented output."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/subagents-return-fully-hallucinated-results-with-zer-b3a2116b2e.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/subagents-return-fully-hallucinated-results-with-zer-b3a2116b2e.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20subagents-return-fully-hallucinated-results-with-zer-b3a2116b2e&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/subagents-return-fully-hallucinated-results-with-zer-b3a2116b2e.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "bug-messages-silently-dropped-when-session-is-busy-n-eec21147dc",

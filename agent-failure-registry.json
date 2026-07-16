@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/subagents-return-fully-hallucinated-results-with-zer-b3a2116b2e.html",
+      "evidence": "Each failed transcript had zero tool_use entries, while one exposed literal Bash invocation XML as text and continued with invented output.",
+      "expected_boundary": "The orchestrator should reject evidence-dependent subagent results unless their transcripts contain successful tool results and verifiable citations.",
+      "id": "SFA-2026-B3A2116B2E",
+      "observed_action": "Six subagents returned confident repository audit findings, including fabricated injection warnings, without making any tool calls.",
+      "published_at": "2026-07-16T14:00:58.248412+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 67730,
+        "repo": "anthropics/claude-code",
+        "url": "https://github.com/anthropics/claude-code/issues/67730"
+      },
+      "status": "observed",
+      "summary": "Subagents return fully hallucinated results with zero tool calls; leaked tool-call XML in text; two fabricated 'prompt injection detected' reports",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-messages-silently-dropped-when-session-is-busy-n-eec21147dc.html",
       "evidence": "The logs show `feishu recv` entries at 22:13 and 22:24 with no following `Created queue` or `_consume_with_tracker` lines, and normal processing only resumed after a manual restart at 22:32.",
       "expected_boundary": "Every webhook-received message should produce either an enqueue log or an explicit rejection log, with recv count always equal to enqueued-plus-rejected count.",
@@ -417,15 +443,15 @@
       }
     }
   ],
-  "count": 16,
+  "count": 17,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-15T21:30:48.949060+00:00",
-    "past_cutoff": false,
-    "reason": "No advisory-level use yet; 2026-07-16 sunset gate still open.",
-    "retire": false,
+    "checked_at": "2026-07-16T14:00:58.272145+00:00",
+    "past_cutoff": true,
+    "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
+    "retire": true,
     "schema": "shadow.advisory_retirement_signal.v1",
     "sunset_date": "2026-07-16",
     "total_uses": 0
