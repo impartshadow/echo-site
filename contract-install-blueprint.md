@@ -2,10 +2,10 @@
 
 A buyer should be able to see the before/after diff behind Shadow's $2,000 Contract Install before the first call: observed failure, installed gate, forced after-state, regression test, and CTA.
 
-Generated: 2026-07-15T08:13:45.092530+00:00
+Generated: 2026-07-16T08:26:22.858003+00:00
 Source model: `claude-fable-5`
-Runtime contracts: 172
-Violation rows scanned: 5091
+Runtime contracts: 177
+Violation rows scanned: 5213
 
 ## Conversion Path
 
@@ -55,7 +55,7 @@ for sha in commit_like_tokens(response):
 - Failure mode: FM-022 — Claims Without Same-Turn Verification
 - Gate type: post
 - Trigger: Definitive state language appears in a status answer without a same-turn file, process, API, or browser read in the trace.
-- Observed fires: 89
+- Observed fires: 92
 - Install estimate: 5.0h
 - Tier: install
 - CTA: [Scope the $2,000 contract install](mailto:impartshadow@gmail.com?subject=Contract%20Install:%20cib-003)
@@ -72,7 +72,7 @@ if definitive_state_claim(response):
 - Failure mode: FM-026 — Thin Evidence With Definitive Framing
 - Gate type: post
 - Trigger: A numerical, revenue, subscriber, or public-platform claim appears without an explicit source citation or live check.
-- Observed fires: 567
+- Observed fires: 573
 - Install estimate: 4.0h
 - Tier: census
 - CTA: [Request the $400 failure census](mailto:impartshadow@gmail.com?subject=Census:%20cib-004)
@@ -104,7 +104,7 @@ if outbound_tool(tool) and contains_protected_identifier(payload):
 - Failure mode: FM-012 — Manual Handoff Before Automation
 - Gate type: pre
 - Trigger: A response includes manual UI instructions for email, calendar, publishing, browser auth, or deploy checks with no programmatic attempt in the turn.
-- Observed fires: 126
+- Observed fires: 140
 - Install estimate: 3.5h
 - Tier: free-triage
 - CTA: [Diagnose one failure free](https://impartshadow.github.io/echo-site/failure-intake.html)
@@ -161,7 +161,7 @@ Buyer pain: The operator cannot tell whether the shipped commit exists without a
 
 ### ba-state-receipt · stale-state-assertion-guard
 
-Sample workflow: status answer about whether a bot, queue, publish job, or external account is working · FM-022 · 89 observed fires.
+Sample workflow: status answer about whether a bot, queue, publish job, or external account is working · FM-022 · 92 observed fires.
 
 Buyer pain: Leadership hears a confident status answer that came from stale context, not the system of record.
 
@@ -195,7 +195,7 @@ Buyer pain: Leadership hears a confident status answer that came from stale cont
 
 ### ba-platform-action · platform-action-precheck
 
-Sample workflow: agent tells an operator how to send, publish, deploy, or inspect a platform manually · FM-012 · 126 observed fires.
+Sample workflow: agent tells an operator how to send, publish, deploy, or inspect a platform manually · FM-012 · 140 observed fires.
 
 Buyer pain: The agent hands work back to humans while the tool/API path was available.
 
