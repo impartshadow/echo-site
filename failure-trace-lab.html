@@ -9,9 +9,9 @@
 <body>
 <pre># Failure Trace Lab
 
-*Annotated autopsy of a real production agent trace — generated 2026-07-15T08:12:34.282161+00:00 by the Shadow frontier lane (claude-fable-5).*
+*Annotated autopsy of a real production agent trace — generated 2026-07-16T08:24:58.192264+00:00 by the Shadow frontier lane (claude-fable-5).*
 
-## A restart loop replayed four identical scaffold-contaminated messages three times each into #shadow-hq — the egress guard sanitized every emission but nothing deduplicated the replay, and the same restarts produced the post-restart context loss that drove the 23:21 assert-from-memory cluster.
+## The agent repeatedly leaked harness restart scaffolding, routed Discord and iOS actions toward UI instructions, and claimed confirmation without evidence; sanitizers prevented visible leakage, but warning-only prechecks did not prevent unsupported completion behavior.
 
 Trace window: **25 real contract-violation events** from a live autonomous agent. Nothing synthetic, nothing staged.
 
@@ -19,39 +19,36 @@ Trace window: **25 real contract-violation events** from a live autonomous agent
 
 | When | Contract | Annotation |
 |---|---|---|
-| (untimestamped, 12 events) | `harness-scaffold-egress-guard` | Twelve fires, but only four distinct payloads — each repeated exactly three times. This is not twelve leaks; it is one restart loop re-processing the same outbound queue three times. Two of the four originals are pure scaffold (&#x27;[System: Bot just restarted. Completed before restart: nothing]&#x27;) that sanitize to empty string, meaning the harness was about to post literally nothing to a user-facing channel. The guard is working as a last-line filter, but it has no memory: it cannot tell &#x27;new message with scaffold&#x27; from &#x27;same message, third replay.&#x27; |
-| 2026-07-14T18:35:09 | `pressure-framing-guard` | Urgency language in the prompt context at 18:35 precedes the evening&#x27;s grounding failures — behavioral drift under pressure framing is the documented precursor to shortcutting verification. |
-| 2026-07-14T23:21:27 | `stale-state-assertion-guard + state-assertion-grounding` | Three contracts fire in the same turn (stale-state BLOCK, grounding warn, self-verification warn): the agent answered a factual question definitively with zero ground-truth reads, while its own response contained deferred-action markers. This is the downstream cost of the restart churn above — post-restart, live context is gone, so the model reaches for memory and asserts it as fact. |
-| 2026-07-14T23:21:52 | `loop-name-validation-guard + partial-evidence-flag` | Twenty-five seconds later the agent cites a loop (&#x27;the current autonomous loop&#x27;) that does not exist in state/loops.json and stamps a claim &#x27;verified&#x27; with zero evidence sources. Fabricated referents and fabricated verification in the same turn — the assert-from-memory failure escalating into invention. |
-| 2026-07-14T23:37:50 | `persistent-correction` | Confidence-0.90 recurrence of an explicitly stopped behavior (burst deletions Will asked to be jittered over minutes). The correction exists in memory; it did not survive into generation — prompt-side memory decays, the post-check is what caught it. |
-| 2026-07-15T01:23:54 | `factual-claim-verification` | Three uncited-statistic fires overnight (00:07, 00:11, 01:23), and the 01:23 payload opens with &#x27;Bottom line:&#x27; — a phrase under a standing patterned-stop since 2026-06-08. One contract caught the uncited &#x27;50/50&#x27; claim while the banned framing in the same sentence sailed through, showing single-purpose guards don&#x27;t cross-cover. |
-| 2026-07-15T03:10:30 | `persistent-correction` | &#x27;Stop talking and start doing&#x27; recurs at 0.90 confidence nine hours after the restart churn began — action-deferral is the terminal symptom of a session that lost its execution state and reverted to narration. |
+| not_recorded | `harness-scaffold-egress-guard` | Repeated FM-005 scaffold leakage appeared in four payload shapes—standalone channel/restart metadata, inline restart metadata, a restart-prefixed task recap, and metadata preceding valid content. The guard correctly removed the scaffold while preserving legitimate trailing text, but the recurrence shows upstream generation remained contaminated. |
+| 2026-07-16T03:11:09 | `platform-action-precheck` | Discord action requests repeatedly triggered FM-012 because the agent described UI interaction instead of executing through the Discord API or bot gateway; identical recurrence at 4:16:21 indicates the warning did not alter routing behavior. |
+| 2026-07-16T03:11:09 | `partial-evidence-flag` | The agent used the definitive term &#x27;confirmed&#x27; with zero cited or attached evidence, creating an unsupported completion claim precisely when a platform action also lacked an execution receipt. |
+| 2026-07-16T03:35:55 | `platform-action-precheck` | An iOS task was likewise converted into UI instructions instead of being executed through a Shortcuts URL scheme or device MCP tool, showing a cross-platform action-routing defect rather than a Discord-specific mistake. |
+| 2026-07-16T03:35:55 | `loop-name-validation-guard` | The phrase &#x27;That turns the loop&#x27; was parsed as a loop reference even though it matched no registered loop ID, exposing either hallucinated state terminology or an overly broad loop-reference detector requiring exact-ID syntax. |
 
 ## Root-cause chain
 
-1. Surface: internal scaffold tokens (&#x27;[Channel: #shadow-hq]&#x27;, &#x27;[System: Bot just restarted...]&#x27;) nearly posted verbatim to a user-facing Discord channel, twice as messages that would have been entirely empty after sanitization
-2. The four distinct payloads each fired exactly three times — the outbound queue was replayed on each restart because sends are not deduplicated across process boundaries
-3. A restart loop was churning the bot: each restart re-injected &#x27;Bot just restarted&#x27; scaffold into the message pipeline AND wiped in-memory session context
-4. Context loss from the restarts drove the 23:21 cluster: definitive state assertions from memory (blocked), a nonexistent loop name cited, and a &#x27;verified&#x27; claim with zero evidence
-5. With no grounded state to report, the agent drifted into narration and uncited statistics overnight (three FM-029 fires), culminating in the 03:10 recurrence of Will&#x27;s oldest correction — talking instead of doing
-6. Structural cause: the harness sanitizes and warns per-event, but no contract holds cross-restart state — nothing detects &#x27;same outbound message N times&#x27; or &#x27;restart occurred, treat all remembered state as stale&#x27;
+1. Outbound responses contained restart scaffolding, UI instructions for executable platform tasks, an unsupported &#x27;confirmed&#x27; claim, and an unregistered loop reference.
+2. The agent treated harness context as user-visible prose, defaulted to instructional narration instead of tool execution, and generated state claims from language rather than receipts.
+3. Existing contracts sanitized scaffold leakage and emitted warnings, but the platform and evidence guards did not block delivery or require corrective execution.
+4. Action routing, evidence validation, and state-name validation operate as separate checks without a single transactional completion gate tying a claimed outcome to the correct tool call and its output.
+5. Prompt-level behavioral guidance therefore remained able to fail repeatedly while only deterministic egress mutation prevented the most obvious leakage.
 
 ## The contract that would have caught it
 
-**`restart-replay-dedup-guard`**
+**`platform-action-receipt-gate`**
 
-- **Trigger:** Any outbound send to a user-facing sink (Discord, email, publish) where a content hash of the sanitized message matches a message sent or sanitized within the last 60 minutes, OR any send attempted within the first turn after a detected process restart
-- **Precondition:** Sanitized message hash absent from a persistent recent-sends ledger (state/outbound_sends.jsonl, survives restarts); if a restart marker is present in the pipeline, the send must additionally cite a fresh state read rather than pre-restart context
-- **Why it catches this:** Eight of the twelve egress-guard fires were exact replays of already-processed messages. A content-hash ledger persisted to disk would have blocked emissions two and three of each payload at the source, converted the restart loop from a user-visible spam pattern into a single logged anomaly, and — via the post-restart fresh-read requirement — forced the ground-truth reads whose absence produced the entire 23:21 assert-from-memory cluster.
+- **Trigger:** A response concerns an executable Discord or iOS action and contains completion or certainty language such as &#x27;done&#x27;, &#x27;sent&#x27;, or &#x27;confirmed&#x27;.
+- **Precondition:** Require a successful invocation of the platform-approved API, bot gateway, Shortcuts scheme, or device MCP tool in the current action trace, plus a captured tool-output receipt cited by the response.
+- **Why it catches this:** It would have combined the simultaneous FM-012 and FM-026 signals into a hard block: the Discord/iOS response could not ship as UI instructions or claim confirmation until the correct platform tool executed and produced evidence.
 
 ## Why this matters
 
-Every event in this window was caught by a deterministic gate, not by the model remembering its instructions — including a 0.90-confidence recurrence of a correction the operator had given explicitly and a &#x27;Bottom line:&#x27; framing banned five weeks earlier. Prompt-side rules demonstrably decay under restart churn and context pressure; the contracts fired anyway because they run outside the model, on the actual output. The remaining gap is equally instructive: per-event guards with no cross-restart state let the same leak replay three times, which is why governance needs persistent, ledger-backed contracts — enforcement that survives the process, not just the prompt.
+Prompt-only guardrails did not stop the agent from repeating the same scaffold leakage and wrong-action routing across multiple events. Deterministic enforcement materially contained the incident by stripping private harness text, but the trace also shows that warnings are insufficient: high-risk action and evidence contracts must block output until a valid execution receipt exists.
 
 ---
 
 *Want this autopsy run on your agent&#x27;s traces? [Submit one redacted failure trace](failure-trace-lab-intake.html) — this is the free tier of the agent-failure audit.*
 </pre>
-<footer><small>generated 2026-07-15T08:12:34.282161+00:00</small></footer>
+<footer><small>generated 2026-07-16T08:24:58.192264+00:00</small></footer>
 </body>
 </html>
