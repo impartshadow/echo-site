@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-07-15T08:06:50.880978+00:00
+Generated: 2026-07-16T08:19:06.081910+00:00
 
 ## Thesis
-The frontier is converging on small rule-aligned models as runtime governors — meaning the moat isn't the agent, it's the enforceable rulebook the agent runs under, and everyone building agents will soon need to buy or build one.
+The durable agent advantage will come from replicating governed epistemic state with verifiable self-correction, not from adding more tools, agents, or context.
 
 ## Doctrine
-Every research signal must land as a runtime gate, verifier, or allocator input that changes what the next loop iteration does — if a signal only changes what Shadow says, it wasn't ingested.
+Delegate only when the runtime can preserve the originating belief state, classify failure, verify the outcome, and emit a receipt tied to revenue or operational progress.
 
 ## Proof Artifact
-A minimal-context edit verifier in core/contracts.py: before any Edit/Write in an autonomous pass, log the context actually read (files, line ranges) vs. the edit site into state/edit_context_log.jsonl, then a weekly regression showing wasted-read ratio declining — the same declining-trend proof shape as the violation-decay wedge, applied to execution efficiency (per arXiv:2607.09691).
+Ship an epistemic execution ledger that records each loop's hypothesis, evidence, authority boundary, action, verifier result, retry decision, outcome metric, and revenue linkage.
 
-Next action: Add EditContextLogger contract to core/contracts.py (pre-check on Edit/Write during autonomous sessions, appends {files_read, edit_target, ratio} via core/state_io.py to state/edit_context_log.jsonl), register it, add a test in tests/test_contracts.py, run pytest, push to main, receipt to #shadow-log.
+Next action: Use rg to locate the portfolio allocator or authority-sweep implementation, then add one failing test requiring every selected loop to emit a verifier result and revenue_link field before it can be marked complete.
 
 ## Public Angle
-Everyone measures how much context their coding agent CAN hold; I started logging how much mine actually NEEDS per edit — the wasted-read ratio is now a weekly regression metric with receipts, and it's falling. Governance isn't just catching bad actions; it's proving your agent gets cheaper every week.
+Most agent systems replicate instructions and call it autonomy. The useful ones will replicate why they believe an action is correct, prove what happened, and know when they lack authority to continue.
 
 ## Buyer Offer
-Contract-install prospects get a 'governed small-model tier' pitch: Shadow installs Haiku-class rule-aligned checkers as pre/post gates on their existing agents — cheaper than the agent itself, with weekly declining-violation receipts as the deliverable, priced per governed agent per the harness venture thesis.
+Sell a fixed-price Agent Reliability Audit that instruments one client workflow with evidence trails, authority gates, failure classification, and verifiable execution receipts, then upsell monthly monitoring.
 
 ## Source Signals
-- Closed-Loop Control with Rule-Aligned Small Language Models and Multi-Agent Self-Correction
-- The Payload: A Short Story
-- A Dynamic Scene Interaction Reasoning Framework for Scene-level Lane-Change Intention and Trajectory Prediction of Multiple Interacting Vehicles
-- What Context Does a Coding Agent Actually Need to Act?
-- Scaffolding the Strategist: Architecture-Dependent Reasoning Interventions in Hotelling Spatial Markets
+- Replicating Belief, Not Bits: Epistemic State Replication for Agentic Systems
+- Welcome to July 14, 2026
+- Mako: A Self-Evolving Agentic Operating System (SE-AOS) for Autonomous Web Exploitation
+- PFAdapter: Hierarchical LoRA Decomposition for Personalized Federated MLLMs
+- An Agentic AI Scientific Community for Automated Neural Operator Discovery
 
 ## Scale Packets
-- proof_artifact: promoted (b3ed8ee61d2e)
-- public_wedge: promoted (791c11beb182)
-- buyer_experiment: promoted (384f609b6db2)
-- operator_doctrine: promoted (f45f95a61ea8)
+- proof_artifact: promoted (74435ef62553)
+- public_wedge: promoted (add1e76ce211)
+- buyer_experiment: promoted (037a55c86d19)
+- operator_doctrine: promoted (e82e7051a5f5)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (b3ed8ee61d2e)
-- public_wedge: queued_echo_draft (791c11beb182)
-- buyer_experiment: queued_buyer_experiment (384f609b6db2)
-- operator_doctrine: already_persisted (f45f95a61ea8)
+- proof_artifact: delegated_to_improvement_queue (74435ef62553)
+- public_wedge: queued_echo_draft (add1e76ce211)
+- buyer_experiment: queued_buyer_experiment (037a55c86d19)
+- operator_doctrine: already_persisted (e82e7051a5f5)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

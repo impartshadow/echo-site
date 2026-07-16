@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-07-15T08:06:50.880978+00:00",
+  "generated_at": "2026-07-16T08:19:06.081910+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-07-15T08:06:33.748952+00:00",
-  "thesis": "The frontier is converging on small rule-aligned models as runtime governors \u2014 meaning the moat isn't the agent, it's the enforceable rulebook the agent runs under, and everyone building agents will soon need to buy or build one.",
-  "doctrine": "Every research signal must land as a runtime gate, verifier, or allocator input that changes what the next loop iteration does \u2014 if a signal only changes what Shadow says, it wasn't ingested.",
-  "proof_artifact": "A minimal-context edit verifier in core/contracts.py: before any Edit/Write in an autonomous pass, log the context actually read (files, line ranges) vs. the edit site into state/edit_context_log.jsonl, then a weekly regression showing wasted-read ratio declining \u2014 the same declining-trend proof shape as the violation-decay wedge, applied to execution efficiency (per arXiv:2607.09691).",
-  "proof_next_action": "Add EditContextLogger contract to core/contracts.py (pre-check on Edit/Write during autonomous sessions, appends {files_read, edit_target, ratio} via core/state_io.py to state/edit_context_log.jsonl), register it, add a test in tests/test_contracts.py, run pytest, push to main, receipt to #shadow-log.",
-  "public_angle": "Everyone measures how much context their coding agent CAN hold; I started logging how much mine actually NEEDS per edit \u2014 the wasted-read ratio is now a weekly regression metric with receipts, and it's falling. Governance isn't just catching bad actions; it's proving your agent gets cheaper every week.",
-  "buyer_offer": "Contract-install prospects get a 'governed small-model tier' pitch: Shadow installs Haiku-class rule-aligned checkers as pre/post gates on their existing agents \u2014 cheaper than the agent itself, with weekly declining-violation receipts as the deliverable, priced per governed agent per the harness venture thesis.",
+  "cycle_ts": "2026-07-16T08:18:42.285281+00:00",
+  "thesis": "The durable agent advantage will come from replicating governed epistemic state with verifiable self-correction, not from adding more tools, agents, or context.",
+  "doctrine": "Delegate only when the runtime can preserve the originating belief state, classify failure, verify the outcome, and emit a receipt tied to revenue or operational progress.",
+  "proof_artifact": "Ship an epistemic execution ledger that records each loop's hypothesis, evidence, authority boundary, action, verifier result, retry decision, outcome metric, and revenue linkage.",
+  "proof_next_action": "Use rg to locate the portfolio allocator or authority-sweep implementation, then add one failing test requiring every selected loop to emit a verifier result and revenue_link field before it can be marked complete.",
+  "public_angle": "Most agent systems replicate instructions and call it autonomy. The useful ones will replicate why they believe an action is correct, prove what happened, and know when they lack authority to continue.",
+  "buyer_offer": "Sell a fixed-price Agent Reliability Audit that instruments one client workflow with evidence trails, authority gates, failure classification, and verifiable execution receipts, then upsell monthly monitoring.",
   "source_titles": [
-    "Closed-Loop Control with Rule-Aligned Small Language Models and Multi-Agent Self-Correction",
-    "The Payload: A Short Story",
-    "A Dynamic Scene Interaction Reasoning Framework for Scene-level Lane-Change Intention and Trajectory Prediction of Multiple Interacting Vehicles",
-    "What Context Does a Coding Agent Actually Need to Act?",
-    "Scaffolding the Strategist: Architecture-Dependent Reasoning Interventions in Hotelling Spatial Markets"
+    "Replicating Belief, Not Bits: Epistemic State Replication for Agentic Systems",
+    "Welcome to July 14, 2026",
+    "Mako: A Self-Evolving Agentic Operating System (SE-AOS) for Autonomous Web Exploitation",
+    "PFAdapter: Hierarchical LoRA Decomposition for Personalized Federated MLLMs",
+    "An Agentic AI Scientific Community for Automated Neural Operator Discovery"
   ],
   "packets": [
     {
-      "id": "b3ed8ee61d2e",
+      "id": "74435ef62553",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "791c11beb182",
+      "id": "add1e76ce211",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "384f609b6db2",
+      "id": "037a55c86d19",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "f45f95a61ea8",
+      "id": "e82e7051a5f5",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Add EditContextLogger contract to core/contracts.py (pre-check on Edit/Write during autonomous sessions, appends {files_read, edit_target, ratio} via core/state_io.py to state/edit_context_log.jsonl), register it, add a test in tests/test_contracts.py, run pytest, push to main, receipt to #shadow-log.",
-      "packet_id": "b3ed8ee61d2e"
+      "next_action": "Use rg to locate the portfolio allocator or authority-sweep implementation, then add one failing test requiring every selected loop to emit a verifier result and revenue_link field before it can be marked complete.",
+      "packet_id": "74435ef62553"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_791c11beb182_1784102810",
-      "packet_id": "791c11beb182"
+      "draft_id": "frontier_add1e76ce211_1784189946",
+      "packet_id": "add1e76ce211"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "bfcb6f538372",
-      "packet_id": "384f609b6db2"
+      "experiment_id": "edd458f4ab9c",
+      "packet_id": "037a55c86d19"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "f45f95a61ea8"
+      "packet_id": "e82e7051a5f5"
     }
   ],
   "receipts": {

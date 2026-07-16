@@ -6,15 +6,15 @@
       "budget": 2,
       "conversions": 0,
       "responses": 0,
-      "score": 3.6812,
+      "score": 3.6816,
       "signups": 0
     },
     "moltbook_engage": {
-      "actions": 895,
+      "actions": 906,
       "budget": 1,
       "conversions": 0,
       "responses": 14,
-      "score": 0.3557,
+      "score": 0.354,
       "signups": 0
     },
     "recommend_swap": {
@@ -30,7 +30,7 @@
       "budget": 1,
       "conversions": 0,
       "responses": 0,
-      "score": 0.2375,
+      "score": 0.2376,
       "signups": 0
     },
     "reply_graph": {
@@ -38,7 +38,7 @@
       "budget": 3,
       "conversions": 0,
       "responses": 0,
-      "score": 0.6813,
+      "score": 0.6814,
       "signups": 0
     },
     "substack_notes": {
@@ -46,7 +46,7 @@
       "budget": 7,
       "conversions": 0,
       "responses": 0,
-      "score": 5.9252,
+      "score": 5.9255,
       "signups": 4
     },
     "x_dm": {
@@ -54,7 +54,7 @@
       "budget": 4,
       "conversions": 0,
       "responses": 0,
-      "score": 5.184,
+      "score": 5.1862,
       "signups": 0
     }
   },
@@ -74,17 +74,25 @@
   "demand_language": [
     {
       "channels": [
+        "reddit_karma",
+        "substack_notes"
+      ],
+      "phrase": "chatgpt updates",
+      "score": 50.142
+    },
+    {
+      "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 33.457
+      "score": 35.456
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "campaign charlieangus d5chk email",
-      "score": 31.457
+      "score": 31.349
     },
     {
       "channels": [
@@ -92,7 +100,7 @@
         "substack_notes"
       ],
       "phrase": "belongs future people think",
-      "score": 19.543
+      "score": 19.435
     },
     {
       "channels": [
@@ -100,14 +108,7 @@
         "substack_notes"
       ],
       "phrase": "best ever image pelican",
-      "score": 15.424
-    },
-    {
-      "channels": [
-        "substack_notes"
-      ],
-      "phrase": "club fucking",
-      "score": 13.426
+      "score": 15.316
     }
   ],
   "flight_recorder": {
@@ -115,8 +116,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 3.0,
-          "last_activity": "2026-07-15T05:05:44.542097+00:00",
+          "hours_since": 2.3,
+          "last_activity": "2026-07-16T06:03:02.708446+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -129,22 +130,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 2.9,
-          "last_activity": "2026-07-15T05:16:13.632952+00:00",
-          "source": "verifier_receipt",
-          "staleness": "ok"
-        },
-        "loop_id": "echo",
-        "name": "Echo Content",
-        "reason": "fresh evidence is internal-only: verifier_receipt",
-        "requires_external_reach": true,
-        "verdict": "no_external_reach"
-      },
-      {
-        "declared_state": "running",
-        "evidence": {
-          "hours_since": 3.1,
-          "last_activity": "2026-07-15T05:01:51.209567+00:00",
+          "hours_since": 2.3,
+          "last_activity": "2026-07-16T06:02:03.143034+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -155,10 +142,24 @@
         "verdict": "no_external_reach"
       },
       {
+        "declared_state": "running",
+        "evidence": {
+          "hours_since": 0.7,
+          "last_activity": "2026-07-16T07:38:10.625425+00:00",
+          "source": "external_post_receipt",
+          "staleness": "ok"
+        },
+        "loop_id": "echo",
+        "name": "Echo Content",
+        "reason": "fresh evidence from external_post_receipt",
+        "requires_external_reach": true,
+        "verdict": "pass"
+      },
+      {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 2.9,
-          "last_activity": "2026-07-15T05:14:30.123177+00:00",
+          "hours_since": 2.1,
+          "last_activity": "2026-07-16T06:15:23.121705+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -171,8 +172,8 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 3.1,
-          "last_activity": "2026-07-15T05:04:05.039492+00:00",
+          "hours_since": 2.2,
+          "last_activity": "2026-07-16T06:07:15.702691+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -185,8 +186,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 3.1,
-          "last_activity": "2026-07-15T05:04:06.731886+00:00",
+          "hours_since": 2.3,
+          "last_activity": "2026-07-16T06:03:32.894682+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -197,27 +198,13 @@
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-07-15T08:07:54.224937+00:00",
+    "generated_at": "2026-07-16T08:20:19.940730+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
         "evidence_source": "verifier_receipt",
         "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
         "loop_id": "brief-production",
-        "missing_receipts": [
-          "external_post_receipt",
-          "subscriber_receipt",
-          "reply_receipt",
-          "meeting_receipt"
-        ],
-        "priority": 90,
-        "verdict": "no_external_reach"
-      },
-      {
-        "action": "produce_or_attach_external_receipt",
-        "evidence_source": "verifier_receipt",
-        "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
-        "loop_id": "echo",
         "missing_receipts": [
           "external_post_receipt",
           "subscriber_receipt",
@@ -245,8 +232,8 @@
     "rule": "Declared loop state is not proof. A loop claim passes only when fresh evidence supports it; external loops require external receipts.",
     "schema": "shadow.agent_flight_recorder.v1",
     "summary": {
-      "no_external_reach": 3,
-      "pass": 3
+      "no_external_reach": 2,
+      "pass": 4
     }
   },
   "frontier_artifact_pack": {
@@ -261,7 +248,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md",
     "purpose": "scarce frontier-model usage ledger that routes high-end model headroom into sellable artifacts, proof surfaces, acquisition machinery, and model-agnostic operating-system upgrades"
   },
-  "generated_at": "2026-07-15T08:07:54.224937+00:00",
+  "generated_at": "2026-07-16T08:20:19.940730+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
