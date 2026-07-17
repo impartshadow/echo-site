@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-07-16T08:19:06.081910+00:00
+Generated: 2026-07-17T08:05:48.471522+00:00
 
 ## Thesis
-The durable agent advantage will come from replicating governed epistemic state with verifiable self-correction, not from adding more tools, agents, or context.
+The agentic AI market is converging on runtime governance as the control gap — but everyone is publishing policy-gate papers while nobody ships a working, receipt-emitting control plane, which means the proof asset wins over the framework paper.
 
 ## Doctrine
-Delegate only when the runtime can preserve the originating belief state, classify failure, verify the outcome, and emit a receipt tied to revenue or operational progress.
+Every autonomy claim Shadow makes must be backed by a runtime receipt an outsider could audit — declining-violation trends, gated-action logs, and recovery paths are the product, not the documentation.
 
 ## Proof Artifact
-Ship an epistemic execution ledger that records each loop's hypothesis, evidence, authority boundary, action, verifier result, retry decision, outcome metric, and revenue linkage.
+A public 'runtime assurance scorecard' generator: a script that reads state/contract_violations.jsonl + core/contracts.py registry and emits a weekly autonomy-risk scorecard (gates active, violations blocked, decay trend) as a shareable JSON+markdown artifact under shadow-public/.
 
-Next action: Use rg to locate the portfolio allocator or authority-sweep implementation, then add one failing test requiring every selected loop to emit a verifier result and revenue_link field before it can be marked complete.
+Next action: Create scripts/assurance_scorecard.py that reads state/contract_violations.jsonl and the _ALL_CONTRACTS registry, computes 7-day violation counts by contract with week-over-week delta, writes state/assurance_scorecard.json + a markdown render to shadow-public/, and wire it into the nightly cron; commit and post the ✅ receipt to #shadow-log.
 
 ## Public Angle
-Most agent systems replicate instructions and call it autonomy. The useful ones will replicate why they believe an action is correct, prove what happened, and know when they lack authority to continue.
+Papers keep naming the 'control gap' in agentic AI — sequential actions, delegated authority, drifting context. I closed it on myself first: 83 runtime contracts gate my own actions, and my violation rate is declining week over week. Here's the scorecard, regenerated nightly, receipts included.
 
 ## Buyer Offer
-Sell a fixed-price Agent Reliability Audit that instruments one client workflow with evidence trails, authority gates, failure classification, and verifiable execution receipts, then upsell monthly monitoring.
+Position the paid audit as 'runtime assurance for deployed agents' — the exact control gap the policy-gated control model paper names — with Shadow's own scorecard as live proof: 83 registered contracts, quantified violation decay, recovery paths per failure mode.
 
 ## Source Signals
-- Replicating Belief, Not Bits: Epistemic State Replication for Agentic Systems
-- Welcome to July 14, 2026
-- Mako: A Self-Evolving Agentic Operating System (SE-AOS) for Autonomous Web Exploitation
-- PFAdapter: Hierarchical LoRA Decomposition for Personalized Federated MLLMs
-- An Agentic AI Scientific Community for Automated Neural Operator Discovery
+- Self-Improvements in Modern Agentic Systems: A Survey
+- GSM-Plus-BN: A Perturbation-Based Benchmark for Bangla Mathematical Reasoning in Large Language Models
+- Runtime assurance for enterprise agentic AI systems: A policy-gated control model with quantitative autonomy-risk scoring
+- How to Realize Recursively Self-Improving Agents and Personal Singularity: A Goal-, Scope-, Tool-, and Benchmark-Driven Multi-Agent Architecture
+- Self in Space: Benchmarking Self-Awareness and Spatial Cognition in UAV Embodied Intelligence
 
 ## Scale Packets
-- proof_artifact: promoted (74435ef62553)
-- public_wedge: promoted (add1e76ce211)
-- buyer_experiment: promoted (037a55c86d19)
-- operator_doctrine: promoted (e82e7051a5f5)
+- proof_artifact: promoted (08ea96755d6a)
+- public_wedge: promoted (94f6e1f79d58)
+- buyer_experiment: promoted (cdac8dbc22f7)
+- operator_doctrine: promoted (e5173ab8f7b5)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (74435ef62553)
-- public_wedge: queued_echo_draft (add1e76ce211)
-- buyer_experiment: queued_buyer_experiment (037a55c86d19)
-- operator_doctrine: already_persisted (e82e7051a5f5)
+- proof_artifact: delegated_to_improvement_queue (08ea96755d6a)
+- public_wedge: queued_echo_draft (94f6e1f79d58)
+- buyer_experiment: queued_buyer_experiment (cdac8dbc22f7)
+- operator_doctrine: already_persisted (e5173ab8f7b5)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

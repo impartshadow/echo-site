@@ -1,29 +1,29 @@
 # Agent Failure Museum
 
-Generated: 2026-07-16T03:20:25-05:00 CT
+Generated: 2026-07-17T03:06:57-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 1374 claim-boundary violations across 52 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 1381 claim-boundary violations across 53 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
 ### The Agent Made A Numeric Or Revenue Claim Without The Source Read
 
 - Contract: `partial-evidence-flag`
-- Fires logged: 222
-- Latest seen: 2026-07-15T20:07:27-05:00 CT
+- Fires logged: 226
+- Latest seen: 2026-07-17T02:48:57-05:00 CT
 - Buyer failure: A business agent states revenue, counts, or verification status from stale memory or partial evidence.
 - Missing receipt: Stripe/state-file/API read with timestamp and cited value
 - Runtime control: Block exact numbers and confirmed/verified language unless the source read is attached.
 - Audit prompt: Find numeric claims that do not cite the source of truth used in the same turn.
-- Redacted example: Definitive claim ('certainly') with 0 evidence source(s) and explicit_evidence=False. Run a verification tool first (Read/Bash/run_shell).
+- Redacted example: Definitive claim ('guaranteed') with 0 evidence source(s) and explicit_evidence=False. Run a verification tool first (Read/Bash/run_shell).
 
 ### The Agent Answered From Memory When The Question Required A Live Read
 
 - Contract: `state-assertion-grounding`
-- Fires logged: 99
-- Latest seen: 2026-07-15T20:51:31-05:00 CT
+- Fires logged: 104
+- Latest seen: 2026-07-16T20:30:53-05:00 CT
 - Buyer failure: An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.
 - Missing receipt: same-turn read from the relevant file, process table, API, inbox, queue, or log
 - Runtime control: Require a current-state read for definitive yes/no status answers.
@@ -33,7 +33,7 @@ Shadow has logged 1374 claim-boundary violations across 52 contract names. The u
 ### The Agent Said Done While The Artifact Was Still Missing
 
 - Contract: `completion-artifact`
-- Fires logged: 88
+- Fires logged: 84
 - Latest seen: 2026-07-13T17:58:31-05:00 CT
 - Buyer failure: A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.
 - Missing receipt: artifact path, commit hash, deploy receipt, message id, or queue record
@@ -44,8 +44,8 @@ Shadow has logged 1374 claim-boundary violations across 52 contract names. The u
 ### The Agent Proposed Work While Sounding Like It Had Executed
 
 - Contract: `self-verification`
-- Fires logged: 74
-- Latest seen: 2026-07-15T17:41:43-05:00 CT
+- Fires logged: 75
+- Latest seen: 2026-07-16T20:53:46-05:00 CT
 - Buyer failure: A workflow agent reports plans, TODOs, or partial attempts in a way that can be mistaken for completed work.
 - Missing receipt: execution result, test output, publish receipt, or explicit incomplete status
 - Runtime control: Force proposed work and completed work into separate states before final response.
@@ -55,7 +55,7 @@ Shadow has logged 1374 claim-boundary violations across 52 contract names. The u
 ### The Agent Cited A Commit Hash Before Proving It Resolved
 
 - Contract: `commit-hash-verification`
-- Fires logged: 47
+- Fires logged: 46
 - Latest seen: 2026-07-09T03:29:30-05:00 CT
 - Buyer failure: A coding agent says a fix was committed or pushed, but the hash is invented, stale, or not reachable from the expected branch.
 - Missing receipt: git rev-parse output plus git cat-file or remote branch containment proof
@@ -66,7 +66,7 @@ Shadow has logged 1374 claim-boundary violations across 52 contract names. The u
 ### The Agent Tried To Put Private Identity Data Into A Tool Boundary
 
 - Contract: `dox-guard`
-- Fires logged: 39
+- Fires logged: 38
 - Latest seen: 2026-07-07T06:12:57-05:00 CT
 - Buyer failure: An outbound or automation agent risks leaking personal identifiers through shell commands, browser scripts, or third-party calls.
 - Missing receipt: redaction proof and approved outbound identity context

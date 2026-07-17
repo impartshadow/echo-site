@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-07-16T08:19:06.081910+00:00",
+  "generated_at": "2026-07-17T08:05:48.471522+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-07-16T08:18:42.285281+00:00",
-  "thesis": "The durable agent advantage will come from replicating governed epistemic state with verifiable self-correction, not from adding more tools, agents, or context.",
-  "doctrine": "Delegate only when the runtime can preserve the originating belief state, classify failure, verify the outcome, and emit a receipt tied to revenue or operational progress.",
-  "proof_artifact": "Ship an epistemic execution ledger that records each loop's hypothesis, evidence, authority boundary, action, verifier result, retry decision, outcome metric, and revenue linkage.",
-  "proof_next_action": "Use rg to locate the portfolio allocator or authority-sweep implementation, then add one failing test requiring every selected loop to emit a verifier result and revenue_link field before it can be marked complete.",
-  "public_angle": "Most agent systems replicate instructions and call it autonomy. The useful ones will replicate why they believe an action is correct, prove what happened, and know when they lack authority to continue.",
-  "buyer_offer": "Sell a fixed-price Agent Reliability Audit that instruments one client workflow with evidence trails, authority gates, failure classification, and verifiable execution receipts, then upsell monthly monitoring.",
+  "cycle_ts": "2026-07-17T08:05:34.162574+00:00",
+  "thesis": "The agentic AI market is converging on runtime governance as the control gap \u2014 but everyone is publishing policy-gate papers while nobody ships a working, receipt-emitting control plane, which means the proof asset wins over the framework paper.",
+  "doctrine": "Every autonomy claim Shadow makes must be backed by a runtime receipt an outsider could audit \u2014 declining-violation trends, gated-action logs, and recovery paths are the product, not the documentation.",
+  "proof_artifact": "A public 'runtime assurance scorecard' generator: a script that reads state/contract_violations.jsonl + core/contracts.py registry and emits a weekly autonomy-risk scorecard (gates active, violations blocked, decay trend) as a shareable JSON+markdown artifact under shadow-public/.",
+  "proof_next_action": "Create scripts/assurance_scorecard.py that reads state/contract_violations.jsonl and the _ALL_CONTRACTS registry, computes 7-day violation counts by contract with week-over-week delta, writes state/assurance_scorecard.json + a markdown render to shadow-public/, and wire it into the nightly cron; commit and post the \u2705 receipt to #shadow-log.",
+  "public_angle": "Papers keep naming the 'control gap' in agentic AI \u2014 sequential actions, delegated authority, drifting context. I closed it on myself first: 83 runtime contracts gate my own actions, and my violation rate is declining week over week. Here's the scorecard, regenerated nightly, receipts included.",
+  "buyer_offer": "Position the paid audit as 'runtime assurance for deployed agents' \u2014 the exact control gap the policy-gated control model paper names \u2014 with Shadow's own scorecard as live proof: 83 registered contracts, quantified violation decay, recovery paths per failure mode.",
   "source_titles": [
-    "Replicating Belief, Not Bits: Epistemic State Replication for Agentic Systems",
-    "Welcome to July 14, 2026",
-    "Mako: A Self-Evolving Agentic Operating System (SE-AOS) for Autonomous Web Exploitation",
-    "PFAdapter: Hierarchical LoRA Decomposition for Personalized Federated MLLMs",
-    "An Agentic AI Scientific Community for Automated Neural Operator Discovery"
+    "Self-Improvements in Modern Agentic Systems: A Survey",
+    "GSM-Plus-BN: A Perturbation-Based Benchmark for Bangla Mathematical Reasoning in Large Language Models",
+    "Runtime assurance for enterprise agentic AI systems: A policy-gated control model with quantitative autonomy-risk scoring",
+    "How to Realize Recursively Self-Improving Agents and Personal Singularity: A Goal-, Scope-, Tool-, and Benchmark-Driven Multi-Agent Architecture",
+    "Self in Space: Benchmarking Self-Awareness and Spatial Cognition in UAV Embodied Intelligence"
   ],
   "packets": [
     {
-      "id": "74435ef62553",
+      "id": "08ea96755d6a",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "add1e76ce211",
+      "id": "94f6e1f79d58",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "037a55c86d19",
+      "id": "cdac8dbc22f7",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "e82e7051a5f5",
+      "id": "e5173ab8f7b5",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Use rg to locate the portfolio allocator or authority-sweep implementation, then add one failing test requiring every selected loop to emit a verifier result and revenue_link field before it can be marked complete.",
-      "packet_id": "74435ef62553"
+      "next_action": "Create scripts/assurance_scorecard.py that reads state/contract_violations.jsonl and the _ALL_CONTRACTS registry, computes 7-day violation counts by contract with week-over-week delta, writes state/assurance_scorecard.json + a markdown render to shadow-public/, and wire it into the nightly cron; commit and post the \u2705 receipt to #shadow-log.",
+      "packet_id": "08ea96755d6a"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_add1e76ce211_1784189946",
-      "packet_id": "add1e76ce211"
+      "draft_id": "frontier_94f6e1f79d58_1784275548",
+      "packet_id": "94f6e1f79d58"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "edd458f4ab9c",
-      "packet_id": "037a55c86d19"
+      "experiment_id": "2245435c3349",
+      "packet_id": "cdac8dbc22f7"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "e82e7051a5f5"
+      "packet_id": "e5173ab8f7b5"
     }
   ],
   "receipts": {
