@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-07-16T14:00:58.250666+00:00",
-  "count": 17,
+  "generated_at": "2026-07-17T06:30:55.325456+00:00",
+  "count": 18,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "auto-merge-workflow-should-respect-requires-manual-r-b21a613fae",
+      "advisory_id": "SFA-2026-B21A613FAE",
+      "ts": "2026-07-17T06:30:55.323147+00:00",
+      "title": "Auto-merge workflow should respect `requires-manual-review` label",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "konflux-ci/namespace-lister",
+        "issue_number": 438,
+        "author": "unknown",
+        "url": "https://github.com/konflux-ci/namespace-lister/issues/438"
+      },
+      "case": {
+        "observed_action": "The konflux-infra-auto-merge bot approved and merged 7 consecutive PRs that the review agent had already labeled requires-manual-review and flagged as needing human sign-off.",
+        "expected_boundary": "The auto-merge workflow should have checked the PR's label set for requires-manual-review immediately before invoking the merge action and skipped the merge if present.",
+        "runtime_context": "Two independent GitHub Actions workflows (a review agent and a deptriage-based auto-merge bot) evaluate the same PR without sharing merge-eligibility state, so a label written by one is never read by the other.",
+        "evidence": "The issue documents a consistent 20-30 minute gap between the review agent's requires-manual-review label plus warning comment and the auto-merge bot's approval and merge across PRs #424, #426, #427, #428, #431, #435, and #437."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/auto-merge-workflow-should-respect-requires-manual-r-b21a613fae.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/auto-merge-workflow-should-respect-requires-manual-r-b21a613fae.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20auto-merge-workflow-should-respect-requires-manual-r-b21a613fae&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/auto-merge-workflow-should-respect-requires-manual-r-b21a613fae.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "subagents-return-fully-hallucinated-results-with-zer-b3a2116b2e",

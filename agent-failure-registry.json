@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/auto-merge-workflow-should-respect-requires-manual-r-b21a613fae.html",
+      "evidence": "The issue documents a consistent 20-30 minute gap between the review agent's requires-manual-review label plus warning comment and the auto-merge bot's approval and merge across PRs #424, #426, #427, #428, #431, #435, and #437.",
+      "expected_boundary": "The auto-merge workflow should have checked the PR's label set for requires-manual-review immediately before invoking the merge action and skipped the merge if present.",
+      "id": "SFA-2026-B21A613FAE",
+      "observed_action": "The konflux-infra-auto-merge bot approved and merged 7 consecutive PRs that the review agent had already labeled requires-manual-review and flagged as needing human sign-off.",
+      "published_at": "2026-07-17T06:30:55.323147+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 438,
+        "repo": "konflux-ci/namespace-lister",
+        "url": "https://github.com/konflux-ci/namespace-lister/issues/438"
+      },
+      "status": "observed",
+      "summary": "Auto-merge workflow should respect `requires-manual-review` label",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/subagents-return-fully-hallucinated-results-with-zer-b3a2116b2e.html",
       "evidence": "Each failed transcript had zero tool_use entries, while one exposed literal Bash invocation XML as text and continued with invented output.",
       "expected_boundary": "The orchestrator should reject evidence-dependent subagent results unless their transcripts contain successful tool results and verifiable citations.",
@@ -443,12 +469,12 @@
       }
     }
   ],
-  "count": 17,
+  "count": 18,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-16T14:00:58.272145+00:00",
+    "checked_at": "2026-07-17T06:30:55.344383+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
