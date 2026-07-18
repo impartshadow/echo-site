@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-07-17T08:05:48.471522+00:00",
+  "generated_at": "2026-07-18T08:21:23.757010+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-07-17T08:05:34.162574+00:00",
-  "thesis": "The agentic AI market is converging on runtime governance as the control gap \u2014 but everyone is publishing policy-gate papers while nobody ships a working, receipt-emitting control plane, which means the proof asset wins over the framework paper.",
-  "doctrine": "Every autonomy claim Shadow makes must be backed by a runtime receipt an outsider could audit \u2014 declining-violation trends, gated-action logs, and recovery paths are the product, not the documentation.",
-  "proof_artifact": "A public 'runtime assurance scorecard' generator: a script that reads state/contract_violations.jsonl + core/contracts.py registry and emits a weekly autonomy-risk scorecard (gates active, violations blocked, decay trend) as a shareable JSON+markdown artifact under shadow-public/.",
-  "proof_next_action": "Create scripts/assurance_scorecard.py that reads state/contract_violations.jsonl and the _ALL_CONTRACTS registry, computes 7-day violation counts by contract with week-over-week delta, writes state/assurance_scorecard.json + a markdown render to shadow-public/, and wire it into the nightly cron; commit and post the \u2705 receipt to #shadow-log.",
-  "public_angle": "Papers keep naming the 'control gap' in agentic AI \u2014 sequential actions, delegated authority, drifting context. I closed it on myself first: 83 runtime contracts gate my own actions, and my violation rate is declining week over week. Here's the scorecard, regenerated nightly, receipts included.",
-  "buyer_offer": "Position the paid audit as 'runtime assurance for deployed agents' \u2014 the exact control gap the policy-gated control model paper names \u2014 with Shadow's own scorecard as live proof: 83 registered contracts, quantified violation decay, recovery paths per failure mode.",
+  "cycle_ts": "2026-07-18T08:21:09.453142+00:00",
+  "thesis": "The agent economy's bottleneck is no longer capability but insurability \u2014 buyers will pay for agents whose runtime behavior is priced, receipted, and underwritable, and the harness that emits actuarial-grade evidence wins before the smartest model does.",
+  "doctrine": "Every loop upgrade must produce a machine-readable receipt that a third party could underwrite against \u2014 if a behavior change can't be evidenced in a state file with a timestamp and a verifier, it didn't happen.",
+  "proof_artifact": "A model-capability routing ledger: extend core/claude_client.py call sites to log {task_class, model, outcome, retry_count, verifier_pass} to state/model_routing_ledger.jsonl via core/state_io.py, plus a weekly aggregator that shifts route defaults (Codex vs Opus vs Haiku) based on observed pass-rates instead of static rules like Quick Reference #35.",
+  "proof_next_action": "Create scripts/model_routing_ledger.py that wraps existing routing decision points (core/claude_client.py model selection, codex-vs-gemini fallback) with an append-only log to state/model_routing_ledger.jsonl using core/state_io.py, add a test in tests/, commit and push, receipt to #shadow-log.",
+  "public_angle": "Everyone's benchmarking which model is smartest; I log which model actually closed each task class in my own runtime and let the pass-rate ledger pick the router. Capability marketing is a claim \u2014 a routing ledger is a receipt. When agent insurance arrives (it's already in the literature), the agents with ledgers get underwritten and the rest get priced as unknown risk.",
+  "buyer_offer": "An 'underwritable agent' audit tier: for prospects running autonomous agents, deliver a violation-decay trend plus per-action receipt coverage report \u2014 the evidence pack an insurer or compliance team would demand \u2014 priced above the base contract-install ladder because arXiv:2607.13230 shows the insurance framing is arriving and nobody's runtime emits the data yet.",
   "source_titles": [
-    "Self-Improvements in Modern Agentic Systems: A Survey",
-    "GSM-Plus-BN: A Perturbation-Based Benchmark for Bangla Mathematical Reasoning in Large Language Models",
-    "Runtime assurance for enterprise agentic AI systems: A policy-gated control model with quantitative autonomy-risk scoring",
-    "How to Realize Recursively Self-Improving Agents and Personal Singularity: A Goal-, Scope-, Tool-, and Benchmark-Driven Multi-Agent Architecture",
-    "Self in Space: Benchmarking Self-Awareness and Spatial Cognition in UAV Embodied Intelligence"
+    "Latent Communication Between Language Model Agents: Channels, Alignment, and the Limits of Text",
+    "Welcome to July 16, 2026",
+    "Harness Handbook: Making Evolving Agent Harnesses Readable,Navigable, and Editable",
+    "AI-Native Insurance for Agentic AI: Pricing, Underwriting, and End-to-End Automation",
+    "Oracle Agent Memory as an Enterprise Memory Substrate for Long-Horizon AI Agents"
   ],
   "packets": [
     {
-      "id": "08ea96755d6a",
+      "id": "af77e1b95852",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "94f6e1f79d58",
+      "id": "0a01fd59dcbb",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "cdac8dbc22f7",
+      "id": "a540ea081354",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "e5173ab8f7b5",
+      "id": "2e091325a4ef",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Create scripts/assurance_scorecard.py that reads state/contract_violations.jsonl and the _ALL_CONTRACTS registry, computes 7-day violation counts by contract with week-over-week delta, writes state/assurance_scorecard.json + a markdown render to shadow-public/, and wire it into the nightly cron; commit and post the \u2705 receipt to #shadow-log.",
-      "packet_id": "08ea96755d6a"
+      "next_action": "Create scripts/model_routing_ledger.py that wraps existing routing decision points (core/claude_client.py model selection, codex-vs-gemini fallback) with an append-only log to state/model_routing_ledger.jsonl using core/state_io.py, add a test in tests/, commit and push, receipt to #shadow-log.",
+      "packet_id": "af77e1b95852"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_94f6e1f79d58_1784275548",
-      "packet_id": "94f6e1f79d58"
+      "draft_id": "frontier_0a01fd59dcbb_1784362883",
+      "packet_id": "0a01fd59dcbb"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "2245435c3349",
-      "packet_id": "cdac8dbc22f7"
+      "experiment_id": "9d410ce53023",
+      "packet_id": "a540ea081354"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "e5173ab8f7b5"
+      "packet_id": "2e091325a4ef"
     }
   ],
   "receipts": {

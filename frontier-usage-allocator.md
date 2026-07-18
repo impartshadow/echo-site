@@ -1,6 +1,6 @@
 # Frontier Usage Allocator
 
-Generated: 2026-07-17T03:06:57-05:00 CT
+Generated: 2026-07-18T03:22:43-05:00 CT
 Reported utilization: 23%
 Computed headroom: 77%
 
@@ -8,7 +8,7 @@ Scarce frontier usage is reserved for compounding assets: sellable artifacts, pu
 
 ## Fallback Rule
 
-When the live session is on Codex fallback, do not pretend fallback work is spending the frontier lane. Produce receipts and queue the synthesis-heavy work for the Shadow frontier lane.
+When the live session is on Codex fallback, do not pretend fallback work is spending the strongest-model lane. Produce receipts and queue the synthesis-heavy work for claude-fable-5.
 
 ## Top Queue
 

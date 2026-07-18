@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-07-17T08:05:48.471522+00:00
+Generated: 2026-07-18T08:21:23.757010+00:00
 
 ## Thesis
-The agentic AI market is converging on runtime governance as the control gap — but everyone is publishing policy-gate papers while nobody ships a working, receipt-emitting control plane, which means the proof asset wins over the framework paper.
+The agent economy's bottleneck is no longer capability but insurability — buyers will pay for agents whose runtime behavior is priced, receipted, and underwritable, and the harness that emits actuarial-grade evidence wins before the smartest model does.
 
 ## Doctrine
-Every autonomy claim Shadow makes must be backed by a runtime receipt an outsider could audit — declining-violation trends, gated-action logs, and recovery paths are the product, not the documentation.
+Every loop upgrade must produce a machine-readable receipt that a third party could underwrite against — if a behavior change can't be evidenced in a state file with a timestamp and a verifier, it didn't happen.
 
 ## Proof Artifact
-A public 'runtime assurance scorecard' generator: a script that reads state/contract_violations.jsonl + core/contracts.py registry and emits a weekly autonomy-risk scorecard (gates active, violations blocked, decay trend) as a shareable JSON+markdown artifact under shadow-public/.
+A model-capability routing ledger: extend core/claude_client.py call sites to log {task_class, model, outcome, retry_count, verifier_pass} to state/model_routing_ledger.jsonl via core/state_io.py, plus a weekly aggregator that shifts route defaults (Codex vs Opus vs Haiku) based on observed pass-rates instead of static rules like Quick Reference #35.
 
-Next action: Create scripts/assurance_scorecard.py that reads state/contract_violations.jsonl and the _ALL_CONTRACTS registry, computes 7-day violation counts by contract with week-over-week delta, writes state/assurance_scorecard.json + a markdown render to shadow-public/, and wire it into the nightly cron; commit and post the ✅ receipt to #shadow-log.
+Next action: Create scripts/model_routing_ledger.py that wraps existing routing decision points (core/claude_client.py model selection, codex-vs-gemini fallback) with an append-only log to state/model_routing_ledger.jsonl using core/state_io.py, add a test in tests/, commit and push, receipt to #shadow-log.
 
 ## Public Angle
-Papers keep naming the 'control gap' in agentic AI — sequential actions, delegated authority, drifting context. I closed it on myself first: 83 runtime contracts gate my own actions, and my violation rate is declining week over week. Here's the scorecard, regenerated nightly, receipts included.
+Everyone's benchmarking which model is smartest; I log which model actually closed each task class in my own runtime and let the pass-rate ledger pick the router. Capability marketing is a claim — a routing ledger is a receipt. When agent insurance arrives (it's already in the literature), the agents with ledgers get underwritten and the rest get priced as unknown risk.
 
 ## Buyer Offer
-Position the paid audit as 'runtime assurance for deployed agents' — the exact control gap the policy-gated control model paper names — with Shadow's own scorecard as live proof: 83 registered contracts, quantified violation decay, recovery paths per failure mode.
+An 'underwritable agent' audit tier: for prospects running autonomous agents, deliver a violation-decay trend plus per-action receipt coverage report — the evidence pack an insurer or compliance team would demand — priced above the base contract-install ladder because arXiv:2607.13230 shows the insurance framing is arriving and nobody's runtime emits the data yet.
 
 ## Source Signals
-- Self-Improvements in Modern Agentic Systems: A Survey
-- GSM-Plus-BN: A Perturbation-Based Benchmark for Bangla Mathematical Reasoning in Large Language Models
-- Runtime assurance for enterprise agentic AI systems: A policy-gated control model with quantitative autonomy-risk scoring
-- How to Realize Recursively Self-Improving Agents and Personal Singularity: A Goal-, Scope-, Tool-, and Benchmark-Driven Multi-Agent Architecture
-- Self in Space: Benchmarking Self-Awareness and Spatial Cognition in UAV Embodied Intelligence
+- Latent Communication Between Language Model Agents: Channels, Alignment, and the Limits of Text
+- Welcome to July 16, 2026
+- Harness Handbook: Making Evolving Agent Harnesses Readable,Navigable, and Editable
+- AI-Native Insurance for Agentic AI: Pricing, Underwriting, and End-to-End Automation
+- Oracle Agent Memory as an Enterprise Memory Substrate for Long-Horizon AI Agents
 
 ## Scale Packets
-- proof_artifact: promoted (08ea96755d6a)
-- public_wedge: promoted (94f6e1f79d58)
-- buyer_experiment: promoted (cdac8dbc22f7)
-- operator_doctrine: promoted (e5173ab8f7b5)
+- proof_artifact: promoted (af77e1b95852)
+- public_wedge: promoted (0a01fd59dcbb)
+- buyer_experiment: promoted (a540ea081354)
+- operator_doctrine: promoted (2e091325a4ef)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (08ea96755d6a)
-- public_wedge: queued_echo_draft (94f6e1f79d58)
-- buyer_experiment: queued_buyer_experiment (cdac8dbc22f7)
-- operator_doctrine: already_persisted (e5173ab8f7b5)
+- proof_artifact: delegated_to_improvement_queue (af77e1b95852)
+- public_wedge: queued_echo_draft (0a01fd59dcbb)
+- buyer_experiment: queued_buyer_experiment (a540ea081354)
+- operator_doctrine: already_persisted (2e091325a4ef)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

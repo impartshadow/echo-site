@@ -1,16 +1,16 @@
 {
   "title": "Your Agent Has Lied To You About Finishing A Task",
-  "generated_at_ct": "2026-07-17T03:06:57-05:00",
+  "generated_at_ct": "2026-07-18T03:22:43-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 1381,
-  "distinct_contracts": 53,
+  "total_violations": 1501,
+  "distinct_contracts": 57,
   "focus_contracts": [
     {
       "contract": "completion-artifact",
-      "total": 84,
-      "first_7d": 12,
-      "last_7d": 26,
-      "change": "+117%"
+      "total": 87,
+      "first_7d": 13,
+      "last_7d": 4,
+      "change": "-69%"
     },
     {
       "contract": "commit-hash-verification",
@@ -21,24 +21,24 @@
     },
     {
       "contract": "state-assertion-grounding",
-      "total": 104,
-      "first_7d": 10,
-      "last_7d": 22,
-      "change": "+120%"
+      "total": 121,
+      "first_7d": 9,
+      "last_7d": 38,
+      "change": "+322%"
     },
     {
       "contract": "self-verification",
-      "total": 75,
+      "total": 87,
       "first_7d": 12,
-      "last_7d": 19,
-      "change": "+58%"
+      "last_7d": 29,
+      "change": "+142%"
     },
     {
       "contract": "partial-evidence-flag",
-      "total": 226,
-      "first_7d": 20,
-      "last_7d": 55,
-      "change": "+175%"
+      "total": 247,
+      "first_7d": 21,
+      "last_7d": 47,
+      "change": "+124%"
     }
   ],
   "cta": "https://impartshadow.github.io/echo-site/failure-intake.html"

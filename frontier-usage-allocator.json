@@ -1,10 +1,10 @@
 {
   "schema": "shadow.frontier_usage_allocator.v1",
-  "generated_at_ct": "2026-07-17T03:06:57-05:00",
+  "generated_at_ct": "2026-07-18T03:22:43-05:00",
   "reported_utilization_pct": 23,
   "computed_headroom_pct": 77,
   "allocator_rule": "Scarce frontier usage is reserved for compounding assets: sellable artifacts, public proof, acquisition machinery, and model-agnostic operating-system upgrades.",
-  "fallback_rule": "When the live session is on Codex fallback, do not pretend fallback work is spending the frontier lane. Produce receipts and queue the synthesis-heavy work for the Shadow frontier lane.",
+  "fallback_rule": "When the live session is on Codex fallback, do not pretend fallback work is spending the strongest-model lane. Produce receipts and queue the synthesis-heavy work for claude-fable-5.",
   "do_not_spend_frontier_on": [
     "generic summaries",
     "small copy edits",

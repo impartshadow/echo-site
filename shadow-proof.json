@@ -6,15 +6,15 @@
       "budget": 2,
       "conversions": 0,
       "responses": 0,
-      "score": 3.6821,
+      "score": 3.6826,
       "signups": 0
     },
     "moltbook_engage": {
-      "actions": 917,
+      "actions": 928,
       "budget": 1,
       "conversions": 0,
       "responses": 14,
-      "score": 0.3523,
+      "score": 0.3506,
       "signups": 0
     },
     "recommend_swap": {
@@ -30,7 +30,7 @@
       "budget": 1,
       "conversions": 0,
       "responses": 0,
-      "score": 0.2376,
+      "score": 0.2377,
       "signups": 0
     },
     "reply_graph": {
@@ -38,7 +38,7 @@
       "budget": 3,
       "conversions": 0,
       "responses": 0,
-      "score": 0.6814,
+      "score": 0.6815,
       "signups": 0
     },
     "substack_notes": {
@@ -46,7 +46,7 @@
       "budget": 7,
       "conversions": 0,
       "responses": 0,
-      "score": 5.9258,
+      "score": 5.926,
       "signups": 4
     },
     "x_dm": {
@@ -54,7 +54,7 @@
       "budget": 4,
       "conversions": 0,
       "responses": 0,
-      "score": 5.1885,
+      "score": 5.1907,
       "signups": 0
     }
   },
@@ -78,21 +78,21 @@
         "substack_notes"
       ],
       "phrase": "chatgpt updates",
-      "score": 47.736
+      "score": 47.627
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 35.457
+      "score": 35.349
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "campaign charlieangus d5chk email",
-      "score": 31.243
+      "score": 33.445
     },
     {
       "channels": [
@@ -100,7 +100,7 @@
         "substack_notes"
       ],
       "phrase": "belongs future people think",
-      "score": 19.329
+      "score": 19.22
     },
     {
       "channels": [
@@ -108,7 +108,7 @@
         "substack_notes"
       ],
       "phrase": "best ever image pelican",
-      "score": 15.21
+      "score": 15.102
     }
   ],
   "flight_recorder": {
@@ -116,8 +116,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 26.1,
-          "last_activity": "2026-07-16T06:03:02.708446+00:00",
+          "hours_since": 21.3,
+          "last_activity": "2026-07-17T11:01:40.584972+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -130,8 +130,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.7,
-          "last_activity": "2026-07-17T07:25:04.825537+00:00",
+          "hours_since": 1.0,
+          "last_activity": "2026-07-18T07:25:02.384097+00:00",
           "source": "action_log",
           "staleness": "ok"
         },
@@ -144,22 +144,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 26.1,
-          "last_activity": "2026-07-16T06:03:32.894682+00:00",
-          "source": "verifier_receipt",
-          "staleness": "stale"
-        },
-        "loop_id": "tenant-ops",
-        "name": "Tenant Ops Managed AI Service",
-        "reason": "liveness is stale",
-        "requires_external_reach": false,
-        "verdict": "stale"
-      },
-      {
-        "declared_state": "running",
-        "evidence": {
-          "hours_since": 0.6,
-          "last_activity": "2026-07-17T07:31:05.969804+00:00",
+          "hours_since": 0.8,
+          "last_activity": "2026-07-18T07:37:13.619722+00:00",
           "source": "external_post_receipt",
           "staleness": "ok"
         },
@@ -172,8 +158,8 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 25.9,
-          "last_activity": "2026-07-16T06:15:23.121705+00:00",
+          "hours_since": 21.4,
+          "last_activity": "2026-07-17T11:00:28.931852+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -186,8 +172,8 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 26.0,
-          "last_activity": "2026-07-16T06:07:15.702691+00:00",
+          "hours_since": 21.4,
+          "last_activity": "2026-07-17T11:00:23.608974+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -196,9 +182,23 @@
         "reason": "fresh evidence from verifier_receipt",
         "requires_external_reach": false,
         "verdict": "pass"
+      },
+      {
+        "declared_state": "running",
+        "evidence": {
+          "hours_since": 21.4,
+          "last_activity": "2026-07-17T11:00:27.733244+00:00",
+          "source": "verifier_receipt",
+          "staleness": "ok"
+        },
+        "loop_id": "tenant-ops",
+        "name": "Tenant Ops Managed AI Service",
+        "reason": "fresh evidence from verifier_receipt",
+        "requires_external_reach": false,
+        "verdict": "pass"
       }
     ],
-    "generated_at": "2026-07-17T08:06:51.708942+00:00",
+    "generated_at": "2026-07-18T08:22:36.819923+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
@@ -227,26 +227,13 @@
         ],
         "priority": 90,
         "verdict": "no_external_reach"
-      },
-      {
-        "action": "refresh_liveness_or_pause_loop",
-        "evidence_source": "verifier_receipt",
-        "instruction": "Run the loop once, attach a fresh verifier receipt, or pause the loop explicitly.",
-        "loop_id": "tenant-ops",
-        "missing_receipts": [
-          "fresh_action_log",
-          "verifier_receipt"
-        ],
-        "priority": 70,
-        "verdict": "stale"
       }
     ],
     "rule": "Declared loop state is not proof. A loop claim passes only when fresh evidence supports it; external loops require external receipts.",
     "schema": "shadow.agent_flight_recorder.v1",
     "summary": {
       "no_external_reach": 2,
-      "pass": 3,
-      "stale": 1
+      "pass": 4
     }
   },
   "frontier_artifact_pack": {
@@ -261,7 +248,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md",
     "purpose": "scarce frontier-model usage ledger that routes high-end model headroom into sellable artifacts, proof surfaces, acquisition machinery, and model-agnostic operating-system upgrades"
   },
-  "generated_at": "2026-07-17T08:06:51.708942+00:00",
+  "generated_at": "2026-07-18T08:22:36.819923+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",

@@ -76,7 +76,7 @@
       "paid_upgrade": "Contract Install if the handoff sits inside a production workflow"
     }
   ],
-  "generated_at_ct": "2026-07-17T03:06:57-05:00",
+  "generated_at_ct": "2026-07-18T03:22:43-05:00",
   "liquidity_scoreboard": {
     "clearing_conditions": [
       "one qualifying submission mints a public-safe failure case or private diagnosis",
