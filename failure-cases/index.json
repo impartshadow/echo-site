@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-07-18T08:22:43.380489+00:00",
-  "count": 19,
+  "generated_at": "2026-07-18T14:01:00.141589+00:00",
+  "count": 20,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "bug-native-harnesses-silently-drop-the-agent-spec-pr-04b376a609",
+      "advisory_id": "SFA-2026-04B376A609",
+      "ts": "2026-07-18T14:01:00.139599+00:00",
+      "title": "[Bug] Native harnesses silently drop the agent spec `prompt:` at runtime",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "omnigent-ai/omnigent",
+        "issue_number": 2853,
+        "author": "unknown",
+        "url": "https://github.com/omnigent-ai/omnigent/issues/2853"
+      },
+      "case": {
+        "observed_action": "Native executors accept the parsed agent system prompt and delete it without delivering it or warning the operator.",
+        "expected_boundary": "The spec-to-native-session boundary should assert that every non-empty prompt reaches a declared runtime input channel or causes explicit rejection or warning.",
+        "runtime_context": "Omnigent 0.5.1 native Claude, Codex, Cursor, Hermes, OpenCode, and related harnesses launch agents whose validated role instructions are absent.",
+        "evidence": "The cited executors delete system_prompt, while the working Claude SDK and pi paths explicitly pass it and the native Claude append flag carries only a session-rename instruction."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/bug-native-harnesses-silently-drop-the-agent-spec-pr-04b376a609.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/bug-native-harnesses-silently-drop-the-agent-spec-pr-04b376a609.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20bug-native-harnesses-silently-drop-the-agent-spec-pr-04b376a609&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/bug-native-harnesses-silently-drop-the-agent-spec-pr-04b376a609.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "getsystemprompt-is-silently-ignored-once-getskills-r-fc6a53f3cc",

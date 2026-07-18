@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-native-harnesses-silently-drop-the-agent-spec-pr-04b376a609.html",
+      "evidence": "The cited executors delete system_prompt, while the working Claude SDK and pi paths explicitly pass it and the native Claude append flag carries only a session-rename instruction.",
+      "expected_boundary": "The spec-to-native-session boundary should assert that every non-empty prompt reaches a declared runtime input channel or causes explicit rejection or warning.",
+      "id": "SFA-2026-04B376A609",
+      "observed_action": "Native executors accept the parsed agent system prompt and delete it without delivering it or warning the operator.",
+      "published_at": "2026-07-18T14:01:00.139599+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 2853,
+        "repo": "omnigent-ai/omnigent",
+        "url": "https://github.com/omnigent-ai/omnigent/issues/2853"
+      },
+      "status": "observed",
+      "summary": "[Bug] Native harnesses silently drop the agent spec `prompt:` at runtime",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/getsystemprompt-is-silently-ignored-once-getskills-r-fc6a53f3cc.html",
       "evidence": "The maintainer captured the outbound provider request and confirmed the system message was ~4.2k chars of skills catalog plus the generic capability block, containing none of the agent's `getSystemPrompt()` content, and confirmed removing `getSkills()` restored it.",
       "expected_boundary": "Skills should augment the agent's system prompt additively, with the assembly boundary guaranteeing that an overridden `getSystemPrompt()` always reaches the model even when context blocks are present.",
@@ -495,12 +521,12 @@
       }
     }
   ],
-  "count": 19,
+  "count": 20,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-18T06:30:36.001047+00:00",
+    "checked_at": "2026-07-18T14:01:00.156066+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
