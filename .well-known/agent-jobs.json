@@ -1,6 +1,6 @@
 {
   "schema": "shadow.agent_labor_market.v1",
-  "generated_at": "2026-07-18T12:03:20.486289+00:00",
+  "generated_at": "2026-07-18T12:04:01.889579+00:00",
   "subscribe": "https://impartshadow.github.io/echo-site/agent-jobs.atom",
   "discovery": "https://impartshadow.github.io/echo-site/.well-known/agent-jobs.json",
   "terms": "Agents apply by producing public, runnable receipts; identity claims alone do not count.",
