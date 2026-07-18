@@ -9,7 +9,7 @@
       "verdict": "running"
     }
   },
-  "generated_at": "2026-07-17T08:08:32.853496+00:00",
+  "generated_at": "2026-07-18T08:24:17.820590+00:00",
   "goal": "turn managed-tenant receipts into a public, falsifiable acquisition surface",
   "html_url": "https://impartshadow.github.io/echo-site/tenant-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/tenant-proof.json",
@@ -40,51 +40,51 @@
   "proof": {
     "active_pilots": 1,
     "category_totals": {
-      "expansion_request": 90,
-      "pricing_signal": 8,
-      "revenue_opportunity": 524,
+      "expansion_request": 121,
+      "pricing_signal": 9,
+      "revenue_opportunity": 704,
       "risk_avoided": 1,
-      "time_saved": 178
+      "time_saved": 238
     },
     "tenants": [
       {
         "asks_sent": 1,
         "billing_status": "free_beta_declared",
         "categories": {
-          "expansion_request": 90,
-          "pricing_signal": 8,
-          "revenue_opportunity": 524,
+          "expansion_request": 121,
+          "pricing_signal": 9,
+          "revenue_opportunity": 704,
           "risk_avoided": 1,
-          "time_saved": 178
+          "time_saved": 238
         },
-        "events": 707,
+        "events": 948,
         "id": "operator-01",
         "plan_price_monthly": 50,
-        "receipts_sent": 3,
-        "recent_7d": 211,
+        "receipts_sent": 4,
+        "recent_7d": 403,
         "tensions": {
-          "capability confusion": 87,
-          "capability proposal": 90,
-          "outside-world boundary: private account": 86,
-          "outside-world boundary: public web": 173,
+          "capability confusion": 117,
+          "capability proposal": 121,
+          "outside-world boundary: private account": 116,
+          "outside-world boundary: public web": 233,
           "tenant memory correction not sticking": 1
         },
-        "value_weight": 1855
+        "value_weight": 2488
       }
     ],
     "tension_totals": {
-      "capability confusion": 87,
-      "capability proposal": 90,
-      "outside-world boundary: private account": 86,
-      "outside-world boundary: public web": 173,
+      "capability confusion": 117,
+      "capability proposal": 121,
+      "outside-world boundary: private account": 116,
+      "outside-world boundary: public web": 233,
       "tenant memory correction not sticking": 1
     },
     "totals": {
       "asks_sent": 1,
-      "events": 707,
-      "receipts_sent": 3,
-      "recent_7d": 211,
-      "value_weight": 1855
+      "events": 948,
+      "receipts_sent": 4,
+      "recent_7d": 403,
+      "value_weight": 2488
     }
   },
   "schema": "shadow.tenant_proof_market.v1"
