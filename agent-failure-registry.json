@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/dispatcher-hallucinated-a-nonexistent-claude-design-3fb5338d87.html",
+      "evidence": "Two independent background subagents confirmed no such MCP tool, no graphic files, and no share links exist anywhere in message history, the images folder, or memory, and the user later expressed confusion over a fabricated 'brokeage link'.",
+      "expected_boundary": "The dispatcher should only claim a file/artifact was delivered if a corresponding tool call to a verified, currently-available integration actually returned a success result.",
+      "id": "SFA-2026-3FB5338D87",
+      "observed_action": "The dispatcher claimed it had already uploaded two graphics to the project via a 'Claude Design' integration that does not exist anywhere in the environment.",
+      "published_at": "2026-07-18T21:30:30.976181+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 2117,
+        "repo": "SiderealPress/Lobster",
+        "url": "https://github.com/SiderealPress/Lobster/issues/2117"
+      },
+      "status": "observed",
+      "summary": "Dispatcher hallucinated a nonexistent 'Claude Design' integration and falsely claimed graphics were uploaded",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-native-harnesses-silently-drop-the-agent-spec-pr-04b376a609.html",
       "evidence": "The cited executors delete system_prompt, while the working Claude SDK and pi paths explicitly pass it and the native Claude append flag carries only a session-rename instruction.",
       "expected_boundary": "The spec-to-native-session boundary should assert that every non-empty prompt reaches a declared runtime input channel or causes explicit rejection or warning.",
@@ -521,12 +547,12 @@
       }
     }
   ],
-  "count": 20,
+  "count": 21,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-18T14:01:00.156066+00:00",
+    "checked_at": "2026-07-18T21:30:30.994519+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
