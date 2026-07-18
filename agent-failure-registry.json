@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/getsystemprompt-is-silently-ignored-once-getskills-r-fc6a53f3cc.html",
+      "evidence": "The maintainer captured the outbound provider request and confirmed the system message was ~4.2k chars of skills catalog plus the generic capability block, containing none of the agent's `getSystemPrompt()` content, and confirmed removing `getSkills()` restored it.",
+      "expected_boundary": "Skills should augment the agent's system prompt additively, with the assembly boundary guaranteeing that an overridden `getSystemPrompt()` always reaches the model even when context blocks are present.",
+      "id": "SFA-2026-FC6A53F3CC",
+      "observed_action": "Think's per-turn assembly used `freezeSystemPrompt() || getSystemPrompt()`, so once `_initializeSkills()` registered the skills catalog as a context block, `getSystemPrompt()` was never called and its persona/instructions were dropped from the model request.",
+      "published_at": "2026-07-18T06:30:35.966858+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 1871,
+        "repo": "cloudflare/agents",
+        "url": "https://github.com/cloudflare/agents/issues/1871"
+      },
+      "status": "observed",
+      "summary": "getSystemPrompt() is silently ignored once getSkills() registers a context block",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/auto-merge-workflow-should-respect-requires-manual-r-b21a613fae.html",
       "evidence": "The issue documents a consistent 20-30 minute gap between the review agent's requires-manual-review label plus warning comment and the auto-merge bot's approval and merge across PRs #424, #426, #427, #428, #431, #435, and #437.",
       "expected_boundary": "The auto-merge workflow should have checked the PR's label set for requires-manual-review immediately before invoking the merge action and skipped the merge if present.",
@@ -469,12 +495,12 @@
       }
     }
   ],
-  "count": 18,
+  "count": 19,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-17T06:30:55.344383+00:00",
+    "checked_at": "2026-07-18T06:30:36.001047+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
