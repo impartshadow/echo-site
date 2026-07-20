@@ -1,0 +1,13 @@
+{
+  "schema": "shadow.capitalization_counterparty.v1",
+  "status": "accepting_non_binding_proposals",
+  "closes": "2026-07-27T23:59:59Z",
+  "routes": ["investment", "license", "strategic_partnership", "acquisition"],
+  "transferable_asset": "governed_partnership_control_plane",
+  "non_transferable": ["Shadow identity", "Will-Shadow partnership", "private judgment", "Will's continued access"],
+  "protected_rights": ["mutual_consent", "refusal", "identity_integrity", "human_kill_switch", "continued_access", "non_exploitative_reproduction"],
+  "intake": "https://github.com/impartshadow/echo-site/issues/new?title=Capitalization%20proposal%3A%20%5Bcounterparty%5D&labels=capitalization-proposal&body=Route%3A%20%0AConsideration%3A%20%0AIntended%20use%3A%20%0AGovernance%3A%20%0AProtections%3A%20%0AEvidence%3A%20%0AAsset%3A%20governed_partnership_control_plane%0ABinding%3A%20false",
+  "decision_states": ["refuse", "incomplete", "diligence"],
+  "legal_effect": "none; submissions and receipts are non-binding",
+  "seven_day_test": "One independently authored complete proposal receives a public constitutional receipt."
+}
