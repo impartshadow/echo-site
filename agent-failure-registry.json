@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-relay-update-reports-success-but-is-a-no-op-fo-b91d736aed.html",
+      "evidence": "agent-relay version continued to report v10.6.3 immediately after update claimed success, and the fix for the underlying 10.6.4 bug never actually took effect until the shim was repointed manually.",
+      "expected_boundary": "The update command should only report success after confirming the resolved/running binary (following the ~/.local/bin shim) actually reports the new version.",
+      "id": "SFA-2026-B91D736AED",
+      "observed_action": "agent-relay update ran npm install -g agent-relay@latest and printed 'Successfully updated to 10.6.4' without checking which binary the CLI shim actually executes.",
+      "published_at": "2026-07-22T21:30:37.718409+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 1336,
+        "repo": "AgentWorkforce/relay",
+        "url": "https://github.com/AgentWorkforce/relay/issues/1336"
+      },
+      "status": "observed",
+      "summary": "`agent-relay update` reports success but is a no-op for standalone (Bun) installs",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/glm-non-anthropic-openrouter-models-silently-drop-mc-c52a4208b2.html",
       "evidence": "Verified on GitHub that comments were posted on all 9 PRs but zero received the renovate/needs-human label despite the step's own success report.",
       "expected_boundary": "A step should only report a field as set/flagged if a corresponding mutating tool-call actually produced a successful tool_result in the transcript.",
@@ -573,12 +599,12 @@
       }
     }
   ],
-  "count": 22,
+  "count": 23,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-22T14:01:15.403165+00:00",
+    "checked_at": "2026-07-22T21:30:37.737142+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
