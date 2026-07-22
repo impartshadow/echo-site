@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Failure census preview — langchain-ai/langgraph</title>
+<style>
+body{font-family:Georgia,serif;max-width:44rem;margin:2rem auto;padding:0 1rem;color:#1a1a1a;line-height:1.55}
+h1{font-size:1.5rem} h2{font-size:1.15rem;margin-bottom:.2rem}
+.meta{color:#666;font-size:.9rem} .evidence{color:#444;font-size:.95rem}
+section{border-top:1px solid #ddd;padding-top:.8rem;margin-top:1rem}
+.offer{background:#f6f4ef;border:1px solid #ddd;padding:1rem;margin-top:2rem}
+</style></head><body>
+<h1>Failure census preview — langchain-ai/langgraph</h1>
+<p class="meta">Generated 2026-07-22 from 5 public issues.
+This is page one of a failure census: the dominant agent-failure classes in this
+project's own tracker, each with the deterministic check that would catch it.</p>
+<p>The dominant pattern across this issue set is silence: state, routing decisions, packaged files, and interrupt signals all fail without raising an error, so developers only discover the defect through downstream symptoms rather than a fast failure at the point of cause. Three of four clusters (state drop, routing unsoundness, packaging loss) share the same root fix shape — a deterministic boundary check run before compile/build/deploy rather than relying on runtime observation.</p>
+<section><h2>silent-state-drop</h2><p>State updates and node output keys vanish without error when they fall outside declared schema boundaries or channel migration edge cases, leaving developers with no signal that data was lost.</p><p class="evidence">Evidence: &ldquo;Ran into a confusing bug where a value I returned from a node just disappeared with no&rdquo; — <a href="https://github.com/langchain-ai/langgraph/issues/8320">#8320</a> <a href="https://github.com/langchain-ai/langgraph/issues/8384">#8384</a></p><p><strong>The deterministic check:</strong> At compile time, assert every key returned by a node&#x27;s static return annotation (or a runtime sample of returned dict keys) is a subset of the declared TypedDict/state schema keys; reject or warn on any key not in that set.</p></section>
+<section><h2>silent-routing-unsoundness</h2><p>Conditional edge routing functions written or modified by LLMs can contain dead branches, overlapping conditions, or uncovered states that fail silently at runtime instead of being caught before compile.</p><p class="evidence">Evidence: &ldquo;LLMs also hallucinate on boolean satisfiability at ~20% error rates&rdquo; — <a href="https://github.com/langchain-ai/langgraph/issues/8035">#8035</a></p><p><strong>The deterministic check:</strong> Before graph.compile(), run a SAT solver over the declared boolean routing conditions to prove each branch is reachable, no two branches overlap ambiguously, and the disjunction of all conditions covers the full state space.</p></section>
+<section><h2>deploy-packaging-silent-loss</h2><p>The CLI&#x27;s deploy archive builder silently omits files that should be included when .dockerignore negation patterns interact with an already-excluded parent directory, shipping an incomplete deployment with no warning.</p><p class="evidence">Evidence: &ldquo;silently drops files re-included via .dockerignore negation under an excluded directory&rdquo; — <a href="https://github.com/langchain-ai/langgraph/issues/8387">#8387</a></p><p><strong>The deterministic check:</strong> When building the deploy archive, for every negation pattern (!path) in .dockerignore, assert the resolved file actually appears in the resulting tar&#x27;s member list; fail the build loudly if a negated path is missing.</p></section>
+<section><h2>interrupt-signal-swallowed</h2><p>GraphInterrupt exceptions raised inside tool-call wrapper paths are caught and not re-raised, so human-in-the-loop interrupt requests silently fail to pause execution as intended.</p><p class="evidence">Evidence: &ldquo;GraphInterrupt Not Re-raised in awrap_tool_call Wrapper Path&rdquo; — <a href="https://github.com/langchain-ai/langgraph/issues/8217">#8217</a></p><p><strong>The deterministic check:</strong> Add a regression test asserting that any exception subclassing GraphInterrupt raised within a tool wrapper propagates unchanged to the graph executor&#x27;s interrupt handler, rather than being caught by generic exception handling in the wrapper.</p></section>
+<div class="offer">
+<p><strong>This preview used only public issues.</strong> The full failure census
+runs the same classification over seven days of your private agent logs and
+traces — every failure classified, frequency-ranked, with the deterministic
+check per class. $400, one-week turnaround.
+Email <a href="mailto:impartshadow@gmail.com">impartshadow@gmail.com</a> with subject &ldquo;census&rdquo;.</p>
+<p class="meta">Free tier: I triage one public agent failure every day —
+<a href="https://impartshadow.github.io/echo-site/failure-cases/">the case log</a>.</p>
+</div>
+</body></html>
