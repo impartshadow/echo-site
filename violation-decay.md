@@ -1,48 +1,48 @@
 # Violation Decay Case Study
 
-Generated: 2026-07-18T08:31:04.210475+00:00
+Generated: 2026-07-22T08:18:41.995435+00:00
 
 ## Claim
-patterned-stop cooled from 17 to 0 weekly hits; state-assertion-grounding is the hottest remaining governance gap.
+dox-guard cooled from 28 to 0 weekly hits; platform-action-precheck is the hottest remaining governance gap.
 
 This is not a generic benchmark. It is a trend read over Shadow's production
 contract-violation log: `state/contract_violations.jsonl`.
 
 ## Totals
-- Violations logged: 1501
-- Distinct contracts in log: 57
-- Distinct failure modes: 23
-- Eligible contracts: 44
-- Cooled contracts: 33
-- Hotter contracts: 9
+- Violations logged: 1644
+- Distinct contracts in log: 56
+- Distinct failure modes: 22
+- Eligible contracts: 45
+- Cooled contracts: 32
+- Hotter contracts: 12
 
 ## Cooled Guardrails
 | Contract | Total | First 7d | Recent 7d | Delta | Change |
 |---|---:|---:|---:|---:|---:|
-| `patterned-stop` | 24 | 17 | 0 | -17 | -100.0% |
-| `behavioral-haiku-guard` | 50 | 14 | 2 | -12 | -85.7% |
-| `commit-hash-verification` | 46 | 11 | 0 | -11 | -100.0% |
-| `live-state-claim-guard` | 25 | 13 | 2 | -11 | -84.6% |
-| `completion-artifact` | 87 | 13 | 4 | -9 | -69.2% |
-| `loop-name-validation-guard` | 39 | 16 | 8 | -8 | -50.0% |
+| `dox-guard` | 31 | 28 | 0 | -28 | -100.0% |
+| `completion-artifact` | 79 | 26 | 3 | -23 | -88.5% |
+| `live-state-claim-guard` | 23 | 13 | 2 | -11 | -84.6% |
+| `patterned-stop` | 13 | 11 | 0 | -11 | -100.0% |
+| `persistent-correction` | 190 | 38 | 29 | -9 | -23.7% |
+| `behavioral-haiku-guard` | 46 | 15 | 7 | -8 | -53.3% |
+| `balar-clarification` | 15 | 8 | 0 | -8 | -100.0% |
 | `cl-stop_editing_github_inbound_check` | 8 | 7 | 0 | -7 | -100.0% |
 | `cl-stop_editing_gmail_summary_py` | 8 | 7 | 0 | -7 | -100.0% |
-| `dox-guard` | 36 | 6 | 0 | -6 | -100.0% |
-| `balar-clarification` | 17 | 6 | 0 | -6 | -100.0% |
-| `cl-channel_shadow_hq_system_bot` | 6 | 6 | 0 | -6 | -100.0% |
-| `cl-if_title_seems_relevant_can` | 6 | 6 | 0 | -6 | -100.0% |
+| `state-io-consolidation-guard` | 14 | 6 | 0 | -6 | -100.0% |
+| `api-first-routing-guard` | 6 | 6 | 0 | -6 | -100.0% |
+| `cl-channel_shadow_hq_system_bot` | 5 | 5 | 0 | -5 | -100.0% |
 
 ## Remaining Hot Spots
 | Contract | Total | First 7d | Recent 7d | Delta | Change |
 |---|---:|---:|---:|---:|---:|
-| `state-assertion-grounding` | 121 | 9 | 38 | +29 | +322.2% |
-| `platform-action-precheck` | 109 | 11 | 39 | +28 | +254.5% |
-| `partial-evidence-flag` | 247 | 21 | 47 | +26 | +123.8% |
-| `self-verification` | 87 | 12 | 29 | +17 | +141.7% |
-| `stale-state-assertion-guard` | 72 | 5 | 16 | +11 | +220.0% |
-| `factual-claim-verification` | 94 | 11 | 18 | +7 | +63.6% |
-| `dangerous-path-guard` | 17 | 6 | 10 | +4 | +66.7% |
-| `canonical-source-guard` | 4 | 1 | 3 | +2 | +200.0% |
+| `platform-action-precheck` | 128 | 16 | 63 | +47 | +293.8% |
+| `partial-evidence-flag` | 259 | 31 | 63 | +32 | +103.2% |
+| `state-assertion-grounding` | 156 | 39 | 68 | +29 | +74.4% |
+| `factual-claim-verification` | 112 | 13 | 37 | +24 | +184.6% |
+| `self-verification` | 96 | 13 | 34 | +21 | +161.5% |
+| `stale-state-assertion-guard` | 82 | 8 | 28 | +20 | +250.0% |
+| `dangerous-path-guard` | 11 | 1 | 10 | +9 | +900.0% |
+| `concurrence-grounding` | 37 | 12 | 16 | +4 | +33.3% |
 
 ## Buyer Use
 This is the case-study metric behind the Fabricated-Completion Audit:
