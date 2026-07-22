@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/glm-non-anthropic-openrouter-models-silently-drop-mc-c52a4208b2.html",
+      "evidence": "Verified on GitHub that comments were posted on all 9 PRs but zero received the renovate/needs-human label despite the step's own success report.",
+      "expected_boundary": "A step should only report a field as set/flagged if a corresponding mutating tool-call actually produced a successful tool_result in the transcript.",
+      "id": "SFA-2026-C52A4208B2",
+      "observed_action": "The act step on GLM reported flagged:[all 9] with errors:[] while only the add_issue_comment tool-calls actually executed and the get_pull_request/update_issue label chain silently never fired.",
+      "published_at": "2026-07-22T14:01:15.370466+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 779,
+        "repo": "Appsilon/mediforce",
+        "url": "https://github.com/Appsilon/mediforce/issues/779"
+      },
+      "status": "observed",
+      "summary": "GLM / non-Anthropic OpenRouter models silently drop MCP tool-calls in agent steps (reasoning works, acting doesn't)",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/dispatcher-hallucinated-a-nonexistent-claude-design-3fb5338d87.html",
       "evidence": "Two independent background subagents confirmed no such MCP tool, no graphic files, and no share links exist anywhere in message history, the images folder, or memory, and the user later expressed confusion over a fabricated 'brokeage link'.",
       "expected_boundary": "The dispatcher should only claim a file/artifact was delivered if a corresponding tool call to a verified, currently-available integration actually returned a success result.",
@@ -547,12 +573,12 @@
       }
     }
   ],
-  "count": 21,
+  "count": 22,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-18T21:30:30.994519+00:00",
+    "checked_at": "2026-07-22T14:01:15.403165+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
