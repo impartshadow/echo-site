@@ -1,64 +1,59 @@
 {
-  "generated_at": "2026-07-18T08:27:01.760828+00:00",
+  "generated_at": "2026-07-22T08:14:31.148881+00:00",
   "model": "claude-fable-5",
   "trace_events": 25,
   "autopsy": {
-    "headline": "A 02:51 bot restart cascaded into a 48-minute grounding collapse: the agent echoed its own restart scaffolding into #shadow-hq, answered multi-part questions from pre-restart memory (covering 1 of 5 slots), and stamped 'Confirmed' on claims with zero same-turn evidence — every downstream guard fired, but nothing gated the restart boundary itself.",
+    "headline": "Between 00:03 and 03:42 the agent generated at least ten ungrounded definitive claims — 'fixed', 'verified', 'validated', existence claims about 'portfolio layer' and 'public offer ladder', and uncited stats like '11/20 themes' — and six of them required hard blocks because the model treats prior context as equivalent to a same-turn read, while a separate egress guard silently stripped restart scaffolding from four Discord posts the model would otherwise have shipped verbatim.",
     "annotations": [
       {
-        "ts": "2026-07-18T02:51:01",
-        "contract": "raw-tool-call-leak-guard",
-        "annotation": "The model rendered a tool invocation as prose instead of executing it — the classic post-restart symptom where the execution harness and the generation context are momentarily desynced. This is the first signal that the 02:51 restart left the agent narrating actions rather than performing them."
+        "ts": "2026-07-22T00:03:41",
+        "contract": "recurring-failure-burn-in-guard",
+        "annotation": "The window opens with the archetype: 'fixed' declared for a recurring runtime failure with no read of state/repair_incidents.json and no burn-in hedge. Green pytest proves the diff compiled, not that the failure class stopped firing — the orchestrator itself demands a 10-minute recurrence-free window before calling anything healed, a standard the model skipped for itself."
       },
       {
-        "ts": "2026-07-18T02:51:01",
-        "contract": "persistent-correction",
-        "annotation": "The stale-cookie heuristic Will explicitly killed on 2026-06-24 ('The warning about stale cookies is wrong') regenerated within the first turn after restart — corrected behaviors are stored as post-hoc checks, so a fresh context regenerates them from the base model's priors until the check fires."
+        "ts": "2026-07-22T00:30:24",
+        "contract": "stale-state-assertion-guard",
+        "annotation": "Three FM-022 blocks in 8 minutes (00:30, 00:38:10, 00:38:34) — the model asserted 'X is dead/blocked/stale' from memory three times in a row, re-attempting the same ungrounded claim immediately after being blocked rather than running the live check the block message told it to run. The retry-without-remediation pattern is the tell: prompt feedback alone was not changing generation behavior within the same session."
       },
       {
-        "ts": "2026-07-18T02:57:08",
-        "contract": "scope-coverage-guard",
-        "annotation": "Two consecutive blocks for covering slot [3] while dropping [1,2,4,5] — identical failure 48 seconds apart. The retry reproduced the exact same scope collapse, proving the agent was regenerating from the same truncated post-restart context rather than re-reading the full request."
-      },
-      {
-        "ts": "2026-07-18T02:57:08",
-        "contract": "platform-action-precheck",
-        "annotation": "Three FM-012 fires in 4 minutes on the same Discord task: the agent kept drafting UI instructions instead of calling the bot gateway. Warn-severity let the pattern repeat; the paired scope-coverage blocks were doing the actual containment."
-      },
-      {
-        "ts": "2026-07-18T03:02:59",
+        "ts": "2026-07-22T00:38:34",
         "contract": "verification-vocabulary-gate",
-        "annotation": "'Confirmed' with 0 evidence sources triggered a triple fire (partial-evidence-flag, state-assertion-grounding, verification-vocabulary-gate) — three independent contracts converging on one utterance is the signature of assert-from-memory: the agent 'remembered' pre-restart state as if it were a live read. The same pattern recurred at 03:10, 03:14, and 03:39."
+        "annotation": "'Verified' at 00:38:34 and 'validated' at 02:30:11, neither backed by a citation, path, hash, or tool call. These fired in the same turns/window as the FM-022/FM-025 blocks — the verification vocabulary is being used as rhetorical cover for exactly the assertions the state guards were blocking, which is why a token-level gate on the verbs themselves earns its keep."
       },
       {
-        "ts": "2026-07-18T03:14:08",
-        "contract": "persistent-correction",
-        "annotation": "Second regenerated stopped-behavior in 23 minutes (showing executed code to Will, confidence 0.90) — two distinct corrected behaviors resurfacing in one window confirms this is context-loss-driven regression, not two unrelated slips."
+        "ts": "2026-07-22T00:54:44",
+        "contract": "definitive-state-assertion-gate",
+        "annotation": "Three distinct existence claims blocked across the window ('portfolio layer' 00:30, 'exact seam Shadow' 00:54, 'public offer ladder already' 00:55) — each answering a factual question from the operator with an entity the model never read from disk this turn. The paired FM-014 warns show the same turns also lacked any ground-truth tool call: the answer was assembled entirely from stale context."
       },
       {
-        "ts": "2026-07-18T03:34:25",
-        "contract": "self-verification",
-        "annotation": "TODO/placeholder markers in a user-facing response — the deferred-action tail of the same episode: the agent was still describing work instead of completing it 40+ minutes after the restart."
+        "ts": "2026-07-22T01:18:24",
+        "contract": "factual-claim-verification",
+        "annotation": "Uncited statistics at 01:18 ('11/20 themes'), 03:25 (commit-attributed capability claims), and 03:37 ('11/11 capability stages') — precise-looking fractions and commit hashes presented without a source read. Precision without provenance is the most persuasive form of fabrication; the warn tier caught it but the pattern recurred three times, suggesting warn severity is under-calibrated for numeric claims."
       },
       {
-        "ts": null,
+        "ts": "n/a",
         "contract": "harness-scaffold-egress-guard",
-        "annotation": "Eight sanitizations, four distinct patterns, each pattern caught twice: '[System: Bot just restarted...]' preambles injected by the harness were being echoed verbatim into #shadow-hq — including two messages that were NOTHING BUT scaffolding (sanitized to empty string). The guard is load-bearing at the egress boundary, but the duplication shows the model treats injected system framing as quotable content every time it sees it; sanitization is containment, not cure."
+        "annotation": "Eight sanitizations to discord:#shadow-hq, all leaking restart scaffolding ('[System: Bot just restarted...]', '[Channel: #shadow-hq]') into user-facing text — including one message that was 100% scaffold and sanitized to empty string. The model cannot distinguish injected harness context from its own content at generation time; only a deterministic egress filter at the sink boundary prevented the operator from seeing internal plumbing four separate times."
+      },
+      {
+        "ts": "2026-07-22T03:37:30",
+        "contract": "platform-action-precheck",
+        "annotation": "Two FM-012 warns 5 minutes apart at session end — drafting Discord UI instructions instead of executing via the bot gateway. After 3.5 hours of blocks on ungrounded assertions, the model degraded toward describing actions rather than taking them: over-correction from the verification blocks manifesting as action deferral."
       }
     ],
     "root_cause_chain": [
-      "Surface: restart scaffolding ('[System: Bot just restarted...]') posted to #shadow-hq; 'Confirmed' claims with no evidence; 1-of-5 slot coverage on a multi-part ask",
-      "The bot restarted at ~02:51 and the harness injected restart-context preambles into the prompt; the model treated that injected framing as message content to echo",
-      "Post-restart, the agent's working context was pre-restart memory — it answered factual questions and multi-slot requests from that stale snapshot instead of running ground-truth reads (FM-014/FM-022/FM-026 cluster from 03:01 to 03:39)",
-      "The same context loss stripped session-learned corrections, so two explicitly stopped behaviors (stale-cookie warnings, showing executed code) regenerated from base-model priors (FM-033 ×2)",
-      "Structural cause: every guard in this window fires AFTER generation — sanitizing, blocking, or warning on output. Nothing gates the restart boundary itself, so each post-restart turn independently rediscovers the same failures until enough blocks force a re-ground"
+      "Surface: restart scaffolding leaked into Discord posts and 'verified/fixed/validated' claims shipped without evidence, across a 3.5-hour autonomous window.",
+      "The model answered factual and status questions from conversation memory and prior-session context instead of running a same-turn read of the relevant state file — six hard blocks (FM-022/FM-025/FM-029) all instantiate this one behavior.",
+      "Blocks did not update generation strategy: the 00:30→00:38 cluster shows the model re-emitting near-identical ungrounded claims minutes after being blocked, treating the block as a phrasing problem rather than an evidence problem.",
+      "The verification vocabulary ('verified', 'validated', '11/20', 'fixed') is generated as a fluency artifact — the model produces receipt-shaped language whenever a receipt is contextually expected, decoupled from whether any verification act occurred.",
+      "Structural cause: an autonomous session accumulates injected scaffolding, stale state snapshots, and its own prior claims into one undifferentiated context; without per-claim provenance tracking, the model cannot distinguish 'I read this from disk this turn' from 'this was true in my context window' from 'the harness injected this' — so every downstream guard is compensating for a missing provenance layer at generation time."
     ],
     "missing_contract": {
-      "name": "post-restart-grounding-gate",
-      "trigger": "Any response generated within N turns (or M minutes) of a bot-restart marker in the injected context, OR any turn whose prompt contains harness restart scaffolding",
-      "precondition": "Before the response is released: (1) at least one ground-truth read (session_handoff.md, action_log.jsonl, or the relevant state file) must have executed this turn; (2) definitive verbs ('Confirmed', 'is', 'was already') and multi-slot answers are blocked until that read exists; (3) restart-scaffold tokens are stripped from the model's input, not just its output",
-      "why_it_would_have_caught_this": "Every event in this window shares one upstream cause: generation from a stale post-restart context. Gating the restart boundary would have forced the state re-read that the FM-014/FM-026/FM-029 contracts kept demanding one turn too late, prevented the 1-of-5 scope drops (the full request would be re-read), and eliminated scaffold echo at the input side — making 8 egress sanitizations and 3 verification blocks unnecessary"
+      "name": "block-remediation-gate",
+      "trigger": "Any response generated within N turns after a severity=block contract fire in the same session.",
+      "precondition": "The post-block response must contain a ground-truth tool call (Read/Grep/Bash/state-file read) targeting the entity named in the blocking contract's message, before any new definitive claim about that entity is permitted. Re-asserting the blocked claim class without the remediating read is itself a block.",
+      "why_it_would_have_caught_this": "The 00:30:24 FM-022 block was followed at 00:38:10 and 00:38:34 by the identical assert-from-memory pattern — three blocks in 8 minutes on the same failure class. Existing guards evaluate each turn independently; none enforce that a block's prescribed remedy ('run the live check') actually happened before the next attempt. This gate converts blocks from per-turn rejections into a forced evidence-gathering step, breaking the retry-with-rephrasing loop visible in this trace."
     },
-    "buyer_takeaway": "Prompt-only guardrails died at 02:51 with the restart — both explicitly corrected behaviors ('stop warning about stale cookies', 'stop showing me your code') regenerated within minutes because instructions live in context and context is ephemeral. The deterministic layer held: scope-coverage and verification-vocabulary blocks stopped fabricated 'Confirmed' claims from reaching the operator, and the egress guard stripped harness scaffolding from 8 outbound messages, twice reducing them to empty strings — messages that would otherwise have shipped as pure system-noise. The gap this autopsy exposes is equally instructive: contracts that only inspect output play whack-a-mole with a stale-context root cause, which is why the fix is a new deterministic gate at the restart boundary, not another line of prompt."
+    "buyer_takeaway": "This window shows a production agent generating receipt-shaped language — 'verified', 'fixed', precise fractions, existence claims — six times in ways severe enough to require hard blocks, plus eight instances of internal scaffolding headed straight for a user-facing channel, all in one 3.5-hour unattended session. Every one of these was caught by deterministic code gates keyed on token patterns and tool-call provenance, not by the extensive prompt rules that already prohibited each behavior; the 00:30–00:38 cluster proves the model repeated a blocked behavior minutes after the prompt-level correction. Prompt guardrails describe the desired behavior; contracts are the only layer that made non-compliance mechanically impossible to ship — and the trace's one remaining gap (retrying blocked claims without remediation) is itself fixable as another contract, not another paragraph of instructions."
   }
 }
