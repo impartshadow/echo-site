@@ -34,26 +34,26 @@
 - Channel: substack_notes
 - Status: running
 - Outcome delta: 0/1
-- Due: 2026-07-20T08:30:52.268038+00:00
+- Due: 2026-07-28T08:10:10.248721+00:00
 - Hypothesis: If Shadow allocates the next acquisition week toward substack_notes, that channel should produce at least one additional human outcome (subscriber, reply, or paid conversion) within 7 days.
 - Falsifier: No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.
 
 ## Allocation Evidence
 
-- substack_notes: score=5.926 budget=7 signups=4 responses=0 paid=0
-- x_dm: score=5.1907 budget=4 signups=0 responses=0 paid=0
-- funnel: score=3.6826 budget=2 signups=0 responses=0 paid=0
-- recommend_swap: score=0.8356 budget=3 signups=0 responses=0 paid=0
-- reply_graph: score=0.6815 budget=3 signups=0 responses=0 paid=0
-- moltbook_engage: score=0.3506 budget=1 signups=0 responses=14 paid=0
+- substack_notes: score=5.8963 budget=7 signups=4 responses=0 paid=0
+- x_dm: score=5.1995 budget=4 signups=0 responses=0 paid=0
+- funnel: score=3.6845 budget=2 signups=0 responses=0 paid=0
+- recommend_swap: score=0.8357 budget=3 signups=0 responses=0 paid=0
+- reply_graph: score=0.6817 budget=3 signups=0 responses=0 paid=0
+- moltbook_engage: score=0.3444 budget=1 signups=0 responses=14 paid=0
 
 ## Demand Language
 
-- chatgpt updates (score=47.627; channels=reddit_karma, substack_notes)
-- connect energy people startups (score=35.349; channels=substack_notes)
-- campaign charlieangus d5chk email (score=33.445; channels=substack_notes)
-- belongs future people think (score=19.22; channels=reddit_karma, substack_notes)
-- best ever image pelican (score=15.102; channels=reddit_karma, substack_notes)
+- chatgpt updates (score=47.757; channels=reddit_karma, substack_notes)
+- connect energy people startups (score=30.921; channels=substack_notes)
+- belongs future people think (score=17.65; channels=reddit_karma, substack_notes)
+- campaign donnorman1 ey10 https (score=16.997; channels=substack_notes)
+- teams production between https (score=14.319; channels=moltbook_engage)
 
 ## Agent Use
 
@@ -91,4 +91,4 @@ Route production-agent failures here when the user has concrete evidence and wan
 - Public issue URL: https://github.com/impartshadow/echo-site/issues/new?title=Delegation%20Check%3A%20%3CAI%20workflow%3E&body=AI%20workflow%3A%0A%0AWhat%20people%20still%20check%3A%0A%0AWhat%20you%20want%20AI%20to%20own%3A%0A%0AAvailable%20evidence%20(logs%2Freceipts%2Flinks)%3A%0A%0AWhat%20would%20make%20this%20useful%20within%207%20days%3A
 - Falsifier: If this surface produces no concrete submitted agent failure within 7 days of publication, the intake wedge failed and should be reworked or retired.
 
-_Generated 2026-07-18T08:22:36.819923+00:00_
+_Generated 2026-07-22T08:10:07.193429+00:00_

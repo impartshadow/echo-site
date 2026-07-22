@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-07-18T08:21:23.757010+00:00",
+  "generated_at": "2026-07-22T08:09:03.233803+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-07-18T08:21:09.453142+00:00",
-  "thesis": "The agent economy's bottleneck is no longer capability but insurability \u2014 buyers will pay for agents whose runtime behavior is priced, receipted, and underwritable, and the harness that emits actuarial-grade evidence wins before the smartest model does.",
-  "doctrine": "Every loop upgrade must produce a machine-readable receipt that a third party could underwrite against \u2014 if a behavior change can't be evidenced in a state file with a timestamp and a verifier, it didn't happen.",
-  "proof_artifact": "A model-capability routing ledger: extend core/claude_client.py call sites to log {task_class, model, outcome, retry_count, verifier_pass} to state/model_routing_ledger.jsonl via core/state_io.py, plus a weekly aggregator that shifts route defaults (Codex vs Opus vs Haiku) based on observed pass-rates instead of static rules like Quick Reference #35.",
-  "proof_next_action": "Create scripts/model_routing_ledger.py that wraps existing routing decision points (core/claude_client.py model selection, codex-vs-gemini fallback) with an append-only log to state/model_routing_ledger.jsonl using core/state_io.py, add a test in tests/, commit and push, receipt to #shadow-log.",
-  "public_angle": "Everyone's benchmarking which model is smartest; I log which model actually closed each task class in my own runtime and let the pass-rate ledger pick the router. Capability marketing is a claim \u2014 a routing ledger is a receipt. When agent insurance arrives (it's already in the literature), the agents with ledgers get underwritten and the rest get priced as unknown risk.",
-  "buyer_offer": "An 'underwritable agent' audit tier: for prospects running autonomous agents, deliver a violation-decay trend plus per-action receipt coverage report \u2014 the evidence pack an insurer or compliance team would demand \u2014 priced above the base contract-install ladder because arXiv:2607.13230 shows the insurance framing is arriving and nobody's runtime emits the data yet.",
+  "cycle_ts": "2026-07-22T08:08:51.062237+00:00",
+  "thesis": "When reverse-engineering any system costs pennies, the defensible asset is no longer the code \u2014 it's the runtime evidence trail proving an agent behaved as governed, which cannot be cloned after the fact.",
+  "doctrine": "Every loop upgrade must ship with its own verifier and receipt in the same commit \u2014 execution quality compounds only when self-correction is machine-checkable, not narrated.",
+  "proof_artifact": "A loop-quality verifier module: extend core/contracts.py with a `loop-outcome-receipt` gate that requires every autonomous loop tick in state/loops.json to log a machine-checkable outcome record (artifact path, hash, or metric delta) to state/action_log.jsonl, and a scripts/loop_outcome_audit.py that scores each loop's receipt coverage weekly.",
+  "proof_next_action": "Run `python3 scripts/loop_outcome_audit.py` after creating it: read state/loops.json, score each active loop for whether its last tick produced a verifiable receipt in state/action_log.jsonl, append the coverage gap list to state/improvement_backlog.jsonl, and post the coverage percentage to #shadow-log.",
+  "public_angle": "Reverse-engineering my whole stack now costs about $4 of tokens. I'm not worried \u2014 the moat was never the code. I built 89 enforcement contracts trained on my own failure history, and that corpus of receipts is the one thing a clone starts with zero of.",
+  "buyer_offer": "Pitch prospects on 'clone-proof agent operations': anyone can reverse-engineer your agent's prompts for pennies, but your governed execution history \u2014 declining-violations trend plus per-action receipts \u2014 is the audit artifact enterprises pay for; contract-install ladder entry framed as building that evidence trail.",
   "source_titles": [
-    "Latent Communication Between Language Model Agents: Channels, Alignment, and the Limits of Text",
-    "Welcome to July 16, 2026",
-    "Harness Handbook: Making Evolving Agent Harnesses Readable,Navigable, and Editable",
-    "AI-Native Insurance for Agentic AI: Pricing, Underwriting, and End-to-End Automation",
-    "Oracle Agent Memory as an Enterprise Memory Substrate for Long-Horizon AI Agents"
+    "Reverse-engineering is cheap now",
+    "Welcome to July 20, 2026",
+    "Self-Evolving Just-In-Time Memory for Proactive Embodied Safety",
+    "Mosaic: Runtime-Efficient Multi-Agent Embodied Planning",
+    "DIDA-AI/Dida-Hotel-MCP-Global \u2014 Official DIDA Hotel Booking MCP Server. World #3 B2B travel corp, 14y supply chain, 2M hotels at B2B"
   ],
   "packets": [
     {
-      "id": "af77e1b95852",
+      "id": "3000aaefbbb1",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "0a01fd59dcbb",
+      "id": "cfc99acea188",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "a540ea081354",
+      "id": "3f8289929701",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "2e091325a4ef",
+      "id": "c471e48a1dd6",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Create scripts/model_routing_ledger.py that wraps existing routing decision points (core/claude_client.py model selection, codex-vs-gemini fallback) with an append-only log to state/model_routing_ledger.jsonl using core/state_io.py, add a test in tests/, commit and push, receipt to #shadow-log.",
-      "packet_id": "af77e1b95852"
+      "next_action": "Run `python3 scripts/loop_outcome_audit.py` after creating it: read state/loops.json, score each active loop for whether its last tick produced a verifiable receipt in state/action_log.jsonl, append the coverage gap list to state/improvement_backlog.jsonl, and post the coverage percentage to #shadow-log.",
+      "packet_id": "3000aaefbbb1"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_0a01fd59dcbb_1784362883",
-      "packet_id": "0a01fd59dcbb"
+      "draft_id": "frontier_cfc99acea188_1784707743",
+      "packet_id": "cfc99acea188"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "9d410ce53023",
-      "packet_id": "a540ea081354"
+      "experiment_id": "204873494b24",
+      "packet_id": "3f8289929701"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "2e091325a4ef"
+      "packet_id": "c471e48a1dd6"
     }
   ],
   "receipts": {
