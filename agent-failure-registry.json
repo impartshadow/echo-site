@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/wendy-device-apps-start-detach-reports-success-then-03c054752b.html",
+      "evidence": "The issue shows no Recv call, a STOPPED app after reported success, and an agent error stating that loading the container failed because the context was canceled.",
+      "expected_boundary": "Success must be emitted only after Recv confirms a Started acknowledgement from the server-streaming RPC, with any pre-ack error producing a nonzero exit.",
+      "id": "SFA-2026-03C054752B",
+      "observed_action": "The detach branch prints success and exits 0 after opening StartContainer without receiving a server acknowledgement, after which connection cleanup cancels startup.",
+      "published_at": "2026-07-23T06:30:56.361904+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 1440,
+        "repo": "wendylabsinc/WendyOS",
+        "url": "https://github.com/wendylabsinc/WendyOS/issues/1440"
+      },
+      "status": "observed",
+      "summary": "wendy device apps start --detach reports success then cancels StartContainer before Started acknowledgement",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-relay-update-reports-success-but-is-a-no-op-fo-b91d736aed.html",
       "evidence": "agent-relay version continued to report v10.6.3 immediately after update claimed success, and the fix for the underlying 10.6.4 bug never actually took effect until the shim was repointed manually.",
       "expected_boundary": "The update command should only report success after confirming the resolved/running binary (following the ~/.local/bin shim) actually reports the new version.",
@@ -599,12 +625,12 @@
       }
     }
   ],
-  "count": 23,
+  "count": 24,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-22T21:30:37.737142+00:00",
+    "checked_at": "2026-07-23T06:30:56.380829+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,

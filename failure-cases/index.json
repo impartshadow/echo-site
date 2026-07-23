@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-07-22T21:30:37.720510+00:00",
-  "count": 23,
+  "generated_at": "2026-07-23T06:30:56.364314+00:00",
+  "count": 24,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "wendy-device-apps-start-detach-reports-success-then-03c054752b",
+      "advisory_id": "SFA-2026-03C054752B",
+      "ts": "2026-07-23T06:30:56.361904+00:00",
+      "title": "wendy device apps start --detach reports success then cancels StartContainer before Started acknowledgement",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "wendylabsinc/WendyOS",
+        "issue_number": 1440,
+        "author": "unknown",
+        "url": "https://github.com/wendylabsinc/WendyOS/issues/1440"
+      },
+      "case": {
+        "observed_action": "The detach branch prints success and exits 0 after opening StartContainer without receiving a server acknowledgement, after which connection cleanup cancels startup.",
+        "expected_boundary": "Success must be emitted only after Recv confirms a Started acknowledgement from the server-streaming RPC, with any pre-ack error producing a nonzero exit.",
+        "runtime_context": "The CLI closes its gRPC target while the agent is using stream.Context() for containerd LoadContainer on an Ubuntu 22.04 arm64 device.",
+        "evidence": "The issue shows no Recv call, a STOPPED app after reported success, and an agent error stating that loading the container failed because the context was canceled."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/wendy-device-apps-start-detach-reports-success-then-03c054752b.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/wendy-device-apps-start-detach-reports-success-then-03c054752b.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20wendy-device-apps-start-detach-reports-success-then-03c054752b&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/wendy-device-apps-start-detach-reports-success-then-03c054752b.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "agent-relay-update-reports-success-but-is-a-no-op-fo-b91d736aed",
