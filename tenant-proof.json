@@ -9,7 +9,7 @@
       "verdict": "running"
     }
   },
-  "generated_at": "2026-07-22T08:11:49.091832+00:00",
+  "generated_at": "2026-07-23T08:15:58.964424+00:00",
   "goal": "turn managed-tenant receipts into a public, falsifiable acquisition surface",
   "html_url": "https://impartshadow.github.io/echo-site/tenant-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/tenant-proof.json",
