@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-before-after-kickoff-callbacks-do-not-support-as-db291519d9.html",
+      "evidence": "the reproduction script shows async_after_callback's print statement never executes and result becomes a coroutine object instead of CrewOutput when passed through crew.akickoff()",
+      "expected_boundary": "any call site that invokes a SerializableCallable value must handle both sync and async callables, matching the isawaitable check already used for task_callback and step_callback in the same codebase",
+      "id": "SFA-2026-DB291519D9",
+      "observed_action": "akickoff invokes before/after_kickoff_callbacks synchronously without checking inspect.isawaitable, so async callbacks return unexecuted coroutine objects instead of running",
+      "published_at": "2026-07-23T14:00:57.782520+00:00",
+      "source": {
+        "author": "magiccao",
+        "channel": "unsolicited_triage",
+        "issue_number": 6481,
+        "repo": "crewAIInc/crewAI",
+        "url": "https://github.com/crewAIInc/crewAI/issues/6481"
+      },
+      "status": "observed",
+      "summary": "[BUG] before/after_kickoff_callbacks do not support async callables in akickoff",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/wendy-device-apps-start-detach-reports-success-then-03c054752b.html",
       "evidence": "The issue shows no Recv call, a STOPPED app after reported success, and an agent error stating that loading the container failed because the context was canceled.",
       "expected_boundary": "Success must be emitted only after Recv confirms a Started acknowledgement from the server-streaming RPC, with any pre-ack error producing a nonzero exit.",
@@ -625,12 +651,12 @@
       }
     }
   ],
-  "count": 24,
+  "count": 25,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-23T06:30:56.380829+00:00",
+    "checked_at": "2026-07-23T14:00:57.802035+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
