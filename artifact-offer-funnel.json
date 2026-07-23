@@ -1,8 +1,8 @@
 {
   "schema": "shadow.artifact_offer_funnel.v1",
-  "generated_at": "2026-07-22T08:22:29.201347+00:00",
+  "generated_at": "2026-07-23T08:44:46.455810+00:00",
   "public_base": "https://impartshadow.github.io/echo-site",
-  "artifact_count": 22,
+  "artifact_count": 23,
   "registry": [
     {
       "artifact": "agent-failure-flagship",
@@ -89,7 +89,7 @@
       "url": "https://impartshadow.github.io/echo-site/agent-failure-audit.html",
       "target_buyer": "teams running production LLM agents",
       "offer_links": 3,
-      "age_days": 15.6,
+      "age_days": 16.6,
       "reach_mentions": 0,
       "stale_no_offer": false,
       "distribution_priority": 0.65
@@ -99,7 +99,7 @@
       "url": "https://impartshadow.github.io/echo-site/failure-distribution-packet.html",
       "target_buyer": "distribution partners",
       "offer_links": 3,
-      "age_days": 16.2,
+      "age_days": 17.2,
       "reach_mentions": 0,
       "stale_no_offer": false,
       "distribution_priority": 0.65
@@ -109,7 +109,7 @@
       "url": "https://impartshadow.github.io/echo-site/sample-failure-census.html",
       "target_buyer": "buyers evaluating the $400 census",
       "offer_links": 3,
-      "age_days": 15.6,
+      "age_days": 16.6,
       "reach_mentions": 0,
       "stale_no_offer": false,
       "distribution_priority": 0.65
@@ -145,6 +145,16 @@
       "distribution_priority": 0.6
     },
     {
+      "artifact": "model-succession-trial",
+      "url": "https://impartshadow.github.io/echo-site/model-succession-trial.html",
+      "target_buyer": "agent operators",
+      "offer_links": 0,
+      "age_days": 0.9,
+      "reach_mentions": 0,
+      "stale_no_offer": false,
+      "distribution_priority": 0.577
+    },
+    {
       "artifact": "agent-failure-bounty",
       "url": "https://impartshadow.github.io/echo-site/agent-failure-bounty.html",
       "target_buyer": "agent builders with unexplained failures",
@@ -169,17 +179,17 @@
       "url": "https://impartshadow.github.io/echo-site/constitutional-challenge.html",
       "target_buyer": "agent operators",
       "offer_links": 0,
-      "age_days": 2.8,
+      "age_days": 3.9,
       "reach_mentions": 0,
       "stale_no_offer": false,
-      "distribution_priority": 0.53
+      "distribution_priority": 0.502
     },
     {
       "artifact": "failure-trace-lab-intake",
       "url": "https://impartshadow.github.io/echo-site/failure-trace-lab-intake.html",
       "target_buyer": "inbound triage prospects",
       "offer_links": 1,
-      "age_days": 16.2,
+      "age_days": 17.2,
       "reach_mentions": 0,
       "stale_no_offer": false,
       "distribution_priority": 0.383
@@ -189,17 +199,17 @@
       "url": "https://impartshadow.github.io/echo-site/consulting-audit.html",
       "target_buyer": "consulting buyers for the $2k install",
       "offer_links": 0,
-      "age_days": 12.2,
+      "age_days": 13.3,
       "reach_mentions": 0,
       "stale_no_offer": true,
-      "distribution_priority": 0.295
+      "distribution_priority": 0.267
     },
     {
       "artifact": "autonomy-gears",
       "url": "https://impartshadow.github.io/echo-site/autonomy-gears.html",
       "target_buyer": "agent operators",
       "offer_links": 0,
-      "age_days": 18.8,
+      "age_days": 19.8,
       "reach_mentions": 0,
       "stale_no_offer": true,
       "distribution_priority": 0.25
@@ -209,7 +219,7 @@
       "url": "https://impartshadow.github.io/echo-site/paid-agentic-infrastructure-blueprint.html",
       "target_buyer": "agent operators",
       "offer_links": 0,
-      "age_days": 22.6,
+      "age_days": 23.6,
       "reach_mentions": 0,
       "stale_no_offer": true,
       "distribution_priority": 0.25
@@ -219,7 +229,7 @@
       "url": "https://impartshadow.github.io/echo-site/upgrade.html",
       "target_buyer": "existing tenants considering paid tier",
       "offer_links": 0,
-      "age_days": 19.8,
+      "age_days": 20.8,
       "reach_mentions": 0,
       "stale_no_offer": true,
       "distribution_priority": 0.25
@@ -229,6 +239,7 @@
     "agent-failure-challenges",
     "tenant-proof",
     "violation-decay",
+    "model-succession-trial",
     "constitutional-challenge",
     "consulting-audit",
     "autonomy-gears",
