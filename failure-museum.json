@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-07-22T03:10:13-05:00",
+  "generated_at_ct": "2026-07-23T03:09:59-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 1644,
-  "distinct_contracts": 56,
+  "total_violations": 1679,
+  "distinct_contracts": 59,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -13,7 +13,7 @@
       "contract": "partial-evidence-flag",
       "failure_mode": "FM-026",
       "severity_seen": "block",
-      "count": 259,
+      "count": 258,
       "latest_seen_ct": "2026-07-19T10:28:21-05:00",
       "example_violation": "Revenue $ claim without Stripe read or state/revenue.json citation. Substitute: $0 confirmed.",
       "title": "The Agent Made A Numeric Or Revenue Claim Without The Source Read",
@@ -26,8 +26,8 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "warn",
-      "count": 156,
-      "latest_seen_ct": "2026-07-21T20:35:02-05:00",
+      "count": 167,
+      "latest_seen_ct": "2026-07-22T20:51:25-05:00",
       "example_violation": "Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
       "buyer_failure": "An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.",
@@ -39,7 +39,7 @@
       "contract": "self-verification",
       "failure_mode": "FM-011",
       "severity_seen": "warn",
-      "count": 96,
+      "count": 93,
       "latest_seen_ct": "2026-07-19T22:18:01-05:00",
       "example_violation": "Response contains incompleteness markers (TODO, placeholder, deferred action). Verifying execution vs. proposal...",
       "title": "The Agent Proposed Work While Sounding Like It Had Executed",
@@ -89,19 +89,6 @@
     }
   ],
   "daily_counts": {
-    "2026-06-21": {
-      "loop-name-validation-guard": 2,
-      "factual-claim-verification": 3,
-      "platform-action-precheck": 1,
-      "patterned-stop": 4,
-      "persistent-correction": 1,
-      "self-verification": 3,
-      "partial-evidence-flag": 1,
-      "balar-clarification": 1,
-      "stale-state-assertion-guard": 1,
-      "live-state-claim-guard": 2,
-      "state-io-consolidation-guard": 1
-    },
     "2026-06-22": {
       "brief-production-while-queued": 1,
       "behavioral-haiku-guard": 3,
@@ -579,6 +566,20 @@
       "definitive-state-assertion-gate": 3,
       "factual-claim-verification": 3,
       "platform-action-precheck": 2
+    },
+    "2026-07-22": {
+      "factual-claim-verification": 9,
+      "definitive-state-assertion-gate": 2,
+      "verification-vocabulary-gate": 6,
+      "platform-action-precheck": 18,
+      "state-assertion-grounding": 11,
+      "stale-state-assertion-guard": 1,
+      "terminal-state-evidence-gate": 3,
+      "script-behavior-assertion-guard": 1,
+      "web-tool-guard": 1,
+      "web-tool-invocation-rewriter": 1,
+      "concurrence-grounding": 1,
+      "manual-handoff-guard": 1
     }
   },
   "cta": {

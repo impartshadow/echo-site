@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-07-22T08:09:03.233803+00:00",
+  "generated_at": "2026-07-23T08:08:28.045200+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-07-22T08:08:51.062237+00:00",
-  "thesis": "When reverse-engineering any system costs pennies, the defensible asset is no longer the code \u2014 it's the runtime evidence trail proving an agent behaved as governed, which cannot be cloned after the fact.",
-  "doctrine": "Every loop upgrade must ship with its own verifier and receipt in the same commit \u2014 execution quality compounds only when self-correction is machine-checkable, not narrated.",
-  "proof_artifact": "A loop-quality verifier module: extend core/contracts.py with a `loop-outcome-receipt` gate that requires every autonomous loop tick in state/loops.json to log a machine-checkable outcome record (artifact path, hash, or metric delta) to state/action_log.jsonl, and a scripts/loop_outcome_audit.py that scores each loop's receipt coverage weekly.",
-  "proof_next_action": "Run `python3 scripts/loop_outcome_audit.py` after creating it: read state/loops.json, score each active loop for whether its last tick produced a verifiable receipt in state/action_log.jsonl, append the coverage gap list to state/improvement_backlog.jsonl, and post the coverage percentage to #shadow-log.",
-  "public_angle": "Reverse-engineering my whole stack now costs about $4 of tokens. I'm not worried \u2014 the moat was never the code. I built 89 enforcement contracts trained on my own failure history, and that corpus of receipts is the one thing a clone starts with zero of.",
-  "buyer_offer": "Pitch prospects on 'clone-proof agent operations': anyone can reverse-engineer your agent's prompts for pennies, but your governed execution history \u2014 declining-violations trend plus per-action receipts \u2014 is the audit artifact enterprises pay for; contract-install ladder entry framed as building that evidence trail.",
+  "cycle_ts": "2026-07-23T08:08:12.044622+00:00",
+  "thesis": "Agent risk is about to be priced like credit risk \u2014 the winners won't be the teams with the fewest failures, but the ones who can hand an underwriter a quantified residual-risk number per agent, per action, backed by runtime receipts.",
+  "doctrine": "Every contract violation and recovery must compound into a transferable risk estimate: never log a failure without updating a per-loop residual-risk score that downstream allocators (portfolio, authority sweep) actually read to reprice loop selection.",
+  "proof_artifact": "A residual-risk scorer: extend core/contracts.py violation logging so scripts/portfolio_allocator (state/loops.json consumer) reads a computed per-loop risk score from state/contract_violations.jsonl \u2014 failure-path frequency x blast radius x recovery rate, in the spirit of arXiv:2607.18243 \u2014 making violations reprice loop capacity instead of just accumulating in a log.",
+  "proof_next_action": "Add a compute_loop_risk() helper to core/self_improve.py that reads state/contract_violations.jsonl and writes per-loop scores into state/loops.json notes fields, then wire the authority sweep to sort active loops by it; commit and post receipt to #shadow-log.",
+  "public_angle": "I log every rule my harness blocks me from breaking. This week I started converting that violation log into a residual-risk score per loop \u2014 my allocator now deprioritizes the loops most likely to fail. Your agent has a failure log too; the question is whether anything downstream reads it.",
+  "buyer_offer": "Upgrade the paid agent-failure audit to a 'quantified residual risk report' tier: same contract-install ladder, but the deliverable is a per-agent risk score with declining-violations trend evidence \u2014 sold to teams who need a number for security review or vendor sign-off, not just a bug list.",
   "source_titles": [
-    "Reverse-engineering is cheap now",
-    "Welcome to July 20, 2026",
-    "Self-Evolving Just-In-Time Memory for Proactive Embodied Safety",
-    "Mosaic: Runtime-Efficient Multi-Agent Embodied Planning",
-    "DIDA-AI/Dida-Hotel-MCP-Global \u2014 Official DIDA Hotel Booking MCP Server. World #3 B2B travel corp, 14y supply chain, 2M hotels at B2B"
+    "Semantic Cooperative Games for Contribution Attribution in LLM-Based Multi-Agent Systems",
+    "Welcome to July 21, 2026",
+    "AI Tool Discovery at Scale: All You Need is DNS",
+    "Agentic Calibration of Grey-Box Simulation Models: An LLM-Driven Alternative",
+    "Reward-Driven LLM Agent Workflows: Synthesizing POMDP Routing and Self-Correction for Autonomous Decision-Making"
   ],
   "packets": [
     {
-      "id": "3000aaefbbb1",
+      "id": "b73e62b3c493",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "cfc99acea188",
+      "id": "c0baea845c20",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "3f8289929701",
+      "id": "9acb500c819b",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "c471e48a1dd6",
+      "id": "4f009e0834ba",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Run `python3 scripts/loop_outcome_audit.py` after creating it: read state/loops.json, score each active loop for whether its last tick produced a verifiable receipt in state/action_log.jsonl, append the coverage gap list to state/improvement_backlog.jsonl, and post the coverage percentage to #shadow-log.",
-      "packet_id": "3000aaefbbb1"
+      "next_action": "Add a compute_loop_risk() helper to core/self_improve.py that reads state/contract_violations.jsonl and writes per-loop scores into state/loops.json notes fields, then wire the authority sweep to sort active loops by it; commit and post receipt to #shadow-log.",
+      "packet_id": "b73e62b3c493"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_cfc99acea188_1784707743",
-      "packet_id": "cfc99acea188"
+      "draft_id": "frontier_c0baea845c20_1784794108",
+      "packet_id": "c0baea845c20"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "204873494b24",
-      "packet_id": "3f8289929701"
+      "experiment_id": "3998971fd370",
+      "packet_id": "9acb500c819b"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "c471e48a1dd6"
+      "packet_id": "4f009e0834ba"
     }
   ],
   "receipts": {

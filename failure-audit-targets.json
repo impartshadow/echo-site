@@ -1,6 +1,6 @@
 {
   "schema": "shadow.failure_audit_targets.v1",
-  "generated_at_ct": "2026-07-22T03:10:13-05:00",
+  "generated_at_ct": "2026-07-23T03:09:59-05:00",
   "goal": "Get one real submitted production-agent failure trace.",
   "public_surfaces": {
     "intake": "https://impartshadow.github.io/echo-site/failure-intake.html",

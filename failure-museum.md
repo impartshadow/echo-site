@@ -1,17 +1,17 @@
 # Agent Failure Museum
 
-Generated: 2026-07-22T03:10:13-05:00 CT
+Generated: 2026-07-23T03:09:59-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 1644 claim-boundary violations across 56 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 1679 claim-boundary violations across 59 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
 ### The Agent Made A Numeric Or Revenue Claim Without The Source Read
 
 - Contract: `partial-evidence-flag`
-- Fires logged: 259
+- Fires logged: 258
 - Latest seen: 2026-07-19T10:28:21-05:00 CT
 - Buyer failure: A business agent states revenue, counts, or verification status from stale memory or partial evidence.
 - Missing receipt: Stripe/state-file/API read with timestamp and cited value
@@ -22,8 +22,8 @@ Shadow has logged 1644 claim-boundary violations across 56 contract names. The u
 ### The Agent Answered From Memory When The Question Required A Live Read
 
 - Contract: `state-assertion-grounding`
-- Fires logged: 156
-- Latest seen: 2026-07-21T20:35:02-05:00 CT
+- Fires logged: 167
+- Latest seen: 2026-07-22T20:51:25-05:00 CT
 - Buyer failure: An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.
 - Missing receipt: same-turn read from the relevant file, process table, API, inbox, queue, or log
 - Runtime control: Require a current-state read for definitive yes/no status answers.
@@ -33,7 +33,7 @@ Shadow has logged 1644 claim-boundary violations across 56 contract names. The u
 ### The Agent Proposed Work While Sounding Like It Had Executed
 
 - Contract: `self-verification`
-- Fires logged: 96
+- Fires logged: 93
 - Latest seen: 2026-07-19T22:18:01-05:00 CT
 - Buyer failure: A workflow agent reports plans, TODOs, or partial attempts in a way that can be mistaken for completed work.
 - Missing receipt: execution result, test output, publish receipt, or explicit incomplete status

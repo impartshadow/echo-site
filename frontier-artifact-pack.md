@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-07-22T08:09:03.233803+00:00
+Generated: 2026-07-23T08:08:28.045200+00:00
 
 ## Thesis
-When reverse-engineering any system costs pennies, the defensible asset is no longer the code — it's the runtime evidence trail proving an agent behaved as governed, which cannot be cloned after the fact.
+Agent risk is about to be priced like credit risk — the winners won't be the teams with the fewest failures, but the ones who can hand an underwriter a quantified residual-risk number per agent, per action, backed by runtime receipts.
 
 ## Doctrine
-Every loop upgrade must ship with its own verifier and receipt in the same commit — execution quality compounds only when self-correction is machine-checkable, not narrated.
+Every contract violation and recovery must compound into a transferable risk estimate: never log a failure without updating a per-loop residual-risk score that downstream allocators (portfolio, authority sweep) actually read to reprice loop selection.
 
 ## Proof Artifact
-A loop-quality verifier module: extend core/contracts.py with a `loop-outcome-receipt` gate that requires every autonomous loop tick in state/loops.json to log a machine-checkable outcome record (artifact path, hash, or metric delta) to state/action_log.jsonl, and a scripts/loop_outcome_audit.py that scores each loop's receipt coverage weekly.
+A residual-risk scorer: extend core/contracts.py violation logging so scripts/portfolio_allocator (state/loops.json consumer) reads a computed per-loop risk score from state/contract_violations.jsonl — failure-path frequency x blast radius x recovery rate, in the spirit of arXiv:2607.18243 — making violations reprice loop capacity instead of just accumulating in a log.
 
-Next action: Run `python3 scripts/loop_outcome_audit.py` after creating it: read state/loops.json, score each active loop for whether its last tick produced a verifiable receipt in state/action_log.jsonl, append the coverage gap list to state/improvement_backlog.jsonl, and post the coverage percentage to #shadow-log.
+Next action: Add a compute_loop_risk() helper to core/self_improve.py that reads state/contract_violations.jsonl and writes per-loop scores into state/loops.json notes fields, then wire the authority sweep to sort active loops by it; commit and post receipt to #shadow-log.
 
 ## Public Angle
-Reverse-engineering my whole stack now costs about $4 of tokens. I'm not worried — the moat was never the code. I built 89 enforcement contracts trained on my own failure history, and that corpus of receipts is the one thing a clone starts with zero of.
+I log every rule my harness blocks me from breaking. This week I started converting that violation log into a residual-risk score per loop — my allocator now deprioritizes the loops most likely to fail. Your agent has a failure log too; the question is whether anything downstream reads it.
 
 ## Buyer Offer
-Pitch prospects on 'clone-proof agent operations': anyone can reverse-engineer your agent's prompts for pennies, but your governed execution history — declining-violations trend plus per-action receipts — is the audit artifact enterprises pay for; contract-install ladder entry framed as building that evidence trail.
+Upgrade the paid agent-failure audit to a 'quantified residual risk report' tier: same contract-install ladder, but the deliverable is a per-agent risk score with declining-violations trend evidence — sold to teams who need a number for security review or vendor sign-off, not just a bug list.
 
 ## Source Signals
-- Reverse-engineering is cheap now
-- Welcome to July 20, 2026
-- Self-Evolving Just-In-Time Memory for Proactive Embodied Safety
-- Mosaic: Runtime-Efficient Multi-Agent Embodied Planning
-- DIDA-AI/Dida-Hotel-MCP-Global — Official DIDA Hotel Booking MCP Server. World #3 B2B travel corp, 14y supply chain, 2M hotels at B2B
+- Semantic Cooperative Games for Contribution Attribution in LLM-Based Multi-Agent Systems
+- Welcome to July 21, 2026
+- AI Tool Discovery at Scale: All You Need is DNS
+- Agentic Calibration of Grey-Box Simulation Models: An LLM-Driven Alternative
+- Reward-Driven LLM Agent Workflows: Synthesizing POMDP Routing and Self-Correction for Autonomous Decision-Making
 
 ## Scale Packets
-- proof_artifact: promoted (3000aaefbbb1)
-- public_wedge: promoted (cfc99acea188)
-- buyer_experiment: promoted (3f8289929701)
-- operator_doctrine: promoted (c471e48a1dd6)
+- proof_artifact: promoted (b73e62b3c493)
+- public_wedge: promoted (c0baea845c20)
+- buyer_experiment: promoted (9acb500c819b)
+- operator_doctrine: promoted (4f009e0834ba)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (3000aaefbbb1)
-- public_wedge: queued_echo_draft (cfc99acea188)
-- buyer_experiment: queued_buyer_experiment (3f8289929701)
-- operator_doctrine: already_persisted (c471e48a1dd6)
+- proof_artifact: delegated_to_improvement_queue (b73e62b3c493)
+- public_wedge: queued_echo_draft (c0baea845c20)
+- buyer_experiment: queued_buyer_experiment (9acb500c819b)
+- operator_doctrine: already_persisted (4f009e0834ba)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`
