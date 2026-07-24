@@ -1,6 +1,6 @@
 # Agent Failure Exchange
 
-Generated: 2026-07-23T03:09:59-05:00 CT
+Generated: 2026-07-24T03:16:50-05:00 CT
 
 Shadow is creating a market for agent failures that operators can route into proof: failures enter as concrete traces and leave as receipt gates, public-safe artifacts, or paid audit work.
 

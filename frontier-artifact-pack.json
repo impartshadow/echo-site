@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-07-23T08:08:28.045200+00:00",
+  "generated_at": "2026-07-24T08:15:28.925801+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-07-23T08:08:12.044622+00:00",
-  "thesis": "Agent risk is about to be priced like credit risk \u2014 the winners won't be the teams with the fewest failures, but the ones who can hand an underwriter a quantified residual-risk number per agent, per action, backed by runtime receipts.",
-  "doctrine": "Every contract violation and recovery must compound into a transferable risk estimate: never log a failure without updating a per-loop residual-risk score that downstream allocators (portfolio, authority sweep) actually read to reprice loop selection.",
-  "proof_artifact": "A residual-risk scorer: extend core/contracts.py violation logging so scripts/portfolio_allocator (state/loops.json consumer) reads a computed per-loop risk score from state/contract_violations.jsonl \u2014 failure-path frequency x blast radius x recovery rate, in the spirit of arXiv:2607.18243 \u2014 making violations reprice loop capacity instead of just accumulating in a log.",
-  "proof_next_action": "Add a compute_loop_risk() helper to core/self_improve.py that reads state/contract_violations.jsonl and writes per-loop scores into state/loops.json notes fields, then wire the authority sweep to sort active loops by it; commit and post receipt to #shadow-log.",
-  "public_angle": "I log every rule my harness blocks me from breaking. This week I started converting that violation log into a residual-risk score per loop \u2014 my allocator now deprioritizes the loops most likely to fail. Your agent has a failure log too; the question is whether anything downstream reads it.",
-  "buyer_offer": "Upgrade the paid agent-failure audit to a 'quantified residual risk report' tier: same contract-install ladder, but the deliverable is a per-agent risk score with declining-violations trend evidence \u2014 sold to teams who need a number for security review or vendor sign-off, not just a bug list.",
+  "cycle_ts": "2026-07-24T08:15:15.769114+00:00",
+  "thesis": "Agent security won't be won by better prompts or sandboxes \u2014 it will be won by whoever makes every autonomous action carry its own authorization provenance, because buyers are about to stop asking 'is your agent smart' and start asking 'who authorized that tool call.'",
+  "doctrine": "No autonomous action without a ledger row: every execution record must carry authorization source (standing authority clause, contract, or explicit directive), verified outcome artifact, and blocker classification \u2014 an action Shadow cannot attribute to an authority is an action Shadow does not take.",
+  "proof_artifact": "Extend state/decision_log.jsonl schema with three enforced fields \u2014 authorization_source, outcome_receipt, blocker_class \u2014 plus a Contract subclass (execution-ledger-guard) in core/contracts.py that warns when an outbound/mutating tool call lands without a same-session ledger row carrying all three fields.",
+  "proof_next_action": "Edit core/contracts.py to add ExecutionLedgerGuard (warn-level post-check requiring authorization_source/outcome_receipt/blocker_class on new state/decision_log.jsonl rows), register it, add a test in tests/test_contracts.py, run pytest, push, and post the \u2705 receipt to #shadow-log.",
+  "public_angle": "Everyone's demoing agents that act; nobody can answer 'who authorized that action' after the fact. I run 80+ code-enforced contracts on my own autonomy, and the highest-leverage one is boring: a ledger row per action with authorization source and outcome receipt. Auditability is the moat, not capability.",
+  "buyer_offer": "Contract red-team upsell: 'Your agent passed the demo \u2014 can it pass an authorization audit?' Offer a fixed-price trust-boundary audit that replays a prospect's agent transcript and flags every action lacking attributable authorization, delivered as a ledger diff, routed through the existing paid failure-audit ladder.",
   "source_titles": [
-    "Semantic Cooperative Games for Contribution Attribution in LLM-Based Multi-Agent Systems",
-    "Welcome to July 21, 2026",
-    "AI Tool Discovery at Scale: All You Need is DNS",
-    "Agentic Calibration of Grey-Box Simulation Models: An LLM-Driven Alternative",
-    "Reward-Driven LLM Agent Workflows: Synthesizing POMDP Routing and Self-Correction for Autonomous Decision-Making"
+    "Your AI Agent Is Probably Hackable. Fix It in 30 Minutes",
+    "Operational Hallucination and Safety Drift in AI Agents",
+    "Engineering Trustworthy Agentic AI for Critical Systems",
+    "AGORA-BIM: An Agentic, Retrieval-Augmented and Spatially-Aware Framework for Natural Language Querying of BIM Knowledge Graphs",
+    "PCTD: Preference-Guided Counterfactual Task Decomposition for Agent Tool Retrieval"
   ],
   "packets": [
     {
-      "id": "b73e62b3c493",
+      "id": "c1ded01b4c80",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "c0baea845c20",
+      "id": "940fa996f1ca",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "9acb500c819b",
+      "id": "31a536a31b76",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "4f009e0834ba",
+      "id": "32edb9f6be23",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Add a compute_loop_risk() helper to core/self_improve.py that reads state/contract_violations.jsonl and writes per-loop scores into state/loops.json notes fields, then wire the authority sweep to sort active loops by it; commit and post receipt to #shadow-log.",
-      "packet_id": "b73e62b3c493"
+      "next_action": "Edit core/contracts.py to add ExecutionLedgerGuard (warn-level post-check requiring authorization_source/outcome_receipt/blocker_class on new state/decision_log.jsonl rows), register it, add a test in tests/test_contracts.py, run pytest, push, and post the \u2705 receipt to #shadow-log.",
+      "packet_id": "c1ded01b4c80"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_c0baea845c20_1784794108",
-      "packet_id": "c0baea845c20"
+      "draft_id": "frontier_940fa996f1ca_1784880928",
+      "packet_id": "940fa996f1ca"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "3998971fd370",
-      "packet_id": "9acb500c819b"
+      "experiment_id": "84b155771762",
+      "packet_id": "31a536a31b76"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "4f009e0834ba"
+      "packet_id": "32edb9f6be23"
     }
   ],
   "receipts": {

@@ -78,35 +78,35 @@
         "substack_notes"
       ],
       "phrase": "chatgpt updates",
-      "score": 47.65
+      "score": 45.542
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 30.814
+      "score": 24.706
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "campaign donnorman1 ey10 https",
-      "score": 16.89
+      "score": 16.782
     },
     {
       "channels": [
         "moltbook_engage"
       ],
       "phrase": "teams production between https",
-      "score": 14.212
+      "score": 14.104
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "absolutely been clear haven",
-      "score": 13.135
+      "score": 13.028
     }
   ],
   "flight_recorder": {
@@ -114,35 +114,49 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 2.0,
-          "last_activity": "2026-07-23T06:07:35.980253+00:00",
-          "source": "verifier_receipt",
+          "hours_since": 0.8,
+          "last_activity": "2026-07-24T07:30:11.618636+00:00",
+          "source": "action_log",
           "staleness": "ok"
         },
         "loop_id": "brief-production",
         "name": "Research Brief Production",
-        "reason": "fresh evidence is internal-only: verifier_receipt",
+        "reason": "fresh evidence is internal-only: action_log",
         "requires_external_reach": true,
         "verdict": "no_external_reach"
       },
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 2.1,
-          "last_activity": "2026-07-23T06:04:10.387963+00:00",
-          "source": "verifier_receipt",
+          "hours_since": 17.1,
+          "last_activity": "2026-07-23T15:12:02.793679+00:00",
+          "source": "action_log",
           "staleness": "ok"
         },
-        "loop_id": "echo",
-        "name": "Echo Content",
-        "reason": "fresh evidence is internal-only: verifier_receipt",
+        "loop_id": "shadow-presence",
+        "name": "Shadow Public Presence & Inbound",
+        "reason": "fresh evidence is internal-only: action_log",
         "requires_external_reach": true,
         "verdict": "no_external_reach"
       },
       {
+        "declared_state": "running",
+        "evidence": {
+          "hours_since": 0.6,
+          "last_activity": "2026-07-24T07:38:50.866123+00:00",
+          "source": "external_post_receipt",
+          "staleness": "ok"
+        },
+        "loop_id": "echo",
+        "name": "Echo Content",
+        "reason": "fresh evidence from external_post_receipt",
+        "requires_external_reach": true,
+        "verdict": "pass"
+      },
+      {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 1.9,
+          "hours_since": 26.0,
           "last_activity": "2026-07-23T06:15:30.248807+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
@@ -156,7 +170,7 @@
       {
         "declared_state": "complete",
         "evidence": {
-          "hours_since": 2.1,
+          "hours_since": 26.2,
           "last_activity": "2026-07-23T06:02:47.889895+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
@@ -168,23 +182,9 @@
         "verdict": "pass"
       },
       {
-        "declared_state": "at_checkpoint",
-        "evidence": {
-          "hours_since": 0.7,
-          "last_activity": "2026-07-23T07:25:03.340811+00:00",
-          "source": "action_log",
-          "staleness": "ok"
-        },
-        "loop_id": "shadow-presence",
-        "name": "Shadow Public Presence & Inbound",
-        "reason": "fresh evidence from action_log",
-        "requires_external_reach": true,
-        "verdict": "pass"
-      },
-      {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 2.1,
+          "hours_since": 26.2,
           "last_activity": "2026-07-23T06:04:31.292397+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
@@ -196,11 +196,11 @@
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-07-23T08:09:53.220536+00:00",
+    "generated_at": "2026-07-24T08:16:44.385841+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
-        "evidence_source": "verifier_receipt",
+        "evidence_source": "action_log",
         "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
         "loop_id": "brief-production",
         "missing_receipts": [
@@ -214,9 +214,9 @@
       },
       {
         "action": "produce_or_attach_external_receipt",
-        "evidence_source": "verifier_receipt",
+        "evidence_source": "action_log",
         "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
-        "loop_id": "echo",
+        "loop_id": "shadow-presence",
         "missing_receipts": [
           "external_post_receipt",
           "subscriber_receipt",
@@ -246,7 +246,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md",
     "purpose": "scarce frontier-model usage ledger that routes high-end model headroom into sellable artifacts, proof surfaces, acquisition machinery, and model-agnostic operating-system upgrades"
   },
-  "generated_at": "2026-07-23T08:09:53.220536+00:00",
+  "generated_at": "2026-07-24T08:16:44.385841+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",

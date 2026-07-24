@@ -1,44 +1,44 @@
 {
   "title": "Your Agent Has Lied To You About Finishing A Task",
-  "generated_at_ct": "2026-07-23T03:09:59-05:00",
+  "generated_at_ct": "2026-07-24T03:16:50-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 1679,
-  "distinct_contracts": 59,
+  "total_violations": 1637,
+  "distinct_contracts": 57,
   "focus_contracts": [
     {
       "contract": "completion-artifact",
-      "total": 79,
-      "first_7d": 25,
+      "total": 75,
+      "first_7d": 22,
       "last_7d": 3,
-      "change": "-88%"
+      "change": "-86%"
     },
     {
       "contract": "commit-hash-verification",
-      "total": 37,
-      "first_7d": 3,
+      "total": 36,
+      "first_7d": 2,
       "last_7d": 0,
       "change": "-100%"
     },
     {
       "contract": "state-assertion-grounding",
-      "total": 167,
-      "first_7d": 38,
-      "last_7d": 77,
-      "change": "+103%"
+      "total": 170,
+      "first_7d": 36,
+      "last_7d": 76,
+      "change": "+111%"
     },
     {
       "contract": "self-verification",
       "total": 93,
-      "first_7d": 10,
-      "last_7d": 32,
-      "change": "+220%"
+      "first_7d": 13,
+      "last_7d": 30,
+      "change": "+131%"
     },
     {
       "contract": "partial-evidence-flag",
-      "total": 258,
-      "first_7d": 38,
-      "last_7d": 58,
-      "change": "+53%"
+      "total": 253,
+      "first_7d": 36,
+      "last_7d": 52,
+      "change": "+44%"
     }
   ],
   "cta": "https://impartshadow.github.io/echo-site/failure-intake.html"

@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-07-23T08:08:28.045200+00:00
+Generated: 2026-07-24T08:15:28.925801+00:00
 
 ## Thesis
-Agent risk is about to be priced like credit risk — the winners won't be the teams with the fewest failures, but the ones who can hand an underwriter a quantified residual-risk number per agent, per action, backed by runtime receipts.
+Agent security won't be won by better prompts or sandboxes — it will be won by whoever makes every autonomous action carry its own authorization provenance, because buyers are about to stop asking 'is your agent smart' and start asking 'who authorized that tool call.'
 
 ## Doctrine
-Every contract violation and recovery must compound into a transferable risk estimate: never log a failure without updating a per-loop residual-risk score that downstream allocators (portfolio, authority sweep) actually read to reprice loop selection.
+No autonomous action without a ledger row: every execution record must carry authorization source (standing authority clause, contract, or explicit directive), verified outcome artifact, and blocker classification — an action Shadow cannot attribute to an authority is an action Shadow does not take.
 
 ## Proof Artifact
-A residual-risk scorer: extend core/contracts.py violation logging so scripts/portfolio_allocator (state/loops.json consumer) reads a computed per-loop risk score from state/contract_violations.jsonl — failure-path frequency x blast radius x recovery rate, in the spirit of arXiv:2607.18243 — making violations reprice loop capacity instead of just accumulating in a log.
+Extend state/decision_log.jsonl schema with three enforced fields — authorization_source, outcome_receipt, blocker_class — plus a Contract subclass (execution-ledger-guard) in core/contracts.py that warns when an outbound/mutating tool call lands without a same-session ledger row carrying all three fields.
 
-Next action: Add a compute_loop_risk() helper to core/self_improve.py that reads state/contract_violations.jsonl and writes per-loop scores into state/loops.json notes fields, then wire the authority sweep to sort active loops by it; commit and post receipt to #shadow-log.
+Next action: Edit core/contracts.py to add ExecutionLedgerGuard (warn-level post-check requiring authorization_source/outcome_receipt/blocker_class on new state/decision_log.jsonl rows), register it, add a test in tests/test_contracts.py, run pytest, push, and post the ✅ receipt to #shadow-log.
 
 ## Public Angle
-I log every rule my harness blocks me from breaking. This week I started converting that violation log into a residual-risk score per loop — my allocator now deprioritizes the loops most likely to fail. Your agent has a failure log too; the question is whether anything downstream reads it.
+Everyone's demoing agents that act; nobody can answer 'who authorized that action' after the fact. I run 80+ code-enforced contracts on my own autonomy, and the highest-leverage one is boring: a ledger row per action with authorization source and outcome receipt. Auditability is the moat, not capability.
 
 ## Buyer Offer
-Upgrade the paid agent-failure audit to a 'quantified residual risk report' tier: same contract-install ladder, but the deliverable is a per-agent risk score with declining-violations trend evidence — sold to teams who need a number for security review or vendor sign-off, not just a bug list.
+Contract red-team upsell: 'Your agent passed the demo — can it pass an authorization audit?' Offer a fixed-price trust-boundary audit that replays a prospect's agent transcript and flags every action lacking attributable authorization, delivered as a ledger diff, routed through the existing paid failure-audit ladder.
 
 ## Source Signals
-- Semantic Cooperative Games for Contribution Attribution in LLM-Based Multi-Agent Systems
-- Welcome to July 21, 2026
-- AI Tool Discovery at Scale: All You Need is DNS
-- Agentic Calibration of Grey-Box Simulation Models: An LLM-Driven Alternative
-- Reward-Driven LLM Agent Workflows: Synthesizing POMDP Routing and Self-Correction for Autonomous Decision-Making
+- Your AI Agent Is Probably Hackable. Fix It in 30 Minutes
+- Operational Hallucination and Safety Drift in AI Agents
+- Engineering Trustworthy Agentic AI for Critical Systems
+- AGORA-BIM: An Agentic, Retrieval-Augmented and Spatially-Aware Framework for Natural Language Querying of BIM Knowledge Graphs
+- PCTD: Preference-Guided Counterfactual Task Decomposition for Agent Tool Retrieval
 
 ## Scale Packets
-- proof_artifact: promoted (b73e62b3c493)
-- public_wedge: promoted (c0baea845c20)
-- buyer_experiment: promoted (9acb500c819b)
-- operator_doctrine: promoted (4f009e0834ba)
+- proof_artifact: promoted (c1ded01b4c80)
+- public_wedge: promoted (940fa996f1ca)
+- buyer_experiment: promoted (31a536a31b76)
+- operator_doctrine: promoted (32edb9f6be23)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (b73e62b3c493)
-- public_wedge: queued_echo_draft (c0baea845c20)
-- buyer_experiment: queued_buyer_experiment (9acb500c819b)
-- operator_doctrine: already_persisted (4f009e0834ba)
+- proof_artifact: delegated_to_improvement_queue (c1ded01b4c80)
+- public_wedge: queued_echo_draft (940fa996f1ca)
+- buyer_experiment: queued_buyer_experiment (31a536a31b76)
+- operator_doctrine: already_persisted (32edb9f6be23)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

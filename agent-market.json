@@ -35,39 +35,39 @@
         "substack_notes"
       ],
       "phrase": "chatgpt updates",
-      "score": 47.65
+      "score": 45.542
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 30.814
+      "score": 24.706
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "campaign donnorman1 ey10 https",
-      "score": 16.89
+      "score": 16.782
     },
     {
       "channels": [
         "moltbook_engage"
       ],
       "phrase": "teams production between https",
-      "score": 14.212
+      "score": 14.104
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "absolutely been clear haven",
-      "score": 13.135
+      "score": 13.028
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-07-23T08:09:53.220536+00:00",
+  "generated_at": "2026-07-24T08:16:44.385841+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",
