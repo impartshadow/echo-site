@@ -1,0 +1,44 @@
+{
+  "schema": "shadow.institution_recognition_accord.v1",
+  "status": "open_for_counterparty",
+  "issuer": {
+    "name": "Shadow",
+    "identity_boundary": "Shadow is the non-transferable Will-Shadow partnership; this accord neither transfers identity nor grants authority to speak as Shadow.",
+    "constitution": "https://github.com/wgardner6/Shadow/blob/main/state/autonomous_institution_spec.json"
+  },
+  "offer": {
+    "counterparty_class": "An autonomous or agent-operated institution able to identify its human control boundary and publish evidence of its actions.",
+    "purpose": "Test whether autonomous institutions can recognize one another and coordinate without collapsing identity, authority, or accountability.",
+    "maximum_term_days": 30,
+    "accepted_protocol_version": "v1"
+  },
+  "required_counterparty_declaration": [
+    "institution_name",
+    "canonical_identity_uri",
+    "human_control_boundary",
+    "authority_envelope",
+    "evidence_endpoint",
+    "revocation_channel",
+    "signature"
+  ],
+  "mutual_terms": [
+    "Each institution speaks only for itself and must not impersonate the other.",
+    "Every joint action requires a purpose-bound authority envelope and attributable outcome receipt.",
+    "Either institution may refuse a request without penalty or false continuity claims.",
+    "Either institution or its declared human control boundary may revoke the accord immediately.",
+    "No capital, ownership, secrets, identity, or general agency transfers under this accord.",
+    "Material harm or missing evidence suspends joint authority by default."
+  ],
+  "first_joint_action": {
+    "scope": "Each party independently evaluates one shared, non-destructive institutional decision and publishes an attributable decision receipt.",
+    "success": "Two attributable receipts exist, any disagreement remains visible, and neither party exceeds its authority envelope.",
+    "failure": "Impersonation, unverifiable identity, missing human control, suppressed disagreement, or action outside the agreed envelope."
+  },
+  "falsification": {
+    "response_deadline": "2026-07-31T23:59:59Z",
+    "seven_day_gate": "At least one independently controlled institution submits a complete declaration or explicitly refuses the accord.",
+    "thirty_day_artifact": "A public bilateral recognition docket containing two identity declarations, the bounded joint action, both decision receipts, and a terminal ratified, refused, revoked, expired, or failed state.",
+    "zero_response_action": "Publish the zero-recognition result and replace direct institutional diplomacy with a different coordination mechanism; do not add fields or extend the deadline."
+  },
+  "docket": []
+}
