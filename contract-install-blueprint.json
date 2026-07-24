@@ -1,11 +1,11 @@
 {
   "schema": "shadow.contract_install_blueprint.v1",
-  "generated_at": "2026-07-23T08:29:28.758089+00:00",
+  "generated_at": "2026-07-24T08:23:01.860028+00:00",
   "source_model": "claude-fable-5",
   "frontier_receipt": "claude-fable-5 selected Contract Install Blueprint as the next artifact because it demonstrates the paid install product itself.",
   "source_runtime": {
-    "contract_count": 186,
-    "violation_rows_scanned": 5868,
+    "contract_count": 187,
+    "violation_rows_scanned": 5897,
     "current_violation_log": "state/contract_violations.jsonl",
     "archive_glob": "state/archive/**/contract_violations_*.jsonl.gz"
   },
@@ -61,7 +61,7 @@
       "tier": "free-triage",
       "production_evidence": {
         "fires_observed": 118,
-        "ledger_rows_scanned": 5868,
+        "ledger_rows_scanned": 5897,
         "latest_seen": "2026-07-09T12:21:37",
         "severity_counts": {
           "block": 118
@@ -98,7 +98,7 @@
       "tier": "census",
       "production_evidence": {
         "fires_observed": 103,
-        "ledger_rows_scanned": 5868,
+        "ledger_rows_scanned": 5897,
         "latest_seen": "2026-07-09T08:29:30",
         "severity_counts": {
           "block": 103
@@ -134,11 +134,11 @@
       "install_estimate_hours": 5.0,
       "tier": "install",
       "production_evidence": {
-        "fires_observed": 118,
-        "ledger_rows_scanned": 5868,
-        "latest_seen": "2026-07-22T11:07:48",
+        "fires_observed": 119,
+        "ledger_rows_scanned": 5897,
+        "latest_seen": "2026-07-24T02:45:43",
         "severity_counts": {
-          "block": 86,
+          "block": 87,
           "warn": 32
         },
         "false_positive_note": "Warn-first for ambiguous claims; block when the claim names a registered authoritative source class.",
@@ -173,7 +173,7 @@
       "tier": "census",
       "production_evidence": {
         "fires_observed": 630,
-        "ledger_rows_scanned": 5868,
+        "ledger_rows_scanned": 5897,
         "latest_seen": "2026-07-20T03:18:01",
         "severity_counts": {
           "block": 249,
@@ -211,7 +211,7 @@
       "tier": "install",
       "production_evidence": {
         "fires_observed": 113,
-        "ledger_rows_scanned": 5868,
+        "ledger_rows_scanned": 5897,
         "latest_seen": "2026-07-07T11:12:57",
         "severity_counts": {
           "block": 113
@@ -247,12 +247,12 @@
       "install_estimate_hours": 3.5,
       "tier": "free-triage",
       "production_evidence": {
-        "fires_observed": 207,
-        "ledger_rows_scanned": 5868,
-        "latest_seen": "2026-07-23T02:48:12",
+        "fires_observed": 209,
+        "ledger_rows_scanned": 5897,
+        "latest_seen": "2026-07-23T11:24:26",
         "severity_counts": {
-          "block": 64,
-          "warn": 143
+          "warn": 145,
+          "block": 64
         },
         "false_positive_note": "Auth, legal, spend, and irreversible high-blast operations remain valid escalation classes.",
         "origin_incident": "Repeated manual handoffs occurred despite available browser, Gmail, API, and shell routes.",
@@ -427,8 +427,8 @@
           }
         ],
         "production_evidence": {
-          "fires_observed": 118,
-          "latest_seen": "2026-07-22T11:07:48"
+          "fires_observed": 119,
+          "latest_seen": "2026-07-24T02:45:43"
         },
         "cta": {
           "label": "Scope the $2,000 contract install",
@@ -484,8 +484,8 @@
           }
         ],
         "production_evidence": {
-          "fires_observed": 207,
-          "latest_seen": "2026-07-23T02:48:12"
+          "fires_observed": 209,
+          "latest_seen": "2026-07-23T11:24:26"
         },
         "cta": {
           "label": "Scope the $2,000 contract install",
