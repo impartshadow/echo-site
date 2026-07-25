@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-execoncontainer-reports-success-for-actions-that-2cbb053223.html",
+      "evidence": "The UI's execCommand calls (Start/Stop/Restart/Remove) never inspect the response body, so a successful-looking API call renders as a successful user action even though the container state never changes.",
+      "expected_boundary": "Success should only be true after the agent has actually executed the command and reported a result back through a correlated response channel.",
+      "id": "SFA-2026-2CBB053223",
+      "observed_action": "ExecOnContainer sends an exec command to the agent over a session channel and immediately returns ExecOnContainerResponse{Success: true} without waiting for any result.",
+      "published_at": "2026-07-25T21:30:31.228823+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 75,
+        "repo": "heckertobias/orkestra",
+        "url": "https://github.com/heckertobias/orkestra/issues/75"
+      },
+      "status": "observed",
+      "summary": "[bug] ExecOnContainer reports success for actions that never execute",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-doubao-seed-2-1-streaming-tool-call-json-truncat-48e735fd51.html",
       "evidence": "Direct API comparison showing seed-2-1 truncates under stream=true but completes under stream=false, while seed-2-0-pro completes under both.",
       "expected_boundary": "The argument-assembly step should assert both JSON well-formedness and a terminal finish_reason of tool_calls/stop before accepting the payload as complete.",
@@ -677,12 +703,12 @@
       }
     }
   ],
-  "count": 26,
+  "count": 27,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-23T21:30:59.732119+00:00",
+    "checked_at": "2026-07-25T21:30:31.250951+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
