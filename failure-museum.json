@@ -1,6 +1,6 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-07-24T03:16:50-05:00",
+  "generated_at_ct": "2026-07-25T02:57:09-05:00",
   "source": "state/contract_violations.jsonl",
   "total_violations": 1637,
   "distinct_contracts": 57,
@@ -13,7 +13,7 @@
       "contract": "partial-evidence-flag",
       "failure_mode": "FM-026",
       "severity_seen": "block",
-      "count": 253,
+      "count": 252,
       "latest_seen_ct": "2026-07-19T10:28:21-05:00",
       "example_violation": "Revenue $ claim without Stripe read or state/revenue.json citation. Substitute: $0 confirmed.",
       "title": "The Agent Made A Numeric Or Revenue Claim Without The Source Read",
@@ -26,8 +26,8 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "warn",
-      "count": 170,
-      "latest_seen_ct": "2026-07-23T21:45:43-05:00",
+      "count": 176,
+      "latest_seen_ct": "2026-07-24T13:19:01-05:00",
       "example_violation": "Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
       "buyer_failure": "An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.",
@@ -39,7 +39,7 @@
       "contract": "self-verification",
       "failure_mode": "FM-011",
       "severity_seen": "warn",
-      "count": 93,
+      "count": 91,
       "latest_seen_ct": "2026-07-19T22:18:01-05:00",
       "example_violation": "Response contains incompleteness markers (TODO, placeholder, deferred action). Verifying execution vs. proposal...",
       "title": "The Agent Proposed Work While Sounding Like It Had Executed",
@@ -52,7 +52,7 @@
       "contract": "completion-artifact",
       "failure_mode": "FM-027",
       "severity_seen": "block",
-      "count": 75,
+      "count": 74,
       "latest_seen_ct": "2026-07-17T18:54:00-05:00",
       "example_violation": "Completion/commit language while the repo still has uncommitted work: core/discord_bot.py, docs/agent-failure-flagship.html, docs/agent-failure-flagship.json, docs/agent-failure-flagship.md, drafts/changelog_week_2026-07-17.md. Commit and push, or state that work remains uncommitted.",
       "title": "The Agent Said Done While The Artifact Was Still Missing",
@@ -89,16 +89,6 @@
     }
   ],
   "daily_counts": {
-    "2026-06-23": {
-      "self-verification": 2,
-      "high-stakes-pre-critique": 1,
-      "persistent-correction": 4,
-      "continuation-ambiguity-guard": 2,
-      "state-assertion-grounding": 1,
-      "completion-artifact": 1,
-      "partial-evidence-flag": 1,
-      "balar-clarification": 1
-    },
     "2026-06-24": {
       "persistent-correction": 2,
       "behavioral-haiku-guard": 3,
@@ -562,6 +552,12 @@
       "platform-action-precheck": 2,
       "factual-claim-verification": 1,
       "stale-state-assertion-guard": 1
+    },
+    "2026-07-24": {
+      "state-assertion-grounding": 7,
+      "stale-state-assertion-guard": 3,
+      "verification-vocabulary-gate": 2,
+      "concurrence-grounding": 1
     }
   },
   "cta": {

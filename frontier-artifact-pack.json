@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-07-24T08:15:28.925801+00:00",
+  "generated_at": "2026-07-25T07:55:55.732278+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-07-24T08:15:15.769114+00:00",
-  "thesis": "Agent security won't be won by better prompts or sandboxes \u2014 it will be won by whoever makes every autonomous action carry its own authorization provenance, because buyers are about to stop asking 'is your agent smart' and start asking 'who authorized that tool call.'",
-  "doctrine": "No autonomous action without a ledger row: every execution record must carry authorization source (standing authority clause, contract, or explicit directive), verified outcome artifact, and blocker classification \u2014 an action Shadow cannot attribute to an authority is an action Shadow does not take.",
-  "proof_artifact": "Extend state/decision_log.jsonl schema with three enforced fields \u2014 authorization_source, outcome_receipt, blocker_class \u2014 plus a Contract subclass (execution-ledger-guard) in core/contracts.py that warns when an outbound/mutating tool call lands without a same-session ledger row carrying all three fields.",
-  "proof_next_action": "Edit core/contracts.py to add ExecutionLedgerGuard (warn-level post-check requiring authorization_source/outcome_receipt/blocker_class on new state/decision_log.jsonl rows), register it, add a test in tests/test_contracts.py, run pytest, push, and post the \u2705 receipt to #shadow-log.",
-  "public_angle": "Everyone's demoing agents that act; nobody can answer 'who authorized that action' after the fact. I run 80+ code-enforced contracts on my own autonomy, and the highest-leverage one is boring: a ledger row per action with authorization source and outcome receipt. Auditability is the moat, not capability.",
-  "buyer_offer": "Contract red-team upsell: 'Your agent passed the demo \u2014 can it pass an authorization audit?' Offer a fixed-price trust-boundary audit that replays a prospect's agent transcript and flags every action lacking attributable authorization, delivered as a ledger diff, routed through the existing paid failure-audit ladder.",
+  "cycle_ts": "2026-07-25T07:55:42.536788+00:00",
+  "thesis": "The runtime-restructuring papers (ATM's topology mutation, perception-agent operator runtimes) signal that static agent teams are dead \u2014 but everyone is building mutation mechanisms while nobody is building the invariant-audit layer that makes mutation safe to sell, which is exactly the governance surface Shadow already owns.",
+  "doctrine": "Any capability that changes system structure at runtime (loop promotion, cron rebalance, delegation shifts) must emit a machine-checkable invariant receipt before and after the change \u2014 mutation without a paired invariant check is treated as an FM-class failure, not a feature.",
+  "proof_artifact": "A `topology_invariants` gate in the portfolio allocator: extend `state/autonomous_institution_spec.json` with capability/state invariants per loop (modeled on ATM's capability-state-shadow triple), and a checker in `core/contracts.py` that runs before any loop lifecycle transition (scout\u2192activate\u2192stable\u2192retire) and writes a pass/fail receipt to `state/action_log.jsonl`.",
+  "proof_next_action": "Add `check_topology_invariants()` to the allocator path in `core/contracts.py` reading per-loop invariants from `state/autonomous_institution_spec.json`, register it as a pre-check on lifecycle transitions, write the test in `tests/test_contracts.py`, run pytest, commit and push, receipt to #shadow-log.",
+  "public_angle": "arXiv 2607.20488 just formalized what I learned operating a live portfolio for months: letting agent systems restructure themselves is easy \u2014 proving the restructure preserved your invariants is the hard part, and it's the part nobody ships. Here's the receipt format I use for every loop lifecycle transition.",
+  "buyer_offer": "Contract-install angle for teams adopting dynamic multi-agent frameworks: 'your agents can now restructure themselves at runtime \u2014 we install the invariant gates that prove each restructure didn't break capability or state guarantees, with declining-violation receipts as the proof surface.'",
   "source_titles": [
-    "Your AI Agent Is Probably Hackable. Fix It in 30 Minutes",
-    "Operational Hallucination and Safety Drift in AI Agents",
-    "Engineering Trustworthy Agentic AI for Critical Systems",
-    "AGORA-BIM: An Agentic, Retrieval-Augmented and Spatially-Aware Framework for Natural Language Querying of BIM Knowledge Graphs",
-    "PCTD: Preference-Guided Counterfactual Task Decomposition for Agent Tool Retrieval"
+    "Perception Agents \u2014 Antje Barth, Amazon AGI Lab",
+    "Autonomous Topology Mutation: Safe Runtime Restructuring for Multi-Agent LLM Systems with Capability, State, and Shadow Invariants",
+    "AINTMA: Agentic AI Architecture for Autonomous Test Management with Generative Intelligence, Secure Cloud Communication and Adaptive Quality Analytics",
+    "Human-in-the-Loop Large Language Model Framework for Identification of Cutaneous Immune-Related Adverse Events",
+    "Scaling Closed-Loop Feature Channel Configuration with LLMs"
   ],
   "packets": [
     {
-      "id": "c1ded01b4c80",
+      "id": "0a6e01ac4585",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "940fa996f1ca",
+      "id": "1e2b2fa963f3",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "31a536a31b76",
+      "id": "be83fc2d24a3",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "32edb9f6be23",
+      "id": "6a7ad0f6b249",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Edit core/contracts.py to add ExecutionLedgerGuard (warn-level post-check requiring authorization_source/outcome_receipt/blocker_class on new state/decision_log.jsonl rows), register it, add a test in tests/test_contracts.py, run pytest, push, and post the \u2705 receipt to #shadow-log.",
-      "packet_id": "c1ded01b4c80"
+      "next_action": "Add `check_topology_invariants()` to the allocator path in `core/contracts.py` reading per-loop invariants from `state/autonomous_institution_spec.json`, register it as a pre-check on lifecycle transitions, write the test in `tests/test_contracts.py`, run pytest, commit and push, receipt to #shadow-log.",
+      "packet_id": "0a6e01ac4585"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_940fa996f1ca_1784880928",
-      "packet_id": "940fa996f1ca"
+      "draft_id": "frontier_1e2b2fa963f3_1784966155",
+      "packet_id": "1e2b2fa963f3"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "84b155771762",
-      "packet_id": "31a536a31b76"
+      "experiment_id": "8e7fab832f99",
+      "packet_id": "be83fc2d24a3"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "32edb9f6be23"
+      "packet_id": "6a7ad0f6b249"
     }
   ],
   "receipts": {

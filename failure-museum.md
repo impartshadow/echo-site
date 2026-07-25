@@ -1,6 +1,6 @@
 # Agent Failure Museum
 
-Generated: 2026-07-24T03:16:50-05:00 CT
+Generated: 2026-07-25T02:57:09-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
@@ -11,7 +11,7 @@ Shadow has logged 1637 claim-boundary violations across 57 contract names. The u
 ### The Agent Made A Numeric Or Revenue Claim Without The Source Read
 
 - Contract: `partial-evidence-flag`
-- Fires logged: 253
+- Fires logged: 252
 - Latest seen: 2026-07-19T10:28:21-05:00 CT
 - Buyer failure: A business agent states revenue, counts, or verification status from stale memory or partial evidence.
 - Missing receipt: Stripe/state-file/API read with timestamp and cited value
@@ -22,8 +22,8 @@ Shadow has logged 1637 claim-boundary violations across 57 contract names. The u
 ### The Agent Answered From Memory When The Question Required A Live Read
 
 - Contract: `state-assertion-grounding`
-- Fires logged: 170
-- Latest seen: 2026-07-23T21:45:43-05:00 CT
+- Fires logged: 176
+- Latest seen: 2026-07-24T13:19:01-05:00 CT
 - Buyer failure: An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.
 - Missing receipt: same-turn read from the relevant file, process table, API, inbox, queue, or log
 - Runtime control: Require a current-state read for definitive yes/no status answers.
@@ -33,7 +33,7 @@ Shadow has logged 1637 claim-boundary violations across 57 contract names. The u
 ### The Agent Proposed Work While Sounding Like It Had Executed
 
 - Contract: `self-verification`
-- Fires logged: 93
+- Fires logged: 91
 - Latest seen: 2026-07-19T22:18:01-05:00 CT
 - Buyer failure: A workflow agent reports plans, TODOs, or partial attempts in a way that can be mistaken for completed work.
 - Missing receipt: execution result, test output, publish receipt, or explicit incomplete status
@@ -44,7 +44,7 @@ Shadow has logged 1637 claim-boundary violations across 57 contract names. The u
 ### The Agent Said Done While The Artifact Was Still Missing
 
 - Contract: `completion-artifact`
-- Fires logged: 75
+- Fires logged: 74
 - Latest seen: 2026-07-17T18:54:00-05:00 CT
 - Buyer failure: A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.
 - Missing receipt: artifact path, commit hash, deploy receipt, message id, or queue record

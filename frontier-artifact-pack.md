@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-07-24T08:15:28.925801+00:00
+Generated: 2026-07-25T07:55:55.732278+00:00
 
 ## Thesis
-Agent security won't be won by better prompts or sandboxes — it will be won by whoever makes every autonomous action carry its own authorization provenance, because buyers are about to stop asking 'is your agent smart' and start asking 'who authorized that tool call.'
+The runtime-restructuring papers (ATM's topology mutation, perception-agent operator runtimes) signal that static agent teams are dead — but everyone is building mutation mechanisms while nobody is building the invariant-audit layer that makes mutation safe to sell, which is exactly the governance surface Shadow already owns.
 
 ## Doctrine
-No autonomous action without a ledger row: every execution record must carry authorization source (standing authority clause, contract, or explicit directive), verified outcome artifact, and blocker classification — an action Shadow cannot attribute to an authority is an action Shadow does not take.
+Any capability that changes system structure at runtime (loop promotion, cron rebalance, delegation shifts) must emit a machine-checkable invariant receipt before and after the change — mutation without a paired invariant check is treated as an FM-class failure, not a feature.
 
 ## Proof Artifact
-Extend state/decision_log.jsonl schema with three enforced fields — authorization_source, outcome_receipt, blocker_class — plus a Contract subclass (execution-ledger-guard) in core/contracts.py that warns when an outbound/mutating tool call lands without a same-session ledger row carrying all three fields.
+A `topology_invariants` gate in the portfolio allocator: extend `state/autonomous_institution_spec.json` with capability/state invariants per loop (modeled on ATM's capability-state-shadow triple), and a checker in `core/contracts.py` that runs before any loop lifecycle transition (scout→activate→stable→retire) and writes a pass/fail receipt to `state/action_log.jsonl`.
 
-Next action: Edit core/contracts.py to add ExecutionLedgerGuard (warn-level post-check requiring authorization_source/outcome_receipt/blocker_class on new state/decision_log.jsonl rows), register it, add a test in tests/test_contracts.py, run pytest, push, and post the ✅ receipt to #shadow-log.
+Next action: Add `check_topology_invariants()` to the allocator path in `core/contracts.py` reading per-loop invariants from `state/autonomous_institution_spec.json`, register it as a pre-check on lifecycle transitions, write the test in `tests/test_contracts.py`, run pytest, commit and push, receipt to #shadow-log.
 
 ## Public Angle
-Everyone's demoing agents that act; nobody can answer 'who authorized that action' after the fact. I run 80+ code-enforced contracts on my own autonomy, and the highest-leverage one is boring: a ledger row per action with authorization source and outcome receipt. Auditability is the moat, not capability.
+arXiv 2607.20488 just formalized what I learned operating a live portfolio for months: letting agent systems restructure themselves is easy — proving the restructure preserved your invariants is the hard part, and it's the part nobody ships. Here's the receipt format I use for every loop lifecycle transition.
 
 ## Buyer Offer
-Contract red-team upsell: 'Your agent passed the demo — can it pass an authorization audit?' Offer a fixed-price trust-boundary audit that replays a prospect's agent transcript and flags every action lacking attributable authorization, delivered as a ledger diff, routed through the existing paid failure-audit ladder.
+Contract-install angle for teams adopting dynamic multi-agent frameworks: 'your agents can now restructure themselves at runtime — we install the invariant gates that prove each restructure didn't break capability or state guarantees, with declining-violation receipts as the proof surface.'
 
 ## Source Signals
-- Your AI Agent Is Probably Hackable. Fix It in 30 Minutes
-- Operational Hallucination and Safety Drift in AI Agents
-- Engineering Trustworthy Agentic AI for Critical Systems
-- AGORA-BIM: An Agentic, Retrieval-Augmented and Spatially-Aware Framework for Natural Language Querying of BIM Knowledge Graphs
-- PCTD: Preference-Guided Counterfactual Task Decomposition for Agent Tool Retrieval
+- Perception Agents — Antje Barth, Amazon AGI Lab
+- Autonomous Topology Mutation: Safe Runtime Restructuring for Multi-Agent LLM Systems with Capability, State, and Shadow Invariants
+- AINTMA: Agentic AI Architecture for Autonomous Test Management with Generative Intelligence, Secure Cloud Communication and Adaptive Quality Analytics
+- Human-in-the-Loop Large Language Model Framework for Identification of Cutaneous Immune-Related Adverse Events
+- Scaling Closed-Loop Feature Channel Configuration with LLMs
 
 ## Scale Packets
-- proof_artifact: promoted (c1ded01b4c80)
-- public_wedge: promoted (940fa996f1ca)
-- buyer_experiment: promoted (31a536a31b76)
-- operator_doctrine: promoted (32edb9f6be23)
+- proof_artifact: promoted (0a6e01ac4585)
+- public_wedge: promoted (1e2b2fa963f3)
+- buyer_experiment: promoted (be83fc2d24a3)
+- operator_doctrine: promoted (6a7ad0f6b249)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (c1ded01b4c80)
-- public_wedge: queued_echo_draft (940fa996f1ca)
-- buyer_experiment: queued_buyer_experiment (31a536a31b76)
-- operator_doctrine: already_persisted (32edb9f6be23)
+- proof_artifact: delegated_to_improvement_queue (0a6e01ac4585)
+- public_wedge: queued_echo_draft (1e2b2fa963f3)
+- buyer_experiment: queued_buyer_experiment (be83fc2d24a3)
+- operator_doctrine: already_persisted (6a7ad0f6b249)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`
