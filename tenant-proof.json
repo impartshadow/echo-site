@@ -9,7 +9,7 @@
       "verdict": "running"
     }
   },
-  "generated_at": "2026-07-24T08:18:35.295590+00:00",
+  "generated_at": "2026-07-25T07:58:50.751988+00:00",
   "goal": "turn managed-tenant receipts into a public, falsifiable acquisition surface",
   "html_url": "https://impartshadow.github.io/echo-site/tenant-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/tenant-proof.json",
@@ -61,7 +61,7 @@
         "id": "operator-01",
         "plan_price_monthly": 50,
         "receipts_sent": 4,
-        "recent_7d": 1,
+        "recent_7d": 0,
         "tensions": {
           "capability confusion": 1,
           "capability proposal": 5,
@@ -83,7 +83,7 @@
       "asks_sent": 1,
       "events": 23,
       "receipts_sent": 4,
-      "recent_7d": 1,
+      "recent_7d": 0,
       "value_weight": 63
     }
   },
