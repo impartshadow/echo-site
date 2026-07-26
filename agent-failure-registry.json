@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-sandbox-agents-silently-drop-configured-nodesele-34c4a8b6d0.html",
+      "evidence": "The issue reports that manifest_builder.go sets and passes the selector while agent_lifecycle.go builds ActorTemplateSpec without reading podTemplate.Spec.NodeSelector.",
+      "expected_boundary": "The BuildSandbox PodTemplate-to-ActorTemplate boundary must preserve nodeSelector exactly or reject it as unsupported.",
+      "id": "SFA-2026-34C4A8B6D0",
+      "observed_action": "The sandbox backend receives a PodTemplateSpec with a resolved nodeSelector but constructs an ActorTemplate without carrying that placement constraint forward.",
+      "published_at": "2026-07-26T06:31:06.975929+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 2306,
+        "repo": "kagent-dev/kagent",
+        "url": "https://github.com/kagent-dev/kagent/issues/2306"
+      },
+      "status": "observed",
+      "summary": "[BUG] Sandbox agents silently drop configured nodeSelector (not applied to ActorTemplate)",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-execoncontainer-reports-success-for-actions-that-2cbb053223.html",
       "evidence": "The UI's execCommand calls (Start/Stop/Restart/Remove) never inspect the response body, so a successful-looking API call renders as a successful user action even though the container state never changes.",
       "expected_boundary": "Success should only be true after the agent has actually executed the command and reported a result back through a correlated response channel.",
@@ -703,12 +729,12 @@
       }
     }
   ],
-  "count": 27,
+  "count": 28,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-25T21:30:31.250951+00:00",
+    "checked_at": "2026-07-26T06:31:06.994713+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
