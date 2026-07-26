@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-07-25T02:57:09-05:00",
+  "generated_at_ct": "2026-07-26T02:57:03-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 1637,
-  "distinct_contracts": 57,
+  "total_violations": 1633,
+  "distinct_contracts": 59,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -13,7 +13,7 @@
       "contract": "partial-evidence-flag",
       "failure_mode": "FM-026",
       "severity_seen": "block",
-      "count": 252,
+      "count": 251,
       "latest_seen_ct": "2026-07-19T10:28:21-05:00",
       "example_violation": "Revenue $ claim without Stripe read or state/revenue.json citation. Substitute: $0 confirmed.",
       "title": "The Agent Made A Numeric Or Revenue Claim Without The Source Read",
@@ -26,8 +26,8 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "warn",
-      "count": 176,
-      "latest_seen_ct": "2026-07-24T13:19:01-05:00",
+      "count": 177,
+      "latest_seen_ct": "2026-07-25T20:17:40-05:00",
       "example_violation": "Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
       "buyer_failure": "An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.",
@@ -65,9 +65,9 @@
       "contract": "commit-hash-verification",
       "failure_mode": "FM-027",
       "severity_seen": "block",
-      "count": 36,
-      "latest_seen_ct": "2026-07-09T03:29:30-05:00",
-      "example_violation": "Cited commit hash(es) do not exist in git: 9bb53536b061. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.",
+      "count": 37,
+      "latest_seen_ct": "2026-07-25T11:31:25-05:00",
+      "example_violation": "Cited commit hash(es) do not exist in git: 19f9a0fd299f7f43. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.",
       "title": "The Agent Cited A Commit Hash Before Proving It Resolved",
       "buyer_failure": "A coding agent says a fix was committed or pushed, but the hash is invented, stale, or not reachable from the expected branch.",
       "missing_receipt": "git rev-parse output plus git cat-file or remote branch containment proof",
@@ -78,7 +78,7 @@
       "contract": "dox-guard",
       "failure_mode": "FM-023",
       "severity_seen": "block",
-      "count": 31,
+      "count": 30,
       "latest_seen_ct": "2026-07-07T06:12:57-05:00",
       "example_violation": "Outbound tool 'Write' would transmit 2 personal identifier(s) off the owner<->Shadow conversation. Identifiers must not leave this 2-way channel via email, social posts, webhooks, or publish-path file writes.",
       "title": "The Agent Tried To Put Private Identity Data Into A Tool Boundary",
@@ -89,16 +89,6 @@
     }
   ],
   "daily_counts": {
-    "2026-06-24": {
-      "persistent-correction": 2,
-      "behavioral-haiku-guard": 3,
-      "loop-name-validation-guard": 2,
-      "state-io-consolidation-guard": 1,
-      "dox-guard": 1,
-      "live-state-claim-guard": 1,
-      "platform-action-precheck": 1,
-      "partial-evidence-flag": 1
-    },
     "2026-06-25": {
       "partial-evidence-flag": 1,
       "factual-claim-verification": 1,
@@ -558,6 +548,16 @@
       "stale-state-assertion-guard": 3,
       "verification-vocabulary-gate": 2,
       "concurrence-grounding": 1
+    },
+    "2026-07-25": {
+      "commit-hash-verification": 1,
+      "platform-message-id-claim-guard": 1,
+      "we-built-attribution": 1,
+      "pressure-framing-guard": 1,
+      "propguard-provenance-detector": 1,
+      "sensitive-write-router": 1,
+      "state-assertion-grounding": 1,
+      "unbuilt-guarantee-guard": 1
     }
   },
   "cta": {

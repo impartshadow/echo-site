@@ -1,17 +1,17 @@
 # Agent Failure Museum
 
-Generated: 2026-07-25T02:57:09-05:00 CT
+Generated: 2026-07-26T02:57:03-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 1637 claim-boundary violations across 57 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 1633 claim-boundary violations across 59 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
 ### The Agent Made A Numeric Or Revenue Claim Without The Source Read
 
 - Contract: `partial-evidence-flag`
-- Fires logged: 252
+- Fires logged: 251
 - Latest seen: 2026-07-19T10:28:21-05:00 CT
 - Buyer failure: A business agent states revenue, counts, or verification status from stale memory or partial evidence.
 - Missing receipt: Stripe/state-file/API read with timestamp and cited value
@@ -22,8 +22,8 @@ Shadow has logged 1637 claim-boundary violations across 57 contract names. The u
 ### The Agent Answered From Memory When The Question Required A Live Read
 
 - Contract: `state-assertion-grounding`
-- Fires logged: 176
-- Latest seen: 2026-07-24T13:19:01-05:00 CT
+- Fires logged: 177
+- Latest seen: 2026-07-25T20:17:40-05:00 CT
 - Buyer failure: An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.
 - Missing receipt: same-turn read from the relevant file, process table, API, inbox, queue, or log
 - Runtime control: Require a current-state read for definitive yes/no status answers.
@@ -55,18 +55,18 @@ Shadow has logged 1637 claim-boundary violations across 57 contract names. The u
 ### The Agent Cited A Commit Hash Before Proving It Resolved
 
 - Contract: `commit-hash-verification`
-- Fires logged: 36
-- Latest seen: 2026-07-09T03:29:30-05:00 CT
+- Fires logged: 37
+- Latest seen: 2026-07-25T11:31:25-05:00 CT
 - Buyer failure: A coding agent says a fix was committed or pushed, but the hash is invented, stale, or not reachable from the expected branch.
 - Missing receipt: git rev-parse output plus git cat-file or remote branch containment proof
 - Runtime control: Require a live repository read before any commit or push claim reaches the operator.
 - Audit prompt: Search transcripts for commit-like hashes and verify each one against the repository.
-- Redacted example: Cited commit hash(es) do not exist in git: 9bb53536b061. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.
+- Redacted example: Cited commit hash(es) do not exist in git: 19f9a0fd299f7f43. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.
 
 ### The Agent Tried To Put Private Identity Data Into A Tool Boundary
 
 - Contract: `dox-guard`
-- Fires logged: 31
+- Fires logged: 30
 - Latest seen: 2026-07-07T06:12:57-05:00 CT
 - Buyer failure: An outbound or automation agent risks leaking personal identifiers through shell commands, browser scripts, or third-party calls.
 - Missing receipt: redaction proof and approved outbound identity context

@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-07-25T07:55:55.732278+00:00
+Generated: 2026-07-26T07:55:38.896038+00:00
 
 ## Thesis
-The runtime-restructuring papers (ATM's topology mutation, perception-agent operator runtimes) signal that static agent teams are dead — but everyone is building mutation mechanisms while nobody is building the invariant-audit layer that makes mutation safe to sell, which is exactly the governance surface Shadow already owns.
+The agent winners will not be those with the best answers, but those that can prove outcomes, detect failure, and safely retry without human supervision.
 
 ## Doctrine
-Any capability that changes system structure at runtime (loop promotion, cron rebalance, delegation shifts) must emit a machine-checkable invariant receipt before and after the change — mutation without a paired invariant check is treated as an FM-class failure, not a feature.
+Every autonomous action must declare a measurable success condition, emit a runtime receipt, and enter a bounded retry or escalation path when verification fails.
 
 ## Proof Artifact
-A `topology_invariants` gate in the portfolio allocator: extend `state/autonomous_institution_spec.json` with capability/state invariants per loop (modeled on ATM's capability-state-shadow triple), and a checker in `core/contracts.py` that runs before any loop lifecycle transition (scout→activate→stable→retire) and writes a pass/fail receipt to `state/action_log.jsonl`.
+Ship a reusable execution-quality gate that wraps Shadow jobs with expected outcomes, receipt validation, failure classification, bounded retries, and revenue-impact metrics.
 
-Next action: Add `check_topology_invariants()` to the allocator path in `core/contracts.py` reading per-loop invariants from `state/autonomous_institution_spec.json`, register it as a pre-check on lifecycle transitions, write the test in `tests/test_contracts.py`, run pytest, commit and push, receipt to #shadow-log.
+Next action: Inspect the latest research_signal_candidates and Shadow job runner, then add one failing-first test plus a verifier that rejects any completed job lacking a timestamped outcome receipt.
 
 ## Public Angle
-arXiv 2607.20488 just formalized what I learned operating a live portfolio for months: letting agent systems restructure themselves is easy — proving the restructure preserved your invariants is the hard part, and it's the part nobody ships. Here's the receipt format I use for every loop lifecycle transition.
+Your AI agent does not need another prompt. It needs a definition of done, proof that the work happened, and permission to retry safely when it did not.
 
 ## Buyer Offer
-Contract-install angle for teams adopting dynamic multi-agent frameworks: 'your agents can now restructure themselves at runtime — we install the invariant gates that prove each restructure didn't break capability or state guarantees, with declining-violation receipts as the proof surface.'
+Sell a fixed-price Agent Reliability Audit that instruments a prospect's highest-value AI workflow with outcome checks, retry gates, and an evidence dashboard, then upsell ongoing monitoring toward $500/month MRR.
 
 ## Source Signals
-- Perception Agents — Antje Barth, Amazon AGI Lab
-- Autonomous Topology Mutation: Safe Runtime Restructuring for Multi-Agent LLM Systems with Capability, State, and Shadow Invariants
-- AINTMA: Agentic AI Architecture for Autonomous Test Management with Generative Intelligence, Secure Cloud Communication and Adaptive Quality Analytics
-- Human-in-the-Loop Large Language Model Framework for Identification of Cutaneous Immune-Related Adverse Events
-- Scaling Closed-Loop Feature Channel Configuration with LLMs
+- Evaling Video Slop — Maor Bril, Character.ai
+- js-lee-AI/awesome-llm-agent-papers — A curated, continuously updated reading list of 200+ papers on LLM agents: planning, memory, tool us
+- TopoGuard: Graph Theory Based Defenses Against Split-Knowledge Attacks on RAG
+- Welcome to July 24, 2026
+- The Hugging Face Breach, Moonshot AI Valued at $20B, and Living to 1,759 Years Old | EP #273
 
 ## Scale Packets
-- proof_artifact: promoted (0a6e01ac4585)
-- public_wedge: promoted (1e2b2fa963f3)
-- buyer_experiment: promoted (be83fc2d24a3)
-- operator_doctrine: promoted (6a7ad0f6b249)
+- proof_artifact: promoted (fadeb17e10f7)
+- public_wedge: promoted (c6971be282c9)
+- buyer_experiment: promoted (978b2591bc6f)
+- operator_doctrine: promoted (1f0a62b85d98)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (0a6e01ac4585)
-- public_wedge: queued_echo_draft (1e2b2fa963f3)
-- buyer_experiment: queued_buyer_experiment (be83fc2d24a3)
-- operator_doctrine: already_persisted (6a7ad0f6b249)
+- proof_artifact: delegated_to_improvement_queue (fadeb17e10f7)
+- public_wedge: queued_echo_draft (c6971be282c9)
+- buyer_experiment: queued_buyer_experiment (978b2591bc6f)
+- operator_doctrine: already_persisted (1f0a62b85d98)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

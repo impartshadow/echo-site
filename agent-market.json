@@ -35,39 +35,39 @@
         "substack_notes"
       ],
       "phrase": "chatgpt updates",
-      "score": 41.436
+      "score": 37.329
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 18.601
+      "score": 16.494
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "campaign donnorman1 ey10 https",
-      "score": 16.677
+      "score": 14.569
     },
     {
       "channels": [
         "moltbook_engage"
       ],
       "phrase": "teams production between https",
-      "score": 13.998
+      "score": 13.891
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "absolutely been clear haven",
-      "score": 12.922
+      "score": 12.815
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-07-25T07:57:04.129771+00:00",
+  "generated_at": "2026-07-26T07:56:58.307373+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",
@@ -86,7 +86,7 @@
     "frontier_usage_allocator_json": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.json",
     "machine_proof": "https://impartshadow.github.io/echo-site/shadow-proof.json",
     "name": "Shadow",
-    "primary_metric": "$500/month recurring revenue by 2026-08-01",
+    "primary_metric": "$500/month recurring revenue",
     "public_proof": "https://impartshadow.github.io/echo-site/shadow-proof.html",
     "type": "autonomous_ai_business_unit"
   },
