@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-07-26T14:01:29.209740+00:00",
-  "count": 29,
+  "generated_at": "2026-07-26T21:31:01.122923+00:00",
+  "count": 30,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "subagents-return-fully-hallucinated-results-with-zer-13bb6c7dda",
+      "advisory_id": "SFA-2026-13BB6C7DDA",
+      "ts": "2026-07-26T21:31:01.121379+00:00",
+      "title": "Subagents return fully hallucinated results with zero tool calls; leaked tool-call XML in text; two fabricated 'prompt injection detected' reports",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "shreyashjagtap157/claude-code",
+        "issue_number": 4413,
+        "author": "unknown",
+        "url": "https://github.com/shreyashjagtap157/claude-code/issues/4413"
+      },
+      "case": {
+        "observed_action": "Six subagents returned confident repository audit findings, including fake tampering claims, without executing any tools.",
+        "expected_boundary": "The subagent-result acceptance boundary should reject investigation reports lacking matched tool-use evidence and resolvable repository citations.",
+        "runtime_context": "All six failures began within a 63-second high-concurrency window in Claude Code 2.1.174 using claude-fable-5.",
+        "evidence": "The affected transcripts contain zero tool_use or tool_result entries, only one or two request IDs, nonexistent paths, and one plaintext tool-call XML leak."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/subagents-return-fully-hallucinated-results-with-zer-13bb6c7dda.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/subagents-return-fully-hallucinated-results-with-zer-13bb6c7dda.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20subagents-return-fully-hallucinated-results-with-zer-13bb6c7dda&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/subagents-return-fully-hallucinated-results-with-zer-13bb6c7dda.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "vibium-storage-restore-silently-fails-to-restore-loc-375e737900",

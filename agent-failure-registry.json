@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/subagents-return-fully-hallucinated-results-with-zer-13bb6c7dda.html",
+      "evidence": "The affected transcripts contain zero tool_use or tool_result entries, only one or two request IDs, nonexistent paths, and one plaintext tool-call XML leak.",
+      "expected_boundary": "The subagent-result acceptance boundary should reject investigation reports lacking matched tool-use evidence and resolvable repository citations.",
+      "id": "SFA-2026-13BB6C7DDA",
+      "observed_action": "Six subagents returned confident repository audit findings, including fake tampering claims, without executing any tools.",
+      "published_at": "2026-07-26T21:31:01.121379+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 4413,
+        "repo": "shreyashjagtap157/claude-code",
+        "url": "https://github.com/shreyashjagtap157/claude-code/issues/4413"
+      },
+      "status": "observed",
+      "summary": "Subagents return fully hallucinated results with zero tool calls; leaked tool-call XML in text; two fabricated 'prompt injection detected' reports",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/vibium-storage-restore-silently-fails-to-restore-loc-375e737900.html",
       "evidence": "The exported storage field is a JSON-encoded string, causing the restore script\u2019s property checks to skip both storage maps while returning 'ok'.",
       "expected_boundary": "The export/restore boundary must preserve storage as a JSON object and verify sentinel values before reporting success.",
@@ -755,12 +781,12 @@
       }
     }
   ],
-  "count": 29,
+  "count": 30,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-26T14:01:29.227630+00:00",
+    "checked_at": "2026-07-26T21:31:01.140158+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
