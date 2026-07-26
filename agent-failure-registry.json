@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/vibium-storage-restore-silently-fails-to-restore-loc-375e737900.html",
+      "evidence": "The exported storage field is a JSON-encoded string, causing the restore script\u2019s property checks to skip both storage maps while returning 'ok'.",
+      "expected_boundary": "The export/restore boundary must preserve storage as a JSON object and verify sentinel values before reporting success.",
+      "id": "SFA-2026-375E737900",
+      "observed_action": "The CLI reports storage restoration success while localStorage and sessionStorage remain empty.",
+      "published_at": "2026-07-26T14:01:29.208598+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 217,
+        "repo": "VibiumDev/vibium",
+        "url": "https://github.com/VibiumDev/vibium/issues/217"
+      },
+      "status": "observed",
+      "summary": "vibium storage restore silently fails to restore localStorage/sessionStorage",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-sandbox-agents-silently-drop-configured-nodesele-34c4a8b6d0.html",
       "evidence": "The issue reports that manifest_builder.go sets and passes the selector while agent_lifecycle.go builds ActorTemplateSpec without reading podTemplate.Spec.NodeSelector.",
       "expected_boundary": "The BuildSandbox PodTemplate-to-ActorTemplate boundary must preserve nodeSelector exactly or reject it as unsupported.",
@@ -729,12 +755,12 @@
       }
     }
   ],
-  "count": 28,
+  "count": 29,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-26T06:31:06.994713+00:00",
+    "checked_at": "2026-07-26T14:01:29.227630+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
