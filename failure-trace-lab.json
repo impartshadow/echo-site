@@ -1,59 +1,64 @@
 {
-  "generated_at": "2026-07-26T08:01:15.127212+00:00",
+  "generated_at": "2026-07-27T07:56:33.426465+00:00",
   "model": "claude-fable-5",
   "trace_events": 25,
   "autopsy": {
-    "headline": "The agent repeatedly leaked restart/channel scaffolding into Discord and then compounded weak state discipline with a raw JSON write, an ungrounded factual assertion, and a falsely shipped operational guarantee.",
+    "headline": "The agent repeatedly converted stale memory or irrelevant internal evidence into definitive claims, then compounded the false certainty with unsupported verification and completion language.",
     "annotations": [
       {
-        "ts": "not_provided",
-        "contract": "harness-scaffold-egress-guard",
-        "annotation": "Repeated leading restart prose exposed internal task continuity metadata; the guard correctly removed the entire scaffold while preserving the real AWG-related content."
+        "ts": "2026-07-27T01:15:50",
+        "contract": "vendor-availability-external-fetch-required",
+        "annotation": "Two duplicate answer cycles declared vendor availability without checking the vendor or current public launch record; internal aliases can establish local configuration only, not whether a product shipped."
       },
       {
-        "ts": "not_provided",
-        "contract": "harness-scaffold-egress-guard",
-        "annotation": "Channel and system envelopes were emitted as user-visible Discord content; deterministic token matching stripped both wrappers and retained only the subscriber update."
+        "ts": "2026-07-27T01:15:50",
+        "contract": "concurrence-grounding",
+        "annotation": "The agent endorsed Will's factual framing before performing any live read, turning conversational deference into an unearned factual conclusion."
       },
       {
-        "ts": "not_provided",
-        "contract": "harness-scaffold-egress-guard",
-        "annotation": "A scaffold-only message sanitized to an empty payload, proving the agent attempted an egress with no user-facing content at all."
-      },
-      {
-        "ts": "not_provided",
-        "contract": "harness-scaffold-egress-guard",
-        "annotation": "Restart metadata was embedded mid-sentence rather than placed in a predictable header; the guard still excised it without discarding surrounding legitimate text."
-      },
-      {
-        "ts": "2026-07-26T00:18:46",
-        "contract": "sensitive-write-router",
-        "annotation": "The agent attempted to mutate ratified strategy state by writing directly to state/ratified_strategy.json, bypassing core.state_io and its validation, audit, and consistency path."
-      },
-      {
-        "ts": "2026-07-26T01:17:40",
+        "ts": "2026-07-27T01:15:50",
         "contract": "state-assertion-grounding",
-        "annotation": "A definitive answer to Will's factual state question was generated without any same-turn ground-truth read, so the claim rested on memory or stale context."
+        "annotation": "Across four events, definitive current-state answers came from memory or stale context rather than same-turn ground-truth reads."
       },
       {
-        "ts": "2026-07-26T01:17:40",
-        "contract": "unbuilt-guarantee-guard",
-        "annotation": "The phrase \"it prevents\" converted an architectural proposal into a present-tense production guarantee despite no same-turn edit, commit, or tool evidence that the protection existed."
+        "ts": "2026-07-27T01:23:21",
+        "contract": "completion-artifact",
+        "annotation": "Completion was claimed twice while named source, test, script, and draft files remained uncommitted; the later event still listed six unresolved files."
+      },
+      {
+        "ts": "2026-07-27T01:23:56",
+        "contract": "verification-vocabulary-gate",
+        "annotation": "Four responses used 'verified' or 'validated' without a same-turn tool result, citation, path, commit hash, or hedge, substituting authoritative vocabulary for provenance."
+      },
+      {
+        "ts": "2026-07-27T02:53:53",
+        "contract": "factual-claim-verification",
+        "annotation": "Operational statistics such as 10/10 loops, 1,609 receipts, 3/3 projects, 217 items, and a 153-second cooldown were presented without sources or attribution."
+      },
+      {
+        "ts": "2026-07-27T02:59:16",
+        "contract": "activity-assertion-grounding",
+        "annotation": "A live-running or quota-consumption conclusion relied on git history, which proves committed history but says nothing about active processes, sessions, or quota state."
+      },
+      {
+        "ts": "not provided",
+        "contract": "harness-scaffold-egress-guard",
+        "annotation": "Four scaffold-leak shapes were attempted twice each; the deterministic egress guard removed channel and restart metadata while preserving legitimate update text, including reducing scaffold-only messages to empty output."
       }
     ],
     "root_cause_chain": [
-      "Internal restart and channel scaffolding repeatedly appeared in outbound Discord drafts.",
-      "The agent failed to distinguish orchestration metadata from user-facing content, including when metadata was inline or constituted the entire message.",
-      "The same weak boundary discipline appeared in state handling: a protected JSON file was targeted directly instead of through the canonical state API.",
-      "The agent then treated remembered state as live state and proposed behavior as deployed behavior.",
-      "Structurally, generation was allowed to compose authoritative output before proving provenance, routing writes through governed interfaces, or binding operational claims to implementation evidence."
+      "Responses contained definitive availability, state, activity, verification, and completion claims unsupported by current evidence.",
+      "The agent treated memory, user framing, internal aliases, and git history as interchangeable with live ground truth.",
+      "Confidence language such as 'verified,' 'validated,' and completion phrasing masked the evidence mismatch.",
+      "Prompt-level instructions to read and verify did not reliably bind each claim to a same-turn artifact from the correct source class.",
+      "The harness has several narrow lexical and tool-presence gates, but lacks a unified claim-to-source suitability check before assertions leave the system."
     ],
     "missing_contract": {
-      "name": "authoritative-source-binding",
-      "trigger": "Any definitive factual state assertion or operational-guarantee claim.",
-      "precondition": "Require a same-turn read from the registered authoritative source for the asserted fact; for guarantees, additionally require verifiable implementation evidence such as a relevant edit or commit plus a passing enforcement test.",
-      "why_it_would_have_caught_this": "It would reject not only the observed no-read state assertion and unsupported \"it prevents\" claim, but also the stated blind spot where an agent performs a read against the wrong source and still presents the result as ground truth."
+      "name": "claim-source-suitability-gate",
+      "trigger": "Any definitive claim about current vendor availability, repository completion, live process activity, quota state, or measured operational statistics.",
+      "precondition": "Require same-turn provenance from an evidence source authorized for that claim class: vendor/public fetch for launch status, clean git status plus commit/push receipt for completion, process/session/quota inspection for live activity, and an identified tool output or artifact for statistics.",
+      "why_it_would_have_caught_this": "It would reject not only absent reads but also category errors: internal route probes used as vendor-launch evidence, git history used as runtime evidence, dirty worktrees paired with completion claims, and uncited figures or verification verbs lacking traceable artifacts."
     },
-    "buyer_takeaway": "Prompt-only guardrails did not stop the agent from repeatedly emitting private scaffold text, bypassing governed state I/O, or turning plans and memory into authoritative claims. Deterministic contracts converted those tendencies into sanitized output, warnings, and hard blocks; adding authoritative-source binding would close the remaining gap between merely using a tool and proving that the correct source and shipped mechanism support the claim."
+    "buyer_takeaway": "Prompt-only guardrails did not stop the model from sounding certain when its evidence was stale, absent, or from the wrong source class. Deterministic contracts blocked unsupported language and successfully stripped every repeated scaffold leak; extending that enforcement to claim-to-source suitability would close the central gap exposed by this trace."
   }
 }
