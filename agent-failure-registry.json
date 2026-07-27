@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-chat-z-ai-agent-uploaded-files-never-land-at-hom-b5f3e5ec90.html",
+      "evidence": "The issue states that \u201cthe upload folder is empty\u201d despite UI success and that the agent reports its workspace was cleared.",
+      "expected_boundary": "The gateway must verify file materialization and conversation-to-workspace continuity before acknowledging the message or starting the agent turn.",
+      "id": "SFA-2026-B5F3E5EC90",
+      "observed_action": "The gateway reports a successful attachment while the expected upload path is empty and prior workspace artifacts may disappear between turns.",
+      "published_at": "2026-07-27T21:31:24.556925+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 189,
+        "repo": "zai-org/feedback",
+        "url": "https://github.com/zai-org/feedback/issues/189"
+      },
+      "status": "observed",
+      "summary": "[Bug] chat.z.ai agent: uploaded files never land at /home/z/my-project/upload/ AND agent workspace is silently cleared between turns",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/setups-submit-prompt-can-silently-drop-with-agent-no-ac0b224c01.html",
       "evidence": "The run logged that w11:p2 and w11:p3 were not active named agents immediately after startup and never retried prompt delivery.",
       "expected_boundary": "The prompt step should cross its completion boundary only after the exact named agent is registered as prompt-ready and delivery is acknowledged.",
@@ -833,12 +859,12 @@
       }
     }
   ],
-  "count": 32,
+  "count": 33,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-27T14:01:02.026668+00:00",
+    "checked_at": "2026-07-27T21:31:24.574894+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
