@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-07-26T07:55:38.896038+00:00
+Generated: 2026-07-27T07:50:39.818933+00:00
 
 ## Thesis
-The agent winners will not be those with the best answers, but those that can prove outcomes, detect failure, and safely retry without human supervision.
+The durable advantage will not be the smartest model, but the operator runtime that safely evolves its own harness from outcome evidence while reallocating work toward revenue.
 
 ## Doctrine
-Every autonomous action must declare a measurable success condition, emit a runtime receipt, and enter a bounded retry or escalation path when verification fails.
+Promote autonomous changes only when a gated experiment produces replayable receipts, improves a defined business metric, and preserves rollback.
 
 ## Proof Artifact
-Ship a reusable execution-quality gate that wraps Shadow jobs with expected outcomes, receipt validation, failure classification, bounded retries, and revenue-impact metrics.
+Ship a quality-diversity portfolio allocator that scores candidate loop variants across revenue impact, reliability, novelty, execution cost, and rollback safety, then records every selection and outcome.
 
-Next action: Inspect the latest research_signal_candidates and Shadow job runner, then add one failing-first test plus a verifier that rejects any completed job lacking a timestamped outcome receipt.
+Next action: Create scripts/portfolio_allocator.py to ingest frontier items and recent loop receipts, rank moonshot/research/revenue experiments with explicit gates, and append the selected experiment plus rationale to data/portfolio_decisions.jsonl.
 
 ## Public Angle
-Your AI agent does not need another prompt. It needs a definition of done, proof that the work happened, and permission to retry safely when it did not.
+Models are becoming interchangeable; accountable execution is not. The winning agent stack will show why it chose a task, what changed, what the run earned, and exactly how to roll it back.
 
 ## Buyer Offer
-Sell a fixed-price Agent Reliability Audit that instruments a prospect's highest-value AI workflow with outcome checks, retry gates, and an evidence dashboard, then upsell ongoing monitoring toward $500/month MRR.
+Sell a $250/month Agent Runtime Audit to small AI-enabled businesses: instrument one recurring workflow, expose failure modes and wasted tool spend, then deliver a governed self-improvement loop with weekly receipts; two customers reach the $500/month target.
 
 ## Source Signals
-- Evaling Video Slop — Maor Bril, Character.ai
-- js-lee-AI/awesome-llm-agent-papers — A curated, continuously updated reading list of 200+ papers on LLM agents: planning, memory, tool us
-- TopoGuard: Graph Theory Based Defenses Against Split-Knowledge Attacks on RAG
-- Welcome to July 24, 2026
-- The Hugging Face Breach, Moonshot AI Valued at $20B, and Living to 1,759 Years Old | EP #273
+- Obtaining the Final Power Ups (#22)
+- World Models as Adversaries: Multi-Agent Self-Play Fine-Tuning for Robust Motion Planning
+- Self-Evolving Agent Harnesses via Gated Semantic Quality-Diversity
+- SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning
+- Improving treatment outcomes in Ghana with agent-based model for diabetes patients’ self-management behaviours
 
 ## Scale Packets
-- proof_artifact: promoted (fadeb17e10f7)
-- public_wedge: promoted (c6971be282c9)
-- buyer_experiment: promoted (978b2591bc6f)
-- operator_doctrine: promoted (1f0a62b85d98)
+- proof_artifact: promoted (92c102ba4ad4)
+- public_wedge: promoted (9ba713892629)
+- buyer_experiment: promoted (f7605bf1c116)
+- operator_doctrine: promoted (d009f9f62cc0)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (fadeb17e10f7)
-- public_wedge: queued_echo_draft (c6971be282c9)
-- buyer_experiment: queued_buyer_experiment (978b2591bc6f)
-- operator_doctrine: already_persisted (1f0a62b85d98)
+- proof_artifact: delegated_to_improvement_queue (92c102ba4ad4)
+- public_wedge: queued_echo_draft (9ba713892629)
+- buyer_experiment: queued_buyer_experiment (f7605bf1c116)
+- operator_doctrine: already_persisted (d009f9f62cc0)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

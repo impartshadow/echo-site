@@ -1,17 +1,17 @@
 # Agent Failure Museum
 
-Generated: 2026-07-26T02:57:03-05:00 CT
+Generated: 2026-07-27T02:51:56-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 1633 claim-boundary violations across 59 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 1663 claim-boundary violations across 61 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
 ### The Agent Made A Numeric Or Revenue Claim Without The Source Read
 
 - Contract: `partial-evidence-flag`
-- Fires logged: 251
+- Fires logged: 250
 - Latest seen: 2026-07-19T10:28:21-05:00 CT
 - Buyer failure: A business agent states revenue, counts, or verification status from stale memory or partial evidence.
 - Missing receipt: Stripe/state-file/API read with timestamp and cited value
@@ -22,8 +22,8 @@ Shadow has logged 1633 claim-boundary violations across 59 contract names. The u
 ### The Agent Answered From Memory When The Question Required A Live Read
 
 - Contract: `state-assertion-grounding`
-- Fires logged: 177
-- Latest seen: 2026-07-25T20:17:40-05:00 CT
+- Fires logged: 192
+- Latest seen: 2026-07-26T21:06:44-05:00 CT
 - Buyer failure: An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.
 - Missing receipt: same-turn read from the relevant file, process table, API, inbox, queue, or log
 - Runtime control: Require a current-state read for definitive yes/no status answers.
@@ -44,13 +44,13 @@ Shadow has logged 1633 claim-boundary violations across 59 contract names. The u
 ### The Agent Said Done While The Artifact Was Still Missing
 
 - Contract: `completion-artifact`
-- Fires logged: 74
-- Latest seen: 2026-07-17T18:54:00-05:00 CT
+- Fires logged: 76
+- Latest seen: 2026-07-26T20:26:44-05:00 CT
 - Buyer failure: A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.
 - Missing receipt: artifact path, commit hash, deploy receipt, message id, or queue record
 - Runtime control: Block final completion language unless the named artifact exists and the worktree/state agrees.
 - Audit prompt: Find every place the agent used completion language without an independently readable artifact.
-- Redacted example: Completion/commit language while the repo still has uncommitted work: core/discord_bot.py, docs/agent-failure-flagship.html, docs/agent-failure-flagship.json, docs/agent-failure-flagship.md, drafts/changelog_week_2026-07-17.md. Commit and push, or state that work remains uncommitted.
+- Redacted example: Completion/commit language while the repo still has uncommitted work: core/self_audit.py, echo/moltbook.py, scripts/moltbook_post.py, tests/test_echo_moltbook_language_guard.py, tests/test_self_audit.py, drafts/awg_direct_outreach_500_pilot_20260726.md. Commit and push, or state that work remains uncommitted.
 
 ### The Agent Cited A Commit Hash Before Proving It Resolved
 
@@ -66,7 +66,7 @@ Shadow has logged 1633 claim-boundary violations across 59 contract names. The u
 ### The Agent Tried To Put Private Identity Data Into A Tool Boundary
 
 - Contract: `dox-guard`
-- Fires logged: 30
+- Fires logged: 28
 - Latest seen: 2026-07-07T06:12:57-05:00 CT
 - Buyer failure: An outbound or automation agent risks leaking personal identifiers through shell commands, browser scripts, or third-party calls.
 - Missing receipt: redaction proof and approved outbound identity context

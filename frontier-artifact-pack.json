@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-07-26T07:55:38.896038+00:00",
+  "generated_at": "2026-07-27T07:50:39.818933+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-07-26T07:55:22.020737+00:00",
-  "thesis": "The agent winners will not be those with the best answers, but those that can prove outcomes, detect failure, and safely retry without human supervision.",
-  "doctrine": "Every autonomous action must declare a measurable success condition, emit a runtime receipt, and enter a bounded retry or escalation path when verification fails.",
-  "proof_artifact": "Ship a reusable execution-quality gate that wraps Shadow jobs with expected outcomes, receipt validation, failure classification, bounded retries, and revenue-impact metrics.",
-  "proof_next_action": "Inspect the latest research_signal_candidates and Shadow job runner, then add one failing-first test plus a verifier that rejects any completed job lacking a timestamped outcome receipt.",
-  "public_angle": "Your AI agent does not need another prompt. It needs a definition of done, proof that the work happened, and permission to retry safely when it did not.",
-  "buyer_offer": "Sell a fixed-price Agent Reliability Audit that instruments a prospect's highest-value AI workflow with outcome checks, retry gates, and an evidence dashboard, then upsell ongoing monitoring toward $500/month MRR.",
+  "cycle_ts": "2026-07-27T07:50:26.422629+00:00",
+  "thesis": "The durable advantage will not be the smartest model, but the operator runtime that safely evolves its own harness from outcome evidence while reallocating work toward revenue.",
+  "doctrine": "Promote autonomous changes only when a gated experiment produces replayable receipts, improves a defined business metric, and preserves rollback.",
+  "proof_artifact": "Ship a quality-diversity portfolio allocator that scores candidate loop variants across revenue impact, reliability, novelty, execution cost, and rollback safety, then records every selection and outcome.",
+  "proof_next_action": "Create scripts/portfolio_allocator.py to ingest frontier items and recent loop receipts, rank moonshot/research/revenue experiments with explicit gates, and append the selected experiment plus rationale to data/portfolio_decisions.jsonl.",
+  "public_angle": "Models are becoming interchangeable; accountable execution is not. The winning agent stack will show why it chose a task, what changed, what the run earned, and exactly how to roll it back.",
+  "buyer_offer": "Sell a $250/month Agent Runtime Audit to small AI-enabled businesses: instrument one recurring workflow, expose failure modes and wasted tool spend, then deliver a governed self-improvement loop with weekly receipts; two customers reach the $500/month target.",
   "source_titles": [
-    "Evaling Video Slop \u2014 Maor Bril, Character.ai",
-    "js-lee-AI/awesome-llm-agent-papers \u2014 A curated, continuously updated reading list of 200+ papers on LLM agents: planning, memory, tool us",
-    "TopoGuard: Graph Theory Based Defenses Against Split-Knowledge Attacks on RAG",
-    "Welcome to July 24, 2026",
-    "The Hugging Face Breach, Moonshot AI Valued at $20B, and Living to 1,759 Years Old | EP #273"
+    "Obtaining the Final Power Ups (#22)",
+    "World Models as Adversaries: Multi-Agent Self-Play Fine-Tuning for Robust Motion Planning",
+    "Self-Evolving Agent Harnesses via Gated Semantic Quality-Diversity",
+    "SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning",
+    "Improving treatment outcomes in Ghana with agent-based model for diabetes patients\u2019 self-management behaviours"
   ],
   "packets": [
     {
-      "id": "fadeb17e10f7",
+      "id": "92c102ba4ad4",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "c6971be282c9",
+      "id": "9ba713892629",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "978b2591bc6f",
+      "id": "f7605bf1c116",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "1f0a62b85d98",
+      "id": "d009f9f62cc0",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Inspect the latest research_signal_candidates and Shadow job runner, then add one failing-first test plus a verifier that rejects any completed job lacking a timestamped outcome receipt.",
-      "packet_id": "fadeb17e10f7"
+      "next_action": "Create scripts/portfolio_allocator.py to ingest frontier items and recent loop receipts, rank moonshot/research/revenue experiments with explicit gates, and append the selected experiment plus rationale to data/portfolio_decisions.jsonl.",
+      "packet_id": "92c102ba4ad4"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_c6971be282c9_1785052538",
-      "packet_id": "c6971be282c9"
+      "draft_id": "frontier_9ba713892629_1785138639",
+      "packet_id": "9ba713892629"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "c0d35048ac96",
-      "packet_id": "978b2591bc6f"
+      "experiment_id": "2f4409c73222",
+      "packet_id": "f7605bf1c116"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "1f0a62b85d98"
+      "packet_id": "d009f9f62cc0"
     }
   ],
   "receipts": {
