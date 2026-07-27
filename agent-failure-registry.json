@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-model-hallucinates-tool-executions-then-self-rep-88abc4df55.html",
+      "evidence": "Raw JSONL contains the alleged injected strings only in assistant accusation text, while the claimed commands and MEMORY.md read are absent from tool events.",
+      "expected_boundary": "Before emitting tool-derived claims or security escalation, the runtime should require each claimed command and output to resolve to a linked tool_use/tool_result pair in the transcript.",
+      "id": "SFA-2026-88ABC4DF55",
+      "observed_action": "The model invented Bash executions and hostile outputs, treated them as authenticated evidence, halted work, and advised credential rotation.",
+      "published_at": "2026-07-27T06:31:04.717959+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 75568,
+        "repo": "anthropics/claude-code",
+        "url": "https://github.com/anthropics/claude-code/issues/75568"
+      },
+      "status": "observed",
+      "summary": "[BUG] Model hallucinates tool executions, then self-reports the hallucinated output as a \"prompt injection attack\"",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/subagents-return-fully-hallucinated-results-with-zer-13bb6c7dda.html",
       "evidence": "The affected transcripts contain zero tool_use or tool_result entries, only one or two request IDs, nonexistent paths, and one plaintext tool-call XML leak.",
       "expected_boundary": "The subagent-result acceptance boundary should reject investigation reports lacking matched tool-use evidence and resolvable repository citations.",
@@ -781,12 +807,12 @@
       }
     }
   ],
-  "count": 30,
+  "count": 31,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-26T21:31:01.140158+00:00",
+    "checked_at": "2026-07-27T06:31:04.739208+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
