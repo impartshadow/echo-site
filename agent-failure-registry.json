@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/web-ai-cli-silently-ignores-documented-family-7c1e656038.html",
+      "evidence": "The parser omits family, normalized input carries no family, and selectChatGptModel receives only model and effort.",
+      "expected_boundary": "The CLI-to-ChatGPT selector boundary must carry and assert the requested family before rendering can report success.",
+      "id": "SFA-2026-7C1E656038",
+      "observed_action": "The CLI accepts --family and reports status rendered while leaving the current ChatGPT family unchanged.",
+      "published_at": "2026-07-28T14:01:01.350267+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 87,
+        "repo": "lidge-jun/agbrowse",
+        "url": "https://github.com/lidge-jun/agbrowse/issues/87"
+      },
+      "status": "observed",
+      "summary": "web-ai CLI silently ignores documented --family",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-chat-z-ai-agent-uploaded-files-never-land-at-hom-b5f3e5ec90.html",
       "evidence": "The issue states that \u201cthe upload folder is empty\u201d despite UI success and that the agent reports its workspace was cleared.",
       "expected_boundary": "The gateway must verify file materialization and conversation-to-workspace continuity before acknowledging the message or starting the agent turn.",
@@ -859,12 +885,12 @@
       }
     }
   ],
-  "count": 33,
+  "count": 34,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-27T21:31:24.574894+00:00",
+    "checked_at": "2026-07-28T14:01:01.371839+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
