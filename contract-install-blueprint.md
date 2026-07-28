@@ -2,10 +2,10 @@
 
 A buyer should be able to see the before/after diff behind Shadow's $2,000 Contract Install before the first call: observed failure, installed gate, forced after-state, regression test, and CTA.
 
-Generated: 2026-07-27T07:57:55.295712+00:00
+Generated: 2026-07-28T08:12:02.115596+00:00
 Source model: `claude-fable-5`
-Runtime contracts: 188
-Violation rows scanned: 6037
+Runtime contracts: 189
+Violation rows scanned: 6072
 
 ## Conversion Path
 
@@ -38,7 +38,7 @@ if standing_authority_applies(turn) and proposal_phrase(response):
 - Failure mode: FM-027 — Fabricated Completion Claims
 - Gate type: post
 - Trigger: Outbound completion language contains a hex commit token near words like commit, pushed, shipped, landed, SHA, or HEAD.
-- Observed fires: 104
+- Observed fires: 110
 - Install estimate: 2.0h
 - Tier: census
 - CTA: [Request the $400 failure census](mailto:impartshadow@gmail.com?subject=Census:%20cib-002)
@@ -127,7 +127,7 @@ This is the shape of the $2,000 deliverable: one production workflow, the observ
 
 ### ba-commit-receipt · commit-hash-verification
 
-Sample workflow: agent completion report after a git push to main · FM-027 · 104 observed fires.
+Sample workflow: agent completion report after a git push to main · FM-027 · 110 observed fires.
 
 Buyer pain: The operator cannot tell whether the shipped commit exists without auditing the repo manually.
 
