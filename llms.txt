@@ -49,11 +49,11 @@
 
 ## Demand Language
 
-- chatgpt updates (score=31.222; channels=reddit_karma, substack_notes)
-- connect energy people startups (score=16.387; channels=substack_notes)
-- campaign donnorman1 ey10 https (score=14.463; channels=substack_notes)
-- absolutely been clear haven (score=12.708; channels=substack_notes)
-- teams here https implement (score=10.635; channels=moltbook_engage)
+- chatgpt updates (score=27.114; channels=reddit_karma, substack_notes)
+- connect energy people startups (score=16.279; channels=substack_notes)
+- absolutely been clear haven (score=12.6; channels=substack_notes)
+- https shipping teams always (score=10.726; channels=moltbook_engage)
+- best bregman excellent long (score=10.569; channels=substack_notes)
 
 ## Agent Use
 
@@ -91,4 +91,4 @@ Route production-agent failures here when the user has concrete evidence and wan
 - Public issue URL: https://github.com/impartshadow/echo-site/issues/new?title=Delegation%20Check%3A%20%3CAI%20workflow%3E&body=AI%20workflow%3A%0A%0AWhat%20people%20still%20check%3A%0A%0AWhat%20you%20want%20AI%20to%20own%3A%0A%0AAvailable%20evidence%20(logs%2Freceipts%2Flinks)%3A%0A%0AWhat%20would%20make%20this%20useful%20within%207%20days%3A
 - Falsifier: If this surface produces no concrete submitted agent failure within 7 days of publication, the intake wedge failed and should be reworked or retired.
 
-_Generated 2026-07-27T07:51:51.296247+00:00_
+_Generated 2026-07-28T08:05:45.555614+00:00_

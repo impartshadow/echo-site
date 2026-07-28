@@ -78,35 +78,35 @@
         "substack_notes"
       ],
       "phrase": "chatgpt updates",
-      "score": 31.222
+      "score": 27.114
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 16.387
-    },
-    {
-      "channels": [
-        "substack_notes"
-      ],
-      "phrase": "campaign donnorman1 ey10 https",
-      "score": 14.463
+      "score": 16.279
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "absolutely been clear haven",
-      "score": 12.708
+      "score": 12.6
     },
     {
       "channels": [
         "moltbook_engage"
       ],
-      "phrase": "teams here https implement",
-      "score": 10.635
+      "phrase": "https shipping teams always",
+      "score": 10.726
+    },
+    {
+      "channels": [
+        "substack_notes"
+      ],
+      "phrase": "best bregman excellent long",
+      "score": 10.569
     }
   ],
   "flight_recorder": {
@@ -114,8 +114,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 14.8,
-          "last_activity": "2026-07-26T17:05:07.565121+00:00",
+          "hours_since": 15.0,
+          "last_activity": "2026-07-27T17:05:33.723783+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -126,9 +126,23 @@
         "verdict": "no_external_reach"
       },
       {
+        "declared_state": "running",
+        "evidence": {
+          "hours_since": 0.4,
+          "last_activity": "2026-07-28T07:43:48.261348+00:00",
+          "source": "action_log",
+          "staleness": "ok"
+        },
+        "loop_id": "shadow-presence",
+        "name": "Shadow Public Presence & Inbound",
+        "reason": "fresh evidence is internal-only: action_log",
+        "requires_external_reach": true,
+        "verdict": "no_external_reach"
+      },
+      {
         "declared_state": "complete",
         "evidence": {
-          "hours_since": 97.8,
+          "hours_since": 122.0,
           "last_activity": "2026-07-23T06:02:47.889895+00:00",
           "source": "verifier_receipt",
           "staleness": "stale"
@@ -142,8 +156,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.3,
-          "last_activity": "2026-07-27T07:31:34.150461+00:00",
+          "hours_since": 0.4,
+          "last_activity": "2026-07-28T07:40:04.843797+00:00",
           "source": "external_post_receipt",
           "staleness": "ok"
         },
@@ -156,8 +170,8 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 14.7,
-          "last_activity": "2026-07-26T17:11:43.815212+00:00",
+          "hours_since": 15.0,
+          "last_activity": "2026-07-27T17:05:33.019376+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -168,24 +182,10 @@
         "verdict": "pass"
       },
       {
-        "declared_state": "at_checkpoint",
-        "evidence": {
-          "hours_since": 0.4,
-          "last_activity": "2026-07-27T07:25:02.433200+00:00",
-          "source": "action_log",
-          "staleness": "ok"
-        },
-        "loop_id": "shadow-presence",
-        "name": "Shadow Public Presence & Inbound",
-        "reason": "fresh evidence from action_log",
-        "requires_external_reach": true,
-        "verdict": "pass"
-      },
-      {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 14.8,
-          "last_activity": "2026-07-26T17:01:39.750161+00:00",
+          "hours_since": 15.0,
+          "last_activity": "2026-07-27T17:05:48.439689+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -196,13 +196,27 @@
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-07-27T07:51:51.296247+00:00",
+    "generated_at": "2026-07-28T08:05:45.555614+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
         "evidence_source": "verifier_receipt",
         "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
         "loop_id": "brief-production",
+        "missing_receipts": [
+          "external_post_receipt",
+          "subscriber_receipt",
+          "reply_receipt",
+          "meeting_receipt"
+        ],
+        "priority": 90,
+        "verdict": "no_external_reach"
+      },
+      {
+        "action": "produce_or_attach_external_receipt",
+        "evidence_source": "action_log",
+        "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
+        "loop_id": "shadow-presence",
         "missing_receipts": [
           "external_post_receipt",
           "subscriber_receipt",
@@ -228,8 +242,8 @@
     "rule": "Declared loop state is not proof. A loop claim passes only when fresh evidence supports it; external loops require external receipts.",
     "schema": "shadow.agent_flight_recorder.v1",
     "summary": {
-      "no_external_reach": 1,
-      "pass": 4,
+      "no_external_reach": 2,
+      "pass": 3,
       "stale": 1
     }
   },
@@ -245,7 +259,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md",
     "purpose": "scarce frontier-model usage ledger that routes high-end model headroom into sellable artifacts, proof surfaces, acquisition machinery, and model-agnostic operating-system upgrades"
   },
-  "generated_at": "2026-07-27T07:51:51.296247+00:00",
+  "generated_at": "2026-07-28T08:05:45.555614+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",

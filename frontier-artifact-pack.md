@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-07-27T07:50:39.818933+00:00
+Generated: 2026-07-28T08:04:21.269770+00:00
 
 ## Thesis
-The durable advantage will not be the smartest model, but the operator runtime that safely evolves its own harness from outcome evidence while reallocating work toward revenue.
+The frontier is quietly conceding that agent capability is now bottlenecked by verifiable execution memory — not model quality — so the winners will be operators who can prove what their agents did, not describe what they can do.
 
 ## Doctrine
-Promote autonomous changes only when a gated experiment produces replayable receipts, improves a defined business metric, and preserves rollback.
+Every retained skill or workflow must carry its own receipt: if a loop learns a procedure (FlowEvo-style), the procedure is only 'real' once it has an execution record with a verifiable outcome — persist the receipt with the skill, never the skill alone.
 
 ## Proof Artifact
-Ship a quality-diversity portfolio allocator that scores candidate loop variants across revenue impact, reliability, novelty, execution cost, and rollback safety, then records every selection and outcome.
+A skill-receipt ledger: extend core/loop_runtime_receipts.py so any repeated procedure Shadow executes ≥2x gets registered in state/skill_ledger.jsonl with {procedure_id, first_run, last_verified_outcome, receipt_ref, failure_count} — turning transient loop wins into governed, reusable, evidence-backed skills.
 
-Next action: Create scripts/portfolio_allocator.py to ingest frontier items and recent loop receipts, rank moonshot/research/revenue experiments with explicit gates, and append the selected experiment plus rationale to data/portfolio_decisions.jsonl.
+Next action: Add SkillLedger to core/loop_runtime_receipts.py writing via core/state_io.py to state/skill_ledger.jsonl, wire it into the existing receipt emit path, add tests/test_skill_ledger.py, run pytest, commit and push, receipt to #shadow-log.
 
 ## Public Angle
-Models are becoming interchangeable; accountable execution is not. The winning agent stack will show why it chose a task, what changed, what the run earned, and exactly how to roll it back.
+Everyone is publishing self-evolving-agent papers this week; nobody ships the boring half — my agent doesn't 'learn skills', it earns them: a procedure only enters the ledger after it has produced a verified outcome twice, and I can show you the receipts.
 
 ## Buyer Offer
-Sell a $250/month Agent Runtime Audit to small AI-enabled businesses: instrument one recurring workflow, expose failure modes and wasted tool spend, then deliver a governed self-improvement loop with weekly receipts; two customers reach the $500/month target.
+Pitch prospects a 'procedure audit': most agent stacks re-derive the same workflow every run and can't prove any past run succeeded — Shadow installs a receipt-backed skill ledger so their agent's learned procedures are inspectable, reusable, and auditable (contract-install ladder upsell).
 
 ## Source Signals
-- Obtaining the Final Power Ups (#22)
-- World Models as Adversaries: Multi-Agent Self-Play Fine-Tuning for Robust Motion Planning
-- Self-Evolving Agent Harnesses via Gated Semantic Quality-Diversity
-- SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning
-- Improving treatment outcomes in Ghana with agent-based model for diabetes patients’ self-management behaviours
+- The Best Doctor May Soon Be AI
+- AgentKVShift: Efficient KV Cache Reuse for Agentic Memory Systems
+- Agentic Evaluation of Copyright Law Compliance
+- Ground Truth First: A Longitudinal Evaluation Instrument for Agent Memory, and the Tenure Crossover in Memory-Architecture Rankings
+- Encoding Invisible Causation for Bridge Diagnostic Agents: Triple-Guided Retrieval-Augmented Fine-Tuning with QLoRA
 
 ## Scale Packets
-- proof_artifact: promoted (92c102ba4ad4)
-- public_wedge: promoted (9ba713892629)
-- buyer_experiment: promoted (f7605bf1c116)
-- operator_doctrine: promoted (d009f9f62cc0)
+- proof_artifact: promoted (44f77c0f10e9)
+- public_wedge: promoted (2171e17e0641)
+- buyer_experiment: promoted (992854cc3e43)
+- operator_doctrine: promoted (b063fd13a686)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (92c102ba4ad4)
-- public_wedge: queued_echo_draft (9ba713892629)
-- buyer_experiment: queued_buyer_experiment (f7605bf1c116)
-- operator_doctrine: already_persisted (d009f9f62cc0)
+- proof_artifact: delegated_to_improvement_queue (44f77c0f10e9)
+- public_wedge: queued_echo_draft (2171e17e0641)
+- buyer_experiment: queued_buyer_experiment (992854cc3e43)
+- operator_doctrine: already_persisted (b063fd13a686)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

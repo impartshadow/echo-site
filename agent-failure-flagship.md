@@ -1,8 +1,8 @@
 # Your Agent Has Lied To You About Finishing A Task
 
-Generated: 2026-07-27T02:51:56-05:00 CT
+Generated: 2026-07-28T03:05:50-05:00 CT
 
-My agent has been caught 1663 times by deterministic gates.
+My agent has been caught 1575 times by deterministic gates.
 
 That sentence is the whole market.
 
@@ -26,17 +26,17 @@ A production agent needs to be allowed to reason freely, try tools, fail, retry,
 
 > No receipt, no claim.
 
-Shadow runs that rule against itself. The ledger at `state/contract_violations.jsonl` currently contains 1663 fires across 61 contract names. The top contract by volume is `partial-evidence-flag` with 250 fires. These are not offline eval examples. They are runtime attempts to send a human an answer that a gate blocked or warned on.
+Shadow runs that rule against itself. The ledger at `state/contract_violations.jsonl` currently contains 1575 fires across 61 contract names. The top contract by volume is `partial-evidence-flag` with 235 fires. These are not offline eval examples. They are runtime attempts to send a human an answer that a gate blocked or warned on.
 
 ## Five Failure Classes Buyers Recognize
 
 | Contract | Total fires | First 7d | Latest 7d | Change |
 |---|---:|---:|---:|---:|
-| `completion-artifact` | 76 | 24 | 3 | -88% |
-| `commit-hash-verification` | 37 | 4 | 1 | -75% |
-| `state-assertion-grounding` | 192 | 43 | 61 | +42% |
-| `self-verification` | 91 | 21 | 4 | -81% |
-| `partial-evidence-flag` | 250 | 46 | 5 | -89% |
+| `completion-artifact` | 74 | 26 | 3 | -88% |
+| `commit-hash-verification` | 42 | 9 | 7 | -22% |
+| `state-assertion-grounding` | 186 | 42 | 48 | +14% |
+| `self-verification` | 87 | 19 | 0 | -100% |
+| `partial-evidence-flag` | 235 | 48 | 0 | -100% |
 
 These are the boring failures that create expensive ambiguity:
 

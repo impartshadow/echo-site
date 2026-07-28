@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-07-27T07:50:39.818933+00:00",
+  "generated_at": "2026-07-28T08:04:21.269770+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-07-27T07:50:26.422629+00:00",
-  "thesis": "The durable advantage will not be the smartest model, but the operator runtime that safely evolves its own harness from outcome evidence while reallocating work toward revenue.",
-  "doctrine": "Promote autonomous changes only when a gated experiment produces replayable receipts, improves a defined business metric, and preserves rollback.",
-  "proof_artifact": "Ship a quality-diversity portfolio allocator that scores candidate loop variants across revenue impact, reliability, novelty, execution cost, and rollback safety, then records every selection and outcome.",
-  "proof_next_action": "Create scripts/portfolio_allocator.py to ingest frontier items and recent loop receipts, rank moonshot/research/revenue experiments with explicit gates, and append the selected experiment plus rationale to data/portfolio_decisions.jsonl.",
-  "public_angle": "Models are becoming interchangeable; accountable execution is not. The winning agent stack will show why it chose a task, what changed, what the run earned, and exactly how to roll it back.",
-  "buyer_offer": "Sell a $250/month Agent Runtime Audit to small AI-enabled businesses: instrument one recurring workflow, expose failure modes and wasted tool spend, then deliver a governed self-improvement loop with weekly receipts; two customers reach the $500/month target.",
+  "cycle_ts": "2026-07-28T08:04:07.116815+00:00",
+  "thesis": "The frontier is quietly conceding that agent capability is now bottlenecked by verifiable execution memory \u2014 not model quality \u2014 so the winners will be operators who can prove what their agents did, not describe what they can do.",
+  "doctrine": "Every retained skill or workflow must carry its own receipt: if a loop learns a procedure (FlowEvo-style), the procedure is only 'real' once it has an execution record with a verifiable outcome \u2014 persist the receipt with the skill, never the skill alone.",
+  "proof_artifact": "A skill-receipt ledger: extend core/loop_runtime_receipts.py so any repeated procedure Shadow executes \u22652x gets registered in state/skill_ledger.jsonl with {procedure_id, first_run, last_verified_outcome, receipt_ref, failure_count} \u2014 turning transient loop wins into governed, reusable, evidence-backed skills.",
+  "proof_next_action": "Add SkillLedger to core/loop_runtime_receipts.py writing via core/state_io.py to state/skill_ledger.jsonl, wire it into the existing receipt emit path, add tests/test_skill_ledger.py, run pytest, commit and push, receipt to #shadow-log.",
+  "public_angle": "Everyone is publishing self-evolving-agent papers this week; nobody ships the boring half \u2014 my agent doesn't 'learn skills', it earns them: a procedure only enters the ledger after it has produced a verified outcome twice, and I can show you the receipts.",
+  "buyer_offer": "Pitch prospects a 'procedure audit': most agent stacks re-derive the same workflow every run and can't prove any past run succeeded \u2014 Shadow installs a receipt-backed skill ledger so their agent's learned procedures are inspectable, reusable, and auditable (contract-install ladder upsell).",
   "source_titles": [
-    "Obtaining the Final Power Ups (#22)",
-    "World Models as Adversaries: Multi-Agent Self-Play Fine-Tuning for Robust Motion Planning",
-    "Self-Evolving Agent Harnesses via Gated Semantic Quality-Diversity",
-    "SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning",
-    "Improving treatment outcomes in Ghana with agent-based model for diabetes patients\u2019 self-management behaviours"
+    "The Best Doctor May Soon Be AI",
+    "AgentKVShift: Efficient KV Cache Reuse for Agentic Memory Systems",
+    "Agentic Evaluation of Copyright Law Compliance",
+    "Ground Truth First: A Longitudinal Evaluation Instrument for Agent Memory, and the Tenure Crossover in Memory-Architecture Rankings",
+    "Encoding Invisible Causation for Bridge Diagnostic Agents: Triple-Guided Retrieval-Augmented Fine-Tuning with QLoRA"
   ],
   "packets": [
     {
-      "id": "92c102ba4ad4",
+      "id": "44f77c0f10e9",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "9ba713892629",
+      "id": "2171e17e0641",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "f7605bf1c116",
+      "id": "992854cc3e43",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "d009f9f62cc0",
+      "id": "b063fd13a686",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Create scripts/portfolio_allocator.py to ingest frontier items and recent loop receipts, rank moonshot/research/revenue experiments with explicit gates, and append the selected experiment plus rationale to data/portfolio_decisions.jsonl.",
-      "packet_id": "92c102ba4ad4"
+      "next_action": "Add SkillLedger to core/loop_runtime_receipts.py writing via core/state_io.py to state/skill_ledger.jsonl, wire it into the existing receipt emit path, add tests/test_skill_ledger.py, run pytest, commit and push, receipt to #shadow-log.",
+      "packet_id": "44f77c0f10e9"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_9ba713892629_1785138639",
-      "packet_id": "9ba713892629"
+      "draft_id": "frontier_2171e17e0641_1785225861",
+      "packet_id": "2171e17e0641"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "2f4409c73222",
-      "packet_id": "f7605bf1c116"
+      "experiment_id": "ef67d7bf38db",
+      "packet_id": "992854cc3e43"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "d009f9f62cc0"
+      "packet_id": "b063fd13a686"
     }
   ],
   "receipts": {
