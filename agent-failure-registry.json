@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/inmemorysaver-silently-and-permanently-drops-the-fir-fa308036d4.html",
+      "evidence": "get_state(config) on the new graph returned ['a'] instead of the expected ['a', 'b'] right after new_graph.invoke({'items': ['b']}, config) had itself returned the correct merged value.",
+      "expected_boundary": "The first write on a thread immediately after migrating a channel to DeltaChannel should be durably persisted and returned by get_state() identically to what invoke() returned, regardless of where the next snapshot boundary falls.",
+      "id": "SFA-2026-FA308036D4",
+      "observed_action": "InMemorySaver's get_delta_channel_history walked the checkpoint ancestor chain and returned only the pre-migration value after the first post-migration write, even though the live invoke() call had correctly returned the merged result.",
+      "published_at": "2026-07-28T21:30:40.546336+00:00",
+      "source": {
+        "author": "Aarkin7",
+        "channel": "unsolicited_triage",
+        "issue_number": 8384,
+        "repo": "langchain-ai/langgraph",
+        "url": "https://github.com/langchain-ai/langgraph/issues/8384"
+      },
+      "status": "observed",
+      "summary": "InMemorySaver silently and permanently drops the first write after migrating a channel to DeltaChannel",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/web-ai-cli-silently-ignores-documented-family-7c1e656038.html",
       "evidence": "The parser omits family, normalized input carries no family, and selectChatGptModel receives only model and effort.",
       "expected_boundary": "The CLI-to-ChatGPT selector boundary must carry and assert the requested family before rendering can report success.",
@@ -885,12 +911,12 @@
       }
     }
   ],
-  "count": 34,
+  "count": 35,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-28T14:01:01.371839+00:00",
+    "checked_at": "2026-07-28T21:30:40.567762+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
