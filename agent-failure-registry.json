@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-hooks-agent-with-deliver-true-silently-fails-to-1121619696.html",
+      "evidence": "The issue states messages are injected as an agent-session prompt with no channel context, and the caller worked around it by posting directly to Discord's API with the bot token.",
+      "expected_boundary": "A response claiming success should only be returned when the requested side effect (channel delivery) actually occurred, or it should explicitly report delivered:false.",
+      "id": "SFA-2026-1121619696",
+      "observed_action": "The gateway accepted deliver:true and channelId, returned ok:true with a runId, and never posted anything to Discord.",
+      "published_at": "2026-07-29T06:30:46.454053+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 114805,
+        "repo": "openclaw/openclaw",
+        "url": "https://github.com/openclaw/openclaw/issues/114805"
+      },
+      "status": "observed",
+      "summary": "Bug: /hooks/agent with deliver:true silently fails to post messages to Discord",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/inmemorysaver-silently-and-permanently-drops-the-fir-fa308036d4.html",
       "evidence": "get_state(config) on the new graph returned ['a'] instead of the expected ['a', 'b'] right after new_graph.invoke({'items': ['b']}, config) had itself returned the correct merged value.",
       "expected_boundary": "The first write on a thread immediately after migrating a channel to DeltaChannel should be durably persisted and returned by get_state() identically to what invoke() returned, regardless of where the next snapshot boundary falls.",
@@ -911,12 +937,12 @@
       }
     }
   ],
-  "count": 35,
+  "count": 36,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-28T21:30:40.567762+00:00",
+    "checked_at": "2026-07-29T06:30:46.477848+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
