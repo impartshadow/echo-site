@@ -1,42 +1,42 @@
 {
   "schema": "shadow.violation_decay.v1",
-  "generated_at": "2026-07-28T08:14:35.597959+00:00",
-  "as_of": "2026-07-28T03:18:45+00:00",
+  "generated_at": "2026-07-29T08:08:05.998811+00:00",
+  "as_of": "2026-07-28T15:27:26+00:00",
   "source": "state/contract_violations.jsonl",
   "window_days": 7,
   "min_age_days": 14,
   "totals": {
-    "violations": 1575,
-    "contracts_in_log": 61,
-    "failure_modes": 22,
+    "violations": 1526,
+    "contracts_in_log": 58,
+    "failure_modes": 20,
     "severities": {
-      "block": 627,
+      "block": 598,
       "unknown": 5,
-      "warn": 943
+      "warn": 923
     },
-    "eligible_contracts": 47,
-    "cooled_contracts": 43,
-    "hotter_contracts": 3,
-    "net_cooling_events": 326,
-    "net_hotter_events": 8
+    "eligible_contracts": 41,
+    "cooled_contracts": 37,
+    "hotter_contracts": 2,
+    "net_cooling_events": 297,
+    "net_hotter_events": 7
   },
-  "headline": "partial-evidence-flag cooled from 57 to 0 weekly hits; factual-claim-verification is the hottest remaining governance gap.",
+  "headline": "partial-evidence-flag cooled from 58 to 0 weekly hits; factual-claim-verification is the hottest remaining governance gap.",
   "cooled": [
     {
       "contract": "partial-evidence-flag",
-      "total": 235,
-      "first_seen": "2026-06-27T14:53:08+00:00",
+      "total": 232,
+      "first_seen": "2026-06-28T13:44:40+00:00",
       "last_seen": "2026-07-20T03:18:01+00:00",
-      "first_window_count": 57,
+      "first_window_count": 58,
       "recent_window_count": 0,
-      "delta": -57,
+      "delta": -58,
       "pct_change": -100.0,
       "status": "cooled"
     },
     {
       "contract": "persistent-correction",
-      "total": 163,
-      "first_seen": "2026-06-27T14:24:08+00:00",
+      "total": 158,
+      "first_seen": "2026-06-28T13:45:44+00:00",
       "last_seen": "2026-07-20T11:07:48+00:00",
       "first_window_count": 46,
       "recent_window_count": 0,
@@ -45,9 +45,20 @@
       "status": "cooled"
     },
     {
+      "contract": "self-verification",
+      "total": 86,
+      "first_seen": "2026-06-28T13:32:48+00:00",
+      "last_seen": "2026-07-20T03:18:01+00:00",
+      "first_window_count": 28,
+      "recent_window_count": 0,
+      "delta": -28,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
       "contract": "completion-artifact",
-      "total": 74,
-      "first_seen": "2026-06-27T15:08:44+00:00",
+      "total": 73,
+      "first_seen": "2026-06-28T13:50:02+00:00",
       "last_seen": "2026-07-27T01:26:44+00:00",
       "first_window_count": 26,
       "recent_window_count": 3,
@@ -56,47 +67,25 @@
       "status": "cooled"
     },
     {
-      "contract": "self-verification",
-      "total": 87,
-      "first_seen": "2026-06-27T14:12:37+00:00",
-      "last_seen": "2026-07-20T03:18:01+00:00",
-      "first_window_count": 22,
-      "recent_window_count": 0,
-      "delta": -22,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
       "contract": "behavioral-haiku-guard",
-      "total": 36,
-      "first_seen": "2026-06-27T14:30:20+00:00",
+      "total": 33,
+      "first_seen": "2026-06-28T12:56:09+00:00",
       "last_seen": "2026-07-19T18:49:30+00:00",
-      "first_window_count": 22,
+      "first_window_count": 19,
       "recent_window_count": 0,
-      "delta": -22,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "dox-guard",
-      "total": 19,
-      "first_seen": "2026-06-27T14:35:30+00:00",
-      "last_seen": "2026-07-07T11:12:57+00:00",
-      "first_window_count": 18,
-      "recent_window_count": 0,
-      "delta": -18,
+      "delta": -19,
       "pct_change": -100.0,
       "status": "cooled"
     },
     {
       "contract": "commit-hash-verification",
-      "total": 42,
+      "total": 43,
       "first_seen": "2026-06-29T02:17:49+00:00",
-      "last_seen": "2026-07-28T03:18:45+00:00",
+      "last_seen": "2026-07-28T12:40:14+00:00",
       "first_window_count": 20,
-      "recent_window_count": 7,
-      "delta": -13,
-      "pct_change": -65.0,
+      "recent_window_count": 8,
+      "delta": -12,
+      "pct_change": -60.0,
       "status": "cooled"
     },
     {
@@ -111,14 +100,14 @@
       "status": "cooled"
     },
     {
-      "contract": "balar-clarification",
-      "total": 9,
-      "first_seen": "2026-06-27T14:49:31+00:00",
-      "last_seen": "2026-07-03T11:47:38+00:00",
-      "first_window_count": 9,
-      "recent_window_count": 0,
+      "contract": "dox-guard",
+      "total": 11,
+      "first_seen": "2026-06-30T19:00:51+00:00",
+      "last_seen": "2026-07-28T12:40:14+00:00",
+      "first_window_count": 10,
+      "recent_window_count": 1,
       "delta": -9,
-      "pct_change": -100.0,
+      "pct_change": -90.0,
       "status": "cooled"
     },
     {
@@ -133,24 +122,35 @@
       "status": "cooled"
     },
     {
-      "contract": "stale-state-assertion-guard",
-      "total": 87,
-      "first_seen": "2026-06-27T21:48:40+00:00",
-      "last_seen": "2026-07-26T13:27:47+00:00",
-      "first_window_count": 15,
-      "recent_window_count": 9,
-      "delta": -6,
-      "pct_change": -40.0,
+      "contract": "high-stakes-pre-critique",
+      "total": 17,
+      "first_seen": "2026-06-30T03:00:24+00:00",
+      "last_seen": "2026-07-20T11:28:53+00:00",
+      "first_window_count": 8,
+      "recent_window_count": 0,
+      "delta": -8,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "balar-clarification",
+      "total": 8,
+      "first_seen": "2026-06-28T23:17:42+00:00",
+      "last_seen": "2026-07-03T11:47:38+00:00",
+      "first_window_count": 8,
+      "recent_window_count": 0,
+      "delta": -8,
+      "pct_change": -100.0,
       "status": "cooled"
     },
     {
       "contract": "loop-name-validation-guard",
-      "total": 26,
-      "first_seen": "2026-06-27T14:12:37+00:00",
+      "total": 25,
+      "first_seen": "2026-06-28T17:15:10+00:00",
       "last_seen": "2026-07-20T10:59:00+00:00",
-      "first_window_count": 6,
+      "first_window_count": 7,
       "recent_window_count": 0,
-      "delta": -6,
+      "delta": -7,
       "pct_change": -100.0,
       "status": "cooled"
     }
@@ -169,43 +169,32 @@
     },
     {
       "contract": "state-assertion-grounding",
-      "total": 186,
-      "first_seen": "2026-06-27T21:01:00+00:00",
+      "total": 181,
+      "first_seen": "2026-06-28T13:32:48+00:00",
       "last_seen": "2026-07-27T12:37:16+00:00",
-      "first_window_count": 45,
-      "recent_window_count": 48,
+      "first_window_count": 42,
+      "recent_window_count": 45,
       "delta": 3,
-      "pct_change": 6.7,
-      "status": "hotter"
-    },
-    {
-      "contract": "unbuilt-guarantee-guard",
-      "total": 6,
-      "first_seen": "2026-07-11T15:00:30+00:00",
-      "last_seen": "2026-07-26T01:17:40+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 2,
-      "delta": 1,
-      "pct_change": 100.0,
+      "pct_change": 7.1,
       "status": "hotter"
     }
   ],
   "all_trends": [
     {
       "contract": "partial-evidence-flag",
-      "total": 235,
-      "first_seen": "2026-06-27T14:53:08+00:00",
+      "total": 232,
+      "first_seen": "2026-06-28T13:44:40+00:00",
       "last_seen": "2026-07-20T03:18:01+00:00",
-      "first_window_count": 57,
+      "first_window_count": 58,
       "recent_window_count": 0,
-      "delta": -57,
+      "delta": -58,
       "pct_change": -100.0,
       "status": "cooled"
     },
     {
       "contract": "persistent-correction",
-      "total": 163,
-      "first_seen": "2026-06-27T14:24:08+00:00",
+      "total": 158,
+      "first_seen": "2026-06-28T13:45:44+00:00",
       "last_seen": "2026-07-20T11:07:48+00:00",
       "first_window_count": 46,
       "recent_window_count": 0,
@@ -214,9 +203,20 @@
       "status": "cooled"
     },
     {
+      "contract": "self-verification",
+      "total": 86,
+      "first_seen": "2026-06-28T13:32:48+00:00",
+      "last_seen": "2026-07-20T03:18:01+00:00",
+      "first_window_count": 28,
+      "recent_window_count": 0,
+      "delta": -28,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
       "contract": "completion-artifact",
-      "total": 74,
-      "first_seen": "2026-06-27T15:08:44+00:00",
+      "total": 73,
+      "first_seen": "2026-06-28T13:50:02+00:00",
       "last_seen": "2026-07-27T01:26:44+00:00",
       "first_window_count": 26,
       "recent_window_count": 3,
@@ -225,47 +225,25 @@
       "status": "cooled"
     },
     {
-      "contract": "self-verification",
-      "total": 87,
-      "first_seen": "2026-06-27T14:12:37+00:00",
-      "last_seen": "2026-07-20T03:18:01+00:00",
-      "first_window_count": 22,
-      "recent_window_count": 0,
-      "delta": -22,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
       "contract": "behavioral-haiku-guard",
-      "total": 36,
-      "first_seen": "2026-06-27T14:30:20+00:00",
+      "total": 33,
+      "first_seen": "2026-06-28T12:56:09+00:00",
       "last_seen": "2026-07-19T18:49:30+00:00",
-      "first_window_count": 22,
+      "first_window_count": 19,
       "recent_window_count": 0,
-      "delta": -22,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "dox-guard",
-      "total": 19,
-      "first_seen": "2026-06-27T14:35:30+00:00",
-      "last_seen": "2026-07-07T11:12:57+00:00",
-      "first_window_count": 18,
-      "recent_window_count": 0,
-      "delta": -18,
+      "delta": -19,
       "pct_change": -100.0,
       "status": "cooled"
     },
     {
       "contract": "commit-hash-verification",
-      "total": 42,
+      "total": 43,
       "first_seen": "2026-06-29T02:17:49+00:00",
-      "last_seen": "2026-07-28T03:18:45+00:00",
+      "last_seen": "2026-07-28T12:40:14+00:00",
       "first_window_count": 20,
-      "recent_window_count": 7,
-      "delta": -13,
-      "pct_change": -65.0,
+      "recent_window_count": 8,
+      "delta": -12,
+      "pct_change": -60.0,
       "status": "cooled"
     },
     {
@@ -280,14 +258,14 @@
       "status": "cooled"
     },
     {
-      "contract": "balar-clarification",
-      "total": 9,
-      "first_seen": "2026-06-27T14:49:31+00:00",
-      "last_seen": "2026-07-03T11:47:38+00:00",
-      "first_window_count": 9,
-      "recent_window_count": 0,
+      "contract": "dox-guard",
+      "total": 11,
+      "first_seen": "2026-06-30T19:00:51+00:00",
+      "last_seen": "2026-07-28T12:40:14+00:00",
+      "first_window_count": 10,
+      "recent_window_count": 1,
       "delta": -9,
-      "pct_change": -100.0,
+      "pct_change": -90.0,
       "status": "cooled"
     },
     {
@@ -302,68 +280,35 @@
       "status": "cooled"
     },
     {
-      "contract": "stale-state-assertion-guard",
-      "total": 87,
-      "first_seen": "2026-06-27T21:48:40+00:00",
-      "last_seen": "2026-07-26T13:27:47+00:00",
-      "first_window_count": 15,
-      "recent_window_count": 9,
-      "delta": -6,
-      "pct_change": -40.0,
+      "contract": "high-stakes-pre-critique",
+      "total": 17,
+      "first_seen": "2026-06-30T03:00:24+00:00",
+      "last_seen": "2026-07-20T11:28:53+00:00",
+      "first_window_count": 8,
+      "recent_window_count": 0,
+      "delta": -8,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "balar-clarification",
+      "total": 8,
+      "first_seen": "2026-06-28T23:17:42+00:00",
+      "last_seen": "2026-07-03T11:47:38+00:00",
+      "first_window_count": 8,
+      "recent_window_count": 0,
+      "delta": -8,
+      "pct_change": -100.0,
       "status": "cooled"
     },
     {
       "contract": "loop-name-validation-guard",
-      "total": 26,
-      "first_seen": "2026-06-27T14:12:37+00:00",
+      "total": 25,
+      "first_seen": "2026-06-28T17:15:10+00:00",
       "last_seen": "2026-07-20T10:59:00+00:00",
-      "first_window_count": 6,
+      "first_window_count": 7,
       "recent_window_count": 0,
-      "delta": -6,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "high-stakes-pre-critique",
-      "total": 18,
-      "first_seen": "2026-06-27T20:11:43+00:00",
-      "last_seen": "2026-07-20T11:28:53+00:00",
-      "first_window_count": 6,
-      "recent_window_count": 0,
-      "delta": -6,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "state-io-consolidation-guard",
-      "total": 9,
-      "first_seen": "2026-06-27T21:09:54+00:00",
-      "last_seen": "2026-07-12T21:42:43+00:00",
-      "first_window_count": 6,
-      "recent_window_count": 0,
-      "delta": -6,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "cl-stop_editing_github_inbound_check",
-      "total": 7,
-      "first_seen": "2026-06-27T21:34:42+00:00",
-      "last_seen": "2026-07-09T12:21:37+00:00",
-      "first_window_count": 6,
-      "recent_window_count": 0,
-      "delta": -6,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "cl-stop_editing_gmail_summary_py",
-      "total": 7,
-      "first_seen": "2026-06-27T21:34:42+00:00",
-      "last_seen": "2026-07-09T12:21:37+00:00",
-      "first_window_count": 6,
-      "recent_window_count": 0,
-      "delta": -6,
+      "delta": -7,
       "pct_change": -100.0,
       "status": "cooled"
     },
@@ -379,14 +324,25 @@
       "status": "cooled"
     },
     {
-      "contract": "concurrence-grounding",
-      "total": 38,
-      "first_seen": "2026-06-27T14:53:08+00:00",
-      "last_seen": "2026-07-27T01:16:26+00:00",
-      "first_window_count": 12,
-      "recent_window_count": 7,
+      "contract": "stale-state-assertion-guard",
+      "total": 86,
+      "first_seen": "2026-06-28T14:19:21+00:00",
+      "last_seen": "2026-07-26T13:27:47+00:00",
+      "first_window_count": 14,
+      "recent_window_count": 9,
       "delta": -5,
-      "pct_change": -41.7,
+      "pct_change": -35.7,
+      "status": "cooled"
+    },
+    {
+      "contract": "concurrence-grounding",
+      "total": 37,
+      "first_seen": "2026-06-28T13:32:48+00:00",
+      "last_seen": "2026-07-27T01:16:26+00:00",
+      "first_window_count": 11,
+      "recent_window_count": 6,
+      "delta": -5,
+      "pct_change": -45.5,
       "status": "cooled"
     },
     {
@@ -398,6 +354,17 @@
       "recent_window_count": 0,
       "delta": -5,
       "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "state-io-consolidation-guard",
+      "total": 9,
+      "first_seen": "2026-06-30T02:41:05+00:00",
+      "last_seen": "2026-07-28T12:40:14+00:00",
+      "first_window_count": 5,
+      "recent_window_count": 1,
+      "delta": -4,
+      "pct_change": -80.0,
       "status": "cooled"
     },
     {
@@ -423,17 +390,6 @@
       "status": "cooled"
     },
     {
-      "contract": "patterned-stop",
-      "total": 4,
-      "first_seen": "2026-06-27T14:24:08+00:00",
-      "last_seen": "2026-06-30T02:37:13+00:00",
-      "first_window_count": 4,
-      "recent_window_count": 0,
-      "delta": -4,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
       "contract": "pressure-framing-guard",
       "total": 16,
       "first_seen": "2026-06-28T13:49:01+00:00",
@@ -446,23 +402,23 @@
     },
     {
       "contract": "live-state-claim-guard",
-      "total": 11,
-      "first_seen": "2026-06-27T21:06:19+00:00",
+      "total": 10,
+      "first_seen": "2026-06-30T03:06:03+00:00",
       "last_seen": "2026-07-19T15:41:46+00:00",
-      "first_window_count": 3,
+      "first_window_count": 2,
       "recent_window_count": 0,
-      "delta": -3,
+      "delta": -2,
       "pct_change": -100.0,
       "status": "cooled"
     },
     {
       "contract": "blocker-surfacing-gate",
-      "total": 5,
-      "first_seen": "2026-06-27T21:01:00+00:00",
+      "total": 4,
+      "first_seen": "2026-06-30T19:29:53+00:00",
       "last_seen": "2026-07-21T01:50:42+00:00",
-      "first_window_count": 3,
+      "first_window_count": 2,
       "recent_window_count": 0,
-      "delta": -3,
+      "delta": -2,
       "pct_change": -100.0,
       "status": "cooled"
     },
@@ -475,17 +431,6 @@
       "recent_window_count": 1,
       "delta": -2,
       "pct_change": -66.7,
-      "status": "cooled"
-    },
-    {
-      "contract": "action-deferral-guard",
-      "total": 3,
-      "first_seen": "2026-06-27T21:16:45+00:00",
-      "last_seen": "2026-07-09T12:21:37+00:00",
-      "first_window_count": 2,
-      "recent_window_count": 0,
-      "delta": -2,
-      "pct_change": -100.0,
       "status": "cooled"
     },
     {
@@ -511,10 +456,10 @@
       "status": "cooled"
     },
     {
-      "contract": "personal-token-send-guard",
+      "contract": "patterned-stop",
       "total": 2,
-      "first_seen": "2026-06-27T12:45:41+00:00",
-      "last_seen": "2026-06-30T19:08:33+00:00",
+      "first_seen": "2026-06-29T12:51:46+00:00",
+      "last_seen": "2026-06-30T02:37:13+00:00",
       "first_window_count": 2,
       "recent_window_count": 0,
       "delta": -2,
@@ -566,76 +511,43 @@
       "status": "cooled"
     },
     {
+      "contract": "action-deferral-guard",
+      "total": 2,
+      "first_seen": "2026-06-30T02:37:13+00:00",
+      "last_seen": "2026-07-09T12:21:37+00:00",
+      "first_window_count": 1,
+      "recent_window_count": 0,
+      "delta": -1,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "cl-stop_editing_github_inbound_check",
+      "total": 2,
+      "first_seen": "2026-06-30T00:00:31+00:00",
+      "last_seen": "2026-07-09T12:21:37+00:00",
+      "first_window_count": 1,
+      "recent_window_count": 0,
+      "delta": -1,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "cl-stop_editing_gmail_summary_py",
+      "total": 2,
+      "first_seen": "2026-06-30T00:00:31+00:00",
+      "last_seen": "2026-07-09T12:21:37+00:00",
+      "first_window_count": 1,
+      "recent_window_count": 0,
+      "delta": -1,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
       "contract": "confident-product-claim-without-fetch",
       "total": 2,
       "first_seen": "2026-07-01T20:45:42+00:00",
       "last_seen": "2026-07-18T16:58:16+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 0,
-      "delta": -1,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "raw-gmail-send-guard",
-      "total": 2,
-      "first_seen": "2026-06-27T20:18:23+00:00",
-      "last_seen": "2026-07-15T11:19:04+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 0,
-      "delta": -1,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "task-reframe-guard",
-      "total": 2,
-      "first_seen": "2026-06-27T21:34:42+00:00",
-      "last_seen": "2026-07-19T03:27:29+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 0,
-      "delta": -1,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "cl-channel_shadow_hq_system_bot",
-      "total": 1,
-      "first_seen": "2026-06-27T21:16:45+00:00",
-      "last_seen": "2026-06-27T21:16:45+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 0,
-      "delta": -1,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "cl-if_title_seems_relevant_can",
-      "total": 1,
-      "first_seen": "2026-06-27T21:16:45+00:00",
-      "last_seen": "2026-06-27T21:16:45+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 0,
-      "delta": -1,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "cl-stop_just_cold_including_stripe",
-      "total": 1,
-      "first_seen": "2026-06-27T21:16:45+00:00",
-      "last_seen": "2026-06-27T21:16:45+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 0,
-      "delta": -1,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "cl-ugh_that_s_what_i",
-      "total": 1,
-      "first_seen": "2026-06-27T21:16:45+00:00",
-      "last_seen": "2026-06-27T21:16:45+00:00",
       "first_window_count": 1,
       "recent_window_count": 0,
       "delta": -1,
@@ -665,6 +577,28 @@
       "status": "cooled"
     },
     {
+      "contract": "personal-token-send-guard",
+      "total": 1,
+      "first_seen": "2026-06-30T19:08:33+00:00",
+      "last_seen": "2026-06-30T19:08:33+00:00",
+      "first_window_count": 1,
+      "recent_window_count": 0,
+      "delta": -1,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "unbuilt-guarantee-guard",
+      "total": 6,
+      "first_seen": "2026-07-11T15:00:30+00:00",
+      "last_seen": "2026-07-26T01:17:40+00:00",
+      "first_window_count": 1,
+      "recent_window_count": 1,
+      "delta": 0,
+      "pct_change": 0.0,
+      "status": "flat"
+    },
+    {
       "contract": "manual-handoff-guard",
       "total": 5,
       "first_seen": "2026-07-01T10:26:30+00:00",
@@ -676,25 +610,14 @@
       "status": "flat"
     },
     {
-      "contract": "unbuilt-guarantee-guard",
-      "total": 6,
-      "first_seen": "2026-07-11T15:00:30+00:00",
-      "last_seen": "2026-07-26T01:17:40+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 2,
-      "delta": 1,
-      "pct_change": 100.0,
-      "status": "hotter"
-    },
-    {
       "contract": "state-assertion-grounding",
-      "total": 186,
-      "first_seen": "2026-06-27T21:01:00+00:00",
+      "total": 181,
+      "first_seen": "2026-06-28T13:32:48+00:00",
       "last_seen": "2026-07-27T12:37:16+00:00",
-      "first_window_count": 45,
-      "recent_window_count": 48,
+      "first_window_count": 42,
+      "recent_window_count": 45,
       "delta": 3,
-      "pct_change": 6.7,
+      "pct_change": 7.1,
       "status": "hotter"
     },
     {
