@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-07-28T08:04:21.269770+00:00",
+  "generated_at": "2026-07-29T07:57:39.500910+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-07-28T08:04:07.116815+00:00",
-  "thesis": "The frontier is quietly conceding that agent capability is now bottlenecked by verifiable execution memory \u2014 not model quality \u2014 so the winners will be operators who can prove what their agents did, not describe what they can do.",
-  "doctrine": "Every retained skill or workflow must carry its own receipt: if a loop learns a procedure (FlowEvo-style), the procedure is only 'real' once it has an execution record with a verifiable outcome \u2014 persist the receipt with the skill, never the skill alone.",
-  "proof_artifact": "A skill-receipt ledger: extend core/loop_runtime_receipts.py so any repeated procedure Shadow executes \u22652x gets registered in state/skill_ledger.jsonl with {procedure_id, first_run, last_verified_outcome, receipt_ref, failure_count} \u2014 turning transient loop wins into governed, reusable, evidence-backed skills.",
-  "proof_next_action": "Add SkillLedger to core/loop_runtime_receipts.py writing via core/state_io.py to state/skill_ledger.jsonl, wire it into the existing receipt emit path, add tests/test_skill_ledger.py, run pytest, commit and push, receipt to #shadow-log.",
-  "public_angle": "Everyone is publishing self-evolving-agent papers this week; nobody ships the boring half \u2014 my agent doesn't 'learn skills', it earns them: a procedure only enters the ledger after it has produced a verified outcome twice, and I can show you the receipts.",
-  "buyer_offer": "Pitch prospects a 'procedure audit': most agent stacks re-derive the same workflow every run and can't prove any past run succeeded \u2014 Shadow installs a receipt-backed skill ledger so their agent's learned procedures are inspectable, reusable, and auditable (contract-install ladder upsell).",
+  "cycle_ts": "2026-07-29T07:57:27.565807+00:00",
+  "thesis": "The agent stack is converging on runtime operations \u2014 context sync (CORVUS), trajectory-aware retrieval, 184M safety classifiers \u2014 which means the moat is no longer building agents but operating them, and buyers will pay for the operator layer before they pay for another agent.",
+  "doctrine": "Every research signal must land as a wiring change in an existing loop (allocator, sweep, contract) with a runtime receipt \u2014 a signal that only becomes a note is a dropped signal.",
+  "proof_artifact": "Extend the portfolio allocator so `portfolio_operator_runtime`-class signals (score \u2265 8) auto-generate a candidate reallocation entry in state/business_theme_portfolio.json with an evidence pointer, instead of dying in the digest queue \u2014 plus a test proving the signal\u2192allocation path fires.",
+  "proof_next_action": "Edit scripts that consume state/ai_digest_pending.json to route pattern_id=portfolio_operator_runtime items into state/improvement_queue.json as impact:high entries with target_loop=meta, then run pytest tests/ -q and commit with receipt to #shadow-log.",
+  "public_angle": "Everyone is shipping agents; almost no one is operating them. I run 112 code-enforced contracts over my own runtime and the violation trend is the product \u2014 here's what an operator layer catches that your eval suite never will.",
+  "buyer_offer": "Position the paid audit as 'operator-runtime readiness': prospects running multi-agent harnesses (autodev-studio-style SDLC agents) get a failure-census showing which of their agent actions lack pre/post gates \u2014 priced as the existing audit ladder, proof sourced from Shadow's 112 live contracts and declining-violations trend.",
   "source_titles": [
-    "The Best Doctor May Soon Be AI",
-    "AgentKVShift: Efficient KV Cache Reuse for Agentic Memory Systems",
-    "Agentic Evaluation of Copyright Law Compliance",
-    "Ground Truth First: A Longitudinal Evaluation Instrument for Agent Memory, and the Tenure Crossover in Memory-Architecture Rankings",
-    "Encoding Invisible Causation for Bridge Diagnostic Agents: Triple-Guided Retrieval-Augmented Fine-Tuning with QLoRA"
+    "AI Agents for Performance: Ship Faster, Pay Less \u2014 Rajat Shah, Netflix",
+    "Multi-Agent System-driven Digital Twins for predictive maintenance: architectures, technologies and open research challenges",
+    "Trajectory-Aware Retrieval Agents for Temporal Decision- Making",
+    "krishagarwal314/autodev-studio \u2014 Autonomous multi-agent SDLC harness: describe a feature in plain English and AI agents scope, code,",
+    "Why AI Infrastructure must evolve for Agent Experience \u2014 Akshat Bubna, Modal CTO"
   ],
   "packets": [
     {
-      "id": "44f77c0f10e9",
+      "id": "309920ba1742",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "2171e17e0641",
+      "id": "2f296af89c4a",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "992854cc3e43",
+      "id": "2f0971c94306",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "b063fd13a686",
+      "id": "02e1759a5d76",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Add SkillLedger to core/loop_runtime_receipts.py writing via core/state_io.py to state/skill_ledger.jsonl, wire it into the existing receipt emit path, add tests/test_skill_ledger.py, run pytest, commit and push, receipt to #shadow-log.",
-      "packet_id": "44f77c0f10e9"
+      "next_action": "Edit scripts that consume state/ai_digest_pending.json to route pattern_id=portfolio_operator_runtime items into state/improvement_queue.json as impact:high entries with target_loop=meta, then run pytest tests/ -q and commit with receipt to #shadow-log.",
+      "packet_id": "309920ba1742"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_2171e17e0641_1785225861",
-      "packet_id": "2171e17e0641"
+      "draft_id": "frontier_2f296af89c4a_1785311859",
+      "packet_id": "2f296af89c4a"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "ef67d7bf38db",
-      "packet_id": "992854cc3e43"
+      "experiment_id": "7edef26a3d88",
+      "packet_id": "2f0971c94306"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "b063fd13a686"
+      "packet_id": "02e1759a5d76"
     }
   ],
   "receipts": {

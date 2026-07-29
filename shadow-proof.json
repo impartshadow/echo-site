@@ -66,7 +66,7 @@
     "leader_changed": false,
     "status": {
       "delta": 0,
-      "due_at": "2026-07-28T08:10:10.248721+00:00",
+      "due_at": "2026-08-05T07:59:01.597823+00:00",
       "target_delta": 1,
       "verdict": "running"
     }
@@ -74,39 +74,38 @@
   "demand_language": [
     {
       "channels": [
-        "reddit_karma",
         "substack_notes"
       ],
-      "phrase": "chatgpt updates",
-      "score": 27.114
+      "phrase": "a-functional-taxonomy-of-world-models axqr0 campaign drfeifei",
+      "score": 20.268
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect energy people startups",
-      "score": 16.279
-    },
-    {
-      "channels": [
-        "substack_notes"
-      ],
-      "phrase": "absolutely been clear haven",
-      "score": 12.6
+      "score": 16.172
     },
     {
       "channels": [
         "moltbook_engage"
       ],
       "phrase": "https shipping teams always",
-      "score": 10.726
+      "score": 10.62
+    },
+    {
+      "channels": [
+        "substack_notes"
+      ],
+      "phrase": "absolutely been clear haven",
+      "score": 10.493
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "best bregman excellent long",
-      "score": 10.569
+      "score": 10.462
     }
   ],
   "flight_recorder": {
@@ -114,8 +113,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 15.0,
-          "last_activity": "2026-07-27T17:05:33.723783+00:00",
+          "hours_since": 14.9,
+          "last_activity": "2026-07-28T17:05:57.782465+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -128,8 +127,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.4,
-          "last_activity": "2026-07-28T07:43:48.261348+00:00",
+          "hours_since": 0.6,
+          "last_activity": "2026-07-29T07:25:02.605216+00:00",
           "source": "action_log",
           "staleness": "ok"
         },
@@ -142,7 +141,7 @@
       {
         "declared_state": "complete",
         "evidence": {
-          "hours_since": 122.0,
+          "hours_since": 145.9,
           "last_activity": "2026-07-23T06:02:47.889895+00:00",
           "source": "verifier_receipt",
           "staleness": "stale"
@@ -156,8 +155,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.4,
-          "last_activity": "2026-07-28T07:40:04.843797+00:00",
+          "hours_since": 0.5,
+          "last_activity": "2026-07-29T07:30:53.824954+00:00",
           "source": "external_post_receipt",
           "staleness": "ok"
         },
@@ -170,8 +169,8 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 15.0,
-          "last_activity": "2026-07-27T17:05:33.019376+00:00",
+          "hours_since": 14.8,
+          "last_activity": "2026-07-28T17:11:06.758206+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -185,7 +184,7 @@
         "declared_state": "running",
         "evidence": {
           "hours_since": 15.0,
-          "last_activity": "2026-07-27T17:05:48.439689+00:00",
+          "last_activity": "2026-07-28T17:01:24.903403+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -196,7 +195,7 @@
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-07-28T08:05:45.555614+00:00",
+    "generated_at": "2026-07-29T07:59:01.597823+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
@@ -259,7 +258,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md",
     "purpose": "scarce frontier-model usage ledger that routes high-end model headroom into sellable artifacts, proof surfaces, acquisition machinery, and model-agnostic operating-system upgrades"
   },
-  "generated_at": "2026-07-28T08:05:45.555614+00:00",
+  "generated_at": "2026-07-29T07:59:01.597823+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
