@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/pseudo-tool-detector-misses-a-single-line-invented-c-a82ae79cff.html",
+      "evidence": "A single-line invented call like `<read>/tmp/x</read>` is not flagged even though the equivalent multi-line block `<read>\\n/tmp/x\\n</read>` is caught by the same detector.",
+      "expected_boundary": "Any complete single-line tool-call form, including the closed `<name>...</name>` shape, should be recognized as a lone tag at the same line-completion boundary already used for the multi-line case.",
+      "id": "SFA-2026-A82AE79CFF",
+      "observed_action": "The pseudo-tool detector in viz.rs was rewritten to match only whole lines consisting of a bare tag, fixing a prose false positive but only extending that rule to the multi-line invoke-opener shape.",
+      "published_at": "2026-07-29T21:30:42.684806+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 77,
+        "repo": "aovestdipaperino/plank",
+        "url": "https://github.com/aovestdipaperino/plank/issues/77"
+      },
+      "status": "observed",
+      "summary": "Pseudo-tool detector misses a single-line invented call (<read>/tmp/x</read>)",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-llm-hallucinates-tool-execution-claims-files-cre-0eb091699f.html",
       "evidence": "The success language conflicts directly with the empty `list_files` result of `total: 0, rows: []`.",
       "expected_boundary": "The response-emission boundary should reject mutation-success claims unless matching successful tool results and verified postconditions exist in the current turn.",
@@ -963,12 +989,12 @@
       }
     }
   ],
-  "count": 37,
+  "count": 38,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-29T14:00:39.875290+00:00",
+    "checked_at": "2026-07-29T21:30:42.707758+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
