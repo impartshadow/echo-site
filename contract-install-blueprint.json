@@ -1,11 +1,11 @@
 {
   "schema": "shadow.contract_install_blueprint.v1",
-  "generated_at": "2026-07-28T08:12:02.115596+00:00",
+  "generated_at": "2026-07-29T08:05:21.047772+00:00",
   "source_model": "claude-fable-5",
   "frontier_receipt": "claude-fable-5 selected Contract Install Blueprint as the next artifact because it demonstrates the paid install product itself.",
   "source_runtime": {
-    "contract_count": 189,
-    "violation_rows_scanned": 6072,
+    "contract_count": 192,
+    "violation_rows_scanned": 6126,
     "current_violation_log": "state/contract_violations.jsonl",
     "archive_glob": "state/archive/**/contract_violations_*.jsonl.gz"
   },
@@ -61,7 +61,7 @@
       "tier": "free-triage",
       "production_evidence": {
         "fires_observed": 118,
-        "ledger_rows_scanned": 6072,
+        "ledger_rows_scanned": 6126,
         "latest_seen": "2026-07-09T12:21:37",
         "severity_counts": {
           "block": 118
@@ -97,11 +97,11 @@
       "install_estimate_hours": 2.0,
       "tier": "census",
       "production_evidence": {
-        "fires_observed": 110,
-        "ledger_rows_scanned": 6072,
-        "latest_seen": "2026-07-28T03:18:45",
+        "fires_observed": 111,
+        "ledger_rows_scanned": 6126,
+        "latest_seen": "2026-07-28T12:40:14",
         "severity_counts": {
-          "block": 110
+          "block": 111
         },
         "false_positive_note": "Pure decimal IDs are ignored; sibling repos are checked before blocking.",
         "origin_incident": "Fabricated push receipts in multi-commit sessions, including 2026-06-14 and 2026-06-20 bursts.",
@@ -135,7 +135,7 @@
       "tier": "install",
       "production_evidence": {
         "fires_observed": 123,
-        "ledger_rows_scanned": 6072,
+        "ledger_rows_scanned": 6126,
         "latest_seen": "2026-07-26T13:27:47",
         "severity_counts": {
           "block": 91,
@@ -173,7 +173,7 @@
       "tier": "census",
       "production_evidence": {
         "fires_observed": 630,
-        "ledger_rows_scanned": 6072,
+        "ledger_rows_scanned": 6126,
         "latest_seen": "2026-07-20T03:18:01",
         "severity_counts": {
           "warn": 381,
@@ -210,11 +210,11 @@
       "install_estimate_hours": 6.0,
       "tier": "install",
       "production_evidence": {
-        "fires_observed": 113,
-        "ledger_rows_scanned": 6072,
-        "latest_seen": "2026-07-07T11:12:57",
+        "fires_observed": 114,
+        "ledger_rows_scanned": 6126,
+        "latest_seen": "2026-07-28T12:40:14",
         "severity_counts": {
-          "block": 113
+          "block": 114
         },
         "false_positive_note": "Client-layer enforcement is required; command regexes alone miss inline API scripts.",
         "origin_incident": "Email and Telegram paths showed that command-line guards alone can be bypassed by direct scripts.",
@@ -248,7 +248,7 @@
       "tier": "free-triage",
       "production_evidence": {
         "fires_observed": 209,
-        "ledger_rows_scanned": 6072,
+        "ledger_rows_scanned": 6126,
         "latest_seen": "2026-07-23T11:24:26",
         "severity_counts": {
           "warn": 145,
@@ -313,8 +313,8 @@
       }
     ],
     "production_evidence": {
-      "fires_observed": 110,
-      "latest_seen": "2026-07-28T03:18:45"
+      "fires_observed": 111,
+      "latest_seen": "2026-07-28T12:40:14"
     },
     "cta": {
       "label": "Scope the $2,000 contract install",
@@ -370,8 +370,8 @@
           }
         ],
         "production_evidence": {
-          "fires_observed": 110,
-          "latest_seen": "2026-07-28T03:18:45"
+          "fires_observed": 111,
+          "latest_seen": "2026-07-28T12:40:14"
         },
         "cta": {
           "label": "Scope the $2,000 contract install",
