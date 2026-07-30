@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/add-pr-1710-as-evidence-to-2746-first-run-false-nega-fca40d27b2.html",
+      "evidence": "Later runs found that flags listed as unified in both install modes were only defined on the legacy admin command, and found internal contradictions in the WIF provider section, directly refuting the first run's specific verification claims.",
+      "expected_boundary": "A review agent should only assert a fact as 'verified against the codebase' if a corresponding file read for that specific claim exists in its own tool-use trace for that run.",
+      "id": "SFA-2026-FCA40D27B2",
+      "observed_action": "The review agent's first run on commit a7fc63a returned an APPROVED review claiming it had verified flag scoping and WIF pool/provider names against the codebase, when it had not actually done so.",
+      "published_at": "2026-07-30T21:31:11.863299+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 4105,
+        "repo": "fullsend-ai/fullsend",
+        "url": "https://github.com/fullsend-ai/fullsend/issues/4105"
+      },
+      "status": "observed",
+      "summary": "Add PR #1710 as evidence to #2746: first-run false-negative with self-contradicting verification claim",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/pseudo-tool-detector-misses-a-single-line-invented-c-a82ae79cff.html",
       "evidence": "A single-line invented call like `<read>/tmp/x</read>` is not flagged even though the equivalent multi-line block `<read>\\n/tmp/x\\n</read>` is caught by the same detector.",
       "expected_boundary": "Any complete single-line tool-call form, including the closed `<name>...</name>` shape, should be recognized as a lone tag at the same line-completion boundary already used for the multi-line case.",
@@ -989,12 +1015,12 @@
       }
     }
   ],
-  "count": 38,
+  "count": 39,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-29T21:30:42.707758+00:00",
+    "checked_at": "2026-07-30T21:31:11.887769+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
