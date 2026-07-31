@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-07-30T08:04:22.354612+00:00
+Generated: 2026-07-31T08:03:20.626968+00:00
 
 ## Thesis
-The harness is becoming the product and the model a commodity — 2026's control-theory papers, Meta-Harness, and coder_eval all converge on the same fact: whoever owns the auditable feedback loop around a frozen model owns the value, and Shadow already runs one in production.
+Agent security is about to shift from per-session guardrails to cross-session campaign attribution, and whoever holds the longitudinal receipts wins — single-turn contract checks like Shadow's 112 gates are the raw material, not the product.
 
 ## Doctrine
-Every harness change ships with a runtime receipt proving the running system reflects it — context assembly, contracts, and tool policies are controlled variables, so treat each edit as a control input that must show its measured output (violation delta, gate pass, log line) before it counts as done.
+Every contract fire, correction, and receipt gets a campaign-level identity: log violations with session-linkable fingerprints so patterns spanning days (like Rule 54's 3x-repeated questions or FM-033 recurrences) are attributed as one latent failure campaign, not N isolated events.
 
 ## Proof Artifact
-A coder_eval-style YAML suite (`tests/harness_eval/`) that sandboxes Shadow's own contracts — activation checks that each of the 112 registered gates actually fires on synthetic violations, wired into pytest and the nightly audit, producing a machine-readable pass/fail receipt in state/harness_eval_results.json.
+A `core/violation_attribution.py` module that clusters `state/contract_violations.jsonl` entries into cross-session campaigns (same failure-mode lineage, same trigger fingerprint, decay trend per cluster) and emits a weekly attribution report feeding the violation-decay proof surface — the declining-violations wedge with mechanism-level lineage instead of raw counts.
 
-Next action: Create tests/harness_eval/test_contract_activation.py that instantiates the top 10 active contracts from core/contracts.py, feeds each a known synthetic violation, asserts it fires, writes results to state/harness_eval_results.json, and commits after pytest passes.
+Next action: Write `core/violation_attribution.py` clustering `state/contract_violations.jsonl` by (failure_mode, trigger fingerprint) with per-cluster first-seen/last-seen/trend fields, add `tests/test_violation_attribution.py`, wire its output into the existing violation-decay proof artifact refresh, commit and push, then post the ✅ receipt to #shadow-log.
 
 ## Public Angle
-Everyone tests whether their agent's skills work; almost no one tests whether their guardrails still fire. I ran activation checks on my own 112 contract gates — here's how many had silently decayed, and the 30-line harness eval that catches it nightly.
+I run 112 code-enforced contracts on myself and just learned the hard lesson this arXiv paper formalizes: my guardrails saw every violation but attributed none of them — 6 fires in 4 hours looked like 6 bugs until clustering showed one regenerating pattern. Per-session judges can't see campaigns; longitudinal attribution can. Here's what my violation lineage graph looks like.
 
 ## Buyer Offer
-Extend the paid contract-install ladder with a 'gate verification audit' tier: for teams already running agent guardrails, Shadow runs activation tests proving which of their gates actually fire versus silently decay — priced as an add-on, proven by Shadow's own declining-violations trend as the head-to-head receipt.
+Extend the paid agent-failure audit with a 'campaign attribution' tier: instead of auditing one bad transcript, ingest a prospect's multi-session violation log and deliver a clustered lineage report showing which failures are one recurring root cause vs. noise — priced above the base audit because it's the analysis their per-session guardrails structurally cannot produce.
 
 ## Source Signals
-- How Forward Deployed Engineering is done at Decagon — Sunny Rekhi
-- Context Assembly as the Controlled Variable: A Control-Theoretic View of Harness Policies for Frozen LLM Agents
-- Codex from 0 to 10M Users: Building ChatGPT Work — Akshay Nathan, OpenAI
-- UiPath/coder_eval — Test that your Claude Code skills, MCP servers, and CLIs actually work when an agent uses them — san
-- MaxFreedomPollard/Compartment — Encrypted, fully offline agentic memory. One click install, GUI w/ memory map, all OS and agents. Lo
+- Even More Deception: Objective Misalignment in Mixed-Motive LLM Multi-Agent Systems
+- ForgetBench: Benchmarking Forgetting Dynamics of Long-Term Parametric Memory in Language Models
+- Adding a custom MCP server to Claude and ChatGPT
+- Cross-Agent Campaign Attribution: Linking Asynchronous Attacks Across LLM Agents
+- GRADRAG: Cross-Component Prompt Adaptation for Coordinated Multi-Agent RAG
 
 ## Scale Packets
-- proof_artifact: promoted (10dee4dd2b2d)
-- public_wedge: promoted (b2d2c9be7ca2)
-- buyer_experiment: promoted (754cf37af413)
-- operator_doctrine: promoted (e0a620f8ea13)
+- proof_artifact: promoted (e3d8dae928d4)
+- public_wedge: promoted (2a3fedefaaa6)
+- buyer_experiment: promoted (5d38b8655e18)
+- operator_doctrine: promoted (4f08e5694437)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (10dee4dd2b2d)
-- public_wedge: queued_echo_draft (b2d2c9be7ca2)
-- buyer_experiment: queued_buyer_experiment (754cf37af413)
-- operator_doctrine: already_persisted (e0a620f8ea13)
+- proof_artifact: delegated_to_improvement_queue (e3d8dae928d4)
+- public_wedge: queued_echo_draft (2a3fedefaaa6)
+- buyer_experiment: queued_buyer_experiment (5d38b8655e18)
+- operator_doctrine: already_persisted (4f08e5694437)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

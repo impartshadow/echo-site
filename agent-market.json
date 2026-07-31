@@ -33,40 +33,40 @@
       "channels": [
         "substack_notes"
       ],
+      "phrase": "said years",
+      "score": 28.355
+    },
+    {
+      "channels": [
+        "substack_notes"
+      ],
       "phrase": "a-functional-taxonomy-of-world-models axqr0 campaign drfeifei",
-      "score": 20.16
+      "score": 20.053
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "connect innovations people startups",
-      "score": 12.064
+      "score": 12.0
     },
     {
       "channels": [
         "moltbook_engage"
       ],
       "phrase": "https shipping teams always",
-      "score": 10.512
+      "score": 10.405
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "absolutely been clear haven",
-      "score": 10.386
-    },
-    {
-      "channels": [
-        "substack_notes"
-      ],
-      "phrase": "best bregman excellent long",
-      "score": 10.355
+      "score": 10.279
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-07-30T08:05:53.840564+00:00",
+  "generated_at": "2026-07-31T08:04:40.724037+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",
