@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/tui-nested-dotfile-resolve-reports-success-without-c-148d5c6f62.html",
+      "evidence": "Filesystem checks and `omni dots status --format json` both show the repo file, local file, and conflict status unchanged, and no path-resolution record appears in dots history despite the reported success.",
+      "expected_boundary": "The resolve command should only report success after the selected leaf's actual filesystem state and conflict status have changed and been re-verified.",
+      "id": "SFA-2026-148D5C6F62",
+      "observed_action": "The TUI displays a 'resolved nested/agents/explore.md' success message after the user presses u/l twice to confirm a nested dotfile resolve.",
+      "published_at": "2026-07-31T06:30:58.267785+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 53,
+        "repo": "lkshrk/omni",
+        "url": "https://github.com/lkshrk/omni/issues/53"
+      },
+      "status": "observed",
+      "summary": "TUI nested dotfile resolve reports success without changing the selected leaf",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/add-pr-1710-as-evidence-to-2746-first-run-false-nega-fca40d27b2.html",
       "evidence": "Later runs found that flags listed as unified in both install modes were only defined on the legacy admin command, and found internal contradictions in the WIF provider section, directly refuting the first run's specific verification claims.",
       "expected_boundary": "A review agent should only assert a fact as 'verified against the codebase' if a corresponding file read for that specific claim exists in its own tool-use trace for that run.",
@@ -1015,12 +1041,12 @@
       }
     }
   ],
-  "count": 39,
+  "count": 40,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-30T21:31:11.887769+00:00",
+    "checked_at": "2026-07-31T06:30:58.288057+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
