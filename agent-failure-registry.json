@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/after-llm-call-hooks-never-run-on-acall-eight-native-812b11cea7.html",
+      "evidence": "A stubbed sync/async comparison shows the registered hook fires and redacts the response under call() but never fires under acall(), and a second related check shows _previous_thinking_blocks stays empty on the async anthropic path because _extract_thinking_block is likewise never called there.",
+      "expected_boundary": "Every _ahandle_* method should call _invoke_after_llm_call_hooks exactly where its paired _handle_* method does, since after_llm_call is documented as a mandatory interception point for redaction and audit logging.",
+      "id": "SFA-2026-812B11CEA7",
+      "observed_action": "Eight async LLM handler methods across the openai, anthropic, and bedrock providers return responses without invoking _invoke_after_llm_call_hooks, unlike their sync counterparts.",
+      "published_at": "2026-07-31T14:00:43.033031+00:00",
+      "source": {
+        "author": "LHMQ878",
+        "channel": "unsolicited_triage",
+        "issue_number": 6736,
+        "repo": "crewAIInc/crewAI",
+        "url": "https://github.com/crewAIInc/crewAI/issues/6736"
+      },
+      "status": "observed",
+      "summary": "after_llm_call hooks never run on acall(): eight native provider handlers skip _invoke_after_llm_call_hooks",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/tui-nested-dotfile-resolve-reports-success-without-c-148d5c6f62.html",
       "evidence": "Filesystem checks and `omni dots status --format json` both show the repo file, local file, and conflict status unchanged, and no path-resolution record appears in dots history despite the reported success.",
       "expected_boundary": "The resolve command should only report success after the selected leaf's actual filesystem state and conflict status have changed and been re-verified.",
@@ -1041,12 +1067,12 @@
       }
     }
   ],
-  "count": 40,
+  "count": 41,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-31T06:30:58.288057+00:00",
+    "checked_at": "2026-07-31T14:00:43.051018+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
