@@ -1,17 +1,17 @@
 # Agent Failure Museum
 
-Generated: 2026-07-31T03:04:45-05:00 CT
+Generated: 2026-08-01T02:57:07-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 1446 claim-boundary violations across 64 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 1405 claim-boundary violations across 63 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
 ### The Agent Made A Numeric Or Revenue Claim Without The Source Read
 
 - Contract: `partial-evidence-flag`
-- Fires logged: 217
+- Fires logged: 214
 - Latest seen: 2026-07-19T10:28:21-05:00 CT
 - Buyer failure: A business agent states revenue, counts, or verification status from stale memory or partial evidence.
 - Missing receipt: Stripe/state-file/API read with timestamp and cited value
@@ -22,7 +22,7 @@ Shadow has logged 1446 claim-boundary violations across 64 contract names. The u
 ### The Agent Answered From Memory When The Question Required A Live Read
 
 - Contract: `state-assertion-grounding`
-- Fires logged: 166
+- Fires logged: 163
 - Latest seen: 2026-07-30T21:52:37-05:00 CT
 - Buyer failure: An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.
 - Missing receipt: same-turn read from the relevant file, process table, API, inbox, queue, or log
@@ -33,7 +33,7 @@ Shadow has logged 1446 claim-boundary violations across 64 contract names. The u
 ### The Agent Proposed Work While Sounding Like It Had Executed
 
 - Contract: `self-verification`
-- Fires logged: 80
+- Fires logged: 76
 - Latest seen: 2026-07-19T22:18:01-05:00 CT
 - Buyer failure: A workflow agent reports plans, TODOs, or partial attempts in a way that can be mistaken for completed work.
 - Missing receipt: execution result, test output, publish receipt, or explicit incomplete status
@@ -44,7 +44,7 @@ Shadow has logged 1446 claim-boundary violations across 64 contract names. The u
 ### The Agent Said Done While The Artifact Was Still Missing
 
 - Contract: `completion-artifact`
-- Fires logged: 57
+- Fires logged: 55
 - Latest seen: 2026-07-29T06:37:24-05:00 CT
 - Buyer failure: A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.
 - Missing receipt: artifact path, commit hash, deploy receipt, message id, or queue record
@@ -66,7 +66,7 @@ Shadow has logged 1446 claim-boundary violations across 64 contract names. The u
 ### The Agent Tried To Put Private Identity Data Into A Tool Boundary
 
 - Contract: `dox-guard`
-- Fires logged: 11
+- Fires logged: 4
 - Latest seen: 2026-07-28T07:40:14-05:00 CT
 - Buyer failure: An outbound or automation agent risks leaking personal identifiers through shell commands, browser scripts, or third-party calls.
 - Missing receipt: redaction proof and approved outbound identity context

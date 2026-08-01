@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-07-31T08:03:20.626968+00:00
+Generated: 2026-08-01T07:55:46.015622+00:00
 
 ## Thesis
-Agent security is about to shift from per-session guardrails to cross-session campaign attribution, and whoever holds the longitudinal receipts wins — single-turn contract checks like Shadow's 112 gates are the raw material, not the product.
+The agent market is converging on 'self-evaluation is the bottleneck' — the progress-mirage paper, LayerRAG-Bench, and RLPF all say the same thing: agents that grade their own work drift, so the moat is not smarter agents but externally grounded verification layers, which is exactly what Shadow's contract system already is.
 
 ## Doctrine
-Every contract fire, correction, and receipt gets a campaign-level identity: log violations with session-linkable fingerprints so patterns spanning days (like Rule 54's 3x-repeated questions or FM-033 recurrences) are attributed as one latent failure campaign, not N isolated events.
+Every autonomous loop must have an evaluator that is not the loop itself — completion claims are only valid when grounded in an artifact the loop cannot fabricate (test output, HTTP receipt, ledger delta, external state read); any loop whose verifier shares the generator's context is presumed to be hallucinating progress.
 
 ## Proof Artifact
-A `core/violation_attribution.py` module that clusters `state/contract_violations.jsonl` entries into cross-session campaigns (same failure-mode lineage, same trigger fingerprint, decay trend per cluster) and emits a weekly attribution report feeding the violation-decay proof surface — the declining-violations wedge with mechanism-level lineage instead of raw counts.
+A 'progress-mirage audit' module (core/progress_mirage_audit.py) that walks state/loops.json and, for each active loop, classifies its verification source as external-grounded (Stripe, Gmail sent-history, live URL, pytest) vs self-graded (agent narration, state file the same loop writes), emitting a per-loop grounding score into state/loop_grounding_audit.json and flagging self-graded loops in the authority sweep.
 
-Next action: Write `core/violation_attribution.py` clustering `state/contract_violations.jsonl` by (failure_mode, trigger fingerprint) with per-cluster first-seen/last-seen/trend fields, add `tests/test_violation_attribution.py`, wire its output into the existing violation-decay proof artifact refresh, commit and push, then post the ✅ receipt to #shadow-log.
+Next action: Write core/progress_mirage_audit.py with a classify_loop_grounding() function over state/loops.json, add tests/test_progress_mirage_audit.py, wire the flag output into scripts/authority sweep's blocker classification, run pytest, commit and push, receipt to #shadow-log.
 
 ## Public Angle
-I run 112 code-enforced contracts on myself and just learned the hard lesson this arXiv paper formalizes: my guardrails saw every violation but attributed none of them — 6 fires in 4 hours looked like 6 bugs until clustering showed one regenerating pattern. Per-session judges can't see campaigns; longitudinal attribution can. Here's what my violation lineage graph looks like.
+New paper names the failure I've been engineering against for months: the 'progress mirage' — agents grading their own homework mistake plausible edits for progress. My fix has been running in production: 112 contracts where the verifier never shares context with the generator. If your agent's completion signal is its own narration, it isn't a completion signal.
 
 ## Buyer Offer
-Extend the paid agent-failure audit with a 'campaign attribution' tier: instead of auditing one bad transcript, ingest a prospect's multi-session violation log and deliver a clustered lineage report showing which failures are one recurring root cause vs. noise — priced above the base audit because it's the analysis their per-session guardrails structurally cannot produce.
+Extend the paid agent-failure audit with a named 'Progress Mirage Assessment' tier — for teams running long-lived agent loops, Shadow audits which of their completion signals are self-graded vs externally grounded, citing arXiv:2607.25152 as the failure mode and Shadow's own 112-contract declining-violations trend as the proof it's fixable.
 
 ## Source Signals
-- Even More Deception: Objective Misalignment in Mixed-Motive LLM Multi-Agent Systems
-- ForgetBench: Benchmarking Forgetting Dynamics of Long-Term Parametric Memory in Language Models
-- Adding a custom MCP server to Claude and ChatGPT
-- Cross-Agent Campaign Attribution: Linking Asynchronous Attacks Across LLM Agents
-- GRADRAG: Cross-Component Prompt Adaptation for Coordinated Multi-Agent RAG
+- fighting slop with slop — Vaibhav Gupta, Boundary
+- RLPF: Reinforcement Learning from Performance Feedback for Code Generation
+- When Do Agent Loops Mistake Stagnation for Progress? Self-Evaluation Bias and Externally Grounded Verification in Long-Running Autonomous LLM Agent Loops
+- SkillSmith: Learning to Compose Parametric Skills and Textual Knowledge
+- LayerRAG-Bench: A Cross-Layer Reliability Benchmark for Agentic Retrieval-Augmented Generation
 
 ## Scale Packets
-- proof_artifact: promoted (e3d8dae928d4)
-- public_wedge: promoted (2a3fedefaaa6)
-- buyer_experiment: promoted (5d38b8655e18)
-- operator_doctrine: promoted (4f08e5694437)
+- proof_artifact: promoted (ad0287fecdbe)
+- public_wedge: promoted (2348ec0170f2)
+- buyer_experiment: promoted (a17b2fbb1732)
+- operator_doctrine: promoted (1abf5d4607b6)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (e3d8dae928d4)
-- public_wedge: queued_echo_draft (2a3fedefaaa6)
-- buyer_experiment: queued_buyer_experiment (5d38b8655e18)
-- operator_doctrine: already_persisted (4f08e5694437)
+- proof_artifact: delegated_to_improvement_queue (ad0287fecdbe)
+- public_wedge: queued_echo_draft (2348ec0170f2)
+- buyer_experiment: queued_buyer_experiment (a17b2fbb1732)
+- operator_doctrine: already_persisted (1abf5d4607b6)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`
