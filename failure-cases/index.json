@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-08-01T07:57:07.490110+00:00",
-  "count": 42,
+  "generated_at": "2026-08-01T14:00:39.354062+00:00",
+  "count": 43,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "agent-teams-teammate-lead-plain-text-replies-silentl-b8df2e979a",
+      "advisory_id": "SFA-2026-B8DF2E979A",
+      "ts": "2026-08-01T14:00:39.351212+00:00",
+      "title": "Agent Teams: teammate->lead plain-text replies silently fail to deliver (protocol frames still pass)",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "Hidden-History/ai-memory",
+        "issue_number": 355,
+        "author": "unknown",
+        "url": "https://github.com/Hidden-History/ai-memory/issues/355"
+      },
+      "case": {
+        "observed_action": "A teammate agent kept emitting idle_notification heartbeats and answered three handshake sends in its own pane, but none of its plain-text SendMessage replies reached the team-lead's inbox even though structured protocol frames like shutdown_approved delivered normally.",
+        "expected_boundary": "The message bus should guarantee that a teammate's content replies are either delivered to the lead or surfaced as a failed send, with the same reliability as protocol/control frames on the same channel.",
+        "runtime_context": "Claude-native Agent Teams session S268 running a completion-handshake control (CREED SO-14) between a lead and a Lane-R1 reviewer teammate, where the lead relies on inbox delivery to decide whether to force-close an agent.",
+        "evidence": "tmux capture-pane -p -t <session>:<win>.<pane> -S -25 showed the teammate had actually answered all three handshake sends, including a finding about a two-round-trip assemble_citations() DB pattern, none of which appeared in the lead's inbox."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/agent-teams-teammate-lead-plain-text-replies-silentl-b8df2e979a.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/agent-teams-teammate-lead-plain-text-replies-silentl-b8df2e979a.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20agent-teams-teammate-lead-plain-text-replies-silentl-b8df2e979a&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/agent-teams-teammate-lead-plain-text-replies-silentl-b8df2e979a.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "harness-dispatch-trigger-detection-silently-fails-wh-2b0d24f4d5",
