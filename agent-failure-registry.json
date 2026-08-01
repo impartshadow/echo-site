@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/harness-dispatch-trigger-detection-silently-fails-wh-2b0d24f4d5.html",
+      "evidence": "The issue reporter confirms the config is accepted by the Go CLI ('the Go CLI accepts it fine') while the shell grep for name: fails to match a source:-only agent entry, producing a silent skip with no error output.",
+      "expected_boundary": "The trigger-detection heuristic should be validated in CI against the real Go config parser across every valid agent-entry schema shape, so any divergence between the two implementations fails a test instead of shipping as a silent no-op.",
+      "id": "SFA-2026-2B0D24F4D5",
+      "observed_action": "The shell-based has_triggers check greps for a literal name: field and returns false for an agent entry that only specifies source:, so dispatch is silently skipped even though the config is valid.",
+      "published_at": "2026-08-01T06:30:45.638507+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 757,
+        "repo": "guyoron1/fullsend",
+        "url": "https://github.com/guyoron1/fullsend/issues/757"
+      },
+      "status": "observed",
+      "summary": "Harness dispatch trigger detection silently fails when agent entry lacks name field",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/after-llm-call-hooks-never-run-on-acall-eight-native-812b11cea7.html",
       "evidence": "A stubbed sync/async comparison shows the registered hook fires and redacts the response under call() but never fires under acall(), and a second related check shows _previous_thinking_blocks stays empty on the async anthropic path because _extract_thinking_block is likewise never called there.",
       "expected_boundary": "Every _ahandle_* method should call _invoke_after_llm_call_hooks exactly where its paired _handle_* method does, since after_llm_call is documented as a mandatory interception point for redaction and audit logging.",
@@ -1067,12 +1093,12 @@
       }
     }
   ],
-  "count": 41,
+  "count": 42,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-07-31T14:00:43.051018+00:00",
+    "checked_at": "2026-08-01T06:30:45.661248+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
