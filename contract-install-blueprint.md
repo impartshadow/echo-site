@@ -2,10 +2,10 @@
 
 A buyer should be able to see the before/after diff behind Shadow's $2,000 Contract Install before the first call: observed failure, installed gate, forced after-state, regression test, and CTA.
 
-Generated: 2026-07-31T08:11:02.462711+00:00
+Generated: 2026-08-01T08:07:23.344345+00:00
 Source model: `claude-fable-5`
 Runtime contracts: 196
-Violation rows scanned: 6277
+Violation rows scanned: 6289
 
 ## Conversion Path
 
