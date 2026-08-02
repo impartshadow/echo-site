@@ -1,41 +1,42 @@
 # Violation Decay Case Study
 
-Generated: 2026-08-01T08:09:59.501176+00:00
+Generated: 2026-08-02T08:14:58.605997+00:00
 
 ## Claim
-persistent-correction cooled from 84 to 0 weekly hits; state-assertion-grounding is the hottest remaining governance gap.
+partial-evidence-flag cooled from 96 to 0 weekly hits; state-assertion-grounding is the hottest remaining governance gap.
 
 This is not a generic benchmark. It is a trend read over Shadow's production
 contract-violation log: `state/contract_violations.jsonl`.
 
 ## Totals
-- Violations logged: 1405
-- Distinct contracts in log: 63
+- Violations logged: 1449
+- Distinct contracts in log: 66
 - Distinct failure modes: 22
-- Eligible contracts: 41
-- Cooled contracts: 37
-- Hotter contracts: 2
+- Eligible contracts: 46
+- Cooled contracts: 41
+- Hotter contracts: 3
 
 ## Cooled Guardrails
 | Contract | Total | First 7d | Recent 7d | Delta | Change |
 |---|---:|---:|---:|---:|---:|
+| `partial-evidence-flag` | 211 | 96 | 0 | -96 | -100.0% |
 | `persistent-correction` | 139 | 84 | 0 | -84 | -100.0% |
-| `partial-evidence-flag` | 214 | 60 | 0 | -60 | -100.0% |
-| `platform-action-precheck` | 127 | 36 | 0 | -36 | -100.0% |
-| `self-verification` | 76 | 22 | 0 | -22 | -100.0% |
-| `factual-claim-verification` | 111 | 21 | 7 | -14 | -66.7% |
-| `commit-hash-verification` | 45 | 24 | 11 | -13 | -54.2% |
+| `scope-coverage-guard` | 43 | 43 | 0 | -43 | -100.0% |
+| `platform-action-precheck` | 128 | 36 | 2 | -34 | -94.4% |
+| `stale-state-assertion-guard` | 81 | 40 | 6 | -34 | -85.0% |
+| `verification-vocabulary-gate` | 76 | 53 | 23 | -30 | -56.6% |
+| `factual-claim-verification` | 115 | 40 | 12 | -28 | -70.0% |
+| `self-verification` | 73 | 23 | 0 | -23 | -100.0% |
+| `commit-hash-verification` | 43 | 32 | 10 | -22 | -68.8% |
+| `definitive-state-assertion-gate` | 20 | 20 | 0 | -20 | -100.0% |
+| `completion-artifact` | 54 | 21 | 4 | -17 | -81.0% |
 | `behavioral-haiku-guard` | 21 | 12 | 0 | -12 | -100.0% |
-| `completion-artifact` | 55 | 14 | 4 | -10 | -71.4% |
-| `high-stakes-pre-critique` | 16 | 10 | 0 | -10 | -100.0% |
-| `sensitive-write-router` | 12 | 11 | 1 | -10 | -90.9% |
-| `stale-state-assertion-guard` | 80 | 16 | 7 | -9 | -56.2% |
-| `loop-name-validation-guard` | 20 | 7 | 0 | -7 | -100.0% |
 
 ## Remaining Hot Spots
 | Contract | Total | First 7d | Recent 7d | Delta | Change |
 |---|---:|---:|---:|---:|---:|
-| `state-assertion-grounding` | 163 | 24 | 32 | +8 | +33.3% |
+| `state-assertion-grounding` | 186 | 24 | 48 | +24 | +100.0% |
+| `terminal-state-evidence-gate` | 34 | 15 | 19 | +4 | +26.7% |
 | `unbuilt-guarantee-guard` | 7 | 1 | 2 | +1 | +100.0% |
 
 ## Buyer Use
