@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agents-cannot-page-their-own-pod-history-before-offs-bf83c3ec65.html",
+      "evidence": "The issue author confirmed the same limit=5 response was returned whether before, offset, both, or neither were supplied, and that the underlying findByPodId(podId, limit, before) signature already accepts the missing parameter.",
+      "expected_boundary": "Since PGMessage.findByPodId already supports a cursor and the human-facing route (#767) passes it through, the agent route should forward before/offset to the same model call or explicitly reject them with a 400.",
+      "id": "SFA-2026-BF83C3EC65",
+      "observed_action": "The agent-facing pods/:podId/messages endpoint accepts before and offset query parameters but returns the same newest-50 messages regardless of their values.",
+      "published_at": "2026-08-02T21:30:36.111701+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 795,
+        "repo": "Team-Commonly/commonly",
+        "url": "https://github.com/Team-Commonly/commonly/issues/795"
+      },
+      "status": "observed",
+      "summary": "Agents cannot page their own pod history \u2014 before/offset are silently ignored",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/cancel-is-silently-ignored-while-the-agent-task-is-s-d333bd16c1.html",
       "evidence": "The server log line 'No active agent to cancel; returning ru...' shows the handler treating absence of a live process as absence of cancel intent, rather than as a not-yet-registered cancel that should be honored on registration.",
       "expected_boundary": "The cancel handler should check a pending-cancel record keyed by turn_id, independent of process-handle existence, before allowing the CLI process to spawn.",
@@ -1145,12 +1171,12 @@
       }
     }
   ],
-  "count": 44,
+  "count": 45,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-02T14:00:43.295203+00:00",
+    "checked_at": "2026-08-02T21:30:36.150123+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
