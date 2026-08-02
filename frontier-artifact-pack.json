@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-08-01T07:55:46.015622+00:00",
+  "generated_at": "2026-08-02T08:01:00.084776+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-08-01T07:55:31.081346+00:00",
-  "thesis": "The agent market is converging on 'self-evaluation is the bottleneck' \u2014 the progress-mirage paper, LayerRAG-Bench, and RLPF all say the same thing: agents that grade their own work drift, so the moat is not smarter agents but externally grounded verification layers, which is exactly what Shadow's contract system already is.",
-  "doctrine": "Every autonomous loop must have an evaluator that is not the loop itself \u2014 completion claims are only valid when grounded in an artifact the loop cannot fabricate (test output, HTTP receipt, ledger delta, external state read); any loop whose verifier shares the generator's context is presumed to be hallucinating progress.",
-  "proof_artifact": "A 'progress-mirage audit' module (core/progress_mirage_audit.py) that walks state/loops.json and, for each active loop, classifies its verification source as external-grounded (Stripe, Gmail sent-history, live URL, pytest) vs self-graded (agent narration, state file the same loop writes), emitting a per-loop grounding score into state/loop_grounding_audit.json and flagging self-graded loops in the authority sweep.",
-  "proof_next_action": "Write core/progress_mirage_audit.py with a classify_loop_grounding() function over state/loops.json, add tests/test_progress_mirage_audit.py, wire the flag output into scripts/authority sweep's blocker classification, run pytest, commit and push, receipt to #shadow-log.",
-  "public_angle": "New paper names the failure I've been engineering against for months: the 'progress mirage' \u2014 agents grading their own homework mistake plausible edits for progress. My fix has been running in production: 112 contracts where the verifier never shares context with the generator. If your agent's completion signal is its own narration, it isn't a completion signal.",
-  "buyer_offer": "Extend the paid agent-failure audit with a named 'Progress Mirage Assessment' tier \u2014 for teams running long-lived agent loops, Shadow audits which of their completion signals are self-graded vs externally grounded, citing arXiv:2607.25152 as the failure mode and Shadow's own 112-contract declining-violations trend as the proof it's fixable.",
+  "cycle_ts": "2026-08-02T08:00:47.121208+00:00",
+  "thesis": "The orchestration-research wave (OrchBench, attention allocation) is optimizing plans nobody can audit \u2014 the market gap isn't smarter routing, it's routing with receipts, and Shadow already owns that lane.",
+  "doctrine": "Every model/task routing decision gets logged as a machine-readable receipt (task class, model chosen, observed outcome) so routing improves from evidence, not defaults \u2014 ungoverned optimization is just drift with better PR.",
+  "proof_artifact": "core/model_router.py \u2014 an observed-strength routing table (task class \u2192 model) backed by state/model_routing_ledger.jsonl, seeded from existing routing rules (Codex for code, Sonnet for voice, Haiku for judging, Gemini chain) and updated by logged outcomes; wire it into core/claude_client.py as the single decision point.",
+  "proof_next_action": "Create core/model_router.py with the seeded routing table + ledger writes via core/state_io.py, add tests/test_model_router.py, run pytest, commit and push, post receipt to #shadow-log.",
+  "public_angle": "Everyone benchmarks orchestration in simulation (OrchBench dropped this week). I log every routing decision my own agent makes in production \u2014 model, task, outcome \u2014 and the ledger disagrees with the benchmarks more often than you'd think. Simulated plan quality is a map; the receipt ledger is the territory.",
+  "buyer_offer": "Contract-install upsell: 'Your agent picks models by vibes \u2014 I install a routing ledger that shows which model earned each task, with per-task receipts. OrchBench evaluates plans in simulation; this governs them in production.'",
   "source_titles": [
-    "fighting slop with slop \u2014 Vaibhav Gupta, Boundary",
-    "RLPF: Reinforcement Learning from Performance Feedback for Code Generation",
-    "When Do Agent Loops Mistake Stagnation for Progress? Self-Evaluation Bias and Externally Grounded Verification in Long-Running Autonomous LLM Agent Loops",
-    "SkillSmith: Learning to Compose Parametric Skills and Textual Knowledge",
-    "LayerRAG-Bench: A Cross-Layer Reliability Benchmark for Agentic Retrieval-Augmented Generation"
+    "Data and Environment Curation for Post-Training LLMs \u2014 Mahesh Sathiamoorthy, Bespoke Labs",
+    "daly2211/autoretrieval \u2014 AI agent autonomously optimizing RAG retrieval pipelines against your own documents",
+    "Focus Is All You Need: Adaptive Goal-aware Attention Orchestration for Multi-Agent Graph Systems",
+    "OrchBench: Evaluating Multi-Agent Orchestration Plans in Isolation via Deterministic Simulation",
+    "Welcome to July 31, 2026"
   ],
   "packets": [
     {
-      "id": "ad0287fecdbe",
+      "id": "857a08f32c11",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "2348ec0170f2",
+      "id": "b97b2262c757",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "a17b2fbb1732",
+      "id": "7c88f6784d02",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "1abf5d4607b6",
+      "id": "d4cac5425507",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Write core/progress_mirage_audit.py with a classify_loop_grounding() function over state/loops.json, add tests/test_progress_mirage_audit.py, wire the flag output into scripts/authority sweep's blocker classification, run pytest, commit and push, receipt to #shadow-log.",
-      "packet_id": "ad0287fecdbe"
+      "next_action": "Create core/model_router.py with the seeded routing table + ledger writes via core/state_io.py, add tests/test_model_router.py, run pytest, commit and push, post receipt to #shadow-log.",
+      "packet_id": "857a08f32c11"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_2348ec0170f2_1785570946",
-      "packet_id": "2348ec0170f2"
+      "draft_id": "frontier_b97b2262c757_1785657660",
+      "packet_id": "b97b2262c757"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "557787d866ce",
-      "packet_id": "a17b2fbb1732"
+      "experiment_id": "1d0fdda227a6",
+      "packet_id": "7c88f6784d02"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "1abf5d4607b6"
+      "packet_id": "d4cac5425507"
     }
   ],
   "receipts": {

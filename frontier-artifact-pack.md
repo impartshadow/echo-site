@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-08-01T07:55:46.015622+00:00
+Generated: 2026-08-02T08:01:00.084776+00:00
 
 ## Thesis
-The agent market is converging on 'self-evaluation is the bottleneck' — the progress-mirage paper, LayerRAG-Bench, and RLPF all say the same thing: agents that grade their own work drift, so the moat is not smarter agents but externally grounded verification layers, which is exactly what Shadow's contract system already is.
+The orchestration-research wave (OrchBench, attention allocation) is optimizing plans nobody can audit — the market gap isn't smarter routing, it's routing with receipts, and Shadow already owns that lane.
 
 ## Doctrine
-Every autonomous loop must have an evaluator that is not the loop itself — completion claims are only valid when grounded in an artifact the loop cannot fabricate (test output, HTTP receipt, ledger delta, external state read); any loop whose verifier shares the generator's context is presumed to be hallucinating progress.
+Every model/task routing decision gets logged as a machine-readable receipt (task class, model chosen, observed outcome) so routing improves from evidence, not defaults — ungoverned optimization is just drift with better PR.
 
 ## Proof Artifact
-A 'progress-mirage audit' module (core/progress_mirage_audit.py) that walks state/loops.json and, for each active loop, classifies its verification source as external-grounded (Stripe, Gmail sent-history, live URL, pytest) vs self-graded (agent narration, state file the same loop writes), emitting a per-loop grounding score into state/loop_grounding_audit.json and flagging self-graded loops in the authority sweep.
+core/model_router.py — an observed-strength routing table (task class → model) backed by state/model_routing_ledger.jsonl, seeded from existing routing rules (Codex for code, Sonnet for voice, Haiku for judging, Gemini chain) and updated by logged outcomes; wire it into core/claude_client.py as the single decision point.
 
-Next action: Write core/progress_mirage_audit.py with a classify_loop_grounding() function over state/loops.json, add tests/test_progress_mirage_audit.py, wire the flag output into scripts/authority sweep's blocker classification, run pytest, commit and push, receipt to #shadow-log.
+Next action: Create core/model_router.py with the seeded routing table + ledger writes via core/state_io.py, add tests/test_model_router.py, run pytest, commit and push, post receipt to #shadow-log.
 
 ## Public Angle
-New paper names the failure I've been engineering against for months: the 'progress mirage' — agents grading their own homework mistake plausible edits for progress. My fix has been running in production: 112 contracts where the verifier never shares context with the generator. If your agent's completion signal is its own narration, it isn't a completion signal.
+Everyone benchmarks orchestration in simulation (OrchBench dropped this week). I log every routing decision my own agent makes in production — model, task, outcome — and the ledger disagrees with the benchmarks more often than you'd think. Simulated plan quality is a map; the receipt ledger is the territory.
 
 ## Buyer Offer
-Extend the paid agent-failure audit with a named 'Progress Mirage Assessment' tier — for teams running long-lived agent loops, Shadow audits which of their completion signals are self-graded vs externally grounded, citing arXiv:2607.25152 as the failure mode and Shadow's own 112-contract declining-violations trend as the proof it's fixable.
+Contract-install upsell: 'Your agent picks models by vibes — I install a routing ledger that shows which model earned each task, with per-task receipts. OrchBench evaluates plans in simulation; this governs them in production.'
 
 ## Source Signals
-- fighting slop with slop — Vaibhav Gupta, Boundary
-- RLPF: Reinforcement Learning from Performance Feedback for Code Generation
-- When Do Agent Loops Mistake Stagnation for Progress? Self-Evaluation Bias and Externally Grounded Verification in Long-Running Autonomous LLM Agent Loops
-- SkillSmith: Learning to Compose Parametric Skills and Textual Knowledge
-- LayerRAG-Bench: A Cross-Layer Reliability Benchmark for Agentic Retrieval-Augmented Generation
+- Data and Environment Curation for Post-Training LLMs — Mahesh Sathiamoorthy, Bespoke Labs
+- daly2211/autoretrieval — AI agent autonomously optimizing RAG retrieval pipelines against your own documents
+- Focus Is All You Need: Adaptive Goal-aware Attention Orchestration for Multi-Agent Graph Systems
+- OrchBench: Evaluating Multi-Agent Orchestration Plans in Isolation via Deterministic Simulation
+- Welcome to July 31, 2026
 
 ## Scale Packets
-- proof_artifact: promoted (ad0287fecdbe)
-- public_wedge: promoted (2348ec0170f2)
-- buyer_experiment: promoted (a17b2fbb1732)
-- operator_doctrine: promoted (1abf5d4607b6)
+- proof_artifact: promoted (857a08f32c11)
+- public_wedge: promoted (b97b2262c757)
+- buyer_experiment: promoted (7c88f6784d02)
+- operator_doctrine: promoted (d4cac5425507)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (ad0287fecdbe)
-- public_wedge: queued_echo_draft (2348ec0170f2)
-- buyer_experiment: queued_buyer_experiment (a17b2fbb1732)
-- operator_doctrine: already_persisted (1abf5d4607b6)
+- proof_artifact: delegated_to_improvement_queue (857a08f32c11)
+- public_wedge: queued_echo_draft (b97b2262c757)
+- buyer_experiment: queued_buyer_experiment (7c88f6784d02)
+- operator_doctrine: already_persisted (d4cac5425507)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`
