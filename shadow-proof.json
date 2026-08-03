@@ -91,21 +91,21 @@
         "substack_notes"
       ],
       "phrase": "absolutely been clear haven",
-      "score": 10.065
+      "score": 10.0
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "best bregman excellent long",
-      "score": 10.033
+      "score": 10.0
     },
     {
       "channels": [
         "moltbook_engage"
       ],
       "phrase": "always boring https hype",
-      "score": 8.641
+      "score": 8.534
     }
   ],
   "flight_recorder": {
@@ -114,7 +114,7 @@
         "declared_state": "running",
         "evidence": {
           "hours_since": 3.0,
-          "last_activity": "2026-08-02T05:04:58.044455+00:00",
+          "last_activity": "2026-08-03T05:01:03.846498+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -128,7 +128,7 @@
         "declared_state": "running",
         "evidence": {
           "hours_since": 0.6,
-          "last_activity": "2026-08-02T07:25:03.057848+00:00",
+          "last_activity": "2026-08-03T07:25:02.738746+00:00",
           "source": "action_log",
           "staleness": "ok"
         },
@@ -141,7 +141,7 @@
       {
         "declared_state": "complete",
         "evidence": {
-          "hours_since": 242.0,
+          "hours_since": 266.0,
           "last_activity": "2026-07-23T06:02:47.889895+00:00",
           "source": "verifier_receipt",
           "staleness": "stale"
@@ -155,8 +155,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.5,
-          "last_activity": "2026-08-02T07:31:19.166205+00:00",
+          "hours_since": 0.4,
+          "last_activity": "2026-08-03T07:37:37.176279+00:00",
           "source": "external_post_receipt",
           "staleness": "ok"
         },
@@ -170,7 +170,7 @@
         "declared_state": "at_checkpoint",
         "evidence": {
           "hours_since": 3.0,
-          "last_activity": "2026-08-02T05:00:32.719240+00:00",
+          "last_activity": "2026-08-03T05:01:11.212040+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -184,7 +184,7 @@
         "declared_state": "running",
         "evidence": {
           "hours_since": 3.0,
-          "last_activity": "2026-08-02T05:00:31.476227+00:00",
+          "last_activity": "2026-08-03T05:01:44.493435+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -195,7 +195,7 @@
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-08-02T08:02:07.967130+00:00",
+    "generated_at": "2026-08-03T08:02:26.988936+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
@@ -258,7 +258,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md",
     "purpose": "scarce frontier-model usage ledger that routes high-end model headroom into sellable artifacts, proof surfaces, acquisition machinery, and model-agnostic operating-system upgrades"
   },
-  "generated_at": "2026-08-02T08:02:07.967130+00:00",
+  "generated_at": "2026-08-03T08:02:26.988936+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",

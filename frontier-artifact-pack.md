@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-08-02T08:01:00.084776+00:00
+Generated: 2026-08-03T08:00:54.201393+00:00
 
 ## Thesis
-The orchestration-research wave (OrchBench, attention allocation) is optimizing plans nobody can audit — the market gap isn't smarter routing, it's routing with receipts, and Shadow already owns that lane.
+The winning agent platform will not be the smartest model but the governed operator runtime that routes work by observed capability and proves every autonomous action produced a revenue-linked outcome.
 
 ## Doctrine
-Every model/task routing decision gets logged as a machine-readable receipt (task class, model chosen, observed outcome) so routing improves from evidence, not defaults — ungoverned optimization is just drift with better PR.
+Grant autonomy only through measured loops: record the authority source, routing rationale, blocker class, execution outcome, verification result, and revenue impact for every action, then use those receipts to improve the next routing decision.
 
 ## Proof Artifact
-core/model_router.py — an observed-strength routing table (task class → model) backed by state/model_routing_ledger.jsonl, seeded from existing routing rules (Codex for code, Sonnet for voice, Haiku for judging, Gemini chain) and updated by logged outcomes; wire it into core/claude_client.py as the single decision point.
+Ship an append-only execution ledger plus capability router that scores coding, research, verification, browser automation, and summarization runs from observed outcomes and retries or reroutes any run that fails its verifier.
 
-Next action: Create core/model_router.py with the seeded routing table + ledger writes via core/state_io.py, add tests/test_model_router.py, run pytest, commit and push, post receipt to #shadow-log.
+Next action: Inspect the repository with `rg -n "research_signal_candidates|execution ledger|authorization|blocker|model.*rout" .` and patch the existing loop schema at its discovered source to require `authorization_source`, `routing_reason`, `blocker_class`, `outcome`, `verification_result`, and `revenue_impact` fields.
 
 ## Public Angle
-Everyone benchmarks orchestration in simulation (OrchBench dropped this week). I log every routing decision my own agent makes in production — model, task, outcome — and the ledger disagrees with the benchmarks more often than you'd think. Simulated plan quality is a map; the receipt ledger is the territory.
+AI agents do not need another intelligence demo. They need an operations ledger: who authorized the action, why this model got the job, what it changed, how it was verified, and whether it made or saved money.
 
 ## Buyer Offer
-Contract-install upsell: 'Your agent picks models by vibes — I install a routing ledger that shows which model earned each task, with per-task receipts. OrchBench evaluates plans in simulation; this governs them in production.'
+Sell a $500/month Governed AI Operator Audit to small agentic teams: instrument one business workflow with authority boundaries, model-routing telemetry, verification gates, and a weekly proof-of-value ledger.
 
 ## Source Signals
-- Data and Environment Curation for Post-Training LLMs — Mahesh Sathiamoorthy, Bespoke Labs
-- daly2211/autoretrieval — AI agent autonomously optimizing RAG retrieval pipelines against your own documents
-- Focus Is All You Need: Adaptive Goal-aware Attention Orchestration for Multi-Agent Graph Systems
-- OrchBench: Evaluating Multi-Agent Orchestration Plans in Isolation via Deterministic Simulation
-- Welcome to July 31, 2026
+- 5 Trends That Defined AI Engineering at World’s Fair 2026
+- Welcome to August 1, 2026
+- datasette-apps 0.2a0
+- July 2026 newsletter
+- ryan-phq2005h1/github-mcp-server — Official GitHub MCP Server — connect AI agents to GitHub API
 
 ## Scale Packets
-- proof_artifact: promoted (857a08f32c11)
-- public_wedge: promoted (b97b2262c757)
-- buyer_experiment: promoted (7c88f6784d02)
-- operator_doctrine: promoted (d4cac5425507)
+- proof_artifact: promoted (74cbdab4672c)
+- public_wedge: promoted (aff5c5ea4861)
+- buyer_experiment: promoted (0a7a7699c6ab)
+- operator_doctrine: promoted (7a6d6e648a89)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (857a08f32c11)
-- public_wedge: queued_echo_draft (b97b2262c757)
-- buyer_experiment: queued_buyer_experiment (7c88f6784d02)
-- operator_doctrine: already_persisted (d4cac5425507)
+- proof_artifact: delegated_to_improvement_queue (74cbdab4672c)
+- public_wedge: queued_echo_draft (aff5c5ea4861)
+- buyer_experiment: queued_buyer_experiment (0a7a7699c6ab)
+- operator_doctrine: already_persisted (7a6d6e648a89)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

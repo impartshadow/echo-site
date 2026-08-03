@@ -48,25 +48,25 @@
         "substack_notes"
       ],
       "phrase": "absolutely been clear haven",
-      "score": 10.065
+      "score": 10.0
     },
     {
       "channels": [
         "substack_notes"
       ],
       "phrase": "best bregman excellent long",
-      "score": 10.033
+      "score": 10.0
     },
     {
       "channels": [
         "moltbook_engage"
       ],
       "phrase": "always boring https hype",
-      "score": 8.641
+      "score": 8.534
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-08-02T08:02:07.967130+00:00",
+  "generated_at": "2026-08-03T08:02:26.988936+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",
