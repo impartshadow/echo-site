@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/subagent-tool-silently-ignores-values-for-the-model-b77228d7ee.html",
+      "evidence": "The reported examples show gpt-5.6-luna executing after both claude-sonnet-5 and nonexistent think-bigly-9.99 were passed as overrides.",
+      "expected_boundary": "The tool-to-subagent launch boundary must either resolve and dispatch the exact requested model or reject it before execution.",
+      "id": "SFA-2026-B77228D7EE",
+      "observed_action": "The subagent tool accepts valid and invalid model values but launches the child with the parent or agent-configured model.",
+      "published_at": "2026-08-03T06:31:09.259390+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 10303,
+        "repo": "kirodotdev/Kiro",
+        "url": "https://github.com/kirodotdev/Kiro/issues/10303"
+      },
+      "status": "observed",
+      "summary": "Subagent tool silently ignores values for the \"model\" parameter",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agents-cannot-page-their-own-pod-history-before-offs-bf83c3ec65.html",
       "evidence": "The issue author confirmed the same limit=5 response was returned whether before, offset, both, or neither were supplied, and that the underlying findByPodId(podId, limit, before) signature already accepts the missing parameter.",
       "expected_boundary": "Since PGMessage.findByPodId already supports a cursor and the human-facing route (#767) passes it through, the agent route should forward before/offset to the same model call or explicitly reject them with a 400.",
@@ -1171,12 +1197,12 @@
       }
     }
   ],
-  "count": 45,
+  "count": 46,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-02T21:30:36.150123+00:00",
+    "checked_at": "2026-08-03T06:31:09.283719+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
