@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-08-03T14:00:58.574663+00:00",
-  "count": 47,
+  "generated_at": "2026-08-03T21:30:51.971832+00:00",
+  "count": 48,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "copilot-owned-tools-like-fetch-webpage-silently-fail-5b09262de8",
+      "advisory_id": "SFA-2026-5B09262DE8",
+      "ts": "2026-08-03T21:30:51.966384+00:00",
+      "title": "Copilot-owned tools (like fetch_webpage) silently fail without GitHub Copilot subscription",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "Vizards/deepseek-v4-for-copilot",
+        "issue_number": 213,
+        "author": "unknown",
+        "url": "https://github.com/Vizards/deepseek-v4-for-copilot/issues/213"
+      },
+      "case": {
+        "observed_action": "Copilot Chat advertised `fetch_webpage`, accepted DeepSeek’s tool call, and returned a subscription-expired message as ordinary tool output.",
+        "expected_boundary": "The host runtime should enforce tool entitlement before exposing the tool schema or accepting the provider’s tool call.",
+        "runtime_context": "A BYOK DeepSeek model was running through `vscode.LanguageModelChatProvider` while the user’s GitHub Copilot subscription was expired.",
+        "evidence": "The model and extension continued working, but the host-owned tool returned “Thank you for using GitHub Copilot. Your subscription has ended.”"
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/copilot-owned-tools-like-fetch-webpage-silently-fail-5b09262de8.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/copilot-owned-tools-like-fetch-webpage-silently-fail-5b09262de8.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20copilot-owned-tools-like-fetch-webpage-silently-fail-5b09262de8&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/copilot-owned-tools-like-fetch-webpage-silently-fail-5b09262de8.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "bug-mcp-tool-override-only-applies-description-param-ffbb6e50f2",

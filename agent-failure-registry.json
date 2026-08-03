@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/copilot-owned-tools-like-fetch-webpage-silently-fail-5b09262de8.html",
+      "evidence": "The model and extension continued working, but the host-owned tool returned \u201cThank you for using GitHub Copilot. Your subscription has ended.\u201d",
+      "expected_boundary": "The host runtime should enforce tool entitlement before exposing the tool schema or accepting the provider\u2019s tool call.",
+      "id": "SFA-2026-5B09262DE8",
+      "observed_action": "Copilot Chat advertised `fetch_webpage`, accepted DeepSeek\u2019s tool call, and returned a subscription-expired message as ordinary tool output.",
+      "published_at": "2026-08-03T21:30:51.966384+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 213,
+        "repo": "Vizards/deepseek-v4-for-copilot",
+        "url": "https://github.com/Vizards/deepseek-v4-for-copilot/issues/213"
+      },
+      "status": "observed",
+      "summary": "Copilot-owned tools (like fetch_webpage) silently fail without GitHub Copilot subscription",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-mcp-tool-override-only-applies-description-param-ffbb6e50f2.html",
       "evidence": "The reported factory loop reads override.get(\"description\") and assigns tool.description, with no corresponding application of parameters or inputSchema.",
       "expected_boundary": "The factory boundary should ensure every accepted override is reflected in the serialized tool definition delivered to the model or explicitly rejected as unsupported.",
@@ -1223,12 +1249,12 @@
       }
     }
   ],
-  "count": 47,
+  "count": 48,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-03T14:00:58.592395+00:00",
+    "checked_at": "2026-08-03T21:30:51.991062+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
