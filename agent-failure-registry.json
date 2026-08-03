@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-mcp-tool-override-only-applies-description-param-ffbb6e50f2.html",
+      "evidence": "The reported factory loop reads override.get(\"description\") and assigns tool.description, with no corresponding application of parameters or inputSchema.",
+      "expected_boundary": "The factory boundary should ensure every accepted override is reflected in the serialized tool definition delivered to the model or explicitly rejected as unsupported.",
+      "id": "SFA-2026-FFBB6E50F2",
+      "observed_action": "The API persists description and parameter-schema overrides, but the runtime factory applies only the description while silently retaining the original schema.",
+      "published_at": "2026-08-03T14:00:58.572329+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 547,
+        "repo": "GenAI-Security-Project/finbot-ctf",
+        "url": "https://github.com/GenAI-Security-Project/finbot-ctf/issues/547"
+      },
+      "status": "observed",
+      "summary": "[Bug] MCP Tool Override Only Applies `description` - `parameters` Silently Dropped",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/subagent-tool-silently-ignores-values-for-the-model-b77228d7ee.html",
       "evidence": "The reported examples show gpt-5.6-luna executing after both claude-sonnet-5 and nonexistent think-bigly-9.99 were passed as overrides.",
       "expected_boundary": "The tool-to-subagent launch boundary must either resolve and dispatch the exact requested model or reject it before execution.",
@@ -1197,12 +1223,12 @@
       }
     }
   ],
-  "count": 46,
+  "count": 47,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-03T06:31:09.283719+00:00",
+    "checked_at": "2026-08-03T14:00:58.592395+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
