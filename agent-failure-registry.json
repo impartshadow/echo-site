@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/vault-search-model-self-attached-tags-and-logic-fals-d4987c30f1.html",
+      "evidence": "Two separate runs (Run A and Run B) show vault_search returning results: [] due to AND-logic tag mismatch, followed by the model asserting it 'couldn't find any relevant documents' despite the page being present.",
+      "expected_boundary": "A tag-filtered query returning zero results should never be treated as final proof of absence; the tool boundary should require a fallback untagged/substring search before any 'not found' claim is made.",
+      "id": "SFA-2026-D4987C30F1",
+      "observed_action": "The agent self-attached an invented tags filter to vault_search and, upon receiving zero results, told the user it found no relevant documents in the vault.",
+      "published_at": "2026-08-04T14:12:49.950932+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 688,
+        "repo": "lmorchard/decafclaw",
+        "url": "https://github.com/lmorchard/decafclaw/issues/688"
+      },
+      "status": "observed",
+      "summary": "vault_search: model-self-attached tags + AND-logic \u2192 false-empty results (hallucinated absence)",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/copilot-owned-tools-like-fetch-webpage-silently-fail-5b09262de8.html",
       "evidence": "The model and extension continued working, but the host-owned tool returned \u201cThank you for using GitHub Copilot. Your subscription has ended.\u201d",
       "expected_boundary": "The host runtime should enforce tool entitlement before exposing the tool schema or accepting the provider\u2019s tool call.",
@@ -1249,12 +1275,12 @@
       }
     }
   ],
-  "count": 48,
+  "count": 49,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-03T21:30:51.991062+00:00",
+    "checked_at": "2026-08-04T14:12:49.971067+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
