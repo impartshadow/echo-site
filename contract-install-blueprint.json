@@ -1,11 +1,11 @@
 {
   "schema": "shadow.contract_install_blueprint.v1",
-  "generated_at": "2026-08-03T08:09:48.266701+00:00",
+  "generated_at": "2026-08-04T08:11:12.357438+00:00",
   "source_model": "claude-fable-5",
   "frontier_receipt": "claude-fable-5 selected Contract Install Blueprint as the next artifact because it demonstrates the paid install product itself.",
   "source_runtime": {
-    "contract_count": 201,
-    "violation_rows_scanned": 6498,
+    "contract_count": 202,
+    "violation_rows_scanned": 6517,
     "current_violation_log": "state/contract_violations.jsonl",
     "archive_glob": "state/archive/**/contract_violations_*.jsonl.gz"
   },
@@ -61,7 +61,7 @@
       "tier": "free-triage",
       "production_evidence": {
         "fires_observed": 118,
-        "ledger_rows_scanned": 6498,
+        "ledger_rows_scanned": 6517,
         "latest_seen": "2026-07-09T12:21:37",
         "severity_counts": {
           "block": 118
@@ -98,7 +98,7 @@
       "tier": "census",
       "production_evidence": {
         "fires_observed": 114,
-        "ledger_rows_scanned": 6498,
+        "ledger_rows_scanned": 6517,
         "latest_seen": "2026-07-30T02:54:48",
         "severity_counts": {
           "block": 114
@@ -135,7 +135,7 @@
       "tier": "install",
       "production_evidence": {
         "fires_observed": 131,
-        "ledger_rows_scanned": 6498,
+        "ledger_rows_scanned": 6517,
         "latest_seen": "2026-08-02T14:48:32",
         "severity_counts": {
           "block": 99,
@@ -173,7 +173,7 @@
       "tier": "census",
       "production_evidence": {
         "fires_observed": 630,
-        "ledger_rows_scanned": 6498,
+        "ledger_rows_scanned": 6517,
         "latest_seen": "2026-07-20T03:18:01",
         "severity_counts": {
           "block": 249,
@@ -211,7 +211,7 @@
       "tier": "install",
       "production_evidence": {
         "fires_observed": 114,
-        "ledger_rows_scanned": 6498,
+        "ledger_rows_scanned": 6517,
         "latest_seen": "2026-07-28T12:40:14",
         "severity_counts": {
           "block": 114
@@ -248,11 +248,11 @@
       "tier": "free-triage",
       "production_evidence": {
         "fires_observed": 211,
-        "ledger_rows_scanned": 6498,
+        "ledger_rows_scanned": 6517,
         "latest_seen": "2026-08-01T21:34:22",
         "severity_counts": {
-          "warn": 145,
-          "block": 66
+          "block": 66,
+          "warn": 145
         },
         "false_positive_note": "Auth, legal, spend, and irreversible high-blast operations remain valid escalation classes.",
         "origin_incident": "Repeated manual handoffs occurred despite available browser, Gmail, API, and shell routes.",
