@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-08-03T08:00:54.201393+00:00",
+  "generated_at": "2026-08-04T08:03:34.638933+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-08-03T08:00:36.753273+00:00",
-  "thesis": "The winning agent platform will not be the smartest model but the governed operator runtime that routes work by observed capability and proves every autonomous action produced a revenue-linked outcome.",
-  "doctrine": "Grant autonomy only through measured loops: record the authority source, routing rationale, blocker class, execution outcome, verification result, and revenue impact for every action, then use those receipts to improve the next routing decision.",
-  "proof_artifact": "Ship an append-only execution ledger plus capability router that scores coding, research, verification, browser automation, and summarization runs from observed outcomes and retries or reroutes any run that fails its verifier.",
-  "proof_next_action": "Inspect the repository with `rg -n \"research_signal_candidates|execution ledger|authorization|blocker|model.*rout\" .` and patch the existing loop schema at its discovered source to require `authorization_source`, `routing_reason`, `blocker_class`, `outcome`, `verification_result`, and `revenue_impact` fields.",
-  "public_angle": "AI agents do not need another intelligence demo. They need an operations ledger: who authorized the action, why this model got the job, what it changed, how it was verified, and whether it made or saved money.",
-  "buyer_offer": "Sell a $500/month Governed AI Operator Audit to small agentic teams: instrument one business workflow with authority boundaries, model-routing telemetry, verification gates, and a weekly proof-of-value ledger.",
+  "cycle_ts": "2026-08-04T08:03:20.582265+00:00",
+  "thesis": "The agentic AI field is converging on the discovery that judges, specs, and formalism all fail under load \u2014 the only durable trust primitive is a runtime ledger of what an agent was authorized to do, what it actually did, and what stopped it, which means governance is becoming an evidence problem, not an evaluation problem.",
+  "doctrine": "Every autonomous action must carry a machine-readable authorization lineage: which standing authority clause permitted it, what artifact proves it landed, and if blocked, which allowlist category the blocker falls under \u2014 evaluators mimic consensus, ledgers don't.",
+  "proof_artifact": "Extend state/action_log.jsonl schema with three fields \u2014 authorization_source (standing-authority clause or Will-directive ref), outcome_artifact (hash/URL/path receipt), blocker_class (allowlist category 1-4 or 'none') \u2014 plus a Contract in core/contracts.py (execution-ledger-guard) that warns when an autonomous outbound action logs without all three fields, and a backfill-tolerant reader in core/state_io.py.",
+  "proof_next_action": "Edit core/contracts.py to add ExecutionLedgerGuard (warn-mode) checking action_log.jsonl writes for authorization_source/outcome_artifact/blocker_class, add tests/test_execution_ledger_guard.py, run pytest, commit and push, receipt to #shadow-log.",
+  "public_angle": "New paper says LLM judges are 'blinded by consensus mimicry' \u2014 they grade the paperwork, not the truth. I stopped trusting my own judge-graded audits months ago. What I trust: a ledger where every autonomous action records its authorization source and a receipt an outsider can verify. Evaluation is theater; provenance is evidence.",
+  "buyer_offer": "Pitch the paid audit ladder with a new proof cut: 'Can your agent show, per action, who authorized it and what receipt proves it ran? Ours can \u2014 here's a 7-day ledger excerpt with authorization lineage and zero unattributed actions.' Targets teams burned by LLM-as-judge dashboards (the Formalism Trap paper is the cold-open citation).",
   "source_titles": [
-    "5 Trends That Defined AI Engineering at World\u2019s Fair 2026",
-    "Welcome to August 1, 2026",
-    "datasette-apps 0.2a0",
-    "July 2026 newsletter",
-    "ryan-phq2005h1/github-mcp-server \u2014 Official GitHub MCP Server \u2014 connect AI agents to GitHub API"
+    "These type of people act like your ally, but are undercover enemies:",
+    "OpenClaw and Ollama in Agentic AI: Toward Fully Autonomous and Scalable AI Agent Systems",
+    "The Formalism Trap: Are LLM-as-a-Judge Evaluators Blinded by Consensus Mimicry under Social Load?",
+    "Specula: Scaling formal specifications for autonomous model checking of system code",
+    "Reasoning in Real World Clinical Care: Why Large Language Models Are Not Yet Safe for Autonomous Clinical Decision Support"
   ],
   "packets": [
     {
-      "id": "74cbdab4672c",
+      "id": "23d0458644a7",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "aff5c5ea4861",
+      "id": "1e9c12ba80b5",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "0a7a7699c6ab",
+      "id": "81ab85bd9f96",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "7a6d6e648a89",
+      "id": "0d7a49ed4f31",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Inspect the repository with `rg -n \"research_signal_candidates|execution ledger|authorization|blocker|model.*rout\" .` and patch the existing loop schema at its discovered source to require `authorization_source`, `routing_reason`, `blocker_class`, `outcome`, `verification_result`, and `revenue_impact` fields.",
-      "packet_id": "74cbdab4672c"
+      "next_action": "Edit core/contracts.py to add ExecutionLedgerGuard (warn-mode) checking action_log.jsonl writes for authorization_source/outcome_artifact/blocker_class, add tests/test_execution_ledger_guard.py, run pytest, commit and push, receipt to #shadow-log.",
+      "packet_id": "23d0458644a7"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_aff5c5ea4861_1785744054",
-      "packet_id": "aff5c5ea4861"
+      "draft_id": "frontier_1e9c12ba80b5_1785830614",
+      "packet_id": "1e9c12ba80b5"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "359f96cf33f4",
-      "packet_id": "0a7a7699c6ab"
+      "experiment_id": "b3164de24035",
+      "packet_id": "81ab85bd9f96"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "7a6d6e648a89"
+      "packet_id": "0d7a49ed4f31"
     }
   ],
   "receipts": {

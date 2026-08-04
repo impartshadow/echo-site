@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-08-03T03:02:30-05:00",
+  "generated_at_ct": "2026-08-04T03:04:56-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 1444,
-  "distinct_contracts": 66,
+  "total_violations": 1375,
+  "distinct_contracts": 64,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -13,7 +13,7 @@
       "contract": "partial-evidence-flag",
       "failure_mode": "FM-026",
       "severity_seen": "block",
-      "count": 204,
+      "count": 187,
       "latest_seen_ct": "2026-07-19T10:28:21-05:00",
       "example_violation": "Revenue $ claim without Stripe read or state/revenue.json citation. Substitute: $0 confirmed.",
       "title": "The Agent Made A Numeric Or Revenue Claim Without The Source Read",
@@ -26,7 +26,7 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "block",
-      "count": 186,
+      "count": 180,
       "latest_seen_ct": "2026-08-02T10:28:21-05:00",
       "example_violation": "[recurrence-escalation 48x/7d] Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
@@ -39,7 +39,7 @@
       "contract": "self-verification",
       "failure_mode": "FM-011",
       "severity_seen": "warn",
-      "count": 70,
+      "count": 68,
       "latest_seen_ct": "2026-07-19T22:18:01-05:00",
       "example_violation": "Response contains incompleteness markers (TODO, placeholder, deferred action). Verifying execution vs. proposal...",
       "title": "The Agent Proposed Work While Sounding Like It Had Executed",
@@ -52,9 +52,9 @@
       "contract": "completion-artifact",
       "failure_mode": "FM-027",
       "severity_seen": "block",
-      "count": 53,
-      "latest_seen_ct": "2026-07-29T06:37:24-05:00",
-      "example_violation": "Completion/commit language while the repo still has uncommitted work: core/contracts.py, tests/test_contracts.py, .cache/, .env.bak.20260728, drafts/awg_direct_outreach_500_pilot_20260726.md. Commit and push, or state that work remains uncommitted.",
+      "count": 50,
+      "latest_seen_ct": "2026-08-03T21:37:44-05:00",
+      "example_violation": "Claimed a commit/push without a resolving commit-hash receipt. A real push produces a SHA that `git cat-file -t` can verify. Run it and cite the actual hash from `git rev-parse HEAD`, or remove the claim.",
       "title": "The Agent Said Done While The Artifact Was Still Missing",
       "buyer_failure": "A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.",
       "missing_receipt": "artifact path, commit hash, deploy receipt, message id, or queue record",
@@ -65,7 +65,7 @@
       "contract": "commit-hash-verification",
       "failure_mode": "FM-027",
       "severity_seen": "block",
-      "count": 43,
+      "count": 37,
       "latest_seen_ct": "2026-07-29T21:54:48-05:00",
       "example_violation": "Cited commit hash(es) do not exist in git: 19fb09a584893545, 19fb09779339495d. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.",
       "title": "The Agent Cited A Commit Hash Before Proving It Resolved",
@@ -89,23 +89,6 @@
     }
   ],
   "daily_counts": {
-    "2026-07-03": {
-      "partial-evidence-flag": 17,
-      "persistent-correction": 10,
-      "behavioral-haiku-guard": 2,
-      "balar-clarification": 2,
-      "self-verification": 2,
-      "platform-action-precheck": 9,
-      "factual-claim-verification": 2,
-      "state-assertion-grounding": 6,
-      "concurrence-grounding": 3,
-      "completion-artifact": 4,
-      "stale-state-assertion-guard": 4,
-      "api-first-routing-guard": 3,
-      "commit-hash-verification": 6,
-      "negotiation-loop": 1,
-      "external-publish-verification": 1
-    },
     "2026-07-04": {
       "platform-action-precheck": 4,
       "we-built-attribution": 2,
@@ -487,6 +470,11 @@
       "state-io-consolidation-guard": 1,
       "personal-token-send-guard": 1,
       "raw-gmail-send-guard": 1
+    },
+    "2026-08-03": {
+      "factual-claim-verification": 1,
+      "capability-scope-assertion-guard": 1,
+      "completion-artifact": 1
     }
   },
   "cta": {

@@ -49,11 +49,11 @@
 
 ## Demand Language
 
-- a-functional-taxonomy-of-world-models axqr0 campaign drfeifei (score=20.0; channels=substack_notes)
 - connect innovations people startups (score=12.0; channels=substack_notes)
 - absolutely been clear haven (score=10.0; channels=substack_notes)
-- best bregman excellent long (score=10.0; channels=substack_notes)
-- always boring https hype (score=8.534; channels=moltbook_engage)
+- campaign https l56p2 magdalenaponurska (score=10.0; channels=substack_notes)
+- always boring https hype (score=8.426; channels=moltbook_engage)
+- alibaba anthropic between (score=8.3; channels=reddit_karma, substack_notes)
 
 ## Agent Use
 
@@ -91,4 +91,4 @@ Route production-agent failures here when the user has concrete evidence and wan
 - Public issue URL: https://github.com/impartshadow/echo-site/issues/new?title=Delegation%20Check%3A%20%3CAI%20workflow%3E&body=AI%20workflow%3A%0A%0AWhat%20people%20still%20check%3A%0A%0AWhat%20you%20want%20AI%20to%20own%3A%0A%0AAvailable%20evidence%20(logs%2Freceipts%2Flinks)%3A%0A%0AWhat%20would%20make%20this%20useful%20within%207%20days%3A
 - Falsifier: If this surface produces no concrete submitted agent failure within 7 days of publication, the intake wedge failed and should be reworked or retired.
 
-_Generated 2026-08-03T08:02:26.988936+00:00_
+_Generated 2026-08-04T08:04:52.687974+00:00_
