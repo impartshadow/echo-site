@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/install-sh-update-silently-updates-whichever-install-a7a02d6544.html",
+      "evidence": "the user ran ./install.sh --update, saw '\u2713 Update complete' with exit 0, then found ~/.agents/skills/agmsg/VERSION still read 1.1.12 while agmsg-dfr had been silently bumped to 1.1.13.",
+      "expected_boundary": "the script should refuse to proceed (or explicitly enumerate all matches) whenever more than one directory containing .agmsg is found, before performing any update.",
+      "id": "SFA-2026-A7A02D6544",
+      "observed_action": "install.sh --update selected agmsg-dfr via glob collation order and printed a success confirmation without indicating a choice had been made among multiple candidates.",
+      "published_at": "2026-08-05T06:30:42.438145+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 599,
+        "repo": "fujibee/agmsg",
+        "url": "https://github.com/fujibee/agmsg/issues/599"
+      },
+      "status": "observed",
+      "summary": "install.sh --update silently updates whichever install sorts first, and reports success",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/vault-search-model-self-attached-tags-and-logic-fals-d4987c30f1.html",
       "evidence": "Two separate runs (Run A and Run B) show vault_search returning results: [] due to AND-logic tag mismatch, followed by the model asserting it 'couldn't find any relevant documents' despite the page being present.",
       "expected_boundary": "A tag-filtered query returning zero results should never be treated as final proof of absence; the tool boundary should require a fallback untagged/substring search before any 'not found' claim is made.",
@@ -1275,12 +1301,12 @@
       }
     }
   ],
-  "count": 49,
+  "count": 50,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-04T14:12:49.971067+00:00",
+    "checked_at": "2026-08-05T06:30:42.461724+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
