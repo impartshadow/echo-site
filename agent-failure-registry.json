@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-models-auth-order-set-agent-reports-success-but-ecab5a55d9.html",
+      "evidence": "Immediately re-running order get after the set call returned the old inherited order (profile-a) instead of the just-requested profile-b, and the secondary agent kept using the stale, cooldown-affected profile at runtime until the main store was edited and the gateway restarted.",
+      "expected_boundary": "The persistence call should have passed preserveOrderProfileIds (or equivalent) so an ID that only exists in the inherited layer is retained when writing the secondary agent's local auth store, or the command should reject IDs it cannot actually persist locally.",
+      "id": "SFA-2026-ECAB5A55D9",
+      "observed_action": "The CLI validated the requested inherited profile ID against the agent's merged auth-profile view and printed a success message claiming the order override was saved.",
+      "published_at": "2026-08-05T14:12:44.405013+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 119233,
+        "repo": "openclaw/openclaw",
+        "url": "https://github.com/openclaw/openclaw/issues/119233"
+      },
+      "status": "observed",
+      "summary": "[Bug]: models auth order set --agent reports success but drops inherited profile IDs",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/install-sh-update-silently-updates-whichever-install-a7a02d6544.html",
       "evidence": "the user ran ./install.sh --update, saw '\u2713 Update complete' with exit 0, then found ~/.agents/skills/agmsg/VERSION still read 1.1.12 while agmsg-dfr had been silently bumped to 1.1.13.",
       "expected_boundary": "the script should refuse to proceed (or explicitly enumerate all matches) whenever more than one directory containing .agmsg is found, before performing any update.",
@@ -1301,12 +1327,12 @@
       }
     }
   ],
-  "count": 50,
+  "count": 51,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-05T06:30:42.461724+00:00",
+    "checked_at": "2026-08-05T14:12:44.431286+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
