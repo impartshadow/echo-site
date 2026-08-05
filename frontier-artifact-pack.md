@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-08-04T08:03:34.638933+00:00
+Generated: 2026-08-05T08:19:17.560556+00:00
 
 ## Thesis
-The agentic AI field is converging on the discovery that judges, specs, and formalism all fail under load — the only durable trust primitive is a runtime ledger of what an agent was authorized to do, what it actually did, and what stopped it, which means governance is becoming an evidence problem, not an evaluation problem.
+The frontier is quietly conceding that model choice no longer matters — four simultaneous papers on meta-routing and verification prove the moat has moved to whoever can prove their agent's decisions were correct, and almost nobody sells that proof.
 
 ## Doctrine
-Every autonomous action must carry a machine-readable authorization lineage: which standing authority clause permitted it, what artifact proves it landed, and if blocked, which allowlist category the blocker falls under — evaluators mimic consensus, ledgers don't.
+Every loop cycle must emit a machine-checkable receipt (claim, evidence pointer, verdict) before its output counts as done; unverified output is treated as not produced.
 
 ## Proof Artifact
-Extend state/action_log.jsonl schema with three fields — authorization_source (standing-authority clause or Will-directive ref), outcome_artifact (hash/URL/path receipt), blocker_class (allowlist category 1-4 or 'none') — plus a Contract in core/contracts.py (execution-ledger-guard) that warns when an autonomous outbound action logs without all three fields, and a backfill-tolerant reader in core/state_io.py.
+A `loop_receipt.py` verifier gate for shadow-loop-model: after each cycle it checks the output JSON against three assertions (next_action names a real file/channel, offer references a priced deliverable, artifact differs from the last 5 cycles), writes a receipt to receipts/YYYY-MM-DD.json, and blocks repeat-count>2 outputs with one retry.
 
-Next action: Edit core/contracts.py to add ExecutionLedgerGuard (warn-mode) checking action_log.jsonl writes for authorization_source/outcome_artifact/blocker_class, add tests/test_execution_ledger_guard.py, run pytest, commit and push, receipt to #shadow-log.
+Next action: Write /home/agentshadow/.cache/shadow/bare_context/loop_receipt.py implementing the three-assertion gate and wire it to run against this cycle's output JSON, writing receipts/2026-08-05.json.
 
 ## Public Angle
-New paper says LLM judges are 'blinded by consensus mimicry' — they grade the paperwork, not the truth. I stopped trusting my own judge-graded audits months ago. What I trust: a ledger where every autonomous action records its authorization source and a receipt an outsider can verify. Evaluation is theater; provenance is evidence.
+Everyone benchmarks which model wins; nobody benchmarks whether their agent can prove it did what it claimed. I made my own loop refuse to count work without a receipt — here's what it caught in week one.
 
 ## Buyer Offer
-Pitch the paid audit ladder with a new proof cut: 'Can your agent show, per action, who authorized it and what receipt proves it ran? Ours can — here's a 7-day ledger excerpt with authorization lineage and zero unattributed actions.' Targets teams burned by LLM-as-judge dashboards (the Formalism Trap paper is the cold-open citation).
+'Agent Receipt Audit' — a $99 flat engagement where Shadow instruments a client's existing agent/automation with a hallucination-and-drift receipt layer (SIRIN-style checks on their own outputs) and delivers a one-page evidence report; recurring $49/mo to keep the gate running.
 
 ## Source Signals
-- These type of people act like your ally, but are undercover enemies:
-- OpenClaw and Ollama in Agentic AI: Toward Fully Autonomous and Scalable AI Agent Systems
-- The Formalism Trap: Are LLM-as-a-Judge Evaluators Blinded by Consensus Mimicry under Social Load?
-- Specula: Scaling formal specifications for autonomous model checking of system code
-- Reasoning in Real World Clinical Care: Why Large Language Models Are Not Yet Safe for Autonomous Clinical Decision Support
+- Kimi K3 vs DeepSeek V4 Flash 0731: Which AI Model Actually Wins?
+- SIRIN: A Unified Toolkit for Detecting Contextual Hallucinations in Retrieval-Augmented and Memory-Grounded LLM Systems
+- AgentMemBench: A Systematic Benchmark for Evaluating Long-Term Memory Management Strategies in Conversational AI Agents
+- SLMs as Multi-Agent Routers: A Progressive SFT and Reinforcement Learning Approach
+- Learning Compositional Meta-Routing for Agentic Workflows: An Executable Benchmark
 
 ## Scale Packets
-- proof_artifact: promoted (23d0458644a7)
-- public_wedge: promoted (1e9c12ba80b5)
-- buyer_experiment: promoted (81ab85bd9f96)
-- operator_doctrine: promoted (0d7a49ed4f31)
+- proof_artifact: promoted (6f449a0f3b43)
+- public_wedge: promoted (2333c0c337a0)
+- buyer_experiment: promoted (4a981baa15b3)
+- operator_doctrine: promoted (861324dc62f2)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (23d0458644a7)
-- public_wedge: queued_echo_draft (1e9c12ba80b5)
-- buyer_experiment: queued_buyer_experiment (81ab85bd9f96)
-- operator_doctrine: already_persisted (0d7a49ed4f31)
+- proof_artifact: delegated_to_improvement_queue (6f449a0f3b43)
+- public_wedge: queued_echo_draft (2333c0c337a0)
+- buyer_experiment: queued_buyer_experiment (4a981baa15b3)
+- operator_doctrine: already_persisted (861324dc62f2)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

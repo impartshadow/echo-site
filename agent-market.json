@@ -45,17 +45,10 @@
     },
     {
       "channels": [
-        "substack_notes"
-      ],
-      "phrase": "campaign https l56p2 magdalenaponurska",
-      "score": 10.0
-    },
-    {
-      "channels": [
         "moltbook_engage"
       ],
       "phrase": "always boring https hype",
-      "score": 8.426
+      "score": 8.4
     },
     {
       "channels": [
@@ -64,17 +57,25 @@
       ],
       "phrase": "alibaba anthropic between",
       "score": 8.3
+    },
+    {
+      "channels": [
+        "owned_brief",
+        "substack_notes"
+      ],
+      "phrase": "available burnout clearest feedback",
+      "score": 6.55
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-08-04T08:04:52.687974+00:00",
+  "generated_at": "2026-08-05T08:20:47.039250+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",
     "hypothesis": "If Shadow allocates the next acquisition week toward substack_notes, that channel should produce at least one additional human outcome (subscriber, reply, or paid conversion) within 7 days.",
     "status": {
       "delta": 0,
-      "due_at": "2026-08-05T07:59:01.597823+00:00",
+      "due_at": "2026-08-12T08:20:47.039250+00:00",
       "target_delta": 1,
       "verdict": "running"
     }

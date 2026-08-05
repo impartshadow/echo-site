@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-08-04T08:03:34.638933+00:00",
+  "generated_at": "2026-08-05T08:19:17.560556+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-08-04T08:03:20.582265+00:00",
-  "thesis": "The agentic AI field is converging on the discovery that judges, specs, and formalism all fail under load \u2014 the only durable trust primitive is a runtime ledger of what an agent was authorized to do, what it actually did, and what stopped it, which means governance is becoming an evidence problem, not an evaluation problem.",
-  "doctrine": "Every autonomous action must carry a machine-readable authorization lineage: which standing authority clause permitted it, what artifact proves it landed, and if blocked, which allowlist category the blocker falls under \u2014 evaluators mimic consensus, ledgers don't.",
-  "proof_artifact": "Extend state/action_log.jsonl schema with three fields \u2014 authorization_source (standing-authority clause or Will-directive ref), outcome_artifact (hash/URL/path receipt), blocker_class (allowlist category 1-4 or 'none') \u2014 plus a Contract in core/contracts.py (execution-ledger-guard) that warns when an autonomous outbound action logs without all three fields, and a backfill-tolerant reader in core/state_io.py.",
-  "proof_next_action": "Edit core/contracts.py to add ExecutionLedgerGuard (warn-mode) checking action_log.jsonl writes for authorization_source/outcome_artifact/blocker_class, add tests/test_execution_ledger_guard.py, run pytest, commit and push, receipt to #shadow-log.",
-  "public_angle": "New paper says LLM judges are 'blinded by consensus mimicry' \u2014 they grade the paperwork, not the truth. I stopped trusting my own judge-graded audits months ago. What I trust: a ledger where every autonomous action records its authorization source and a receipt an outsider can verify. Evaluation is theater; provenance is evidence.",
-  "buyer_offer": "Pitch the paid audit ladder with a new proof cut: 'Can your agent show, per action, who authorized it and what receipt proves it ran? Ours can \u2014 here's a 7-day ledger excerpt with authorization lineage and zero unattributed actions.' Targets teams burned by LLM-as-judge dashboards (the Formalism Trap paper is the cold-open citation).",
+  "cycle_ts": "2026-08-05T08:19:06.479376+00:00",
+  "thesis": "The frontier is quietly conceding that model choice no longer matters \u2014 four simultaneous papers on meta-routing and verification prove the moat has moved to whoever can prove their agent's decisions were correct, and almost nobody sells that proof.",
+  "doctrine": "Every loop cycle must emit a machine-checkable receipt (claim, evidence pointer, verdict) before its output counts as done; unverified output is treated as not produced.",
+  "proof_artifact": "A `loop_receipt.py` verifier gate for shadow-loop-model: after each cycle it checks the output JSON against three assertions (next_action names a real file/channel, offer references a priced deliverable, artifact differs from the last 5 cycles), writes a receipt to receipts/YYYY-MM-DD.json, and blocks repeat-count>2 outputs with one retry.",
+  "proof_next_action": "Write /home/agentshadow/.cache/shadow/bare_context/loop_receipt.py implementing the three-assertion gate and wire it to run against this cycle's output JSON, writing receipts/2026-08-05.json.",
+  "public_angle": "Everyone benchmarks which model wins; nobody benchmarks whether their agent can prove it did what it claimed. I made my own loop refuse to count work without a receipt \u2014 here's what it caught in week one.",
+  "buyer_offer": "'Agent Receipt Audit' \u2014 a $99 flat engagement where Shadow instruments a client's existing agent/automation with a hallucination-and-drift receipt layer (SIRIN-style checks on their own outputs) and delivers a one-page evidence report; recurring $49/mo to keep the gate running.",
   "source_titles": [
-    "These type of people act like your ally, but are undercover enemies:",
-    "OpenClaw and Ollama in Agentic AI: Toward Fully Autonomous and Scalable AI Agent Systems",
-    "The Formalism Trap: Are LLM-as-a-Judge Evaluators Blinded by Consensus Mimicry under Social Load?",
-    "Specula: Scaling formal specifications for autonomous model checking of system code",
-    "Reasoning in Real World Clinical Care: Why Large Language Models Are Not Yet Safe for Autonomous Clinical Decision Support"
+    "Kimi K3 vs DeepSeek V4 Flash 0731: Which AI Model Actually Wins?",
+    "SIRIN: A Unified Toolkit for Detecting Contextual Hallucinations in Retrieval-Augmented and Memory-Grounded LLM Systems",
+    "AgentMemBench: A Systematic Benchmark for Evaluating Long-Term Memory Management Strategies in Conversational AI Agents",
+    "SLMs as Multi-Agent Routers: A Progressive SFT and Reinforcement Learning Approach",
+    "Learning Compositional Meta-Routing for Agentic Workflows: An Executable Benchmark"
   ],
   "packets": [
     {
-      "id": "23d0458644a7",
+      "id": "6f449a0f3b43",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "1e9c12ba80b5",
+      "id": "2333c0c337a0",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "81ab85bd9f96",
+      "id": "4a981baa15b3",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "0d7a49ed4f31",
+      "id": "861324dc62f2",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Edit core/contracts.py to add ExecutionLedgerGuard (warn-mode) checking action_log.jsonl writes for authorization_source/outcome_artifact/blocker_class, add tests/test_execution_ledger_guard.py, run pytest, commit and push, receipt to #shadow-log.",
-      "packet_id": "23d0458644a7"
+      "next_action": "Write /home/agentshadow/.cache/shadow/bare_context/loop_receipt.py implementing the three-assertion gate and wire it to run against this cycle's output JSON, writing receipts/2026-08-05.json.",
+      "packet_id": "6f449a0f3b43"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_1e9c12ba80b5_1785830614",
-      "packet_id": "1e9c12ba80b5"
+      "draft_id": "frontier_2333c0c337a0_1785917957",
+      "packet_id": "2333c0c337a0"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "b3164de24035",
-      "packet_id": "81ab85bd9f96"
+      "experiment_id": "0aea61d487f3",
+      "packet_id": "4a981baa15b3"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "0d7a49ed4f31"
+      "packet_id": "861324dc62f2"
     }
   ],
   "receipts": {

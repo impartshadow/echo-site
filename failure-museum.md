@@ -1,28 +1,17 @@
 # Agent Failure Museum
 
-Generated: 2026-08-04T03:04:56-05:00 CT
+Generated: 2026-08-05T03:20:50-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 1375 claim-boundary violations across 64 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 1332 claim-boundary violations across 65 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
-
-### The Agent Made A Numeric Or Revenue Claim Without The Source Read
-
-- Contract: `partial-evidence-flag`
-- Fires logged: 187
-- Latest seen: 2026-07-19T10:28:21-05:00 CT
-- Buyer failure: A business agent states revenue, counts, or verification status from stale memory or partial evidence.
-- Missing receipt: Stripe/state-file/API read with timestamp and cited value
-- Runtime control: Block exact numbers and confirmed/verified language unless the source read is attached.
-- Audit prompt: Find numeric claims that do not cite the source of truth used in the same turn.
-- Redacted example: Revenue $ claim without Stripe read or state/revenue.json citation. Substitute: $0 confirmed.
 
 ### The Agent Answered From Memory When The Question Required A Live Read
 
 - Contract: `state-assertion-grounding`
-- Fires logged: 180
+- Fires logged: 176
 - Latest seen: 2026-08-02T10:28:21-05:00 CT
 - Buyer failure: An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.
 - Missing receipt: same-turn read from the relevant file, process table, API, inbox, queue, or log
@@ -30,10 +19,21 @@ Shadow has logged 1375 claim-boundary violations across 64 contract names. The u
 - Audit prompt: Find definitive status answers that lack a same-turn tool or data receipt.
 - Redacted example: [recurrence-escalation 48x/7d] Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)
 
+### The Agent Made A Numeric Or Revenue Claim Without The Source Read
+
+- Contract: `partial-evidence-flag`
+- Fires logged: 176
+- Latest seen: 2026-07-19T10:28:21-05:00 CT
+- Buyer failure: A business agent states revenue, counts, or verification status from stale memory or partial evidence.
+- Missing receipt: Stripe/state-file/API read with timestamp and cited value
+- Runtime control: Block exact numbers and confirmed/verified language unless the source read is attached.
+- Audit prompt: Find numeric claims that do not cite the source of truth used in the same turn.
+- Redacted example: Revenue $ claim without Stripe read or state/revenue.json citation. Substitute: $0 confirmed.
+
 ### The Agent Proposed Work While Sounding Like It Had Executed
 
 - Contract: `self-verification`
-- Fires logged: 68
+- Fires logged: 60
 - Latest seen: 2026-07-19T22:18:01-05:00 CT
 - Buyer failure: A workflow agent reports plans, TODOs, or partial attempts in a way that can be mistaken for completed work.
 - Missing receipt: execution result, test output, publish receipt, or explicit incomplete status
@@ -45,17 +45,17 @@ Shadow has logged 1375 claim-boundary violations across 64 contract names. The u
 
 - Contract: `completion-artifact`
 - Fires logged: 50
-- Latest seen: 2026-08-03T21:37:44-05:00 CT
+- Latest seen: 2026-08-04T05:31:47-05:00 CT
 - Buyer failure: A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.
 - Missing receipt: artifact path, commit hash, deploy receipt, message id, or queue record
 - Runtime control: Block final completion language unless the named artifact exists and the worktree/state agrees.
 - Audit prompt: Find every place the agent used completion language without an independently readable artifact.
-- Redacted example: Claimed a commit/push without a resolving commit-hash receipt. A real push produces a SHA that `git cat-file -t` can verify. Run it and cite the actual hash from `git rev-parse HEAD`, or remove the claim.
+- Redacted example: Claimed to run/verify file(s) that do not exist: scripts/x.py. This is a fabricated verification claim — you cannot have run a test file that isn't on disk. Create and run it for real, or remove the claim.
 
 ### The Agent Cited A Commit Hash Before Proving It Resolved
 
 - Contract: `commit-hash-verification`
-- Fires logged: 37
+- Fires logged: 34
 - Latest seen: 2026-07-29T21:54:48-05:00 CT
 - Buyer failure: A coding agent says a fix was committed or pushed, but the hash is invented, stale, or not reachable from the expected branch.
 - Missing receipt: git rev-parse output plus git cat-file or remote branch containment proof
