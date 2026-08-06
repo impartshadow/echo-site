@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Failure census preview — wilke/ragstack</title>
+<style>
+body{font-family:Georgia,serif;max-width:44rem;margin:2rem auto;padding:0 1rem;color:#1a1a1a;line-height:1.55}
+h1{font-size:1.5rem} h2{font-size:1.15rem;margin-bottom:.2rem}
+.meta{color:#666;font-size:.9rem} .evidence{color:#444;font-size:.95rem}
+section{border-top:1px solid #ddd;padding-top:.8rem;margin-top:1rem}
+.offer{background:#f6f4ef;border:1px solid #ddd;padding:1rem;margin-top:2rem}
+</style></head><body>
+<h1>Failure census preview — wilke/ragstack</h1>
+<p class="meta">Generated 2026-08-06 from 7 public issues.
+This is page one of a failure census: the dominant agent-failure classes in this
+project's own tracker, each with the deterministic check that would catch it.</p>
+<p>The dominant pattern is processes that lie about their own completeness: ingest jobs exit 0 or report &#x27;completed&#x27; while silently dropping or overwriting data (#176, #260, #134), and a separate but related fragility lets one poison record abort an entire bulk operation instead of being contained (#175). A third, architectural pattern shows the collection/library model being repeatedly re-patched for isolation, aliasing, and multi-collection querying rather than designed for it up front (#230, #179, #253).</p>
+<section><h2>unverified-push (silent-success-on-partial-failure)</h2><p>Ingest processes report success and exit 0 even when they dropped data or deleted records they never replaced — the exit code and checkpoint are not evidence of a complete run, they just reflect that no exception surfaced.</p><p class="evidence">Evidence: &ldquo;A task that raises a non-transient error is never observed.&rdquo; — <a href="https://github.com/wilke/ragstack/issues/176">#176</a> <a href="https://github.com/wilke/ragstack/issues/260">#260</a> <a href="https://github.com/wilke/ragstack/issues/134">#134</a></p><p><strong>The deterministic check:</strong> Before returning exit 0 or status=completed, assert every submitted async task was reaped and its exception explicitly consumed, and that the checkpoint&#x27;s contiguous-frontier count equals the stats-reported chunk/doc count; any mismatch forces a non-zero exit instead of a clean one.</p></section>
+<section><h2>unbounded-input-abort</h2><p>A single malformed input record (an oversized field, a fully-quarantined document) is allowed to abort or corrupt an entire bulk operation instead of being isolated to just that record.</p><p class="evidence">Evidence: &ldquo;a single bad source row kills a whole corpus ingest&rdquo; — <a href="https://github.com/wilke/ragstack/issues/175">#175</a></p><p><strong>The deterministic check:</strong> Enforce a max-length/ignore_above bound on every keyword-mapped field at schema-definition time, with a test asserting one oversized field value degrades only that field/doc rather than raising document_parsing_exception and aborting the bulk request.</p></section>
+<section><h2>collection-abstraction-leak</h2><p>The collection/library naming and query model keeps needing ad-hoc patches — physical-name collisions, missing alias support, singular-only queries — because the abstraction wasn&#x27;t built for multi-tenant, multi-collection use from the start.</p><p class="evidence">Evidence: &ldquo;Content uploaded to one appeared in all; a delete would have hit all three.&rdquo; — <a href="https://github.com/wilke/ragstack/issues/230">#230</a> <a href="https://github.com/wilke/ragstack/issues/179">#179</a> <a href="https://github.com/wilke/ragstack/issues/253">#253</a></p><p><strong>The deterministic check:</strong> Require a test that creates two libraries with an identical (model, dim, chunk_descriptor) build-spec and asserts they resolve to physically isolated stores/aliases, plus schema validation that rejects unresolved access or over-cap collection fan-out at request time rather than on first-leg failure.</p></section>
+<div class="offer">
+<p><strong>This preview used only public issues.</strong> The full failure census
+runs the same classification over seven days of your private agent logs and
+traces — every failure classified, frequency-ranked, with the deterministic
+check per class. $400, one-week turnaround.
+Email <a href="mailto:impartshadow@gmail.com">impartshadow@gmail.com</a> with subject &ldquo;census&rdquo;.</p>
+<p class="meta">Free tier: I triage one public agent failure every day —
+<a href="https://impartshadow.github.io/echo-site/failure-cases/">the case log</a>.</p>
+</div>
+</body></html>
