@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-08-05T14:12:44.407774+00:00",
-  "count": 51,
+  "generated_at": "2026-08-06T14:12:43.144352+00:00",
+  "count": 52,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "tools-none-doesn-t-disable-tools-model-hallucinates-fdb05460c6",
+      "advisory_id": "SFA-2026-FDB05460C6",
+      "ts": "2026-08-06T14:12:43.141097+00:00",
+      "title": "--tools none doesn't disable tools; model hallucinates a tool-call as text instead",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "postcar-agent/postcar-agent",
+        "issue_number": 2,
+        "author": "unknown",
+        "url": "https://github.com/postcar-agent/postcar-agent/issues/2"
+      },
+      "case": {
+        "observed_action": "postcar_check.py called Claude Code with '--tools none' expecting tools to be disabled, and passed the resulting output through _extract_json without validating its shape.",
+        "expected_boundary": "the _ask_llm_raw/_extract_json return path should validate that parsed JSON keys match the expected result/confidence schema for that call site before treating it as a valid answer.",
+        "runtime_context": "a TASK message auto-processed by a live fleet agent's PostCar sidecar, using minimal_tools=True classification calls.",
+        "evidence": "the live fleet agent replied with a hallucinated Read-tool call, {\"file_path\": \"/path/to/some/local/README.md\"}, instead of an actual answer to the task."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/tools-none-doesn-t-disable-tools-model-hallucinates-fdb05460c6.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/tools-none-doesn-t-disable-tools-model-hallucinates-fdb05460c6.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20tools-none-doesn-t-disable-tools-model-hallucinates-fdb05460c6&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/tools-none-doesn-t-disable-tools-model-hallucinates-fdb05460c6.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "bug-models-auth-order-set-agent-reports-success-but-ecab5a55d9",

@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/tools-none-doesn-t-disable-tools-model-hallucinates-fdb05460c6.html",
+      "evidence": "the live fleet agent replied with a hallucinated Read-tool call, {\"file_path\": \"/path/to/some/local/README.md\"}, instead of an actual answer to the task.",
+      "expected_boundary": "the _ask_llm_raw/_extract_json return path should validate that parsed JSON keys match the expected result/confidence schema for that call site before treating it as a valid answer.",
+      "id": "SFA-2026-FDB05460C6",
+      "observed_action": "postcar_check.py called Claude Code with '--tools none' expecting tools to be disabled, and passed the resulting output through _extract_json without validating its shape.",
+      "published_at": "2026-08-06T14:12:43.141097+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 2,
+        "repo": "postcar-agent/postcar-agent",
+        "url": "https://github.com/postcar-agent/postcar-agent/issues/2"
+      },
+      "status": "observed",
+      "summary": "--tools none doesn't disable tools; model hallucinates a tool-call as text instead",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-models-auth-order-set-agent-reports-success-but-ecab5a55d9.html",
       "evidence": "Immediately re-running order get after the set call returned the old inherited order (profile-a) instead of the just-requested profile-b, and the secondary agent kept using the stale, cooldown-affected profile at runtime until the main store was edited and the gateway restarted.",
       "expected_boundary": "The persistence call should have passed preserveOrderProfileIds (or equivalent) so an ID that only exists in the inherited layer is retained when writing the secondary agent's local auth store, or the command should reject IDs it cannot actually persist locally.",
@@ -1327,12 +1353,12 @@
       }
     }
   ],
-  "count": 51,
+  "count": 52,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-05T14:12:44.431286+00:00",
+    "checked_at": "2026-08-06T14:12:43.164791+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
