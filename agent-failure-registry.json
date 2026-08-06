@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/postgressaver-get-delta-channel-history-permanently-a48c3588c8.html",
+      "evidence": "get_delta_channel_history returns with no 'seed' and empty 'writes' for that channel with no exception or warning, so downstream channels_from_checkpoint silently hydrates real accumulated history (e.g. hundreds of messages) as an empty list.",
+      "expected_boundary": "The cache write for walk_cursor_by_ch[ch] should only occur once target_id has actually been observed in parent_of, distinguishing 'not yet loaded' from 'confirmed root/no parent'.",
+      "id": "SFA-2026-A48C3588C8",
+      "observed_action": "get_delta_channel_history caches walk_cursor_by_ch[ch] as None on the first pagination page whenever the target checkpoint's parent hasn't been loaded yet, and never revisits that cache entry on later pages.",
+      "published_at": "2026-08-06T21:30:35.332281+00:00",
+      "source": {
+        "author": "Navneet-Scaler",
+        "channel": "unsolicited_triage",
+        "issue_number": 8448,
+        "repo": "langchain-ai/langgraph",
+        "url": "https://github.com/langchain-ai/langgraph/issues/8448"
+      },
+      "status": "observed",
+      "summary": "PostgresSaver: get_delta_channel_history permanently poisons walk cursor when target checkpoint isn't in the first pagination page, silently dropping DeltaChannel history",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/tools-none-doesn-t-disable-tools-model-hallucinates-fdb05460c6.html",
       "evidence": "the live fleet agent replied with a hallucinated Read-tool call, {\"file_path\": \"/path/to/some/local/README.md\"}, instead of an actual answer to the task.",
       "expected_boundary": "the _ask_llm_raw/_extract_json return path should validate that parsed JSON keys match the expected result/confidence schema for that call site before treating it as a valid answer.",
@@ -1353,12 +1379,12 @@
       }
     }
   ],
-  "count": 52,
+  "count": 53,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-06T14:12:43.164791+00:00",
+    "checked_at": "2026-08-06T21:30:35.365562+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
