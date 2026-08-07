@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/conversational-flow-golden-use-case-improvements-per-a17a0e2ee9.html",
+      "evidence": "the SQLite dump shows do_greet's persisted row contains only ['user'] while converse_turn's persisted row contains ['user','user','assistant'], confirming the fallback append never reaches the database",
+      "expected_boundary": "any mutation intended to be durable must occur inside the same method invocation that @persist snapshots, not in caller code after kickoff() returns",
+      "id": "SFA-2026-A17A0E2EE9",
+      "observed_action": "handle_turn appends the assistant reply to state after kickoff() has already returned and the per-method persistence snapshot has already been taken",
+      "published_at": "2026-08-07T14:12:40.447781+00:00",
+      "source": {
+        "author": "lorenzejay",
+        "channel": "unsolicited_triage",
+        "issue_number": 6766,
+        "repo": "crewAIInc/crewAI",
+        "url": "https://github.com/crewAIInc/crewAI/issues/6766"
+      },
+      "status": "observed",
+      "summary": "Conversational Flow golden use case improvements - @persist silently drops assistant replies from custom @listen routes",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/chat-hallucinated-get-union-scheme-data-call-toolret-07cef645ac.html",
       "evidence": "Langfuse trace [redacted-id] shows a TOOL get_union_scheme_data observation with ToolRetryError: Unknown tool name, followed by a search_documents fallback and a final answer citing National Livestock Mission/RKVY figures like '50% subsidy up to \u20b91,50,000 for cattle shed'.",
       "expected_boundary": "The agent should never call a tool absent from its registered toolset, and any tool-call failure should be reflected in the final answer's confidence rather than silently papered over with unrelated data.",
@@ -1405,12 +1431,12 @@
       }
     }
   ],
-  "count": 54,
+  "count": 55,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-07T06:30:49.651996+00:00",
+    "checked_at": "2026-08-07T14:12:40.472992+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
