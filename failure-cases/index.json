@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-08-06T21:30:35.334773+00:00",
-  "count": 53,
+  "generated_at": "2026-08-07T06:30:49.627562+00:00",
+  "count": 54,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "chat-hallucinated-get-union-scheme-data-call-toolret-07cef645ac",
+      "advisory_id": "SFA-2026-07CEF645AC",
+      "ts": "2026-08-07T06:30:49.623595+00:00",
+      "title": "Chat: hallucinated get_union_scheme_data call → ToolRetryError → generic national-scheme numbers passed off as union data",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "OpenAgriNet/amul-oan-api",
+        "issue_number": 164,
+        "author": "unknown",
+        "url": "https://github.com/OpenAgriNet/amul-oan-api/issues/164"
+      },
+      "case": {
+        "observed_action": "The agent called get_union_scheme_data despite it not being registered in the toolset for the farmer's union, hit a ToolRetryError, then fell back to search_documents and answered with generic national-scheme figures presented as union-specific data.",
+        "expected_boundary": "The agent should never call a tool absent from its registered toolset, and any tool-call failure should be reflected in the final answer's confidence rather than silently papered over with unrelated data.",
+        "runtime_context": "OpenAgriNet's amul-oan-api chat agent, where get_union_scheme_data is conditionally registered based on whether the '## Union schemes available' block is present in the system prompt for that farmer's union.",
+        "evidence": "Langfuse trace [redacted-id] shows a TOOL get_union_scheme_data observation with ToolRetryError: Unknown tool name, followed by a search_documents fallback and a final answer citing National Livestock Mission/RKVY figures like '50% subsidy up to ₹1,50,000 for cattle shed'."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/chat-hallucinated-get-union-scheme-data-call-toolret-07cef645ac.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/chat-hallucinated-get-union-scheme-data-call-toolret-07cef645ac.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20chat-hallucinated-get-union-scheme-data-call-toolret-07cef645ac&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/chat-hallucinated-get-union-scheme-data-call-toolret-07cef645ac.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "postgressaver-get-delta-channel-history-permanently-a48c3588c8",

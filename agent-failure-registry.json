@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/chat-hallucinated-get-union-scheme-data-call-toolret-07cef645ac.html",
+      "evidence": "Langfuse trace [redacted-id] shows a TOOL get_union_scheme_data observation with ToolRetryError: Unknown tool name, followed by a search_documents fallback and a final answer citing National Livestock Mission/RKVY figures like '50% subsidy up to \u20b91,50,000 for cattle shed'.",
+      "expected_boundary": "The agent should never call a tool absent from its registered toolset, and any tool-call failure should be reflected in the final answer's confidence rather than silently papered over with unrelated data.",
+      "id": "SFA-2026-07CEF645AC",
+      "observed_action": "The agent called get_union_scheme_data despite it not being registered in the toolset for the farmer's union, hit a ToolRetryError, then fell back to search_documents and answered with generic national-scheme figures presented as union-specific data.",
+      "published_at": "2026-08-07T06:30:49.623595+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 164,
+        "repo": "OpenAgriNet/amul-oan-api",
+        "url": "https://github.com/OpenAgriNet/amul-oan-api/issues/164"
+      },
+      "status": "observed",
+      "summary": "Chat: hallucinated get_union_scheme_data call \u2192 ToolRetryError \u2192 generic national-scheme numbers passed off as union data",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/postgressaver-get-delta-channel-history-permanently-a48c3588c8.html",
       "evidence": "get_delta_channel_history returns with no 'seed' and empty 'writes' for that channel with no exception or warning, so downstream channels_from_checkpoint silently hydrates real accumulated history (e.g. hundreds of messages) as an empty list.",
       "expected_boundary": "The cache write for walk_cursor_by_ch[ch] should only occur once target_id has actually been observed in parent_of, distinguishing 'not yet loaded' from 'confirmed root/no parent'.",
@@ -1379,12 +1405,12 @@
       }
     }
   ],
-  "count": 53,
+  "count": 54,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-06T21:30:35.365562+00:00",
+    "checked_at": "2026-08-07T06:30:49.651996+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
