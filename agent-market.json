@@ -45,30 +45,30 @@
     },
     {
       "channels": [
-        "moltbook_engage"
+        "moltbook_engage",
+        "owned_brief"
       ],
       "phrase": "always boring https hype",
-      "score": 8.4
+      "score": 9.25
     },
     {
       "channels": [
-        "reddit_karma",
         "substack_notes"
       ],
-      "phrase": "alibaba anthropic between",
-      "score": 8.3
+      "phrase": "best future piece read",
+      "score": 8.0
     },
     {
       "channels": [
         "owned_brief",
         "substack_notes"
       ],
-      "phrase": "available burnout clearest feedback",
-      "score": 6.55
+      "phrase": "intelligence approvals component coordination",
+      "score": 7.4
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-08-05T08:20:47.039250+00:00",
+  "generated_at": "2026-08-07T08:14:48.797776+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",

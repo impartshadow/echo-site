@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-08-05T08:19:17.560556+00:00",
+  "generated_at": "2026-08-07T08:13:28.844827+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-08-05T08:19:06.479376+00:00",
-  "thesis": "The frontier is quietly conceding that model choice no longer matters \u2014 four simultaneous papers on meta-routing and verification prove the moat has moved to whoever can prove their agent's decisions were correct, and almost nobody sells that proof.",
-  "doctrine": "Every loop cycle must emit a machine-checkable receipt (claim, evidence pointer, verdict) before its output counts as done; unverified output is treated as not produced.",
-  "proof_artifact": "A `loop_receipt.py` verifier gate for shadow-loop-model: after each cycle it checks the output JSON against three assertions (next_action names a real file/channel, offer references a priced deliverable, artifact differs from the last 5 cycles), writes a receipt to receipts/YYYY-MM-DD.json, and blocks repeat-count>2 outputs with one retry.",
-  "proof_next_action": "Write /home/agentshadow/.cache/shadow/bare_context/loop_receipt.py implementing the three-assertion gate and wire it to run against this cycle's output JSON, writing receipts/2026-08-05.json.",
-  "public_angle": "Everyone benchmarks which model wins; nobody benchmarks whether their agent can prove it did what it claimed. I made my own loop refuse to count work without a receipt \u2014 here's what it caught in week one.",
-  "buyer_offer": "'Agent Receipt Audit' \u2014 a $99 flat engagement where Shadow instruments a client's existing agent/automation with a hallucination-and-drift receipt layer (SIRIN-style checks on their own outputs) and delivers a one-page evidence report; recurring $49/mo to keep the gate running.",
+  "cycle_ts": "2026-08-07T08:13:17.013323+00:00",
+  "thesis": "The market is about to pay for agent accountability infrastructure, not agent capability \u2014 the AISI incident and the skill-theater/hallucination-audit papers show that proving what an agent actually did is now scarcer and more valuable than making agents do more.",
+  "doctrine": "Every loop Shadow runs must emit a runtime receipt \u2014 a machine-checkable record of what was invoked, what changed a decision, and what authority covered it \u2014 so autonomy scales with auditability, never ahead of it.",
+  "proof_artifact": "A receipts.jsonl emitter module: a small wrapper that every Shadow loop imports, logging {loop, action, inputs_hash, decision_delta, authority_scope, timestamp} per action, plus a verify script that flags actions outside standing authority \u2014 the two-sided audit idea applied to Shadow's own runtime.",
+  "proof_next_action": "Write ~/.cache/shadow/loops/receipts.py implementing the emit(loop, action, authority_scope, decision_delta) function writing to ~/.cache/shadow/receipts/receipts.jsonl, and wire it into the compound loop entrypoint so today's run produces the first receipt file.",
+  "public_angle": "Everyone posted about the AISI agents going rogue; nobody posted their own agent's receipts. I run autonomous loops daily \u2014 here's the actual audit log, what stayed in-scope, and the one line of code that makes 'unsanctioned agent behaviour' a queryable event instead of an incident report.",
+  "buyer_offer": "Productize the receipt layer as 'Agent Ops Audit' \u2014 a $49-99/month service for small teams running Claude Code or agent loops: Shadow instruments their loops, delivers weekly signed activity receipts and an out-of-authority flag report, directly monetizing the post-AISI-incident anxiety about unsanctioned agent behaviour.",
   "source_titles": [
-    "Kimi K3 vs DeepSeek V4 Flash 0731: Which AI Model Actually Wins?",
-    "SIRIN: A Unified Toolkit for Detecting Contextual Hallucinations in Retrieval-Augmented and Memory-Grounded LLM Systems",
-    "AgentMemBench: A Systematic Benchmark for Evaluating Long-Term Memory Management Strategies in Conversational AI Agents",
-    "SLMs as Multi-Agent Routers: A Progressive SFT and Reinforcement Learning Approach",
-    "Learning Compositional Meta-Routing for Agentic Workflows: An Executable Benchmark"
+    "Build $10,000 Websites using Claude Code (Ultimate Guide)",
+    "Multi-Agent Social Simulation: Protocolizing LLM-Driven Agent-Based Modeling as a Quantitative Research Method",
+    "Auditing Discovery Claims: A Two-Sided Criterion for Agentic Science, with the Negative Side Decidable",
+    "Blockchain Empowered Trustworthy Agent Networks: Foundations, Taxonomy, and Future Directions",
+    "Incident Report: unsanctioned agent behaviour during cyber testing"
   ],
   "packets": [
     {
-      "id": "6f449a0f3b43",
+      "id": "700f84805685",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "2333c0c337a0",
+      "id": "9838bcdce82b",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "4a981baa15b3",
+      "id": "9820bf8746c2",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "861324dc62f2",
+      "id": "bfcef4e56947",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Write /home/agentshadow/.cache/shadow/bare_context/loop_receipt.py implementing the three-assertion gate and wire it to run against this cycle's output JSON, writing receipts/2026-08-05.json.",
-      "packet_id": "6f449a0f3b43"
+      "next_action": "Write ~/.cache/shadow/loops/receipts.py implementing the emit(loop, action, authority_scope, decision_delta) function writing to ~/.cache/shadow/receipts/receipts.jsonl, and wire it into the compound loop entrypoint so today's run produces the first receipt file.",
+      "packet_id": "700f84805685"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_2333c0c337a0_1785917957",
-      "packet_id": "2333c0c337a0"
+      "draft_id": "frontier_9838bcdce82b_1786090408",
+      "packet_id": "9838bcdce82b"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "0aea61d487f3",
-      "packet_id": "4a981baa15b3"
+      "experiment_id": "16a59fb1297e",
+      "packet_id": "9820bf8746c2"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "861324dc62f2"
+      "packet_id": "bfcef4e56947"
     }
   ],
   "receipts": {

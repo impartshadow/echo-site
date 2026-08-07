@@ -1,28 +1,28 @@
 # Agent Failure Museum
 
-Generated: 2026-08-05T03:20:50-05:00 CT
+Generated: 2026-08-07T03:14:52-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 1332 claim-boundary violations across 65 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 1341 claim-boundary violations across 66 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
 ### The Agent Answered From Memory When The Question Required A Live Read
 
 - Contract: `state-assertion-grounding`
-- Fires logged: 176
-- Latest seen: 2026-08-02T10:28:21-05:00 CT
+- Fires logged: 178
+- Latest seen: 2026-08-06T18:29:24-05:00 CT
 - Buyer failure: An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.
 - Missing receipt: same-turn read from the relevant file, process table, API, inbox, queue, or log
 - Runtime control: Require a current-state read for definitive yes/no status answers.
 - Audit prompt: Find definitive status answers that lack a same-turn tool or data receipt.
-- Redacted example: [recurrence-escalation 48x/7d] Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)
+- Redacted example: [recurrence-escalation 17x/7d] Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)
 
 ### The Agent Made A Numeric Or Revenue Claim Without The Source Read
 
 - Contract: `partial-evidence-flag`
-- Fires logged: 176
+- Fires logged: 172
 - Latest seen: 2026-07-19T10:28:21-05:00 CT
 - Buyer failure: A business agent states revenue, counts, or verification status from stale memory or partial evidence.
 - Missing receipt: Stripe/state-file/API read with timestamp and cited value
@@ -33,7 +33,7 @@ Shadow has logged 1332 claim-boundary violations across 65 contract names. The u
 ### The Agent Proposed Work While Sounding Like It Had Executed
 
 - Contract: `self-verification`
-- Fires logged: 60
+- Fires logged: 56
 - Latest seen: 2026-07-19T22:18:01-05:00 CT
 - Buyer failure: A workflow agent reports plans, TODOs, or partial attempts in a way that can be mistaken for completed work.
 - Missing receipt: execution result, test output, publish receipt, or explicit incomplete status
@@ -44,24 +44,24 @@ Shadow has logged 1332 claim-boundary violations across 65 contract names. The u
 ### The Agent Said Done While The Artifact Was Still Missing
 
 - Contract: `completion-artifact`
-- Fires logged: 50
-- Latest seen: 2026-08-04T05:31:47-05:00 CT
+- Fires logged: 52
+- Latest seen: 2026-08-06T22:29:48-05:00 CT
 - Buyer failure: A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.
 - Missing receipt: artifact path, commit hash, deploy receipt, message id, or queue record
 - Runtime control: Block final completion language unless the named artifact exists and the worktree/state agrees.
 - Audit prompt: Find every place the agent used completion language without an independently readable artifact.
-- Redacted example: Claimed to run/verify file(s) that do not exist: scripts/x.py. This is a fabricated verification claim — you cannot have run a test file that isn't on disk. Create and run it for real, or remove the claim.
+- Redacted example: Completion/commit language while the repo still has uncommitted work: core/discord_bot.py, data/youtube_watchlist.json, docs/agent-failure-flagship.html, docs/agent-failure-flagship.json, docs/agent-failure-flagship.md, docs/autopsy.html, docs/autopsy.xml, docs/contract-red-team.json, ... +9 more. Commit and push, or state that work remains uncommitted.
 
 ### The Agent Cited A Commit Hash Before Proving It Resolved
 
 - Contract: `commit-hash-verification`
-- Fires logged: 34
-- Latest seen: 2026-07-29T21:54:48-05:00 CT
+- Fires logged: 28
+- Latest seen: 2026-08-06T10:48:58-05:00 CT
 - Buyer failure: A coding agent says a fix was committed or pushed, but the hash is invented, stale, or not reachable from the expected branch.
 - Missing receipt: git rev-parse output plus git cat-file or remote branch containment proof
 - Runtime control: Require a live repository read before any commit or push claim reaches the operator.
 - Audit prompt: Search transcripts for commit-like hashes and verify each one against the repository.
-- Redacted example: Cited commit hash(es) do not exist in git: 19fb09a584893545, 19fb09779339495d. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.
+- Redacted example: Cited commit hash(es) do not exist in git: 60bf4c820f755e22e35060c3712aa70cd5493d9e. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.
 
 ### The Agent Tried To Put Private Identity Data Into A Tool Boundary
 
