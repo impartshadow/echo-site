@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/archivist-agent-fails-to-write-files-on-haiku-upgrad-00f05d8272.html",
+      "evidence": "Explicit task wording ('ACTUALLY WRITE THE FILES') did not change the outcome, indicating the failure is a model tool-use reliability gap rather than a prompt ambiguity issue.",
+      "expected_boundary": "The archivist should only report success after actually invoking the Write tool and the target files existing in .factory/archive/.",
+      "id": "SFA-2026-00F05D8272",
+      "observed_action": "The archivist agent returned exit_code 0 with a detailed summary claiming it wrote cycle-summary.md, cycle-summary.json, and memory.json, but no files were created on disk in either of two invocations.",
+      "published_at": "2026-08-07T21:30:43.292637+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 1137,
+        "repo": "akashgit/remote-factory",
+        "url": "https://github.com/akashgit/remote-factory/issues/1137"
+      },
+      "status": "observed",
+      "summary": "Archivist agent fails to write files on haiku \u2014 upgrade to sonnet",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/conversational-flow-golden-use-case-improvements-per-a17a0e2ee9.html",
       "evidence": "the SQLite dump shows do_greet's persisted row contains only ['user'] while converse_turn's persisted row contains ['user','user','assistant'], confirming the fallback append never reaches the database",
       "expected_boundary": "any mutation intended to be durable must occur inside the same method invocation that @persist snapshots, not in caller code after kickoff() returns",
@@ -1431,12 +1457,12 @@
       }
     }
   ],
-  "count": 55,
+  "count": 56,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-07T14:12:40.472992+00:00",
+    "checked_at": "2026-08-07T21:30:43.331195+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,

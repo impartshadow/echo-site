@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-08-07T14:12:40.451606+00:00",
-  "count": 55,
+  "generated_at": "2026-08-07T21:30:43.297011+00:00",
+  "count": 56,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "archivist-agent-fails-to-write-files-on-haiku-upgrad-00f05d8272",
+      "advisory_id": "SFA-2026-00F05D8272",
+      "ts": "2026-08-07T21:30:43.292637+00:00",
+      "title": "Archivist agent fails to write files on haiku — upgrade to sonnet",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "akashgit/remote-factory",
+        "issue_number": 1137,
+        "author": "unknown",
+        "url": "https://github.com/akashgit/remote-factory/issues/1137"
+      },
+      "case": {
+        "observed_action": "The archivist agent returned exit_code 0 with a detailed summary claiming it wrote cycle-summary.md, cycle-summary.json, and memory.json, but no files were created on disk in either of two invocations.",
+        "expected_boundary": "The archivist should only report success after actually invoking the Write tool and the target files existing in .factory/archive/.",
+        "runtime_context": "Haiku-model archivist invoked twice in the same Forge project session (b562680e), the second time with an explicit instruction to actually write the files.",
+        "evidence": "Explicit task wording ('ACTUALLY WRITE THE FILES') did not change the outcome, indicating the failure is a model tool-use reliability gap rather than a prompt ambiguity issue."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/archivist-agent-fails-to-write-files-on-haiku-upgrad-00f05d8272.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/archivist-agent-fails-to-write-files-on-haiku-upgrad-00f05d8272.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20archivist-agent-fails-to-write-files-on-haiku-upgrad-00f05d8272&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/archivist-agent-fails-to-write-files-on-haiku-upgrad-00f05d8272.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "conversational-flow-golden-use-case-improvements-per-a17a0e2ee9",
