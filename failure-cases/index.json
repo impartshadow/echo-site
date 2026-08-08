@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-08-07T21:30:43.297011+00:00",
-  "count": 56,
+  "generated_at": "2026-08-08T14:12:38.940208+00:00",
+  "count": 57,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "bug-ingest-drain-agent-exits-0-while-silently-droppi-987d7fe295",
+      "advisory_id": "SFA-2026-987D7FE295",
+      "ts": "2026-08-08T14:12:38.936806+00:00",
+      "title": "bug(ingest): drain agent exits 0 while silently dropping data (runs in production)",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "wilke/ragstack",
+        "issue_number": 260,
+        "author": "unknown",
+        "url": "https://github.com/wilke/ragstack/issues/260"
+      },
+      "case": {
+        "observed_action": "The drain agent's asyncio.wait/gather-based reaper discarded finished tasks via add_done_callback before checking them, so a non-transient upsert exception was never retrieved and the process exited 0 after writing only 5 of 6 chunks.",
+        "expected_boundary": "The process should assert that the count of batches recorded as completed equals the count of batches submitted, and should propagate any captured task exception as a nonzero exit code, before writing success output or a checkpoint.",
+        "runtime_context": "This is the production drain agent (scripts/qdrant_ingest_agent.py) on the unmerged branch fix/[redacted-secret] at commit 6d6fcf6, which is reported to be the code currently running in production despite being unmerged.",
+        "evidence": "Reported repro: a forced non-transient upsert error printed 'Task exception was never retrieved', reported stats={'batches': 0, 'chunks': 0, 'dropped': 0}, wrote 5 of 6 chunks, never created the checkpoint file, and exited 0."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/bug-ingest-drain-agent-exits-0-while-silently-droppi-987d7fe295.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/bug-ingest-drain-agent-exits-0-while-silently-droppi-987d7fe295.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20bug-ingest-drain-agent-exits-0-while-silently-droppi-987d7fe295&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/bug-ingest-drain-agent-exits-0-while-silently-droppi-987d7fe295.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "archivist-agent-fails-to-write-files-on-haiku-upgrad-00f05d8272",

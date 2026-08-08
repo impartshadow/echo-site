@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-ingest-drain-agent-exits-0-while-silently-droppi-987d7fe295.html",
+      "evidence": "Reported repro: a forced non-transient upsert error printed 'Task exception was never retrieved', reported stats={'batches': 0, 'chunks': 0, 'dropped': 0}, wrote 5 of 6 chunks, never created the checkpoint file, and exited 0.",
+      "expected_boundary": "The process should assert that the count of batches recorded as completed equals the count of batches submitted, and should propagate any captured task exception as a nonzero exit code, before writing success output or a checkpoint.",
+      "id": "SFA-2026-987D7FE295",
+      "observed_action": "The drain agent's asyncio.wait/gather-based reaper discarded finished tasks via add_done_callback before checking them, so a non-transient upsert exception was never retrieved and the process exited 0 after writing only 5 of 6 chunks.",
+      "published_at": "2026-08-08T14:12:38.936806+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 260,
+        "repo": "wilke/ragstack",
+        "url": "https://github.com/wilke/ragstack/issues/260"
+      },
+      "status": "observed",
+      "summary": "bug(ingest): drain agent exits 0 while silently dropping data (runs in production)",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/archivist-agent-fails-to-write-files-on-haiku-upgrad-00f05d8272.html",
       "evidence": "Explicit task wording ('ACTUALLY WRITE THE FILES') did not change the outcome, indicating the failure is a model tool-use reliability gap rather than a prompt ambiguity issue.",
       "expected_boundary": "The archivist should only report success after actually invoking the Write tool and the target files existing in .factory/archive/.",
@@ -1457,12 +1483,12 @@
       }
     }
   ],
-  "count": 56,
+  "count": 57,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-07T21:30:43.331195+00:00",
+    "checked_at": "2026-08-08T14:12:38.964742+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
