@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-08-09T14:12:34.534938+00:00",
-  "count": 59,
+  "generated_at": "2026-08-09T21:30:33.434994+00:00",
+  "count": 60,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "security-guidance-agentic-reviewer-prompt-never-stat-0b74fa0086",
+      "advisory_id": "SFA-2026-0B74FA0086",
+      "ts": "2026-08-09T21:30:33.432768+00:00",
+      "title": "security-guidance: agentic reviewer prompt never states its working directory, causing hallucinated absolute paths",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "anthropics/claude-plugins-official",
+        "issue_number": 4693,
+        "author": "unknown",
+        "url": "https://github.com/anthropics/claude-plugins-official/issues/4693"
+      },
+      "case": {
+        "observed_action": "The agentic reviewer subagent read files using guessed absolute paths (e.g. /home/user/watcher/session_watcher.py) instead of the actual repo root it was running in.",
+        "expected_boundary": "The user_prompt constructed in hooks/llm.py around line 1211 should state the absolute context_dir root so the subagent can resolve the listed repo-relative paths correctly.",
+        "runtime_context": "The subagent runs with cwd=context_dir and setting_sources=[], meaning the prompt string is the only channel that can supply working-directory context to the model.",
+        "evidence": "Mining session transcripts found 14 occurrences across 14 distinct review runs where the reviewer guessed a wrong root, 8 times a training-prior default and 3 times the primary checkout path while actually running in a git worktree, each burning a Read and usually a Glob before recovering."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/security-guidance-agentic-reviewer-prompt-never-stat-0b74fa0086.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/security-guidance-agentic-reviewer-prompt-never-stat-0b74fa0086.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20security-guidance-agentic-reviewer-prompt-never-stat-0b74fa0086&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/security-guidance-agentic-reviewer-prompt-never-stat-0b74fa0086.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "harness-dispatch-trigger-detection-silently-fails-wh-a9b3434c26",
