@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-08-08T14:12:38.940208+00:00",
-  "count": 57,
+  "generated_at": "2026-08-09T06:30:43.825374+00:00",
+  "count": 58,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "attachment-handling-broken-images-silently-dropped-p-afbb5c4cd9",
+      "advisory_id": "SFA-2026-AFBB5C4CD9",
+      "ts": "2026-08-09T06:30:43.819747+00:00",
+      "title": "Attachment handling broken: images silently dropped, PDFs unreadable",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "irisworks/iris-core",
+        "issue_number": 141,
+        "author": "unknown",
+        "url": "https://github.com/irisworks/iris-core/issues/141"
+      },
+      "case": {
+        "observed_action": "The pipeline filtered image_url content blocks out of the model payload because models.json declared Kimi-K2.6 as input: [\"text\"] only, and PDFs were passed as bare file paths with no extraction step.",
+        "expected_boundary": "Content filtering at the model-input boundary should assert that dropped blocks are surfaced (count and reason) rather than silently discarded, and attachment ingestion should guarantee every listed attachment resolves to model-readable content or an explicit failure.",
+        "runtime_context": "iris-core's Telegram-to-agent pipeline routes attachments through openai-completions.js/openai-responses-shared.js content filtering gated by the model's declared input capabilities in data/models.json.",
+        "evidence": "The issue quotes the exact filter line `content.filter((c) => c.type !== \"image_url\")` and confirms PDFs never reach base64 encoding, only an XML path tag in the prompt."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/attachment-handling-broken-images-silently-dropped-p-afbb5c4cd9.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/attachment-handling-broken-images-silently-dropped-p-afbb5c4cd9.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20attachment-handling-broken-images-silently-dropped-p-afbb5c4cd9&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/attachment-handling-broken-images-silently-dropped-p-afbb5c4cd9.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "bug-ingest-drain-agent-exits-0-while-silently-droppi-987d7fe295",

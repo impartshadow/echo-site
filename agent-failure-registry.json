@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/attachment-handling-broken-images-silently-dropped-p-afbb5c4cd9.html",
+      "evidence": "The issue quotes the exact filter line `content.filter((c) => c.type !== \"image_url\")` and confirms PDFs never reach base64 encoding, only an XML path tag in the prompt.",
+      "expected_boundary": "Content filtering at the model-input boundary should assert that dropped blocks are surfaced (count and reason) rather than silently discarded, and attachment ingestion should guarantee every listed attachment resolves to model-readable content or an explicit failure.",
+      "id": "SFA-2026-AFBB5C4CD9",
+      "observed_action": "The pipeline filtered image_url content blocks out of the model payload because models.json declared Kimi-K2.6 as input: [\"text\"] only, and PDFs were passed as bare file paths with no extraction step.",
+      "published_at": "2026-08-09T06:30:43.819747+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 141,
+        "repo": "irisworks/iris-core",
+        "url": "https://github.com/irisworks/iris-core/issues/141"
+      },
+      "status": "observed",
+      "summary": "Attachment handling broken: images silently dropped, PDFs unreadable",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-ingest-drain-agent-exits-0-while-silently-droppi-987d7fe295.html",
       "evidence": "Reported repro: a forced non-transient upsert error printed 'Task exception was never retrieved', reported stats={'batches': 0, 'chunks': 0, 'dropped': 0}, wrote 5 of 6 chunks, never created the checkpoint file, and exited 0.",
       "expected_boundary": "The process should assert that the count of batches recorded as completed equals the count of batches submitted, and should propagate any captured task exception as a nonzero exit code, before writing success output or a checkpoint.",
@@ -1483,12 +1509,12 @@
       }
     }
   ],
-  "count": 57,
+  "count": 58,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-08T14:12:38.964742+00:00",
+    "checked_at": "2026-08-09T06:30:43.853448+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
