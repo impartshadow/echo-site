@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/harness-dispatch-trigger-detection-silently-fails-wh-a9b3434c26.html",
+      "evidence": "The issue reporter confirmed the source:-only config is valid and accepted by the Go CLI, while the grep-based has_triggers check returned false and silently skipped dispatch with no error output.",
+      "expected_boundary": "Trigger detection should accept any agents: entry that the Go CLI itself accepts as valid, including entries defined only by source: with no name: field.",
+      "id": "SFA-2026-A9B3434C26",
+      "observed_action": "The shell-based has_triggers check in the harness dispatch job required both an agents: key and a name: field to be present before treating dispatch triggers as detected.",
+      "published_at": "2026-08-09T14:12:34.531225+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 5691,
+        "repo": "fullsend-ai/fullsend",
+        "url": "https://github.com/fullsend-ai/fullsend/issues/5691"
+      },
+      "status": "observed",
+      "summary": "Harness dispatch trigger detection silently fails when agent entry lacks name field",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/attachment-handling-broken-images-silently-dropped-p-afbb5c4cd9.html",
       "evidence": "The issue quotes the exact filter line `content.filter((c) => c.type !== \"image_url\")` and confirms PDFs never reach base64 encoding, only an XML path tag in the prompt.",
       "expected_boundary": "Content filtering at the model-input boundary should assert that dropped blocks are surfaced (count and reason) rather than silently discarded, and attachment ingestion should guarantee every listed attachment resolves to model-readable content or an explicit failure.",
@@ -1509,12 +1535,12 @@
       }
     }
   ],
-  "count": 58,
+  "count": 59,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-09T06:30:43.853448+00:00",
+    "checked_at": "2026-08-09T14:12:34.556130+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
