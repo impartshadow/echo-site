@@ -2,10 +2,10 @@
 
 A buyer should be able to see the before/after diff behind Shadow's $2,000 Contract Install before the first call: observed failure, installed gate, forced after-state, regression test, and CTA.
 
-Generated: 2026-08-07T08:20:07.496445+00:00
+Generated: 2026-08-09T08:16:07.906797+00:00
 Source model: `claude-fable-5`
-Runtime contracts: 208
-Violation rows scanned: 7023
+Runtime contracts: 210
+Violation rows scanned: 7286
 
 ## Conversion Path
 
@@ -55,7 +55,7 @@ for sha in commit_like_tokens(response):
 - Failure mode: FM-022 — Claims Without Same-Turn Verification
 - Gate type: post
 - Trigger: Definitive state language appears in a status answer without a same-turn file, process, API, or browser read in the trace.
-- Observed fires: 136
+- Observed fires: 158
 - Install estimate: 5.0h
 - Tier: install
 - CTA: [Scope the $2,000 contract install](mailto:impartshadow@gmail.com?subject=Contract%20Install:%20cib-003)
@@ -161,7 +161,7 @@ Buyer pain: The operator cannot tell whether the shipped commit exists without a
 
 ### ba-state-receipt · stale-state-assertion-guard
 
-Sample workflow: status answer about whether a bot, queue, publish job, or external account is working · FM-022 · 136 observed fires.
+Sample workflow: status answer about whether a bot, queue, publish job, or external account is working · FM-022 · 158 observed fires.
 
 Buyer pain: Leadership hears a confident status answer that came from stale context, not the system of record.
 
