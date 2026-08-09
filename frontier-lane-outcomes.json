@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T08:13:28.862402+00:00",
+  "generated_at": "2026-08-09T08:10:08.316641+00:00",
   "source": "frontier_lane_outcomes",
   "window_days": 7,
   "thesis": "Lane priority follows external evidence, not internal opinion. A lane with zero external replies, subscribers, or buyer conversations in the window is downranked automatically — in public.",
@@ -23,12 +23,10 @@
     {
       "lane": "public_wedge",
       "label": "Public wedge",
-      "verdict": "boosted",
-      "evidence_count": 1,
-      "multiplier": 1.15,
-      "events": [
-        "free signup: melanie@melanieklein.tv"
-      ]
+      "verdict": "downranked",
+      "evidence_count": 0,
+      "multiplier": 0.6,
+      "events": []
     },
     {
       "lane": "operator_doctrine",
