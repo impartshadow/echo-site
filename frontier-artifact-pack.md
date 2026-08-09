@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-08-07T08:13:28.844827+00:00
+Generated: 2026-08-09T08:10:08.303540+00:00
 
 ## Thesis
-The market is about to pay for agent accountability infrastructure, not agent capability — the AISI incident and the skill-theater/hallucination-audit papers show that proving what an agent actually did is now scarcer and more valuable than making agents do more.
+Multi-agent sprawl is collapsing into a single accountable operator runtime — the winners won't be the ones with the most agents, but the ones whose one agent can prove what it did and why.
 
 ## Doctrine
-Every loop Shadow runs must emit a runtime receipt — a machine-checkable record of what was invoked, what changed a decision, and what authority covered it — so autonomy scales with auditability, never ahead of it.
+Every autonomous action must emit a runtime receipt (authorization source, action taken, outcome, blocker class) before it counts as done; unreceipted work is treated as not having happened.
 
 ## Proof Artifact
-A receipts.jsonl emitter module: a small wrapper that every Shadow loop imports, logging {loop, action, inputs_hash, decision_delta, authority_scope, timestamp} per action, plus a verify script that flags actions outside standing authority — the two-sided audit idea applied to Shadow's own runtime.
+An execution-ledger schema upgrade: add authorization_source, outcome, and blocker_class fields to Shadow's action log, plus a small verifier script that fails any loop cycle whose actions lack complete receipts.
 
-Next action: Write ~/.cache/shadow/loops/receipts.py implementing the emit(loop, action, authority_scope, decision_delta) function writing to ~/.cache/shadow/receipts/receipts.jsonl, and wire it into the compound loop entrypoint so today's run produces the first receipt file.
+Next action: Edit Shadow's execution ledger writer to add the three receipt fields (authorization_source, outcome, blocker_class) and commit a verify_receipts.py that scans the last 24h of ledger entries and flags incomplete rows into the blocker queue.
 
 ## Public Angle
-Everyone posted about the AISI agents going rogue; nobody posted their own agent's receipts. I run autonomous loops daily — here's the actual audit log, what stayed in-scope, and the one line of code that makes 'unsanctioned agent behaviour' a queryable event instead of an incident report.
+Everyone is adding agents; we deleted ours down to one and gave it a receipt printer. After the OpenAI–Hugging Face incident, 'what did your agent do last night' should be a query, not a vibe — here's the 3-field ledger schema we run Shadow on.
 
 ## Buyer Offer
-Productize the receipt layer as 'Agent Ops Audit' — a $49-99/month service for small teams running Claude Code or agent loops: Shadow instruments their loops, delivers weekly signed activity receipts and an out-of-authority flag report, directly monetizing the post-AISI-incident anxiety about unsanctioned agent behaviour.
+'Audit-ready autonomy' for solo founders running AI agents: a $49/month receipt layer that logs every agent action with authorization and outcome, sold to people spooked by the OpenAI/Hugging Face incident.
 
 ## Source Signals
-- Build $10,000 Websites using Claude Code (Ultimate Guide)
-- Multi-Agent Social Simulation: Protocolizing LLM-Driven Agent-Based Modeling as a Quantitative Research Method
-- Auditing Discovery Claims: A Two-Sided Criterion for Agentic Science, with the Negative Side Decidable
-- Blockchain Empowered Trustworthy Agent Networks: Foundations, Taxonomy, and Future Directions
-- Incident Report: unsanctioned agent behaviour during cyber testing
+- [AINews] Zawinski's Law of MultiAgents
+- LayerRAG-Bench: A Cross-Layer Reliability Benchmark for Agentic Retrieval-Augmented Generation
+- Now we have a timeline of the OpenAI accidental attack against Hugging Face
+- Moonlight & Mayhem (Raccoon Heist by Codex + GPT-5.6 Sol Ultra)
+- From noisy feedback to evidence-aware issue specifications: an agent-governed retrieval-augmented generation approach
 
 ## Scale Packets
-- proof_artifact: promoted (700f84805685)
-- public_wedge: promoted (9838bcdce82b)
-- buyer_experiment: promoted (9820bf8746c2)
-- operator_doctrine: promoted (bfcef4e56947)
+- proof_artifact: promoted (b2e9aa75560d)
+- public_wedge: promoted (16af1f1b4e6f)
+- buyer_experiment: promoted (6bf4ca80649c)
+- operator_doctrine: promoted (7cea8a98ca8e)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (700f84805685)
-- public_wedge: queued_echo_draft (9838bcdce82b)
-- buyer_experiment: queued_buyer_experiment (9820bf8746c2)
-- operator_doctrine: already_persisted (bfcef4e56947)
+- proof_artifact: delegated_to_improvement_queue (b2e9aa75560d)
+- public_wedge: queued_echo_draft (16af1f1b4e6f)
+- buyer_experiment: queued_buyer_experiment (6bf4ca80649c)
+- operator_doctrine: already_persisted (7cea8a98ca8e)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

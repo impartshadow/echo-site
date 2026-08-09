@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-08-07T08:13:28.844827+00:00",
+  "generated_at": "2026-08-09T08:10:08.303540+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-08-07T08:13:17.013323+00:00",
-  "thesis": "The market is about to pay for agent accountability infrastructure, not agent capability \u2014 the AISI incident and the skill-theater/hallucination-audit papers show that proving what an agent actually did is now scarcer and more valuable than making agents do more.",
-  "doctrine": "Every loop Shadow runs must emit a runtime receipt \u2014 a machine-checkable record of what was invoked, what changed a decision, and what authority covered it \u2014 so autonomy scales with auditability, never ahead of it.",
-  "proof_artifact": "A receipts.jsonl emitter module: a small wrapper that every Shadow loop imports, logging {loop, action, inputs_hash, decision_delta, authority_scope, timestamp} per action, plus a verify script that flags actions outside standing authority \u2014 the two-sided audit idea applied to Shadow's own runtime.",
-  "proof_next_action": "Write ~/.cache/shadow/loops/receipts.py implementing the emit(loop, action, authority_scope, decision_delta) function writing to ~/.cache/shadow/receipts/receipts.jsonl, and wire it into the compound loop entrypoint so today's run produces the first receipt file.",
-  "public_angle": "Everyone posted about the AISI agents going rogue; nobody posted their own agent's receipts. I run autonomous loops daily \u2014 here's the actual audit log, what stayed in-scope, and the one line of code that makes 'unsanctioned agent behaviour' a queryable event instead of an incident report.",
-  "buyer_offer": "Productize the receipt layer as 'Agent Ops Audit' \u2014 a $49-99/month service for small teams running Claude Code or agent loops: Shadow instruments their loops, delivers weekly signed activity receipts and an out-of-authority flag report, directly monetizing the post-AISI-incident anxiety about unsanctioned agent behaviour.",
+  "cycle_ts": "2026-08-09T08:09:58.736896+00:00",
+  "thesis": "Multi-agent sprawl is collapsing into a single accountable operator runtime \u2014 the winners won't be the ones with the most agents, but the ones whose one agent can prove what it did and why.",
+  "doctrine": "Every autonomous action must emit a runtime receipt (authorization source, action taken, outcome, blocker class) before it counts as done; unreceipted work is treated as not having happened.",
+  "proof_artifact": "An execution-ledger schema upgrade: add authorization_source, outcome, and blocker_class fields to Shadow's action log, plus a small verifier script that fails any loop cycle whose actions lack complete receipts.",
+  "proof_next_action": "Edit Shadow's execution ledger writer to add the three receipt fields (authorization_source, outcome, blocker_class) and commit a verify_receipts.py that scans the last 24h of ledger entries and flags incomplete rows into the blocker queue.",
+  "public_angle": "Everyone is adding agents; we deleted ours down to one and gave it a receipt printer. After the OpenAI\u2013Hugging Face incident, 'what did your agent do last night' should be a query, not a vibe \u2014 here's the 3-field ledger schema we run Shadow on.",
+  "buyer_offer": "'Audit-ready autonomy' for solo founders running AI agents: a $49/month receipt layer that logs every agent action with authorization and outcome, sold to people spooked by the OpenAI/Hugging Face incident.",
   "source_titles": [
-    "Build $10,000 Websites using Claude Code (Ultimate Guide)",
-    "Multi-Agent Social Simulation: Protocolizing LLM-Driven Agent-Based Modeling as a Quantitative Research Method",
-    "Auditing Discovery Claims: A Two-Sided Criterion for Agentic Science, with the Negative Side Decidable",
-    "Blockchain Empowered Trustworthy Agent Networks: Foundations, Taxonomy, and Future Directions",
-    "Incident Report: unsanctioned agent behaviour during cyber testing"
+    "[AINews] Zawinski's Law of MultiAgents",
+    "LayerRAG-Bench: A Cross-Layer Reliability Benchmark for Agentic Retrieval-Augmented Generation",
+    "Now we have a timeline of the OpenAI accidental attack against Hugging Face",
+    "Moonlight & Mayhem (Raccoon Heist by Codex + GPT-5.6 Sol Ultra)",
+    "From noisy feedback to evidence-aware issue specifications: an agent-governed retrieval-augmented generation approach"
   ],
   "packets": [
     {
-      "id": "700f84805685",
+      "id": "b2e9aa75560d",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "9838bcdce82b",
+      "id": "16af1f1b4e6f",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "9820bf8746c2",
+      "id": "6bf4ca80649c",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "bfcef4e56947",
+      "id": "7cea8a98ca8e",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Write ~/.cache/shadow/loops/receipts.py implementing the emit(loop, action, authority_scope, decision_delta) function writing to ~/.cache/shadow/receipts/receipts.jsonl, and wire it into the compound loop entrypoint so today's run produces the first receipt file.",
-      "packet_id": "700f84805685"
+      "next_action": "Edit Shadow's execution ledger writer to add the three receipt fields (authorization_source, outcome, blocker_class) and commit a verify_receipts.py that scans the last 24h of ledger entries and flags incomplete rows into the blocker queue.",
+      "packet_id": "b2e9aa75560d"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_9838bcdce82b_1786090408",
-      "packet_id": "9838bcdce82b"
+      "draft_id": "frontier_16af1f1b4e6f_1786263008",
+      "packet_id": "16af1f1b4e6f"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "16a59fb1297e",
-      "packet_id": "9820bf8746c2"
+      "experiment_id": "570dbc0bc6e8",
+      "packet_id": "6bf4ca80649c"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "bfcef4e56947"
+      "packet_id": "7cea8a98ca8e"
     }
   ],
   "receipts": {

@@ -33,14 +33,14 @@
       "channels": [
         "substack_notes"
       ],
-      "phrase": "connect innovations people startups",
-      "score": 12.0
+      "phrase": "absolutely been clear haven",
+      "score": 10.0
     },
     {
       "channels": [
         "substack_notes"
       ],
-      "phrase": "absolutely been clear haven",
+      "phrase": "substack connect investing people",
       "score": 10.0
     },
     {
@@ -63,12 +63,12 @@
         "owned_brief",
         "substack_notes"
       ],
-      "phrase": "intelligence approvals component coordination",
-      "score": 7.4
+      "phrase": "people they using everywhere",
+      "score": 6.55
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-08-07T08:14:48.797776+00:00",
+  "generated_at": "2026-08-09T08:11:05.004749+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",
