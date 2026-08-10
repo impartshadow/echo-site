@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/cancel-reports-success-but-writes-no-terminal-state-c7f2e65d71.html",
+      "evidence": "The issue reports WORKING forever after mid-run cancellation and an unchanged INPUT_REQUIRED task after parked cancellation, while V1 enforced ordering and a canceled-state post-check.",
+      "expected_boundary": "At the on_cancel_task return boundary, normal success must persist CANCELED, otherwise the handler must raise TaskNotCancelableError.",
+      "id": "SFA-2026-C7F2E65D71",
+      "observed_action": "DefaultRequestHandlerV2 returns normally from cancellation while the task remains WORKING or INPUT_REQUIRED indefinitely.",
+      "published_at": "2026-08-10T21:31:14.176038+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 1170,
+        "repo": "a2aproject/a2a-python",
+        "url": "https://github.com/a2aproject/a2a-python/issues/1170"
+      },
+      "status": "observed",
+      "summary": "Cancel reports success but writes no terminal state (DefaultRequestHandlerV2)",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-teams-bridge-silently-reports-success-when-ato-c311ba036e.html",
       "evidence": "A fake `jq` exiting 1 produced `register_exit=0` while the ledger remained `{\"tasks\":{},\"phases\":{}}`.",
       "expected_boundary": "The atomic-update helper must return non-zero unless the requested ledger mutation is durably committed.",
@@ -1587,12 +1613,12 @@
       }
     }
   ],
-  "count": 61,
+  "count": 62,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-10T14:12:51.064957+00:00",
+    "checked_at": "2026-08-10T21:31:14.207992+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
