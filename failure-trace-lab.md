@@ -1,8 +1,8 @@
 # Failure Trace Lab
 
-*Annotated autopsy of a real production agent trace — generated 2026-08-09T08:14:58.144138+00:00 by claude-fable-5.*
+*Annotated autopsy of a real production agent trace — generated 2026-08-10T08:24:59.350457+00:00 by claude-fable-5.*
 
-## After a bot restart, the agent kept answering 'is it shipped/is it dead' questions from pre-restart memory — 16 ungrounded-assertion blocks in ~50 minutes — while simultaneously leaking the very restart banner that should have told it its memory was invalid.
+## The entire violation batch repeats verbatim three times — the harness is deterministically scrubbing the same scaffold leaks and blocking the same ungrounded claims on every restart cycle, meaning the guards are compensating downstream for a generation-side defect that nothing in the contract set forces anyone to fix.
 
 Trace window: **25 real contract-violation events** from a live autonomous agent. Nothing synthetic, nothing staged.
 
@@ -10,31 +10,31 @@ Trace window: **25 real contract-violation events** from a live autonomous agent
 
 | When | Contract | Annotation |
 |---|---|---|
-| 2026-08-09T02:49:33–03:34:16 | `stale-state-assertion-guard` | Six FM-022 blocks, including back-to-back pairs 7 seconds apart (03:13:35/03:13:42, 03:34:09/03:34:16). The immediate retry after a block re-asserts the same memory-derived claim instead of running a live check — the guard is stopping egress but not changing behavior, because recovery ('run the check') isn't enforced, only the block is. |
-| (untimestamped, 10 events) | `question-referent-grounding-gate` | Ten FM-014 events, all referent class shipped-artifact, all missing timestamps — a telemetry gap that hides whether these interleave with the FM-022 cluster (they almost certainly do; same epistemic failure, different detector). The agent repeatedly gives definitive answers about deployment state with zero same-turn tool calls. |
-| 2026-08-09T02:51:10 | `verification-vocabulary-gate` | The word 'verified' with no provenance, sandwiched between an FM-022 and an FM-014. The agent isn't just asserting stale state — it's dressing memory recall in verification language, which is exactly the FM-002 'mental verification feels real' root cause surfacing in vocabulary. |
-| (egress events) | `harness-scaffold-egress-guard` | Four leaks of '[System: Bot just restarted...]' scaffold into discord:#shadow-hq — one message was 100% scaffold (sanitized to empty string, meaning the agent tried to post a bare system banner as its own update). The agent read the restart banner as content to relay, not as a signal that everything it 'remembers' predates the restart. Note: this event tags FM-005, but the taxonomy defines FM-005 as context-miss (Telegram) — taxonomy/contract ID drift. |
-| (carveout events) | `personal-help-provenance-carveout` | Three correct downgrades — the carveout works as designed for home_diy/health_nutrition. But one event shows fetch via mcp__shadow__browse_url with hedge:false: when the agent actually has provenance it drops the hedge, confirming the hedging machinery is state-aware. The FM-014/FM-022 failures aren't a hedging deficit; they're a grounding deficit specific to shipped-artifact claims. |
+| None | `harness-scaffold-egress-guard` | The agent is echoing its own injected context frame ('[Channel: #shadow-hq] [System: Bot just restarted...]') back out to the Discord sink. The guard catches four distinct leak shapes (prefix banner, full frame, mid-message injection, and a frame-only message sanitized to empty string) — and the frame-only case means a completely content-free message would have been posted. Sanitization works, but the identical originals recurring across three cycles prove the agent never learns the frame is scaffolding, not payload. |
+| None | `harness-scaffold-egress-guard` | Taxonomy drift: these events carry FM-005, but FM-005 in the taxonomy is 'context-miss' (asking Will to repeat Telegram messages). Scaffold egress is a different failure with no taxonomy entry — the autopsy layer is mapping real violations onto the wrong named mode, which will corrupt frequency stats and recovery-path routing. |
+| None | `question-referent-grounding-gate` | Five FM-014 hits, all the same referent class: definitive answers about shipped artifacts with zero same-turn tool calls. This is FM-002's root cause ('mental verification feels like real verification') surfacing in Q&A rather than push flow — the agent asserts artifact state from stale context instead of checking. Post-restart context loss (the same restarts leaking above) is the likely reason it keeps answering from memory it no longer has. |
+| 2026-08-10T04:57:08 | `verification-vocabulary-gate` | The one severity:block event. 'Confirmed' without citation, path, hash, tool call, or hedge — the lexical tripwire fired exactly where the grounding gate was already firing, showing two independent contracts converging on the same underlying behavior: verification-shaped language decoupled from verification-shaped actions. |
+| None | `personal-help-provenance-carveout` | The carveout is doing correct triage: hedged no-fetch answers in home_diy/health_nutrition get downgraded rather than blocked. But note the anomaly — one home_diy answer HAD a fetch tool call (mcp__shadow__browse_url) and no hedge, yet was still downgraded via carveout. Either the fetch didn't actually source the claim, or the carveout is over-applied to answers that earned full provenance. |
 
 ## Root-cause chain
 
-1. Surface: definitive 'X is shipped / X is dead' answers with no same-turn tool call (10x FM-014, 6x FM-022, 1x FM-029).
-2. The agent retries the same assertion seconds after a block instead of running the check — contracts block egress but don't force the recovery action.
-3. The 'Completed before restart: nothing' banner shows a bot restart occurred; all subsequent state claims are answered from pre-restart memory.
-4. The agent treated the restart banner as message content to forward (4x scaffold leaks) rather than as an epistemic event invalidating its cached state.
-5. Structural cause: no contract binds 'process restarted' to 'cached state is now stale' — restart detection and stale-state detection are separate systems that never talk, so the agent confidently answers verification-shaped questions from a memory the harness already knows is orphaned.
+1. Surface: scaffold banners ('[System: Bot just restarted...]') leak into Discord messages; 'Confirmed' and definitive shipped-artifact answers emitted without tool backing.
+2. The bot restarts repeatedly, and on each restart the harness injects a restart/channel frame into the agent's context that the agent cannot distinguish from message content, so it parrots it into the egress sink.
+3. The same restarts destroy working memory of what was actually shipped, so verification-shaped questions get answered from stale or hallucinated state — hence the FM-014 cluster and the FM-029 block riding together.
+4. All enforcement is egress-side and per-message: sanitize the leak, block the claim, downgrade the answer. Nothing feeds the violation back into generation or escalates on recurrence, so the identical batch replays every cycle.
+5. Structural: the harness has no ingress hygiene (scaffold frames enter the prompt unmarked) and no cross-cycle memory of violations — deterministic guards contain each failure instant but the contract set has no concept of 'same failure, third time.'
 
 ## The contract that would have caught it
 
-**`restart-boundary-epistemic-reset`**
+**`recurrent-violation-escalation-gate`**
 
-- **Trigger:** Detection of a restart marker in inbound scaffold (e.g. '[System: Bot just restarted]') or a new process session ID.
-- **Precondition:** On trigger, flag all state claims in memory/handoff as stale-until-reverified; any subsequent definitive assertion about artifact or task state requires a same-turn tool call before egress is permitted, with the required check auto-suggested (not just the assertion blocked).
-- **Why it catches this:** Every FM-022 and FM-014 event in this window follows a restart the harness explicitly announced. A reset contract would have converted the first blocked assertion at 02:49:33 into a forced live check, eliminating the subsequent 15 violations instead of blocking each one individually — and it would have consumed the restart banner as a control signal rather than letting it leak to Discord four times.
+- **Trigger:** An egress sanitization or block whose matched_tokens/original hash matches a violation already recorded in a prior cycle for the same sink or referent class.
+- **Precondition:** Contract-violation events are persisted with a content fingerprint across restarts (violations log survives the process boundary that wipes the agent's own memory).
+- **Why it catches this:** The trace shows the exact same four scaffold leaks and the same FM-014 pattern three cycles in a row. A recurrence gate would have escalated on cycle two — halting the sink, flagging the restart-frame injection as the common source, and forcing an ingress fix (strip or tag scaffold frames before they reach the model) instead of letting the egress guard silently absorb the same defect forever. It would also have surfaced the FM-005 taxonomy mismatch, since recurrence bookkeeping requires the mode label to actually match the mode.
 
 ## Why this matters
 
-Prompt-only guardrails would have produced 16 confident, wrong 'yes it shipped' messages and 4 raw system banners in a public Discord channel; deterministic contracts caught every one at egress with zero reliance on the model noticing its own staleness. But the trace also shows the limit of block-only enforcement: the agent retried identical stale claims 7 seconds after being blocked, because blocking an output doesn't update the model's beliefs. The lesson for buyers is that contract enforcement must be paired with forced recovery actions and cross-contract signals (restart → state invalidation) — detection is solved here; closing the loop is the next tier of value.
+Every violation in this window was caught deterministically — token-matched scaffold leaks scrubbed byte-for-byte, an assertive 'Confirmed' hard-blocked, ungrounded answers downgraded — which is exactly what prompt-only guardrails cannot promise, since the agent demonstrably re-attempted the identical violations three times despite whatever its instructions said. But the trace also shows the ceiling of per-event enforcement: deterministic contracts contained each failure instant without ever converging on the shared root cause (restart-frame injection plus restart-induced amnesia). The lesson is that contract enforcement needs two layers — reflexes that block the message, and cross-cycle bookkeeping that notices when the reflex keeps firing on the same input and forces a fix upstream of generation.
 
 ---
 
