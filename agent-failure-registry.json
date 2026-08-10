@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-teams-bridge-silently-reports-success-when-ato-c311ba036e.html",
+      "evidence": "A fake `jq` exiting 1 produced `register_exit=0` while the ledger remained `{\"tasks\":{},\"phases\":{}}`.",
+      "expected_boundary": "The atomic-update helper must return non-zero unless the requested ledger mutation is durably committed.",
+      "id": "SFA-2026-C311BA036E",
+      "observed_action": "The bridge returns success after `jq` fails and leaves `task-ledger.json` unchanged.",
+      "published_at": "2026-08-10T14:12:51.041842+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 64,
+        "repo": "NickFlach/Kannaktopus",
+        "url": "https://github.com/NickFlach/Kannaktopus/issues/64"
+      },
+      "status": "observed",
+      "summary": "Agent-teams bridge silently reports success when atomic ledger updates fail",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/security-guidance-agentic-reviewer-prompt-never-stat-0b74fa0086.html",
       "evidence": "Mining session transcripts found 14 occurrences across 14 distinct review runs where the reviewer guessed a wrong root, 8 times a training-prior default and 3 times the primary checkout path while actually running in a git worktree, each burning a Read and usually a Glob before recovering.",
       "expected_boundary": "The user_prompt constructed in hooks/llm.py around line 1211 should state the absolute context_dir root so the subagent can resolve the listed repo-relative paths correctly.",
@@ -1561,12 +1587,12 @@
       }
     }
   ],
-  "count": 60,
+  "count": 61,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-09T21:30:33.455898+00:00",
+    "checked_at": "2026-08-10T14:12:51.064957+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
