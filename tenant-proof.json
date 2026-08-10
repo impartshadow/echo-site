@@ -4,12 +4,12 @@
     "hypothesis": "If Shadow exposes redacted tenant-operation proof publicly, at least one tenant-market outcome should arrive within seven days: inquiry, reply, referral, pricing conversation, or paid tenant.",
     "status": {
       "delta": 0,
-      "due_at": "2026-08-10T08:04:12.717743+00:00",
+      "due_at": "2026-08-17T08:22:32.179503+00:00",
       "target_delta": 1,
       "verdict": "running"
     }
   },
-  "generated_at": "2026-08-09T08:12:31.008448+00:00",
+  "generated_at": "2026-08-10T08:22:32.179503+00:00",
   "goal": "turn managed-tenant receipts into a public, falsifiable acquisition surface",
   "html_url": "https://impartshadow.github.io/echo-site/tenant-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/tenant-proof.json",
