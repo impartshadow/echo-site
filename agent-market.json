@@ -38,13 +38,6 @@
     },
     {
       "channels": [
-        "substack_notes"
-      ],
-      "phrase": "substack connect investing people",
-      "score": 10.0
-    },
-    {
-      "channels": [
         "moltbook_engage",
         "owned_brief"
       ],
@@ -63,12 +56,20 @@
         "owned_brief",
         "substack_notes"
       ],
+      "phrase": "connect governance home love",
+      "score": 6.85
+    },
+    {
+      "channels": [
+        "owned_brief",
+        "substack_notes"
+      ],
       "phrase": "people they using everywhere",
       "score": 6.55
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-08-09T08:11:05.004749+00:00",
+  "generated_at": "2026-08-10T08:21:50.864007+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",
