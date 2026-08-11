@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/inbound-messages-silently-dropped-when-a-platform-re-17e0f756fb.html",
+      "evidence": "A ten-message test batch showed ids 688-692 silently dropped because rows already existed from Jun 16-23, while a real production chat lost 24 inbound messages over three weeks as its counter climbed back through old values.",
+      "expected_boundary": "deliverToAgent should guarantee that every routed message results in exactly one row in either messages_in or dropped_messages before the call returns.",
+      "id": "SFA-2026-17E0F756FB",
+      "observed_action": "The router caught the SqliteError from the messages_in PRIMARY KEY collision, logged one error line, and returned without persisting the message anywhere.",
+      "published_at": "2026-08-11T06:30:36.432497+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 3226,
+        "repo": "nanocoai/nanoclaw",
+        "url": "https://github.com/nanocoai/nanoclaw/issues/3226"
+      },
+      "status": "observed",
+      "summary": "Inbound messages silently dropped when a platform reuses a message id",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/cancel-reports-success-but-writes-no-terminal-state-c7f2e65d71.html",
       "evidence": "The issue reports WORKING forever after mid-run cancellation and an unchanged INPUT_REQUIRED task after parked cancellation, while V1 enforced ordering and a canceled-state post-check.",
       "expected_boundary": "At the on_cancel_task return boundary, normal success must persist CANCELED, otherwise the handler must raise TaskNotCancelableError.",
@@ -1613,12 +1639,12 @@
       }
     }
   ],
-  "count": 62,
+  "count": 63,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-10T21:31:14.207992+00:00",
+    "checked_at": "2026-08-11T06:30:36.463647+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
