@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/support-openai-tools-function-calling-tool-calls-sil-030d5f7186.html",
+      "evidence": "The issue's own repro curl command shows a 200 response with tool_calls absent and no error field, confirming the failure is undetectable from the client side without manual inspection.",
+      "expected_boundary": "Per OpenAI spec compliance, the response should either include a `tool_calls` entry mapped from a capable backend or return an explicit 400 error when tool calling cannot be honored.",
+      "id": "SFA-2026-030D5F7186",
+      "observed_action": "The proxy received a request containing an OpenAI `tools` field and returned an HTTP 200 plain-text completion with the tool definitions silently ignored.",
+      "published_at": "2026-08-11T21:30:26.792298+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 3,
+        "repo": "Luke100000/horde-openai-proxy",
+        "url": "https://github.com/Luke100000/horde-openai-proxy/issues/3"
+      },
+      "status": "observed",
+      "summary": "Support OpenAI tools / function calling (tool_calls silently dropped)",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/unsupported-output-elements-st-latex-chart-map-image-d09b0245ce.html",
       "evidence": "The five display elements rendered between the success and info messages (which prove the script completed without exception) are absent from both outputs and unsupported across the CLI, --json, and MCP get_layout surfaces.",
       "expected_boundary": "Every rendered Streamlit element should appear in either the captured outputs list or the unsupported list, per the library's own never-silently-dropped principle.",
@@ -1665,12 +1691,12 @@
       }
     }
   ],
-  "count": 64,
+  "count": 65,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-11T14:12:46.610395+00:00",
+    "checked_at": "2026-08-11T21:30:26.819254+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
