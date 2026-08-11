@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/unsupported-output-elements-st-latex-chart-map-image-d09b0245ce.html",
+      "evidence": "The five display elements rendered between the success and info messages (which prove the script completed without exception) are absent from both outputs and unsupported across the CLI, --json, and MCP get_layout surfaces.",
+      "expected_boundary": "Every rendered Streamlit element should appear in either the captured outputs list or the unsupported list, per the library's own never-silently-dropped principle.",
+      "id": "SFA-2026-D09B0245CE",
+      "observed_action": "streamlit-mcp's get_layout/read_output returned only title/success/info for an app that also rendered latex, divider, progress, bar_chart, and map elements after a button click.",
+      "published_at": "2026-08-11T14:12:46.570112+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 92,
+        "repo": "dkedar7/streamlit-mcp",
+        "url": "https://github.com/dkedar7/streamlit-mcp/issues/92"
+      },
+      "status": "observed",
+      "summary": "Unsupported *output* elements (st.latex/chart/map/image/progress/\u2026) are silently dropped from `read_output`/`get_layout` \u2014 the #29 \"never silently dropped\" gap, but for outputs",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/inbound-messages-silently-dropped-when-a-platform-re-17e0f756fb.html",
       "evidence": "A ten-message test batch showed ids 688-692 silently dropped because rows already existed from Jun 16-23, while a real production chat lost 24 inbound messages over three weeks as its counter climbed back through old values.",
       "expected_boundary": "deliverToAgent should guarantee that every routed message results in exactly one row in either messages_in or dropped_messages before the call returns.",
@@ -1639,12 +1665,12 @@
       }
     }
   ],
-  "count": 63,
+  "count": 64,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-11T06:30:36.463647+00:00",
+    "checked_at": "2026-08-11T14:12:46.610395+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
