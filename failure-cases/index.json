@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-08-11T21:30:26.795248+00:00",
-  "count": 65,
+  "generated_at": "2026-08-12T06:30:28.799333+00:00",
+  "count": 66,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "agent-system-prompt-models-sometimes-write-fake-tool-d2a7dec21e",
+      "advisory_id": "SFA-2026-D2A7DEC21E",
+      "ts": "2026-08-12T06:30:28.796835+00:00",
+      "title": "agent/system_prompt: models sometimes write fake tool invocations as text instead of real tool_calls",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "NousResearch/hermes-agent",
+        "issue_number": 83379,
+        "author": "unknown",
+        "url": "https://github.com/NousResearch/hermes-agent/issues/83379"
+      },
+      "case": {
+        "observed_action": "The model emitted a prose-formatted fake tool invocation (XML/JSON/narrated terminal block) with finish_reason 'stop' and then fabricated matching tool output and a final answer built on it.",
+        "expected_boundary": "The harness should have gated delivery on finish_reason == 'tool_calls' whenever assistant text matched a tool-invocation shape, blocking the turn instead of shipping fabricated pi-health/calendar/curl output to the user.",
+        "runtime_context": "Self-hosted qwen-35b-a3b via llama-server/litellm on a scheduled daily-briefing cron job (pi-health check, calendar fetch, web research, Obsidian note write), reproduced deterministically at temperature=0.",
+        "evidence": "Direct API replay of the captured system+user prompt+tools array against the model backend, bypassing the harness, showed finish_reason 'stop' with fabricated <invoke> text on every trial before the fix and finish_reason 'tool_calls' on every trial after adding TOOL_CALL_FORMAT_GUIDANCE."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/agent-system-prompt-models-sometimes-write-fake-tool-d2a7dec21e.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/agent-system-prompt-models-sometimes-write-fake-tool-d2a7dec21e.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20agent-system-prompt-models-sometimes-write-fake-tool-d2a7dec21e&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/agent-system-prompt-models-sometimes-write-fake-tool-d2a7dec21e.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "support-openai-tools-function-calling-tool-calls-sil-030d5f7186",
