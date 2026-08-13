@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/notebook-import-writes-no-attachments-and-reports-su-12a66adb7c.html",
+      "evidence": "Reproduction against a real database showed result {success:true, importedAttachments:2} alongside actually written {fabFiles:0, artifacts:0} and empty knowledgeIds/artifactIds on the created notebook, with the underlying Mongoose ValidationErrors visible only in logger.warn output.",
+      "expected_boundary": "The success response and its counts must be derived from confirmed database writes, not from the source export payload, and a per-item validation failure should fail the request rather than being swallowed by logger.warn.",
+      "id": "SFA-2026-12A66ADB7C",
+      "observed_action": "The notebook import service reports success and a nonzero attachment count while writing zero knowledge files, artifacts, or tools to the database.",
+      "published_at": "2026-08-13T06:30:45.537933+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 1633,
+        "repo": "Bike4Mind/bike4mind",
+        "url": "https://github.com/Bike4Mind/bike4mind/issues/1633"
+      },
+      "status": "observed",
+      "summary": "Notebook import writes no attachments and reports success",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/context-compression-loses-initial-user-question-and-c61227e523.html",
       "evidence": "The user's bug report explicitly states compression 'discards the early conversation turns (initial user message + model's initial reasoning) while preserving only the most recent tool call results and model responses,' and the resulting response was internally coherent but factually unrelated to the actual question asked.",
       "expected_boundary": "The compression routine should preserve or pin the original task anchor (turn 0 and/or a summary of it) outside the compressible window so the model always retains what it was asked to do.",
@@ -1743,12 +1769,12 @@
       }
     }
   ],
-  "count": 67,
+  "count": 68,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-12T14:12:32.242564+00:00",
+    "checked_at": "2026-08-13T06:30:45.582322+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
