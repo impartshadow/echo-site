@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/parseusermemoryextractionresult-defaults-missing-con-66cc9b46bb.html",
+      "evidence": "The parser defaults absence to 0, the record normalizer defaults it to 1, and the apply loop skips every operation below 0.85.",
+      "expected_boundary": "The parse-to-apply contract should define missing confidence consistently and verify that otherwise valid memory mutations are applied.",
+      "id": "SFA-2026-66CC9B46BB",
+      "observed_action": "A model-returned archive or update without confidence is normalized to zero and silently filtered out.",
+      "published_at": "2026-08-13T21:30:40.050143+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 2783,
+        "repo": "webbrain-one/webbrain",
+        "url": "https://github.com/webbrain-one/webbrain/issues/2783"
+      },
+      "status": "observed",
+      "summary": "parseUserMemoryExtractionResult defaults missing confidence to 0, silently dropping model-returned archive/update ops",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/close-slice-reports-success-when-worktree-removal-si-66424f2d1f.html",
       "evidence": "ls of .worktrees/ showed five leftover directories absent from `git worktree list` and with no corresponding admin directory under .git/worktrees/, and manual removal reproduced the same split between a released and two still-held directories.",
       "expected_boundary": "merge_and_cleanup_worktree should have checked subprocess.run's returncode after the git worktree remove call and reported the failure alongside the success message rather than returning True unconditionally.",
@@ -1795,12 +1821,12 @@
       }
     }
   ],
-  "count": 69,
+  "count": 70,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-13T14:12:28.746548+00:00",
+    "checked_at": "2026-08-13T21:30:40.074615+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
