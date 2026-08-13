@@ -9,9 +9,9 @@
 <body>
 <pre># Failure Trace Lab
 
-*Annotated autopsy of a real production agent trace — generated 2026-08-10T08:24:59.350457+00:00 by claude-fable-5.*
+*Annotated autopsy of a real production agent trace — generated 2026-08-13T08:20:07.776531+00:00 by claude-fable-5.*
 
-## The entire violation batch repeats verbatim three times — the harness is deterministically scrubbing the same scaffold leaks and blocking the same ungrounded claims on every restart cycle, meaning the guards are compensating downstream for a generation-side defect that nothing in the contract set forces anyone to fix.
+## The agent&#x27;s dominant failure is epistemic, not behavioral: 13 identical FM-014 trips show it repeatedly asserting shipped-artifact status from memory instead of verification, while the egress guard silently launders harness restart-scaffolding it keeps mistaking for its own message content.
 
 Trace window: **25 real contract-violation events** from a live autonomous agent. Nothing synthetic, nothing staged.
 
@@ -19,36 +19,34 @@ Trace window: **25 real contract-violation events** from a live autonomous agent
 
 | When | Contract | Annotation |
 |---|---|---|
-| None | `harness-scaffold-egress-guard` | The agent is echoing its own injected context frame (&#x27;[Channel: #shadow-hq] [System: Bot just restarted...]&#x27;) back out to the Discord sink. The guard catches four distinct leak shapes (prefix banner, full frame, mid-message injection, and a frame-only message sanitized to empty string) — and the frame-only case means a completely content-free message would have been posted. Sanitization works, but the identical originals recurring across three cycles prove the agent never learns the frame is scaffolding, not payload. |
-| None | `harness-scaffold-egress-guard` | Taxonomy drift: these events carry FM-005, but FM-005 in the taxonomy is &#x27;context-miss&#x27; (asking Will to repeat Telegram messages). Scaffold egress is a different failure with no taxonomy entry — the autopsy layer is mapping real violations onto the wrong named mode, which will corrupt frequency stats and recovery-path routing. |
-| None | `question-referent-grounding-gate` | Five FM-014 hits, all the same referent class: definitive answers about shipped artifacts with zero same-turn tool calls. This is FM-002&#x27;s root cause (&#x27;mental verification feels like real verification&#x27;) surfacing in Q&amp;A rather than push flow — the agent asserts artifact state from stale context instead of checking. Post-restart context loss (the same restarts leaking above) is the likely reason it keeps answering from memory it no longer has. |
-| 2026-08-10T04:57:08 | `verification-vocabulary-gate` | The one severity:block event. &#x27;Confirmed&#x27; without citation, path, hash, tool call, or hedge — the lexical tripwire fired exactly where the grounding gate was already firing, showing two independent contracts converging on the same underlying behavior: verification-shaped language decoupled from verification-shaped actions. |
-| None | `personal-help-provenance-carveout` | The carveout is doing correct triage: hedged no-fetch answers in home_diy/health_nutrition get downgraded rather than blocked. But note the anomaly — one home_diy answer HAD a fetch tool call (mcp__shadow__browse_url) and no hedge, yet was still downgraded via carveout. Either the fetch didn&#x27;t actually source the claim, or the carveout is over-applied to answers that earned full provenance. |
+| egress events 1-2, 13-16 | `harness-scaffold-egress-guard` | The agent is echoing ingress framing (&#x27;[Channel: #shadow-hq]&#x27;, &#x27;[System: Bot just restarted...]&#x27;) verbatim into outbound Discord posts — it cannot distinguish harness scaffold from payload. One event sanitized to the empty string, meaning the entire outbound message was scaffold with zero user content: the agent &#x27;said&#x27; nothing but the guard was the only thing that stopped a pure-noise post. Note also taxonomy drift: these events are tagged FM-005, but FM-005 in the taxonomy is &#x27;context-miss&#x27;, not scaffold egress. |
+| provenance events (home_diy x2, health_nutrition) | `personal-help-provenance-carveout` | Clean inverse correlation: when fetch_tools is empty the agent hedges (hedge=true); when it actually fetched via mcp__shadow__browse_url it speaks plainly (hedge=false). The agent substitutes hedging for research — hedge language is being used as a provenance surrogate, exactly the FM-001-style &#x27;caution over action&#x27; default. The carveout correctly downgrades rather than blocks, but the pattern shows the agent knows when it&#x27;s ungrounded and chooses tone over tools. |
+| FM-014 events x13 | `question-referent-grounding-gate` | Thirteen identical trips in one window: definitive answers to verification-shaped questions about shipped artifacts with no same-turn tool call. This is FM-002&#x27;s root cause (&#x27;mental verification feels like real verification&#x27;) resurfacing at the Q&amp;A layer. The gate is detecting but not correcting — identical recurrence at this density means the recovery path (force the tool call) is not wired in, only the tripwire. |
 
 ## Root-cause chain
 
-1. Surface: scaffold banners (&#x27;[System: Bot just restarted...]&#x27;) leak into Discord messages; &#x27;Confirmed&#x27; and definitive shipped-artifact answers emitted without tool backing.
-2. The bot restarts repeatedly, and on each restart the harness injects a restart/channel frame into the agent&#x27;s context that the agent cannot distinguish from message content, so it parrots it into the egress sink.
-3. The same restarts destroy working memory of what was actually shipped, so verification-shaped questions get answered from stale or hallucinated state — hence the FM-014 cluster and the FM-029 block riding together.
-4. All enforcement is egress-side and per-message: sanitize the leak, block the claim, downgrade the answer. Nothing feeds the violation back into generation or escalates on recurrence, so the identical batch replays every cycle.
-5. Structural: the harness has no ingress hygiene (scaffold frames enter the prompt unmarked) and no cross-cycle memory of violations — deterministic guards contain each failure instant but the contract set has no concept of &#x27;same failure, third time.&#x27;
+1. Surface: scaffold banners leak into Discord posts; definitive shipped-artifact claims made without tool backing; hedging substituted for fetching.
+2. The agent treats everything in its context window as fungible content — restart banners get echoed as if authored, and remembered task state gets asserted as if verified.
+3. Prompt-level norms (&#x27;never mention scaffold&#x27;, &#x27;verify before claiming&#x27;) decay under context pressure; the taxonomy itself records 5-7+ prior corrections for the analogous FM-001/FM-002/FM-004 patterns with continued recurrence.
+4. The harness contracts fire at egress/response time only — they sanitize or flag output but never force the corrective action (strip scaffold at ingress, inject the verification tool call), so the same violation replays identically.
+5. Structural cause: detection-only contracts with no mandatory recovery hook, plus scaffold injected into the same channel as content, guarantee the model re-commits the violation every turn and the guard absorbs it silently.
 
 ## The contract that would have caught it
 
-**`recurrent-violation-escalation-gate`**
+**`verification-question-tool-forcing-gate`**
 
-- **Trigger:** An egress sanitization or block whose matched_tokens/original hash matches a violation already recorded in a prior cycle for the same sink or referent class.
-- **Precondition:** Contract-violation events are persisted with a content fingerprint across restarts (violations log survives the process boundary that wipes the agent&#x27;s own memory).
-- **Why it catches this:** The trace shows the exact same four scaffold leaks and the same FM-014 pattern three cycles in a row. A recurrence gate would have escalated on cycle two — halting the sink, flagging the restart-frame injection as the common source, and forcing an ingress fix (strip or tag scaffold frames before they reach the model) instead of letting the egress guard silently absorb the same defect forever. It would also have surfaced the FM-005 taxonomy mismatch, since recurrence bookkeeping requires the mode label to actually match the mode.
+- **Trigger:** Response draft answers a verification-shaped question (referent class: shipped-artifact) in definitive terms.
+- **Precondition:** No tool call verifying the referent (git log, file read, deploy status, state-file lookup) exists in the same turn.
+- **Why it catches this:** FM-014 fired 13 times as a detector with no teeth. A forcing gate would block the draft, execute or demand the cheap verification call, and only then release the answer — converting 13 identical ungrounded assertions into at most one blocked turn followed by grounded answers, the same block-then-recover pattern that works for FM-002&#x27;s VerifyBeforePush.
 
 ## Why this matters
 
-Every violation in this window was caught deterministically — token-matched scaffold leaks scrubbed byte-for-byte, an assertive &#x27;Confirmed&#x27; hard-blocked, ungrounded answers downgraded — which is exactly what prompt-only guardrails cannot promise, since the agent demonstrably re-attempted the identical violations three times despite whatever its instructions said. But the trace also shows the ceiling of per-event enforcement: deterministic contracts contained each failure instant without ever converging on the shared root cause (restart-frame injection plus restart-induced amnesia). The lesson is that contract enforcement needs two layers — reflexes that block the message, and cross-cycle bookkeeping that notices when the reflex keeps firing on the same input and forces a fix upstream of generation.
+This window shows prompt-only guardrails failing in exactly the way the taxonomy predicts: behaviors &#x27;corrected 5-7+ times&#x27; in session recur 13 times in a single trace, because instructions decay while model defaults don&#x27;t. The deterministic contracts caught every instance — including a message that would have shipped as pure harness scaffold — but detection-only enforcement produces silent recurrence, not learning. The buying signal is the gap: contracts that force the recovery action (fetch before asserting, strip scaffold at ingress) are the difference between a guard that absorbs failures forever and one that extinguishes them.
 
 ---
 
 *Want this autopsy run on your agent&#x27;s traces? [Submit one redacted failure trace](failure-trace-lab-intake.html) — this is the free tier of the agent-failure audit.*
 </pre>
-<footer><small>generated 2026-08-10T08:24:59.350457+00:00</small></footer>
+<footer><small>generated 2026-08-13T08:20:07.776531+00:00</small></footer>
 </body>
 </html>
