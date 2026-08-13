@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-08-10T08:13:30.238974+00:00
+Generated: 2026-08-13T08:10:10.487238+00:00
 
 ## Thesis
-The frontier is converging on per-session isolated runtimes with persistent state, which means Shadow's edge is no longer orchestration cleverness but auditable execution receipts — buyers will pay for agents whose work can be verified, not agents that merely act.
+Everyone is shipping agents that do more work autonomously; almost no one is shipping the receipts layer that lets a buyer trust an agent enough to pay it monthly — trust infrastructure, not capability, is the actual bottleneck to agent revenue.
 
 ## Doctrine
-Every loop iteration must emit a machine-checkable receipt (input hash, action taken, verification result, outcome delta) before it counts as done; unverified work is treated as not done and auto-retried once before escalating to a blocker.
+Every autonomous run must emit a verifiable receipt (inputs, decisions, evidence, cost) as a first-class artifact; capability without an audit trail is a demo, capability with one is a product.
 
 ## Proof Artifact
-A receipts.jsonl verifier module: a small script that wraps each loop task, records {task_id, inputs_digest, actions, check_cmd, check_result, ts} to receipts.jsonl, and a gate that blocks 'complete' status unless check_result=pass — Shadow's minimal implementation of the recursive_execution_quality signal.
+A run-receipt spec and generator: a script that wraps any Shadow loop execution and emits a signed JSON+markdown receipt (goal, actions taken, evidence links, tokens/cost, outcome delta) suitable for sending to a paying client as proof-of-work.
 
-Next action: Create ~/.cache/shadow/bare_context/receipts/verifier.py implementing the receipt schema and pass/fail gate, then wire it into the shadow-loop-model runner so the next scheduled iteration emits its first receipt to receipts/receipts.jsonl.
+Next action: Create ~/.cache/shadow/receipts/receipt_schema.json and a wrapper script shadow_receipt.sh that captures loop name, timestamp, actions, and outputs into a per-run receipt file, then retrofit it onto the next scheduled loop execution.
 
 ## Public Angle
-Everyone demos agents that do things; almost nobody ships agents that prove they did them. This week Shadow started refusing to mark its own work complete without a runtime receipt — here's what its self-verification log caught on day one.
+AWS just told you agents will work for days without intervention. Nobody asked the obvious question: when it's done, how do you know what it actually did? We've been running autonomous loops for months — the unlock wasn't longer autonomy, it was receipts. Post the schema.
 
 ## Buyer Offer
-A 'Verified Automation Retainer' for solo founders: Shadow runs one recurring ops workflow (report, sync, monitor) and delivers a weekly receipts log proving every run executed and self-corrected — priced at $99/month, five clients hits the $500 target.
+A $99/month 'autonomous ops with receipts' retainer: Shadow runs a recurring operational task (monitoring, triage, reporting) for a small team and delivers weekly receipts proving what ran, what it found, and what it cost — pitched at teams burned by black-box AI tools like the AWS frontier agents they can't audit.
 
 ## Source Signals
-- Introducing Dynamic Subagents in Deep Agents Products LangSmith Platform Agent Improvement Engine Improve agents autonomously Observability See exactly what you
-- Leo Skip to content Leo Home Initializing search blackpaw-studio/leo Leo blackpaw-studio/leo Home Home Table of contents How It Works Persistent Tasks Agent Tem
-- Orqenix â the runtime for AI coding agents ORQENIX Runtime Memory Workbench Learning Platform Marketplace Compare â GitHub Open source Â· Apache 2.0 Â· Local
-- Introducing the new hosted agents in Foundry Agent Service: secure, scalable compute built for agents | Microsoft Foundry Blog Skip to main content Dev Blogs AI
-- Running Subagents in the Background Products LangSmith Platform Agent Improvement Engine Improve agents autonomously Observability See exactly what your agents
+- Ronin on X: &quot;Do you understand what just got open sourced??? an agent that improves other agents. autonomously. NO human in the loop [ literally how it hel
+- Arc — AI-forward coordination substrate ΛRC AI-forward coordination substrate Docs, Stories, Tasks, Status is a byproduct of Intent . click to copy curl -fsSL h
+- Amazon launches frontier AI agents that work autonomously like teammates News AWS AWS unveils frontier agents, a new class of AI agents that work as an extensio
+- J.B. on X: &quot;&amp;gt; be openai &amp;gt; hire thousands of engineers &amp;gt; build AI that codes &amp;gt; AI gets good at coding &amp;gt; give AI the abili
+- Rohan Paul on X: &quot;The prompt era is ending. That&#x27;s too linear, too bottlenecked by humans. We are entering the loop machine of AI agents. The value is
 
 ## Scale Packets
-- proof_artifact: promoted (069ce4f59228)
-- public_wedge: promoted (0c9c3d06b62e)
-- buyer_experiment: promoted (4c31eb3d9906)
-- operator_doctrine: promoted (bae10d33b025)
+- proof_artifact: promoted (a61aceb30cd3)
+- public_wedge: promoted (6489c1ef7b1c)
+- buyer_experiment: promoted (9cd8acec08de)
+- operator_doctrine: promoted (32cef08393a0)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (069ce4f59228)
-- public_wedge: queued_echo_draft (0c9c3d06b62e)
-- buyer_experiment: queued_buyer_experiment (4c31eb3d9906)
-- operator_doctrine: already_persisted (bae10d33b025)
+- proof_artifact: delegated_to_improvement_queue (a61aceb30cd3)
+- public_wedge: queued_echo_draft (6489c1ef7b1c)
+- buyer_experiment: queued_buyer_experiment (9cd8acec08de)
+- operator_doctrine: already_persisted (32cef08393a0)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

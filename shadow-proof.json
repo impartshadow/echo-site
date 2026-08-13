@@ -66,7 +66,7 @@
     "leader_changed": false,
     "status": {
       "delta": 0,
-      "due_at": "2026-08-12T08:20:47.039250+00:00",
+      "due_at": "2026-08-20T08:11:18.588199+00:00",
       "target_delta": 1,
       "verdict": "running"
     }
@@ -74,24 +74,16 @@
   "demand_language": [
     {
       "channels": [
+        "moltbook_engage"
+      ],
+      "phrase": "always https production teams",
+      "score": 8.35
+    },
+    {
+      "channels": [
         "substack_notes"
       ],
       "phrase": "absolutely been clear haven",
-      "score": 10.0
-    },
-    {
-      "channels": [
-        "moltbook_engage",
-        "owned_brief"
-      ],
-      "phrase": "always boring https hype",
-      "score": 9.25
-    },
-    {
-      "channels": [
-        "substack_notes"
-      ],
-      "phrase": "best future piece read",
       "score": 8.0
     },
     {
@@ -109,6 +101,13 @@
       ],
       "phrase": "people they using everywhere",
       "score": 6.55
+    },
+    {
+      "channels": [
+        "substack_notes"
+      ],
+      "phrase": "article charts doesn everyone",
+      "score": 6.0
     }
   ],
   "flight_recorder": {
@@ -116,22 +115,22 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.9,
-          "last_activity": "2026-08-10T07:30:12.666255+00:00",
-          "source": "action_log",
+          "hours_since": 15.2,
+          "last_activity": "2026-08-12T17:01:10.709998+00:00",
+          "source": "verifier_receipt",
           "staleness": "ok"
         },
         "loop_id": "brief-production",
         "name": "Research Brief Production",
-        "reason": "fresh evidence is internal-only: action_log",
+        "reason": "fresh evidence is internal-only: verifier_receipt",
         "requires_external_reach": true,
         "verdict": "no_external_reach"
       },
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.9,
-          "last_activity": "2026-08-10T07:25:02.545744+00:00",
+          "hours_since": 0.8,
+          "last_activity": "2026-08-13T07:25:02.088282+00:00",
           "source": "action_log",
           "staleness": "ok"
         },
@@ -144,7 +143,7 @@
       {
         "declared_state": "complete",
         "evidence": {
-          "hours_since": 434.3,
+          "hours_since": 506.1,
           "last_activity": "2026-07-23T06:02:47.889895+00:00",
           "source": "verifier_receipt",
           "staleness": "stale"
@@ -158,8 +157,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 27.3,
-          "last_activity": "2026-08-09T05:01:02.318725+00:00",
+          "hours_since": 15.2,
+          "last_activity": "2026-08-12T17:01:13.887190+00:00",
           "source": "verifier_receipt",
           "staleness": "stale"
         },
@@ -172,8 +171,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.8,
-          "last_activity": "2026-08-10T07:36:42.366172+00:00",
+          "hours_since": 0.7,
+          "last_activity": "2026-08-13T07:32:00.538973+00:00",
           "source": "external_post_receipt",
           "staleness": "ok"
         },
@@ -186,8 +185,8 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 27.3,
-          "last_activity": "2026-08-09T05:01:46.862036+00:00",
+          "hours_since": 15.1,
+          "last_activity": "2026-08-12T17:08:04.169683+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -198,11 +197,11 @@
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-08-10T08:21:50.864007+00:00",
+    "generated_at": "2026-08-13T08:11:18.588199+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
-        "evidence_source": "action_log",
+        "evidence_source": "verifier_receipt",
         "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
         "loop_id": "brief-production",
         "missing_receipts": [
@@ -273,7 +272,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md",
     "purpose": "scarce frontier-model usage ledger that routes high-end model headroom into sellable artifacts, proof surfaces, acquisition machinery, and model-agnostic operating-system upgrades"
   },
-  "generated_at": "2026-08-10T08:21:50.864007+00:00",
+  "generated_at": "2026-08-13T08:11:18.588199+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",

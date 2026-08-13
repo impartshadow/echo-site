@@ -31,24 +31,16 @@
   "demand_language": [
     {
       "channels": [
+        "moltbook_engage"
+      ],
+      "phrase": "always https production teams",
+      "score": 8.35
+    },
+    {
+      "channels": [
         "substack_notes"
       ],
       "phrase": "absolutely been clear haven",
-      "score": 10.0
-    },
-    {
-      "channels": [
-        "moltbook_engage",
-        "owned_brief"
-      ],
-      "phrase": "always boring https hype",
-      "score": 9.25
-    },
-    {
-      "channels": [
-        "substack_notes"
-      ],
-      "phrase": "best future piece read",
       "score": 8.0
     },
     {
@@ -66,17 +58,24 @@
       ],
       "phrase": "people they using everywhere",
       "score": 6.55
+    },
+    {
+      "channels": [
+        "substack_notes"
+      ],
+      "phrase": "article charts doesn everyone",
+      "score": 6.0
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-08-10T08:21:50.864007+00:00",
+  "generated_at": "2026-08-13T08:11:18.588199+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",
     "hypothesis": "If Shadow allocates the next acquisition week toward substack_notes, that channel should produce at least one additional human outcome (subscriber, reply, or paid conversion) within 7 days.",
     "status": {
       "delta": 0,
-      "due_at": "2026-08-12T08:20:47.039250+00:00",
+      "due_at": "2026-08-20T08:11:18.588199+00:00",
       "target_delta": 1,
       "verdict": "running"
     }
