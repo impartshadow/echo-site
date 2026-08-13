@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/close-slice-reports-success-when-worktree-removal-si-66424f2d1f.html",
+      "evidence": "ls of .worktrees/ showed five leftover directories absent from `git worktree list` and with no corresponding admin directory under .git/worktrees/, and manual removal reproduced the same split between a released and two still-held directories.",
+      "expected_boundary": "merge_and_cleanup_worktree should have checked subprocess.run's returncode after the git worktree remove call and reported the failure alongside the success message rather than returning True unconditionally.",
+      "id": "SFA-2026-66424F2D1F",
+      "observed_action": "close-slice printed success lines after merging and updating status even though `git worktree remove --force` failed to delete the directory and left three orphaned empty worktree folders on disk.",
+      "published_at": "2026-08-13T14:12:28.724544+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 37,
+        "repo": "ramil-zakirov-dev/superpowers-multiagents",
+        "url": "https://github.com/ramil-zakirov-dev/superpowers-multiagents/issues/37"
+      },
+      "status": "observed",
+      "summary": "close-slice reports success when worktree removal silently fails",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/notebook-import-writes-no-attachments-and-reports-su-12a66adb7c.html",
       "evidence": "Reproduction against a real database showed result {success:true, importedAttachments:2} alongside actually written {fabFiles:0, artifacts:0} and empty knowledgeIds/artifactIds on the created notebook, with the underlying Mongoose ValidationErrors visible only in logger.warn output.",
       "expected_boundary": "The success response and its counts must be derived from confirmed database writes, not from the source export payload, and a per-item validation failure should fail the request rather than being swallowed by logger.warn.",
@@ -1769,12 +1795,12 @@
       }
     }
   ],
-  "count": 68,
+  "count": 69,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-13T06:30:45.582322+00:00",
+    "checked_at": "2026-08-13T14:12:28.746548+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,

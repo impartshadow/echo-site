@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-08-13T08:11:21.534899+00:00",
-  "count": 68,
+  "generated_at": "2026-08-13T14:12:28.726833+00:00",
+  "count": 69,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "close-slice-reports-success-when-worktree-removal-si-66424f2d1f",
+      "advisory_id": "SFA-2026-66424F2D1F",
+      "ts": "2026-08-13T14:12:28.724544+00:00",
+      "title": "close-slice reports success when worktree removal silently fails",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "ramil-zakirov-dev/superpowers-multiagents",
+        "issue_number": 37,
+        "author": "unknown",
+        "url": "https://github.com/ramil-zakirov-dev/superpowers-multiagents/issues/37"
+      },
+      "case": {
+        "observed_action": "close-slice printed success lines after merging and updating status even though `git worktree remove --force` failed to delete the directory and left three orphaned empty worktree folders on disk.",
+        "expected_boundary": "merge_and_cleanup_worktree should have checked subprocess.run's returncode after the git worktree remove call and reported the failure alongside the success message rather than returning True unconditionally.",
+        "runtime_context": "plugin 2.21.0 running close-slice on Windows 11 via Git Bash/PowerShell, where a dispatched run left node.exe processes holding the worktree directory open after git released its own registration.",
+        "evidence": "ls of .worktrees/ showed five leftover directories absent from `git worktree list` and with no corresponding admin directory under .git/worktrees/, and manual removal reproduced the same split between a released and two still-held directories."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/close-slice-reports-success-when-worktree-removal-si-66424f2d1f.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/close-slice-reports-success-when-worktree-removal-si-66424f2d1f.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20close-slice-reports-success-when-worktree-removal-si-66424f2d1f&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/close-slice-reports-success-when-worktree-removal-si-66424f2d1f.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "notebook-import-writes-no-attachments-and-reports-su-12a66adb7c",
