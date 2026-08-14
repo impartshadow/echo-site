@@ -74,17 +74,19 @@
   "demand_language": [
     {
       "channels": [
-        "moltbook_engage"
+        "moltbook_engage",
+        "owned_brief"
       ],
       "phrase": "always https production teams",
-      "score": 8.35
+      "score": 9.2
     },
     {
       "channels": [
+        "owned_brief",
         "substack_notes"
       ],
-      "phrase": "absolutely been clear haven",
-      "score": 8.0
+      "phrase": "move please problem problems",
+      "score": 8.55
     },
     {
       "channels": [
@@ -96,17 +98,16 @@
     },
     {
       "channels": [
-        "owned_brief",
         "substack_notes"
       ],
-      "phrase": "people they using everywhere",
-      "score": 6.55
+      "phrase": "article charts doesn everyone",
+      "score": 6.0
     },
     {
       "channels": [
         "substack_notes"
       ],
-      "phrase": "article charts doesn everyone",
+      "phrase": "brain second articles closest",
       "score": 6.0
     }
   ],
@@ -115,8 +116,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 15.2,
-          "last_activity": "2026-08-12T17:01:10.709998+00:00",
+          "hours_since": 8.8,
+          "last_activity": "2026-08-13T23:01:18.277691+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -129,8 +130,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.8,
-          "last_activity": "2026-08-13T07:25:02.088282+00:00",
+          "hours_since": 0.4,
+          "last_activity": "2026-08-14T07:25:02.627649+00:00",
           "source": "action_log",
           "staleness": "ok"
         },
@@ -143,7 +144,7 @@
       {
         "declared_state": "complete",
         "evidence": {
-          "hours_since": 506.1,
+          "hours_since": 529.8,
           "last_activity": "2026-07-23T06:02:47.889895+00:00",
           "source": "verifier_receipt",
           "staleness": "stale"
@@ -157,22 +158,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 15.2,
-          "last_activity": "2026-08-12T17:01:13.887190+00:00",
-          "source": "verifier_receipt",
-          "staleness": "stale"
-        },
-        "loop_id": "tenant-ops",
-        "name": "Tenant Ops Managed AI Service",
-        "reason": "liveness is stale",
-        "requires_external_reach": false,
-        "verdict": "stale"
-      },
-      {
-        "declared_state": "running",
-        "evidence": {
-          "hours_since": 0.7,
-          "last_activity": "2026-08-13T07:32:00.538973+00:00",
+          "hours_since": 0.3,
+          "last_activity": "2026-08-14T07:32:52.298180+00:00",
           "source": "external_post_receipt",
           "staleness": "ok"
         },
@@ -185,8 +172,8 @@
       {
         "declared_state": "at_checkpoint",
         "evidence": {
-          "hours_since": 15.1,
-          "last_activity": "2026-08-12T17:08:04.169683+00:00",
+          "hours_since": 8.8,
+          "last_activity": "2026-08-13T23:01:26.564989+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -195,9 +182,23 @@
         "reason": "fresh evidence from verifier_receipt",
         "requires_external_reach": false,
         "verdict": "pass"
+      },
+      {
+        "declared_state": "running",
+        "evidence": {
+          "hours_since": 8.8,
+          "last_activity": "2026-08-13T23:01:43.659609+00:00",
+          "source": "verifier_receipt",
+          "staleness": "ok"
+        },
+        "loop_id": "tenant-ops",
+        "name": "Tenant Ops Managed AI Service",
+        "reason": "fresh evidence from verifier_receipt",
+        "requires_external_reach": false,
+        "verdict": "pass"
       }
     ],
-    "generated_at": "2026-08-13T08:11:18.588199+00:00",
+    "generated_at": "2026-08-14T07:48:11.234447+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
@@ -238,26 +239,14 @@
         ],
         "priority": 70,
         "verdict": "stale"
-      },
-      {
-        "action": "refresh_liveness_or_pause_loop",
-        "evidence_source": "verifier_receipt",
-        "instruction": "Run the loop once, attach a fresh verifier receipt, or pause the loop explicitly.",
-        "loop_id": "tenant-ops",
-        "missing_receipts": [
-          "fresh_action_log",
-          "verifier_receipt"
-        ],
-        "priority": 70,
-        "verdict": "stale"
       }
     ],
     "rule": "Declared loop state is not proof. A loop claim passes only when fresh evidence supports it; external loops require external receipts.",
     "schema": "shadow.agent_flight_recorder.v1",
     "summary": {
       "no_external_reach": 2,
-      "pass": 2,
-      "stale": 2
+      "pass": 3,
+      "stale": 1
     }
   },
   "frontier_artifact_pack": {
@@ -272,7 +261,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md",
     "purpose": "scarce frontier-model usage ledger that routes high-end model headroom into sellable artifacts, proof surfaces, acquisition machinery, and model-agnostic operating-system upgrades"
   },
-  "generated_at": "2026-08-13T08:11:18.588199+00:00",
+  "generated_at": "2026-08-14T07:48:11.234447+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",

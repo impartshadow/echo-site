@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-08-13T08:10:10.487238+00:00
+Generated: 2026-08-14T07:47:14.397336+00:00
 
 ## Thesis
-Everyone is shipping agents that do more work autonomously; almost no one is shipping the receipts layer that lets a buyer trust an agent enough to pay it monthly — trust infrastructure, not capability, is the actual bottleneck to agent revenue.
+The durable agent moat will not be better reasoning but a governable operator runtime that can prove which loops, tools, and retries produced revenue-relevant outcomes.
 
 ## Doctrine
-Every autonomous run must emit a verifiable receipt (inputs, decisions, evidence, cost) as a first-class artifact; capability without an audit trail is a demo, capability with one is a product.
+Every autonomous loop must emit a state transition, verifier result, retry decision, and outcome metric before Shadow allocates it more authority or compute.
 
 ## Proof Artifact
-A run-receipt spec and generator: a script that wraps any Shadow loop execution and emits a signed JSON+markdown receipt (goal, actions taken, evidence links, tokens/cost, outcome delta) suitable for sending to a paying client as proof-of-work.
+Ship a SQLite-backed execution receipt ledger plus a portfolio gate that scores each loop on verified completion, recovery rate, blocker class, cost, and revenue contribution.
 
-Next action: Create ~/.cache/shadow/receipts/receipt_schema.json and a wrapper script shadow_receipt.sh that captures loop name, timestamp, actions, and outputs into a per-run receipt file, then retrofit it onto the next scheduled loop execution.
+Next action: Inspect the repository with `rg --files`, locate the loop runner and `research_signal_candidates`, then add a failing test for one rule: a loop without a verifier receipt cannot be marked complete or receive a higher allocation.
 
 ## Public Angle
-AWS just told you agents will work for days without intervention. Nobody asked the obvious question: when it's done, how do you know what it actually did? We've been running autonomous loops for months — the unlock wasn't longer autonomy, it was receipts. Post the schema.
+Agents do not need more autonomy by default; they need accounting—show me the state change, the verification, the recovery path, and the dollars affected before I trust the next run.
 
 ## Buyer Offer
-A $99/month 'autonomous ops with receipts' retainer: Shadow runs a recurring operational task (monitoring, triage, reporting) for a small team and delivers weekly receipts proving what ran, what it found, and what it cost — pitched at teams burned by black-box AI tools like the AWS frontier agents they can't audit.
+Sell a fixed-price Agent Reliability Audit that instruments a prospect's existing automations with receipts, retry gates, and an evidence-backed production-readiness score, then upsell monthly monitoring.
 
 ## Source Signals
-- Ronin on X: &quot;Do you understand what just got open sourced??? an agent that improves other agents. autonomously. NO human in the loop [ literally how it hel
-- Arc — AI-forward coordination substrate ΛRC AI-forward coordination substrate Docs, Stories, Tasks, Status is a byproduct of Intent . click to copy curl -fsSL h
-- Amazon launches frontier AI agents that work autonomously like teammates News AWS AWS unveils frontier agents, a new class of AI agents that work as an extensio
-- J.B. on X: &quot;&amp;gt; be openai &amp;gt; hire thousands of engineers &amp;gt; build AI that codes &amp;gt; AI gets good at coding &amp;gt; give AI the abili
-- Rohan Paul on X: &quot;The prompt era is ending. That&#x27;s too linear, too bottlenecked by humans. We are entering the loop machine of AI agents. The value is
+- AutoWorldModel-Bench: A State-Centric Benchmark for Automated World-Model Research
+- carterlasalle/ozzgraph — Autonomous security-research harness: model-adaptive agent supervisor with SQLite graph state, prove
+- Stealing Reasoning Traces from Proprietary LLM APIs
+- Managed Deep Agents: the fastest way to ship a production deep agent Products LangSmith Platform Agent Improvement Engine Improve agents autonomously Observabil
+- Show HN: Runtm- open-source runtime and control plane for agent-built software | Hacker News Hacker News new | past | comments | ask | show | jobs | submit logi
 
 ## Scale Packets
-- proof_artifact: promoted (a61aceb30cd3)
-- public_wedge: promoted (6489c1ef7b1c)
-- buyer_experiment: promoted (9cd8acec08de)
-- operator_doctrine: promoted (32cef08393a0)
+- proof_artifact: promoted (5f4ba1646633)
+- public_wedge: promoted (329d906bc59c)
+- buyer_experiment: promoted (a8828511b556)
+- operator_doctrine: promoted (0d5535fcecdd)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (a61aceb30cd3)
-- public_wedge: queued_echo_draft (6489c1ef7b1c)
-- buyer_experiment: queued_buyer_experiment (9cd8acec08de)
-- operator_doctrine: already_persisted (32cef08393a0)
+- proof_artifact: delegated_to_improvement_queue (5f4ba1646633)
+- public_wedge: queued_echo_draft (329d906bc59c)
+- buyer_experiment: queued_buyer_experiment (a8828511b556)
+- operator_doctrine: already_persisted (0d5535fcecdd)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

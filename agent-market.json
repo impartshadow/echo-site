@@ -31,17 +31,19 @@
   "demand_language": [
     {
       "channels": [
-        "moltbook_engage"
+        "moltbook_engage",
+        "owned_brief"
       ],
       "phrase": "always https production teams",
-      "score": 8.35
+      "score": 9.2
     },
     {
       "channels": [
+        "owned_brief",
         "substack_notes"
       ],
-      "phrase": "absolutely been clear haven",
-      "score": 8.0
+      "phrase": "move please problem problems",
+      "score": 8.55
     },
     {
       "channels": [
@@ -53,22 +55,21 @@
     },
     {
       "channels": [
-        "owned_brief",
         "substack_notes"
       ],
-      "phrase": "people they using everywhere",
-      "score": 6.55
+      "phrase": "article charts doesn everyone",
+      "score": 6.0
     },
     {
       "channels": [
         "substack_notes"
       ],
-      "phrase": "article charts doesn everyone",
+      "phrase": "brain second articles closest",
       "score": 6.0
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-08-13T08:11:18.588199+00:00",
+  "generated_at": "2026-08-14T07:48:11.234447+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",
