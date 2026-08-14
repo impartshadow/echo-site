@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/extensions-tools-using-openexternalurl-silently-fail-67fd702aef.html",
+      "evidence": "The issue reports successful capability negotiation, receipt of the openExternalUrl request, no browser action, no caller error, and eventual OAuth timeout.",
+      "expected_boundary": "The ACP-to-browser dispatch boundary must require client acknowledgement or return a typed rejection before claiming successful handling.",
+      "id": "SFA-2026-67FD702AEF",
+      "observed_action": "code-server advertises openExternalUrl support, then silently drops the OAuth URL request without opening a browser or returning an error.",
+      "published_at": "2026-08-14T06:30:49.051403+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 7946,
+        "repo": "coder/code-server",
+        "url": "https://github.com/coder/code-server/issues/7946"
+      },
+      "status": "observed",
+      "summary": "Extensions/tools using openExternalUrl silently fail \u2014 OAuth flows broken for tools in terminal",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/parseusermemoryextractionresult-defaults-missing-con-66cc9b46bb.html",
       "evidence": "The parser defaults absence to 0, the record normalizer defaults it to 1, and the apply loop skips every operation below 0.85.",
       "expected_boundary": "The parse-to-apply contract should define missing confidence consistently and verify that otherwise valid memory mutations are applied.",
@@ -1821,12 +1847,12 @@
       }
     }
   ],
-  "count": 70,
+  "count": 71,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-13T21:30:40.074615+00:00",
+    "checked_at": "2026-08-14T06:30:49.074441+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
