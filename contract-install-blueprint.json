@@ -1,11 +1,11 @@
 {
   "schema": "shadow.contract_install_blueprint.v1",
-  "generated_at": "2026-08-13T08:21:16.645729+00:00",
+  "generated_at": "2026-08-14T07:57:47.748338+00:00",
   "source_model": "claude-fable-5",
   "frontier_receipt": "claude-fable-5 selected Contract Install Blueprint as the next artifact because it demonstrates the paid install product itself.",
   "source_runtime": {
-    "contract_count": 218,
-    "violation_rows_scanned": 7733,
+    "contract_count": 220,
+    "violation_rows_scanned": 7783,
     "current_violation_log": "state/contract_violations.jsonl",
     "archive_glob": "state/archive/**/contract_violations_*.jsonl.gz"
   },
@@ -61,7 +61,7 @@
       "tier": "free-triage",
       "production_evidence": {
         "fires_observed": 118,
-        "ledger_rows_scanned": 7733,
+        "ledger_rows_scanned": 7783,
         "latest_seen": "2026-07-09T12:21:37",
         "severity_counts": {
           "block": 118
@@ -97,11 +97,11 @@
       "install_estimate_hours": 2.0,
       "tier": "census",
       "production_evidence": {
-        "fires_observed": 116,
-        "ledger_rows_scanned": 7733,
-        "latest_seen": "2026-08-06T15:48:58",
+        "fires_observed": 117,
+        "ledger_rows_scanned": 7783,
+        "latest_seen": "2026-08-14T02:20:38",
         "severity_counts": {
-          "block": 116
+          "block": 117
         },
         "false_positive_note": "Pure decimal IDs are ignored; sibling repos are checked before blocking.",
         "origin_incident": "Fabricated push receipts in multi-commit sessions, including 2026-06-14 and 2026-06-20 bursts.",
@@ -134,11 +134,11 @@
       "install_estimate_hours": 5.0,
       "tier": "install",
       "production_evidence": {
-        "fires_observed": 168,
-        "ledger_rows_scanned": 7733,
-        "latest_seen": "2026-08-12T12:59:27",
+        "fires_observed": 170,
+        "ledger_rows_scanned": 7783,
+        "latest_seen": "2026-08-14T03:12:54",
         "severity_counts": {
-          "block": 136,
+          "block": 138,
           "warn": 32
         },
         "false_positive_note": "Warn-first for ambiguous claims; block when the claim names a registered authoritative source class.",
@@ -173,7 +173,7 @@
       "tier": "census",
       "production_evidence": {
         "fires_observed": 630,
-        "ledger_rows_scanned": 7733,
+        "ledger_rows_scanned": 7783,
         "latest_seen": "2026-07-20T03:18:01",
         "severity_counts": {
           "block": 249,
@@ -211,7 +211,7 @@
       "tier": "install",
       "production_evidence": {
         "fires_observed": 114,
-        "ledger_rows_scanned": 7733,
+        "ledger_rows_scanned": 7783,
         "latest_seen": "2026-07-28T12:40:14",
         "severity_counts": {
           "block": 114
@@ -248,7 +248,7 @@
       "tier": "free-triage",
       "production_evidence": {
         "fires_observed": 211,
-        "ledger_rows_scanned": 7733,
+        "ledger_rows_scanned": 7783,
         "latest_seen": "2026-08-01T21:34:22",
         "severity_counts": {
           "warn": 145,
@@ -313,8 +313,8 @@
       }
     ],
     "production_evidence": {
-      "fires_observed": 116,
-      "latest_seen": "2026-08-06T15:48:58"
+      "fires_observed": 117,
+      "latest_seen": "2026-08-14T02:20:38"
     },
     "cta": {
       "label": "Scope the $2,000 contract install",
@@ -370,8 +370,8 @@
           }
         ],
         "production_evidence": {
-          "fires_observed": 116,
-          "latest_seen": "2026-08-06T15:48:58"
+          "fires_observed": 117,
+          "latest_seen": "2026-08-14T02:20:38"
         },
         "cta": {
           "label": "Scope the $2,000 contract install",
@@ -427,8 +427,8 @@
           }
         ],
         "production_evidence": {
-          "fires_observed": 168,
-          "latest_seen": "2026-08-12T12:59:27"
+          "fires_observed": 170,
+          "latest_seen": "2026-08-14T03:12:54"
         },
         "cta": {
           "label": "Scope the $2,000 contract install",
