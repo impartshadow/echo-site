@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-creation-silently-ignores-the-chosen-model-new-73a1d92d16.html",
+      "evidence": "error_54.txt shows 'Attempt 4/4 (giving up), Provider: Anthropic | Model: claude-opus-4-6, Auth error: ANTHROPIC_API_KEY not set' while config.json shows 'llm_provider: anthropic, model: null' despite DeepSeek having been selected in the UI.",
+      "expected_boundary": "The create endpoint's request struct and deserialization policy should reject or explicitly honor any provider/model field the frontend actually sends, matching the shape already used by the working configure/Manage path.",
+      "id": "SFA-2026-73A1D92D16",
+      "observed_action": "The backend accepted a create-agent request containing a client-selected model/provider and silently discarded it, booting the agent on the folder's default Anthropic provider instead.",
+      "published_at": "2026-08-15T21:30:29.599884+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 180,
+        "repo": "bigmoostache/context-pilot",
+        "url": "https://github.com/bigmoostache/context-pilot/issues/180"
+      },
+      "status": "observed",
+      "summary": "Agent creation silently ignores the chosen model \u2014 new agents always boot on the default provider",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-response-model-is-ignored-by-acall-when-streamin-33ead9c5ef.html",
       "evidence": "response_model is declared and documented on _ahandle_streaming_response but never referenced in its body, and the function returns full_response (raw accumulated text) verbatim on the success path.",
       "expected_boundary": "any handler that declares and documents a response_model parameter must pass the completed response through InternalInstructor before returning, matching the other three call-path handlers.",
@@ -1873,12 +1899,12 @@
       }
     }
   ],
-  "count": 72,
+  "count": 73,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-15T06:30:51.329405+00:00",
+    "checked_at": "2026-08-15T21:30:29.631215+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
