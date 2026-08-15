@@ -47,14 +47,6 @@
     },
     {
       "channels": [
-        "owned_brief",
-        "substack_notes"
-      ],
-      "phrase": "connect governance home love",
-      "score": 6.85
-    },
-    {
-      "channels": [
         "substack_notes"
       ],
       "phrase": "article charts doesn everyone",
@@ -66,10 +58,17 @@
       ],
       "phrase": "brain second articles closest",
       "score": 6.0
+    },
+    {
+      "channels": [
+        "owned_brief"
+      ],
+      "phrase": "production coordination economics evaluation",
+      "score": 5.95
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-08-14T07:48:11.234447+00:00",
+  "generated_at": "2026-08-15T08:08:42.633403+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",

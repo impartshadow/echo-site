@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-08-14T02:48:13-05:00",
+  "generated_at_ct": "2026-08-15T03:08:44-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 1228,
-  "distinct_contracts": 67,
+  "total_violations": 1247,
+  "distinct_contracts": 69,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -13,9 +13,9 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "block",
-      "count": 169,
-      "latest_seen_ct": "2026-08-13T07:10:36-05:00",
-      "example_violation": "[recurrence-escalation 16x/7d] Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
+      "count": 170,
+      "latest_seen_ct": "2026-08-14T21:49:46-05:00",
+      "example_violation": "[recurrence-escalation 17x/7d] Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
       "buyer_failure": "An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.",
       "missing_receipt": "same-turn read from the relevant file, process table, API, inbox, queue, or log",
@@ -26,7 +26,7 @@
       "contract": "partial-evidence-flag",
       "failure_mode": "FM-026",
       "severity_seen": "block",
-      "count": 65,
+      "count": 63,
       "latest_seen_ct": "2026-07-19T10:28:21-05:00",
       "example_violation": "Revenue $ claim without Stripe read or state/revenue.json citation. Substitute: $0 confirmed.",
       "title": "The Agent Made A Numeric Or Revenue Claim Without The Source Read",
@@ -39,7 +39,7 @@
       "contract": "self-verification",
       "failure_mode": "FM-011",
       "severity_seen": "warn",
-      "count": 39,
+      "count": 34,
       "latest_seen_ct": "2026-07-19T22:18:01-05:00",
       "example_violation": "Response contains incompleteness markers (TODO, placeholder, deferred action). Verifying execution vs. proposal...",
       "title": "The Agent Proposed Work While Sounding Like It Had Executed",
@@ -89,17 +89,6 @@
     }
   ],
   "daily_counts": {
-    "2026-07-14": {
-      "platform-action-precheck": 2,
-      "self-verification": 5,
-      "factual-claim-verification": 4,
-      "persistent-correction": 4,
-      "partial-evidence-flag": 2,
-      "pressure-framing-guard": 1,
-      "state-assertion-grounding": 2,
-      "stale-state-assertion-guard": 1,
-      "loop-name-validation-guard": 1
-    },
     "2026-07-15": {
       "concurrence-grounding": 1,
       "raw-gmail-send-guard": 1,
@@ -449,6 +438,18 @@
       "post-commit-audit": 1,
       "stale-state-assertion-guard": 2,
       "commit-hash-verification": 1
+    },
+    "2026-08-14": {
+      "blocker-surfacing-gate": 1,
+      "verification-vocabulary-gate": 3,
+      "state-assertion-grounding": 3,
+      "typed-claim-entailment-gate": 23,
+      "stale-state-assertion-guard": 4,
+      "concurrence-grounding": 1,
+      "fleet-state-claim-grounding-gate": 2,
+      "absence-claim-gate": 1,
+      "spawn-lifecycle-claim-guard": 2,
+      "factual-claim-verification": 1
     }
   },
   "cta": {

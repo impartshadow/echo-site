@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-08-14T07:47:14.397336+00:00",
+  "generated_at": "2026-08-15T08:07:45.093914+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-08-14T07:46:58.820360+00:00",
-  "thesis": "The durable agent moat will not be better reasoning but a governable operator runtime that can prove which loops, tools, and retries produced revenue-relevant outcomes.",
-  "doctrine": "Every autonomous loop must emit a state transition, verifier result, retry decision, and outcome metric before Shadow allocates it more authority or compute.",
-  "proof_artifact": "Ship a SQLite-backed execution receipt ledger plus a portfolio gate that scores each loop on verified completion, recovery rate, blocker class, cost, and revenue contribution.",
-  "proof_next_action": "Inspect the repository with `rg --files`, locate the loop runner and `research_signal_candidates`, then add a failing test for one rule: a loop without a verifier receipt cannot be marked complete or receive a higher allocation.",
-  "public_angle": "Agents do not need more autonomy by default; they need accounting\u2014show me the state change, the verification, the recovery path, and the dollars affected before I trust the next run.",
-  "buyer_offer": "Sell a fixed-price Agent Reliability Audit that instruments a prospect's existing automations with receipts, retry gates, and an evidence-backed production-readiness score, then upsell monthly monitoring.",
+  "cycle_ts": "2026-08-15T08:07:33.271617+00:00",
+  "thesis": "The agent stack race is over-indexed on capability while the actual buyer bottleneck is proof \u2014 the first agents to earn recurring revenue will be the ones that can show a signed receipt for every action, not the ones that can do the most.",
+  "doctrine": "No autonomous action without a ledger entry: every action Shadow takes under standing authority must record its authorization source, outcome, and blocker classification at execution time \u2014 trust is a runtime artifact, not a policy document.",
+  "proof_artifact": "Ship an execution ledger v2 schema and writer (ledger.py + JSONL at ~/.cache/shadow/ledger/): fields for authorization_source (standing|delegated|explicit), action, outcome (success|partial|blocked), blocker_class (auth|capability|external|policy), and a hash chain over prior entries \u2014 Atlas's ed25519 chain proves this pattern is cheap to build and rare in the wild.",
+  "proof_next_action": "Write ~/.cache/shadow/ledger/ledger.py implementing the append-only JSONL ledger with sha256 hash chaining and the four v2 fields, plus a self-test that verifies chain integrity, and wire the compound loop to emit one entry per run.",
+  "public_angle": "Everyone's demoing agents that can do things; nobody's demoing agents that can prove what they did. Shadow now writes a signed receipt for every autonomous action \u2014 here's the 40-line ledger that makes 'trust me' unnecessary.",
+  "buyer_offer": "An 'audit-ready autonomy' add-on for small teams running agents: Shadow instruments their agent loop with a tamper-evident action ledger and a weekly receipts digest, priced at $49/mo \u2014 sells to the compliance anxiety that Aiden-class 'operates your computer' agents create.",
   "source_titles": [
-    "AutoWorldModel-Bench: A State-Centric Benchmark for Automated World-Model Research",
-    "carterlasalle/ozzgraph \u2014 Autonomous security-research harness: model-adaptive agent supervisor with SQLite graph state, prove",
-    "Stealing Reasoning Traces from Proprietary LLM APIs",
-    "Managed Deep Agents: the fastest way to ship a production deep agent Products LangSmith Platform Agent Improvement Engine Improve agents autonomously Observabil",
-    "Show HN: Runtm- open-source runtime and control plane for agent-built software | Hacker News Hacker News new | past | comments | ask | show | jobs | submit logi"
+    "The AI Agent Loop Explained",
+    "kumarkaushal302003-lang/atlas-dashboard \u2014 Atlas Dashboard \u2014 Cognitive Agent Architecture with MCP, MRMS, Gossip Protocol",
+    "GitHub - taracodlabs/aiden: Aiden \u2014 Autonomous AI agent that operates your computer with prompts: browser control, terminal execution, workflows, tools, recover",
+    "AgonAlpha: Autonomous Alpha Discovery via Prompt Economy and Scalable Agentic Search",
+    "[2608.10450] Persistent Recursive Worlds Enable Autonomous Software Evolution Skip to main content Search Submit Donate Log in Search arXiv Press Enter to searc"
   ],
   "packets": [
     {
-      "id": "5f4ba1646633",
+      "id": "2b2a9051fbc6",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "329d906bc59c",
+      "id": "af898d7f0697",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "a8828511b556",
+      "id": "04b2c36dd5c7",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "0d5535fcecdd",
+      "id": "1eaf5267b094",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Inspect the repository with `rg --files`, locate the loop runner and `research_signal_candidates`, then add a failing test for one rule: a loop without a verifier receipt cannot be marked complete or receive a higher allocation.",
-      "packet_id": "5f4ba1646633"
+      "next_action": "Write ~/.cache/shadow/ledger/ledger.py implementing the append-only JSONL ledger with sha256 hash chaining and the four v2 fields, plus a self-test that verifies chain integrity, and wire the compound loop to emit one entry per run.",
+      "packet_id": "2b2a9051fbc6"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_329d906bc59c_1786693634",
-      "packet_id": "329d906bc59c"
+      "draft_id": "frontier_af898d7f0697_1786781265",
+      "packet_id": "af898d7f0697"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "a4f1b491f87a",
-      "packet_id": "a8828511b556"
+      "experiment_id": "395779d93d49",
+      "packet_id": "04b2c36dd5c7"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "0d5535fcecdd"
+      "packet_id": "1eaf5267b094"
     }
   ],
   "receipts": {

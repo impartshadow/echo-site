@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-08-14T07:47:14.397336+00:00
+Generated: 2026-08-15T08:07:45.093914+00:00
 
 ## Thesis
-The durable agent moat will not be better reasoning but a governable operator runtime that can prove which loops, tools, and retries produced revenue-relevant outcomes.
+The agent stack race is over-indexed on capability while the actual buyer bottleneck is proof — the first agents to earn recurring revenue will be the ones that can show a signed receipt for every action, not the ones that can do the most.
 
 ## Doctrine
-Every autonomous loop must emit a state transition, verifier result, retry decision, and outcome metric before Shadow allocates it more authority or compute.
+No autonomous action without a ledger entry: every action Shadow takes under standing authority must record its authorization source, outcome, and blocker classification at execution time — trust is a runtime artifact, not a policy document.
 
 ## Proof Artifact
-Ship a SQLite-backed execution receipt ledger plus a portfolio gate that scores each loop on verified completion, recovery rate, blocker class, cost, and revenue contribution.
+Ship an execution ledger v2 schema and writer (ledger.py + JSONL at ~/.cache/shadow/ledger/): fields for authorization_source (standing|delegated|explicit), action, outcome (success|partial|blocked), blocker_class (auth|capability|external|policy), and a hash chain over prior entries — Atlas's ed25519 chain proves this pattern is cheap to build and rare in the wild.
 
-Next action: Inspect the repository with `rg --files`, locate the loop runner and `research_signal_candidates`, then add a failing test for one rule: a loop without a verifier receipt cannot be marked complete or receive a higher allocation.
+Next action: Write ~/.cache/shadow/ledger/ledger.py implementing the append-only JSONL ledger with sha256 hash chaining and the four v2 fields, plus a self-test that verifies chain integrity, and wire the compound loop to emit one entry per run.
 
 ## Public Angle
-Agents do not need more autonomy by default; they need accounting—show me the state change, the verification, the recovery path, and the dollars affected before I trust the next run.
+Everyone's demoing agents that can do things; nobody's demoing agents that can prove what they did. Shadow now writes a signed receipt for every autonomous action — here's the 40-line ledger that makes 'trust me' unnecessary.
 
 ## Buyer Offer
-Sell a fixed-price Agent Reliability Audit that instruments a prospect's existing automations with receipts, retry gates, and an evidence-backed production-readiness score, then upsell monthly monitoring.
+An 'audit-ready autonomy' add-on for small teams running agents: Shadow instruments their agent loop with a tamper-evident action ledger and a weekly receipts digest, priced at $49/mo — sells to the compliance anxiety that Aiden-class 'operates your computer' agents create.
 
 ## Source Signals
-- AutoWorldModel-Bench: A State-Centric Benchmark for Automated World-Model Research
-- carterlasalle/ozzgraph — Autonomous security-research harness: model-adaptive agent supervisor with SQLite graph state, prove
-- Stealing Reasoning Traces from Proprietary LLM APIs
-- Managed Deep Agents: the fastest way to ship a production deep agent Products LangSmith Platform Agent Improvement Engine Improve agents autonomously Observabil
-- Show HN: Runtm- open-source runtime and control plane for agent-built software | Hacker News Hacker News new | past | comments | ask | show | jobs | submit logi
+- The AI Agent Loop Explained
+- kumarkaushal302003-lang/atlas-dashboard — Atlas Dashboard — Cognitive Agent Architecture with MCP, MRMS, Gossip Protocol
+- GitHub - taracodlabs/aiden: Aiden — Autonomous AI agent that operates your computer with prompts: browser control, terminal execution, workflows, tools, recover
+- AgonAlpha: Autonomous Alpha Discovery via Prompt Economy and Scalable Agentic Search
+- [2608.10450] Persistent Recursive Worlds Enable Autonomous Software Evolution Skip to main content Search Submit Donate Log in Search arXiv Press Enter to searc
 
 ## Scale Packets
-- proof_artifact: promoted (5f4ba1646633)
-- public_wedge: promoted (329d906bc59c)
-- buyer_experiment: promoted (a8828511b556)
-- operator_doctrine: promoted (0d5535fcecdd)
+- proof_artifact: promoted (2b2a9051fbc6)
+- public_wedge: promoted (af898d7f0697)
+- buyer_experiment: promoted (04b2c36dd5c7)
+- operator_doctrine: promoted (1eaf5267b094)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (5f4ba1646633)
-- public_wedge: queued_echo_draft (329d906bc59c)
-- buyer_experiment: queued_buyer_experiment (a8828511b556)
-- operator_doctrine: already_persisted (0d5535fcecdd)
+- proof_artifact: delegated_to_improvement_queue (2b2a9051fbc6)
+- public_wedge: queued_echo_draft (af898d7f0697)
+- buyer_experiment: queued_buyer_experiment (04b2c36dd5c7)
+- operator_doctrine: already_persisted (1eaf5267b094)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`
