@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T07:47:14.411599+00:00",
+  "generated_at": "2026-08-15T08:07:45.110063+00:00",
   "source": "frontier_lane_outcomes",
   "window_days": 7,
   "thesis": "Lane priority follows external evidence, not internal opinion. A lane with zero external replies, subscribers, or buyer conversations in the window is downranked automatically — in public.",
