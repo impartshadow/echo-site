@@ -1,43 +1,43 @@
 # Violation Decay Case Study
 
-Generated: 2026-08-13T08:23:31.475046+00:00
+Generated: 2026-08-15T08:15:56.475953+00:00
 
 ## Claim
-partial-evidence-flag cooled from 50 to 0 weekly hits; stale-state-assertion-guard is the hottest remaining governance gap.
+platform-action-precheck cooled from 64 to 0 weekly hits; stale-state-assertion-guard is the hottest remaining governance gap.
 
 This is not a generic benchmark. It is a trend read over Shadow's production
 contract-violation log: `state/contract_violations.jsonl`.
 
 ## Totals
-- Violations logged: 1270
-- Distinct contracts in log: 68
+- Violations logged: 1247
+- Distinct contracts in log: 69
 - Distinct failure modes: 21
-- Eligible contracts: 44
-- Cooled contracts: 37
+- Eligible contracts: 50
+- Cooled contracts: 40
 - Hotter contracts: 3
 
 ## Cooled Guardrails
 | Contract | Total | First 7d | Recent 7d | Delta | Change |
 |---|---:|---:|---:|---:|---:|
-| `partial-evidence-flag` | 73 | 50 | 0 | -50 | -100.0% |
-| `platform-action-precheck` | 89 | 49 | 0 | -49 | -100.0% |
+| `platform-action-precheck` | 85 | 64 | 0 | -64 | -100.0% |
+| `partial-evidence-flag` | 63 | 63 | 0 | -63 | -100.0% |
+| `state-assertion-grounding` | 170 | 73 | 22 | -51 | -69.9% |
 | `scope-coverage-guard` | 43 | 43 | 0 | -43 | -100.0% |
-| `self-verification` | 45 | 29 | 0 | -29 | -100.0% |
-| `persistent-correction` | 41 | 28 | 0 | -28 | -100.0% |
+| `self-verification` | 34 | 34 | 0 | -34 | -100.0% |
+| `persistent-correction` | 29 | 29 | 0 | -29 | -100.0% |
 | `definitive-state-assertion-gate` | 20 | 20 | 0 | -20 | -100.0% |
-| `state-assertion-grounding` | 175 | 38 | 20 | -18 | -47.4% |
-| `loop-name-validation-guard` | 13 | 13 | 0 | -13 | -100.0% |
-| `terminal-state-evidence-gate` | 39 | 15 | 4 | -11 | -73.3% |
-| `verification-vocabulary-gate` | 127 | 53 | 43 | -10 | -18.9% |
+| `verification-vocabulary-gate` | 132 | 53 | 36 | -17 | -32.1% |
+| `terminal-state-evidence-gate` | 39 | 15 | 3 | -12 | -80.0% |
+| `commit-hash-verification` | 14 | 11 | 1 | -10 | -90.9% |
 | `sensitive-write-router` | 11 | 10 | 0 | -10 | -100.0% |
 | `dangerous-path-guard` | 10 | 10 | 0 | -10 | -100.0% |
 
 ## Remaining Hot Spots
 | Contract | Total | First 7d | Recent 7d | Delta | Change |
 |---|---:|---:|---:|---:|---:|
-| `stale-state-assertion-guard` | 81 | 26 | 37 | +11 | +42.3% |
-| `factual-claim-verification` | 126 | 37 | 47 | +10 | +27.0% |
-| `unbuilt-guarantee-guard` | 10 | 1 | 3 | +2 | +200.0% |
+| `stale-state-assertion-guard` | 85 | 29 | 35 | +6 | +20.7% |
+| `factual-claim-verification` | 121 | 39 | 40 | +1 | +2.6% |
+| `blocker-surfacing-gate` | 5 | 2 | 3 | +1 | +50.0% |
 
 ## Buyer Use
 This is the case-study metric behind the Fabricated-Completion Audit:
