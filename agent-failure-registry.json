@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-response-model-is-ignored-by-acall-when-streamin-33ead9c5ef.html",
+      "evidence": "response_model is declared and documented on _ahandle_streaming_response but never referenced in its body, and the function returns full_response (raw accumulated text) verbatim on the success path.",
+      "expected_boundary": "any handler that declares and documents a response_model parameter must pass the completed response through InternalInstructor before returning, matching the other three call-path handlers.",
+      "id": "SFA-2026-33EAD9C5EF",
+      "observed_action": "await llm.acall(messages, response_model=Landmark) with stream=True returned the raw accumulated stream text instead of a validated Landmark instance.",
+      "published_at": "2026-08-15T06:30:51.302272+00:00",
+      "source": {
+        "author": "LHMQ878",
+        "channel": "unsolicited_triage",
+        "issue_number": 6733,
+        "repo": "crewAIInc/crewAI",
+        "url": "https://github.com/crewAIInc/crewAI/issues/6733"
+      },
+      "status": "observed",
+      "summary": "[BUG] response_model is ignored by acall() when streaming is enabled",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/extensions-tools-using-openexternalurl-silently-fail-67fd702aef.html",
       "evidence": "The issue reports successful capability negotiation, receipt of the openExternalUrl request, no browser action, no caller error, and eventual OAuth timeout.",
       "expected_boundary": "The ACP-to-browser dispatch boundary must require client acknowledgement or return a typed rejection before claiming successful handling.",
@@ -1847,12 +1873,12 @@
       }
     }
   ],
-  "count": 71,
+  "count": 72,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-14T06:30:49.074441+00:00",
+    "checked_at": "2026-08-15T06:30:51.329405+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
