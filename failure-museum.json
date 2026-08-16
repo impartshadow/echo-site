@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-08-15T03:08:44-05:00",
+  "generated_at_ct": "2026-08-16T03:13:04-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 1247,
-  "distinct_contracts": 69,
+  "total_violations": 1277,
+  "distinct_contracts": 68,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -13,7 +13,7 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "block",
-      "count": 170,
+      "count": 168,
       "latest_seen_ct": "2026-08-14T21:49:46-05:00",
       "example_violation": "[recurrence-escalation 17x/7d] Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
@@ -26,7 +26,7 @@
       "contract": "partial-evidence-flag",
       "failure_mode": "FM-026",
       "severity_seen": "block",
-      "count": 63,
+      "count": 57,
       "latest_seen_ct": "2026-07-19T10:28:21-05:00",
       "example_violation": "Revenue $ claim without Stripe read or state/revenue.json citation. Substitute: $0 confirmed.",
       "title": "The Agent Made A Numeric Or Revenue Claim Without The Source Read",
@@ -39,7 +39,7 @@
       "contract": "self-verification",
       "failure_mode": "FM-011",
       "severity_seen": "warn",
-      "count": 34,
+      "count": 32,
       "latest_seen_ct": "2026-07-19T22:18:01-05:00",
       "example_violation": "Response contains incompleteness markers (TODO, placeholder, deferred action). Verifying execution vs. proposal...",
       "title": "The Agent Proposed Work While Sounding Like It Had Executed",
@@ -89,23 +89,6 @@
     }
   ],
   "daily_counts": {
-    "2026-07-15": {
-      "concurrence-grounding": 1,
-      "raw-gmail-send-guard": 1,
-      "platform-action-precheck": 14,
-      "partial-evidence-flag": 6,
-      "factual-claim-verification": 1,
-      "capability-scope-assertion-guard": 3,
-      "persistent-correction": 6,
-      "self-verification": 2,
-      "stale-state-assertion-guard": 3,
-      "canonical-source-guard": 3,
-      "state-assertion-grounding": 2,
-      "loop-name-validation-guard": 3,
-      "dangerous-path-guard": 10,
-      "sensitive-write-router": 10,
-      "live-state-claim-guard": 1
-    },
     "2026-07-16": {
       "self-verification": 2,
       "pressure-framing-guard": 1,
@@ -450,6 +433,23 @@
       "absence-claim-gate": 1,
       "spawn-lifecycle-claim-guard": 2,
       "factual-claim-verification": 1
+    },
+    "2026-08-15": {
+      "typed-claim-entailment-gate": 63,
+      "factual-claim-verification": 5,
+      "fleet-state-claim-grounding-gate": 4,
+      "stale-state-assertion-guard": 6,
+      "absence-claim-gate": 1,
+      "vendor-availability-external-fetch-required": 1,
+      "platform-message-id-claim-guard": 1,
+      "verification-vocabulary-gate": 6,
+      "concurrence-grounding": 1,
+      "cleanup-claim-mechanism-gate": 1,
+      "capability-scope-assertion-guard": 1,
+      "spawn-lifecycle-claim-guard": 4
+    },
+    "2026-08-16": {
+      "typed-claim-entailment-gate": 2
     }
   },
   "cta": {

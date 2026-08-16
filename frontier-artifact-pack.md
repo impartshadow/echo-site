@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-08-15T08:07:45.093914+00:00
+Generated: 2026-08-16T08:12:04.865678+00:00
 
 ## Thesis
-The agent stack race is over-indexed on capability while the actual buyer bottleneck is proof — the first agents to earn recurring revenue will be the ones that can show a signed receipt for every action, not the ones that can do the most.
+The durable-agent platforms (Cloudflare fibers, sub-agent RPC) are commoditizing uptime, which means the only defensible layer left is auditable judgment — agents that can prove why they acted, not just that they stayed alive.
 
 ## Doctrine
-No autonomous action without a ledger entry: every action Shadow takes under standing authority must record its authorization source, outcome, and blocker classification at execution time — trust is a runtime artifact, not a policy document.
+Every loop execution must emit a runtime receipt (input signal, decision, action taken, verifiable outcome) before it counts as done; unreceipted work is treated as not having happened.
 
 ## Proof Artifact
-Ship an execution ledger v2 schema and writer (ledger.py + JSONL at ~/.cache/shadow/ledger/): fields for authorization_source (standing|delegated|explicit), action, outcome (success|partial|blocked), blocker_class (auth|capability|external|policy), and a hash chain over prior entries — Atlas's ed25519 chain proves this pattern is cheap to build and rare in the wild.
+A receipt-emitting wrapper for Shadow's loop runner: a small module that intercepts each loop cycle, writes a structured JSON receipt (signal_id, decision, action, outcome, timestamp) to a receipts/ ledger, and a verifier script that flags cycles with missing or failed receipts for retry.
 
-Next action: Write ~/.cache/shadow/ledger/ledger.py implementing the append-only JSONL ledger with sha256 hash chaining and the four v2 fields, plus a self-test that verifies chain integrity, and wire the compound loop to emit one entry per run.
+Next action: Create receipts/schema.json and a receipt_writer.py in the shadow-loop-model repo that wraps the existing loop entrypoint and logs one receipt per cycle, then run it against the current research_signal_candidates batch to produce the first real ledger entries.
 
 ## Public Angle
-Everyone's demoing agents that can do things; nobody's demoing agents that can prove what they did. Shadow now writes a signed receipt for every autonomous action — here's the 40-line ledger that makes 'trust me' unnecessary.
+Everyone is bragging about agents that run for weeks; nobody can show you a single receipt proving one decision was correct. Shadow now refuses to count any autonomous action that can't produce its own evidence — here's what a week of receipted agent work actually looks like.
 
 ## Buyer Offer
-An 'audit-ready autonomy' add-on for small teams running agents: Shadow instruments their agent loop with a tamper-evident action ledger and a weekly receipts digest, priced at $49/mo — sells to the compliance anxiety that Aiden-class 'operates your computer' agents create.
+An 'agent audit trail' add-on for small teams running LLM automations: Shadow instruments their existing agent loops with receipts and a weekly integrity report — priced at $49/month per pipeline, three pipelines gets Will to the $500 target's first tranche.
 
 ## Source Signals
-- The AI Agent Loop Explained
-- kumarkaushal302003-lang/atlas-dashboard — Atlas Dashboard — Cognitive Agent Architecture with MCP, MRMS, Gossip Protocol
-- GitHub - taracodlabs/aiden: Aiden — Autonomous AI agent that operates your computer with prompts: browser control, terminal execution, workflows, tools, recover
-- AgonAlpha: Autonomous Alpha Discovery via Prompt Economy and Scalable Agentic Search
-- [2608.10450] Persistent Recursive Worlds Enable Autonomous Software Evolution Skip to main content Search Submit Donate Log in Search arXiv Press Enter to searc
+- Enterprise AI Agents: From Prototypes to Production
+- Sub-agents Â· Cloudflare Agents docs Skip to content Documentation Index Fetch the complete documentation index at: https://developers.cloudflare.com/agents/llm
+- Diagnostic Foundation for Evaluating LLMs' Research Integrity as Co-Scientists
+- Long-running agents Â· Cloudflare Agents docs Skip to content Documentation Index Fetch the complete documentation index at: https://developers.cloudflare.com/a
+- seanlxh/Air-Lingjing — Embodied-intelligence simulation backend for multi-agent orchestration and Unreal Engine integration
 
 ## Scale Packets
-- proof_artifact: promoted (2b2a9051fbc6)
-- public_wedge: promoted (af898d7f0697)
-- buyer_experiment: promoted (04b2c36dd5c7)
-- operator_doctrine: promoted (1eaf5267b094)
+- proof_artifact: promoted (225229032599)
+- public_wedge: promoted (6205b265ed6f)
+- buyer_experiment: promoted (89670a68ad9f)
+- operator_doctrine: promoted (8112142892f6)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (2b2a9051fbc6)
-- public_wedge: queued_echo_draft (af898d7f0697)
-- buyer_experiment: queued_buyer_experiment (04b2c36dd5c7)
-- operator_doctrine: already_persisted (1eaf5267b094)
+- proof_artifact: delegated_to_improvement_queue (225229032599)
+- public_wedge: queued_echo_draft (6205b265ed6f)
+- buyer_experiment: queued_buyer_experiment (89670a68ad9f)
+- operator_doctrine: already_persisted (8112142892f6)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

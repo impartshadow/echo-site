@@ -1,17 +1,17 @@
 # Agent Failure Museum
 
-Generated: 2026-08-15T03:08:44-05:00 CT
+Generated: 2026-08-16T03:13:04-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 1247 claim-boundary violations across 69 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 1277 claim-boundary violations across 68 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
 ### The Agent Answered From Memory When The Question Required A Live Read
 
 - Contract: `state-assertion-grounding`
-- Fires logged: 170
+- Fires logged: 168
 - Latest seen: 2026-08-14T21:49:46-05:00 CT
 - Buyer failure: An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.
 - Missing receipt: same-turn read from the relevant file, process table, API, inbox, queue, or log
@@ -22,7 +22,7 @@ Shadow has logged 1247 claim-boundary violations across 69 contract names. The u
 ### The Agent Made A Numeric Or Revenue Claim Without The Source Read
 
 - Contract: `partial-evidence-flag`
-- Fires logged: 63
+- Fires logged: 57
 - Latest seen: 2026-07-19T10:28:21-05:00 CT
 - Buyer failure: A business agent states revenue, counts, or verification status from stale memory or partial evidence.
 - Missing receipt: Stripe/state-file/API read with timestamp and cited value
@@ -33,7 +33,7 @@ Shadow has logged 1247 claim-boundary violations across 69 contract names. The u
 ### The Agent Proposed Work While Sounding Like It Had Executed
 
 - Contract: `self-verification`
-- Fires logged: 34
+- Fires logged: 32
 - Latest seen: 2026-07-19T22:18:01-05:00 CT
 - Buyer failure: A workflow agent reports plans, TODOs, or partial attempts in a way that can be mistaken for completed work.
 - Missing receipt: execution result, test output, publish receipt, or explicit incomplete status

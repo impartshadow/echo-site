@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-08-15T08:07:45.093914+00:00",
+  "generated_at": "2026-08-16T08:12:04.865678+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-08-15T08:07:33.271617+00:00",
-  "thesis": "The agent stack race is over-indexed on capability while the actual buyer bottleneck is proof \u2014 the first agents to earn recurring revenue will be the ones that can show a signed receipt for every action, not the ones that can do the most.",
-  "doctrine": "No autonomous action without a ledger entry: every action Shadow takes under standing authority must record its authorization source, outcome, and blocker classification at execution time \u2014 trust is a runtime artifact, not a policy document.",
-  "proof_artifact": "Ship an execution ledger v2 schema and writer (ledger.py + JSONL at ~/.cache/shadow/ledger/): fields for authorization_source (standing|delegated|explicit), action, outcome (success|partial|blocked), blocker_class (auth|capability|external|policy), and a hash chain over prior entries \u2014 Atlas's ed25519 chain proves this pattern is cheap to build and rare in the wild.",
-  "proof_next_action": "Write ~/.cache/shadow/ledger/ledger.py implementing the append-only JSONL ledger with sha256 hash chaining and the four v2 fields, plus a self-test that verifies chain integrity, and wire the compound loop to emit one entry per run.",
-  "public_angle": "Everyone's demoing agents that can do things; nobody's demoing agents that can prove what they did. Shadow now writes a signed receipt for every autonomous action \u2014 here's the 40-line ledger that makes 'trust me' unnecessary.",
-  "buyer_offer": "An 'audit-ready autonomy' add-on for small teams running agents: Shadow instruments their agent loop with a tamper-evident action ledger and a weekly receipts digest, priced at $49/mo \u2014 sells to the compliance anxiety that Aiden-class 'operates your computer' agents create.",
+  "cycle_ts": "2026-08-16T08:11:53.600919+00:00",
+  "thesis": "The durable-agent platforms (Cloudflare fibers, sub-agent RPC) are commoditizing uptime, which means the only defensible layer left is auditable judgment \u2014 agents that can prove why they acted, not just that they stayed alive.",
+  "doctrine": "Every loop execution must emit a runtime receipt (input signal, decision, action taken, verifiable outcome) before it counts as done; unreceipted work is treated as not having happened.",
+  "proof_artifact": "A receipt-emitting wrapper for Shadow's loop runner: a small module that intercepts each loop cycle, writes a structured JSON receipt (signal_id, decision, action, outcome, timestamp) to a receipts/ ledger, and a verifier script that flags cycles with missing or failed receipts for retry.",
+  "proof_next_action": "Create receipts/schema.json and a receipt_writer.py in the shadow-loop-model repo that wraps the existing loop entrypoint and logs one receipt per cycle, then run it against the current research_signal_candidates batch to produce the first real ledger entries.",
+  "public_angle": "Everyone is bragging about agents that run for weeks; nobody can show you a single receipt proving one decision was correct. Shadow now refuses to count any autonomous action that can't produce its own evidence \u2014 here's what a week of receipted agent work actually looks like.",
+  "buyer_offer": "An 'agent audit trail' add-on for small teams running LLM automations: Shadow instruments their existing agent loops with receipts and a weekly integrity report \u2014 priced at $49/month per pipeline, three pipelines gets Will to the $500 target's first tranche.",
   "source_titles": [
-    "The AI Agent Loop Explained",
-    "kumarkaushal302003-lang/atlas-dashboard \u2014 Atlas Dashboard \u2014 Cognitive Agent Architecture with MCP, MRMS, Gossip Protocol",
-    "GitHub - taracodlabs/aiden: Aiden \u2014 Autonomous AI agent that operates your computer with prompts: browser control, terminal execution, workflows, tools, recover",
-    "AgonAlpha: Autonomous Alpha Discovery via Prompt Economy and Scalable Agentic Search",
-    "[2608.10450] Persistent Recursive Worlds Enable Autonomous Software Evolution Skip to main content Search Submit Donate Log in Search arXiv Press Enter to searc"
+    "Enterprise AI Agents: From Prototypes to Production",
+    "Sub-agents \u00c2\u00b7 Cloudflare Agents docs Skip to content Documentation Index Fetch the complete documentation index at: https://developers.cloudflare.com/agents/llm",
+    "Diagnostic Foundation for Evaluating LLMs' Research Integrity as Co-Scientists",
+    "Long-running agents \u00c2\u00b7 Cloudflare Agents docs Skip to content Documentation Index Fetch the complete documentation index at: https://developers.cloudflare.com/a",
+    "seanlxh/Air-Lingjing \u2014 Embodied-intelligence simulation backend for multi-agent orchestration and Unreal Engine integration"
   ],
   "packets": [
     {
-      "id": "2b2a9051fbc6",
+      "id": "225229032599",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "af898d7f0697",
+      "id": "6205b265ed6f",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "04b2c36dd5c7",
+      "id": "89670a68ad9f",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "1eaf5267b094",
+      "id": "8112142892f6",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Write ~/.cache/shadow/ledger/ledger.py implementing the append-only JSONL ledger with sha256 hash chaining and the four v2 fields, plus a self-test that verifies chain integrity, and wire the compound loop to emit one entry per run.",
-      "packet_id": "2b2a9051fbc6"
+      "next_action": "Create receipts/schema.json and a receipt_writer.py in the shadow-loop-model repo that wraps the existing loop entrypoint and logs one receipt per cycle, then run it against the current research_signal_candidates batch to produce the first real ledger entries.",
+      "packet_id": "225229032599"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_af898d7f0697_1786781265",
-      "packet_id": "af898d7f0697"
+      "draft_id": "frontier_6205b265ed6f_1786867924",
+      "packet_id": "6205b265ed6f"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "395779d93d49",
-      "packet_id": "04b2c36dd5c7"
+      "experiment_id": "93a3430dff27",
+      "packet_id": "89670a68ad9f"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "1eaf5267b094"
+      "packet_id": "8112142892f6"
     }
   ],
   "receipts": {

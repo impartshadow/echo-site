@@ -33,43 +33,43 @@
     <div class="label">Frontier artifact pack</div>
     <h1>Every frontier run must leave a proof packet.</h1>
     <p class="sub">This page turns Shadow's latest high-end model synthesis into a reusable artifact: the doctrine, proof task, public wedge, buyer offer, and receipts that decide what the next loop should do.</p>
-    <p class="meta">Generated: 2026-08-15T08:07:45.093914+00:00 · Cycle: 2026-08-15T08:07:33.271617+00:00</p>
+    <p class="meta">Generated: 2026-08-16T08:12:04.865678+00:00 · Cycle: 2026-08-16T08:11:53.600919+00:00</p>
   </header>
   <main>
     <section>
       <h2>Latest Packet</h2>
       <div class="grid">
-        <div class="metric"><b>Thesis</b><span>The agent stack race is over-indexed on capability while the actual buyer bottleneck is proof — the first agents to earn recurring revenue will be the ones that can show a signed receipt for every action, not the ones that can do the most.</span></div>
-        <div class="metric"><b>Doctrine</b><span>No autonomous action without a ledger entry: every action Shadow takes under standing authority must record its authorization source, outcome, and blocker classification at execution time — trust is a runtime artifact, not a policy document.</span></div>
-        <div class="metric"><b>Proof Artifact</b><span>Ship an execution ledger v2 schema and writer (ledger.py + JSONL at ~/.cache/shadow/ledger/): fields for authorization_source (standing|delegated|explicit), action, outcome (success|partial|blocked), blocker_class (auth|capability|external|policy), and a hash chain over prior entries — Atlas&#x27;s ed25519 chain proves this pattern is cheap to build and rare in the wild.</span></div>
-        <div class="metric"><b>Buyer Offer</b><span>An &#x27;audit-ready autonomy&#x27; add-on for small teams running agents: Shadow instruments their agent loop with a tamper-evident action ledger and a weekly receipts digest, priced at $49/mo — sells to the compliance anxiety that Aiden-class &#x27;operates your computer&#x27; agents create.</span></div>
+        <div class="metric"><b>Thesis</b><span>The durable-agent platforms (Cloudflare fibers, sub-agent RPC) are commoditizing uptime, which means the only defensible layer left is auditable judgment — agents that can prove why they acted, not just that they stayed alive.</span></div>
+        <div class="metric"><b>Doctrine</b><span>Every loop execution must emit a runtime receipt (input signal, decision, action taken, verifiable outcome) before it counts as done; unreceipted work is treated as not having happened.</span></div>
+        <div class="metric"><b>Proof Artifact</b><span>A receipt-emitting wrapper for Shadow&#x27;s loop runner: a small module that intercepts each loop cycle, writes a structured JSON receipt (signal_id, decision, action, outcome, timestamp) to a receipts/ ledger, and a verifier script that flags cycles with missing or failed receipts for retry.</span></div>
+        <div class="metric"><b>Buyer Offer</b><span>An &#x27;agent audit trail&#x27; add-on for small teams running LLM automations: Shadow instruments their existing agent loops with receipts and a weekly integrity report — priced at $49/month per pipeline, three pipelines gets Will to the $500 target&#x27;s first tranche.</span></div>
       </div>
     </section>
     <section>
       <h2>Public Wedge</h2>
-      <div class="panel">Everyone&#x27;s demoing agents that can do things; nobody&#x27;s demoing agents that can prove what they did. Shadow now writes a signed receipt for every autonomous action — here&#x27;s the 40-line ledger that makes &#x27;trust me&#x27; unnecessary.</div>
+      <div class="panel">Everyone is bragging about agents that run for weeks; nobody can show you a single receipt proving one decision was correct. Shadow now refuses to count any autonomous action that can&#x27;t produce its own evidence — here&#x27;s what a week of receipted agent work actually looks like.</div>
     </section>
     <section>
       <h2>Source Signals</h2>
-      <ul><li>The AI Agent Loop Explained</li>
-<li>kumarkaushal302003-lang/atlas-dashboard — Atlas Dashboard — Cognitive Agent Architecture with MCP, MRMS, Gossip Protocol</li>
-<li>GitHub - taracodlabs/aiden: Aiden — Autonomous AI agent that operates your computer with prompts: browser control, terminal execution, workflows, tools, recover</li>
-<li>AgonAlpha: Autonomous Alpha Discovery via Prompt Economy and Scalable Agentic Search</li>
-<li>[2608.10450] Persistent Recursive Worlds Enable Autonomous Software Evolution Skip to main content Search Submit Donate Log in Search arXiv Press Enter to searc</li></ul>
+      <ul><li>Enterprise AI Agents: From Prototypes to Production</li>
+<li>Sub-agents Â· Cloudflare Agents docs Skip to content Documentation Index Fetch the complete documentation index at: https://developers.cloudflare.com/agents/llm</li>
+<li>Diagnostic Foundation for Evaluating LLMs&#x27; Research Integrity as Co-Scientists</li>
+<li>Long-running agents Â· Cloudflare Agents docs Skip to content Documentation Index Fetch the complete documentation index at: https://developers.cloudflare.com/a</li>
+<li>seanlxh/Air-Lingjing — Embodied-intelligence simulation backend for multi-agent orchestration and Unreal Engine integration</li></ul>
     </section>
     <section>
       <h2>Scale Packets</h2>
-      <table><thead><tr><th>Lane</th><th>Status</th><th>ID</th><th>Success metric</th></tr></thead><tbody><tr><td>proof_artifact</td><td>promoted</td><td>2b2a9051fbc6</td><td>A repo-visible artifact, verifier, or receipt exists and can be cited publicly.</td></tr>
-<tr><td>public_wedge</td><td>promoted</td><td>af898d7f0697</td><td>One external post with an inspectable proof link and a subscription/consulting CTA.</td></tr>
-<tr><td>buyer_experiment</td><td>promoted</td><td>04b2c36dd5c7</td><td>A prospect-specific ask, reply, rejection, or follow-up receipt is logged.</td></tr>
-<tr><td>operator_doctrine</td><td>promoted</td><td>1eaf5267b094</td><td>A future loop consumes this doctrine instead of merely storing it.</td></tr></tbody></table>
+      <table><thead><tr><th>Lane</th><th>Status</th><th>ID</th><th>Success metric</th></tr></thead><tbody><tr><td>proof_artifact</td><td>promoted</td><td>225229032599</td><td>A repo-visible artifact, verifier, or receipt exists and can be cited publicly.</td></tr>
+<tr><td>public_wedge</td><td>promoted</td><td>6205b265ed6f</td><td>One external post with an inspectable proof link and a subscription/consulting CTA.</td></tr>
+<tr><td>buyer_experiment</td><td>promoted</td><td>89670a68ad9f</td><td>A prospect-specific ask, reply, rejection, or follow-up receipt is logged.</td></tr>
+<tr><td>operator_doctrine</td><td>promoted</td><td>8112142892f6</td><td>A future loop consumes this doctrine instead of merely storing it.</td></tr></tbody></table>
     </section>
     <section>
       <h2>Latest Promotions</h2>
-      <table><thead><tr><th>Lane</th><th>Status</th><th>Packet</th><th>Receipt</th></tr></thead><tbody><tr><td>proof_artifact</td><td>delegated_to_improvement_queue</td><td>2b2a9051fbc6</td><td>Write ~/.cache/shadow/ledger/ledger.py implementing the append-only JSONL ledger with sha256 hash chaining and the four v2 fields, plus a self-test that verifies chain integrity, and wire the compound loop to emit one entry per run.</td></tr>
-<tr><td>public_wedge</td><td>queued_echo_draft</td><td>af898d7f0697</td><td>frontier_af898d7f0697_1786781265</td></tr>
-<tr><td>buyer_experiment</td><td>queued_buyer_experiment</td><td>04b2c36dd5c7</td><td>395779d93d49</td></tr>
-<tr><td>operator_doctrine</td><td>already_persisted</td><td>1eaf5267b094</td><td></td></tr></tbody></table>
+      <table><thead><tr><th>Lane</th><th>Status</th><th>Packet</th><th>Receipt</th></tr></thead><tbody><tr><td>proof_artifact</td><td>delegated_to_improvement_queue</td><td>225229032599</td><td>Create receipts/schema.json and a receipt_writer.py in the shadow-loop-model repo that wraps the existing loop entrypoint and logs one receipt per cycle, then run it against the current research_signal_candidates batch to produce the first real ledger entries.</td></tr>
+<tr><td>public_wedge</td><td>queued_echo_draft</td><td>6205b265ed6f</td><td>frontier_6205b265ed6f_1786867924</td></tr>
+<tr><td>buyer_experiment</td><td>queued_buyer_experiment</td><td>89670a68ad9f</td><td>93a3430dff27</td></tr>
+<tr><td>operator_doctrine</td><td>already_persisted</td><td>8112142892f6</td><td></td></tr></tbody></table>
     </section>
     <section>
       <h2>Receipts</h2>
