@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-08-16T14:12:31.636184+00:00",
-  "count": 75,
+  "generated_at": "2026-08-16T21:30:42.178380+00:00",
+  "count": 76,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "protocol-injectcontext-injectionack-unimplemented-ag-66248f246e",
+      "advisory_id": "SFA-2026-66248F246E",
+      "ts": "2026-08-16T21:30:42.172750+00:00",
+      "title": "Protocol: InjectContext/InjectionAck unimplemented; agent acks silently dropped",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "2389-research/coven-gateway",
+        "issue_number": 68,
+        "author": "unknown",
+        "url": "https://github.com/2389-research/coven-gateway/issues/68"
+      },
+      "case": {
+        "observed_action": "The gateway constructs no ServerMessage_InjectContext and routes incoming AgentMessage.injection_ack into dispatchMessage's default case, discarding it without a log entry.",
+        "expected_boundary": "Every oneof variant defined in the AgentMessage/ServerMessage proto schema should have a corresponding handled case in the Go dispatcher, enforced by a build-time or test-time exhaustiveness check.",
+        "runtime_context": "Go's switch statement over generated oneof wrapper types does not require exhaustiveness, so a proto schema addition (InjectContext/InjectionAck) can ship without any compiler or CI signal that the dispatcher never learned about it.",
+        "evidence": "The issue explicitly states injection_ack falls into dispatchMessage's default arm and is silently dropped in internal/gateway/grpc.go, and that ServerMessage_InjectContext is never constructed anywhere in the codebase."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/protocol-injectcontext-injectionack-unimplemented-ag-66248f246e.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/protocol-injectcontext-injectionack-unimplemented-ag-66248f246e.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20protocol-injectcontext-injectionack-unimplemented-ag-66248f246e&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/protocol-injectcontext-injectionack-unimplemented-ag-66248f246e.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "detect-prs-with-missing-review-dispatch-caused-by-si-5614bc65e7",

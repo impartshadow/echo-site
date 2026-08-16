@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/protocol-injectcontext-injectionack-unimplemented-ag-66248f246e.html",
+      "evidence": "The issue explicitly states injection_ack falls into dispatchMessage's default arm and is silently dropped in internal/gateway/grpc.go, and that ServerMessage_InjectContext is never constructed anywhere in the codebase.",
+      "expected_boundary": "Every oneof variant defined in the AgentMessage/ServerMessage proto schema should have a corresponding handled case in the Go dispatcher, enforced by a build-time or test-time exhaustiveness check.",
+      "id": "SFA-2026-66248F246E",
+      "observed_action": "The gateway constructs no ServerMessage_InjectContext and routes incoming AgentMessage.injection_ack into dispatchMessage's default case, discarding it without a log entry.",
+      "published_at": "2026-08-16T21:30:42.172750+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 68,
+        "repo": "2389-research/coven-gateway",
+        "url": "https://github.com/2389-research/coven-gateway/issues/68"
+      },
+      "status": "observed",
+      "summary": "Protocol: InjectContext/InjectionAck unimplemented; agent acks silently dropped",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/detect-prs-with-missing-review-dispatch-caused-by-si-5614bc65e7.html",
       "evidence": "509 workflow runs were checked for 2026-08-06 and none corresponded to PR #5995's opened event, and the same PR successfully dispatched review on 2026-08-10 via a synchronize event, proving dispatch criteria were met but the trigger was never delivered.",
       "expected_boundary": "Every open PR should have a corresponding review-dispatch workflow run created within a bounded time of its creation, verified against GitHub's PR API rather than assumed from event delivery.",
@@ -1951,12 +1977,12 @@
       }
     }
   ],
-  "count": 75,
+  "count": 76,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-16T14:12:31.658429+00:00",
+    "checked_at": "2026-08-16T21:30:42.200026+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
