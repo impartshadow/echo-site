@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/a-fifth-workspace-mount-is-silently-ignored-rather-t-de99c82e68.html",
+      "evidence": "docker-compose.yml contains only four WORKSPACE_ROOTS interpolations and four workspace volume mounts, so a fifth .env entry is never substituted into any variable Compose reads, resulting in no mount, no log line, and no error.",
+      "expected_boundary": "The system should either mount the fifth workspace or refuse startup with an explicit error, since docker-compose.yml hard-codes exactly four interpolation slots and parseMounts has no matching cap.",
+      "id": "SFA-2026-DE99C82E68",
+      "observed_action": "An operator adds UF_WORKSPACE_5_NAME and UF_WORKSPACE_5 to .env expecting a fifth workspace mount, matching the pattern of slots 1-4.",
+      "published_at": "2026-08-16T06:30:31.480371+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 77,
+        "repo": "Xapicc/UsageFoundry",
+        "url": "https://github.com/Xapicc/UsageFoundry/issues/77"
+      },
+      "status": "observed",
+      "summary": "A fifth workspace mount is silently ignored rather than refused",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-creation-silently-ignores-the-chosen-model-new-73a1d92d16.html",
       "evidence": "error_54.txt shows 'Attempt 4/4 (giving up), Provider: Anthropic | Model: claude-opus-4-6, Auth error: ANTHROPIC_API_KEY not set' while config.json shows 'llm_provider: anthropic, model: null' despite DeepSeek having been selected in the UI.",
       "expected_boundary": "The create endpoint's request struct and deserialization policy should reject or explicitly honor any provider/model field the frontend actually sends, matching the shape already used by the working configure/Manage path.",
@@ -1899,12 +1925,12 @@
       }
     }
   ],
-  "count": 73,
+  "count": 74,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-15T21:30:29.631215+00:00",
+    "checked_at": "2026-08-16T06:30:31.503329+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
