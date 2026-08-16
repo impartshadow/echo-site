@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-08-16T08:13:04.666401+00:00",
-  "count": 74,
+  "generated_at": "2026-08-16T14:12:31.636184+00:00",
+  "count": 75,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "detect-prs-with-missing-review-dispatch-caused-by-si-5614bc65e7",
+      "advisory_id": "SFA-2026-5614BC65E7",
+      "ts": "2026-08-16T14:12:31.632220+00:00",
+      "title": "Detect PRs with missing review dispatch caused by silently dropped webhooks",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "fullsend-ai/fullsend",
+        "issue_number": 6050,
+        "author": "unknown",
+        "url": "https://github.com/fullsend-ai/fullsend/issues/6050"
+      },
+      "case": {
+        "observed_action": "The pull_request_target/opened webhook for PR #5995 was dropped by GitHub, so no fullsend.yaml workflow run was created and review dispatch never fired until a synchronize event four days later.",
+        "expected_boundary": "Every open PR should have a corresponding review-dispatch workflow run created within a bounded time of its creation, verified against GitHub's PR API rather than assumed from event delivery.",
+        "runtime_context": "GitHub Actions event-driven dispatch architecture in fullsend-ai/fullsend with no reconciliation sweep, observed alongside a confirmed 4.5-hour gap in pull_request_target runs spanning the PR's creation time.",
+        "evidence": "509 workflow runs were checked for 2026-08-06 and none corresponded to PR #5995's opened event, and the same PR successfully dispatched review on 2026-08-10 via a synchronize event, proving dispatch criteria were met but the trigger was never delivered."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/detect-prs-with-missing-review-dispatch-caused-by-si-5614bc65e7.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/detect-prs-with-missing-review-dispatch-caused-by-si-5614bc65e7.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20detect-prs-with-missing-review-dispatch-caused-by-si-5614bc65e7&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/detect-prs-with-missing-review-dispatch-caused-by-si-5614bc65e7.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "a-fifth-workspace-mount-is-silently-ignored-rather-t-de99c82e68",

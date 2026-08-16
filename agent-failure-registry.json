@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/detect-prs-with-missing-review-dispatch-caused-by-si-5614bc65e7.html",
+      "evidence": "509 workflow runs were checked for 2026-08-06 and none corresponded to PR #5995's opened event, and the same PR successfully dispatched review on 2026-08-10 via a synchronize event, proving dispatch criteria were met but the trigger was never delivered.",
+      "expected_boundary": "Every open PR should have a corresponding review-dispatch workflow run created within a bounded time of its creation, verified against GitHub's PR API rather than assumed from event delivery.",
+      "id": "SFA-2026-5614BC65E7",
+      "observed_action": "The pull_request_target/opened webhook for PR #5995 was dropped by GitHub, so no fullsend.yaml workflow run was created and review dispatch never fired until a synchronize event four days later.",
+      "published_at": "2026-08-16T14:12:31.632220+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 6050,
+        "repo": "fullsend-ai/fullsend",
+        "url": "https://github.com/fullsend-ai/fullsend/issues/6050"
+      },
+      "status": "observed",
+      "summary": "Detect PRs with missing review dispatch caused by silently dropped webhooks",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/a-fifth-workspace-mount-is-silently-ignored-rather-t-de99c82e68.html",
       "evidence": "docker-compose.yml contains only four WORKSPACE_ROOTS interpolations and four workspace volume mounts, so a fifth .env entry is never substituted into any variable Compose reads, resulting in no mount, no log line, and no error.",
       "expected_boundary": "The system should either mount the fifth workspace or refuse startup with an explicit error, since docker-compose.yml hard-codes exactly four interpolation slots and parseMounts has no matching cap.",
@@ -1925,12 +1951,12 @@
       }
     }
   ],
-  "count": 74,
+  "count": 75,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-16T06:30:31.503329+00:00",
+    "checked_at": "2026-08-16T14:12:31.658429+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
