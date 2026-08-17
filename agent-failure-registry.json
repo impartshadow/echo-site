@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/snapcompact-can-silently-drop-user-instructions-when-fccb020a21.html",
+      "evidence": "Post-compaction inspection showed direct retained user messages: 0, SILVER-OTTER-663 in retained archive: false, while SILVER-OTTER-663 still in session JSONL: true, and the model replied UNKNOWN when asked to recall it.",
+      "expected_boundary": "Compaction must never report success while silently discarding a genuine user-role message that isn't otherwise carried forward under a protected budget.",
+      "id": "SFA-2026-FCCB020A21",
+      "observed_action": "Snapcompact ran /compact, reported success, and rebuilt provider context by dropping chronological middle content from the archive without checking whether it contained an unretrieved user message.",
+      "published_at": "2026-08-17T06:30:36.714390+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 8792,
+        "repo": "can1357/oh-my-pi",
+        "url": "https://github.com/can1357/oh-my-pi/issues/8792"
+      },
+      "status": "observed",
+      "summary": "Snapcompact can silently drop user instructions when its frame archive overflows",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/protocol-injectcontext-injectionack-unimplemented-ag-66248f246e.html",
       "evidence": "The issue explicitly states injection_ack falls into dispatchMessage's default arm and is silently dropped in internal/gateway/grpc.go, and that ServerMessage_InjectContext is never constructed anywhere in the codebase.",
       "expected_boundary": "Every oneof variant defined in the AgentMessage/ServerMessage proto schema should have a corresponding handled case in the Go dispatcher, enforced by a build-time or test-time exhaustiveness check.",
@@ -1977,12 +2003,12 @@
       }
     }
   ],
-  "count": 76,
+  "count": 77,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-16T21:30:42.200026+00:00",
+    "checked_at": "2026-08-17T06:30:36.745019+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
