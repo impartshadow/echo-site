@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-08-16T08:12:04.865678+00:00
+Generated: 2026-08-17T08:08:17.665011+00:00
 
 ## Thesis
-The durable-agent platforms (Cloudflare fibers, sub-agent RPC) are commoditizing uptime, which means the only defensible layer left is auditable judgment — agents that can prove why they acted, not just that they stayed alive.
+Agent frameworks are converging on the same feature checklist (memory, tool forging, orchestration) while the actual scarce asset — a runtime that can prove what it did and bill for it — remains unshipped by everyone chasing benchmark stars.
 
 ## Doctrine
-Every loop execution must emit a runtime receipt (input signal, decision, action taken, verifiable outcome) before it counts as done; unreceipted work is treated as not having happened.
+Every loop execution must emit a machine-checkable receipt (input hash, action taken, verification result, outcome delta); work without a receipt is treated as not done and gets retried or retired.
 
 ## Proof Artifact
-A receipt-emitting wrapper for Shadow's loop runner: a small module that intercepts each loop cycle, writes a structured JSON receipt (signal_id, decision, action, outcome, timestamp) to a receipts/ ledger, and a verifier script that flags cycles with missing or failed receipts for retry.
+A receipt-emitting verifier wrapper: a small script that wraps any Shadow loop invocation, records input/output hashes and a pass/fail verification check to an append-only receipts log (JSONL), and gates retries on verification failure — the smallest concrete implementation of the recursive_execution_quality signal.
 
-Next action: Create receipts/schema.json and a receipt_writer.py in the shadow-loop-model repo that wraps the existing loop entrypoint and logs one receipt per cycle, then run it against the current research_signal_candidates batch to produce the first real ledger entries.
+Next action: Create ~/.cache/shadow/bare_context/receipts/verifier.py implementing the JSONL receipt wrapper (input hash, action, check result, timestamp) and wire it into the highest-frequency existing loop script so the next scheduled run emits its first receipt.
 
 ## Public Angle
-Everyone is bragging about agents that run for weeks; nobody can show you a single receipt proving one decision was correct. Shadow now refuses to count any autonomous action that can't produce its own evidence — here's what a week of receipted agent work actually looks like.
+Everyone's agent framework has memory and tool forging now; nobody's has receipts. I made my agent prove every action it takes with an append-only verification log — here's what a week of machine-checkable autonomy looks like, failures included.
 
 ## Buyer Offer
-An 'agent audit trail' add-on for small teams running LLM automations: Shadow instruments their existing agent loops with receipts and a weekly integrity report — priced at $49/month per pipeline, three pipelines gets Will to the $500 target's first tranche.
+Sell 'audited autonomy' to solo operators already running cron-driven AI agents: a flat monthly service where Shadow instruments their existing agent loops with receipts and a weekly evidence digest proving what their automation actually did — priced at $49/mo, ten clients hits the $500 target.
 
 ## Source Signals
-- Enterprise AI Agents: From Prototypes to Production
-- Sub-agents Â· Cloudflare Agents docs Skip to content Documentation Index Fetch the complete documentation index at: https://developers.cloudflare.com/agents/llm
-- Diagnostic Foundation for Evaluating LLMs' Research Integrity as Co-Scientists
-- Long-running agents Â· Cloudflare Agents docs Skip to content Documentation Index Fetch the complete documentation index at: https://developers.cloudflare.com/a
-- seanlxh/Air-Lingjing — Embodied-intelligence simulation backend for multi-agent orchestration and Unreal Engine integration
+- GitHub - Kohaku-Lab/KohakuTerrarium: KohakuTerrarium is a general-purpose AI agent framework and batteries-included app for building, running, and composing sel
+- Welcome to August 15, 2026
+- MimicHunterZ/dsh-agent-compact — DSH plugin for agent-driven span compaction: compress chosen conversation spans into self-written ch
+- GitHub - framerslab/agentos: TypeScript AI agent framework: cognitive memory, runtime tool forging, multi-agent orchestration, 11 LLM providers. · GitHub Skip t
+- OpRAG: A Resource-Deterministic Runtime for GPU-Backed Multi-Stage RAG Workflows
 
 ## Scale Packets
-- proof_artifact: promoted (225229032599)
-- public_wedge: promoted (6205b265ed6f)
-- buyer_experiment: promoted (89670a68ad9f)
-- operator_doctrine: promoted (8112142892f6)
+- proof_artifact: promoted (1a7f5783208a)
+- public_wedge: promoted (21ee36b92290)
+- buyer_experiment: promoted (083f0725264c)
+- operator_doctrine: promoted (b1c1f92fe9b1)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (225229032599)
-- public_wedge: queued_echo_draft (6205b265ed6f)
-- buyer_experiment: queued_buyer_experiment (89670a68ad9f)
-- operator_doctrine: already_persisted (8112142892f6)
+- proof_artifact: delegated_to_improvement_queue (1a7f5783208a)
+- public_wedge: queued_echo_draft (21ee36b92290)
+- buyer_experiment: queued_buyer_experiment (083f0725264c)
+- operator_doctrine: already_persisted (b1c1f92fe9b1)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`
