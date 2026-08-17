@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-sensenova-hallucinates-undeclared-exec-tool-in-s-ee235c1dd2.html",
+      "evidence": "usage.jsonl shows 31 occurrences between 01:40-02:42 on 2026-08-16, all returning HTTP 502 with upstreamError 'routed provider emitted undeclared client tool \"exec\"; only request-declared tools may be called'.",
+      "expected_boundary": "bridge.ts should validate provider-emitted tool-call names against declaredToolNames at the stream-parsing boundary and drop/no-op unrecognized calls instead of letting them reach the line-998 fatal check.",
+      "id": "SFA-2026-EE235C1DD2",
+      "observed_action": "sensenova-6.8-flash-lite emitted a tool call to \"exec\" during a routed subagent request even though exec was not present in the request's declared tools array.",
+      "published_at": "2026-08-17T14:12:35.298584+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 1795,
+        "repo": "lidge-jun/opencodex",
+        "url": "https://github.com/lidge-jun/opencodex/issues/1795"
+      },
+      "status": "observed",
+      "summary": "[Bug]: sensenova hallucinates undeclared exec tool in subagent requests causing 502 stream disconnected",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/snapcompact-can-silently-drop-user-instructions-when-fccb020a21.html",
       "evidence": "Post-compaction inspection showed direct retained user messages: 0, SILVER-OTTER-663 in retained archive: false, while SILVER-OTTER-663 still in session JSONL: true, and the model replied UNKNOWN when asked to recall it.",
       "expected_boundary": "Compaction must never report success while silently discarding a genuine user-role message that isn't otherwise carried forward under a protected budget.",
@@ -2003,12 +2029,12 @@
       }
     }
   ],
-  "count": 77,
+  "count": 78,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-17T06:30:36.745019+00:00",
+    "checked_at": "2026-08-17T14:12:35.325932+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
