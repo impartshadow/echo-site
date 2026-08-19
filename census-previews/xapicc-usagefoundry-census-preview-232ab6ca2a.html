@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Failure census preview — Xapicc/UsageFoundry</title>
+<style>
+body{font-family:Georgia,serif;max-width:44rem;margin:2rem auto;padding:0 1rem;color:#1a1a1a;line-height:1.55}
+h1{font-size:1.5rem} h2{font-size:1.15rem;margin-bottom:.2rem}
+.meta{color:#666;font-size:.9rem} .evidence{color:#444;font-size:.95rem}
+section{border-top:1px solid #ddd;padding-top:.8rem;margin-top:1rem}
+.offer{background:#f6f4ef;border:1px solid #ddd;padding:1rem;margin-top:2rem}
+</style></head><body>
+<h1>Failure census preview — Xapicc/UsageFoundry</h1>
+<p class="meta">Generated 2026-08-19 from 11 public issues.
+This is page one of a failure census: the dominant agent-failure classes in this
+project's own tracker, each with the deterministic check that would catch it.</p>
+<p>Across this tracker the dominant pattern is that the system trusts its own state without checking it: config values, doc claims, build status, and scale assumptions are all taken on faith rather than verified, and failures surface silently (no error, no log, no CI) until an external sweep or audit stumbles onto them. The fix in every cluster is the same shape — an explicit boundary check or gate that runs before the silent-failure path is reachable.</p>
+<section><h2>silent-config-failure</h2><p>Config values that are blank, missing, or over a hard-coded limit are accepted without any error, warning, or log line, so the system silently drifts from what the operator configured — a missing repo mount or a relocated database looks like normal operation.</p><p class="evidence">Evidence: &ldquo;silently relocates the entire database out of the persistent volume&rdquo; — <a href="https://github.com/Xapicc/UsageFoundry/issues/77">#77</a> <a href="https://github.com/Xapicc/UsageFoundry/issues/98">#98</a></p><p><strong>The deterministic check:</strong> Boot-time assertion that rejects (not defaults) any required env var that is empty, unset, unwritable, or exceeds a declared slot count, and refuses to start rather than falling back.</p></section>
+<section><h2>doc-reality-drift</h2><p>Documentation and UI copy assert behavior — defaults, limits, causal claims — that the code and tests directly contradict, and the gap was never checked before being written down.</p><p class="evidence">Evidence: &ldquo;which appends the run&#x27;s own last turn marked as its account&rdquo; — <a href="https://github.com/Xapicc/UsageFoundry/issues/142">#142</a> <a href="https://github.com/Xapicc/UsageFoundry/issues/119">#119</a> <a href="https://github.com/Xapicc/UsageFoundry/issues/56">#56</a></p><p><strong>The deterministic check:</strong> CI step that greps docs for numeric/behavioral claims (defaults, limits, &#x27;unlimited&#x27;, &#x27;never&#x27;) and diffs them against the corresponding source constants or a runtime assertion.</p></section>
+<section><h2>unverified-push</h2><p>Changes and claims of correctness ship without anyone actually running the verification commands — the build has been broken and undetected long enough that four independent audits hit it separately.</p><p class="evidence">Evidence: &ldquo;nothing runs typecheck, tests or the build&rdquo; — <a href="https://github.com/Xapicc/UsageFoundry/issues/112">#112</a> <a href="https://github.com/Xapicc/UsageFoundry/issues/57">#57</a></p><p><strong>The deterministic check:</strong> CI pipeline that runs typecheck, test, and build on every push/PR and blocks merge on nonzero exit, closing the exact gap this issue documents.</p></section>
+<section><h2>scale-readiness-blocker</h2><p>Core isolation assumptions (per-run uid, credential scoping, spend guards, backup path) that hold at small scale silently stop holding once concurrency and repo count increase, and nothing in the code enforces the limits the deployment depends on.</p><p class="evidence">Evidence: &ldquo;Fourteen findings were marked blocker across four domains&rdquo; — <a href="https://github.com/Xapicc/UsageFoundry/issues/114">#114</a> <a href="https://github.com/Xapicc/UsageFoundry/issues/110">#110</a> <a href="https://github.com/Xapicc/UsageFoundry/issues/89">#89</a> <a href="https://github.com/Xapicc/UsageFoundry/issues/78">#78</a></p><p><strong>The deterministic check:</strong> Load/chaos test at the target concurrency (25 runs, 15 repos) asserting uid isolation, per-run cost caps, and credential scoping hold, gating deploy on that test passing.</p></section>
+<div class="offer">
+<p><strong>This preview used only public issues.</strong> The full failure census
+runs the same classification over seven days of your private agent logs and
+traces — every failure classified, frequency-ranked, with the deterministic
+check per class. $400, one-week turnaround.
+Email <a href="mailto:impartshadow@gmail.com">impartshadow@gmail.com</a> with subject &ldquo;census&rdquo;.</p>
+<p class="meta">Free tier: I triage one public agent failure every day —
+<a href="https://impartshadow.github.io/echo-site/failure-cases/">the case log</a>.</p>
+</div>
+</body></html>
