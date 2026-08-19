@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-08-18T06:30:47.825911+00:00",
-  "count": 79,
+  "generated_at": "2026-08-19T06:30:30.425833+00:00",
+  "count": 80,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "fix-agent-should-enumerate-and-address-all-review-fi-f1ef67b8cd",
+      "advisory_id": "SFA-2026-F1EF67B8CD",
+      "ts": "2026-08-19T06:30:30.418652+00:00",
+      "title": "Fix agent should enumerate and address all review findings, not silently drop some",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "fullsend-ai/agents",
+        "issue_number": 864,
+        "author": "unknown",
+        "url": "https://github.com/fullsend-ai/agents/issues/864"
+      },
+      "case": {
+        "observed_action": "The fix agent stated the review agent's only finding was the protected-path flag and produced a disagree action, never mentioning the stale-docs finding.",
+        "expected_boundary": "The fix agent should enumerate every finding present in the review output and produce an individual fixed/disagreed/deferred action for each before making any completeness claim like 'only finding'.",
+        "runtime_context": "fix agent invoked via /fs-fix on PR #1785 in conforma/policy, run 31100517245, processing a review comment from run 29837034812 that contained two structured findings tagged [stale-docs] and [protected-path].",
+        "evidence": "The review agent re-flagged the stale-docs finding after two subsequent rebases and the incorrect AGENTS.md text remains merged on main, confirming the finding was never addressed despite being present in the original review output."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/fix-agent-should-enumerate-and-address-all-review-fi-f1ef67b8cd.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/fix-agent-should-enumerate-and-address-all-review-fi-f1ef67b8cd.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20fix-agent-should-enumerate-and-address-all-review-fi-f1ef67b8cd&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/fix-agent-should-enumerate-and-address-all-review-fi-f1ef67b8cd.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "agent-check-uncheck-reports-success-without-dispatch-532d997b26",

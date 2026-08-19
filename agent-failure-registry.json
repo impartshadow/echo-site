@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/fix-agent-should-enumerate-and-address-all-review-fi-f1ef67b8cd.html",
+      "evidence": "The review agent re-flagged the stale-docs finding after two subsequent rebases and the incorrect AGENTS.md text remains merged on main, confirming the finding was never addressed despite being present in the original review output.",
+      "expected_boundary": "The fix agent should enumerate every finding present in the review output and produce an individual fixed/disagreed/deferred action for each before making any completeness claim like 'only finding'.",
+      "id": "SFA-2026-F1EF67B8CD",
+      "observed_action": "The fix agent stated the review agent's only finding was the protected-path flag and produced a disagree action, never mentioning the stale-docs finding.",
+      "published_at": "2026-08-19T06:30:30.418652+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 864,
+        "repo": "fullsend-ai/agents",
+        "url": "https://github.com/fullsend-ai/agents/issues/864"
+      },
+      "status": "observed",
+      "summary": "Fix agent should enumerate and address all review findings, not silently drop some",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-check-uncheck-reports-success-without-dispatch-532d997b26.html",
       "evidence": "a database read after save showed the checkbox flag persisted as unset despite the tool reporting checked, and the click-based retry succeeded and persisted correctly while carrying component/source attribution that the failing check call lacked.",
       "expected_boundary": "the action should only report success once the framework's controlled state (verified on a derived element like a disabled submit button) has actually updated, not merely once the DOM property has been written.",
@@ -2055,12 +2081,12 @@
       }
     }
   ],
-  "count": 79,
+  "count": 80,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-18T06:30:47.850400+00:00",
+    "checked_at": "2026-08-19T06:30:30.448963+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
