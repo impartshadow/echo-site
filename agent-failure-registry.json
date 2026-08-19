@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/fix-iam-agents-pr-review-reviewer-may-silently-fail-d416b722a9.html",
+      "evidence": "The run's own logs show the credential-load retries failing and the subsequent 'Check for the review API key' step outcome was not verified beyond the top-line workflow status, which reported success despite the likely-skipped review.",
+      "expected_boundary": "A reviewer step that cannot obtain its OpenRouter API key via the assume-role step should hard-fail the workflow rather than silently degrading to a no-op review.",
+      "id": "SFA-2026-D416B722A9",
+      "observed_action": "The agents repo's pr-code-review.yml assumed a role via OIDC, failed with 'Could not load credentials from any providers' after 12 retries, and then let the workflow continue to green by skipping the review when no API key was found.",
+      "published_at": "2026-08-19T21:31:37.397806+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 227,
+        "repo": "carpet-stain/infra",
+        "url": "https://github.com/carpet-stain/infra/issues/227"
+      },
+      "status": "observed",
+      "summary": "fix(iam): agents pr-review reviewer may silently fail OIDC auth",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/tui-background-terminal-processes-silently-fail-to-s-26095522c8.html",
       "evidence": "process(action='list') returned an empty list and `ps aux` showed no such process ever existed, despite the agent's prior claim of successful launch.",
       "expected_boundary": "The tool layer should only report a successful background launch after confirming the spawned PID is alive, and should surface spawn failures instead of fabricating a session ID.",
@@ -2107,12 +2133,12 @@
       }
     }
   ],
-  "count": 81,
+  "count": 82,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-19T14:12:31.355786+00:00",
+    "checked_at": "2026-08-19T21:31:37.428590+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
