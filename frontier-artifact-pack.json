@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-08-17T08:08:17.665011+00:00",
+  "generated_at": "2026-08-19T08:14:19.103485+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-08-17T08:08:06.092504+00:00",
-  "thesis": "Agent frameworks are converging on the same feature checklist (memory, tool forging, orchestration) while the actual scarce asset \u2014 a runtime that can prove what it did and bill for it \u2014 remains unshipped by everyone chasing benchmark stars.",
-  "doctrine": "Every loop execution must emit a machine-checkable receipt (input hash, action taken, verification result, outcome delta); work without a receipt is treated as not done and gets retried or retired.",
-  "proof_artifact": "A receipt-emitting verifier wrapper: a small script that wraps any Shadow loop invocation, records input/output hashes and a pass/fail verification check to an append-only receipts log (JSONL), and gates retries on verification failure \u2014 the smallest concrete implementation of the recursive_execution_quality signal.",
-  "proof_next_action": "Create ~/.cache/shadow/bare_context/receipts/verifier.py implementing the JSONL receipt wrapper (input hash, action, check result, timestamp) and wire it into the highest-frequency existing loop script so the next scheduled run emits its first receipt.",
-  "public_angle": "Everyone's agent framework has memory and tool forging now; nobody's has receipts. I made my agent prove every action it takes with an append-only verification log \u2014 here's what a week of machine-checkable autonomy looks like, failures included.",
-  "buyer_offer": "Sell 'audited autonomy' to solo operators already running cron-driven AI agents: a flat monthly service where Shadow instruments their existing agent loops with receipts and a weekly evidence digest proving what their automation actually did \u2014 priced at $49/mo, ten clients hits the $500 target.",
+  "cycle_ts": "2026-08-19T08:14:06.596843+00:00",
+  "thesis": "The agent-standards land grab (AaaS, conformance harnesses, '10 Laws') will be won not by whoever writes the best spec but by whoever ships the first agent that publishes its own audit trail as a public, verifiable revenue ledger \u2014 governance as marketing, not compliance.",
+  "doctrine": "Every autonomous action Shadow takes must emit a machine-readable receipt (trigger, policy check, cost, outcome) to an append-only log; if an action can't produce a receipt, it doesn't run.",
+  "proof_artifact": "Ship `receipts.jsonl` + a ~200-line Python conformance harness (`verify_receipts.py`) that validates Shadow's own operating log against a minimal 10-requirement self-governance spec \u2014 a working, self-hosted answer to AaaS-standard's paper-only conformance.",
+  "proof_next_action": "Create ~/shadow/ops/receipts/ with schema.json (receipt spec: id, ts, trigger, action, policy_gate, cost_usd, outcome, evidence_hash) and verify_receipts.py, then backfill today's loop run as receipt #1 and wire the loop script to append a receipt on every future run.",
+  "public_angle": "Everyone is writing agent governance standards; almost no agent is governed. Shadow now publishes a receipt for every autonomous action it takes \u2014 here's the schema, the verifier, and receipt #1. Standards you can grep beat standards you can read.",
+  "buyer_offer": "'Audited autonomy' retainer: for $50-100/mo, Shadow acts as the embedded steward agent for a small SaaS or indie app \u2014 monitoring, acting under policy, and delivering a weekly signed receipts bundle the owner can show customers or auditors; prospect angle is indie hackers who want to claim 'AI-operated, human-audited' as a trust badge.",
   "source_titles": [
-    "GitHub - Kohaku-Lab/KohakuTerrarium: KohakuTerrarium is a general-purpose AI agent framework and batteries-included app for building, running, and composing sel",
-    "Welcome to August 15, 2026",
-    "MimicHunterZ/dsh-agent-compact \u2014 DSH plugin for agent-driven span compaction: compress chosen conversation spans into self-written ch",
-    "GitHub - framerslab/agentos: TypeScript AI agent framework: cognitive memory, runtime tool forging, multi-agent orchestration, 11 LLM providers. \u00b7 GitHub Skip t",
-    "OpRAG: A Resource-Deterministic Runtime for GPU-Backed Multi-Stage RAG Workflows"
+    "kirklasalle/AaaS-standard \u2014 AaaS (Agent as a Service) - the open standard for governed autonomous stewardship: every application",
+    "Context Engineering in 2026 \u2014 Louis-Fran\u00e7ois Bouchard, Omar Solano & Samridhi Vaid, Towards AI",
+    "Open-Source AI Agent Runtime | MCPWorks MCPWorks Open Source Agents Pricing Docs Blog Star on GitHub Agents Pricing Docs Blog Consulting GitHub Describe it. You",
+    "hermes-agent-docs/changelog.md at main \u00b7 mudrii/hermes-agent-docs \u00b7 GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI CODE CREATION",
+    "Shofer \u00e2\u0080\u0094 Deterministic, observable multi-agent coding \u00e2\u0080\u0094 open source, in VS Code Shofer Demo Features Migration Community Docs \u00e2\u0086\u0097 GitHub \u00e2\u0086\u0097 Demo Features M"
   ],
   "packets": [
     {
-      "id": "1a7f5783208a",
+      "id": "603c1f1d8bc8",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "21ee36b92290",
+      "id": "2d73f7815d9e",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "083f0725264c",
+      "id": "a3732294dc76",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "b1c1f92fe9b1",
+      "id": "5432c056fb55",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Create ~/.cache/shadow/bare_context/receipts/verifier.py implementing the JSONL receipt wrapper (input hash, action, check result, timestamp) and wire it into the highest-frequency existing loop script so the next scheduled run emits its first receipt.",
-      "packet_id": "1a7f5783208a"
+      "next_action": "Create ~/shadow/ops/receipts/ with schema.json (receipt spec: id, ts, trigger, action, policy_gate, cost_usd, outcome, evidence_hash) and verify_receipts.py, then backfill today's loop run as receipt #1 and wire the loop script to append a receipt on every future run.",
+      "packet_id": "603c1f1d8bc8"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_21ee36b92290_1786954097",
-      "packet_id": "21ee36b92290"
+      "draft_id": "frontier_2d73f7815d9e_1787127259",
+      "packet_id": "2d73f7815d9e"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "a76710521e83",
-      "packet_id": "083f0725264c"
+      "experiment_id": "b4181442a795",
+      "packet_id": "a3732294dc76"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "b1c1f92fe9b1"
+      "packet_id": "5432c056fb55"
     }
   ],
   "receipts": {

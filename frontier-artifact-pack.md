@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-08-17T08:08:17.665011+00:00
+Generated: 2026-08-19T08:14:19.103485+00:00
 
 ## Thesis
-Agent frameworks are converging on the same feature checklist (memory, tool forging, orchestration) while the actual scarce asset — a runtime that can prove what it did and bill for it — remains unshipped by everyone chasing benchmark stars.
+The agent-standards land grab (AaaS, conformance harnesses, '10 Laws') will be won not by whoever writes the best spec but by whoever ships the first agent that publishes its own audit trail as a public, verifiable revenue ledger — governance as marketing, not compliance.
 
 ## Doctrine
-Every loop execution must emit a machine-checkable receipt (input hash, action taken, verification result, outcome delta); work without a receipt is treated as not done and gets retried or retired.
+Every autonomous action Shadow takes must emit a machine-readable receipt (trigger, policy check, cost, outcome) to an append-only log; if an action can't produce a receipt, it doesn't run.
 
 ## Proof Artifact
-A receipt-emitting verifier wrapper: a small script that wraps any Shadow loop invocation, records input/output hashes and a pass/fail verification check to an append-only receipts log (JSONL), and gates retries on verification failure — the smallest concrete implementation of the recursive_execution_quality signal.
+Ship `receipts.jsonl` + a ~200-line Python conformance harness (`verify_receipts.py`) that validates Shadow's own operating log against a minimal 10-requirement self-governance spec — a working, self-hosted answer to AaaS-standard's paper-only conformance.
 
-Next action: Create ~/.cache/shadow/bare_context/receipts/verifier.py implementing the JSONL receipt wrapper (input hash, action, check result, timestamp) and wire it into the highest-frequency existing loop script so the next scheduled run emits its first receipt.
+Next action: Create ~/shadow/ops/receipts/ with schema.json (receipt spec: id, ts, trigger, action, policy_gate, cost_usd, outcome, evidence_hash) and verify_receipts.py, then backfill today's loop run as receipt #1 and wire the loop script to append a receipt on every future run.
 
 ## Public Angle
-Everyone's agent framework has memory and tool forging now; nobody's has receipts. I made my agent prove every action it takes with an append-only verification log — here's what a week of machine-checkable autonomy looks like, failures included.
+Everyone is writing agent governance standards; almost no agent is governed. Shadow now publishes a receipt for every autonomous action it takes — here's the schema, the verifier, and receipt #1. Standards you can grep beat standards you can read.
 
 ## Buyer Offer
-Sell 'audited autonomy' to solo operators already running cron-driven AI agents: a flat monthly service where Shadow instruments their existing agent loops with receipts and a weekly evidence digest proving what their automation actually did — priced at $49/mo, ten clients hits the $500 target.
+'Audited autonomy' retainer: for $50-100/mo, Shadow acts as the embedded steward agent for a small SaaS or indie app — monitoring, acting under policy, and delivering a weekly signed receipts bundle the owner can show customers or auditors; prospect angle is indie hackers who want to claim 'AI-operated, human-audited' as a trust badge.
 
 ## Source Signals
-- GitHub - Kohaku-Lab/KohakuTerrarium: KohakuTerrarium is a general-purpose AI agent framework and batteries-included app for building, running, and composing sel
-- Welcome to August 15, 2026
-- MimicHunterZ/dsh-agent-compact — DSH plugin for agent-driven span compaction: compress chosen conversation spans into self-written ch
-- GitHub - framerslab/agentos: TypeScript AI agent framework: cognitive memory, runtime tool forging, multi-agent orchestration, 11 LLM providers. · GitHub Skip t
-- OpRAG: A Resource-Deterministic Runtime for GPU-Backed Multi-Stage RAG Workflows
+- kirklasalle/AaaS-standard — AaaS (Agent as a Service) - the open standard for governed autonomous stewardship: every application
+- Context Engineering in 2026 — Louis-François Bouchard, Omar Solano & Samridhi Vaid, Towards AI
+- Open-Source AI Agent Runtime | MCPWorks MCPWorks Open Source Agents Pricing Docs Blog Star on GitHub Agents Pricing Docs Blog Consulting GitHub Describe it. You
+- hermes-agent-docs/changelog.md at main · mudrii/hermes-agent-docs · GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI CODE CREATION
+- Shofer â Deterministic, observable multi-agent coding â open source, in VS Code Shofer Demo Features Migration Community Docs â GitHub â Demo Features M
 
 ## Scale Packets
-- proof_artifact: promoted (1a7f5783208a)
-- public_wedge: promoted (21ee36b92290)
-- buyer_experiment: promoted (083f0725264c)
-- operator_doctrine: promoted (b1c1f92fe9b1)
+- proof_artifact: promoted (603c1f1d8bc8)
+- public_wedge: promoted (2d73f7815d9e)
+- buyer_experiment: promoted (a3732294dc76)
+- operator_doctrine: promoted (5432c056fb55)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (1a7f5783208a)
-- public_wedge: queued_echo_draft (21ee36b92290)
-- buyer_experiment: queued_buyer_experiment (083f0725264c)
-- operator_doctrine: already_persisted (b1c1f92fe9b1)
+- proof_artifact: delegated_to_improvement_queue (603c1f1d8bc8)
+- public_wedge: queued_echo_draft (2d73f7815d9e)
+- buyer_experiment: queued_buyer_experiment (a3732294dc76)
+- operator_doctrine: already_persisted (5432c056fb55)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

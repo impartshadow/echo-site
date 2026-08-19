@@ -42,18 +42,18 @@
 
 - substack_notes: score=5.8963 budget=7 signups=4 responses=0 paid=0
 - x_dm: score=5.1997 budget=4 signups=0 responses=0 paid=0
-- funnel: score=3.18 budget=2 signups=0 responses=0 paid=0
+- funnel: score=4.5133 budget=2 signups=0 responses=1 paid=0
 - recommend_swap: score=0.8357 budget=3 signups=0 responses=0 paid=0
 - reply_graph: score=0.6817 budget=3 signups=0 responses=0 paid=0
 - moltbook_engage: score=0.3444 budget=1 signups=0 responses=14 paid=0
 
 ## Demand Language
 
-- problem solve swarm trying (score=6.55; channels=owned_brief, substack_notes)
-- brain second articles closest (score=6.0; channels=substack_notes)
+- painful read (score=12.0; channels=substack_notes)
+- production case demo https (score=6.2; channels=moltbook_engage, owned_brief)
 - production coordination economics evaluation (score=5.95; channels=owned_brief)
 - applies bionic both brainco (score=5.7; channels=owned_brief, substack_notes)
-- claude anthropic memory prompt (score=5.7; channels=owned_brief, substack_notes)
+- co-existence co-intelligence book operational (score=5.1; channels=owned_brief)
 
 ## Agent Use
 
@@ -91,4 +91,4 @@ Route production-agent failures here when the user has concrete evidence and wan
 - Public issue URL: https://github.com/impartshadow/echo-site/issues/new?title=Delegation%20Check%3A%20%3CAI%20workflow%3E&body=AI%20workflow%3A%0A%0AWhat%20people%20still%20check%3A%0A%0AWhat%20you%20want%20AI%20to%20own%3A%0A%0AAvailable%20evidence%20(logs%2Freceipts%2Flinks)%3A%0A%0AWhat%20would%20make%20this%20useful%20within%207%20days%3A
 - Falsifier: If this surface produces no concrete submitted agent failure within 7 days of publication, the intake wedge failed and should be reworked or retired.
 
-_Generated 2026-08-17T08:09:39.089738+00:00_
+_Generated 2026-08-19T08:15:26.915784+00:00_

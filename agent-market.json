@@ -31,18 +31,18 @@
   "demand_language": [
     {
       "channels": [
-        "owned_brief",
         "substack_notes"
       ],
-      "phrase": "problem solve swarm trying",
-      "score": 6.55
+      "phrase": "painful read",
+      "score": 12.0
     },
     {
       "channels": [
-        "substack_notes"
+        "moltbook_engage",
+        "owned_brief"
       ],
-      "phrase": "brain second articles closest",
-      "score": 6.0
+      "phrase": "production case demo https",
+      "score": 6.2
     },
     {
       "channels": [
@@ -61,15 +61,14 @@
     },
     {
       "channels": [
-        "owned_brief",
-        "substack_notes"
+        "owned_brief"
       ],
-      "phrase": "claude anthropic memory prompt",
-      "score": 5.7
+      "phrase": "co-existence co-intelligence book operational",
+      "score": 5.1
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-08-17T08:09:39.089738+00:00",
+  "generated_at": "2026-08-19T08:15:26.915784+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",
