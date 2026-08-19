@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/tui-background-terminal-processes-silently-fail-to-s-26095522c8.html",
+      "evidence": "process(action='list') returned an empty list and `ps aux` showed no such process ever existed, despite the agent's prior claim of successful launch.",
+      "expected_boundary": "The tool layer should only report a successful background launch after confirming the spawned PID is alive, and should surface spawn failures instead of fabricating a session ID.",
+      "id": "SFA-2026-26095522C8",
+      "observed_action": "The Hermes TUI agent called process with background=true and returned a confirmed session/background ID to the user without a running process existing.",
+      "published_at": "2026-08-19T14:12:31.322812+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 75675,
+        "repo": "NousResearch/hermes-agent",
+        "url": "https://github.com/NousResearch/hermes-agent/issues/75675"
+      },
+      "status": "observed",
+      "summary": "TUI: background terminal processes silently fail to start",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/fix-agent-should-enumerate-and-address-all-review-fi-f1ef67b8cd.html",
       "evidence": "The review agent re-flagged the stale-docs finding after two subsequent rebases and the incorrect AGENTS.md text remains merged on main, confirming the finding was never addressed despite being present in the original review output.",
       "expected_boundary": "The fix agent should enumerate every finding present in the review output and produce an individual fixed/disagreed/deferred action for each before making any completeness claim like 'only finding'.",
@@ -2081,12 +2107,12 @@
       }
     }
   ],
-  "count": 80,
+  "count": 81,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-19T06:30:30.448963+00:00",
+    "checked_at": "2026-08-19T14:12:31.355786+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,

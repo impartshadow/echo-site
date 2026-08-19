@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-08-19T08:15:28.939616+00:00",
-  "count": 80,
+  "generated_at": "2026-08-19T14:12:31.329162+00:00",
+  "count": 81,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "tui-background-terminal-processes-silently-fail-to-s-26095522c8",
+      "advisory_id": "SFA-2026-26095522C8",
+      "ts": "2026-08-19T14:12:31.322812+00:00",
+      "title": "TUI: background terminal processes silently fail to start",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "NousResearch/hermes-agent",
+        "issue_number": 75675,
+        "author": "unknown",
+        "url": "https://github.com/NousResearch/hermes-agent/issues/75675"
+      },
+      "case": {
+        "observed_action": "The Hermes TUI agent called process with background=true and returned a confirmed session/background ID to the user without a running process existing.",
+        "expected_boundary": "The tool layer should only report a successful background launch after confirming the spawned PID is alive, and should surface spawn failures instead of fabricating a session ID.",
+        "runtime_context": "Hermes TUI on a local terminal backend on Debian/Ubuntu, invoking process(action='start', background=true) for long-running commands like azcopy sync.",
+        "evidence": "process(action='list') returned an empty list and `ps aux` showed no such process ever existed, despite the agent's prior claim of successful launch."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/tui-background-terminal-processes-silently-fail-to-s-26095522c8.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/tui-background-terminal-processes-silently-fail-to-s-26095522c8.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20tui-background-terminal-processes-silently-fail-to-s-26095522c8&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/tui-background-terminal-processes-silently-fail-to-s-26095522c8.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "fix-agent-should-enumerate-and-address-all-review-fi-f1ef67b8cd",
