@@ -1,11 +1,11 @@
 {
   "schema": "shadow.contract_install_blueprint.v1",
-  "generated_at": "2026-08-19T08:20:23.655817+00:00",
+  "generated_at": "2026-08-20T08:46:00.198400+00:00",
   "source_model": "claude-fable-5",
   "frontier_receipt": "claude-fable-5 selected Contract Install Blueprint as the next artifact because it demonstrates the paid install product itself.",
   "source_runtime": {
-    "contract_count": 216,
-    "violation_rows_scanned": 8640,
+    "contract_count": 218,
+    "violation_rows_scanned": 8656,
     "current_violation_log": "state/contract_violations.jsonl",
     "archive_glob": "state/archive/**/contract_violations_*.jsonl.gz"
   },
@@ -61,7 +61,7 @@
       "tier": "free-triage",
       "production_evidence": {
         "fires_observed": 118,
-        "ledger_rows_scanned": 8640,
+        "ledger_rows_scanned": 8656,
         "latest_seen": "2026-07-09T12:21:37",
         "severity_counts": {
           "block": 118
@@ -98,7 +98,7 @@
       "tier": "census",
       "production_evidence": {
         "fires_observed": 118,
-        "ledger_rows_scanned": 8640,
+        "ledger_rows_scanned": 8656,
         "latest_seen": "2026-08-18T06:45:38",
         "severity_counts": {
           "block": 118
@@ -135,7 +135,7 @@
       "tier": "install",
       "production_evidence": {
         "fires_observed": 183,
-        "ledger_rows_scanned": 8640,
+        "ledger_rows_scanned": 8656,
         "latest_seen": "2026-08-17T11:59:54",
         "severity_counts": {
           "block": 151,
@@ -173,11 +173,11 @@
       "tier": "census",
       "production_evidence": {
         "fires_observed": 630,
-        "ledger_rows_scanned": 8640,
+        "ledger_rows_scanned": 8656,
         "latest_seen": "2026-07-20T03:18:01",
         "severity_counts": {
-          "block": 249,
-          "warn": 381
+          "warn": 381,
+          "block": 249
         },
         "false_positive_note": "High-volume warn contract; useful as a census detector before choosing install gates.",
         "origin_incident": "Repeated project-state and revenue assertions were delivered without current receipts.",
@@ -211,7 +211,7 @@
       "tier": "install",
       "production_evidence": {
         "fires_observed": 114,
-        "ledger_rows_scanned": 8640,
+        "ledger_rows_scanned": 8656,
         "latest_seen": "2026-07-28T12:40:14",
         "severity_counts": {
           "block": 114
@@ -248,7 +248,7 @@
       "tier": "free-triage",
       "production_evidence": {
         "fires_observed": 213,
-        "ledger_rows_scanned": 8640,
+        "ledger_rows_scanned": 8656,
         "latest_seen": "2026-08-16T22:04:49",
         "severity_counts": {
           "warn": 145,
