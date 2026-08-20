@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/deltachannel-state-reads-back-empty-when-the-checkpo-112f52b075.html",
+      "evidence": "aget_state on a thread with two prior messages returned 0 messages instead of 2, and update_state committed a head checkpoint that permanently reads messages: [] while its parent checkpoint still returns the full list.",
+      "expected_boundary": "All hydration and replay logic within a single state-read/update function must use the one checkpointer variable resolved from config[CONF][CONFIG_KEY_CHECKPOINTER], never a second, independently-sourced saver reference.",
+      "id": "SFA-2026-112F52B075",
+      "observed_action": "State-reading and state-updating functions hydrated DeltaChannel values using self.checkpointer (the graph-attached saver) instead of the config-resolved checkpointer already validated earlier in the same function.",
+      "published_at": "2026-08-20T06:30:46.266813+00:00",
+      "source": {
+        "author": "doniyor2109",
+        "channel": "unsolicited_triage",
+        "issue_number": 8653,
+        "repo": "langchain-ai/langgraph",
+        "url": "https://github.com/langchain-ai/langgraph/issues/8653"
+      },
+      "status": "observed",
+      "summary": "DeltaChannel state reads back empty when the checkpointer is passed via config instead of compile()",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/fix-iam-agents-pr-review-reviewer-may-silently-fail-d416b722a9.html",
       "evidence": "The run's own logs show the credential-load retries failing and the subsequent 'Check for the review API key' step outcome was not verified beyond the top-line workflow status, which reported success despite the likely-skipped review.",
       "expected_boundary": "A reviewer step that cannot obtain its OpenRouter API key via the assume-role step should hard-fail the workflow rather than silently degrading to a no-op review.",
@@ -2133,12 +2159,12 @@
       }
     }
   ],
-  "count": 82,
+  "count": 83,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-19T21:31:37.428590+00:00",
+    "checked_at": "2026-08-20T06:30:46.294871+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
