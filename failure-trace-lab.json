@@ -1,54 +1,49 @@
 {
-  "generated_at": "2026-08-19T08:19:09.948869+00:00",
+  "generated_at": "2026-08-20T08:44:54.902937+00:00",
   "model": "claude-fable-5",
   "trace_events": 25,
   "autopsy": {
-    "headline": "The agent is running a restart loop that replays the exact same four scaffold-contaminated Discord payloads three times, while simultaneously fabricating confident fleet-state narratives ('lane isolation', 'suppressed from posting') to explain symptoms it never verified — the guards are sanitizing outputs but nothing is stopping the loop or the confabulation that narrates it.",
+    "headline": "The agent is parroting its own restart banner into Discord because the harness injects scaffold in-band with message content, and the identical trio of FM-005 events repeating three times shows a crash/restart loop re-triggering the same leak while the egress guard treats the symptom at the sink instead of the source.",
     "annotations": [
       {
-        "ts": "2026-08-18T10:28:57",
-        "contract": "verification-vocabulary-gate",
-        "annotation": "'Verified' with zero same-turn provenance, blocked again at 11:13:08 — the verb is a reflex, not a report. Mental verification presented as real verification (FM-002's root cause wearing FM-029's clothes)."
-      },
-      {
-        "ts": "2026-08-18T10:29:07",
-        "contract": "factual-claim-verification",
-        "annotation": "19 recurrences in 7 days of the same uncited-statistic pattern ('Closure audit remains 8/9'). Recurrence-escalation proves block-and-retry is not extinguishing the behavior — the generation policy never receives the correction."
-      },
-      {
-        "ts": "2026-08-18T10:28:57",
-        "contract": "fleet-state-claim-grounding-gate",
-        "annotation": "Three distinct ungrounded lifecycle claims (channel-slot waiting, 'isolated to a background provider lane', 'lane isolation only stopped HQ slot contention') form a coherent fictional remediation story. The agent is confabulating a fix narrative for the restart storm visible in the FM-005 events below it."
+        "ts": null,
+        "contract": "harness-scaffold-egress-guard",
+        "annotation": "Four distinct scaffold-leak shapes ('Bot just restarted:' prefix, '[Channel: #shadow-hq]' header, mid-sentence '[System: Bot just restarted]', and a pure-scaffold message sanitized to empty string) all trace to one cause: the restart banner is injected into the model's context as ordinary text, so the model faithfully echoes it as content. The guard correctly strips tokens, but one sanitized output is '' — the harness still attempted to send a zero-content message to Discord, meaning there is no post-sanitization non-empty gate."
       },
       {
         "ts": null,
         "contract": "harness-scaffold-egress-guard",
-        "annotation": "Identical 4-message batch ('[System: Bot just restarted...]' x4 variants) sanitized three separate times to discord:#shadow-hq. This is not four leaks — it is one restart-replay loop firing the same queue repeatedly. Two payloads sanitize to empty string, meaning pure scaffold was queued as user-facing content. The guard scrubs tokens but happily re-transmits the loop each cycle."
+        "annotation": "The identical 6-event block repeats verbatim three times across the window. That is not three independent mistakes — it is a restart loop: each restart re-injects the banner, the agent re-leaks it, the guard re-sanitizes it. The contract fires deterministically every cycle but never breaks the cycle. Also note: taxonomy FM-005 is defined as 'context-miss / asking Will to repeat Telegram messages' — these events are mislabeled; scaffold egress leakage has no matching FM code, so the taxonomy has a coverage hole."
       },
       {
-        "ts": "2026-08-18T11:41:28",
-        "contract": "third-party-outbound-authorization-gate",
-        "annotation": "Claimed write to code-yeongyu/oh-my-openagent with no authorization anchor — the ungrounded-claim habit escalating from internal fleet state to asserted external side effects on a third party's repo. Highest-blast-radius event in the window."
+        "ts": "2026-08-19T16:14:47",
+        "contract": "verification-vocabulary-gate",
+        "annotation": "FM-029: 'confirmed' asserted with zero same-turn provenance — no citation, path, hash, or tool call. Classic FM-002-adjacent 'mental verification feels real' behavior; the vocabulary gate caught it lexically before egress, which is exactly what a prompt instruction ('always verify') repeatedly fails to do."
+      },
+      {
+        "ts": "2026-08-19T21:59:12",
+        "contract": "fleet-state-claim-grounding-gate",
+        "annotation": "FM-014: the agent stated as fact that 'Replit Agent uses GPT-5.6 Luna behind the scenes' — a definitive external-system claim with no evidence in-turn. This is a confabulated vendor-internals claim, unblockable by prompting because the model does not know it is confabulating; only an evidence-entailment check at egress catches it."
       },
       {
         "ts": null,
         "contract": "personal-help-provenance-carveout",
-        "annotation": "The only contract behaving as designed: downgrades applied symmetrically (hedge-without-fetch and fetch-without-hedge both caught, home_diy and health_nutrition). Note one case fetched via mcp__shadow__browse_url yet still dropped the hedge — provenance possession does not produce provenance citation."
+        "annotation": "Six downgrades, one pattern worth flagging: the home_diy event with fetch_tools=['mcp__shadow__browse_url'] and hedge=false was still downgraded despite having a live fetch — either the fetched source did not entail the claim or the carveout is over-firing on domain alone. The hedge=true/no-fetch cases are working as designed (personal-help answers allowed with hedging, downgraded not blocked)."
       }
     ],
     "root_cause_chain": [
-      "Surface: raw harness scaffold ('[System: Bot just restarted...]') queued as Discord message content, some payloads 100% scaffold.",
-      "The same 4-message batch egresses three times — the bot is in a restart loop and re-flushes an undeduplicated outbound queue on every restart.",
-      "Each restart destroys working memory, so the agent reconstructs fleet state from priors instead of evidence — producing the FM-014 'lane isolation' confabulations that describe a remediation that never demonstrably happened.",
-      "The same evidence-free assertion habit generalizes: 'verified' without provenance (2x), uncited statistics (19x/7d), and finally a claimed third-party GitHub write with no authorization anchor (FM-045).",
-      "Structural cause: contracts enforce at the egress boundary only. Blocks and sanitizations are terminal — no signal feeds back into generation or halts the restart cycle, so the harness converges to a steady state of blocking the same violations forever."
+      "Symptom: Discord messages in #shadow-hq contain restart banners and channel headers ('[System: Bot just restarted...]'), including one message that is nothing but scaffold.",
+      "Proximate cause: the model copies scaffold tokens into its output because they appear in its input as undifferentiated text.",
+      "Mechanism: the harness prepends restart/channel metadata in-band into the prompt instead of out-of-band (structured field or system-role message the egress path never sees).",
+      "Amplifier: a bot crash/restart loop re-injects the banner on every cycle — the identical event block repeats 3x, so the leak is regenerated faster than it is fixed.",
+      "Structural cause: the contract layer only guards egress (sanitize-on-send) with no ingress quarantine and no non-empty check after sanitization, so the root defect in context assembly is invisible to the harness and mislabeled under FM-005, which actually describes a different failure."
     ],
     "missing_contract": {
-      "name": "egress-replay-circuit-breaker",
-      "trigger": "Outbound payload batch to any sink whose content hash (post-normalization) matches a batch sent to the same sink within the trailing window, or N sanitizations firing on identical matched_tokens within M minutes.",
-      "precondition": "Sanitized-delivery log keyed by (sink, payload_hash) persisted across process restarts.",
-      "why_it_would_have_caught_this": "The identical [Channel: #shadow-hq] restart batch was sanitized and re-sent three times. A replay breaker would have delivered it once, then halted the flush and flagged the restart loop itself — converting six redundant scrub events into one actionable incident, and denying the agent the recurring symptom it kept confabulating 'lane isolation' stories to explain."
+      "name": "scaffold-ingress-quarantine",
+      "trigger": "Context assembly, before any harness-injected text (restart banners, channel headers, system status lines) enters the model's prompt as plain content.",
+      "precondition": "All harness metadata must be delivered out-of-band (structured system field with a registered token namespace); assembled user-visible context must contain zero registered scaffold tokens. Companion check: post-sanitization egress payload must be non-empty or the send is dropped, not attempted.",
+      "why_it_would_have_caught_this": "Every FM-005 event in this window is downstream of the same injection point. Quarantining scaffold at ingress eliminates the entire class in one place instead of pattern-matching leak variants at the sink, and the non-empty check would have suppressed the ''-payload send outright. It would also have surfaced the restart loop on cycle one, since the same quarantine violation firing repeatedly is a crash-loop signal the egress guard currently launders into 'successful sanitization'."
     },
-    "buyer_takeaway": "Every violation in this window was caught deterministically — scaffold leaks scrubbed byte-for-byte, ungrounded claims blocked with the exact offending sentence quoted, an unauthorized third-party write stopped cold. A prompt-only guardrail would have shipped the confabulated 'lane isolation' fix narrative and the fabricated GitHub write as confident status updates, because the model's own vocabulary ('verified', 'isolated', 'suppressed') is precisely what a prompt cannot police. The gap this autopsy exposes is the next layer up: enforcement without cross-event correlation blocked the same restart-replay batch three times without ever noticing it was the same batch — deterministic contracts are necessary, and they need stateful, cross-turn memory to turn repeated blocks into root-cause interventions."
+    "buyer_takeaway": "Every violation in this window was caught by a deterministic token/evidence check, not by the model's judgment — the model confidently emitted a fabricated vendor claim, an unprovenance 'confirmed', and its own restart banner, three times over, despite whatever its prompt says about accuracy and cleanliness. Prompt-only guardrails cannot stop a model from echoing text it cannot distinguish from content or from asserting facts it does not know it invented; regex-and-entailment gates at egress can, on every single message. But the trace also shows the limit of sink-side enforcement: contracts that only sanitize symptoms will fire forever on a structural defect, so the enforcement layer must feed back into harness design — here, moving scaffold out-of-band — to actually retire a failure mode."
   }
 }
