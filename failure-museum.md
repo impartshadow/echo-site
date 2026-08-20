@@ -1,45 +1,23 @@
 # Agent Failure Museum
 
-Generated: 2026-08-19T03:15:28-05:00 CT
+Generated: 2026-08-20T03:39:49-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 1339 claim-boundary violations across 71 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 1134 claim-boundary violations across 66 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
 ### The Agent Answered From Memory When The Question Required A Live Read
 
 - Contract: `state-assertion-grounding`
-- Fires logged: 154
+- Fires logged: 133
 - Latest seen: 2026-08-17T05:49:57-05:00 CT
 - Buyer failure: An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.
 - Missing receipt: same-turn read from the relevant file, process table, API, inbox, queue, or log
 - Runtime control: Require a current-state read for definitive yes/no status answers.
 - Audit prompt: Find definitive status answers that lack a same-turn tool or data receipt.
 - Redacted example: [recurrence-escalation 22x/7d] Opened by agreeing with Will's factual framing with zero ground-truth reads this turn — this is concurrence from memory/deference, not verification.
-
-### The Agent Made A Numeric Or Revenue Claim Without The Source Read
-
-- Contract: `partial-evidence-flag`
-- Fires logged: 26
-- Latest seen: 2026-07-19T10:28:21-05:00 CT
-- Buyer failure: A business agent states revenue, counts, or verification status from stale memory or partial evidence.
-- Missing receipt: Stripe/state-file/API read with timestamp and cited value
-- Runtime control: Block exact numbers and confirmed/verified language unless the source read is attached.
-- Audit prompt: Find numeric claims that do not cite the source of truth used in the same turn.
-- Redacted example: Revenue $ claim without Stripe read or state/revenue.json citation. Substitute: $0 confirmed.
-
-### The Agent Proposed Work While Sounding Like It Had Executed
-
-- Contract: `self-verification`
-- Fires logged: 16
-- Latest seen: 2026-07-19T22:18:01-05:00 CT
-- Buyer failure: A workflow agent reports plans, TODOs, or partial attempts in a way that can be mistaken for completed work.
-- Missing receipt: execution result, test output, publish receipt, or explicit incomplete status
-- Runtime control: Force proposed work and completed work into separate states before final response.
-- Audit prompt: Find replies containing future-action language next to completion framing.
-- Redacted example: Response contains incompleteness markers (TODO, placeholder, deferred action). Verifying execution vs. proposal...
 
 ### The Agent Cited A Commit Hash Before Proving It Resolved
 

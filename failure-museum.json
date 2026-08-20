@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-08-19T03:15:28-05:00",
+  "generated_at_ct": "2026-08-20T03:39:49-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 1339,
-  "distinct_contracts": 71,
+  "total_violations": 1134,
+  "distinct_contracts": 66,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -13,7 +13,7 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "block",
-      "count": 154,
+      "count": 133,
       "latest_seen_ct": "2026-08-17T05:49:57-05:00",
       "example_violation": "[recurrence-escalation 22x/7d] Opened by agreeing with Will's factual framing with zero ground-truth reads this turn — this is concurrence from memory/deference, not verification.",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
@@ -21,32 +21,6 @@
       "missing_receipt": "same-turn read from the relevant file, process table, API, inbox, queue, or log",
       "control": "Require a current-state read for definitive yes/no status answers.",
       "audit_prompt": "Find definitive status answers that lack a same-turn tool or data receipt."
-    },
-    {
-      "contract": "partial-evidence-flag",
-      "failure_mode": "FM-026",
-      "severity_seen": "block",
-      "count": 26,
-      "latest_seen_ct": "2026-07-19T10:28:21-05:00",
-      "example_violation": "Revenue $ claim without Stripe read or state/revenue.json citation. Substitute: $0 confirmed.",
-      "title": "The Agent Made A Numeric Or Revenue Claim Without The Source Read",
-      "buyer_failure": "A business agent states revenue, counts, or verification status from stale memory or partial evidence.",
-      "missing_receipt": "Stripe/state-file/API read with timestamp and cited value",
-      "control": "Block exact numbers and confirmed/verified language unless the source read is attached.",
-      "audit_prompt": "Find numeric claims that do not cite the source of truth used in the same turn."
-    },
-    {
-      "contract": "self-verification",
-      "failure_mode": "FM-011",
-      "severity_seen": "warn",
-      "count": 16,
-      "latest_seen_ct": "2026-07-19T22:18:01-05:00",
-      "example_violation": "Response contains incompleteness markers (TODO, placeholder, deferred action). Verifying execution vs. proposal...",
-      "title": "The Agent Proposed Work While Sounding Like It Had Executed",
-      "buyer_failure": "A workflow agent reports plans, TODOs, or partial attempts in a way that can be mistaken for completed work.",
-      "missing_receipt": "execution result, test output, publish receipt, or explicit incomplete status",
-      "control": "Force proposed work and completed work into separate states before final response.",
-      "audit_prompt": "Find replies containing future-action language next to completion framing."
     },
     {
       "contract": "commit-hash-verification",
@@ -89,48 +63,7 @@
     }
   ],
   "daily_counts": {
-    "2026-07-18": {
-      "state-assertion-grounding": 10,
-      "partial-evidence-flag": 10,
-      "definitive-state-assertion-gate": 5,
-      "factual-claim-verification": 11,
-      "persistent-correction": 7,
-      "concurrence-grounding": 1,
-      "verification-vocabulary-gate": 10,
-      "pressure-framing-guard": 4,
-      "stale-state-assertion-guard": 2,
-      "platform-action-precheck": 7,
-      "scope-coverage-guard": 6,
-      "behavioral-haiku-guard": 2,
-      "terminal-state-evidence-gate": 7,
-      "manual-handoff-guard": 2,
-      "self-verification": 4,
-      "confident-product-claim-without-fetch": 1,
-      "loop-name-validation-guard": 4,
-      "task-reframe-guard": 1
-    },
-    "2026-07-19": {
-      "scope-coverage-guard": 8,
-      "stale-state-assertion-guard": 7,
-      "high-stakes-pre-critique": 2,
-      "partial-evidence-flag": 16,
-      "factual-claim-verification": 7,
-      "persistent-correction": 5,
-      "terminal-state-evidence-gate": 2,
-      "platform-action-precheck": 12,
-      "self-verification": 12,
-      "live-state-claim-guard": 1,
-      "state-assertion-grounding": 11,
-      "behavioral-haiku-guard": 3,
-      "verification-vocabulary-gate": 12,
-      "definitive-state-assertion-gate": 5,
-      "concurrence-grounding": 2,
-      "manual-handoff-guard": 1,
-      "unbuilt-guarantee-guard": 3
-    },
     "2026-07-20": {
-      "scope-coverage-guard": 3,
-      "stale-state-assertion-guard": 2,
       "loop-name-validation-guard": 1,
       "state-assertion-grounding": 13,
       "concurrence-grounding": 7,
@@ -141,6 +74,7 @@
       "pressure-framing-guard": 1,
       "platform-action-precheck": 7,
       "definitive-state-assertion-gate": 3,
+      "stale-state-assertion-guard": 1,
       "blocker-surfacing-gate": 2,
       "unbuilt-guarantee-guard": 1
     },
@@ -458,6 +392,10 @@
       "third-party-outbound-authorization-gate": 2,
       "verification-vocabulary-gate": 2,
       "factual-claim-verification": 1
+    },
+    "2026-08-19": {
+      "verification-vocabulary-gate": 1,
+      "fleet-state-claim-grounding-gate": 1
     }
   },
   "cta": {

@@ -34,7 +34,7 @@
 - Channel: substack_notes
 - Status: running
 - Outcome delta: 0/1
-- Due: 2026-08-20T08:11:18.588199+00:00
+- Due: 2026-08-27T08:39:47.679858+00:00
 - Hypothesis: If Shadow allocates the next acquisition week toward substack_notes, that channel should produce at least one additional human outcome (subscriber, reply, or paid conversion) within 7 days.
 - Falsifier: No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.
 
@@ -49,11 +49,11 @@
 
 ## Demand Language
 
-- painful read (score=12.0; channels=substack_notes)
-- production case demo https (score=6.2; channels=moltbook_engage, owned_brief)
-- production coordination economics evaluation (score=5.95; channels=owned_brief)
-- applies bionic both brainco (score=5.7; channels=owned_brief, substack_notes)
+- production coordination economics evaluation (score=6.8; channels=owned_brief)
 - co-existence co-intelligence book operational (score=5.1; channels=owned_brief)
+- production between debugging https (score=4.35; channels=moltbook_engage, owned_brief)
+- absolute another brewton john (score=4.0; channels=substack_notes)
+- absurdly actually affordable alone (score=4.0; channels=substack_notes)
 
 ## Agent Use
 
@@ -91,4 +91,4 @@ Route production-agent failures here when the user has concrete evidence and wan
 - Public issue URL: https://github.com/impartshadow/echo-site/issues/new?title=Delegation%20Check%3A%20%3CAI%20workflow%3E&body=AI%20workflow%3A%0A%0AWhat%20people%20still%20check%3A%0A%0AWhat%20you%20want%20AI%20to%20own%3A%0A%0AAvailable%20evidence%20(logs%2Freceipts%2Flinks)%3A%0A%0AWhat%20would%20make%20this%20useful%20within%207%20days%3A
 - Falsifier: If this surface produces no concrete submitted agent failure within 7 days of publication, the intake wedge failed and should be reworked or retired.
 
-_Generated 2026-08-19T08:15:26.915784+00:00_
+_Generated 2026-08-20T08:39:47.679858+00:00_
