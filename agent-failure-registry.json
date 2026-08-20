@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/producer-agents-test-writer-refactorer-report-mechan-2822dac12c.html",
+      "evidence": "The exit gate table itself states verification method is 'Scan changed files for markers' performed by the reporting agent, and the issue reporter confirms via git diff that the claimed provenance marker was absent from both files and three of four flagged duplicate-import occurrences remained unresolved after a 'resolved' report.",
+      "expected_boundary": "Producer agents must substantiate mechanical, checkable claims with externally-run tool output (diff/grep against the actual changed files) before their return is accepted, and an empty or unparseable return must be treated as a blocking failure rather than an implicit pass.",
+      "id": "SFA-2026-2822DAC12C",
+      "observed_action": "The refactorer and test-writer agents returned confident completion claims (a provenance marker added, a duplicate-import advisory resolved) that a subsequent git diff showed to be false, and in one pass the test-writer returned no output at all despite having written files.",
+      "published_at": "2026-08-20T14:12:55.514747+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 175,
+        "repo": "sefalk/AgenticAIGovernance",
+        "url": "https://github.com/sefalk/AgenticAIGovernance/issues/175"
+      },
+      "status": "observed",
+      "summary": "Producer agents (test-writer, refactorer) report mechanical completions (provenance markers, resolved advisories) without diff evidence, and return zero output without failure",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/deltachannel-state-reads-back-empty-when-the-checkpo-112f52b075.html",
       "evidence": "aget_state on a thread with two prior messages returned 0 messages instead of 2, and update_state committed a head checkpoint that permanently reads messages: [] while its parent checkpoint still returns the full list.",
       "expected_boundary": "All hydration and replay logic within a single state-read/update function must use the one checkpointer variable resolved from config[CONF][CONFIG_KEY_CHECKPOINTER], never a second, independently-sourced saver reference.",
@@ -2159,12 +2185,12 @@
       }
     }
   ],
-  "count": 83,
+  "count": 84,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-20T06:30:46.294871+00:00",
+    "checked_at": "2026-08-20T14:12:55.543364+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
