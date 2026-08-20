@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/sms-draft-reply-silently-drops-the-sms-body-and-repo-6551ed6cf7.html",
+      "evidence": "The reported repro payload {'contact': '+15551234567', 'body': 'Sounds good, see you tomorrow.'} produced output 'Draft saved: ' with the body text absent and the function still returning True.",
+      "expected_boundary": "The executor should read the 'body' field documented in the proactive-agent prompt contract (proactive_agent.py:88) and should refuse to report success if the required field is missing or empty.",
+      "id": "SFA-2026-6551ED6CF7",
+      "observed_action": "sms_draft_reply read payload.get('draft', '') and returned True regardless of content, so a payload containing 'body' produced an empty 'Draft saved:' message while reporting success.",
+      "published_at": "2026-08-20T21:30:31.241678+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 835,
+        "repo": "open-jarvis/OpenJarvis",
+        "url": "https://github.com/open-jarvis/OpenJarvis/issues/835"
+      },
+      "status": "observed",
+      "summary": "sms_draft_reply silently drops the SMS body and reports success",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/producer-agents-test-writer-refactorer-report-mechan-2822dac12c.html",
       "evidence": "The exit gate table itself states verification method is 'Scan changed files for markers' performed by the reporting agent, and the issue reporter confirms via git diff that the claimed provenance marker was absent from both files and three of four flagged duplicate-import occurrences remained unresolved after a 'resolved' report.",
       "expected_boundary": "Producer agents must substantiate mechanical, checkable claims with externally-run tool output (diff/grep against the actual changed files) before their return is accepted, and an empty or unparseable return must be treated as a blocking failure rather than an implicit pass.",
@@ -2185,12 +2211,12 @@
       }
     }
   ],
-  "count": 84,
+  "count": 85,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-20T14:12:55.543364+00:00",
+    "checked_at": "2026-08-20T21:30:31.275078+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,

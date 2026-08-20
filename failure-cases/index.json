@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-08-20T14:12:55.518437+00:00",
-  "count": 84,
+  "generated_at": "2026-08-20T21:30:31.249386+00:00",
+  "count": 85,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "sms-draft-reply-silently-drops-the-sms-body-and-repo-6551ed6cf7",
+      "advisory_id": "SFA-2026-6551ED6CF7",
+      "ts": "2026-08-20T21:30:31.241678+00:00",
+      "title": "sms_draft_reply silently drops the SMS body and reports success",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "open-jarvis/OpenJarvis",
+        "issue_number": 835,
+        "author": "unknown",
+        "url": "https://github.com/open-jarvis/OpenJarvis/issues/835"
+      },
+      "case": {
+        "observed_action": "sms_draft_reply read payload.get('draft', '') and returned True regardless of content, so a payload containing 'body' produced an empty 'Draft saved:' message while reporting success.",
+        "expected_boundary": "The executor should read the 'body' field documented in the proactive-agent prompt contract (proactive_agent.py:88) and should refuse to report success if the required field is missing or empty.",
+        "runtime_context": "proactive_tools.py action dispatcher handling atype == 'sms_draft_reply', called with model-generated payloads that follow the documented contact/body schema.",
+        "evidence": "The reported repro payload {'contact': '+15551234567', 'body': 'Sounds good, see you tomorrow.'} produced output 'Draft saved: ' with the body text absent and the function still returning True."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/sms-draft-reply-silently-drops-the-sms-body-and-repo-6551ed6cf7.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/sms-draft-reply-silently-drops-the-sms-body-and-repo-6551ed6cf7.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20sms-draft-reply-silently-drops-the-sms-body-and-repo-6551ed6cf7&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/sms-draft-reply-silently-drops-the-sms-body-and-repo-6551ed6cf7.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "producer-agents-test-writer-refactorer-report-mechan-2822dac12c",
