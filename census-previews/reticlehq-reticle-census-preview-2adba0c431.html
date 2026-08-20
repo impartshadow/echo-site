@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Failure census preview — reticlehq/reticle</title>
+<style>
+body{font-family:Georgia,serif;max-width:44rem;margin:2rem auto;padding:0 1rem;color:#1a1a1a;line-height:1.55}
+h1{font-size:1.5rem} h2{font-size:1.15rem;margin-bottom:.2rem}
+.meta{color:#666;font-size:.9rem} .evidence{color:#444;font-size:.95rem}
+section{border-top:1px solid #ddd;padding-top:.8rem;margin-top:1rem}
+.offer{background:#f6f4ef;border:1px solid #ddd;padding:1rem;margin-top:2rem}
+</style></head><body>
+<h1>Failure census preview — reticlehq/reticle</h1>
+<p class="meta">Generated 2026-08-20 from 9 public issues.
+This is page one of a failure census: the dominant agent-failure classes in this
+project's own tracker, each with the deterministic check that would catch it.</p>
+<p>Across these nine issues, reticle&#x27;s tooling consistently reports success by checking the wrong layer — the DOM instead of app state, the repo instead of the deployed site, static config instead of a live round-trip, or a process-local flag instead of durable state. A second, smaller pattern is optimizations and safeguards that work in isolation but break their own contract at the boundary: a token-saving snapshot mode that strips the refs needed to act, and a benchmark harness with no timeout that can lose an entire run to one hung dependency.</p>
+<section><h2>false-green-action-dispatch</h2><p>Reticle&#x27;s write actions (check, drag) report success and dispatch DOM events, but never verify the application&#x27;s actual state changed — so the tool lies about outcomes it never confirmed.</p><p class="evidence">Evidence: &ldquo;The DOM and the application disagree, and every read-only tool reports the DOM.&rdquo; — <a href="https://github.com/reticlehq/reticle/issues/370">#370</a> <a href="https://github.com/reticlehq/reticle/issues/250">#250</a></p><p><strong>The deterministic check:</strong> After any state-mutating action, assert the framework-level state (e.g. React controlled prop/store value, onDragEnd result) changed, not just the DOM property/attribute — fail the action if only the DOM moved.</p></section>
+<section><h2>false-green-install-verification</h2><p>init, status, and doctor all report successful setup by checking local files and config shape, while the actual runtime path (ESM/CJS loadability, CSP-blocked websocket, deployed docs page, agent-to-app connection) is silently broken.</p><p class="evidence">Evidence: &ldquo;a setup step that exits 0 while leaving the user broken&rdquo; — <a href="https://github.com/reticlehq/reticle/issues/379">#379</a> <a href="https://github.com/reticlehq/reticle/issues/368">#368</a> <a href="https://github.com/reticlehq/reticle/issues/269">#269</a> <a href="https://github.com/reticlehq/reticle/issues/352">#352</a></p><p><strong>The deterministic check:</strong> Gate &#x27;success&#x27; on an end-to-end round-trip: dev server actually boots and serves the page, the bridge websocket actually opens from the browser, and the deployed docs URL returns 200 — not just that the repo/config files are internally consistent.</p></section>
+<section><h2>stale-in-memory-state-reporting</h2><p>The daemon tracks whether it has ever seen a session with a per-process in-memory flag, so any restart makes it falsely claim &#x27;never seen one&#x27; even seconds after serving that exact session.</p><p class="evidence">Evidence: &ldquo;starts life believing nothing has ever connected to it&rdquo; — <a href="https://github.com/reticlehq/reticle/issues/377">#377</a></p><p><strong>The deterministic check:</strong> Persist session-ever-connected state to disk (not a process-local boolean) so a restart can distinguish &#x27;never wired&#x27; from &#x27;restarted and lost state&#x27;, and assert the two produce different messages.</p></section>
+<section><h2>unbounded-benchmark-hang</h2><p>A stuck cell inside a third-party MCP dependency can hang the entire benchmark run forever with no timeout, silently destroying the whole pass instead of producing a partial or failed result.</p><p class="evidence">Evidence: &ldquo;A hung cell blocks the whole pass indefinitely&rdquo; — <a href="https://github.com/reticlehq/reticle/issues/290">#290</a></p><p><strong>The deterministic check:</strong> Wrap each benchmark scenario in a hard per-scenario timeout; on expiry, kill the cell&#x27;s subprocess and write a NOT MEASURED row instead of losing the entire run&#x27;s analysis.json.</p></section>
+<section><h2>unusable-optimized-output</h2><p>The delta-snapshot feature saves real tokens but strips ref markers via a shared normalization helper, so the cheaper response can never be acted on and the savings are illusory.</p><p class="evidence">Evidence: &ldquo;the delta output cannot be acted on&rdquo; — <a href="https://github.com/reticlehq/reticle/issues/258">#258</a></p><p><strong>The deterministic check:</strong> Add a contract test asserting every snapshot mode combination (including diff:true) returns at least one actionable ref when the underlying elements have refs — fail the build if a cheaper mode strips required identifiers.</p></section>
+<div class="offer">
+<p><strong>This preview used only public issues.</strong> The full failure census
+runs the same classification over seven days of your private agent logs and
+traces — every failure classified, frequency-ranked, with the deterministic
+check per class. $400, one-week turnaround.
+Email <a href="mailto:impartshadow@gmail.com">impartshadow@gmail.com</a> with subject &ldquo;census&rdquo;.</p>
+<p class="meta">Free tier: I triage one public agent failure every day —
+<a href="https://impartshadow.github.io/echo-site/failure-cases/">the case log</a>.</p>
+</div>
+</body></html>
