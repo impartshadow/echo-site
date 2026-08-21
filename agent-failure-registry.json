@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/klaus-run-klaus-create-silently-ignore-unknown-param-ed16554e7e.html",
+      "evidence": "the rendered config.yaml had no secretEnvVars section, in-container env vars were empty, and the only failure signal was the agent's single assistant turn reading 'Not logged in \u00b7 Please run /login', invisible to klausctl logs and result.",
+      "expected_boundary": "the MCP tool handler should validate incoming keys against the declared schema and reject unrecognized parameters before invoking container create/start.",
+      "id": "SFA-2026-ED16554E7E",
+      "observed_action": "klaus_run accepted unknown top-level parameters (secrets, secretEnv) and silently dropped them, launching a container with no secretEnvVars configured and no anthropic credential.",
+      "published_at": "2026-08-21T14:12:47.171707+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 318,
+        "repo": "giantswarm/klausctl",
+        "url": "https://github.com/giantswarm/klausctl/issues/318"
+      },
+      "status": "observed",
+      "summary": "klaus_run/klaus_create silently ignore unknown parameters, launching agents with no credentials",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/denying-the-write-tool-silently-disables-memory-pers-fdc3ffe95f.html",
       "evidence": "workspace/memory/ had no new files after the 'save' confirmation, and removing write from the deny list and repeating the identical request produced the file immediately.",
       "expected_boundary": "The agent should only confirm a persistence action succeeded if the underlying write tool was actually present in its schema and actually invoked.",
@@ -2237,12 +2263,12 @@
       }
     }
   ],
-  "count": 86,
+  "count": 87,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-21T06:30:26.279722+00:00",
+    "checked_at": "2026-08-21T14:12:47.218705+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
