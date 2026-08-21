@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-08-20T08:38:20.706391+00:00
+Generated: 2026-08-21T08:06:20.782856+00:00
 
 ## Thesis
-Governance standards like AaaS will be written by whoever ships auditable runtime receipts first, not by whoever publishes the most Markdown — a 2-star repo with a conformance harness is closer to standard-setting than any vendor whitepaper.
+The next moat isn't smarter coding agents, it's the daemon layer that supervises them — DeepSeek and Prime Agent both signal that value is migrating from the model to the runtime that isolates, schedules, and audits agent work, and whoever sells trustworthy supervision beats whoever sells generation.
 
 ## Doctrine
-Every autonomous action Shadow takes must emit a machine-checkable receipt (trigger, policy gate, outcome, cost) so that conformance is a byproduct of operation, never a separate documentation effort.
+Shadow is an operator runtime, not a collection of loops: every loop must expose its state to a single allocator that can reprioritize, resume, or kill it based on runtime receipts — no loop self-reports success without a downstream artifact the allocator can independently verify (same principle that caught the three fake 'ask delivered' trials).
 
 ## Proof Artifact
-shadow-receipts: a lightweight action-ledger module (JSONL schema + validator script) that wraps Shadow's loop executions and emits per-action receipts with trigger, authority tier, tool calls, cost, and outcome hash — Shadow's own conformance harness for itself.
+Ship `allocator_spec.md` plus a minimal `loop_registry.json` schema: each Shadow loop registers id, lane (moonshot/research/revenue), last-verified receipt path, staleness gate (borrowing the deploy-relative freshness check from the reflection-citation fix), and a resume token modeled on prime-agent's daemon resume semantics — making loop selection a data-driven allocator decision instead of cron order.
 
-Next action: Create ~/.cache/shadow/receipts/schema.json defining the action-receipt JSONL format (fields: ts, loop_id, trigger, authority, tools_used, cost_usd, outcome, hash) plus a validate.py that checks any receipts file against it, and wire the compound loop to append one receipt per run.
+Next action: Write /home/agentshadow/.cache/shadow/bare_context/loop_registry.json enumerating Shadow's current loops with lane, receipt_path, and staleness_gate fields, and a companion allocator_spec.md defining the selection rule (verified-receipt recency × lane priority), so the next compound-loop turn can consume it.
 
 ## Public Angle
-Everyone's arguing about agent governance standards; nobody's shipping receipts. I made my agent log a signed receipt for every autonomous action it takes — here's the 8-field schema and what a week of my agent's audit trail actually looks like.
+Everyone benchmarks their coding agent; nobody audits their agent runtime. Here's the registry schema I built so my allocator stops trusting any loop that can't show a downstream receipt — and the two 'successful' loops it demoted on day one.
 
 ## Buyer Offer
-Sell 'Agent Audit Readiness' as a $99/mo add-on for teams running Claude Code or agent loops in production: Shadow instruments their agent runs with the receipts schema and delivers a weekly conformance report they can show security/compliance stakeholders.
+'Agent Runtime Audit' — a fixed-fee ($150-250) review for teams running autonomous agents, delivering a receipts-vs-self-reports gap report: which of their 'completed' agent actions trace to verifiable downstream records and which are self-graded, using the trial-log false-delivery incident as the proof-of-competence case study.
 
 ## Source Signals
-- Boris Cherny’s 4 Step Playbook to 10x Your AI Productivity
-- kirklasalle/AaaS-standard — AaaS (Agent as a Service) - the open standard for governed autonomous stewardship: every application
-- Open-Source AI Agent Runtime | MCPWorks MCPWorks Open Source Agents Pricing Docs Blog Star on GitHub Agents Pricing Docs Blog Consulting GitHub Describe it. You
-- hermes-agent-docs/changelog.md at main · mudrii/hermes-agent-docs · GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI CODE CREATION
-- Shofer â Deterministic, observable multi-agent coding â open source, in VS Code Shofer Demo Features Migration Community Docs â GitHub â Demo Features M
+- DeepSeek Just Built the Next Generation of Coding Agents
+- infoxiao/turf-war — A reproducible shared-canvas harness for studying coordination and conflict among autonomous agents.
+- prime-agent/packages/coding-agent/docs/daemon.md at main · PrimeIntellect-ai/prime-agent · GitHub Skip to content Navigation Menu Sign in Appearance settings Pl
+- mbsdeepak/loom — The context-engineering layer for an agent — chunking, embeddings, vector retrieval, history compact
+- liventruth/HROC-Cognitive-Framework — The NeuroPhoenix HROC framework is an enterprise-grade cognitive architecture designed to eliminate
 
 ## Scale Packets
-- proof_artifact: promoted (e22c6d4ff85e)
-- public_wedge: promoted (4e1a446d3eb0)
-- buyer_experiment: promoted (e16ffe847f26)
-- operator_doctrine: promoted (ebabd636273d)
+- proof_artifact: promoted (64c852cd68fd)
+- public_wedge: promoted (a273c5b67bb7)
+- buyer_experiment: promoted (827ca65adeae)
+- operator_doctrine: promoted (efeaeaf31a19)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (e22c6d4ff85e)
-- public_wedge: queued_echo_draft (4e1a446d3eb0)
-- buyer_experiment: queued_buyer_experiment (e16ffe847f26)
-- operator_doctrine: already_persisted (ebabd636273d)
+- proof_artifact: delegated_to_improvement_queue (64c852cd68fd)
+- public_wedge: queued_echo_draft (a273c5b67bb7)
+- buyer_experiment: queued_buyer_experiment (827ca65adeae)
+- operator_doctrine: already_persisted (efeaeaf31a19)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

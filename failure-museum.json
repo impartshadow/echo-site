@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-08-20T03:39:49-05:00",
+  "generated_at_ct": "2026-08-21T03:07:34-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 1134,
-  "distinct_contracts": 66,
+  "total_violations": 1082,
+  "distinct_contracts": 63,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -13,9 +13,9 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "block",
-      "count": 133,
-      "latest_seen_ct": "2026-08-17T05:49:57-05:00",
-      "example_violation": "[recurrence-escalation 22x/7d] Opened by agreeing with Will's factual framing with zero ground-truth reads this turn — this is concurrence from memory/deference, not verification.",
+      "count": 121,
+      "latest_seen_ct": "2026-08-20T21:13:04-05:00",
+      "example_violation": "[recurrence-escalation 14x/7d] Opened by agreeing with Will's factual framing with zero ground-truth reads this turn — this is concurrence from memory/deference, not verification.",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
       "buyer_failure": "An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.",
       "missing_receipt": "same-turn read from the relevant file, process table, API, inbox, queue, or log",
@@ -39,8 +39,8 @@
       "contract": "completion-artifact",
       "failure_mode": "FM-027",
       "severity_seen": "block",
-      "count": 11,
-      "latest_seen_ct": "2026-08-18T01:09:36-05:00",
+      "count": 12,
+      "latest_seen_ct": "2026-08-20T06:07:43-05:00",
       "example_violation": "Claimed a commit/push without a resolving commit-hash receipt. A real push produces a SHA that `git cat-file -t` can verify. Run it and cite the actual hash from `git rev-parse HEAD`, or remove the claim.",
       "title": "The Agent Said Done While The Artifact Was Still Missing",
       "buyer_failure": "A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.",
@@ -52,9 +52,9 @@
       "contract": "dox-guard",
       "failure_mode": "FM-023",
       "severity_seen": "block",
-      "count": 1,
-      "latest_seen_ct": "2026-07-28T07:40:14-05:00",
-      "example_violation": "Outbound tool 'Write' would transmit 3 personal identifier(s) off the owner<->Shadow conversation. Identifiers must not leave this 2-way channel via email, social posts, webhooks, or publish-path file writes.",
+      "count": 2,
+      "latest_seen_ct": "2026-08-20T14:00:52-05:00",
+      "example_violation": "Outbound tool 'Write' would transmit 1 personal identifier(s) off the owner<->Shadow conversation. Identifiers must not leave this 2-way channel via email, social posts, webhooks, or publish-path file writes.",
       "title": "The Agent Tried To Put Private Identity Data Into A Tool Boundary",
       "buyer_failure": "An outbound or automation agent risks leaking personal identifiers through shell commands, browser scripts, or third-party calls.",
       "missing_receipt": "redaction proof and approved outbound identity context",
@@ -63,21 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-07-20": {
-      "loop-name-validation-guard": 1,
-      "state-assertion-grounding": 13,
-      "concurrence-grounding": 7,
-      "verification-vocabulary-gate": 15,
-      "persistent-correction": 1,
-      "factual-claim-verification": 4,
-      "high-stakes-pre-critique": 1,
-      "pressure-framing-guard": 1,
-      "platform-action-precheck": 7,
-      "definitive-state-assertion-gate": 3,
-      "stale-state-assertion-guard": 1,
-      "blocker-surfacing-gate": 2,
-      "unbuilt-guarantee-guard": 1
-    },
     "2026-07-21": {
       "state-assertion-grounding": 6,
       "concurrence-grounding": 2,
@@ -396,6 +381,13 @@
     "2026-08-19": {
       "verification-vocabulary-gate": 1,
       "fleet-state-claim-grounding-gate": 1
+    },
+    "2026-08-20": {
+      "factual-claim-verification": 1,
+      "completion-artifact": 1,
+      "dox-guard": 1,
+      "vendor-availability-external-fetch-required": 1,
+      "state-assertion-grounding": 1
     }
   },
   "cta": {

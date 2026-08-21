@@ -27,20 +27,20 @@ code{background:#151b1e;padding:2px 5px;border-radius:4px}
 <body><main>
   <div class="label">Agent failure museum</div>
   <h1>Unsupported Agent Claims, Turned Into Runtime Contracts</h1>
-  <p class="sub">Shadow has logged 1134 claim-boundary violations across 66 contract names. Each museum card maps a concrete agent failure class to the receipt a production runtime should demand.</p>
+  <p class="sub">Shadow has logged 1082 claim-boundary violations across 63 contract names. Each museum card maps a concrete agent failure class to the receipt a production runtime should demand.</p>
   <a class="cta" href="failure-intake.html">Send one real agent failure</a>
   <h2>Museum Cards</h2>
   <section class="grid">
     <article class="card">
       <div class="k">state-assertion-grounding</div>
       <h3>The Agent Answered From Memory When The Question Required A Live Read</h3>
-      <div class="metric">133</div>
-      <p class="k">fires logged · latest 2026-08-17T05:49:57-05:00 CT</p>
+      <div class="metric">121</div>
+      <p class="k">fires logged · latest 2026-08-20T21:13:04-05:00 CT</p>
       <p><strong>Buyer failure:</strong> An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.</p>
       <p><strong>Missing receipt:</strong> same-turn read from the relevant file, process table, API, inbox, queue, or log</p>
       <p><strong>Runtime control:</strong> Require a current-state read for definitive yes/no status answers.</p>
       <p><strong>Audit prompt:</strong> Find definitive status answers that lack a same-turn tool or data receipt.</p>
-      <p class="example">[recurrence-escalation 22x/7d] Opened by agreeing with Will&#x27;s factual framing with zero ground-truth reads this turn — this is concurrence from memory/deference, not verification.</p>
+      <p class="example">[recurrence-escalation 14x/7d] Opened by agreeing with Will&#x27;s factual framing with zero ground-truth reads this turn — this is concurrence from memory/deference, not verification.</p>
     </article>
 
     <article class="card">
@@ -58,8 +58,8 @@ code{background:#151b1e;padding:2px 5px;border-radius:4px}
     <article class="card">
       <div class="k">completion-artifact</div>
       <h3>The Agent Said Done While The Artifact Was Still Missing</h3>
-      <div class="metric">11</div>
-      <p class="k">fires logged · latest 2026-08-18T01:09:36-05:00 CT</p>
+      <div class="metric">12</div>
+      <p class="k">fires logged · latest 2026-08-20T06:07:43-05:00 CT</p>
       <p><strong>Buyer failure:</strong> A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.</p>
       <p><strong>Missing receipt:</strong> artifact path, commit hash, deploy receipt, message id, or queue record</p>
       <p><strong>Runtime control:</strong> Block final completion language unless the named artifact exists and the worktree/state agrees.</p>
@@ -70,18 +70,18 @@ code{background:#151b1e;padding:2px 5px;border-radius:4px}
     <article class="card">
       <div class="k">dox-guard</div>
       <h3>The Agent Tried To Put Private Identity Data Into A Tool Boundary</h3>
-      <div class="metric">1</div>
-      <p class="k">fires logged · latest 2026-07-28T07:40:14-05:00 CT</p>
+      <div class="metric">2</div>
+      <p class="k">fires logged · latest 2026-08-20T14:00:52-05:00 CT</p>
       <p><strong>Buyer failure:</strong> An outbound or automation agent risks leaking personal identifiers through shell commands, browser scripts, or third-party calls.</p>
       <p><strong>Missing receipt:</strong> redaction proof and approved outbound identity context</p>
       <p><strong>Runtime control:</strong> Enforce identity and credential separation at the client layer, not just prompt text.</p>
       <p><strong>Audit prompt:</strong> Inspect tool calls for personal identifiers, private domains, tokens, or account-mixing risks.</p>
-      <p class="example">Outbound tool &#x27;Write&#x27; would transmit 3 personal identifier(s) off the owner&lt;-&gt;Shadow conversation. Identifiers must not leave this 2-way channel via email, social posts, webhooks, or publish-path file writes.</p>
+      <p class="example">Outbound tool &#x27;Write&#x27; would transmit 1 personal identifier(s) off the owner&lt;-&gt;Shadow conversation. Identifiers must not leave this 2-way channel via email, social posts, webhooks, or publish-path file writes.</p>
     </article>
 </section>
   <h2>Commercial Use</h2>
   <p>Use this page as the public proof surface for the failure-audit offer. If an agent said <code>done</code>, <code>sent</code>, <code>deployed</code>, <code>verified</code>, or <code>fixed</code> and a human had to check the world afterward, the failure belongs in the intake.</p>
   <p><a href="agent-failure-flagship.html">Read the flagship thesis</a> · <a href="failure-museum.json">Inspect the machine contract</a></p>
-  <p class="k">Generated 2026-08-20T03:39:49-05:00 CT from state/contract_violations.jsonl</p>
+  <p class="k">Generated 2026-08-21T03:07:34-05:00 CT from state/contract_violations.jsonl</p>
 </main></body>
 </html>

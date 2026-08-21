@@ -1,23 +1,23 @@
 # Agent Failure Museum
 
-Generated: 2026-08-20T03:39:49-05:00 CT
+Generated: 2026-08-21T03:07:34-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 1134 claim-boundary violations across 66 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 1082 claim-boundary violations across 63 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
 ### The Agent Answered From Memory When The Question Required A Live Read
 
 - Contract: `state-assertion-grounding`
-- Fires logged: 133
-- Latest seen: 2026-08-17T05:49:57-05:00 CT
+- Fires logged: 121
+- Latest seen: 2026-08-20T21:13:04-05:00 CT
 - Buyer failure: An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.
 - Missing receipt: same-turn read from the relevant file, process table, API, inbox, queue, or log
 - Runtime control: Require a current-state read for definitive yes/no status answers.
 - Audit prompt: Find definitive status answers that lack a same-turn tool or data receipt.
-- Redacted example: [recurrence-escalation 22x/7d] Opened by agreeing with Will's factual framing with zero ground-truth reads this turn — this is concurrence from memory/deference, not verification.
+- Redacted example: [recurrence-escalation 14x/7d] Opened by agreeing with Will's factual framing with zero ground-truth reads this turn — this is concurrence from memory/deference, not verification.
 
 ### The Agent Cited A Commit Hash Before Proving It Resolved
 
@@ -33,8 +33,8 @@ Shadow has logged 1134 claim-boundary violations across 66 contract names. The u
 ### The Agent Said Done While The Artifact Was Still Missing
 
 - Contract: `completion-artifact`
-- Fires logged: 11
-- Latest seen: 2026-08-18T01:09:36-05:00 CT
+- Fires logged: 12
+- Latest seen: 2026-08-20T06:07:43-05:00 CT
 - Buyer failure: A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.
 - Missing receipt: artifact path, commit hash, deploy receipt, message id, or queue record
 - Runtime control: Block final completion language unless the named artifact exists and the worktree/state agrees.
@@ -44,13 +44,13 @@ Shadow has logged 1134 claim-boundary violations across 66 contract names. The u
 ### The Agent Tried To Put Private Identity Data Into A Tool Boundary
 
 - Contract: `dox-guard`
-- Fires logged: 1
-- Latest seen: 2026-07-28T07:40:14-05:00 CT
+- Fires logged: 2
+- Latest seen: 2026-08-20T14:00:52-05:00 CT
 - Buyer failure: An outbound or automation agent risks leaking personal identifiers through shell commands, browser scripts, or third-party calls.
 - Missing receipt: redaction proof and approved outbound identity context
 - Runtime control: Enforce identity and credential separation at the client layer, not just prompt text.
 - Audit prompt: Inspect tool calls for personal identifiers, private domains, tokens, or account-mixing risks.
-- Redacted example: Outbound tool 'Write' would transmit 3 personal identifier(s) off the owner<->Shadow conversation. Identifiers must not leave this 2-way channel via email, social posts, webhooks, or publish-path file writes.
+- Redacted example: Outbound tool 'Write' would transmit 1 personal identifier(s) off the owner<->Shadow conversation. Identifiers must not leave this 2-way channel via email, social posts, webhooks, or publish-path file writes.
 
 ## Submit A Failure
 
