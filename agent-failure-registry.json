@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/denying-the-write-tool-silently-disables-memory-pers-fdc3ffe95f.html",
+      "evidence": "workspace/memory/ had no new files after the 'save' confirmation, and removing write from the deny list and repeating the identical request produced the file immediately.",
+      "expected_boundary": "The agent should only confirm a persistence action succeeded if the underlying write tool was actually present in its schema and actually invoked.",
+      "id": "SFA-2026-FDC3FFE95F",
+      "observed_action": "The agent confirmed 'Guardado' (saved) after being asked to save something to memory, when the write tool had been silently removed via tools.deny.",
+      "published_at": "2026-08-21T06:30:26.238572+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 126906,
+        "repo": "openclaw/openclaw",
+        "url": "https://github.com/openclaw/openclaw/issues/126906"
+      },
+      "status": "observed",
+      "summary": "Denying the write tool silently disables memory persistence, and the agent reports success anyway",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/sms-draft-reply-silently-drops-the-sms-body-and-repo-6551ed6cf7.html",
       "evidence": "The reported repro payload {'contact': '+15551234567', 'body': 'Sounds good, see you tomorrow.'} produced output 'Draft saved: ' with the body text absent and the function still returning True.",
       "expected_boundary": "The executor should read the 'body' field documented in the proactive-agent prompt contract (proactive_agent.py:88) and should refuse to report success if the required field is missing or empty.",
@@ -2211,12 +2237,12 @@
       }
     }
   ],
-  "count": 85,
+  "count": 86,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-20T21:30:31.275078+00:00",
+    "checked_at": "2026-08-21T06:30:26.279722+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
