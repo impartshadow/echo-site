@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Failure census preview — Bike4Mind/bike4mind</title>
+<style>
+body{font-family:Georgia,serif;max-width:44rem;margin:2rem auto;padding:0 1rem;color:#1a1a1a;line-height:1.55}
+h1{font-size:1.5rem} h2{font-size:1.15rem;margin-bottom:.2rem}
+.meta{color:#666;font-size:.9rem} .evidence{color:#444;font-size:.95rem}
+section{border-top:1px solid #ddd;padding-top:.8rem;margin-top:1rem}
+.offer{background:#f6f4ef;border:1px solid #ddd;padding:1rem;margin-top:2rem}
+</style></head><body>
+<h1>Failure census preview — Bike4Mind/bike4mind</h1>
+<p class="meta">Generated 2026-08-21 from 8 public issues.
+This is page one of a failure census: the dominant agent-failure classes in this
+project's own tracker, each with the deterministic check that would catch it.</p>
+<p>Across these eight issues the dominant pattern is silence: failures, drops, and wrong data all resolve to a 200/success/no-error state instead of an observable failure, spanning build tooling (2030), API mutations (2017, 1987), content ingestion (2024, 1880), request construction (1951), transport (1957), and environment isolation (1898). None of these are logic bugs in the traditional sense — they are missing boundary checks between &#x27;the call was accepted&#x27; and &#x27;the call did what was claimed,&#x27; which is exactly the class of defect that survives code review and only surfaces when a user notices stale content, a missing tool, or a leaked email.</p>
+<section><h2>silent-success-reporting</h2><p>An operation partially or fully fails, but the caller only sees the enqueue/HTTP 200 or a per-attachment warning bucket, so the UI or CI reports success while the real work never happened.</p><p class="evidence">Evidence: &ldquo;does nothing for any file that is already chunked, and reports success anyway&rdquo; — <a href="https://github.com/Bike4Mind/bike4mind/issues/2017">#2017</a> <a href="https://github.com/Bike4Mind/bike4mind/issues/1987">#1987</a> <a href="https://github.com/Bike4Mind/bike4mind/issues/2030">#2030</a></p><p><strong>The deterministic check:</strong> Assert response/exit status is derived from item-level outcome, not from enqueue acceptance: reprocess mutation must fail/no-op-flag when the idempotency guard skips chunking; importTools must surface llmParams validation throws in `errors`, not silently into `attachmentWarnings`; bundler entrypoint must set process.exitCode=1 whenever errorCount&gt;0 before help:build is considered green.</p></section>
+<section><h2>silent-parameter-and-content-drop</h2><p>A request is built or content is transformed without carrying forward a required field (selected model, HTML-to-text extraction, structured message content), so the backend silently receives the wrong value and produces wrong output with no error.</p><p class="evidence">Evidence: &ldquo;silently ignores whichever Gemini model the user selected and always runs the edit against&rdquo; — <a href="https://github.com/Bike4Mind/bike4mind/issues/1951">#1951</a> <a href="https://github.com/Bike4Mind/bike4mind/issues/2024">#2024</a> <a href="https://github.com/Bike4Mind/bike4mind/issues/1880">#1880</a></p><p><strong>The deterministic check:</strong> Contract test comparing outbound payload against the user-facing selection/source: assert GeminiImageService.edit() receives `model` equal to the session&#x27;s selected model; assert stored fab-file text matches an extracted-text fixture (no raw tags, headings/lists/tables preserved) rather than raw HTML or `&lt;p&gt;`-only text; assert Anthropic system content is text-joined, never `JSON.stringify`&#x27;d or bare `.join()`&#x27;d, for array-valued content blocks.</p></section>
+<section><h2>silent-transport-data-loss</h2><p>The WebSocket fanout protocol changed to chunk large payloads, but the client never implemented reassembly, so any push over 120KB is dropped with no error and the UI silently stops updating.</p><p class="evidence">Evidence: &ldquo;the frame is silently dropped and the document update never lands&rdquo; — <a href="https://github.com/Bike4Mind/bike4mind/issues/1957">#1957</a></p><p><strong>The deterministic check:</strong> Client-side test: feed a `{_chunked:true,_chunkIndex,_totalChunks,_data}` sequence into WebsocketContext&#x27;s onMessage and assert the reassembled message is dispatched to the matching `action` listener, not routed to the fallback `setLastJsonMessage` path.</p></section>
+<section><h2>partial-stage-isolation-fix</h2><p>A stage-aware routing fix was applied to one delivery channel (Slack) but not its sibling (email), leaving non-production environments able to send to production-configured recipient lists while telemetry reports it as a normal delivery.</p><p class="evidence">Evidence: &ldquo;mails that same list, prod or not&rdquo; — <a href="https://github.com/Bike4Mind/bike4mind/issues/1898">#1898</a></p><p><strong>The deterministic check:</strong> Integration test asserting the email channel checks `stageClass === &#x27;production&#x27;` (mirroring the Slack `SlackNonProdFeedbackWebhookUrl` pattern) before sending to `FeedbackReceiveEmail`, and that a nonprod-stage test run yields either a suppressed send or a dedicated nonprod recipient, not delivery to the production list.</p></section>
+<div class="offer">
+<p><strong>This preview used only public issues.</strong> The full failure census
+runs the same classification over seven days of your private agent logs and
+traces — every failure classified, frequency-ranked, with the deterministic
+check per class. $400, one-week turnaround.
+Email <a href="mailto:impartshadow@gmail.com">impartshadow@gmail.com</a> with subject &ldquo;census&rdquo;.</p>
+<p class="meta">Free tier: I triage one public agent failure every day —
+<a href="https://impartshadow.github.io/echo-site/failure-cases/">the case log</a>.</p>
+</div>
+</body></html>
