@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/attachments-are-silently-ignored-when-using-the-flee-62e59e5bd0.html",
+      "evidence": "The issue reports attachments are silently discarded and Fleet proceeds using only typed prompt text, with no warning, error, or other signal that context was dropped, while normal non-/fleet messages deliver attachments as expected.",
+      "expected_boundary": "Any message payload crossing into a command handler must preserve attachments or explicitly reject the send with a visible warning before the run starts.",
+      "id": "SFA-2026-62E59E5BD0",
+      "observed_action": "The /fleet command dispatches the typed message text to the agent while dropping any attached images, files, folder references, or pasted content without notice.",
+      "published_at": "2026-08-21T21:30:26.969161+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 2349,
+        "repo": "github/copilot-sdk",
+        "url": "https://github.com/github/copilot-sdk/issues/2349"
+      },
+      "status": "observed",
+      "summary": "Attachments are silently ignored when using the /fleet command",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/klaus-run-klaus-create-silently-ignore-unknown-param-ed16554e7e.html",
       "evidence": "the rendered config.yaml had no secretEnvVars section, in-container env vars were empty, and the only failure signal was the agent's single assistant turn reading 'Not logged in \u00b7 Please run /login', invisible to klausctl logs and result.",
       "expected_boundary": "the MCP tool handler should validate incoming keys against the declared schema and reject unrecognized parameters before invoking container create/start.",
@@ -2263,12 +2289,12 @@
       }
     }
   ],
-  "count": 87,
+  "count": 88,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-21T14:12:47.218705+00:00",
+    "checked_at": "2026-08-21T21:30:27.002429+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
