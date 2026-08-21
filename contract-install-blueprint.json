@@ -1,11 +1,11 @@
 {
   "schema": "shadow.contract_install_blueprint.v1",
-  "generated_at": "2026-08-20T08:46:00.198400+00:00",
+  "generated_at": "2026-08-21T08:12:44.899216+00:00",
   "source_model": "claude-fable-5",
   "frontier_receipt": "claude-fable-5 selected Contract Install Blueprint as the next artifact because it demonstrates the paid install product itself.",
   "source_runtime": {
-    "contract_count": 218,
-    "violation_rows_scanned": 8656,
+    "contract_count": 219,
+    "violation_rows_scanned": 8661,
     "current_violation_log": "state/contract_violations.jsonl",
     "archive_glob": "state/archive/**/contract_violations_*.jsonl.gz"
   },
@@ -61,7 +61,7 @@
       "tier": "free-triage",
       "production_evidence": {
         "fires_observed": 118,
-        "ledger_rows_scanned": 8656,
+        "ledger_rows_scanned": 8661,
         "latest_seen": "2026-07-09T12:21:37",
         "severity_counts": {
           "block": 118
@@ -98,7 +98,7 @@
       "tier": "census",
       "production_evidence": {
         "fires_observed": 118,
-        "ledger_rows_scanned": 8656,
+        "ledger_rows_scanned": 8661,
         "latest_seen": "2026-08-18T06:45:38",
         "severity_counts": {
           "block": 118
@@ -135,7 +135,7 @@
       "tier": "install",
       "production_evidence": {
         "fires_observed": 183,
-        "ledger_rows_scanned": 8656,
+        "ledger_rows_scanned": 8661,
         "latest_seen": "2026-08-17T11:59:54",
         "severity_counts": {
           "block": 151,
@@ -173,7 +173,7 @@
       "tier": "census",
       "production_evidence": {
         "fires_observed": 630,
-        "ledger_rows_scanned": 8656,
+        "ledger_rows_scanned": 8661,
         "latest_seen": "2026-07-20T03:18:01",
         "severity_counts": {
           "warn": 381,
@@ -210,11 +210,11 @@
       "install_estimate_hours": 6.0,
       "tier": "install",
       "production_evidence": {
-        "fires_observed": 114,
-        "ledger_rows_scanned": 8656,
-        "latest_seen": "2026-07-28T12:40:14",
+        "fires_observed": 115,
+        "ledger_rows_scanned": 8661,
+        "latest_seen": "2026-08-20T19:00:52",
         "severity_counts": {
-          "block": 114
+          "block": 115
         },
         "false_positive_note": "Client-layer enforcement is required; command regexes alone miss inline API scripts.",
         "origin_incident": "Email and Telegram paths showed that command-line guards alone can be bypassed by direct scripts.",
@@ -248,7 +248,7 @@
       "tier": "free-triage",
       "production_evidence": {
         "fires_observed": 213,
-        "ledger_rows_scanned": 8656,
+        "ledger_rows_scanned": 8661,
         "latest_seen": "2026-08-16T22:04:49",
         "severity_counts": {
           "warn": 145,

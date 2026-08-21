@@ -2,10 +2,10 @@
 
 A buyer should be able to see the before/after diff behind Shadow's $2,000 Contract Install before the first call: observed failure, installed gate, forced after-state, regression test, and CTA.
 
-Generated: 2026-08-20T08:46:00.198400+00:00
+Generated: 2026-08-21T08:12:44.899216+00:00
 Source model: `claude-fable-5`
-Runtime contracts: 218
-Violation rows scanned: 8656
+Runtime contracts: 219
+Violation rows scanned: 8661
 
 ## Conversion Path
 
@@ -88,7 +88,7 @@ if factual_claim(response) and evidence_count(response) < threshold:
 - Failure mode: FM-023 — Personal Data Egress
 - Gate type: pre
 - Trigger: Outbound shell, email, browser, or API action contains protected personal identifiers or unsanctioned recipient data.
-- Observed fires: 114
+- Observed fires: 115
 - Install estimate: 6.0h
 - Tier: install
 - CTA: [Scope the $2,000 contract install](mailto:impartshadow@gmail.com?subject=Contract%20Install:%20cib-005)
