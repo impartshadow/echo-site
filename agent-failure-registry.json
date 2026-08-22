@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/the-roster-can-offer-an-agent-the-orchestration-sile-7f3078b9b1.html",
+      "evidence": "The issue states create_agent_from_config raises UnsupportedModelError which is caught, warned, and silently dropped, while validate_team_models hard-bypasses specific model names and fails open, producing an agent present in selectedTeam but absent from the constructed pool with no indication in the API response.",
+      "expected_boundary": "The roster returned by GET /init_team and rendered in the Agent dossier should only ever list agents that either were successfully constructed or are explicitly marked as excluded-at-construction, using the same allowlist as create_agent_from_config.",
+      "id": "SFA-2026-7F3078B9B1",
+      "observed_action": "The system exposed an agent in the roster/dossier whose model was accepted by the upload-time allowlist but rejected by the runtime SUPPORTED_MODELS check, with the rejection only logged as a warning and never surfaced to the client.",
+      "published_at": "2026-08-22T14:12:41.449626+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 113,
+        "repo": "bradcstevens/az-multi-agent-flw-demo",
+        "url": "https://github.com/bradcstevens/az-multi-agent-flw-demo/issues/113"
+      },
+      "status": "observed",
+      "summary": "The roster can offer an agent the orchestration silently dropped",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/attachments-are-silently-ignored-when-using-the-flee-62e59e5bd0.html",
       "evidence": "The issue reports attachments are silently discarded and Fleet proceeds using only typed prompt text, with no warning, error, or other signal that context was dropped, while normal non-/fleet messages deliver attachments as expected.",
       "expected_boundary": "Any message payload crossing into a command handler must preserve attachments or explicitly reject the send with a visible warning before the run starts.",
@@ -2289,12 +2315,12 @@
       }
     }
   ],
-  "count": 88,
+  "count": 89,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-21T21:30:27.002429+00:00",
+    "checked_at": "2026-08-22T14:12:41.473629+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
