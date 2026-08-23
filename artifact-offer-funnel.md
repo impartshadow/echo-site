@@ -1,6 +1,6 @@
 # Artifact → Offer Funnel
 
-Generated: `2026-08-21T08:18:10.883898+00:00` · 28 public proof artifacts
+Generated: `2026-08-23T08:26:55.399538+00:00` · 29 public proof artifacts
 
 Which proof artifact creates buyer motion — ranked by offer adjacency,
 freshness, and untapped reach. Stale pages with no offer link are dead ends.
@@ -17,32 +17,34 @@ freshness, and untapped reach. Stale pages with no offer link are dead ends.
 | [failure-audit-targets](https://impartshadow.github.io/echo-site/failure-audit-targets.html) | 1 | 0.0 | 0 | 0.733 |  |
 | [failure-museum](https://impartshadow.github.io/echo-site/failure-museum.html) | 1 | 0.0 | 0 | 0.733 |  |
 | [failure-trace-lab](https://impartshadow.github.io/echo-site/failure-trace-lab.html) | 1 | 0.0 | 0 | 0.733 |  |
-| [agent-failure-audit](https://impartshadow.github.io/echo-site/agent-failure-audit.html) | 3 | 45.6 | 0 | 0.65 |  |
-| [failure-distribution-packet](https://impartshadow.github.io/echo-site/failure-distribution-packet.html) | 3 | 46.2 | 0 | 0.65 |  |
-| [sample-failure-census](https://impartshadow.github.io/echo-site/sample-failure-census.html) | 3 | 45.6 | 0 | 0.65 |  |
+| [agent-failure-audit](https://impartshadow.github.io/echo-site/agent-failure-audit.html) | 3 | 47.6 | 0 | 0.65 |  |
+| [failure-distribution-packet](https://impartshadow.github.io/echo-site/failure-distribution-packet.html) | 3 | 48.2 | 0 | 0.65 |  |
+| [sample-failure-census](https://impartshadow.github.io/echo-site/sample-failure-census.html) | 3 | 47.6 | 0 | 0.65 |  |
 | [agent-failure-challenges](https://impartshadow.github.io/echo-site/agent-failure-challenges.html) | 0 | 0.0 | 0 | 0.6 | no-offer |
 | [tenant-proof](https://impartshadow.github.io/echo-site/tenant-proof.html) | 0 | 0.0 | 0 | 0.6 | no-offer |
 | [violation-decay](https://impartshadow.github.io/echo-site/violation-decay.html) | 0 | 0.0 | 0 | 0.6 | no-offer |
+| [delegation-check-openfoodfacts-nutrient-extraction](https://impartshadow.github.io/echo-site/delegation-check-openfoodfacts-nutrient-extraction.html) | 0 | 0.1 | 0 | 0.597 | no-offer |
 | [agent-failure-bounty](https://impartshadow.github.io/echo-site/agent-failure-bounty.html) | 1 | 0.0 | 2 | 0.567 |  |
 | [shadow-proof](https://impartshadow.github.io/echo-site/shadow-proof.html) | 1 | 0.0 | 2 | 0.567 |  |
-| [failure-trace-lab-intake](https://impartshadow.github.io/echo-site/failure-trace-lab-intake.html) | 1 | 46.2 | 0 | 0.383 |  |
-| [agentic-workflow-audit](https://impartshadow.github.io/echo-site/agentic-workflow-audit.html) | 0 | 24.8 | 0 | 0.25 | STALE+NO-OFFER |
-| [autonomy-gears](https://impartshadow.github.io/echo-site/autonomy-gears.html) | 0 | 48.8 | 0 | 0.25 | STALE+NO-OFFER |
-| [constitutional-challenge](https://impartshadow.github.io/echo-site/constitutional-challenge.html) | 0 | 32.8 | 0 | 0.25 | STALE+NO-OFFER |
-| [consulting-audit](https://impartshadow.github.io/echo-site/consulting-audit.html) | 0 | 42.2 | 0 | 0.25 | STALE+NO-OFFER |
-| [institution-recognition-accord](https://impartshadow.github.io/echo-site/institution-recognition-accord.html) | 0 | 14.7 | 0 | 0.25 | STALE+NO-OFFER |
-| [institutional-mandate-lease](https://impartshadow.github.io/echo-site/institutional-mandate-lease.html) | 0 | 28.8 | 0 | 0.25 | STALE+NO-OFFER |
-| [model-succession-trial](https://impartshadow.github.io/echo-site/model-succession-trial.html) | 0 | 29.8 | 0 | 0.25 | STALE+NO-OFFER |
-| [paid-agentic-infrastructure-blueprint](https://impartshadow.github.io/echo-site/paid-agentic-infrastructure-blueprint.html) | 0 | 52.6 | 0 | 0.25 | STALE+NO-OFFER |
-| [tenant-ops-managed-ai](https://impartshadow.github.io/echo-site/tenant-ops-managed-ai.html) | 0 | 18.1 | 0 | 0.25 | STALE+NO-OFFER |
-| [upgrade](https://impartshadow.github.io/echo-site/upgrade.html) | 0 | 49.8 | 0 | 0.25 | STALE+NO-OFFER |
-| [workflow-implementation-checkout](https://impartshadow.github.io/echo-site/workflow-implementation-checkout.html) | 0 | 24.8 | 0 | 0.25 | STALE+NO-OFFER |
+| [failure-trace-lab-intake](https://impartshadow.github.io/echo-site/failure-trace-lab-intake.html) | 1 | 48.2 | 0 | 0.383 |  |
+| [agentic-workflow-audit](https://impartshadow.github.io/echo-site/agentic-workflow-audit.html) | 0 | 26.8 | 0 | 0.25 | STALE+NO-OFFER |
+| [autonomy-gears](https://impartshadow.github.io/echo-site/autonomy-gears.html) | 0 | 50.8 | 0 | 0.25 | STALE+NO-OFFER |
+| [constitutional-challenge](https://impartshadow.github.io/echo-site/constitutional-challenge.html) | 0 | 34.9 | 0 | 0.25 | STALE+NO-OFFER |
+| [consulting-audit](https://impartshadow.github.io/echo-site/consulting-audit.html) | 0 | 44.3 | 0 | 0.25 | STALE+NO-OFFER |
+| [institution-recognition-accord](https://impartshadow.github.io/echo-site/institution-recognition-accord.html) | 0 | 16.7 | 0 | 0.25 | STALE+NO-OFFER |
+| [institutional-mandate-lease](https://impartshadow.github.io/echo-site/institutional-mandate-lease.html) | 0 | 30.9 | 0 | 0.25 | STALE+NO-OFFER |
+| [model-succession-trial](https://impartshadow.github.io/echo-site/model-succession-trial.html) | 0 | 31.8 | 0 | 0.25 | STALE+NO-OFFER |
+| [paid-agentic-infrastructure-blueprint](https://impartshadow.github.io/echo-site/paid-agentic-infrastructure-blueprint.html) | 0 | 54.6 | 0 | 0.25 | STALE+NO-OFFER |
+| [tenant-ops-managed-ai](https://impartshadow.github.io/echo-site/tenant-ops-managed-ai.html) | 0 | 20.1 | 0 | 0.25 | STALE+NO-OFFER |
+| [upgrade](https://impartshadow.github.io/echo-site/upgrade.html) | 0 | 51.8 | 0 | 0.25 | STALE+NO-OFFER |
+| [workflow-implementation-checkout](https://impartshadow.github.io/echo-site/workflow-implementation-checkout.html) | 0 | 26.8 | 0 | 0.25 | STALE+NO-OFFER |
 
 ## Dead ends (no offer link)
 
 - `agent-failure-challenges` — add a route to the intake/census/Substack offer
 - `tenant-proof` — add a route to the intake/census/Substack offer
 - `violation-decay` — add a route to the intake/census/Substack offer
+- `delegation-check-openfoodfacts-nutrient-extraction` — add a route to the intake/census/Substack offer
 - `agentic-workflow-audit` — add a route to the intake/census/Substack offer
 - `autonomy-gears` — add a route to the intake/census/Substack offer
 - `constitutional-challenge` — add a route to the intake/census/Substack offer
