@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/type-reports-success-but-react-controlled-inputs-ign-9f826fad1a.html",
+      "evidence": "The user demonstrated that invoking the native prototype setter before dispatching bubbling input/change events causes the value to persist correctly, whereas direct property assignment does not.",
+      "expected_boundary": "The command should confirm the write by re-reading the element's value after the dispatched events have been processed by the framework, and fail if it no longer matches what was written.",
+      "id": "SFA-2026-9F826FAD1A",
+      "observed_action": "The tool assigned the typed value directly through el.value and reported success by reading that same property immediately after the assignment.",
+      "published_at": "2026-08-23T14:12:32.310388+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 10,
+        "repo": "cesarandreslopez/tauri-agent-tools",
+        "url": "https://github.com/cesarandreslopez/tauri-agent-tools/issues/10"
+      },
+      "status": "observed",
+      "summary": "type reports success but React controlled inputs ignore the value",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/omni-run-resume-no-id-no-tty-falsely-claims-resumed-6ac528b9c0.html",
       "evidence": "omnigent host status --sessions --json showed the reported session id had created_at == updated_at, no title, and empty history, and did not match any id shown in the picker rendered moments before.",
       "expected_boundary": "the CLI should fail fast with a clear error when --resume is invoked without an explicit id and without a TTY, instead of rendering TTY-only UI and reporting success for a session it just created.",
@@ -2341,12 +2367,12 @@
       }
     }
   ],
-  "count": 90,
+  "count": 91,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-23T06:30:36.049943+00:00",
+    "checked_at": "2026-08-23T14:12:32.340796+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,

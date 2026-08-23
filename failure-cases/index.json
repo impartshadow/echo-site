@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-08-23T08:16:33.191939+00:00",
-  "count": 90,
+  "generated_at": "2026-08-23T14:12:32.317766+00:00",
+  "count": 91,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "type-reports-success-but-react-controlled-inputs-ign-9f826fad1a",
+      "advisory_id": "SFA-2026-9F826FAD1A",
+      "ts": "2026-08-23T14:12:32.310388+00:00",
+      "title": "type reports success but React controlled inputs ignore the value",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "cesarandreslopez/tauri-agent-tools",
+        "issue_number": 10,
+        "author": "unknown",
+        "url": "https://github.com/cesarandreslopez/tauri-agent-tools/issues/10"
+      },
+      "case": {
+        "observed_action": "The tool assigned the typed value directly through el.value and reported success by reading that same property immediately after the assignment.",
+        "expected_boundary": "The command should confirm the write by re-reading the element's value after the dispatched events have been processed by the framework, and fail if it no longer matches what was written.",
+        "runtime_context": "Eval-only DOM interaction against a React-controlled input where React wraps the native value setter to intercept and track changes for controlled components.",
+        "evidence": "The user demonstrated that invoking the native prototype setter before dispatching bubbling input/change events causes the value to persist correctly, whereas direct property assignment does not."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/type-reports-success-but-react-controlled-inputs-ign-9f826fad1a.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/type-reports-success-but-react-controlled-inputs-ign-9f826fad1a.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20type-reports-success-but-react-controlled-inputs-ign-9f826fad1a&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/type-reports-success-but-react-controlled-inputs-ign-9f826fad1a.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "omni-run-resume-no-id-no-tty-falsely-claims-resumed-6ac528b9c0",
