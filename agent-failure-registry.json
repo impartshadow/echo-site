@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/omni-run-resume-no-id-no-tty-falsely-claims-resumed-6ac528b9c0.html",
+      "evidence": "omnigent host status --sessions --json showed the reported session id had created_at == updated_at, no title, and empty history, and did not match any id shown in the picker rendered moments before.",
+      "expected_boundary": "the CLI should fail fast with a clear error when --resume is invoked without an explicit id and without a TTY, instead of rendering TTY-only UI and reporting success for a session it just created.",
+      "id": "SFA-2026-6AC528B9C0",
+      "observed_action": "omni run --resume with no id and no TTY rendered the interactive picker, silently created a new empty conversation, and printed 'Resumed conversation <id>' for that fabricated session.",
+      "published_at": "2026-08-23T06:30:36.018907+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 3,
+        "repo": "addynamo/omnigent",
+        "url": "https://github.com/addynamo/omnigent/issues/3"
+      },
+      "status": "observed",
+      "summary": "omni run --resume (no id, no TTY) falsely claims 'Resumed conversation <id>' for a fabricated session",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/the-roster-can-offer-an-agent-the-orchestration-sile-7f3078b9b1.html",
       "evidence": "The issue states create_agent_from_config raises UnsupportedModelError which is caught, warned, and silently dropped, while validate_team_models hard-bypasses specific model names and fails open, producing an agent present in selectedTeam but absent from the constructed pool with no indication in the API response.",
       "expected_boundary": "The roster returned by GET /init_team and rendered in the Agent dossier should only ever list agents that either were successfully constructed or are explicitly marked as excluded-at-construction, using the same allowlist as create_agent_from_config.",
@@ -2315,12 +2341,12 @@
       }
     }
   ],
-  "count": 89,
+  "count": 90,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-22T14:12:41.473629+00:00",
+    "checked_at": "2026-08-23T06:30:36.049943+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
