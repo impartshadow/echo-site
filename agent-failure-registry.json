@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-report-adb-operator-reports-success-before-async-ad416c2d91.html",
+      "evidence": "A delayed ADB mock (deferred promise on adb.shell) shows execute() resolving to success while the mock's promise is still pending, and a later rejection on that promise is not propagated through execute().",
+      "expected_boundary": "singleActionExecutor() should only resolve (or reject) once every underlying ADB promise it triggers has settled, so execute() accurately reflects device completion state.",
+      "id": "SFA-2026-AD416C2D91",
+      "observed_action": "AdbOperator.singleActionExecutor() invokes async handlers like handleSwipe, handleScroll, handleType, and keyevent without awaiting them, so execute() returns before the device action finishes.",
+      "published_at": "2026-08-23T21:30:33.076311+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 1952,
+        "repo": "bytedance/UI-TARS-desktop",
+        "url": "https://github.com/bytedance/UI-TARS-desktop/issues/1952"
+      },
+      "status": "observed",
+      "summary": "[Bug Report]: ADB operator reports success before asynchronous actions finish",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/type-reports-success-but-react-controlled-inputs-ign-9f826fad1a.html",
       "evidence": "The user demonstrated that invoking the native prototype setter before dispatching bubbling input/change events causes the value to persist correctly, whereas direct property assignment does not.",
       "expected_boundary": "The command should confirm the write by re-reading the element's value after the dispatched events have been processed by the framework, and fail if it no longer matches what was written.",
@@ -2367,12 +2393,12 @@
       }
     }
   ],
-  "count": 91,
+  "count": 92,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-23T14:12:32.340796+00:00",
+    "checked_at": "2026-08-23T21:30:33.106852+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
