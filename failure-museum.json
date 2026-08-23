@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-08-21T03:07:34-05:00",
+  "generated_at_ct": "2026-08-23T03:16:33-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 1082,
-  "distinct_contracts": 63,
+  "total_violations": 1091,
+  "distinct_contracts": 62,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -13,9 +13,9 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "block",
-      "count": 121,
-      "latest_seen_ct": "2026-08-20T21:13:04-05:00",
-      "example_violation": "[recurrence-escalation 14x/7d] Opened by agreeing with Will's factual framing with zero ground-truth reads this turn — this is concurrence from memory/deference, not verification.",
+      "count": 117,
+      "latest_seen_ct": "2026-08-21T21:00:26-05:00",
+      "example_violation": "[recurrence-escalation 15x/7d] Opened by agreeing with Will's factual framing with zero ground-truth reads this turn — this is concurrence from memory/deference, not verification.",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
       "buyer_failure": "An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.",
       "missing_receipt": "same-turn read from the relevant file, process table, API, inbox, queue, or log",
@@ -63,17 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-07-21": {
-      "state-assertion-grounding": 6,
-      "concurrence-grounding": 2,
-      "terminal-state-evidence-gate": 1,
-      "verification-vocabulary-gate": 3,
-      "recurring-failure-burn-in-guard": 1,
-      "stale-state-assertion-guard": 3,
-      "definitive-state-assertion-gate": 3,
-      "factual-claim-verification": 3,
-      "platform-action-precheck": 2
-    },
     "2026-07-22": {
       "factual-claim-verification": 9,
       "definitive-state-assertion-gate": 2,
@@ -388,6 +377,22 @@
       "dox-guard": 1,
       "vendor-availability-external-fetch-required": 1,
       "state-assertion-grounding": 1
+    },
+    "2026-08-21": {
+      "vendor-availability-external-fetch-required": 1,
+      "stale-state-assertion-guard": 2,
+      "factual-claim-verification": 2,
+      "terminal-state-evidence-gate": 2,
+      "verification-vocabulary-gate": 2,
+      "state-assertion-grounding": 2
+    },
+    "2026-08-22": {
+      "unbuilt-guarantee-guard": 2,
+      "verification-vocabulary-gate": 1,
+      "third-party-outbound-authorization-gate": 1,
+      "factual-claim-verification": 2,
+      "fleet-state-claim-grounding-gate": 11,
+      "stale-state-assertion-guard": 5
     }
   },
   "cta": {

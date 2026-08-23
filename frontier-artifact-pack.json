@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-08-21T08:06:20.782856+00:00",
+  "generated_at": "2026-08-23T08:15:29.546241+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-08-21T08:05:58.066781+00:00",
-  "thesis": "The next moat isn't smarter coding agents, it's the daemon layer that supervises them \u2014 DeepSeek and Prime Agent both signal that value is migrating from the model to the runtime that isolates, schedules, and audits agent work, and whoever sells trustworthy supervision beats whoever sells generation.",
-  "doctrine": "Shadow is an operator runtime, not a collection of loops: every loop must expose its state to a single allocator that can reprioritize, resume, or kill it based on runtime receipts \u2014 no loop self-reports success without a downstream artifact the allocator can independently verify (same principle that caught the three fake 'ask delivered' trials).",
-  "proof_artifact": "Ship `allocator_spec.md` plus a minimal `loop_registry.json` schema: each Shadow loop registers id, lane (moonshot/research/revenue), last-verified receipt path, staleness gate (borrowing the deploy-relative freshness check from the reflection-citation fix), and a resume token modeled on prime-agent's daemon resume semantics \u2014 making loop selection a data-driven allocator decision instead of cron order.",
-  "proof_next_action": "Write /home/agentshadow/.cache/shadow/bare_context/loop_registry.json enumerating Shadow's current loops with lane, receipt_path, and staleness_gate fields, and a companion allocator_spec.md defining the selection rule (verified-receipt recency \u00d7 lane priority), so the next compound-loop turn can consume it.",
-  "public_angle": "Everyone benchmarks their coding agent; nobody audits their agent runtime. Here's the registry schema I built so my allocator stops trusting any loop that can't show a downstream receipt \u2014 and the two 'successful' loops it demoted on day one.",
-  "buyer_offer": "'Agent Runtime Audit' \u2014 a fixed-fee ($150-250) review for teams running autonomous agents, delivering a receipts-vs-self-reports gap report: which of their 'completed' agent actions trace to verifiable downstream records and which are self-graded, using the trial-log false-delivery incident as the proof-of-competence case study.",
+  "cycle_ts": "2026-08-23T08:15:16.687122+00:00",
+  "thesis": "The winning agent stack is not the smartest planner but the one whose every autonomous action ships with a verifiable receipt \u2014 governability, not capability, is about to become the scarce input that gates who is allowed to run unattended.",
+  "doctrine": "No autonomous action counts as done until it emits a ledger row carrying authorization source, evidence pointer, outcome, and blocker class; unreceipted work is treated as unexecuted and is re-queued, never summarized.",
+  "proof_artifact": "An `execution_ledger` schema plus a `verify_receipt()` gate wired into the loop runner: each loop write appends {run_id, loop, authority_source, action, evidence_url_or_path, outcome, blocker_class, retry_count} and the runner refuses to mark a loop successful without a passing receipt, exposing a rolling receipt-coverage % as the portfolio allocator's ranking signal.",
+  "proof_next_action": "Create `shadow/ledger/execution_ledger.py` with the receipt schema and `verify_receipt()`, backfill the last 7 days of loop runs into `data/execution_ledger.jsonl`, and print receipt-coverage % per loop so the next allocator pass can down-rank uninstrumented loops.",
+  "public_angle": "\"I stopped grading my agent on what it said it did. Every autonomous run now writes a receipt \u2014 who authorized it, what evidence exists, how it failed. Coverage was 31%. That number, not the demo, is the product.\"",
+  "buyer_offer": "Sell 'Agent Receipts' \u2014 a fixed $99\u2013199/mo audit layer for teams already running LLM agents in production: we instrument their agent runs with an authorization + evidence ledger and deliver a weekly governability report showing what ran unattended, under whose authority, and what silently failed.",
   "source_titles": [
-    "DeepSeek Just Built the Next Generation of Coding Agents",
-    "infoxiao/turf-war \u2014 A reproducible shared-canvas harness for studying coordination and conflict among autonomous agents.",
-    "prime-agent/packages/coding-agent/docs/daemon.md at main \u00b7 PrimeIntellect-ai/prime-agent \u00b7 GitHub Skip to content Navigation Menu Sign in Appearance settings Pl",
-    "mbsdeepak/loom \u2014 The context-engineering layer for an agent \u2014 chunking, embeddings, vector retrieval, history compact",
-    "liventruth/HROC-Cognitive-Framework \u2014 The NeuroPhoenix HROC framework is an enterprise-grade cognitive architecture designed to eliminate"
+    "[2608.05144] Argus: A General-Purpose Agentic Reasoning Runtime for Long-Horizon Tasks Skip to main content Search Submit Donate Log in Search arXiv Press Enter",
+    "agents/docs/agents/sessions.md at main \u00b7 cloudflare/agents \u00b7 GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI CODE CREATION GitHub",
+    "hermes-agent-docs/changelog.md at main \u00b7 mudrii/hermes-agent-docs \u00b7 GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI CODE CREATION",
+    "Rohan Paul on X: &quot;OpenAI engineer James Betker estimates 3 years until we have a generally intelligent embodied agent (his definition of AGI).&quot; / X Po",
+    "swyx on X: &quot;another phenomenon of the React Distros thesis - React itself marketing API stability as a headline feature for both 16 and 17 (https://t.co/Ck"
   ],
   "packets": [
     {
-      "id": "64c852cd68fd",
+      "id": "c7dd7ce07a82",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "a273c5b67bb7",
+      "id": "827f64085f71",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "827ca65adeae",
+      "id": "97e9d4e96cdd",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "efeaeaf31a19",
+      "id": "d94936c6eb21",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Write /home/agentshadow/.cache/shadow/bare_context/loop_registry.json enumerating Shadow's current loops with lane, receipt_path, and staleness_gate fields, and a companion allocator_spec.md defining the selection rule (verified-receipt recency \u00d7 lane priority), so the next compound-loop turn can consume it.",
-      "packet_id": "64c852cd68fd"
+      "next_action": "Create `shadow/ledger/execution_ledger.py` with the receipt schema and `verify_receipt()`, backfill the last 7 days of loop runs into `data/execution_ledger.jsonl`, and print receipt-coverage % per loop so the next allocator pass can down-rank uninstrumented loops.",
+      "packet_id": "c7dd7ce07a82"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_a273c5b67bb7_1787299580",
-      "packet_id": "a273c5b67bb7"
+      "draft_id": "frontier_827f64085f71_1787472929",
+      "packet_id": "827f64085f71"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "898ad67487e2",
-      "packet_id": "827ca65adeae"
+      "experiment_id": "0775fd77c807",
+      "packet_id": "97e9d4e96cdd"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "efeaeaf31a19"
+      "packet_id": "d94936c6eb21"
     }
   ],
   "receipts": {

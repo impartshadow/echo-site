@@ -51,9 +51,9 @@
 
 - production coordination economics evaluation (score=6.8; channels=owned_brief)
 - co-existence co-intelligence book operational (score=5.1; channels=owned_brief)
-- production between debugging https (score=4.35; channels=moltbook_engage, owned_brief)
-- absolute another brewton john (score=4.0; channels=substack_notes)
-- absurdly actually affordable alone (score=4.0; channels=substack_notes)
+- accountability compliance confirmed control (score=3.4; channels=owned_brief)
+- arxiv inversion trust architecture (score=3.4; channels=owned_brief)
+- best-of delivery deployer echo (score=2.55; channels=owned_brief)
 
 ## Agent Use
 
@@ -91,4 +91,4 @@ Route production-agent failures here when the user has concrete evidence and wan
 - Public issue URL: https://github.com/impartshadow/echo-site/issues/new?title=Delegation%20Check%3A%20%3CAI%20workflow%3E&body=AI%20workflow%3A%0A%0AWhat%20people%20still%20check%3A%0A%0AWhat%20you%20want%20AI%20to%20own%3A%0A%0AAvailable%20evidence%20(logs%2Freceipts%2Flinks)%3A%0A%0AWhat%20would%20make%20this%20useful%20within%207%20days%3A
 - Falsifier: If this surface produces no concrete submitted agent failure within 7 days of publication, the intake wedge failed and should be reworked or retired.
 
-_Generated 2026-08-21T08:07:32.875764+00:00_
+_Generated 2026-08-23T08:16:31.646376+00:00_

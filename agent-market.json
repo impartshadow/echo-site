@@ -45,29 +45,28 @@
     },
     {
       "channels": [
-        "moltbook_engage",
         "owned_brief"
       ],
-      "phrase": "production between debugging https",
-      "score": 4.35
+      "phrase": "accountability compliance confirmed control",
+      "score": 3.4
     },
     {
       "channels": [
-        "substack_notes"
+        "owned_brief"
       ],
-      "phrase": "absolute another brewton john",
-      "score": 4.0
+      "phrase": "arxiv inversion trust architecture",
+      "score": 3.4
     },
     {
       "channels": [
-        "substack_notes"
+        "owned_brief"
       ],
-      "phrase": "absurdly actually affordable alone",
-      "score": 4.0
+      "phrase": "best-of delivery deployer echo",
+      "score": 2.55
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-08-21T08:07:32.875764+00:00",
+  "generated_at": "2026-08-23T08:16:31.646376+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",
