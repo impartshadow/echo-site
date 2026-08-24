@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/pi-canonical-child-silently-ignores-requested-thinki-991e104ee8.html",
+      "evidence": "The child session's routing log recorded {\"type\":\"model_change\",\"modelId\":\"gpt-5.6-sol\"} followed by {\"type\":\"thinking_level_change\",\"thinkingLevel\":\"medium\"}, contradicting both the workflowScript request and the task brief's resolved route.",
+      "expected_boundary": "Dispatch should assert that the child's first emitted model_change and thinking_level_change events match the requested route before permitting any task work, failing closed on mismatch.",
+      "id": "SFA-2026-991E104EE8",
+      "observed_action": "Pi dispatched a canonical Engineer child requesting model gpt-5.6-sol with thinking xhigh, but the child silently started and ran at the default thinking level medium.",
+      "published_at": "2026-08-24T14:12:45.656220+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 391,
+        "repo": "pzzld-org/shepherd",
+        "url": "https://github.com/pzzld-org/shepherd/issues/391"
+      },
+      "status": "observed",
+      "summary": "Pi canonical child silently ignores requested thinking level",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/memory-import-s-project-reports-success-but-silently-a22e1adbbb.html",
       "evidence": "memory stats reports 0 project memories and 14 global memories while ~/.jcode/memory/projects/ demonstrably contains 26 files, and memory list --scope project also reports 'No memories found' for the same directory, indicating the CLI's project-scope resolver points somewhere other than the store the in-session tool writes to.",
       "expected_boundary": "the import command must verify the record count in the target store file increased before printing a success message, and must resolve the same project key/path that the in-session memory tool and memory stats/list commands use for the same working directory.",
@@ -2419,12 +2445,12 @@
       }
     }
   ],
-  "count": 93,
+  "count": 94,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-24T06:30:40.206369+00:00",
+    "checked_at": "2026-08-24T14:12:45.686888+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
