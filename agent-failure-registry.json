@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/memory-import-s-project-reports-success-but-silently-a22e1adbbb.html",
+      "evidence": "memory stats reports 0 project memories and 14 global memories while ~/.jcode/memory/projects/ demonstrably contains 26 files, and memory list --scope project also reports 'No memories found' for the same directory, indicating the CLI's project-scope resolver points somewhere other than the store the in-session tool writes to.",
+      "expected_boundary": "the import command must verify the record count in the target store file increased before printing a success message, and must resolve the same project key/path that the in-session memory tool and memory stats/list commands use for the same working directory.",
+      "id": "SFA-2026-A22E1ADBBB",
+      "observed_action": "jcode memory import -s project reported 'Imported 1 memories (0 skipped)' and exited 0 while writing no file under ~/.jcode/memory, verified by mtime/size snapshot before and after the command.",
+      "published_at": "2026-08-24T06:30:40.177175+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 1045,
+        "repo": "1jehuang/jcode",
+        "url": "https://github.com/1jehuang/jcode/issues/1045"
+      },
+      "status": "observed",
+      "summary": "memory import -s project reports success but silently writes nothing",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-report-adb-operator-reports-success-before-async-ad416c2d91.html",
       "evidence": "A delayed ADB mock (deferred promise on adb.shell) shows execute() resolving to success while the mock's promise is still pending, and a later rejection on that promise is not propagated through execute().",
       "expected_boundary": "singleActionExecutor() should only resolve (or reject) once every underlying ADB promise it triggers has settled, so execute() accurately reflects device completion state.",
@@ -2393,12 +2419,12 @@
       }
     }
   ],
-  "count": 92,
+  "count": 93,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-23T21:30:33.106852+00:00",
+    "checked_at": "2026-08-24T06:30:40.206369+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
