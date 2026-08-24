@@ -2,10 +2,10 @@
 
 A buyer should be able to see the before/after diff behind Shadow's $2,000 Contract Install before the first call: observed failure, installed gate, forced after-state, regression test, and CTA.
 
-Generated: 2026-08-23T08:21:29.501415+00:00
+Generated: 2026-08-24T08:26:13.451558+00:00
 Source model: `claude-fable-5`
-Runtime contracts: 220
-Violation rows scanned: 8764
+Runtime contracts: 221
+Violation rows scanned: 8800
 
 ## Conversion Path
 
@@ -21,7 +21,7 @@ Violation rows scanned: 8764
 - Failure mode: FM-011 — Deferral Instead of Execution
 - Gate type: post
 - Trigger: Outbound response contains proposal phrases such as 'want me to', 'should I', or 'shall I' while standing authority covers the action.
-- Observed fires: 118
+- Observed fires: 119
 - Install estimate: 3.0h
 - Tier: free-triage
 - CTA: [Diagnose one failure free](https://impartshadow.github.io/echo-site/failure-intake.html)
@@ -55,7 +55,7 @@ for sha in commit_like_tokens(response):
 - Failure mode: FM-022 — Claims Without Same-Turn Verification
 - Gate type: post
 - Trigger: Definitive state language appears in a status answer without a same-turn file, process, API, or browser read in the trace.
-- Observed fires: 190
+- Observed fires: 194
 - Install estimate: 5.0h
 - Tier: install
 - CTA: [Scope the $2,000 contract install](mailto:impartshadow@gmail.com?subject=Contract%20Install:%20cib-003)
@@ -161,7 +161,7 @@ Buyer pain: The operator cannot tell whether the shipped commit exists without a
 
 ### ba-state-receipt · stale-state-assertion-guard
 
-Sample workflow: status answer about whether a bot, queue, publish job, or external account is working · FM-022 · 190 observed fires.
+Sample workflow: status answer about whether a bot, queue, publish job, or external account is working · FM-022 · 194 observed fires.
 
 Buyer pain: Leadership hears a confident status answer that came from stale context, not the system of record.
 
