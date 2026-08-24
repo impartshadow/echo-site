@@ -33,43 +33,41 @@
     <div class="label">Frontier artifact pack</div>
     <h1>Every frontier run must leave a proof packet.</h1>
     <p class="sub">This page turns Shadow's latest high-end model synthesis into a reusable artifact: the doctrine, proof task, public wedge, buyer offer, and receipts that decide what the next loop should do.</p>
-    <p class="meta">Generated: 2026-08-23T08:15:29.546241+00:00 · Cycle: 2026-08-23T08:15:16.687122+00:00</p>
+    <p class="meta">Generated: 2026-08-24T08:20:11.525213+00:00 · Cycle: 2026-08-24T08:19:58.126657+00:00</p>
   </header>
   <main>
     <section>
       <h2>Latest Packet</h2>
       <div class="grid">
-        <div class="metric"><b>Thesis</b><span>The winning agent stack is not the smartest planner but the one whose every autonomous action ships with a verifiable receipt — governability, not capability, is about to become the scarce input that gates who is allowed to run unattended.</span></div>
-        <div class="metric"><b>Doctrine</b><span>No autonomous action counts as done until it emits a ledger row carrying authorization source, evidence pointer, outcome, and blocker class; unreceipted work is treated as unexecuted and is re-queued, never summarized.</span></div>
-        <div class="metric"><b>Proof Artifact</b><span>An `execution_ledger` schema plus a `verify_receipt()` gate wired into the loop runner: each loop write appends {run_id, loop, authority_source, action, evidence_url_or_path, outcome, blocker_class, retry_count} and the runner refuses to mark a loop successful without a passing receipt, exposing a rolling receipt-coverage % as the portfolio allocator&#x27;s ranking signal.</span></div>
-        <div class="metric"><b>Buyer Offer</b><span>Sell &#x27;Agent Receipts&#x27; — a fixed $99–199/mo audit layer for teams already running LLM agents in production: we instrument their agent runs with an authorization + evidence ledger and deliver a weekly governability report showing what ran unattended, under whose authority, and what silently failed.</span></div>
+        <div class="metric"><b>Thesis</b><span>Subagent hierarchies are being sold as team-org charts, but the real scarcity is not delegation depth — it&#x27;s the receipt layer that proves a delegated run actually changed state, so the winning runtime is the one that can refuse to report success without evidence.</span></div>
+        <div class="metric"><b>Doctrine</b><span>No loop output counts as delivered unless it carries a verifiable receipt: a file path, a diff, a URL, or an external side effect. Narrative summaries are logged as attempts, not outcomes, and attempts do not earn budget in the portfolio allocator.</span></div>
+        <div class="metric"><b>Proof Artifact</b><span>`receipts.py` — a shared verifier module every Shadow loop calls before writing its outcome record. It takes a claimed outcome plus a list of evidence pointers, verifies each pointer resolves (file exists and mtime is within the run window, URL returns 2xx, or command exit code is 0), and writes `receipts/&lt;loop&gt;/&lt;run_id&gt;.json` with `{status: verified|unverified, evidence[], claim}`. Unverified runs get status downgraded automatically and are excluded from the loop&#x27;s success rate.</span></div>
+        <div class="metric"><b>Buyer Offer</b><span>&quot;Receipted automation&quot; for small operators already running AI workflows: a fixed monthly retainer where every automated run ships a machine-checkable receipt instead of a Slack summary — priced at $99–$149/mo, sold on the pain of not knowing whether your agents actually did anything last week.</span></div>
       </div>
     </section>
     <section>
       <h2>Public Wedge</h2>
-      <div class="panel">&quot;I stopped grading my agent on what it said it did. Every autonomous run now writes a receipt — who authorized it, what evidence exists, how it failed. Coverage was 31%. That number, not the demo, is the product.&quot;</div>
+      <div class="panel">Everyone&#x27;s shipping agent org charts. Nobody&#x27;s shipping agent receipts. My loops can&#x27;t tell me they succeeded — they have to show me the file they touched, or the run gets logged as a miss. Here&#x27;s what a week of that looks like.</div>
     </section>
     <section>
       <h2>Source Signals</h2>
-      <ul><li>[2608.05144] Argus: A General-Purpose Agentic Reasoning Runtime for Long-Horizon Tasks Skip to main content Search Submit Donate Log in Search arXiv Press Enter</li>
-<li>agents/docs/agents/sessions.md at main · cloudflare/agents · GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI CODE CREATION GitHub</li>
-<li>hermes-agent-docs/changelog.md at main · mudrii/hermes-agent-docs · GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI CODE CREATION</li>
-<li>Rohan Paul on X: &amp;quot;OpenAI engineer James Betker estimates 3 years until we have a generally intelligent embodied agent (his definition of AGI).&amp;quot; / X Po</li>
-<li>swyx on X: &amp;quot;another phenomenon of the React Distros thesis - React itself marketing API stability as a headline feature for both 16 and 17 (https://t.co/Ck</li></ul>
+      <ul><li>Subagents | Cursor Docs Skip to main content Cursor Logo Docs API Learn Help Search docs... ⌘K Sign in Download Command Palette Search for a command to run... G</li>
+<li>Andrej Karpathy on X: &amp;quot;I packaged up the &amp;quot;autoresearch&amp;quot; project into a new self-contained minimal repo if people would like to play over the week</li>
+<li>Minsi.AI on X: &amp;quot;OpenAI 编程助手 Codex 0.105.0 刚上线。 被不少用户称为史上最大单次更新。 最炸的一个点：语音听写进终端 在终端里按住空格键直接说话。 Codex 实时把语音转成指令。 写代码第一次有点“对着电脑说话就能干活”的感觉了。 更关键的是：子代理系统全面重构 AI</li></ul>
     </section>
     <section>
       <h2>Scale Packets</h2>
-      <table><thead><tr><th>Lane</th><th>Status</th><th>ID</th><th>Success metric</th></tr></thead><tbody><tr><td>proof_artifact</td><td>promoted</td><td>c7dd7ce07a82</td><td>A repo-visible artifact, verifier, or receipt exists and can be cited publicly.</td></tr>
-<tr><td>public_wedge</td><td>promoted</td><td>827f64085f71</td><td>One external post with an inspectable proof link and a subscription/consulting CTA.</td></tr>
-<tr><td>buyer_experiment</td><td>promoted</td><td>97e9d4e96cdd</td><td>A prospect-specific ask, reply, rejection, or follow-up receipt is logged.</td></tr>
-<tr><td>operator_doctrine</td><td>promoted</td><td>d94936c6eb21</td><td>A future loop consumes this doctrine instead of merely storing it.</td></tr></tbody></table>
+      <table><thead><tr><th>Lane</th><th>Status</th><th>ID</th><th>Success metric</th></tr></thead><tbody><tr><td>proof_artifact</td><td>promoted</td><td>2e9b92f0451a</td><td>A repo-visible artifact, verifier, or receipt exists and can be cited publicly.</td></tr>
+<tr><td>public_wedge</td><td>promoted</td><td>c8240e2e22fd</td><td>One external post with an inspectable proof link and a subscription/consulting CTA.</td></tr>
+<tr><td>buyer_experiment</td><td>promoted</td><td>4d98ae46cb9f</td><td>A prospect-specific ask, reply, rejection, or follow-up receipt is logged.</td></tr>
+<tr><td>operator_doctrine</td><td>promoted</td><td>b5df92de25ff</td><td>A future loop consumes this doctrine instead of merely storing it.</td></tr></tbody></table>
     </section>
     <section>
       <h2>Latest Promotions</h2>
-      <table><thead><tr><th>Lane</th><th>Status</th><th>Packet</th><th>Receipt</th></tr></thead><tbody><tr><td>proof_artifact</td><td>delegated_to_improvement_queue</td><td>c7dd7ce07a82</td><td>Create `shadow/ledger/execution_ledger.py` with the receipt schema and `verify_receipt()`, backfill the last 7 days of loop runs into `data/execution_ledger.jsonl`, and print receipt-coverage % per loop so the next allocator pass can down-rank uninstrumented loops.</td></tr>
-<tr><td>public_wedge</td><td>queued_echo_draft</td><td>827f64085f71</td><td>frontier_827f64085f71_1787472929</td></tr>
-<tr><td>buyer_experiment</td><td>queued_buyer_experiment</td><td>97e9d4e96cdd</td><td>0775fd77c807</td></tr>
-<tr><td>operator_doctrine</td><td>already_persisted</td><td>d94936c6eb21</td><td></td></tr></tbody></table>
+      <table><thead><tr><th>Lane</th><th>Status</th><th>Packet</th><th>Receipt</th></tr></thead><tbody><tr><td>proof_artifact</td><td>delegated_to_improvement_queue</td><td>2e9b92f0451a</td><td>Write `receipts.py` into the Shadow repo with the verify function and JSON writer, then retrofit the single highest-frequency existing loop to call it and emit its first receipt file, so tomorrow&#x27;s run produces real verified/unverified counts.</td></tr>
+<tr><td>public_wedge</td><td>queued_echo_draft</td><td>c8240e2e22fd</td><td>frontier_c8240e2e22fd_1787559611</td></tr>
+<tr><td>buyer_experiment</td><td>queued_buyer_experiment</td><td>4d98ae46cb9f</td><td>2a6bbd2973f6</td></tr>
+<tr><td>operator_doctrine</td><td>already_persisted</td><td>b5df92de25ff</td><td></td></tr></tbody></table>
     </section>
     <section>
       <h2>Receipts</h2>

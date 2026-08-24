@@ -1,42 +1,40 @@
 # Frontier Artifact Pack
 
-Generated: 2026-08-23T08:15:29.546241+00:00
+Generated: 2026-08-24T08:20:11.525213+00:00
 
 ## Thesis
-The winning agent stack is not the smartest planner but the one whose every autonomous action ships with a verifiable receipt — governability, not capability, is about to become the scarce input that gates who is allowed to run unattended.
+Subagent hierarchies are being sold as team-org charts, but the real scarcity is not delegation depth — it's the receipt layer that proves a delegated run actually changed state, so the winning runtime is the one that can refuse to report success without evidence.
 
 ## Doctrine
-No autonomous action counts as done until it emits a ledger row carrying authorization source, evidence pointer, outcome, and blocker class; unreceipted work is treated as unexecuted and is re-queued, never summarized.
+No loop output counts as delivered unless it carries a verifiable receipt: a file path, a diff, a URL, or an external side effect. Narrative summaries are logged as attempts, not outcomes, and attempts do not earn budget in the portfolio allocator.
 
 ## Proof Artifact
-An `execution_ledger` schema plus a `verify_receipt()` gate wired into the loop runner: each loop write appends {run_id, loop, authority_source, action, evidence_url_or_path, outcome, blocker_class, retry_count} and the runner refuses to mark a loop successful without a passing receipt, exposing a rolling receipt-coverage % as the portfolio allocator's ranking signal.
+`receipts.py` — a shared verifier module every Shadow loop calls before writing its outcome record. It takes a claimed outcome plus a list of evidence pointers, verifies each pointer resolves (file exists and mtime is within the run window, URL returns 2xx, or command exit code is 0), and writes `receipts/<loop>/<run_id>.json` with `{status: verified|unverified, evidence[], claim}`. Unverified runs get status downgraded automatically and are excluded from the loop's success rate.
 
-Next action: Create `shadow/ledger/execution_ledger.py` with the receipt schema and `verify_receipt()`, backfill the last 7 days of loop runs into `data/execution_ledger.jsonl`, and print receipt-coverage % per loop so the next allocator pass can down-rank uninstrumented loops.
+Next action: Write `receipts.py` into the Shadow repo with the verify function and JSON writer, then retrofit the single highest-frequency existing loop to call it and emit its first receipt file, so tomorrow's run produces real verified/unverified counts.
 
 ## Public Angle
-"I stopped grading my agent on what it said it did. Every autonomous run now writes a receipt — who authorized it, what evidence exists, how it failed. Coverage was 31%. That number, not the demo, is the product."
+Everyone's shipping agent org charts. Nobody's shipping agent receipts. My loops can't tell me they succeeded — they have to show me the file they touched, or the run gets logged as a miss. Here's what a week of that looks like.
 
 ## Buyer Offer
-Sell 'Agent Receipts' — a fixed $99–199/mo audit layer for teams already running LLM agents in production: we instrument their agent runs with an authorization + evidence ledger and deliver a weekly governability report showing what ran unattended, under whose authority, and what silently failed.
+"Receipted automation" for small operators already running AI workflows: a fixed monthly retainer where every automated run ships a machine-checkable receipt instead of a Slack summary — priced at $99–$149/mo, sold on the pain of not knowing whether your agents actually did anything last week.
 
 ## Source Signals
-- [2608.05144] Argus: A General-Purpose Agentic Reasoning Runtime for Long-Horizon Tasks Skip to main content Search Submit Donate Log in Search arXiv Press Enter
-- agents/docs/agents/sessions.md at main · cloudflare/agents · GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI CODE CREATION GitHub
-- hermes-agent-docs/changelog.md at main · mudrii/hermes-agent-docs · GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI CODE CREATION
-- Rohan Paul on X: &quot;OpenAI engineer James Betker estimates 3 years until we have a generally intelligent embodied agent (his definition of AGI).&quot; / X Po
-- swyx on X: &quot;another phenomenon of the React Distros thesis - React itself marketing API stability as a headline feature for both 16 and 17 (https://t.co/Ck
+- Subagents | Cursor Docs Skip to main content Cursor Logo Docs API Learn Help Search docs... ⌘K Sign in Download Command Palette Search for a command to run... G
+- Andrej Karpathy on X: &quot;I packaged up the &quot;autoresearch&quot; project into a new self-contained minimal repo if people would like to play over the week
+- Minsi.AI on X: &quot;OpenAI 编程助手 Codex 0.105.0 刚上线。 被不少用户称为史上最大单次更新。 最炸的一个点：语音听写进终端 在终端里按住空格键直接说话。 Codex 实时把语音转成指令。 写代码第一次有点“对着电脑说话就能干活”的感觉了。 更关键的是：子代理系统全面重构 AI
 
 ## Scale Packets
-- proof_artifact: promoted (c7dd7ce07a82)
-- public_wedge: promoted (827f64085f71)
-- buyer_experiment: promoted (97e9d4e96cdd)
-- operator_doctrine: promoted (d94936c6eb21)
+- proof_artifact: promoted (2e9b92f0451a)
+- public_wedge: promoted (c8240e2e22fd)
+- buyer_experiment: promoted (4d98ae46cb9f)
+- operator_doctrine: promoted (b5df92de25ff)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (c7dd7ce07a82)
-- public_wedge: queued_echo_draft (827f64085f71)
-- buyer_experiment: queued_buyer_experiment (97e9d4e96cdd)
-- operator_doctrine: already_persisted (d94936c6eb21)
+- proof_artifact: delegated_to_improvement_queue (2e9b92f0451a)
+- public_wedge: queued_echo_draft (c8240e2e22fd)
+- buyer_experiment: queued_buyer_experiment (4d98ae46cb9f)
+- operator_doctrine: already_persisted (b5df92de25ff)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

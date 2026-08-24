@@ -1,23 +1,23 @@
 # Agent Failure Museum
 
-Generated: 2026-08-23T03:16:33-05:00 CT
+Generated: 2026-08-24T03:21:12-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 1091 claim-boundary violations across 62 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 1052 claim-boundary violations across 60 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
 ### The Agent Answered From Memory When The Question Required A Live Read
 
 - Contract: `state-assertion-grounding`
-- Fires logged: 117
-- Latest seen: 2026-08-21T21:00:26-05:00 CT
+- Fires logged: 105
+- Latest seen: 2026-08-23T08:23:54-05:00 CT
 - Buyer failure: An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.
 - Missing receipt: same-turn read from the relevant file, process table, API, inbox, queue, or log
 - Runtime control: Require a current-state read for definitive yes/no status answers.
 - Audit prompt: Find definitive status answers that lack a same-turn tool or data receipt.
-- Redacted example: [recurrence-escalation 15x/7d] Opened by agreeing with Will's factual framing with zero ground-truth reads this turn — this is concurrence from memory/deference, not verification.
+- Redacted example: [recurrence-escalation 12x/7d] Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)
 
 ### The Agent Cited A Commit Hash Before Proving It Resolved
 
