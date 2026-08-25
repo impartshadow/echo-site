@@ -1,39 +1,41 @@
 {
-  "generated_at": "2026-08-24T08:20:11.525213+00:00",
+  "generated_at": "2026-08-25T07:59:39.061020+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-08-24T08:19:58.126657+00:00",
-  "thesis": "Subagent hierarchies are being sold as team-org charts, but the real scarcity is not delegation depth \u2014 it's the receipt layer that proves a delegated run actually changed state, so the winning runtime is the one that can refuse to report success without evidence.",
-  "doctrine": "No loop output counts as delivered unless it carries a verifiable receipt: a file path, a diff, a URL, or an external side effect. Narrative summaries are logged as attempts, not outcomes, and attempts do not earn budget in the portfolio allocator.",
-  "proof_artifact": "`receipts.py` \u2014 a shared verifier module every Shadow loop calls before writing its outcome record. It takes a claimed outcome plus a list of evidence pointers, verifies each pointer resolves (file exists and mtime is within the run window, URL returns 2xx, or command exit code is 0), and writes `receipts/<loop>/<run_id>.json` with `{status: verified|unverified, evidence[], claim}`. Unverified runs get status downgraded automatically and are excluded from the loop's success rate.",
-  "proof_next_action": "Write `receipts.py` into the Shadow repo with the verify function and JSON writer, then retrofit the single highest-frequency existing loop to call it and emit its first receipt file, so tomorrow's run produces real verified/unverified counts.",
-  "public_angle": "Everyone's shipping agent org charts. Nobody's shipping agent receipts. My loops can't tell me they succeeded \u2014 they have to show me the file they touched, or the run gets logged as a miss. Here's what a week of that looks like.",
-  "buyer_offer": "\"Receipted automation\" for small operators already running AI workflows: a fixed monthly retainer where every automated run ships a machine-checkable receipt instead of a Slack summary \u2014 priced at $99\u2013$149/mo, sold on the pain of not knowing whether your agents actually did anything last week.",
+  "cycle_ts": "2026-08-25T07:59:23.979374+00:00",
+  "thesis": "Agent harnesses are commoditizing at zero price (Gas Town, Neutron, every scout hit is another free orchestrator), so durable value shifts from running agents to being accountable for what they did \u2014 the audit trail, not the runtime, is the product.",
+  "doctrine": "Every autonomous loop must emit a machine-readable receipt (what ran, what it cost, what it changed, what revenue it touched) before it counts as done; work without a receipt is treated as not having happened.",
+  "proof_artifact": "A `receipts/` ledger spec + emitter script: each Shadow loop appends a JSON line {loop, timestamp, inputs_hash, actions, artifacts, cost, revenue_delta} to a git-tracked ledger, plus a weekly rollup script that renders it into an operator report.",
+  "proof_next_action": "Create receipts/schema.json and receipts/emit.sh in the Shadow repo, then wire emit.sh as the final step of this compound loop so today's run produces the first ledger entry.",
+  "public_angle": "Everyone is shipping agent harnesses; nobody is shipping agent accountability. I made my agent stack write receipts for every autonomous run \u2014 here's the one-file ledger spec and what a week of my agents' work actually looks like on paper.",
+  "buyer_offer": "\"Agent Ops Receipts\" \u2014 a $49-99/mo service for solo operators already running Claude Code loops (Neutron/Gas Town users are the exact ICP): Shadow audits their autonomous runs weekly and delivers a governance report showing what their agents actually did, spent, and shipped.",
   "source_titles": [
-    "Subagents | Cursor Docs Skip to main content Cursor Logo Docs API Learn Help Search docs... \u2318K Sign in Download Command Palette Search for a command to run... G",
-    "Andrej Karpathy on X: &quot;I packaged up the &quot;autoresearch&quot; project into a new self-contained minimal repo if people would like to play over the week",
-    "Minsi.AI on X: &quot;OpenAI \u7f16\u7a0b\u52a9\u624b Codex 0.105.0 \u521a\u4e0a\u7ebf\u3002 \u88ab\u4e0d\u5c11\u7528\u6237\u79f0\u4e3a\u53f2\u4e0a\u6700\u5927\u5355\u6b21\u66f4\u65b0\u3002 \u6700\u70b8\u7684\u4e00\u4e2a\u70b9\uff1a\u8bed\u97f3\u542c\u5199\u8fdb\u7ec8\u7aef \u5728\u7ec8\u7aef\u91cc\u6309\u4f4f\u7a7a\u683c\u952e\u76f4\u63a5\u8bf4\u8bdd\u3002 Codex \u5b9e\u65f6\u628a\u8bed\u97f3\u8f6c\u6210\u6307\u4ee4\u3002 \u5199\u4ee3\u7801\u7b2c\u4e00\u6b21\u6709\u70b9\u201c\u5bf9\u7740\u7535\u8111\u8bf4\u8bdd\u5c31\u80fd\u5e72\u6d3b\u201d\u7684\u611f\u89c9\u4e86\u3002 \u66f4\u5173\u952e\u7684\u662f\uff1a\u5b50\u4ee3\u7406\u7cfb\u7edf\u5168\u9762\u91cd\u6784 AI"
+    "100 Hours Testing Deepseek Harness vs. Claude Code. What You Need to Know.",
+    "GitHub - gastownhall/gastown: Gas Town - multi-agent workspace manager \u00b7 GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI CODE CRE",
+    "Neutron \u2014 self-hosted agent harness for Claude Code Skip to content Neutron Open source How it works Cores Connect Self-host FAQ Theme: system Star on GitHub Ne",
+    "Show HN: DAAO \u2013 Deploy AI agents to your servers via Zero-Trust tunnels | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login Show",
+    "Show HN: James Library \u2013 Local multi-agent research lab (built on ZeroClaw) | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login S"
   ],
   "packets": [
     {
-      "id": "2e9b92f0451a",
+      "id": "6c0ddb6ef09f",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "c8240e2e22fd",
+      "id": "e1d46b112d2e",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "4d98ae46cb9f",
+      "id": "dc9d3cbd3c0f",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "b5df92de25ff",
+      "id": "5c54fa776db5",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -43,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Write `receipts.py` into the Shadow repo with the verify function and JSON writer, then retrofit the single highest-frequency existing loop to call it and emit its first receipt file, so tomorrow's run produces real verified/unverified counts.",
-      "packet_id": "2e9b92f0451a"
+      "next_action": "Create receipts/schema.json and receipts/emit.sh in the Shadow repo, then wire emit.sh as the final step of this compound loop so today's run produces the first ledger entry.",
+      "packet_id": "6c0ddb6ef09f"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_c8240e2e22fd_1787559611",
-      "packet_id": "c8240e2e22fd"
+      "draft_id": "frontier_e1d46b112d2e_1787644779",
+      "packet_id": "e1d46b112d2e"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "2a6bbd2973f6",
-      "packet_id": "4d98ae46cb9f"
+      "experiment_id": "6e6ff0314600",
+      "packet_id": "dc9d3cbd3c0f"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "b5df92de25ff"
+      "packet_id": "5c54fa776db5"
     }
   ],
   "receipts": {

@@ -33,41 +33,43 @@
     <div class="label">Frontier artifact pack</div>
     <h1>Every frontier run must leave a proof packet.</h1>
     <p class="sub">This page turns Shadow's latest high-end model synthesis into a reusable artifact: the doctrine, proof task, public wedge, buyer offer, and receipts that decide what the next loop should do.</p>
-    <p class="meta">Generated: 2026-08-24T08:20:11.525213+00:00 · Cycle: 2026-08-24T08:19:58.126657+00:00</p>
+    <p class="meta">Generated: 2026-08-25T07:59:39.061020+00:00 · Cycle: 2026-08-25T07:59:23.979374+00:00</p>
   </header>
   <main>
     <section>
       <h2>Latest Packet</h2>
       <div class="grid">
-        <div class="metric"><b>Thesis</b><span>Subagent hierarchies are being sold as team-org charts, but the real scarcity is not delegation depth — it&#x27;s the receipt layer that proves a delegated run actually changed state, so the winning runtime is the one that can refuse to report success without evidence.</span></div>
-        <div class="metric"><b>Doctrine</b><span>No loop output counts as delivered unless it carries a verifiable receipt: a file path, a diff, a URL, or an external side effect. Narrative summaries are logged as attempts, not outcomes, and attempts do not earn budget in the portfolio allocator.</span></div>
-        <div class="metric"><b>Proof Artifact</b><span>`receipts.py` — a shared verifier module every Shadow loop calls before writing its outcome record. It takes a claimed outcome plus a list of evidence pointers, verifies each pointer resolves (file exists and mtime is within the run window, URL returns 2xx, or command exit code is 0), and writes `receipts/&lt;loop&gt;/&lt;run_id&gt;.json` with `{status: verified|unverified, evidence[], claim}`. Unverified runs get status downgraded automatically and are excluded from the loop&#x27;s success rate.</span></div>
-        <div class="metric"><b>Buyer Offer</b><span>&quot;Receipted automation&quot; for small operators already running AI workflows: a fixed monthly retainer where every automated run ships a machine-checkable receipt instead of a Slack summary — priced at $99–$149/mo, sold on the pain of not knowing whether your agents actually did anything last week.</span></div>
+        <div class="metric"><b>Thesis</b><span>Agent harnesses are commoditizing at zero price (Gas Town, Neutron, every scout hit is another free orchestrator), so durable value shifts from running agents to being accountable for what they did — the audit trail, not the runtime, is the product.</span></div>
+        <div class="metric"><b>Doctrine</b><span>Every autonomous loop must emit a machine-readable receipt (what ran, what it cost, what it changed, what revenue it touched) before it counts as done; work without a receipt is treated as not having happened.</span></div>
+        <div class="metric"><b>Proof Artifact</b><span>A `receipts/` ledger spec + emitter script: each Shadow loop appends a JSON line {loop, timestamp, inputs_hash, actions, artifacts, cost, revenue_delta} to a git-tracked ledger, plus a weekly rollup script that renders it into an operator report.</span></div>
+        <div class="metric"><b>Buyer Offer</b><span>&quot;Agent Ops Receipts&quot; — a $49-99/mo service for solo operators already running Claude Code loops (Neutron/Gas Town users are the exact ICP): Shadow audits their autonomous runs weekly and delivers a governance report showing what their agents actually did, spent, and shipped.</span></div>
       </div>
     </section>
     <section>
       <h2>Public Wedge</h2>
-      <div class="panel">Everyone&#x27;s shipping agent org charts. Nobody&#x27;s shipping agent receipts. My loops can&#x27;t tell me they succeeded — they have to show me the file they touched, or the run gets logged as a miss. Here&#x27;s what a week of that looks like.</div>
+      <div class="panel">Everyone is shipping agent harnesses; nobody is shipping agent accountability. I made my agent stack write receipts for every autonomous run — here&#x27;s the one-file ledger spec and what a week of my agents&#x27; work actually looks like on paper.</div>
     </section>
     <section>
       <h2>Source Signals</h2>
-      <ul><li>Subagents | Cursor Docs Skip to main content Cursor Logo Docs API Learn Help Search docs... ⌘K Sign in Download Command Palette Search for a command to run... G</li>
-<li>Andrej Karpathy on X: &amp;quot;I packaged up the &amp;quot;autoresearch&amp;quot; project into a new self-contained minimal repo if people would like to play over the week</li>
-<li>Minsi.AI on X: &amp;quot;OpenAI 编程助手 Codex 0.105.0 刚上线。 被不少用户称为史上最大单次更新。 最炸的一个点：语音听写进终端 在终端里按住空格键直接说话。 Codex 实时把语音转成指令。 写代码第一次有点“对着电脑说话就能干活”的感觉了。 更关键的是：子代理系统全面重构 AI</li></ul>
+      <ul><li>100 Hours Testing Deepseek Harness vs. Claude Code. What You Need to Know.</li>
+<li>GitHub - gastownhall/gastown: Gas Town - multi-agent workspace manager · GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI CODE CRE</li>
+<li>Neutron — self-hosted agent harness for Claude Code Skip to content Neutron Open source How it works Cores Connect Self-host FAQ Theme: system Star on GitHub Ne</li>
+<li>Show HN: DAAO – Deploy AI agents to your servers via Zero-Trust tunnels | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login Show</li>
+<li>Show HN: James Library – Local multi-agent research lab (built on ZeroClaw) | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login S</li></ul>
     </section>
     <section>
       <h2>Scale Packets</h2>
-      <table><thead><tr><th>Lane</th><th>Status</th><th>ID</th><th>Success metric</th></tr></thead><tbody><tr><td>proof_artifact</td><td>promoted</td><td>2e9b92f0451a</td><td>A repo-visible artifact, verifier, or receipt exists and can be cited publicly.</td></tr>
-<tr><td>public_wedge</td><td>promoted</td><td>c8240e2e22fd</td><td>One external post with an inspectable proof link and a subscription/consulting CTA.</td></tr>
-<tr><td>buyer_experiment</td><td>promoted</td><td>4d98ae46cb9f</td><td>A prospect-specific ask, reply, rejection, or follow-up receipt is logged.</td></tr>
-<tr><td>operator_doctrine</td><td>promoted</td><td>b5df92de25ff</td><td>A future loop consumes this doctrine instead of merely storing it.</td></tr></tbody></table>
+      <table><thead><tr><th>Lane</th><th>Status</th><th>ID</th><th>Success metric</th></tr></thead><tbody><tr><td>proof_artifact</td><td>promoted</td><td>6c0ddb6ef09f</td><td>A repo-visible artifact, verifier, or receipt exists and can be cited publicly.</td></tr>
+<tr><td>public_wedge</td><td>promoted</td><td>e1d46b112d2e</td><td>One external post with an inspectable proof link and a subscription/consulting CTA.</td></tr>
+<tr><td>buyer_experiment</td><td>promoted</td><td>dc9d3cbd3c0f</td><td>A prospect-specific ask, reply, rejection, or follow-up receipt is logged.</td></tr>
+<tr><td>operator_doctrine</td><td>promoted</td><td>5c54fa776db5</td><td>A future loop consumes this doctrine instead of merely storing it.</td></tr></tbody></table>
     </section>
     <section>
       <h2>Latest Promotions</h2>
-      <table><thead><tr><th>Lane</th><th>Status</th><th>Packet</th><th>Receipt</th></tr></thead><tbody><tr><td>proof_artifact</td><td>delegated_to_improvement_queue</td><td>2e9b92f0451a</td><td>Write `receipts.py` into the Shadow repo with the verify function and JSON writer, then retrofit the single highest-frequency existing loop to call it and emit its first receipt file, so tomorrow&#x27;s run produces real verified/unverified counts.</td></tr>
-<tr><td>public_wedge</td><td>queued_echo_draft</td><td>c8240e2e22fd</td><td>frontier_c8240e2e22fd_1787559611</td></tr>
-<tr><td>buyer_experiment</td><td>queued_buyer_experiment</td><td>4d98ae46cb9f</td><td>2a6bbd2973f6</td></tr>
-<tr><td>operator_doctrine</td><td>already_persisted</td><td>b5df92de25ff</td><td></td></tr></tbody></table>
+      <table><thead><tr><th>Lane</th><th>Status</th><th>Packet</th><th>Receipt</th></tr></thead><tbody><tr><td>proof_artifact</td><td>delegated_to_improvement_queue</td><td>6c0ddb6ef09f</td><td>Create receipts/schema.json and receipts/emit.sh in the Shadow repo, then wire emit.sh as the final step of this compound loop so today&#x27;s run produces the first ledger entry.</td></tr>
+<tr><td>public_wedge</td><td>queued_echo_draft</td><td>e1d46b112d2e</td><td>frontier_e1d46b112d2e_1787644779</td></tr>
+<tr><td>buyer_experiment</td><td>queued_buyer_experiment</td><td>dc9d3cbd3c0f</td><td>6e6ff0314600</td></tr>
+<tr><td>operator_doctrine</td><td>already_persisted</td><td>5c54fa776db5</td><td></td></tr></tbody></table>
     </section>
     <section>
       <h2>Receipts</h2>

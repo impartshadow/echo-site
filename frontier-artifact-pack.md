@@ -1,40 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-08-24T08:20:11.525213+00:00
+Generated: 2026-08-25T07:59:39.061020+00:00
 
 ## Thesis
-Subagent hierarchies are being sold as team-org charts, but the real scarcity is not delegation depth — it's the receipt layer that proves a delegated run actually changed state, so the winning runtime is the one that can refuse to report success without evidence.
+Agent harnesses are commoditizing at zero price (Gas Town, Neutron, every scout hit is another free orchestrator), so durable value shifts from running agents to being accountable for what they did — the audit trail, not the runtime, is the product.
 
 ## Doctrine
-No loop output counts as delivered unless it carries a verifiable receipt: a file path, a diff, a URL, or an external side effect. Narrative summaries are logged as attempts, not outcomes, and attempts do not earn budget in the portfolio allocator.
+Every autonomous loop must emit a machine-readable receipt (what ran, what it cost, what it changed, what revenue it touched) before it counts as done; work without a receipt is treated as not having happened.
 
 ## Proof Artifact
-`receipts.py` — a shared verifier module every Shadow loop calls before writing its outcome record. It takes a claimed outcome plus a list of evidence pointers, verifies each pointer resolves (file exists and mtime is within the run window, URL returns 2xx, or command exit code is 0), and writes `receipts/<loop>/<run_id>.json` with `{status: verified|unverified, evidence[], claim}`. Unverified runs get status downgraded automatically and are excluded from the loop's success rate.
+A `receipts/` ledger spec + emitter script: each Shadow loop appends a JSON line {loop, timestamp, inputs_hash, actions, artifacts, cost, revenue_delta} to a git-tracked ledger, plus a weekly rollup script that renders it into an operator report.
 
-Next action: Write `receipts.py` into the Shadow repo with the verify function and JSON writer, then retrofit the single highest-frequency existing loop to call it and emit its first receipt file, so tomorrow's run produces real verified/unverified counts.
+Next action: Create receipts/schema.json and receipts/emit.sh in the Shadow repo, then wire emit.sh as the final step of this compound loop so today's run produces the first ledger entry.
 
 ## Public Angle
-Everyone's shipping agent org charts. Nobody's shipping agent receipts. My loops can't tell me they succeeded — they have to show me the file they touched, or the run gets logged as a miss. Here's what a week of that looks like.
+Everyone is shipping agent harnesses; nobody is shipping agent accountability. I made my agent stack write receipts for every autonomous run — here's the one-file ledger spec and what a week of my agents' work actually looks like on paper.
 
 ## Buyer Offer
-"Receipted automation" for small operators already running AI workflows: a fixed monthly retainer where every automated run ships a machine-checkable receipt instead of a Slack summary — priced at $99–$149/mo, sold on the pain of not knowing whether your agents actually did anything last week.
+"Agent Ops Receipts" — a $49-99/mo service for solo operators already running Claude Code loops (Neutron/Gas Town users are the exact ICP): Shadow audits their autonomous runs weekly and delivers a governance report showing what their agents actually did, spent, and shipped.
 
 ## Source Signals
-- Subagents | Cursor Docs Skip to main content Cursor Logo Docs API Learn Help Search docs... ⌘K Sign in Download Command Palette Search for a command to run... G
-- Andrej Karpathy on X: &quot;I packaged up the &quot;autoresearch&quot; project into a new self-contained minimal repo if people would like to play over the week
-- Minsi.AI on X: &quot;OpenAI 编程助手 Codex 0.105.0 刚上线。 被不少用户称为史上最大单次更新。 最炸的一个点：语音听写进终端 在终端里按住空格键直接说话。 Codex 实时把语音转成指令。 写代码第一次有点“对着电脑说话就能干活”的感觉了。 更关键的是：子代理系统全面重构 AI
+- 100 Hours Testing Deepseek Harness vs. Claude Code. What You Need to Know.
+- GitHub - gastownhall/gastown: Gas Town - multi-agent workspace manager · GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI CODE CRE
+- Neutron — self-hosted agent harness for Claude Code Skip to content Neutron Open source How it works Cores Connect Self-host FAQ Theme: system Star on GitHub Ne
+- Show HN: DAAO – Deploy AI agents to your servers via Zero-Trust tunnels | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login Show
+- Show HN: James Library – Local multi-agent research lab (built on ZeroClaw) | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login S
 
 ## Scale Packets
-- proof_artifact: promoted (2e9b92f0451a)
-- public_wedge: promoted (c8240e2e22fd)
-- buyer_experiment: promoted (4d98ae46cb9f)
-- operator_doctrine: promoted (b5df92de25ff)
+- proof_artifact: promoted (6c0ddb6ef09f)
+- public_wedge: promoted (e1d46b112d2e)
+- buyer_experiment: promoted (dc9d3cbd3c0f)
+- operator_doctrine: promoted (5c54fa776db5)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (2e9b92f0451a)
-- public_wedge: queued_echo_draft (c8240e2e22fd)
-- buyer_experiment: queued_buyer_experiment (4d98ae46cb9f)
-- operator_doctrine: already_persisted (b5df92de25ff)
+- proof_artifact: delegated_to_improvement_queue (6c0ddb6ef09f)
+- public_wedge: queued_echo_draft (e1d46b112d2e)
+- buyer_experiment: queued_buyer_experiment (dc9d3cbd3c0f)
+- operator_doctrine: already_persisted (5c54fa776db5)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`
