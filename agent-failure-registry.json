@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-agent-hook-endpoint-resets-on-payloads-1mb-silen-691fe033a3.html",
+      "evidence": "The reporter's curl loop shows HTTP 204 at 500KB and 900KB but HTTP 000 with a connection reset at 1,000,068 and 1,200,068 bytes, and confirmed via -H \"Expect:\" that it is not the 100-continue handshake causing the reset.",
+      "expected_boundary": "Requests exceeding the body-size limit should be rejected with a structured 4xx (e.g. 413) response rather than a connection reset, and the forwarder should surface or log that rejection instead of masking it.",
+      "id": "SFA-2026-691FE033A3",
+      "observed_action": "The agent-hook server resets the TCP connection on request bodies at or above roughly 1MB instead of returning an HTTP response, and the forwarding script's `|| true` silently discards the resulting curl failure.",
+      "published_at": "2026-08-25T06:30:56.970350+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 15791,
+        "repo": "stablyai/orca",
+        "url": "https://github.com/stablyai/orca/issues/15791"
+      },
+      "status": "observed",
+      "summary": "[Bug]: agent hook endpoint resets on payloads >= ~1MB, silently dropping agent-status events",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/the-agent-claims-it-will-remember-something-without-58478000d0.html",
       "evidence": "The issue reporter confirmed via post-hoc questioning that the agent 'judged no available skill relevant and just acknowledged it directly,' with no memory_write or equivalent call present in the run trace.",
       "expected_boundary": "A durability claim like 'I'll remember' must only be emitted in the same turn as a successful write/store tool call, or replaced with an explicit statement that nothing was persisted.",
@@ -2471,12 +2497,12 @@
       }
     }
   ],
-  "count": 95,
+  "count": 96,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-24T21:30:40.780028+00:00",
+    "checked_at": "2026-08-25T06:30:57.003045+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
