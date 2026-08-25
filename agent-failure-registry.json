@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/uncaught-valueerror-in-path-in-repo-is-dirty-when-an-2d37e55125.html",
+      "evidence": "The issue quotes the exact unguarded code at repo.py:567-575 and repo.py:598-601 alongside the guarded sibling in ignored_file_raw(), and provides a minimal reproduction showing the unhandled ValueError traceback.",
+      "expected_boundary": "Any path-normalization call that can raise ValueError on out-of-root input must be wrapped in the same try/except pattern already used in ignored_file_raw(), at every call site, not just some.",
+      "id": "SFA-2026-2D37E55125",
+      "observed_action": "GitRepo.path_in_repo() and is_dirty() call normalize_path() on LLM-supplied edit-block paths without catching ValueError, crashing the session when the path resolves outside the repo root.",
+      "published_at": "2026-08-25T21:30:48.033324+00:00",
+      "source": {
+        "author": "aniruddhaadak80",
+        "channel": "unsolicited_triage",
+        "issue_number": 5620,
+        "repo": "Aider-AI/aider",
+        "url": "https://github.com/Aider-AI/aider/issues/5620"
+      },
+      "status": "observed",
+      "summary": "Uncaught ValueError in path_in_repo()/is_dirty() when an edit block references an absolute path (session crash)",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/fix-core-validate-tool-call-directive-input-against-8af204ed0e.html",
       "evidence": "The issue states the policy engine gates execution but malformed or unexpected input structures can still reach tool backends, and proposes adding schema validation in execute_tool_in_loop() after directive parsing.",
       "expected_boundary": "Tool input should be validated against a registered per-tool schema (required fields, types, no extraneous structure) immediately before backend dispatch, rejecting non-conforming input with an error event.",
@@ -2523,12 +2549,12 @@
       }
     }
   ],
-  "count": 97,
+  "count": 98,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-25T14:12:34.569854+00:00",
+    "checked_at": "2026-08-25T21:30:48.064720+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
