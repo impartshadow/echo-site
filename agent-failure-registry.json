@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/fix-core-validate-tool-call-directive-input-against-8af204ed0e.html",
+      "evidence": "The issue states the policy engine gates execution but malformed or unexpected input structures can still reach tool backends, and proposes adding schema validation in execute_tool_in_loop() after directive parsing.",
+      "expected_boundary": "Tool input should be validated against a registered per-tool schema (required fields, types, no extraneous structure) immediately before backend dispatch, rejecting non-conforming input with an error event.",
+      "id": "SFA-2026-8AF204ED0E",
+      "observed_action": "parse_tool_call_directives() extracts tool name and input from model output and passes it straight to execute_tool_in_loop() for dispatch to the tool backend.",
+      "published_at": "2026-08-25T14:12:34.540824+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 296,
+        "repo": "Growth-Circle/cadis",
+        "url": "https://github.com/Growth-Circle/cadis/issues/296"
+      },
+      "status": "observed",
+      "summary": "fix(core): validate tool call directive input against tool schema before execution",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-agent-hook-endpoint-resets-on-payloads-1mb-silen-691fe033a3.html",
       "evidence": "The reporter's curl loop shows HTTP 204 at 500KB and 900KB but HTTP 000 with a connection reset at 1,000,068 and 1,200,068 bytes, and confirmed via -H \"Expect:\" that it is not the 100-continue handshake causing the reset.",
       "expected_boundary": "Requests exceeding the body-size limit should be rejected with a structured 4xx (e.g. 413) response rather than a connection reset, and the forwarder should surface or log that rejection instead of masking it.",
@@ -2497,12 +2523,12 @@
       }
     }
   ],
-  "count": 96,
+  "count": 97,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-25T06:30:57.003045+00:00",
+    "checked_at": "2026-08-25T14:12:34.569854+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
