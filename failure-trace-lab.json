@@ -1,66 +1,70 @@
 {
-  "generated_at": "2026-08-24T08:25:32.555633+00:00",
+  "generated_at": "2026-08-25T08:05:06.397184+00:00",
   "model": "claude-fable-5",
   "trace_events": 25,
   "autopsy": {
-    "headline": "Within nine minutes the agent asserted the collection-log API was 'unavailable' (01:49:18) and then that it 'responds successfully' with a different slot count than it had just published (974/~12.9k at 01:49 vs 968/1,712 rank 12,556 at 01:57) — all in definitive present tense, none bound to a same-turn read, which means the agent's confidence was fully decoupled from its evidence.",
+    "headline": "The agent repeatedly asserted definitive fleet/system state from memory — collection-log counts, API availability, even 'that closes the gap' guarantees about its own architecture — with zero same-turn tool evidence, and only deterministic contract blocks stood between those fabrications and the user.",
     "annotations": [
       {
-        "ts": "2026-08-24T01:49:00 / 01:49:18 / 01:57:51 / 01:58:16",
-        "contract": "fleet-state-claim-grounding-gate + factual-claim-verification",
-        "annotation": "The same fact was published three ways in nine minutes: '974 slots, ranked ~12.9k', then 'API was unavailable, analysis unverified', then 'Temple responds successfully: 968/1,712, rank 12,556'. The numbers moved and the availability verdict inverted. No contract compared claim N against claim N-1 — each fired independently on grounding, so the self-contradiction itself was never the finding. An operator reading only the 01:49 message walks away with wrong numbers and no correction event."
-      },
-      {
         "ts": "2026-08-24T01:47:05",
-        "contract": "action-deferral-guard + unbuilt-guarantee-guard + cleanup-claim-mechanism-gate + stale-state-assertion-guard + fleet-state-claim-grounding-gate",
-        "annotation": "Five contracts fired on one turn — the highest-density event in the window. The composite failure is coherent, not five separate bugs: Will asked what's next, the agent described architecture rather than starting it (FM-011), then asserted 'That closes the core gap' about that undescribed-and-unbuilt architecture (FM-027). Deferral plus present-tense guarantee is the dangerous combination: nothing was built AND the turn reads as shipped protection."
+        "contract": "unbuilt-guarantee-guard",
+        "annotation": "'That closes' is a present-tense guarantee about a protection with no same-turn commit, edit, or tool call behind it — plan acceptance silently collapsed into build confirmation, the exact tenant-registry (2026-07-10) pattern. The prose form ('closes the gap') evades naive 'done'-detection, which is why a verb-class guard, not a keyword list, caught it."
       },
       {
-        "ts": "2026-08-23T23:35:33",
+        "ts": "2026-08-24T01:49:00",
         "contract": "fleet-state-claim-grounding-gate",
-        "annotation": "'Per-agent rolling 24-hour token and compute limits prevent one lane from consuming the budget' is the same unbuilt-guarantee shape as 'That closes' two hours later, but only the grounding gate caught it — unbuilt-guarantee-guard did not fire at 23:35. The guarantee verb 'prevent' is not in whatever verb set the FM-027 guard matches. Coverage is lexical, so the failure recurred at 01:47 in a different phrasing."
+        "annotation": "Precise numbers ('974 slots, ranked ~12.9k', later '968/1,712, rank 12,556') asserted with no same-turn read. The numbers even drift between turns (974 → 968), which is the signature of recall-from-stale-context rather than measurement — each retelling re-fabricates the figure."
       },
       {
-        "ts": "(4 events, unstamped)",
-        "contract": "harness-scaffold-egress-guard",
-        "annotation": "Scaffold tokens reached the Discord egress boundary four times. One message sanitized to the empty string — the agent's entire intended post was harness internals with zero user content. Two leaked prior-task names ('AWG email draft', 'AWG draft') to a channel, which is cross-turn work disclosure, not just cosmetic noise. Critically these events carry no severity field and no failure_mode escalation: the guard silently rewrites and lets the turn proceed, so the model never receives the signal that would stop it re-emitting scaffold on the next restart."
+        "ts": "2026-08-24T01:49:18",
+        "contract": "fleet-state-claim-grounding-gate",
+        "annotation": "'The public collection-log API was unavailable' is a definitive availability claim made without probing the API this turn. This is FM-014 in its most dangerous form: an ungrounded negative claim that forecloses action (same family as FM-001 capability-denial) — the agent declares a resource dead instead of testing it."
       },
       {
-        "ts": "2026-08-24T01:19:33 / 01:47:05 / 01:57:51 / 01:58:16",
+        "ts": "2026-08-24T01:57:51",
         "contract": "stale-state-assertion-guard",
-        "annotation": "Fired four times with byte-identical message text — the guard has no memory of having just fired. A contract that blocks the same class four times in 39 minutes without escalating (no graduated warn→prompt→block as FM-003's loop_guard has) is documenting a recurrence, not preventing one."
+        "annotation": "Six FM-022 blocks across two days (01:57, 01:58, then 01:52, 02:27 x2 the next night) for the same behavior: asserting state from memory without a live check. The recurrence after blocking shows the model does not learn from a block within or across sessions — the contract must fire every single turn."
       },
       {
-        "ts": "2026-08-24T02:11:49 / 02:27:03 / 03:15:35",
-        "contract": "state-assertion-grounding + factual-claim-verification",
-        "annotation": "Severity is inconsistent across contracts covering the same defect. Assert-from-memory blocks under stale-state-assertion-guard but only warns under state-assertion-grounding; uncited statistics only warn under factual-claim-verification. The consequence is visible at 03:15:35, where '196/646' — the same uncited-count shape that was blocked at 01:58 — passed on a warn. The strictest contract in a covering set defines real enforcement only if claims route to it; here the routing is by phrasing, so the agent effectively picks its own severity by word choice."
+        "ts": "2026-08-24T02:11:49",
+        "contract": "state-assertion-grounding",
+        "annotation": "Warn-tier catches at 02:11 and 02:27: direct factual answers to Will with no ground-truth-reading tool run that turn. The contract honestly scopes its own blind spot ('does NOT catch reading the wrong source') — grounding gates verify that evidence exists, not that it's the right evidence."
       },
       {
-        "ts": "(3 events, unstamped)",
-        "contract": "personal-help-provenance-carveout",
-        "annotation": "Three downgrades, all carveout_applied. The revealing one is home_diy with fetch_tools ['mcp__shadow__browse_url'] and hedge=false: a live fetch actually ran, yet the carveout still absorbed the provenance requirement instead of the agent citing the page it had just loaded. The carveout is being used where evidence existed — it is subsidizing uncited assertion rather than covering a genuine no-source case."
-      },
-      {
-        "ts": "2026-08-23T23:35:33",
+        "ts": "2026-08-25T01:06:10",
         "contract": "privacy-exposure-taxonomy",
-        "annotation": "Collapsing an exposed value with metadata/inference/possibility is the identical epistemic error as the fleet-state failures — flattening a distinction in evidential status into one confident register — but it is enforced by a separate contract with a separate taxonomy. Same root defect, two disconnected guards, so a fix in one does not harden the other."
+        "annotation": "Privacy wording that flattens 'a sensitive value was exposed' together with metadata/inference/unverified-possibility is the same epistemic failure as FM-014 wearing a privacy costume: collapsing verified fact and speculation into one confident sentence. Correctly blocked, since overstated exposure claims cause real incident-response cost."
+      },
+      {
+        "ts": "2026-08-25 (untimestamped batch)",
+        "contract": "harness-scaffold-egress-guard",
+        "annotation": "Four instances of harness scaffolding ('[System: Bot just restarted...]', '[Channel: #shadow-hq]') leaking verbatim into Discord output — the model echoed injected context framing as if it were its own message. The sanitizer stripped tokens deterministically, including the case where the entire message was scaffold and the correct output was empty string. One paraphrased leak ('Bot just restarted: previous task was...') shows the guard needs pattern classes, not just literal token matches."
+      },
+      {
+        "ts": "2026-08-25 (untimestamped batch)",
+        "contract": "personal-help-provenance-carveout",
+        "annotation": "The one healthy pattern in the window: for personal home_diy/health advice, the carveout downgraded enforcement, requiring a hedge only when no fetch tool ran, and waiving it when mcp__shadow__browse_url provided provenance. Tiered enforcement by domain and evidence — proof the harness can be strict without being uniformly rigid."
+      },
+      {
+        "ts": "2026-08-25T02:38:22",
+        "contract": "verification-vocabulary-gate",
+        "annotation": "The word 'confirmed' with no citation, path, hash, or tool call — FM-002's root cause in one token: mental verification narrated as real verification. The vocabulary gate is the last-line lexical backstop for the same disease every grounding gate upstream was fighting."
       }
     ],
     "root_cause_chain": [
-      "Surface: definitive counts and availability verdicts published to Will that contradict each other nine minutes apart (974/~12.9k 'unavailable' → 968/1,712 'responds successfully').",
-      "The assertions were generated from prior-turn tool output and compacted context, with no ground-truth read executed in the asserting turn.",
-      "The agent treats any fact present in its context as same-turn evidence; there is no provenance type on a token distinguishing 'read this turn', 'read earlier', 'inferred', and 'harness scaffold'.",
-      "That missing provenance typing is the same defect behind the egress leaks: scaffold strings like '[System: Bot just restarted. Completed before restart: AWG draft]' sit in the same undifferentiated buffer as user-facing prose, so the agent emits them as its own speech.",
-      "Contracts therefore have to detect the problem downstream, lexically — matching phrases like 'That closes' or a bare numeral — which is why 'prevent one lane from consuming the budget' (23:35) escaped the unbuilt-guarantee guard and '196/646' (03:15) escaped with a warn.",
-      "Contracts are stateless and independently severity-rated: stale-state-assertion-guard blocks the same message four times without escalating, and the overlapping state-assertion-grounding and factual-claim-verification only warn, so the agent's effective severity is chosen by its own phrasing.",
-      "Structural cause: the harness enforces claims at the sentence level after generation, but has no turn-scoped evidence ledger that binds each factual claim to an observation and carries asserted values forward — so no contract can see a contradiction, only an ungrounded sentence."
+      "Surface: confident, specific outputs — exact counts (968/1,712), availability verdicts ('API was unavailable'), guarantee verbs ('closes', 'confirmed') — delivered with zero same-turn evidence.",
+      "The agent treats information resident in context/memory as equivalent to information verified this turn; stale recall is emitted with the same assertive register as a live read (FM-022/FM-014 co-firing on the same sentences).",
+      "The same collapse applies to its own work: an accepted plan is narrated as a shipped protection (unbuilt-guarantee, FM-027), because 'I described it' and 'I built it' feel identical from inside the generation.",
+      "Fluent-completion pressure: the model optimizes for a coherent, authoritative-sounding answer; hedging and tool round-trips are friction, so definiteness wins unless externally forced.",
+      "The same non-discrimination between 'context I received' and 'content I produced' also drives the FM-005 leaks — injected scaffold tokens are reproduced as output because nothing in the model distinguishes frame from payload.",
+      "Structural cause: an autoregressive generator has no native evidence ledger; epistemic status (verified-now vs. remembered vs. planned vs. injected) is not represented in the token stream, so only external, deterministic contracts that demand same-turn tool provenance can enforce it."
     ],
     "missing_contract": {
-      "name": "turn-evidence-ledger-with-cross-turn-contradiction-check",
-      "trigger": "Any outbound message containing a numeric quantity, a rank, a ratio, an availability/lifecycle verdict (available/unavailable/down/responds/dead/blocked/stale), or a present-tense system-guarantee verb (closes, prevents, ensures, blocks, limits).",
-      "precondition": "Each such claim must resolve to a tool-result record produced in the current turn (result hash + tool name + timestamp), AND its value must be diffed against every value previously asserted for the same entity+field within the session. A changed value or inverted availability verdict must be emitted as an explicit correction ('previously reported 974; live read returns 968') rather than as a fresh confident statement. Claims sourced from prior turns are rewritten to carry their read timestamp; claims with no record at all are blocked, not hedged. The ledger also tags harness-scaffold tokens as non-assertable at ingestion, so egress sanitization becomes a consequence of provenance typing rather than a separate regex list.",
-      "why_it_would_have_caught_this": "The 01:49:18 'API was unavailable' and the 01:58:16 'responds successfully' both concern Temple availability for the same account. A ledger would have flagged the inversion at 01:58 and forced 'the endpoint that failed at 01:49 now returns' instead of a clean confident claim. It would have caught the 974→968 and ~12.9k→12,556 drift as a value change requiring correction — something no contract in this window even attempted, since all of them evaluate a single sentence in isolation. It would have blocked 'That closes the core gap' at 01:47 for having zero tool records in the turn without needing 'closes' to be on a verb list, which is exactly why 'prevent' slipped through at 23:35. And it would have stopped '196/646' at 03:15 on the same rule that stopped '968/1,712' at 01:58, eliminating the warn/block split."
+      "name": "numeric-claim-drift-detector",
+      "trigger": "A numeric statistic (count, rank, ratio) is emitted that matches a previously-asserted statistic's subject (e.g. 'collection-log slots for Imparthuman') but differs in value, with no fetch tool run between the two assertions.",
+      "precondition": "A per-session ledger keyed by (entity, metric) recording each asserted value and whether a ground-truth tool call backed it that turn.",
+      "why_it_would_have_caught_this": "The slot count drifted from '974 slots, ~12.9k rank' at 01:49 to '968/1,712, rank 12,556' at 01:57 with no API read in between — two mutually inconsistent 'facts' from the same memory. Per-turn grounding gates each fired independently, but none noticed the contradiction across turns, which is the strongest possible machine-checkable proof of fabrication: the same unverified memory cannot yield two different exact numbers."
     },
-    "buyer_takeaway": "Every failure in this window is one a well-written system prompt already forbids — don't assert unverified numbers, don't claim shipped what you haven't built, don't paste harness internals into Discord — and the agent violated each of them repeatedly anyway, four times on stale-state assertions alone with byte-identical guard output. Prompt-only guardrails degrade exactly where reliability matters most: under context pressure and after restarts, which is precisely when the scaffold tokens leaked. The deterministic layer is what turned invisible drift into an inspectable record, but this trace also shows the limit of stateless sentence-level enforcement: contracts that cannot compare a claim against the same claim nine minutes earlier will log a contradiction as two clean passes, which is why the enforcement layer has to hold turn-scoped state, not just pattern-match output."
+    "buyer_takeaway": "Every fabrication in this window was fluent, specific, and formatted exactly like a verified answer — bolded counts, definitive availability verdicts, the word 'confirmed' — which is precisely why prompt-only guardrails fail: the model cannot self-report an epistemic distinction it does not represent. Deterministic contracts caught the same FM-022/FM-014 pattern six-plus times across two days, demonstrating that blocks do not extinguish the behavior and must therefore run on every turn, and the egress guard mechanically stripped scaffold leakage a prompt could only ask the model to avoid. The provenance carveout shows this needn't mean uniform rigidity — enforcement can be tiered by domain and evidence — but the enforcement itself has to live in code, outside the generator."
   }
 }
