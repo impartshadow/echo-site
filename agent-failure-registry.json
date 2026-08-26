@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/neotoma-corrections-create-reports-success-while-wri-15ef2aa032.html",
+      "evidence": "Two CLI attempts with different idempotency keys both returned success while `retrieve_field_provenance` showed the original 2026-08-24 observation still winning and stored size unchanged at 11816 B instead of the expected 12198 B.",
+      "expected_boundary": "A `success: true` response should only be emitted after the CLI confirms, via a returned observation_id or a post-write read-back matching the submitted byte length, that the correction actually persisted.",
+      "id": "SFA-2026-15EF2AA032",
+      "observed_action": "The neotoma CLI's `corrections create` command returned `{\"success\": true}` for a ~12KB html_body correction while leaving the stored field byte count unchanged and creating no new observation.",
+      "published_at": "2026-08-26T14:12:37.494139+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 2220,
+        "repo": "markmhendrickson/neotoma",
+        "url": "https://github.com/markmhendrickson/neotoma/issues/2220"
+      },
+      "status": "observed",
+      "summary": "neotoma corrections create reports success while writing nothing",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/board-register-project-reports-success-but-the-proje-f992f49f2c.html",
       "evidence": "show_config(section=\"project_board\") and a grep of langgraph-config.yaml both confirm the 'agent-browser' entry is absent despite the tool's success return, and the subsequent board_mark_ready call fails because _repo_for() falls back to the default repo root.",
       "expected_boundary": "The tool should only report success after confirming the project entry actually exists in the live project_board.projects config and has been persisted to langgraph-config.yaml.",
@@ -2575,12 +2601,12 @@
       }
     }
   ],
-  "count": 99,
+  "count": 100,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-26T06:30:49.559601+00:00",
+    "checked_at": "2026-08-26T14:12:37.520531+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
