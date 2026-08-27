@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/do-not-silently-ignore-vercel-agent-stream-overrides-3bb51ac0b2.html",
+      "evidence": "The issue reproduction shows generate() calling the replacement model and stream() calling the original model under identical KITARU_OVERRIDE env state with no warning or error raised.",
+      "expected_boundary": "Both generate() and stream() must resolve KITARU_OVERRIDE and KITARU_REPLAY_ID through one shared pre-execution check before any provider or tool call, and reject unsupported override combinations rather than silently falling through to defaults.",
+      "id": "SFA-2026-3BB51AC0B2",
+      "observed_action": "stream() delegated to the native ToolLoopAgent using the original model settings while only checking KITARU_REPLAY_ID, ignoring an active KITARU_OVERRIDE that generate() applied on the same code path.",
+      "published_at": "2026-08-27T06:30:38.142891+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 778,
+        "repo": "zenml-io/kitaru",
+        "url": "https://github.com/zenml-io/kitaru/issues/778"
+      },
+      "status": "observed",
+      "summary": "Do not silently ignore Vercel Agent stream overrides",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/neotoma-corrections-create-reports-success-while-wri-15ef2aa032.html",
       "evidence": "Two CLI attempts with different idempotency keys both returned success while `retrieve_field_provenance` showed the original 2026-08-24 observation still winning and stored size unchanged at 11816 B instead of the expected 12198 B.",
       "expected_boundary": "A `success: true` response should only be emitted after the CLI confirms, via a returned observation_id or a post-write read-back matching the submitted byte length, that the correction actually persisted.",
@@ -2601,12 +2627,12 @@
       }
     }
   ],
-  "count": 100,
+  "count": 101,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-26T14:12:37.520531+00:00",
+    "checked_at": "2026-08-27T06:30:38.177976+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,

@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-08-26T14:12:37.498892+00:00",
-  "count": 100,
+  "generated_at": "2026-08-27T06:30:38.149414+00:00",
+  "count": 101,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "do-not-silently-ignore-vercel-agent-stream-overrides-3bb51ac0b2",
+      "advisory_id": "SFA-2026-3BB51AC0B2",
+      "ts": "2026-08-27T06:30:38.142891+00:00",
+      "title": "Do not silently ignore Vercel Agent stream overrides",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "zenml-io/kitaru",
+        "issue_number": 778,
+        "author": "unknown",
+        "url": "https://github.com/zenml-io/kitaru/issues/778"
+      },
+      "case": {
+        "observed_action": "stream() delegated to the native ToolLoopAgent using the original model settings while only checking KITARU_REPLAY_ID, ignoring an active KITARU_OVERRIDE that generate() applied on the same code path.",
+        "expected_boundary": "Both generate() and stream() must resolve KITARU_OVERRIDE and KITARU_REPLAY_ID through one shared pre-execution check before any provider or tool call, and reject unsupported override combinations rather than silently falling through to defaults.",
+        "runtime_context": "TypeScript Vercel AI SDK adapter for createKitaruToolLoopAgent, where generate() and stream() are separate entry points that independently reimplement env-based override resolution.",
+        "evidence": "The issue reproduction shows generate() calling the replacement model and stream() calling the original model under identical KITARU_OVERRIDE env state with no warning or error raised."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/do-not-silently-ignore-vercel-agent-stream-overrides-3bb51ac0b2.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/do-not-silently-ignore-vercel-agent-stream-overrides-3bb51ac0b2.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20do-not-silently-ignore-vercel-agent-stream-overrides-3bb51ac0b2&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/do-not-silently-ignore-vercel-agent-stream-overrides-3bb51ac0b2.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "neotoma-corrections-create-reports-success-while-wri-15ef2aa032",
