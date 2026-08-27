@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-08-25T03:00:38-05:00",
+  "generated_at_ct": "2026-08-27T03:09:26-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 1045,
-  "distinct_contracts": 60,
+  "total_violations": 1050,
+  "distinct_contracts": 59,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -13,7 +13,7 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "block",
-      "count": 98,
+      "count": 99,
       "latest_seen_ct": "2026-08-23T08:23:54-05:00",
       "example_violation": "[recurrence-escalation 12x/7d] Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
@@ -26,7 +26,7 @@
       "contract": "commit-hash-verification",
       "failure_mode": "FM-027",
       "severity_seen": "block",
-      "count": 15,
+      "count": 14,
       "latest_seen_ct": "2026-08-18T01:45:38-05:00",
       "example_violation": "Cited commit hash(es) do not exist in git: 8d3c005. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.",
       "title": "The Agent Cited A Commit Hash Before Proving It Resolved",
@@ -39,9 +39,9 @@
       "contract": "completion-artifact",
       "failure_mode": "FM-027",
       "severity_seen": "block",
-      "count": 12,
-      "latest_seen_ct": "2026-08-20T06:07:43-05:00",
-      "example_violation": "Claimed a commit/push without a resolving commit-hash receipt. A real push produces a SHA that `git cat-file -t` can verify. Run it and cite the actual hash from `git rev-parse HEAD`, or remove the claim.",
+      "count": 13,
+      "latest_seen_ct": "2026-08-25T18:16:32-05:00",
+      "example_violation": "Completion/commit language while the repo still has uncommitted work: scripts/tmp_dump_headers.py. Commit and push, or state that work remains uncommitted.",
       "title": "The Agent Said Done While The Artifact Was Still Missing",
       "buyer_failure": "A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.",
       "missing_receipt": "artifact path, commit hash, deploy receipt, message id, or queue record",
@@ -63,16 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-07-25": {
-      "commit-hash-verification": 1,
-      "platform-message-id-claim-guard": 1,
-      "we-built-attribution": 1,
-      "pressure-framing-guard": 1,
-      "propguard-provenance-detector": 1,
-      "sensitive-write-router": 1,
-      "state-assertion-grounding": 1,
-      "unbuilt-guarantee-guard": 1
-    },
     "2026-07-26": {
       "stale-state-assertion-guard": 1,
       "verification-vocabulary-gate": 10,
@@ -385,6 +375,18 @@
       "factual-claim-verification": 1,
       "stale-state-assertion-guard": 3,
       "verification-vocabulary-gate": 1
+    },
+    "2026-08-25": {
+      "fleet-state-claim-grounding-gate": 1,
+      "completion-artifact": 1
+    },
+    "2026-08-26": {
+      "factual-claim-verification": 3,
+      "state-assertion-grounding": 2,
+      "unbuilt-guarantee-guard": 1,
+      "stale-state-assertion-guard": 3,
+      "verification-vocabulary-gate": 1,
+      "pressure-framing-guard": 1
     }
   },
   "cta": {

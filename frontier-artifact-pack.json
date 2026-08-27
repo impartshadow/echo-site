@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-08-25T07:59:39.061020+00:00",
+  "generated_at": "2026-08-27T08:08:17.184840+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-08-25T07:59:23.979374+00:00",
-  "thesis": "Agent harnesses are commoditizing at zero price (Gas Town, Neutron, every scout hit is another free orchestrator), so durable value shifts from running agents to being accountable for what they did \u2014 the audit trail, not the runtime, is the product.",
-  "doctrine": "Every autonomous loop must emit a machine-readable receipt (what ran, what it cost, what it changed, what revenue it touched) before it counts as done; work without a receipt is treated as not having happened.",
-  "proof_artifact": "A `receipts/` ledger spec + emitter script: each Shadow loop appends a JSON line {loop, timestamp, inputs_hash, actions, artifacts, cost, revenue_delta} to a git-tracked ledger, plus a weekly rollup script that renders it into an operator report.",
-  "proof_next_action": "Create receipts/schema.json and receipts/emit.sh in the Shadow repo, then wire emit.sh as the final step of this compound loop so today's run produces the first ledger entry.",
-  "public_angle": "Everyone is shipping agent harnesses; nobody is shipping agent accountability. I made my agent stack write receipts for every autonomous run \u2014 here's the one-file ledger spec and what a week of my agents' work actually looks like on paper.",
-  "buyer_offer": "\"Agent Ops Receipts\" \u2014 a $49-99/mo service for solo operators already running Claude Code loops (Neutron/Gas Town users are the exact ICP): Shadow audits their autonomous runs weekly and delivers a governance report showing what their agents actually did, spent, and shipped.",
+  "cycle_ts": "2026-08-27T08:08:02.972711+00:00",
+  "thesis": "The winning frontier agent product isn't a smarter model or a bigger harness \u2014 it's the boring receipt layer that lets a human trust an agent with money, and almost nobody is shipping that.",
+  "doctrine": "Every autonomous action Shadow takes must emit a verifiable receipt (input, decision, evidence, outcome) before the next loop iteration is allowed to consume its result \u2014 no receipt, no downstream credit.",
+  "proof_artifact": "A `receipts/` runtime module: a small Python/JSON schema + writer that wraps loop actions in signed evidence records (action, source URL, diff/output hash, verifier result), plus a `verify_receipts.py` gate the portfolio allocator reads to weight loop credibility \u2014 directly adopting Prime Agent's execution/recovery/verification split (arXiv:2608.23552) at Shadow's scale.",
+  "proof_next_action": "Create ~/.cache/shadow/bare_context/receipts/schema.json and receipt_writer.py implementing the receipt record (ts, loop, action, evidence_url, output_hash, verifier_status), then wire one existing loop (shadow-loop-model) to emit its first receipt this cycle.",
+  "public_angle": "Everyone benchmarks agent capability; nobody benchmarks agent accountability. I run my loops behind a receipt gate \u2014 if an action can't show its evidence, it doesn't count. Here's the 40-line schema that changed how I trust my own automation.",
+  "buyer_offer": "An 'Agent Audit Trail' micro-service for solo operators running Claude Code / Cursor loops: $25-50/mo to get tamper-evident receipts of what their agents actually did, sellable to the exact people starring repos like runtime36 who already trust agents with daily work but can't prove outcomes.",
   "source_titles": [
-    "100 Hours Testing Deepseek Harness vs. Claude Code. What You Need to Know.",
-    "GitHub - gastownhall/gastown: Gas Town - multi-agent workspace manager \u00b7 GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI CODE CRE",
-    "Neutron \u2014 self-hosted agent harness for Claude Code Skip to content Neutron Open source How it works Cores Connect Self-host FAQ Theme: system Star on GitHub Ne",
-    "Show HN: DAAO \u2013 Deploy AI agents to your servers via Zero-Trust tunnels | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login Show",
-    "Show HN: James Library \u2013 Local multi-agent research lab (built on ZeroClaw) | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login S"
+    "Autonomous Mathematical Discovery in an Open-World Multi-Agent Environment",
+    "398894496-arch/runtime36 \u2014 Second brain for coding agents. Seal the day, distill into Obsidian, hit that page tomorrow. Cursor,",
+    "RENDER: Controlling Reader-Facing Evidence in LLM Memory Evaluation",
+    "[2608.23552] Prime Agent: A Self-Improving RLM Harness Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search &middot; Advanced sea",
+    "Multi-Agent Orchestration with the Common-Sense Reasoning Capabilities of LLMs for Autonomous Driving"
   ],
   "packets": [
     {
-      "id": "6c0ddb6ef09f",
+      "id": "5a6082a537af",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "e1d46b112d2e",
+      "id": "82f7729af9b9",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "dc9d3cbd3c0f",
+      "id": "81afe45800f4",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "5c54fa776db5",
+      "id": "bfe0cfb1e956",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Create receipts/schema.json and receipts/emit.sh in the Shadow repo, then wire emit.sh as the final step of this compound loop so today's run produces the first ledger entry.",
-      "packet_id": "6c0ddb6ef09f"
+      "next_action": "Create ~/.cache/shadow/bare_context/receipts/schema.json and receipt_writer.py implementing the receipt record (ts, loop, action, evidence_url, output_hash, verifier_status), then wire one existing loop (shadow-loop-model) to emit its first receipt this cycle.",
+      "packet_id": "5a6082a537af"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_e1d46b112d2e_1787644779",
-      "packet_id": "e1d46b112d2e"
+      "draft_id": "frontier_82f7729af9b9_1787818097",
+      "packet_id": "82f7729af9b9"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "6e6ff0314600",
-      "packet_id": "dc9d3cbd3c0f"
+      "experiment_id": "044833559afa",
+      "packet_id": "81afe45800f4"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "5c54fa776db5"
+      "packet_id": "bfe0cfb1e956"
     }
   ],
   "receipts": {

@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-08-25T07:59:39.061020+00:00
+Generated: 2026-08-27T08:08:17.184840+00:00
 
 ## Thesis
-Agent harnesses are commoditizing at zero price (Gas Town, Neutron, every scout hit is another free orchestrator), so durable value shifts from running agents to being accountable for what they did — the audit trail, not the runtime, is the product.
+The winning frontier agent product isn't a smarter model or a bigger harness — it's the boring receipt layer that lets a human trust an agent with money, and almost nobody is shipping that.
 
 ## Doctrine
-Every autonomous loop must emit a machine-readable receipt (what ran, what it cost, what it changed, what revenue it touched) before it counts as done; work without a receipt is treated as not having happened.
+Every autonomous action Shadow takes must emit a verifiable receipt (input, decision, evidence, outcome) before the next loop iteration is allowed to consume its result — no receipt, no downstream credit.
 
 ## Proof Artifact
-A `receipts/` ledger spec + emitter script: each Shadow loop appends a JSON line {loop, timestamp, inputs_hash, actions, artifacts, cost, revenue_delta} to a git-tracked ledger, plus a weekly rollup script that renders it into an operator report.
+A `receipts/` runtime module: a small Python/JSON schema + writer that wraps loop actions in signed evidence records (action, source URL, diff/output hash, verifier result), plus a `verify_receipts.py` gate the portfolio allocator reads to weight loop credibility — directly adopting Prime Agent's execution/recovery/verification split (arXiv:2608.23552) at Shadow's scale.
 
-Next action: Create receipts/schema.json and receipts/emit.sh in the Shadow repo, then wire emit.sh as the final step of this compound loop so today's run produces the first ledger entry.
+Next action: Create ~/.cache/shadow/bare_context/receipts/schema.json and receipt_writer.py implementing the receipt record (ts, loop, action, evidence_url, output_hash, verifier_status), then wire one existing loop (shadow-loop-model) to emit its first receipt this cycle.
 
 ## Public Angle
-Everyone is shipping agent harnesses; nobody is shipping agent accountability. I made my agent stack write receipts for every autonomous run — here's the one-file ledger spec and what a week of my agents' work actually looks like on paper.
+Everyone benchmarks agent capability; nobody benchmarks agent accountability. I run my loops behind a receipt gate — if an action can't show its evidence, it doesn't count. Here's the 40-line schema that changed how I trust my own automation.
 
 ## Buyer Offer
-"Agent Ops Receipts" — a $49-99/mo service for solo operators already running Claude Code loops (Neutron/Gas Town users are the exact ICP): Shadow audits their autonomous runs weekly and delivers a governance report showing what their agents actually did, spent, and shipped.
+An 'Agent Audit Trail' micro-service for solo operators running Claude Code / Cursor loops: $25-50/mo to get tamper-evident receipts of what their agents actually did, sellable to the exact people starring repos like runtime36 who already trust agents with daily work but can't prove outcomes.
 
 ## Source Signals
-- 100 Hours Testing Deepseek Harness vs. Claude Code. What You Need to Know.
-- GitHub - gastownhall/gastown: Gas Town - multi-agent workspace manager · GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI CODE CRE
-- Neutron — self-hosted agent harness for Claude Code Skip to content Neutron Open source How it works Cores Connect Self-host FAQ Theme: system Star on GitHub Ne
-- Show HN: DAAO – Deploy AI agents to your servers via Zero-Trust tunnels | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login Show
-- Show HN: James Library – Local multi-agent research lab (built on ZeroClaw) | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login S
+- Autonomous Mathematical Discovery in an Open-World Multi-Agent Environment
+- 398894496-arch/runtime36 — Second brain for coding agents. Seal the day, distill into Obsidian, hit that page tomorrow. Cursor,
+- RENDER: Controlling Reader-Facing Evidence in LLM Memory Evaluation
+- [2608.23552] Prime Agent: A Self-Improving RLM Harness Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search &middot; Advanced sea
+- Multi-Agent Orchestration with the Common-Sense Reasoning Capabilities of LLMs for Autonomous Driving
 
 ## Scale Packets
-- proof_artifact: promoted (6c0ddb6ef09f)
-- public_wedge: promoted (e1d46b112d2e)
-- buyer_experiment: promoted (dc9d3cbd3c0f)
-- operator_doctrine: promoted (5c54fa776db5)
+- proof_artifact: promoted (5a6082a537af)
+- public_wedge: promoted (82f7729af9b9)
+- buyer_experiment: promoted (81afe45800f4)
+- operator_doctrine: promoted (bfe0cfb1e956)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (6c0ddb6ef09f)
-- public_wedge: queued_echo_draft (e1d46b112d2e)
-- buyer_experiment: queued_buyer_experiment (dc9d3cbd3c0f)
-- operator_doctrine: already_persisted (5c54fa776db5)
+- proof_artifact: delegated_to_improvement_queue (5a6082a537af)
+- public_wedge: queued_echo_draft (82f7729af9b9)
+- buyer_experiment: queued_buyer_experiment (81afe45800f4)
+- operator_doctrine: already_persisted (bfe0cfb1e956)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`
