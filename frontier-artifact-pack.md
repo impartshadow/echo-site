@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-08-27T08:08:17.184840+00:00
+Generated: 2026-08-28T08:07:32.007703+00:00
 
 ## Thesis
-The winning frontier agent product isn't a smarter model or a bigger harness — it's the boring receipt layer that lets a human trust an agent with money, and almost nobody is shipping that.
+The winning agent business won't sell intelligence — it will sell recoverability: replayable, receipt-backed execution that a buyer can audit after the fact, which is exactly what belief-cascade persuasion networks and CRDT workspaces both quietly assume and never ship.
 
 ## Doctrine
-Every autonomous action Shadow takes must emit a verifiable receipt (input, decision, evidence, outcome) before the next loop iteration is allowed to consume its result — no receipt, no downstream credit.
+No loop output counts as done without a runtime receipt — a verifiable artifact (diff, log, metric delta) that a third party could replay; summaries without receipts are classified as blockers, not progress.
 
 ## Proof Artifact
-A `receipts/` runtime module: a small Python/JSON schema + writer that wraps loop actions in signed evidence records (action, source URL, diff/output hash, verifier result), plus a `verify_receipts.py` gate the portfolio allocator reads to weight loop credibility — directly adopting Prime Agent's execution/recovery/verification split (arXiv:2608.23552) at Shadow's scale.
+A receipt-gate module for the shadow-loop pipeline: a small verifier script that runs after each loop iteration, checks for a concrete evidence artifact (file diff, test result, or metric), writes a signed receipt JSON to a receipts/ ledger, and blocks loop-complete status if absent — modeled on workspace-agent-harness's replayable-run pattern.
 
-Next action: Create ~/.cache/shadow/bare_context/receipts/schema.json and receipt_writer.py implementing the receipt record (ts, loop, action, evidence_url, output_hash, verifier_status), then wire one existing loop (shadow-loop-model) to emit its first receipt this cycle.
+Next action: Create receipts/verify_receipt.py in the shadow-loop working directory: a script that takes a loop iteration's output directory, checks for at least one concrete artifact (non-empty diff, test log, or metric file), and appends a receipt entry {iteration, timestamp, artifact_path, sha256} to receipts/ledger.jsonl, exiting nonzero when no artifact exists; then wire it into the loop's completion check.
 
 ## Public Angle
-Everyone benchmarks agent capability; nobody benchmarks agent accountability. I run my loops behind a receipt gate — if an action can't show its evidence, it doesn't count. Here's the 40-line schema that changed how I trust my own automation.
+Everyone benchmarks agent intelligence; nobody audits agent execution. We made our agent unable to claim it finished anything without producing a replayable receipt — here's what its failure rate really was once it couldn't lie to itself.
 
 ## Buyer Offer
-An 'Agent Audit Trail' micro-service for solo operators running Claude Code / Cursor loops: $25-50/mo to get tamper-evident receipts of what their agents actually did, sellable to the exact people starring repos like runtime36 who already trust agents with daily work but can't prove outcomes.
+An 'audited autonomy' tier for small teams running AI agents: $50/month per pipeline for receipt-ledger instrumentation that proves what their agents actually did — pitched to the hackathon/SOC-agent crowd (CyberForge-style builders) who already require human-approval gates but have no evidence trail between approvals.
 
 ## Source Signals
-- Autonomous Mathematical Discovery in an Open-World Multi-Agent Environment
-- 398894496-arch/runtime36 — Second brain for coding agents. Seal the day, distill into Obsidian, hit that page tomorrow. Cursor,
-- RENDER: Controlling Reader-Facing Evidence in LLM Memory Evaluation
-- [2608.23552] Prime Agent: A Self-Improving RLM Harness Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search &middot; Advanced sea
-- Multi-Agent Orchestration with the Common-Sense Reasoning Capabilities of LLMs for Autonomous Driving
+- Belief Cascades Drive Persuasion in LLM Agent Networks
+- pym96/workspace-agent-harness — A replayable, recoverable, and benchmark-first harness for autonomous research agents.
+- AgentRoom: Concurrent Multi-Agent Coding in a CRDT-Backed Shared Workspace
+- Exploit More, Explore Smarter for Budget-Constrained Agentic Search
+- Simran-kaur7/CyberForge — CyberForge — an autonomous AI SOC agent built on TrueForge that investigates security incidents end-
 
 ## Scale Packets
-- proof_artifact: promoted (5a6082a537af)
-- public_wedge: promoted (82f7729af9b9)
-- buyer_experiment: promoted (81afe45800f4)
-- operator_doctrine: promoted (bfe0cfb1e956)
+- proof_artifact: promoted (981348919e63)
+- public_wedge: promoted (1697e61d76f5)
+- buyer_experiment: promoted (f80fb66ef5ea)
+- operator_doctrine: promoted (f843b62ea37e)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (5a6082a537af)
-- public_wedge: queued_echo_draft (82f7729af9b9)
-- buyer_experiment: queued_buyer_experiment (81afe45800f4)
-- operator_doctrine: already_persisted (bfe0cfb1e956)
+- proof_artifact: delegated_to_improvement_queue (981348919e63)
+- public_wedge: queued_echo_draft (1697e61d76f5)
+- buyer_experiment: queued_buyer_experiment (f80fb66ef5ea)
+- operator_doctrine: already_persisted (f843b62ea37e)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

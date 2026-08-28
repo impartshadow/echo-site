@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-08-27T08:08:17.184840+00:00",
+  "generated_at": "2026-08-28T08:07:32.007703+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-08-27T08:08:02.972711+00:00",
-  "thesis": "The winning frontier agent product isn't a smarter model or a bigger harness \u2014 it's the boring receipt layer that lets a human trust an agent with money, and almost nobody is shipping that.",
-  "doctrine": "Every autonomous action Shadow takes must emit a verifiable receipt (input, decision, evidence, outcome) before the next loop iteration is allowed to consume its result \u2014 no receipt, no downstream credit.",
-  "proof_artifact": "A `receipts/` runtime module: a small Python/JSON schema + writer that wraps loop actions in signed evidence records (action, source URL, diff/output hash, verifier result), plus a `verify_receipts.py` gate the portfolio allocator reads to weight loop credibility \u2014 directly adopting Prime Agent's execution/recovery/verification split (arXiv:2608.23552) at Shadow's scale.",
-  "proof_next_action": "Create ~/.cache/shadow/bare_context/receipts/schema.json and receipt_writer.py implementing the receipt record (ts, loop, action, evidence_url, output_hash, verifier_status), then wire one existing loop (shadow-loop-model) to emit its first receipt this cycle.",
-  "public_angle": "Everyone benchmarks agent capability; nobody benchmarks agent accountability. I run my loops behind a receipt gate \u2014 if an action can't show its evidence, it doesn't count. Here's the 40-line schema that changed how I trust my own automation.",
-  "buyer_offer": "An 'Agent Audit Trail' micro-service for solo operators running Claude Code / Cursor loops: $25-50/mo to get tamper-evident receipts of what their agents actually did, sellable to the exact people starring repos like runtime36 who already trust agents with daily work but can't prove outcomes.",
+  "cycle_ts": "2026-08-28T08:07:19.053205+00:00",
+  "thesis": "The winning agent business won't sell intelligence \u2014 it will sell recoverability: replayable, receipt-backed execution that a buyer can audit after the fact, which is exactly what belief-cascade persuasion networks and CRDT workspaces both quietly assume and never ship.",
+  "doctrine": "No loop output counts as done without a runtime receipt \u2014 a verifiable artifact (diff, log, metric delta) that a third party could replay; summaries without receipts are classified as blockers, not progress.",
+  "proof_artifact": "A receipt-gate module for the shadow-loop pipeline: a small verifier script that runs after each loop iteration, checks for a concrete evidence artifact (file diff, test result, or metric), writes a signed receipt JSON to a receipts/ ledger, and blocks loop-complete status if absent \u2014 modeled on workspace-agent-harness's replayable-run pattern.",
+  "proof_next_action": "Create receipts/verify_receipt.py in the shadow-loop working directory: a script that takes a loop iteration's output directory, checks for at least one concrete artifact (non-empty diff, test log, or metric file), and appends a receipt entry {iteration, timestamp, artifact_path, sha256} to receipts/ledger.jsonl, exiting nonzero when no artifact exists; then wire it into the loop's completion check.",
+  "public_angle": "Everyone benchmarks agent intelligence; nobody audits agent execution. We made our agent unable to claim it finished anything without producing a replayable receipt \u2014 here's what its failure rate really was once it couldn't lie to itself.",
+  "buyer_offer": "An 'audited autonomy' tier for small teams running AI agents: $50/month per pipeline for receipt-ledger instrumentation that proves what their agents actually did \u2014 pitched to the hackathon/SOC-agent crowd (CyberForge-style builders) who already require human-approval gates but have no evidence trail between approvals.",
   "source_titles": [
-    "Autonomous Mathematical Discovery in an Open-World Multi-Agent Environment",
-    "398894496-arch/runtime36 \u2014 Second brain for coding agents. Seal the day, distill into Obsidian, hit that page tomorrow. Cursor,",
-    "RENDER: Controlling Reader-Facing Evidence in LLM Memory Evaluation",
-    "[2608.23552] Prime Agent: A Self-Improving RLM Harness Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search &middot; Advanced sea",
-    "Multi-Agent Orchestration with the Common-Sense Reasoning Capabilities of LLMs for Autonomous Driving"
+    "Belief Cascades Drive Persuasion in LLM Agent Networks",
+    "pym96/workspace-agent-harness \u2014 A replayable, recoverable, and benchmark-first harness for autonomous research agents.",
+    "AgentRoom: Concurrent Multi-Agent Coding in a CRDT-Backed Shared Workspace",
+    "Exploit More, Explore Smarter for Budget-Constrained Agentic Search",
+    "Simran-kaur7/CyberForge \u2014 CyberForge \u2014 an autonomous AI SOC agent built on TrueForge that investigates security incidents end-"
   ],
   "packets": [
     {
-      "id": "5a6082a537af",
+      "id": "981348919e63",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "82f7729af9b9",
+      "id": "1697e61d76f5",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "81afe45800f4",
+      "id": "f80fb66ef5ea",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "bfe0cfb1e956",
+      "id": "f843b62ea37e",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Create ~/.cache/shadow/bare_context/receipts/schema.json and receipt_writer.py implementing the receipt record (ts, loop, action, evidence_url, output_hash, verifier_status), then wire one existing loop (shadow-loop-model) to emit its first receipt this cycle.",
-      "packet_id": "5a6082a537af"
+      "next_action": "Create receipts/verify_receipt.py in the shadow-loop working directory: a script that takes a loop iteration's output directory, checks for at least one concrete artifact (non-empty diff, test log, or metric file), and appends a receipt entry {iteration, timestamp, artifact_path, sha256} to receipts/ledger.jsonl, exiting nonzero when no artifact exists; then wire it into the loop's completion check.",
+      "packet_id": "981348919e63"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_82f7729af9b9_1787818097",
-      "packet_id": "82f7729af9b9"
+      "draft_id": "frontier_1697e61d76f5_1787904451",
+      "packet_id": "1697e61d76f5"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "044833559afa",
-      "packet_id": "81afe45800f4"
+      "experiment_id": "7a4880f5e2d3",
+      "packet_id": "f80fb66ef5ea"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "bfe0cfb1e956"
+      "packet_id": "f843b62ea37e"
     }
   ],
   "receipts": {
