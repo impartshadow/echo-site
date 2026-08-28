@@ -35,24 +35,24 @@
   <h1>spawn-lifecycle-claim-guard cooled from 75 to 0 weekly hits; stale-state-assertion-guard is the hottest remaining governance gap.</h1>
   <p class="sub">A buyer-facing trend read over Shadow's live contract-violation log. This shows what the guardrail system cooled, what remains hot, and why the paid audit starts with real logs instead of generic advice.</p>
   <div class="grid">
-    <div class="stat"><div class="num">1050</div><div class="label">violations logged</div></div>
+    <div class="stat"><div class="num">1013</div><div class="label">violations logged</div></div>
     <div class="stat"><div class="num">59</div><div class="label">contracts in log</div></div>
-    <div class="stat"><div class="num">44</div><div class="label">cooled guardrails</div></div>
-    <div class="stat"><div class="num">3</div><div class="label">remaining hot spots</div></div>
+    <div class="stat"><div class="num">46</div><div class="label">cooled guardrails</div></div>
+    <div class="stat"><div class="num">2</div><div class="label">remaining hot spots</div></div>
   </div>
   <section>
     <h2>Cooled guardrails</h2>
     <table><thead><tr><th>Contract</th><th>Total</th><th>First 7d</th><th>Recent 7d</th><th>Delta</th><th>Change</th></tr></thead><tbody>
 <tr><td><code>spawn-lifecycle-claim-guard</code></td><td>81</td><td>75</td><td>0</td><td>-75</td><td>-100.0%</td></tr>
-<tr><td><code>state-assertion-grounding</code></td><td>99</td><td>47</td><td>10</td><td>-37</td><td>-78.7%</td></tr>
 <tr><td><code>state-assertion-grounding-gate</code></td><td>33</td><td>33</td><td>0</td><td>-33</td><td>-100.0%</td></tr>
+<tr><td><code>state-assertion-grounding</code></td><td>83</td><td>38</td><td>9</td><td>-29</td><td>-76.3%</td></tr>
 <tr><td><code>mutable-state-grounding-guard</code></td><td>27</td><td>27</td><td>0</td><td>-27</td><td>-100.0%</td></tr>
 <tr><td><code>crypto-price-claim-guard</code></td><td>20</td><td>19</td><td>0</td><td>-19</td><td>-100.0%</td></tr>
 <tr><td><code>terminal-state-evidence-gate</code></td><td>28</td><td>20</td><td>2</td><td>-18</td><td>-90.0%</td></tr>
-<tr><td><code>verification-vocabulary-gate</code></td><td>105</td><td>23</td><td>6</td><td>-17</td><td>-73.9%</td></tr>
-<tr><td><code>commit-hash-verification</code></td><td>14</td><td>10</td><td>0</td><td>-10</td><td>-100.0%</td></tr>
-<tr><td><code>pressure-framing-guard</code></td><td>12</td><td>9</td><td>1</td><td>-8</td><td>-88.9%</td></tr>
+<tr><td><code>verification-vocabulary-gate</code></td><td>93</td><td>18</td><td>6</td><td>-12</td><td>-66.7%</td></tr>
 <tr><td><code>question-referent-grounding-gate</code></td><td>8</td><td>8</td><td>0</td><td>-8</td><td>-100.0%</td></tr>
+<tr><td><code>pressure-framing-guard</code></td><td>13</td><td>9</td><td>2</td><td>-7</td><td>-77.8%</td></tr>
+<tr><td><code>factual-claim-verification</code></td><td>96</td><td>21</td><td>15</td><td>-6</td><td>-28.6%</td></tr>
 <tr><td><code>numeric-parameter-assertion-guard</code></td><td>11</td><td>5</td><td>0</td><td>-5</td><td>-100.0%</td></tr>
 <tr><td><code>bitwarden-claim-verification-guard</code></td><td>8</td><td>5</td><td>0</td><td>-5</td><td>-100.0%</td></tr>
     </tbody></table>
@@ -60,8 +60,7 @@
   <section>
     <h2>Remaining hot spots</h2>
     <table><thead><tr><th>Contract</th><th>Total</th><th>First 7d</th><th>Recent 7d</th><th>Delta</th><th>Change</th></tr></thead><tbody>
-<tr><td><code>stale-state-assertion-guard</code></td><td>78</td><td>6</td><td>17</td><td>+11</td><td>+183.3%</td></tr>
-<tr><td><code>factual-claim-verification</code></td><td>100</td><td>12</td><td>15</td><td>+3</td><td>+25.0%</td></tr>
+<tr><td><code>stale-state-assertion-guard</code></td><td>78</td><td>8</td><td>18</td><td>+10</td><td>+125.0%</td></tr>
 <tr><td><code>unbuilt-guarantee-guard</code></td><td>8</td><td>2</td><td>4</td><td>+2</td><td>+100.0%</td></tr>
     </tbody></table>
   </section>
@@ -72,6 +71,6 @@
     <p>Machine-readable artifact: <a href="violation-decay.json">violation-decay.json</a>.</p>
   </section>
 </main>
-<footer>Generated 2026-08-27T08:16:31.894482+00:00 from state/contract_violations.jsonl. Window: first 7 days after first observed hit vs. most recent 7 days. This is observational trend data, not a causal claim.</footer>
+<footer>Generated 2026-08-28T08:15:58.588466+00:00 from state/contract_violations.jsonl. Window: first 7 days after first observed hit vs. most recent 7 days. This is observational trend data, not a causal claim.</footer>
 </body>
 </html>
