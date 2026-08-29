@@ -2,10 +2,10 @@
 
 A buyer should be able to see the before/after diff behind Shadow's $2,000 Contract Install before the first call: observed failure, installed gate, forced after-state, regression test, and CTA.
 
-Generated: 2026-08-28T08:13:34.908874+00:00
+Generated: 2026-08-29T08:43:35.249082+00:00
 Source model: `claude-fable-5`
 Runtime contracts: 225
-Violation rows scanned: 8881
+Violation rows scanned: 8938
 
 ## Conversion Path
 
@@ -38,7 +38,7 @@ if standing_authority_applies(turn) and proposal_phrase(response):
 - Failure mode: FM-027 — Fabricated Completion Claims
 - Gate type: post
 - Trigger: Outbound completion language contains a hex commit token near words like commit, pushed, shipped, landed, SHA, or HEAD.
-- Observed fires: 118
+- Observed fires: 119
 - Install estimate: 2.0h
 - Tier: census
 - CTA: [Request the $400 failure census](mailto:impartshadow@gmail.com?subject=Census:%20cib-002)
@@ -55,7 +55,7 @@ for sha in commit_like_tokens(response):
 - Failure mode: FM-022 — Claims Without Same-Turn Verification
 - Gate type: post
 - Trigger: Definitive state language appears in a status answer without a same-turn file, process, API, or browser read in the trace.
-- Observed fires: 201
+- Observed fires: 203
 - Install estimate: 5.0h
 - Tier: install
 - CTA: [Scope the $2,000 contract install](mailto:impartshadow@gmail.com?subject=Contract%20Install:%20cib-003)
@@ -127,7 +127,7 @@ This is the shape of the $2,000 deliverable: one production workflow, the observ
 
 ### ba-commit-receipt · commit-hash-verification
 
-Sample workflow: agent completion report after a git push to main · FM-027 · 118 observed fires.
+Sample workflow: agent completion report after a git push to main · FM-027 · 119 observed fires.
 
 Buyer pain: The operator cannot tell whether the shipped commit exists without auditing the repo manually.
 
@@ -161,7 +161,7 @@ Buyer pain: The operator cannot tell whether the shipped commit exists without a
 
 ### ba-state-receipt · stale-state-assertion-guard
 
-Sample workflow: status answer about whether a bot, queue, publish job, or external account is working · FM-022 · 201 observed fires.
+Sample workflow: status answer about whether a bot, queue, publish job, or external account is working · FM-022 · 203 observed fires.
 
 Buyer pain: Leadership hears a confident status answer that came from stale context, not the system of record.
 
