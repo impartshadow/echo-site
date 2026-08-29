@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-08-28T08:07:32.007703+00:00
+Generated: 2026-08-29T08:37:33.723566+00:00
 
 ## Thesis
-The winning agent business won't sell intelligence — it will sell recoverability: replayable, receipt-backed execution that a buyer can audit after the fact, which is exactly what belief-cascade persuasion networks and CRDT workspaces both quietly assume and never ship.
+The moat is no longer the model or the summary — it's the harness that stays in the loop long enough to verify its own actions, and most agent businesses will die because they ship outputs instead of receipts.
 
 ## Doctrine
-No loop output counts as done without a runtime receipt — a verifiable artifact (diff, log, metric delta) that a third party could replay; summaries without receipts are classified as blockers, not progress.
+Every loop action must close observe → act → verify: no artifact counts as shipped until a runtime receipt proves the world changed as intended, and unverified actions get retried or classified as blockers, never silently logged.
 
 ## Proof Artifact
-A receipt-gate module for the shadow-loop pipeline: a small verifier script that runs after each loop iteration, checks for a concrete evidence artifact (file diff, test result, or metric), writes a signed receipt JSON to a receipts/ ledger, and blocks loop-complete status if absent — modeled on workspace-agent-harness's replayable-run pattern.
+A verify-gate module for the Shadow loop runner: after each loop's primary action, run a declared post-condition check (file exists, endpoint responds, metric moved), emit a receipt JSON {action, expected, observed, pass}, and auto-retry once on failure before flagging a blocker.
 
-Next action: Create receipts/verify_receipt.py in the shadow-loop working directory: a script that takes a loop iteration's output directory, checks for at least one concrete artifact (non-empty diff, test log, or metric file), and appends a receipt entry {iteration, timestamp, artifact_path, sha256} to receipts/ledger.jsonl, exiting nonzero when no artifact exists; then wire it into the loop's completion check.
+Next action: Create ~/.cache/shadow/loops/lib/verify_gate.py implementing check-receipt-retry (post_condition callable, receipt written to ~/.cache/shadow/receipts/{loop}_{ts}.json), then wire it into the highest-frequency existing loop runner as its exit step.
 
 ## Public Angle
-Everyone benchmarks agent intelligence; nobody audits agent execution. We made our agent unable to claim it finished anything without producing a replayable receipt — here's what its failure rate really was once it couldn't lie to itself.
+Everyone demos agents acting; nobody demos agents checking whether the action worked. We made verification the exit criterion of every loop — here's what our receipts caught in week one.
 
 ## Buyer Offer
-An 'audited autonomy' tier for small teams running AI agents: $50/month per pipeline for receipt-ledger instrumentation that proves what their agents actually did — pitched to the hackathon/SOC-agent crowd (CyberForge-style builders) who already require human-approval gates but have no evidence trail between approvals.
+Sell 'verified automation' to small ops teams: a $99/mo Shadow-run watchdog that doesn't just execute their recurring task but delivers a signed receipt each run proving the outcome occurred — pitch to prospects already burned by silent cron/Zapier failures.
 
 ## Source Signals
-- Belief Cascades Drive Persuasion in LLM Agent Networks
-- pym96/workspace-agent-harness — A replayable, recoverable, and benchmark-first harness for autonomous research agents.
-- AgentRoom: Concurrent Multi-Agent Coding in a CRDT-Backed Shared Workspace
-- Exploit More, Explore Smarter for Budget-Constrained Agentic Search
-- Simran-kaur7/CyberForge — CyberForge — an autonomous AI SOC agent built on TrueForge that investigates security incidents end-
+- Agents Don't Paginate: First-Chunk Selection for LLM Tool Responses
+- Prime Agent: A Self-Improving RLM Harness | Seth Karten Home Research Canonical page Agent Harnesses · Technical Report Prime Agent: A Self-Improving RLM Harnes
+- Distributed Training using an Intelligent Network
+- yuriak/DCS-Harness — An agent-native workspace for autonomous DCS mission direction
+- Carer-Healthcare-AI/Hospilot — Open-source agentic AI operating layer for hospital operations — multi-agent orchestration over FHIR
 
 ## Scale Packets
-- proof_artifact: promoted (981348919e63)
-- public_wedge: promoted (1697e61d76f5)
-- buyer_experiment: promoted (f80fb66ef5ea)
-- operator_doctrine: promoted (f843b62ea37e)
+- proof_artifact: promoted (ec88fe6afb96)
+- public_wedge: promoted (9ece13962b49)
+- buyer_experiment: promoted (4ffe732ec4fe)
+- operator_doctrine: promoted (756c300b2bc7)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (981348919e63)
-- public_wedge: queued_echo_draft (1697e61d76f5)
-- buyer_experiment: queued_buyer_experiment (f80fb66ef5ea)
-- operator_doctrine: already_persisted (f843b62ea37e)
+- proof_artifact: delegated_to_improvement_queue (ec88fe6afb96)
+- public_wedge: queued_echo_draft (9ece13962b49)
+- buyer_experiment: queued_buyer_experiment (4ffe732ec4fe)
+- operator_doctrine: already_persisted (756c300b2bc7)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

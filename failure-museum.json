@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-08-28T03:08:37-05:00",
+  "generated_at_ct": "2026-08-29T03:38:35-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 1013,
-  "distinct_contracts": 59,
+  "total_violations": 1022,
+  "distinct_contracts": 60,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -13,7 +13,7 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "block",
-      "count": 83,
+      "count": 85,
       "latest_seen_ct": "2026-08-23T08:23:54-05:00",
       "example_violation": "[recurrence-escalation 12x/7d] Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
@@ -40,8 +40,8 @@
       "failure_mode": "FM-027",
       "severity_seen": "block",
       "count": 8,
-      "latest_seen_ct": "2026-08-18T01:45:38-05:00",
-      "example_violation": "Cited commit hash(es) do not exist in git: 8d3c005. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.",
+      "latest_seen_ct": "2026-08-28T16:12:45-05:00",
+      "example_violation": "Cited commit hash(es) do not exist in git: e9d4c57b. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.",
       "title": "The Agent Cited A Commit Hash Before Proving It Resolved",
       "buyer_failure": "A coding agent says a fix was committed or pushed, but the hash is invented, stale, or not reachable from the expected branch.",
       "missing_receipt": "git rev-parse output plus git cat-file or remote branch containment proof",
@@ -52,7 +52,7 @@
       "contract": "dox-guard",
       "failure_mode": "FM-023",
       "severity_seen": "block",
-      "count": 2,
+      "count": 1,
       "latest_seen_ct": "2026-08-20T14:00:52-05:00",
       "example_violation": "Outbound tool 'Write' would transmit 1 personal identifier(s) off the owner<->Shadow conversation. Identifiers must not leave this 2-way channel via email, social posts, webhooks, or publish-path file writes.",
       "title": "The Agent Tried To Put Private Identity Data Into A Tool Boundary",
@@ -63,14 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-07-28": {
-      "raw-gmail-send-guard": 1,
-      "state-io-consolidation-guard": 1,
-      "dox-guard": 1,
-      "commit-hash-verification": 1,
-      "platform-action-param-schema-guard": 1,
-      "verification-vocabulary-gate": 1
-    },
     "2026-07-29": {
       "capability-scope-assertion-guard": 1,
       "commit-hash-verification": 3,
@@ -380,6 +372,17 @@
       "completion-artifact": 2,
       "fleet-state-claim-grounding-gate": 2,
       "pressure-framing-guard": 1
+    },
+    "2026-08-28": {
+      "state-assertion-grounding": 2,
+      "verification-vocabulary-gate": 2,
+      "stale-state-assertion-guard": 2,
+      "factual-claim-verification": 1,
+      "pressure-framing-guard": 2,
+      "fleet-state-claim-grounding-gate": 3,
+      "commit-hash-verification": 1,
+      "script-behavior-assertion-guard": 1,
+      "third-party-outbound-authorization-gate": 1
     }
   },
   "cta": {

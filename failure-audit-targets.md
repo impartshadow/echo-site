@@ -1,6 +1,6 @@
 # Failure-Audit Target Map
 
-Generated: 2026-08-28T03:08:37-05:00 CT
+Generated: 2026-08-29T03:38:35-05:00 CT
 
 Goal: Get one real submitted production-agent failure trace.
 
