@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-08-29T03:38:35-05:00",
+  "generated_at_ct": "2026-08-30T03:07:44-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 1022,
-  "distinct_contracts": 60,
+  "total_violations": 1018,
+  "distinct_contracts": 58,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -13,7 +13,7 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "block",
-      "count": 85,
+      "count": 87,
       "latest_seen_ct": "2026-08-23T08:23:54-05:00",
       "example_violation": "[recurrence-escalation 12x/7d] Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
@@ -26,7 +26,7 @@
       "contract": "completion-artifact",
       "failure_mode": "FM-027",
       "severity_seen": "block",
-      "count": 12,
+      "count": 11,
       "latest_seen_ct": "2026-08-27T21:29:21-05:00",
       "example_violation": "Completion/commit language while the repo still has uncommitted work: core/contracts.py, tests/test_contracts.py, scripts/tmp_dump_headers.py. Commit and push, or state that work remains uncommitted.",
       "title": "The Agent Said Done While The Artifact Was Still Missing",
@@ -39,7 +39,7 @@
       "contract": "commit-hash-verification",
       "failure_mode": "FM-027",
       "severity_seen": "block",
-      "count": 8,
+      "count": 5,
       "latest_seen_ct": "2026-08-28T16:12:45-05:00",
       "example_violation": "Cited commit hash(es) do not exist in git: e9d4c57b. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.",
       "title": "The Agent Cited A Commit Hash Before Proving It Resolved",
@@ -63,15 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-07-29": {
-      "capability-scope-assertion-guard": 1,
-      "commit-hash-verification": 3,
-      "completion-artifact": 1,
-      "factual-claim-verification": 2,
-      "stale-state-assertion-guard": 2,
-      "fabricated-verification-claim": 1,
-      "platform-action-param-schema-guard": 4
-    },
     "2026-07-30": {
       "stale-state-assertion-guard": 1,
       "verification-vocabulary-gate": 8,
@@ -383,6 +374,12 @@
       "commit-hash-verification": 1,
       "script-behavior-assertion-guard": 1,
       "third-party-outbound-authorization-gate": 1
+    },
+    "2026-08-29": {
+      "state-assertion-grounding": 2,
+      "verification-vocabulary-gate": 5,
+      "terminal-state-evidence-gate": 1,
+      "stale-state-assertion-guard": 2
     }
   },
   "cta": {

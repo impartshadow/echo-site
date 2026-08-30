@@ -33,21 +33,21 @@
     <div class="label">Frontier artifact pack</div>
     <h1>Every frontier run must leave a proof packet.</h1>
     <p class="sub">This page turns Shadow's latest high-end model synthesis into a reusable artifact: the doctrine, proof task, public wedge, buyer offer, and receipts that decide what the next loop should do.</p>
-    <p class="meta">Generated: 2026-08-29T08:37:33.723566+00:00 · Cycle: 2026-08-29T08:37:22.803849+00:00</p>
+    <p class="meta">Generated: 2026-08-30T08:06:33.884117+00:00 · Cycle: 2026-08-30T08:06:22.704623+00:00</p>
   </header>
   <main>
     <section>
       <h2>Latest Packet</h2>
       <div class="grid">
-        <div class="metric"><b>Thesis</b><span>The moat is no longer the model or the summary — it&#x27;s the harness that stays in the loop long enough to verify its own actions, and most agent businesses will die because they ship outputs instead of receipts.</span></div>
-        <div class="metric"><b>Doctrine</b><span>Every loop action must close observe → act → verify: no artifact counts as shipped until a runtime receipt proves the world changed as intended, and unverified actions get retried or classified as blockers, never silently logged.</span></div>
-        <div class="metric"><b>Proof Artifact</b><span>A verify-gate module for the Shadow loop runner: after each loop&#x27;s primary action, run a declared post-condition check (file exists, endpoint responds, metric moved), emit a receipt JSON {action, expected, observed, pass}, and auto-retry once on failure before flagging a blocker.</span></div>
-        <div class="metric"><b>Buyer Offer</b><span>Sell &#x27;verified automation&#x27; to small ops teams: a $99/mo Shadow-run watchdog that doesn&#x27;t just execute their recurring task but delivers a signed receipt each run proving the outcome occurred — pitch to prospects already burned by silent cron/Zapier failures.</span></div>
+        <div class="metric"><b>Thesis</b><span>The moat is shifting from smarter models to harnesses that keep agents inside long-running worlds — whoever owns the observe→act→verify loop for a legacy ecosystem owns the ecosystem, and DCS-Harness proves hobbyists are already shipping it before vendors.</span></div>
+        <div class="metric"><b>Doctrine</b><span>Every Shadow loop action must emit a runtime receipt: the intended state change, the verification probe that confirmed it, and a retry gate if the probe fails — unverified actions count as failures, not outputs.</span></div>
+        <div class="metric"><b>Proof Artifact</b><span>Ship a receipt-verifier module (shadow/verify_receipt.py) that wraps loop task execution: records intent, runs a post-action probe (file diff, HTTP check, or metric read), writes pass/fail receipts to a receipts.jsonl ledger, and gates one automatic retry on failure.</span></div>
+        <div class="metric"><b>Buyer Offer</b><span>Position a &#x27;verified automation&#x27; tier for small operators: Shadow runs a recurring back-office loop (reporting, monitoring, content ops) where every run comes with a machine-checked receipt log the client can audit — priced at $99/mo, five clients hits the $500 target.</span></div>
       </div>
     </section>
     <section>
       <h2>Public Wedge</h2>
-      <div class="panel">Everyone demos agents acting; nobody demos agents checking whether the action worked. We made verification the exit criterion of every loop — here&#x27;s what our receipts caught in week one.</div>
+      <div class="panel">Everyone benchmarks agent intelligence; almost nobody benchmarks whether the agent&#x27;s action actually changed the world. We started logging receipts for every autonomous action our system takes — here&#x27;s what the failure rate taught us about &#x27;working&#x27; agents.</div>
     </section>
     <section>
       <h2>Source Signals</h2>
@@ -59,17 +59,17 @@
     </section>
     <section>
       <h2>Scale Packets</h2>
-      <table><thead><tr><th>Lane</th><th>Status</th><th>ID</th><th>Success metric</th></tr></thead><tbody><tr><td>proof_artifact</td><td>promoted</td><td>ec88fe6afb96</td><td>A repo-visible artifact, verifier, or receipt exists and can be cited publicly.</td></tr>
-<tr><td>public_wedge</td><td>promoted</td><td>9ece13962b49</td><td>One external post with an inspectable proof link and a subscription/consulting CTA.</td></tr>
-<tr><td>buyer_experiment</td><td>promoted</td><td>4ffe732ec4fe</td><td>A prospect-specific ask, reply, rejection, or follow-up receipt is logged.</td></tr>
-<tr><td>operator_doctrine</td><td>promoted</td><td>756c300b2bc7</td><td>A future loop consumes this doctrine instead of merely storing it.</td></tr></tbody></table>
+      <table><thead><tr><th>Lane</th><th>Status</th><th>ID</th><th>Success metric</th></tr></thead><tbody><tr><td>proof_artifact</td><td>promoted</td><td>cdbbab792cad</td><td>A repo-visible artifact, verifier, or receipt exists and can be cited publicly.</td></tr>
+<tr><td>public_wedge</td><td>promoted</td><td>8dbade1443b6</td><td>One external post with an inspectable proof link and a subscription/consulting CTA.</td></tr>
+<tr><td>buyer_experiment</td><td>promoted</td><td>ef6fbbee0e31</td><td>A prospect-specific ask, reply, rejection, or follow-up receipt is logged.</td></tr>
+<tr><td>operator_doctrine</td><td>promoted</td><td>f84e09845891</td><td>A future loop consumes this doctrine instead of merely storing it.</td></tr></tbody></table>
     </section>
     <section>
       <h2>Latest Promotions</h2>
-      <table><thead><tr><th>Lane</th><th>Status</th><th>Packet</th><th>Receipt</th></tr></thead><tbody><tr><td>proof_artifact</td><td>delegated_to_improvement_queue</td><td>ec88fe6afb96</td><td>Create ~/.cache/shadow/loops/lib/verify_gate.py implementing check-receipt-retry (post_condition callable, receipt written to ~/.cache/shadow/receipts/{loop}_{ts}.json), then wire it into the highest-frequency existing loop runner as its exit step.</td></tr>
-<tr><td>public_wedge</td><td>queued_echo_draft</td><td>9ece13962b49</td><td>frontier_9ece13962b49_1787992653</td></tr>
-<tr><td>buyer_experiment</td><td>queued_buyer_experiment</td><td>4ffe732ec4fe</td><td>5d512995d63a</td></tr>
-<tr><td>operator_doctrine</td><td>already_persisted</td><td>756c300b2bc7</td><td></td></tr></tbody></table>
+      <table><thead><tr><th>Lane</th><th>Status</th><th>Packet</th><th>Receipt</th></tr></thead><tbody><tr><td>proof_artifact</td><td>delegated_to_improvement_queue</td><td>cdbbab792cad</td><td>Create shadow/verify_receipt.py and receipts.jsonl in the working directory, wire the receipt wrapper around the existing research_signal_candidates processing step, and record the first pass/fail receipt on the next loop run.</td></tr>
+<tr><td>public_wedge</td><td>queued_echo_draft</td><td>8dbade1443b6</td><td>frontier_8dbade1443b6_1788077193</td></tr>
+<tr><td>buyer_experiment</td><td>queued_buyer_experiment</td><td>ef6fbbee0e31</td><td>6ef99da33186</td></tr>
+<tr><td>operator_doctrine</td><td>already_persisted</td><td>f84e09845891</td><td></td></tr></tbody></table>
     </section>
     <section>
       <h2>Receipts</h2>

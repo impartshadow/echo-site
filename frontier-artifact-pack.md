@@ -1,23 +1,23 @@
 # Frontier Artifact Pack
 
-Generated: 2026-08-29T08:37:33.723566+00:00
+Generated: 2026-08-30T08:06:33.884117+00:00
 
 ## Thesis
-The moat is no longer the model or the summary — it's the harness that stays in the loop long enough to verify its own actions, and most agent businesses will die because they ship outputs instead of receipts.
+The moat is shifting from smarter models to harnesses that keep agents inside long-running worlds — whoever owns the observe→act→verify loop for a legacy ecosystem owns the ecosystem, and DCS-Harness proves hobbyists are already shipping it before vendors.
 
 ## Doctrine
-Every loop action must close observe → act → verify: no artifact counts as shipped until a runtime receipt proves the world changed as intended, and unverified actions get retried or classified as blockers, never silently logged.
+Every Shadow loop action must emit a runtime receipt: the intended state change, the verification probe that confirmed it, and a retry gate if the probe fails — unverified actions count as failures, not outputs.
 
 ## Proof Artifact
-A verify-gate module for the Shadow loop runner: after each loop's primary action, run a declared post-condition check (file exists, endpoint responds, metric moved), emit a receipt JSON {action, expected, observed, pass}, and auto-retry once on failure before flagging a blocker.
+Ship a receipt-verifier module (shadow/verify_receipt.py) that wraps loop task execution: records intent, runs a post-action probe (file diff, HTTP check, or metric read), writes pass/fail receipts to a receipts.jsonl ledger, and gates one automatic retry on failure.
 
-Next action: Create ~/.cache/shadow/loops/lib/verify_gate.py implementing check-receipt-retry (post_condition callable, receipt written to ~/.cache/shadow/receipts/{loop}_{ts}.json), then wire it into the highest-frequency existing loop runner as its exit step.
+Next action: Create shadow/verify_receipt.py and receipts.jsonl in the working directory, wire the receipt wrapper around the existing research_signal_candidates processing step, and record the first pass/fail receipt on the next loop run.
 
 ## Public Angle
-Everyone demos agents acting; nobody demos agents checking whether the action worked. We made verification the exit criterion of every loop — here's what our receipts caught in week one.
+Everyone benchmarks agent intelligence; almost nobody benchmarks whether the agent's action actually changed the world. We started logging receipts for every autonomous action our system takes — here's what the failure rate taught us about 'working' agents.
 
 ## Buyer Offer
-Sell 'verified automation' to small ops teams: a $99/mo Shadow-run watchdog that doesn't just execute their recurring task but delivers a signed receipt each run proving the outcome occurred — pitch to prospects already burned by silent cron/Zapier failures.
+Position a 'verified automation' tier for small operators: Shadow runs a recurring back-office loop (reporting, monitoring, content ops) where every run comes with a machine-checked receipt log the client can audit — priced at $99/mo, five clients hits the $500 target.
 
 ## Source Signals
 - Agents Don't Paginate: First-Chunk Selection for LLM Tool Responses
@@ -27,16 +27,16 @@ Sell 'verified automation' to small ops teams: a $99/mo Shadow-run watchdog that
 - Carer-Healthcare-AI/Hospilot — Open-source agentic AI operating layer for hospital operations — multi-agent orchestration over FHIR
 
 ## Scale Packets
-- proof_artifact: promoted (ec88fe6afb96)
-- public_wedge: promoted (9ece13962b49)
-- buyer_experiment: promoted (4ffe732ec4fe)
-- operator_doctrine: promoted (756c300b2bc7)
+- proof_artifact: promoted (cdbbab792cad)
+- public_wedge: promoted (8dbade1443b6)
+- buyer_experiment: promoted (ef6fbbee0e31)
+- operator_doctrine: promoted (f84e09845891)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (ec88fe6afb96)
-- public_wedge: queued_echo_draft (9ece13962b49)
-- buyer_experiment: queued_buyer_experiment (4ffe732ec4fe)
-- operator_doctrine: already_persisted (756c300b2bc7)
+- proof_artifact: delegated_to_improvement_queue (cdbbab792cad)
+- public_wedge: queued_echo_draft (8dbade1443b6)
+- buyer_experiment: queued_buyer_experiment (ef6fbbee0e31)
+- operator_doctrine: already_persisted (f84e09845891)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

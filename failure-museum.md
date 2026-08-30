@@ -1,17 +1,17 @@
 # Agent Failure Museum
 
-Generated: 2026-08-29T03:38:35-05:00 CT
+Generated: 2026-08-30T03:07:44-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 1022 claim-boundary violations across 60 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 1018 claim-boundary violations across 58 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
 ### The Agent Answered From Memory When The Question Required A Live Read
 
 - Contract: `state-assertion-grounding`
-- Fires logged: 85
+- Fires logged: 87
 - Latest seen: 2026-08-23T08:23:54-05:00 CT
 - Buyer failure: An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.
 - Missing receipt: same-turn read from the relevant file, process table, API, inbox, queue, or log
@@ -22,7 +22,7 @@ Shadow has logged 1022 claim-boundary violations across 60 contract names. The u
 ### The Agent Said Done While The Artifact Was Still Missing
 
 - Contract: `completion-artifact`
-- Fires logged: 12
+- Fires logged: 11
 - Latest seen: 2026-08-27T21:29:21-05:00 CT
 - Buyer failure: A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.
 - Missing receipt: artifact path, commit hash, deploy receipt, message id, or queue record
@@ -33,7 +33,7 @@ Shadow has logged 1022 claim-boundary violations across 60 contract names. The u
 ### The Agent Cited A Commit Hash Before Proving It Resolved
 
 - Contract: `commit-hash-verification`
-- Fires logged: 8
+- Fires logged: 5
 - Latest seen: 2026-08-28T16:12:45-05:00 CT
 - Buyer failure: A coding agent says a fix was committed or pushed, but the hash is invented, stale, or not reachable from the expected branch.
 - Missing receipt: git rev-parse output plus git cat-file or remote branch containment proof
