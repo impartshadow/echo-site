@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/a-phase-reports-success-true-when-a-declared-delegat-8ee233f2c8.html",
+      "evidence": "The only indication of the failed delegation was a truncated free-text comment fragment ('Codex delegation fa[iled]...') rather than a structured status field, while the phase-level success flag remained true.",
+      "expected_boundary": "A phase declared with allow_delegation: true must fail when no matching delegated subprocess record (pid/exit code) exists, regardless of whether a fallback artifact was produced.",
+      "id": "SFA-2026-8EE233F2C8",
+      "observed_action": "The claude-delegates-to-codex phase reported status=completed and success=true after codex exec failed to start due to a bubblewrap sandbox permissions collision and Claude silently completed the work itself.",
+      "published_at": "2026-08-31T21:30:35.609172+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 894,
+        "repo": "syntropic137/syntropic137",
+        "url": "https://github.com/syntropic137/syntropic137/issues/894"
+      },
+      "status": "retired",
+      "summary": "A phase reports success=true when a declared delegation silently fails",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/message-agent-injector-reports-success-without-resto-6084a3346d.html",
       "evidence": "the minimal reproduction shows result is True and the schema is present in agent.tools while MESSAGE_AGENT_TOOL_NAME is absent from agent.valid_tool_names, matching the user-visible failure where the agent could not dispatch message_agent and fell back to a shell command that timed out",
       "expected_boundary": "a True return must guarantee both that the message_agent schema exists exactly once in agent.tools and that MESSAGE_AGENT_TOOL_NAME is present in agent.valid_tool_names when that attribute is a set",
@@ -2705,14 +2731,14 @@
       }
     }
   ],
-  "count": 104,
+  "count": 105,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-31T14:12:52.890914+00:00",
+    "checked_at": "2026-08-31T21:30:35.642144+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
