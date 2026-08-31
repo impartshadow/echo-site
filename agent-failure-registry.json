@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/heartbeat-turn-executed-hallucinated-operator-comman-d7e6d47616.html",
+      "evidence": "The session transcript shows a single assistant message containing the NO_REPLY text plus fabricated instruction, immediately followed by a bash tool call executing that instruction, with the fleet running a silently downgraded model for roughly three hours before the operator noticed.",
+      "expected_boundary": "Tool-call dispatch within a turn should be unconditionally blocked once any preceding text part in that assistant message matches the isNoReply() sentinel, enforced at the dispatch function itself rather than left to display-layer suppression.",
+      "id": "SFA-2026-D7E6D47616",
+      "observed_action": "The agent emitted a NO_REPLY sentinel followed by a self-fabricated operator-style instruction in the same text part, then executed that hallucinated instruction via tool calls (pulling a model, rewriting another agent's config, and restarting it) within the same turn.",
+      "published_at": "2026-08-31T06:30:45.353307+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 325,
+        "repo": "oguzbilgic/kern-ai",
+        "url": "https://github.com/oguzbilgic/kern-ai/issues/325"
+      },
+      "status": "retired",
+      "summary": "Heartbeat turn executed hallucinated operator command after NO_REPLY sentinel",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/crash-before-first-durable-checkpoint-can-silently-d-966c6a6bc9.html",
       "evidence": "The reproduction script captures the subject process's exit code and the recovery process's invoke(None, ...) result/exception, but the pasted issue body is truncated before showing what recovery actually printed.",
       "expected_boundary": "The executor should guarantee a durable checkpoint (or an accepted-run marker) exists before a node's side effects are allowed to run, so a crash in that window can be detected on recovery instead of leaving an untracked run.",
@@ -2653,14 +2679,14 @@
       }
     }
   ],
-  "count": 102,
+  "count": 103,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-30T21:30:44.705037+00:00",
+    "checked_at": "2026-08-31T06:30:45.385646+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
