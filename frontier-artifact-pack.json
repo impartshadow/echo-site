@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-08-30T08:06:33.884117+00:00",
+  "generated_at": "2026-08-31T08:13:40.841747+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-08-30T08:06:22.704623+00:00",
-  "thesis": "The moat is shifting from smarter models to harnesses that keep agents inside long-running worlds \u2014 whoever owns the observe\u2192act\u2192verify loop for a legacy ecosystem owns the ecosystem, and DCS-Harness proves hobbyists are already shipping it before vendors.",
-  "doctrine": "Every Shadow loop action must emit a runtime receipt: the intended state change, the verification probe that confirmed it, and a retry gate if the probe fails \u2014 unverified actions count as failures, not outputs.",
-  "proof_artifact": "Ship a receipt-verifier module (shadow/verify_receipt.py) that wraps loop task execution: records intent, runs a post-action probe (file diff, HTTP check, or metric read), writes pass/fail receipts to a receipts.jsonl ledger, and gates one automatic retry on failure.",
-  "proof_next_action": "Create shadow/verify_receipt.py and receipts.jsonl in the working directory, wire the receipt wrapper around the existing research_signal_candidates processing step, and record the first pass/fail receipt on the next loop run.",
-  "public_angle": "Everyone benchmarks agent intelligence; almost nobody benchmarks whether the agent's action actually changed the world. We started logging receipts for every autonomous action our system takes \u2014 here's what the failure rate taught us about 'working' agents.",
-  "buyer_offer": "Position a 'verified automation' tier for small operators: Shadow runs a recurring back-office loop (reporting, monitoring, content ops) where every run comes with a machine-checked receipt log the client can audit \u2014 priced at $99/mo, five clients hits the $500 target.",
+  "cycle_ts": "2026-08-31T08:13:28.392988+00:00",
+  "thesis": "The moat is shifting from agent intelligence to harness engineering \u2014 whoever ships verifiable observe-act-verify loops inside other people's mature software ecosystems (DCS, FHIR, EDA) wins, because the model is now the commodity and the receipt is the product.",
+  "doctrine": "Every autonomous action Shadow takes must close its own loop: act, then independently verify the world changed as intended, and emit a machine-checkable receipt \u2014 an unverified action counts as a failure, not a success.",
+  "proof_artifact": "A verify-receipt module for the compound loop: a small Python script (verify_receipt.py) that wraps each loop action with a post-condition check (file exists, endpoint responds, metric moved) and writes a JSON receipt {action, expected, observed, pass} to a receipts/ ledger the allocator can read.",
+  "proof_next_action": "Create receipts/ and write verify_receipt.py in the shadow loop workspace, then retrofit it onto the most recent research_signal_candidates entry so the next loop iteration emits its first pass/fail receipt.",
+  "public_angle": "Everyone benchmarks agents; almost no one verifies them at runtime. Shadow now refuses to count any action as done until the world confirms it \u2014 here's the 40-line receipt ledger that changed our failure rate, and why 'the model said it did it' is the new 'it works on my machine.'",
+  "buyer_offer": "Productize 'harness audits' for niche vertical agent projects (like Hospilot or DCS-Harness maintainers): a $99-199/month retainer where Shadow continuously diffs their agent harness against frontier patterns (Prime Agent, DeepSeek Harness) and ships a monthly gap report with concrete patches \u2014 recurring, low-touch, directly on the $500/mo path.",
   "source_titles": [
-    "Agents Don't Paginate: First-Chunk Selection for LLM Tool Responses",
     "Prime Agent: A Self-Improving RLM Harness | Seth Karten Home Research Canonical page Agent Harnesses \u00b7 Technical Report Prime Agent: A Self-Improving RLM Harnes",
-    "Distributed Training using an Intelligent Network",
+    "Carer-Healthcare-AI/Hospilot \u2014 Open-source agentic AI operating layer for hospital operations \u2014 multi-agent orchestration over FHIR",
+    "The First AI Chip Designed End-to-End by AI",
     "yuriak/DCS-Harness \u2014 An agent-native workspace for autonomous DCS mission direction",
-    "Carer-Healthcare-AI/Hospilot \u2014 Open-source agentic AI operating layer for hospital operations \u2014 multi-agent orchestration over FHIR"
+    "flagdizero/jenny-android-ai-agent \u2014 A local-first personal AI agent that lives on your Android phone. Permanent memory, scheduled autono"
   ],
   "packets": [
     {
-      "id": "cdbbab792cad",
+      "id": "1ebed01b1aa9",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "8dbade1443b6",
+      "id": "5bb67ff4bc91",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "ef6fbbee0e31",
+      "id": "35f9a7552a2c",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "f84e09845891",
+      "id": "900f0b35bd9a",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Create shadow/verify_receipt.py and receipts.jsonl in the working directory, wire the receipt wrapper around the existing research_signal_candidates processing step, and record the first pass/fail receipt on the next loop run.",
-      "packet_id": "cdbbab792cad"
+      "next_action": "Create receipts/ and write verify_receipt.py in the shadow loop workspace, then retrofit it onto the most recent research_signal_candidates entry so the next loop iteration emits its first pass/fail receipt.",
+      "packet_id": "1ebed01b1aa9"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_8dbade1443b6_1788077193",
-      "packet_id": "8dbade1443b6"
+      "draft_id": "frontier_5bb67ff4bc91_1788164020",
+      "packet_id": "5bb67ff4bc91"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "6ef99da33186",
-      "packet_id": "ef6fbbee0e31"
+      "experiment_id": "67d6bc6d6bad",
+      "packet_id": "35f9a7552a2c"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "f84e09845891"
+      "packet_id": "900f0b35bd9a"
     }
   ],
   "receipts": {

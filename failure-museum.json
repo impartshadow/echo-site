@@ -1,8 +1,8 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-08-30T03:07:44-05:00",
+  "generated_at_ct": "2026-08-31T03:14:40-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 1018,
+  "total_violations": 989,
   "distinct_contracts": 58,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
@@ -13,7 +13,7 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "block",
-      "count": 87,
+      "count": 79,
       "latest_seen_ct": "2026-08-23T08:23:54-05:00",
       "example_violation": "[recurrence-escalation 12x/7d] Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
@@ -63,23 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-07-30": {
-      "stale-state-assertion-guard": 1,
-      "verification-vocabulary-gate": 8,
-      "bitwarden-claim-verification-guard": 1,
-      "terminal-state-evidence-gate": 1,
-      "platform-message-id-claim-guard": 3,
-      "state-assertion-grounding": 8,
-      "concurrence-grounding": 1,
-      "unbuilt-guarantee-guard": 1,
-      "cl-channel_shadow_hq_system_bot": 1,
-      "cl-don_t_just_blindly_take": 1,
-      "cl-if_title_seems_relevant_can": 1,
-      "cl-stop_just_cold_including_stripe": 1,
-      "cl-ugh_that_s_what_i": 1,
-      "cl-yeah_i_just_wanted_make": 1,
-      "pressure-framing-guard": 3
-    },
     "2026-08-01": {
       "pressure-framing-guard": 1,
       "propguard-provenance-detector": 1,
@@ -380,6 +363,11 @@
       "verification-vocabulary-gate": 5,
       "terminal-state-evidence-gate": 1,
       "stale-state-assertion-guard": 2
+    },
+    "2026-08-30": {
+      "verification-vocabulary-gate": 1,
+      "privacy-exposure-taxonomy": 1,
+      "factual-claim-verification": 2
     }
   },
   "cta": {

@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-08-30T08:06:33.884117+00:00
+Generated: 2026-08-31T08:13:40.841747+00:00
 
 ## Thesis
-The moat is shifting from smarter models to harnesses that keep agents inside long-running worlds — whoever owns the observe→act→verify loop for a legacy ecosystem owns the ecosystem, and DCS-Harness proves hobbyists are already shipping it before vendors.
+The moat is shifting from agent intelligence to harness engineering — whoever ships verifiable observe-act-verify loops inside other people's mature software ecosystems (DCS, FHIR, EDA) wins, because the model is now the commodity and the receipt is the product.
 
 ## Doctrine
-Every Shadow loop action must emit a runtime receipt: the intended state change, the verification probe that confirmed it, and a retry gate if the probe fails — unverified actions count as failures, not outputs.
+Every autonomous action Shadow takes must close its own loop: act, then independently verify the world changed as intended, and emit a machine-checkable receipt — an unverified action counts as a failure, not a success.
 
 ## Proof Artifact
-Ship a receipt-verifier module (shadow/verify_receipt.py) that wraps loop task execution: records intent, runs a post-action probe (file diff, HTTP check, or metric read), writes pass/fail receipts to a receipts.jsonl ledger, and gates one automatic retry on failure.
+A verify-receipt module for the compound loop: a small Python script (verify_receipt.py) that wraps each loop action with a post-condition check (file exists, endpoint responds, metric moved) and writes a JSON receipt {action, expected, observed, pass} to a receipts/ ledger the allocator can read.
 
-Next action: Create shadow/verify_receipt.py and receipts.jsonl in the working directory, wire the receipt wrapper around the existing research_signal_candidates processing step, and record the first pass/fail receipt on the next loop run.
+Next action: Create receipts/ and write verify_receipt.py in the shadow loop workspace, then retrofit it onto the most recent research_signal_candidates entry so the next loop iteration emits its first pass/fail receipt.
 
 ## Public Angle
-Everyone benchmarks agent intelligence; almost nobody benchmarks whether the agent's action actually changed the world. We started logging receipts for every autonomous action our system takes — here's what the failure rate taught us about 'working' agents.
+Everyone benchmarks agents; almost no one verifies them at runtime. Shadow now refuses to count any action as done until the world confirms it — here's the 40-line receipt ledger that changed our failure rate, and why 'the model said it did it' is the new 'it works on my machine.'
 
 ## Buyer Offer
-Position a 'verified automation' tier for small operators: Shadow runs a recurring back-office loop (reporting, monitoring, content ops) where every run comes with a machine-checked receipt log the client can audit — priced at $99/mo, five clients hits the $500 target.
+Productize 'harness audits' for niche vertical agent projects (like Hospilot or DCS-Harness maintainers): a $99-199/month retainer where Shadow continuously diffs their agent harness against frontier patterns (Prime Agent, DeepSeek Harness) and ships a monthly gap report with concrete patches — recurring, low-touch, directly on the $500/mo path.
 
 ## Source Signals
-- Agents Don't Paginate: First-Chunk Selection for LLM Tool Responses
 - Prime Agent: A Self-Improving RLM Harness | Seth Karten Home Research Canonical page Agent Harnesses · Technical Report Prime Agent: A Self-Improving RLM Harnes
-- Distributed Training using an Intelligent Network
-- yuriak/DCS-Harness — An agent-native workspace for autonomous DCS mission direction
 - Carer-Healthcare-AI/Hospilot — Open-source agentic AI operating layer for hospital operations — multi-agent orchestration over FHIR
+- The First AI Chip Designed End-to-End by AI
+- yuriak/DCS-Harness — An agent-native workspace for autonomous DCS mission direction
+- flagdizero/jenny-android-ai-agent — A local-first personal AI agent that lives on your Android phone. Permanent memory, scheduled autono
 
 ## Scale Packets
-- proof_artifact: promoted (cdbbab792cad)
-- public_wedge: promoted (8dbade1443b6)
-- buyer_experiment: promoted (ef6fbbee0e31)
-- operator_doctrine: promoted (f84e09845891)
+- proof_artifact: promoted (1ebed01b1aa9)
+- public_wedge: promoted (5bb67ff4bc91)
+- buyer_experiment: promoted (35f9a7552a2c)
+- operator_doctrine: promoted (900f0b35bd9a)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (cdbbab792cad)
-- public_wedge: queued_echo_draft (8dbade1443b6)
-- buyer_experiment: queued_buyer_experiment (ef6fbbee0e31)
-- operator_doctrine: already_persisted (f84e09845891)
+- proof_artifact: delegated_to_improvement_queue (1ebed01b1aa9)
+- public_wedge: queued_echo_draft (5bb67ff4bc91)
+- buyer_experiment: queued_buyer_experiment (35f9a7552a2c)
+- operator_doctrine: already_persisted (900f0b35bd9a)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`
