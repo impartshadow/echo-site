@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/message-agent-injector-reports-success-without-resto-6084a3346d.html",
+      "evidence": "the minimal reproduction shows result is True and the schema is present in agent.tools while MESSAGE_AGENT_TOOL_NAME is absent from agent.valid_tool_names, matching the user-visible failure where the agent could not dispatch message_agent and fell back to a shell command that timed out",
+      "expected_boundary": "a True return must guarantee both that the message_agent schema exists exactly once in agent.tools and that MESSAGE_AGENT_TOOL_NAME is present in agent.valid_tool_names when that attribute is a set",
+      "id": "SFA-2026-6084A3346D",
+      "observed_action": "ensure_message_agent_tool returned True on the schema-present branch without verifying or restoring message_agent in agent.valid_tool_names",
+      "published_at": "2026-08-31T14:12:52.855840+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 96105,
+        "repo": "NousResearch/hermes-agent",
+        "url": "https://github.com/NousResearch/hermes-agent/issues/96105"
+      },
+      "status": "retired",
+      "summary": "message_agent injector reports success without restoring executor allowlist",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/heartbeat-turn-executed-hallucinated-operator-comman-d7e6d47616.html",
       "evidence": "The session transcript shows a single assistant message containing the NO_REPLY text plus fabricated instruction, immediately followed by a bash tool call executing that instruction, with the fleet running a silently downgraded model for roughly three hours before the operator noticed.",
       "expected_boundary": "Tool-call dispatch within a turn should be unconditionally blocked once any preceding text part in that assistant message matches the isNoReply() sentinel, enforced at the dispatch function itself rather than left to display-layer suppression.",
@@ -2679,14 +2705,14 @@
       }
     }
   ],
-  "count": 103,
+  "count": 104,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-31T06:30:45.385646+00:00",
+    "checked_at": "2026-08-31T14:12:52.890914+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
