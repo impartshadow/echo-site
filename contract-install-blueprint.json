@@ -1,11 +1,11 @@
 {
   "schema": "shadow.contract_install_blueprint.v1",
-  "generated_at": "2026-08-30T08:12:45.234673+00:00",
+  "generated_at": "2026-08-31T08:19:43.150333+00:00",
   "source_model": "claude-fable-5",
   "frontier_receipt": "claude-fable-5 selected Contract Install Blueprint as the next artifact because it demonstrates the paid install product itself.",
   "source_runtime": {
-    "contract_count": 227,
-    "violation_rows_scanned": 8948,
+    "contract_count": 228,
+    "violation_rows_scanned": 8977,
     "current_violation_log": "state/contract_violations.jsonl",
     "archive_glob": "state/archive/**/contract_violations_*.jsonl.gz"
   },
@@ -61,7 +61,7 @@
       "tier": "free-triage",
       "production_evidence": {
         "fires_observed": 119,
-        "ledger_rows_scanned": 8948,
+        "ledger_rows_scanned": 8977,
         "latest_seen": "2026-08-24T01:47:05",
         "severity_counts": {
           "block": 119
@@ -98,7 +98,7 @@
       "tier": "census",
       "production_evidence": {
         "fires_observed": 119,
-        "ledger_rows_scanned": 8948,
+        "ledger_rows_scanned": 8977,
         "latest_seen": "2026-08-28T21:12:45",
         "severity_counts": {
           "block": 119
@@ -135,7 +135,7 @@
       "tier": "install",
       "production_evidence": {
         "fires_observed": 205,
-        "ledger_rows_scanned": 8948,
+        "ledger_rows_scanned": 8977,
         "latest_seen": "2026-08-30T02:06:44",
         "severity_counts": {
           "block": 173,
@@ -173,7 +173,7 @@
       "tier": "census",
       "production_evidence": {
         "fires_observed": 630,
-        "ledger_rows_scanned": 8948,
+        "ledger_rows_scanned": 8977,
         "latest_seen": "2026-07-20T03:18:01",
         "severity_counts": {
           "warn": 381,
@@ -211,7 +211,7 @@
       "tier": "install",
       "production_evidence": {
         "fires_observed": 115,
-        "ledger_rows_scanned": 8948,
+        "ledger_rows_scanned": 8977,
         "latest_seen": "2026-08-20T19:00:52",
         "severity_counts": {
           "block": 115
@@ -248,7 +248,7 @@
       "tier": "free-triage",
       "production_evidence": {
         "fires_observed": 213,
-        "ledger_rows_scanned": 8948,
+        "ledger_rows_scanned": 8977,
         "latest_seen": "2026-08-16T22:04:49",
         "severity_counts": {
           "block": 68,
