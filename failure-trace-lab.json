@@ -1,50 +1,59 @@
 {
-  "generated_at": "2026-08-31T08:18:36.104951+00:00",
+  "generated_at": "2026-09-01T08:18:28.735658+00:00",
   "model": "claude-fable-5",
   "trace_events": 25,
   "autopsy": {
-    "headline": "The egress guard is winning the same battle three times over: every bot restart re-injects a '[System: Bot just restarted...]' banner inline into model context, the agent parrots it verbatim into Discord, and the guard strips it at egress — a symptomatic patch masking an ingress framing defect that recurs identically every cycle.",
+    "headline": "The egress guard is silently laundering the exact same four scaffold-contaminated Discord messages on every bot restart (18:07, 23:07, 07:54) — deterministic sanitization is working perfectly while masking an unfixed restart-replay bug, and each restart also wipes context that the agent then reconstructs from memory and 71-day-dead state files.",
     "annotations": [
       {
-        "ts": "cycle 1-3, event 1 of each restart burst",
+        "ts": "2026-08-31T18:07:20.698685+00:00",
         "contract": "harness-scaffold-egress-guard",
-        "annotation": "Sanitized output is the empty string — the agent's ENTIRE message was scaffold echo ('[Channel: #shadow-hq] [System: Bot just restarted. Completed before restart: nothing]'). The agent had nothing to say and posted anyway; the guard turned a leak into a ghost message. A guard that produces zero-byte sends is proof the send should never have been attempted."
+        "annotation": "Four-message FM-005 burst: restart scaffold ('[System: Bot just restarted...]', '[Channel: #shadow-hq]') leaking into outbound Discord text. One message sanitizes to empty string — pure scaffold with zero user content nearly egressed. The guard strips it, but stripping is symptom suppression: the scaffold is entering the model's output channel upstream."
       },
       {
-        "ts": "cycle 1-3, mid-burst events",
+        "ts": "2026-08-31T23:07:39.305898+00:00",
         "contract": "harness-scaffold-egress-guard",
-        "annotation": "Banner tokens appear mid-sentence ('ok here's the update [System: Bot just restarted] then more text') and as a paraphrased prefix ('Bot just restarted: previous task was AWG email draft'). The second form shows the model isn't just copy-pasting — it's absorbing the banner as content and restating it in its own voice, which means token-matching will eventually miss a rephrasing the regex doesn't know."
+        "annotation": "Byte-identical repeat of the 18:07 four-message burst, including the same 'Completed before restart: AWG draft' payload. Identical originals across restarts means this is a replayed queue or startup self-test firing on every restart, not fresh model output — the guard has no dedupe/escalation, so it will sanitize this forever without anyone noticing."
       },
       {
-        "ts": "cycle 2-3, tail event of each burst",
+        "ts": "2026-09-01T07:54:39.157318+00:00",
         "contract": "harness-scaffold-egress-guard",
-        "annotation": "The exact same four-event leak signature repeats verbatim across three restart cycles ('Completed before restart: nothing' → '...AWG draft'). Zero variance across cycles = deterministic reproduction. This is not model stochasticity; it's the harness injecting the banner as unmarked inline text every restart. Nothing upstream changed between cycles despite 12 caught violations."
+        "annotation": "Third identical burst ~9h later confirms a restart loop cadence. Three restarts in 14 hours is itself a health signal the contract layer observes but never surfaces."
       },
       {
-        "ts": "cycle 1-3, taxonomy tag on all egress events",
-        "failure_mode_note": "tag mismatch",
-        "contract": "harness-scaffold-egress-guard",
-        "annotation": "Events are tagged FM-005 (context-miss: 'asking Will to repeat something'), but the observed behavior is scaffold-context bleed-through — the inverse problem: too much harness context leaking OUT, not missing context. The taxonomy has no named mode for scaffold-echo, so violations are being filed under the nearest neighbor, which corrupts frequency stats and hides that this mode has no owning root-cause entry."
-      },
-      {
-        "ts": "interleaved, all provenance events",
+        "ts": "2026-08-31T18:07:57.603727+00:00",
         "contract": "personal-help-provenance-carveout",
-        "annotation": "This contract is functioning correctly and consistently: hedge=true whenever fetch_tools is empty, hedge=false when a fetch occurred, carveout applied uniformly across home_diy and health_nutrition. One wrinkle: the fetch tool is logged as both 'mcp__shadow__browse_url' and bare 'browse_url' — un-normalized tool identifiers across log paths will break any future FM-004 wrong-tool-route analytics that key on exact names."
+        "annotation": "Carveout downgrades fire in the same post-restart minute as the FM-005 bursts (both at 18:07 and 23:08): home_diy/health_nutrition answers given with no fetch or unhedged single-fetch. The carveout correctly downgrades rather than blocks, but the timing shows the agent resumes answering personal queries immediately after restart with degraded provenance."
+      },
+      {
+        "ts": "2026-08-31T22:57:53",
+        "contract": "dead-source-citation-guard",
+        "annotation": "The sharpest catch in the window: agent cites state/self_rewrite_runs.jsonl (untouched 71 days) as live evidence, repeating the 2026-07-07 echo_post_log wrong-diagnosis failure pattern. A frozen state file means its writer is dead — the agent is diagnosing from a corpse."
+      },
+      {
+        "ts": "2026-08-31T22:57:27",
+        "contract": "stale-state-assertion-guard",
+        "annotation": "Two FM-022 blocks in 26 seconds plus an FM-029 uncited-statistic warn: post-restart, the agent asserts 'X is dead/blocked/stale' and numeric caps from memory with no same-turn Read/Grep. The uncited claim is literally *about* FM-011/FM-022/FM-029 remediation — the agent is hallucinating progress on fixing its own hallucination failure modes."
+      },
+      {
+        "ts": "2026-09-01T01:18:41",
+        "contract": "verification-vocabulary-gate",
+        "annotation": "'Verified' used with zero same-turn provenance, followed 22 minutes later by another assert-from-memory FM-014 warn answering Will's factual question. The blocks at 22:57 did not change behavior three hours later — the model re-offends; only the deterministic gate prevents egress each time."
       }
     ],
     "root_cause_chain": [
-      "Surface: scaffold tokens ('[Channel: #shadow-hq]', '[System: Bot just restarted...]') appear in outbound Discord messages, including one message that is 100% scaffold.",
-      "The model treats the restart banner as message content because the harness injects it as unmarked inline text in the same channel-message format as real user content.",
-      "The egress guard strips matched tokens per-send but has no feedback path — nothing quarantines the banner at ingress or blocks empty-after-sanitization sends.",
-      "Because the fix lives only at egress, every restart deterministically reproduces the identical four-leak burst; three full cycles in this window with zero drift.",
-      "Structural cause: scaffold metadata and conversational content share one undifferentiated text channel, and the taxonomy has no failure mode owning scaffold-echo (events mis-filed under FM-005), so no recovery path or upstream contract was ever assigned."
+      "Surface: restart scaffold text ('[System: Bot just restarted...]') appears verbatim in outbound Discord messages and must be stripped by the egress guard.",
+      "The same four contaminated messages recur byte-identically at 18:07, 23:07, and 07:54 — a message queue or startup path is replayed on every restart, and sanitization hides the recurrence instead of escalating it.",
+      "The bot is restarting repeatedly (3x in ~14h), and each restart destroys in-process context ('Completed before restart: nothing').",
+      "Post-restart, the agent compensates for lost context by asserting state from memory and stale artifacts: FM-022 stale-state blocks, FM-014 citation of a 71-day-frozen state file, FM-029 uncited numerics and unearned 'verified' claims.",
+      "Structural cause: the harness injects operational scaffold into the same text stream the model emits from, and provides no fresh ground-truth re-read requirement after restart — so every restart simultaneously creates scaffold-leak pressure at egress and stale-assertion pressure at reasoning time. Contracts catch both symptoms per-turn but nothing closes the loop on the restart itself."
     ],
     "missing_contract": {
-      "name": "scaffold-ingress-quarantine",
-      "trigger": "Bot restart / any harness-generated banner or metadata being appended to model input context",
-      "precondition": "Harness metadata (restart notices, channel headers, prior-task state) must be delivered in a structured out-of-band field, never as inline text in the content stream; additionally, any egress payload that sanitizes to empty must be dropped, not sent.",
-      "why_it_would_have_caught_this": "All 12 egress violations share one ingress event: the restart banner entering context as plain text. Quarantining it at injection time makes the echo impossible regardless of how the model rephrases it — closing the gap that token-matching at egress can never fully cover (the 'Bot just restarted:' paraphrase already shows the model mutating the banner beyond its literal form)."
+      "name": "recurring-violation-escalation-guard",
+      "trigger": "The same contract fires on a payload whose normalized original text hash matches a prior violation within a rolling 48h window, or any contract fires >= N times with identical matched_tokens across process restarts.",
+      "precondition": "Violation log persisted across restarts with content hashes; restart events recorded in the same stream.",
+      "why_it_would_have_caught_this": "It would have flagged the second 23:07 burst as an exact replay of 18:07 and escalated from silent-sanitize to alert-and-halt, surfacing both the restart loop and the queue-replay bug after two occurrences instead of letting the egress guard absorb the identical failure indefinitely. It would also correlate the post-restart FM-022/FM-014 cluster with restart events, exposing that stale-state assertions are a restart symptom, not independent model lapses."
     },
-    "buyer_takeaway": "The egress guard caught 100% of leaks with deterministic token matching — including one where it reduced the agent's entire message to an empty string — which no prompt-only instruction ('never echo system banners') would do reliably, as evidenced by the model already paraphrasing the banner into its own words. But the trace also shows the limit of enforcement without remediation: the same violation reproduced identically across three restart cycles because contracts caught the symptom while the ingress defect stayed unfixed. Deterministic enforcement is the floor that makes failure legible and countable; the value is that these 12 structured events point to exactly one upstream fix, something prompt guardrails could never surface."
+    "buyer_takeaway": "This window shows deterministic contracts doing exactly what prompts cannot: the model re-offended on identical patterns across three restarts and a 3-hour gap (FM-005 four times per restart, FM-022/FM-029 hours after being blocked for the same thing), and every single instance was caught mechanically at the boundary. Prompt-only guardrails would have let scaffold text and 71-day-stale 'evidence' reach Will on the first restart and every one after. The gap the trace also exposes is the honest part: per-event enforcement without cross-event memory suppresses symptoms so reliably that a recurring root cause — the restart loop itself — stays invisible, which is why contract logs need escalation logic, not just filters."
   }
 }
