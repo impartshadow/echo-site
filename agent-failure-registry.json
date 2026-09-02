@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/transport-stop-silently-dropping-mid-run-user-respon-16ab92d853.html",
+      "evidence": "The issue body itself states the protobuf contract promises next-turn injection while the code path shows no handler exists until RunFollowUpLoop registers post-done.",
+      "expected_boundary": "Every event type defined in harness.proto should have a registered handler across all loop states (primary, provider-stream, tool-dispatch), with an explicit observable ack or nack for any event received outside a valid window.",
+      "id": "SFA-2026-16AB92D853",
+      "observed_action": "The active agentic loop received a mid-run user_response control event and discarded it silently because only RunFollowUpLoop, registered after the primary done, had a handler for that event type.",
+      "published_at": "2026-09-02T06:30:44.546313+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 572,
+        "repo": "rxbynerd/stirrup",
+        "url": "https://github.com/rxbynerd/stirrup/issues/572"
+      },
+      "status": "retired",
+      "summary": "transport: stop silently dropping mid-run user_response events",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/a-phase-reports-success-true-when-a-declared-delegat-8ee233f2c8.html",
       "evidence": "The only indication of the failed delegation was a truncated free-text comment fragment ('Codex delegation fa[iled]...') rather than a structured status field, while the phase-level success flag remained true.",
       "expected_boundary": "A phase declared with allow_delegation: true must fail when no matching delegated subprocess record (pid/exit code) exists, regardless of whether a fallback artifact was produced.",
@@ -2731,14 +2757,14 @@
       }
     }
   ],
-  "count": 105,
+  "count": 106,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-08-31T21:30:35.642144+00:00",
+    "checked_at": "2026-09-02T06:30:44.574427+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
