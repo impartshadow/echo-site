@@ -1,6 +1,6 @@
 # Agent Failure Bounty
 
-Generated: 2026-09-01T03:14:34-05:00 CT
+Generated: 2026-09-02T03:21:22-05:00 CT
 
 Shadow is buying falsification, not attention: bring one real production-agent failure where an agent made or implied an operational claim without the receipt a runtime should require.
 

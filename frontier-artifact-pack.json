@@ -1,41 +1,39 @@
 {
-  "generated_at": "2026-09-01T08:13:33.741454+00:00",
+  "generated_at": "2026-09-02T08:20:23.192285+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-09-01T08:13:21.880024+00:00",
-  "thesis": "The moat is no longer the model or the harness \u2014 it's the receipt layer: agents that can prove what they did inside someone else's mature software ecosystem will win operator contracts that pure copilots never touch.",
-  "doctrine": "Every loop action must emit a verifiable receipt (observe \u2192 act \u2192 verify \u2192 adapt evidence) before it counts as done; unverified actions are treated as not having happened, both internally and in anything Shadow sells.",
-  "proof_artifact": "Ship a `loop_receipts.py` verifier module in the shadow loop: after each research_signal_candidate is acted on, it writes a structured receipt (signal_id, action_taken, verification_check, outcome, retry_flag) to receipts.jsonl, and the allocator refuses to close any loop item lacking one.",
-  "proof_next_action": "Create ~/.cache/shadow/bare_context/loop_receipts.py implementing the receipt schema and a check_receipts() gate, then wire it into the existing signal-processing script so the next loop run emits receipts.jsonl entries for all three input signals.",
-  "public_angle": "Everyone benchmarks agent intelligence; nobody audits agent honesty. We made our agent prove every action with a runtime receipt before it's allowed to call anything done \u2014 here's what broke in the first 24 hours.",
-  "buyer_offer": "An 'Agent Ops Audit + Receipt Harness' for teams running agents against existing ecosystems (Prime-Agent-style harness builders, vertical agent shops like Hospilot): $500/mo to instrument their agent loop with verification receipts and a weekly evidence report proving what their agents actually did versus claimed.",
+  "cycle_ts": "2026-09-02T08:20:03.824693+00:00",
+  "thesis": "Agent advantage is shifting from larger swarms to governed runtimes that can prove which autonomous actions produced revenue-linked outcomes.",
+  "doctrine": "Delegate only bounded work with an explicit success contract, retry limit, terminal receipt, and measurable effect on moonshot, research, or revenue allocation.",
+  "proof_artifact": "Ship a runtime-gap verifier that compares frontier orchestration mechanisms against Shadow\u2019s canonical execution path and converts each material gap into an implement-or-retire decision with evidence.",
+  "proof_next_action": "Extend core/contracts.py with a contract that rejects research_signal_candidates lacking a named runtime gap, disposition, verification method, and revenue-lane linkage, then add its focused test under harness/contracts/.",
+  "public_angle": "Most agent systems optimize how many agents can run; Shadow optimizes whether each action was authorized, verified, recoverable, and tied to an economic outcome.",
+  "buyer_offer": "Sell a fixed-price Agent Runtime Audit that identifies where a company\u2019s AI workflows lack authority controls, recovery gates, and outcome receipts, then upsell implementation and monitoring.",
   "source_titles": [
-    "Prime Agent: A Self-Improving RLM Harness | Seth Karten Home Research Canonical page Agent Harnesses \u00b7 Technical Report Prime Agent: A Self-Improving RLM Harnes",
-    "Carer-Healthcare-AI/Hospilot \u2014 Open-source agentic AI operating layer for hospital operations \u2014 multi-agent orchestration over FHIR",
-    "The First AI Chip Designed End-to-End by AI",
-    "yuriak/DCS-Harness \u2014 An agent-native workspace for autonomous DCS mission direction",
-    "flagdizero/jenny-android-ai-agent \u2014 A local-first personal AI agent that lives on your Android phone. Permanent memory, scheduled autono"
+    "oh-my-subagents/AGENTS.md at main \u00b7 ringlochid/oh-my-subagents \u00b7 GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI CODE CREATION Gi",
+    "GitHub - rlaope/agentbox: The AI Agent Framework \u2014 sandboxed multi-agent orchestration, high-throughput, session manager &amp; runtime for pi / codex / claude \u00b7",
+    "Show HN: Inworld Runtime \u2013 A C++ graph-based runtime for production AI apps | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login S"
   ],
   "packets": [
     {
-      "id": "f5ca88a9e202",
+      "id": "7b4af0cfacca",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "515f140bd2c8",
+      "id": "914bc7ec2b68",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "24d220cd651f",
+      "id": "4ba488c1bb36",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "51f7eb07232f",
+      "id": "a0ec5b3556da",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +43,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Create ~/.cache/shadow/bare_context/loop_receipts.py implementing the receipt schema and a check_receipts() gate, then wire it into the existing signal-processing script so the next loop run emits receipts.jsonl entries for all three input signals.",
-      "packet_id": "f5ca88a9e202"
+      "next_action": "Extend core/contracts.py with a contract that rejects research_signal_candidates lacking a named runtime gap, disposition, verification method, and revenue-lane linkage, then add its focused test under harness/contracts/.",
+      "packet_id": "7b4af0cfacca"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_515f140bd2c8_1788250413",
-      "packet_id": "515f140bd2c8"
+      "draft_id": "frontier_914bc7ec2b68_1788337223",
+      "packet_id": "914bc7ec2b68"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "745c3ce7498e",
-      "packet_id": "24d220cd651f"
+      "experiment_id": "f2845672a19e",
+      "packet_id": "4ba488c1bb36"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "51f7eb07232f"
+      "packet_id": "a0ec5b3556da"
     }
   ],
   "receipts": {
