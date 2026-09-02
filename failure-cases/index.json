@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-09-02T08:21:22.192093+00:00",
-  "count": 106,
+  "generated_at": "2026-09-02T14:12:42.346101+00:00",
+  "count": 107,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "pentest-agent-strix-doesn-t-actually-test-on-local-m-a32ee1939e",
+      "advisory_id": "SFA-2026-A32EE1939E",
+      "ts": "2026-09-02T14:12:42.338711+00:00",
+      "title": "Pentest agent (Strix) doesn't actually test on local models — returns a hallucinated report",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "bwalia/jobshout",
+        "issue_number": 148,
+        "author": "unknown",
+        "url": "https://github.com/bwalia/jobshout/issues/148"
+      },
+      "case": {
+        "observed_action": "The local qwen3-coder:30b run returned engaged=True with a fabricated report referencing an unscoped domain instead of performing real recon and exploitation against the target.",
+        "expected_boundary": "A completion should only be classified as a successful scan if the run's tool calls and reported findings are scoped to the actual target and meet a minimum evidence threshold for the requested scan depth.",
+        "runtime_context": "Strix pentest agent driven by a local Ollama model (ollama_chat/qwen3-coder:30b) via strix-service/app/runner.py's build_args and _classify logic.",
+        "evidence": "The run finished in 1-2 minutes for a 'deep' scan, showed very small token counts, and produced a report citing acme.example/example.com, a domain never in scope, while _classify's guard only fails closed when both engaged and findings are absent."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/pentest-agent-strix-doesn-t-actually-test-on-local-m-a32ee1939e.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/pentest-agent-strix-doesn-t-actually-test-on-local-m-a32ee1939e.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20pentest-agent-strix-doesn-t-actually-test-on-local-m-a32ee1939e&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/pentest-agent-strix-doesn-t-actually-test-on-local-m-a32ee1939e.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "transport-stop-silently-dropping-mid-run-user-respon-16ab92d853",

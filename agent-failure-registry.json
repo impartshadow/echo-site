@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/pentest-agent-strix-doesn-t-actually-test-on-local-m-a32ee1939e.html",
+      "evidence": "The run finished in 1-2 minutes for a 'deep' scan, showed very small token counts, and produced a report citing acme.example/example.com, a domain never in scope, while _classify's guard only fails closed when both engaged and findings are absent.",
+      "expected_boundary": "A completion should only be classified as a successful scan if the run's tool calls and reported findings are scoped to the actual target and meet a minimum evidence threshold for the requested scan depth.",
+      "id": "SFA-2026-A32EE1939E",
+      "observed_action": "The local qwen3-coder:30b run returned engaged=True with a fabricated report referencing an unscoped domain instead of performing real recon and exploitation against the target.",
+      "published_at": "2026-09-02T14:12:42.338711+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 148,
+        "repo": "bwalia/jobshout",
+        "url": "https://github.com/bwalia/jobshout/issues/148"
+      },
+      "status": "retired",
+      "summary": "Pentest agent (Strix) doesn't actually test on local models \u2014 returns a hallucinated report",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/transport-stop-silently-dropping-mid-run-user-respon-16ab92d853.html",
       "evidence": "The issue body itself states the protobuf contract promises next-turn injection while the code path shows no handler exists until RunFollowUpLoop registers post-done.",
       "expected_boundary": "Every event type defined in harness.proto should have a registered handler across all loop states (primary, provider-stream, tool-dispatch), with an explicit observable ack or nack for any event received outside a valid window.",
@@ -2757,14 +2783,14 @@
       }
     }
   ],
-  "count": 106,
+  "count": 107,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-02T06:30:44.574427+00:00",
+    "checked_at": "2026-09-02T14:12:42.369562+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
