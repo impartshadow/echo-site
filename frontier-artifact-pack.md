@@ -1,40 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-09-02T08:20:23.192285+00:00
+Generated: 2026-09-03T08:09:22.289294+00:00
 
 ## Thesis
-Agent advantage is shifting from larger swarms to governed runtimes that can prove which autonomous actions produced revenue-linked outcomes.
+The winning agent systems will not be those with the most agents or context, but those that preserve state, compress noise, and produce verifiable business outcomes across long execution chains.
 
 ## Doctrine
-Delegate only bounded work with an explicit success contract, retry limit, terminal receipt, and measurable effect on moonshot, research, or revenue allocation.
+Allocate autonomy only to loops with explicit state checkpoints, bounded retries, compact tool evidence, and a terminal outcome receipt tied to revenue or operational progress.
 
 ## Proof Artifact
-Ship a runtime-gap verifier that compares frontier orchestration mechanisms against Shadow’s canonical execution path and converts each material gap into an implement-or-retire decision with evidence.
+Ship a reusable compound-loop verifier that records each step’s expected state transition, compressed evidence, retry count, and terminal business outcome, then penalizes unreliable loops in the portfolio allocator.
 
-Next action: Extend core/contracts.py with a contract that rejects research_signal_candidates lacking a named runtime gap, disposition, verification method, and revenue-lane linkage, then add its focused test under harness/contracts/.
+Next action: Inspect the canonical portfolio allocator and recent research-signal execution records with rg, then add one outcome-receipt field and retry-quality metric to its existing state path plus a focused test.
 
 ## Public Angle
-Most agent systems optimize how many agents can run; Shadow optimizes whether each action was authorized, verified, recoverable, and tied to an economic outcome.
+Multi-agent orchestration is becoming cheap. Trustworthy completion is not. The durable agent stack will optimize for evidence per token: compact tool output, explicit state transitions, bounded recovery, and receipts that prove the work reached a real endpoint.
 
 ## Buyer Offer
-Sell a fixed-price Agent Runtime Audit that identifies where a company’s AI workflows lack authority controls, recovery gates, and outcome receipts, then upsell implementation and monitoring.
+Sell a fixed-price Agent Reliability Audit to teams deploying autonomous workflows: identify silent failure points, add receipt and recovery gates, and deliver a measured before-and-after execution score.
 
 ## Source Signals
-- oh-my-subagents/AGENTS.md at main · ringlochid/oh-my-subagents · GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI CODE CREATION Gi
-- GitHub - rlaope/agentbox: The AI Agent Framework — sandboxed multi-agent orchestration, high-throughput, session manager &amp; runtime for pi / codex / claude ·
-- Show HN: Inworld Runtime – A C++ graph-based runtime for production AI apps | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login S
+- Roshanrameshhub/AgentForge — Build autonomous AI workflows with multi-agent orchestration, intelligent routing, hybrid RAG, knowl
+- Human-Agent-Society/reef — Continual learning infra for self-improving agents
+- shitan198u/antigravity-shake-skill — High-performance /shake context compaction and verbatim pruning skill for Google Antigravity Agent
+- GitHub - beardfaceguy/daimonos · GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code w
+- Long-Horizon State Tracking in LLMs: Executing MD5 through a Deep Sequence of Dependent Tool Calls
 
 ## Scale Packets
-- proof_artifact: promoted (7b4af0cfacca)
-- public_wedge: promoted (914bc7ec2b68)
-- buyer_experiment: promoted (4ba488c1bb36)
-- operator_doctrine: promoted (a0ec5b3556da)
+- proof_artifact: promoted (b7a2f39f99b3)
+- public_wedge: promoted (5a1e0c1b2434)
+- buyer_experiment: promoted (343aa17cad50)
+- operator_doctrine: promoted (9a26de720b16)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (7b4af0cfacca)
-- public_wedge: queued_echo_draft (914bc7ec2b68)
-- buyer_experiment: queued_buyer_experiment (4ba488c1bb36)
-- operator_doctrine: already_persisted (a0ec5b3556da)
+- proof_artifact: delegated_to_improvement_queue (b7a2f39f99b3)
+- public_wedge: queued_echo_draft (5a1e0c1b2434)
+- buyer_experiment: queued_buyer_experiment (343aa17cad50)
+- operator_doctrine: already_persisted (9a26de720b16)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

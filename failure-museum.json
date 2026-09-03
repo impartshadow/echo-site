@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-09-02T03:21:22-05:00",
+  "generated_at_ct": "2026-09-03T03:10:24-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 978,
-  "distinct_contracts": 60,
+  "total_violations": 962,
+  "distinct_contracts": 57,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -13,7 +13,7 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "block",
-      "count": 61,
+      "count": 57,
       "latest_seen_ct": "2026-08-23T08:23:54-05:00",
       "example_violation": "[recurrence-escalation 12x/7d] Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
@@ -63,19 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-08-02": {
-      "factual-claim-verification": 9,
-      "pressure-framing-guard": 4,
-      "stale-state-assertion-guard": 3,
-      "verification-vocabulary-gate": 7,
-      "canonical-source-guard": 2,
-      "state-assertion-grounding": 5,
-      "activity-assertion-grounding": 1,
-      "concurrence-grounding": 1,
-      "state-io-consolidation-guard": 1,
-      "personal-token-send-guard": 1,
-      "raw-gmail-send-guard": 1
-    },
     "2026-08-03": {
       "factual-claim-verification": 1,
       "capability-scope-assertion-guard": 1,
@@ -372,6 +359,15 @@
       "factual-claim-verification": 4,
       "state-assertion-grounding": 4,
       "verification-vocabulary-gate": 2
+    },
+    "2026-09-02": {
+      "canonical-source-guard": 2,
+      "verification-vocabulary-gate": 4,
+      "state-assertion-grounding": 1,
+      "privacy-exposure-taxonomy": 8,
+      "stale-state-assertion-guard": 2,
+      "fleet-state-claim-grounding-gate": 1,
+      "manual-handoff-guard": 1
     }
   },
   "cta": {
