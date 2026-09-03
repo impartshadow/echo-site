@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/v0-35-0-renaming-a-running-session-reports-success-b-2fe1d89387.html",
+      "evidence": "sqlite3 query on state.db shows the session row's name and worktree_branch unchanged after the rename call, and git branch --list 'am/*' shows no new am/SCT-11-cpu-perf branch was created.",
+      "expected_boundary": "the success message should only be emitted after the sessions.name row and the am/ branch have actually been mutated, or a refusal should be returned explaining the rename cannot apply while running.",
+      "id": "SFA-2026-2FE1D89387",
+      "observed_action": "agent-manager rename on a running, already-named session prints 'session renamed to <x>' via both CLI and MCP tool without erroring.",
+      "published_at": "2026-09-03T06:30:38.135298+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 427,
+        "repo": "YoanWai/agent-manager",
+        "url": "https://github.com/YoanWai/agent-manager/issues/427"
+      },
+      "status": "retired",
+      "summary": "v0.35.0: renaming a running session reports success but changes nothing",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/pentest-agent-strix-doesn-t-actually-test-on-local-m-a32ee1939e.html",
       "evidence": "The run finished in 1-2 minutes for a 'deep' scan, showed very small token counts, and produced a report citing acme.example/example.com, a domain never in scope, while _classify's guard only fails closed when both engaged and findings are absent.",
       "expected_boundary": "A completion should only be classified as a successful scan if the run's tool calls and reported findings are scoped to the actual target and meet a minimum evidence threshold for the requested scan depth.",
@@ -2783,14 +2809,14 @@
       }
     }
   ],
-  "count": 107,
+  "count": 108,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-02T14:12:42.369562+00:00",
+    "checked_at": "2026-09-03T06:30:38.162272+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
