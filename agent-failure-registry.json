@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/channels-post-reports-success-when-every-mention-tar-792130f5a4.html",
+      "evidence": "The delivery receipt with state 'refused_policy' and reasonCode 'mention_chain_paused' plus the matching system row were both written by emitReceipt before the HTTP response was returned, yet neither appears in the response body.",
+      "expected_boundary": "The POST /channels/:id/messages response schema must surface each mention's delivery state and reasonCode when that outcome is known synchronously at response-write time.",
+      "id": "SFA-2026-792130F5A4",
+      "observed_action": "The channels post response returned status complete/exit 0 even though a mention target was synchronously refused by the consecutive-turn brake.",
+      "published_at": "2026-09-03T14:12:50.724639+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 1560,
+        "repo": "donovan-yohan/relay-ide",
+        "url": "https://github.com/donovan-yohan/relay-ide/issues/1560"
+      },
+      "status": "retired",
+      "summary": "channels post reports success when every mention target was refused by policy",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/v0-35-0-renaming-a-running-session-reports-success-b-2fe1d89387.html",
       "evidence": "sqlite3 query on state.db shows the session row's name and worktree_branch unchanged after the rename call, and git branch --list 'am/*' shows no new am/SCT-11-cpu-perf branch was created.",
       "expected_boundary": "the success message should only be emitted after the sessions.name row and the am/ branch have actually been mutated, or a refusal should be returned explaining the rename cannot apply while running.",
@@ -2809,14 +2835,14 @@
       }
     }
   ],
-  "count": 108,
+  "count": 109,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-03T06:30:38.162272+00:00",
+    "checked_at": "2026-09-03T14:12:50.752440+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,

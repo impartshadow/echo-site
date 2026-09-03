@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-09-03T08:10:24.146225+00:00",
-  "count": 108,
+  "generated_at": "2026-09-03T14:12:50.730520+00:00",
+  "count": 109,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "channels-post-reports-success-when-every-mention-tar-792130f5a4",
+      "advisory_id": "SFA-2026-792130F5A4",
+      "ts": "2026-09-03T14:12:50.724639+00:00",
+      "title": "channels post reports success when every mention target was refused by policy",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "donovan-yohan/relay-ide",
+        "issue_number": 1560,
+        "author": "unknown",
+        "url": "https://github.com/donovan-yohan/relay-ide/issues/1560"
+      },
+      "case": {
+        "observed_action": "The channels post response returned status complete/exit 0 even though a mention target was synchronously refused by the consecutive-turn brake.",
+        "expected_boundary": "The POST /channels/:id/messages response schema must surface each mention's delivery state and reasonCode when that outcome is known synchronously at response-write time.",
+        "runtime_context": "hub-host CLI (sender agent:local-cli) posting @antigravity mentions into an Impl channel bound by routingDefaults.providerId, on prod nightly .913.",
+        "evidence": "The delivery receipt with state 'refused_policy' and reasonCode 'mention_chain_paused' plus the matching system row were both written by emitReceipt before the HTTP response was returned, yet neither appears in the response body."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/channels-post-reports-success-when-every-mention-tar-792130f5a4.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/channels-post-reports-success-when-every-mention-tar-792130f5a4.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20channels-post-reports-success-when-every-mention-tar-792130f5a4&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/channels-post-reports-success-when-every-mention-tar-792130f5a4.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "v0-35-0-renaming-a-running-session-reports-success-b-2fe1d89387",
