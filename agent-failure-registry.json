@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/revision-mode-strategy-refine-silently-ignores-chang-8d1bf70062.html",
+      "evidence": "The prior version file in local/strat-history/<KEY>/ contains the old SME bullet while the newer version contains the edited bullet, yet the generated Strategy-body text is essentially identical across the two versions, and the .pre-refine.md snapshot used for comparison is taken after the human's edit so it cannot detect the change.",
+      "expected_boundary": "Revision Mode should have diffed the current SME section against the prior committed version in local/strat-history and treated any textual difference as an in-scope, highest-priority input requiring propagation into the Strategy body.",
+      "id": "SFA-2026-8D1BF70062",
+      "observed_action": "The strategy-refine agent, running in Revision Mode, declared the SME input section unchanged and preserved the existing Strategy body without re-checking it against the edited SME text.",
+      "published_at": "2026-09-03T21:30:31.554619+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 71,
+        "repo": "opendatahub-io/strat-creator",
+        "url": "https://github.com/opendatahub-io/strat-creator/issues/71"
+      },
+      "status": "retired",
+      "summary": "Revision-mode strategy-refine silently ignores changed SME input",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/channels-post-reports-success-when-every-mention-tar-792130f5a4.html",
       "evidence": "The delivery receipt with state 'refused_policy' and reasonCode 'mention_chain_paused' plus the matching system row were both written by emitReceipt before the HTTP response was returned, yet neither appears in the response body.",
       "expected_boundary": "The POST /channels/:id/messages response schema must surface each mention's delivery state and reasonCode when that outcome is known synchronously at response-write time.",
@@ -2835,14 +2861,14 @@
       }
     }
   ],
-  "count": 109,
+  "count": 110,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-03T14:12:50.752440+00:00",
+    "checked_at": "2026-09-03T21:30:31.586125+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
