@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/b66-invalid-or-unreadable-config-is-silently-dropped-f717829093.html",
+      "evidence": "issue was filed from a static read of file:line rather than a live reproduction, so the existsSync-skip and empty catch-block behavior is inferred from source rather than confirmed by an executed test run.",
+      "expected_boundary": "any config source explicitly specified by the caller (--config flag or HASHPILOT_ROUTE_POLICY env var) that fails to load must surface a warnings entry in the apiVersion-1 envelope rather than silently falling back, while absent project/global config files with no override requested remain silently skipped.",
+      "id": "SFA-2026-F717829093",
+      "observed_action": "config.ts silently falls through to the next config tier when an explicitly-passed --config path doesn't exist or contains malformed JSON, and the same silent fallback happens for malformed JSON in HASHPILOT_ROUTE_POLICY or any config tier via an empty catch block.",
+      "published_at": "2026-09-04T14:12:50.298333+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 167,
+        "repo": "bigknoxy/HashPilot",
+        "url": "https://github.com/bigknoxy/HashPilot/issues/167"
+      },
+      "status": "retired",
+      "summary": "B66 \u2014 Invalid or unreadable --config is silently dropped with no warning",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/inbound-slack-and-discord-messages-silently-dropped-f9efb18740.html",
       "evidence": "The network audit log shows each message frame reaching the sandbox's live websocket within 0.5-2.1 seconds while the session list and gateway logs show no corresponding session creation or dispatch entry.",
       "expected_boundary": "Every inbound message that reaches the handler should either produce a dispatched session or an explicit logged rejection with a reason.",
@@ -2887,14 +2913,14 @@
       }
     }
   ],
-  "count": 111,
+  "count": 112,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-04T06:31:01.078827+00:00",
+    "checked_at": "2026-09-04T14:12:50.329244+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
