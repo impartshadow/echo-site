@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/inbound-slack-and-discord-messages-silently-dropped-f9efb18740.html",
+      "evidence": "The network audit log shows each message frame reaching the sandbox's live websocket within 0.5-2.1 seconds while the session list and gateway logs show no corresponding session creation or dispatch entry.",
+      "expected_boundary": "Every inbound message that reaches the handler should either produce a dispatched session or an explicit logged rejection with a reason.",
+      "id": "SFA-2026-F9EFB18740",
+      "observed_action": "The sandbox's channel handler received inbound Slack and Discord messages at the socket/gateway layer but never created a session, called inference, or sent a reply for any of them.",
+      "published_at": "2026-09-04T06:31:01.050296+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 10634,
+        "repo": "NVIDIA/NemoClaw",
+        "url": "https://github.com/NVIDIA/NemoClaw/issues/10634"
+      },
+      "status": "retired",
+      "summary": "Inbound Slack and Discord messages silently dropped despite healthy channel connections",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/revision-mode-strategy-refine-silently-ignores-chang-8d1bf70062.html",
       "evidence": "The prior version file in local/strat-history/<KEY>/ contains the old SME bullet while the newer version contains the edited bullet, yet the generated Strategy-body text is essentially identical across the two versions, and the .pre-refine.md snapshot used for comparison is taken after the human's edit so it cannot detect the change.",
       "expected_boundary": "Revision Mode should have diffed the current SME section against the prior committed version in local/strat-history and treated any textual difference as an in-scope, highest-priority input requiring propagation into the Strategy body.",
@@ -2861,14 +2887,14 @@
       }
     }
   ],
-  "count": 110,
+  "count": 111,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-03T21:30:31.586125+00:00",
+    "checked_at": "2026-09-04T06:31:01.078827+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
