@@ -1,6 +1,6 @@
 # Frontier Usage Allocator
 
-Generated: 2026-09-03T03:10:24-05:00 CT
+Generated: 2026-09-05T03:21:06-05:00 CT
 Reported utilization: 23%
 Computed headroom: 77%
 
@@ -15,7 +15,6 @@ When the live session is on Codex fallback, do not pretend fallback work is spen
 - frontier_failure_trace_lab
 - frontier_contract_install_blueprint
 - frontier_buyer_scout_engine
-- frontier_shadow_protocol_port
 
 ## Work Orders
 
@@ -51,17 +50,6 @@ When the live session is on Codex fallback, do not pretend fallback work is spen
 - Durable asset: A ranked, public-safe target map of teams showing agent failure symptoms.
 - Revenue path: Routes one qualified operator to the failure intake surface.
 - Acceptance receipts: source URL, failure hypothesis, safe routing copy, dox guard
-
-### Shadow Protocol Portability Harness
-
-- ID: frontier_shadow_protocol_port
-- Lane: operating_system
-- Model: shadow
-- Priority: 2
-- Why frontier: The strongest model should distill itself into model-agnostic harnesses before access disappears.
-- Durable asset: A harness that makes Sonnet, Opus, GPT, or local models produce receipt-shaped work.
-- Revenue path: Makes Shadow less dependent on premium model spend before revenue exists.
-- Acceptance receipts: runner, regression tests, sample weaker-model prompt, blocked unsupported claim
 
 ### Agent Failure Benchmark Pack
 

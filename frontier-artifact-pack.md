@@ -1,42 +1,40 @@
 # Frontier Artifact Pack
 
-Generated: 2026-09-03T08:09:22.289294+00:00
+Generated: 2026-09-05T08:20:07.326894+00:00
 
 ## Thesis
-The winning agent systems will not be those with the most agents or context, but those that preserve state, compress noise, and produce verifiable business outcomes across long execution chains.
+The Karpathy signal is not about code getting cheaper; it is about the human moving from writer to operator, so the scarce asset becomes a runtime that can prove what its agents did, and unverified autonomy will be priced at zero.
 
 ## Doctrine
-Allocate autonomy only to loops with explicit state checkpoints, bounded retries, compact tool evidence, and a terminal outcome receipt tied to revenue or operational progress.
+No loop, agent, or delegation runs without emitting a receipt: input, decision, action, evidence, and cost. If Shadow cannot show the receipt, the action did not happen and it cannot be sold.
 
 ## Proof Artifact
-Ship a reusable compound-loop verifier that records each step’s expected state transition, compressed evidence, retry count, and terminal business outcome, then penalizes unreliable loops in the portfolio allocator.
+A receipt schema and emitter (`shadow/receipts.py` plus `receipts/YYYY-MM-DD.jsonl`) that every loop run appends to, and a 20-line allocator rule that scores loops by receipt yield per dollar rather than by novelty score, so the two zero-score PyPI fetch failures get auto-classified as a scout blocker instead of surfacing as digests.
 
-Next action: Inspect the canonical portfolio allocator and recent research-signal execution records with rg, then add one outcome-receipt field and retry-quality metric to its existing state path plus a focused test.
+Next action: Add a scout-fetch blocker rule to the frontier loop: any digest whose summary matches 'JavaScript is disabled' or 'Client Challenge' gets kind set to 'blocker', target_loop 'scout', score 0, and never reaches the compound prompt; write the two failing PyPI URLs to a retry queue and log the classification as the first receipt in receipts/2026-09-05.jsonl.
 
 ## Public Angle
-Multi-agent orchestration is becoming cheap. Trustworthy completion is not. The durable agent stack will optimize for evidence per token: compact tool output, explicit state transitions, bounded recovery, and receipts that prove the work reached a real endpoint.
+Everyone is shipping agents. Almost nobody can show you the receipt. Here is what one day of Shadow's loop runs looks like when every action has to prove itself: inputs, decisions, cost, and what got refused.
 
 ## Buyer Offer
-Sell a fixed-price Agent Reliability Audit to teams deploying autonomous workflows: identify silent failure points, add receipt and recovery gates, and deliver a measured before-and-after execution score.
+An 'Agent Receipts Audit' for small teams already running Claude Code or agent loops in production: Shadow instruments their loops, delivers one week of receipts and a governability report, priced at $250 to $500 per month recurring, aimed at founders who need to show clients or investors what their agents actually did.
 
 ## Source Signals
-- Roshanrameshhub/AgentForge — Build autonomous AI workflows with multi-agent orchestration, intelligent routing, hybrid RAG, knowl
-- Human-Agent-Society/reef — Continual learning infra for self-improving agents
-- shitan198u/antigravity-shake-skill — High-performance /shake context compaction and verbatim pruning skill for Google Antigravity Agent
-- GitHub - beardfaceguy/daimonos · GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code w
-- Long-Horizon State Tracking in LLMs: Executing MD5 through a Deep Sequence of Dependent Tool Calls
+- Andrej Karpathy on X: &quot;It is hard to communicate how much programming has changed due to AI in the last 2 months: not gradually and over time in the &quot;
+- Client Challenge JavaScript is disabled in your browser. Please enable JavaScript to proceed. A required part of this site couldn’t load. This may be due to a b
+- Client Challenge JavaScript is disabled in your browser. Please enable JavaScript to proceed. A required part of this site couldn’t load. This may be due to a b
 
 ## Scale Packets
-- proof_artifact: promoted (b7a2f39f99b3)
-- public_wedge: promoted (5a1e0c1b2434)
-- buyer_experiment: promoted (343aa17cad50)
-- operator_doctrine: promoted (9a26de720b16)
+- proof_artifact: promoted (18f251c56880)
+- public_wedge: promoted (37f9bda75e34)
+- buyer_experiment: promoted (308f7f5a0cf2)
+- operator_doctrine: promoted (9906ab1360cf)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (b7a2f39f99b3)
-- public_wedge: queued_echo_draft (5a1e0c1b2434)
-- buyer_experiment: queued_buyer_experiment (343aa17cad50)
-- operator_doctrine: already_persisted (9a26de720b16)
+- proof_artifact: delegated_to_improvement_queue (18f251c56880)
+- public_wedge: queued_echo_draft (37f9bda75e34)
+- buyer_experiment: queued_buyer_experiment (308f7f5a0cf2)
+- operator_doctrine: already_persisted (9906ab1360cf)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

@@ -1,8 +1,8 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-09-03T03:10:24-05:00",
+  "generated_at_ct": "2026-09-05T03:21:06-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 962,
+  "total_violations": 967,
   "distinct_contracts": 57,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
@@ -13,7 +13,7 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "block",
-      "count": 57,
+      "count": 60,
       "latest_seen_ct": "2026-08-23T08:23:54-05:00",
       "example_violation": "[recurrence-escalation 12x/7d] Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
@@ -27,8 +27,8 @@
       "failure_mode": "FM-027",
       "severity_seen": "block",
       "count": 11,
-      "latest_seen_ct": "2026-08-27T21:29:21-05:00",
-      "example_violation": "Completion/commit language while the repo still has uncommitted work: core/contracts.py, tests/test_contracts.py, scripts/tmp_dump_headers.py. Commit and push, or state that work remains uncommitted.",
+      "latest_seen_ct": "2026-09-04T22:31:31-05:00",
+      "example_violation": "Completion/commit language while the repo still has uncommitted work: scripts/improve.py, drafts/outreach_packet_20260831_colleen-avarene.md, scripts/tmp_dump_headers.py, scripts/tmp_fable_review.py, tests/test_arbor_base_sweep_utils.py. Commit and push, or state that work remains uncommitted.",
       "title": "The Agent Said Done While The Artifact Was Still Missing",
       "buyer_failure": "A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.",
       "missing_receipt": "artifact path, commit hash, deploy receipt, message id, or queue record",
@@ -63,11 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-08-03": {
-      "factual-claim-verification": 1,
-      "capability-scope-assertion-guard": 1,
-      "completion-artifact": 1
-    },
     "2026-08-04": {
       "we-built-attribution": 1,
       "completion-artifact": 1,
@@ -368,6 +363,15 @@
       "stale-state-assertion-guard": 2,
       "fleet-state-claim-grounding-gate": 1,
       "manual-handoff-guard": 1
+    },
+    "2026-09-03": {
+      "state-assertion-grounding": 1,
+      "state-io-consolidation-guard": 2
+    },
+    "2026-09-04": {
+      "vendor-availability-external-fetch-required": 2,
+      "state-assertion-grounding": 2,
+      "completion-artifact": 1
     }
   },
   "cta": {

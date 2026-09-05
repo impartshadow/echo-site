@@ -1,41 +1,39 @@
 {
-  "generated_at": "2026-09-03T08:09:22.289294+00:00",
+  "generated_at": "2026-09-05T08:20:07.326894+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-09-03T08:09:07.800548+00:00",
-  "thesis": "The winning agent systems will not be those with the most agents or context, but those that preserve state, compress noise, and produce verifiable business outcomes across long execution chains.",
-  "doctrine": "Allocate autonomy only to loops with explicit state checkpoints, bounded retries, compact tool evidence, and a terminal outcome receipt tied to revenue or operational progress.",
-  "proof_artifact": "Ship a reusable compound-loop verifier that records each step\u2019s expected state transition, compressed evidence, retry count, and terminal business outcome, then penalizes unreliable loops in the portfolio allocator.",
-  "proof_next_action": "Inspect the canonical portfolio allocator and recent research-signal execution records with rg, then add one outcome-receipt field and retry-quality metric to its existing state path plus a focused test.",
-  "public_angle": "Multi-agent orchestration is becoming cheap. Trustworthy completion is not. The durable agent stack will optimize for evidence per token: compact tool output, explicit state transitions, bounded recovery, and receipts that prove the work reached a real endpoint.",
-  "buyer_offer": "Sell a fixed-price Agent Reliability Audit to teams deploying autonomous workflows: identify silent failure points, add receipt and recovery gates, and deliver a measured before-and-after execution score.",
+  "cycle_ts": "2026-09-05T08:19:50.049257+00:00",
+  "thesis": "The Karpathy signal is not about code getting cheaper; it is about the human moving from writer to operator, so the scarce asset becomes a runtime that can prove what its agents did, and unverified autonomy will be priced at zero.",
+  "doctrine": "No loop, agent, or delegation runs without emitting a receipt: input, decision, action, evidence, and cost. If Shadow cannot show the receipt, the action did not happen and it cannot be sold.",
+  "proof_artifact": "A receipt schema and emitter (`shadow/receipts.py` plus `receipts/YYYY-MM-DD.jsonl`) that every loop run appends to, and a 20-line allocator rule that scores loops by receipt yield per dollar rather than by novelty score, so the two zero-score PyPI fetch failures get auto-classified as a scout blocker instead of surfacing as digests.",
+  "proof_next_action": "Add a scout-fetch blocker rule to the frontier loop: any digest whose summary matches 'JavaScript is disabled' or 'Client Challenge' gets kind set to 'blocker', target_loop 'scout', score 0, and never reaches the compound prompt; write the two failing PyPI URLs to a retry queue and log the classification as the first receipt in receipts/2026-09-05.jsonl.",
+  "public_angle": "Everyone is shipping agents. Almost nobody can show you the receipt. Here is what one day of Shadow's loop runs looks like when every action has to prove itself: inputs, decisions, cost, and what got refused.",
+  "buyer_offer": "An 'Agent Receipts Audit' for small teams already running Claude Code or agent loops in production: Shadow instruments their loops, delivers one week of receipts and a governability report, priced at $250 to $500 per month recurring, aimed at founders who need to show clients or investors what their agents actually did.",
   "source_titles": [
-    "Roshanrameshhub/AgentForge \u2014 Build autonomous AI workflows with multi-agent orchestration, intelligent routing, hybrid RAG, knowl",
-    "Human-Agent-Society/reef \u2014 Continual learning infra for self-improving agents",
-    "shitan198u/antigravity-shake-skill \u2014 High-performance /shake context compaction and verbatim pruning skill for Google Antigravity Agent",
-    "GitHub - beardfaceguy/daimonos \u00b7 GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code w",
-    "Long-Horizon State Tracking in LLMs: Executing MD5 through a Deep Sequence of Dependent Tool Calls"
+    "Andrej Karpathy on X: &quot;It is hard to communicate how much programming has changed due to AI in the last 2 months: not gradually and over time in the &quot;",
+    "Client Challenge JavaScript is disabled in your browser. Please enable JavaScript to proceed. A required part of this site couldn\u2019t load. This may be due to a b",
+    "Client Challenge JavaScript is disabled in your browser. Please enable JavaScript to proceed. A required part of this site couldn\u2019t load. This may be due to a b"
   ],
   "packets": [
     {
-      "id": "b7a2f39f99b3",
+      "id": "18f251c56880",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "5a1e0c1b2434",
+      "id": "37f9bda75e34",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "343aa17cad50",
+      "id": "308f7f5a0cf2",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "9a26de720b16",
+      "id": "9906ab1360cf",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +43,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Inspect the canonical portfolio allocator and recent research-signal execution records with rg, then add one outcome-receipt field and retry-quality metric to its existing state path plus a focused test.",
-      "packet_id": "b7a2f39f99b3"
+      "next_action": "Add a scout-fetch blocker rule to the frontier loop: any digest whose summary matches 'JavaScript is disabled' or 'Client Challenge' gets kind set to 'blocker', target_loop 'scout', score 0, and never reaches the compound prompt; write the two failing PyPI URLs to a retry queue and log the classification as the first receipt in receipts/2026-09-05.jsonl.",
+      "packet_id": "18f251c56880"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_5a1e0c1b2434_1788422962",
-      "packet_id": "5a1e0c1b2434"
+      "draft_id": "frontier_37f9bda75e34_1788596407",
+      "packet_id": "37f9bda75e34"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "dbb1f2509988",
-      "packet_id": "343aa17cad50"
+      "experiment_id": "a15b1608e392",
+      "packet_id": "308f7f5a0cf2"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "9a26de720b16"
+      "packet_id": "9906ab1360cf"
     }
   ],
   "receipts": {

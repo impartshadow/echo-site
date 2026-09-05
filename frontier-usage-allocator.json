@@ -1,6 +1,6 @@
 {
   "schema": "shadow.frontier_usage_allocator.v1",
-  "generated_at_ct": "2026-09-03T03:10:24-05:00",
+  "generated_at_ct": "2026-09-05T03:21:06-05:00",
   "reported_utilization_pct": 23,
   "computed_headroom_pct": 77,
   "allocator_rule": "Scarce frontier usage is reserved for compounding assets: sellable artifacts, public proof, acquisition machinery, and model-agnostic operating-system upgrades.",
@@ -20,8 +20,7 @@
   "top_frontier_queue": [
     "frontier_failure_trace_lab",
     "frontier_contract_install_blueprint",
-    "frontier_buyer_scout_engine",
-    "frontier_shadow_protocol_port"
+    "frontier_buyer_scout_engine"
   ],
   "work_orders": [
     {
@@ -72,22 +71,6 @@
         "dox guard"
       ],
       "revenue_path": "Routes one qualified operator to the failure intake surface."
-    },
-    {
-      "id": "frontier_shadow_protocol_port",
-      "title": "Shadow Protocol Portability Harness",
-      "lane": "operating_system",
-      "model": "shadow",
-      "priority": 2,
-      "why_frontier": "The strongest model should distill itself into model-agnostic harnesses before access disappears.",
-      "durable_asset": "A harness that makes Sonnet, Opus, GPT, or local models produce receipt-shaped work.",
-      "acceptance_receipts": [
-        "runner",
-        "regression tests",
-        "sample weaker-model prompt",
-        "blocked unsupported claim"
-      ],
-      "revenue_path": "Makes Shadow less dependent on premium model spend before revenue exists."
     },
     {
       "id": "frontier_failure_benchmark_pack",

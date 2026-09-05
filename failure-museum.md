@@ -1,17 +1,17 @@
 # Agent Failure Museum
 
-Generated: 2026-09-03T03:10:24-05:00 CT
+Generated: 2026-09-05T03:21:06-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 962 claim-boundary violations across 57 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 967 claim-boundary violations across 57 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
 ### The Agent Answered From Memory When The Question Required A Live Read
 
 - Contract: `state-assertion-grounding`
-- Fires logged: 57
+- Fires logged: 60
 - Latest seen: 2026-08-23T08:23:54-05:00 CT
 - Buyer failure: An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.
 - Missing receipt: same-turn read from the relevant file, process table, API, inbox, queue, or log
@@ -23,12 +23,12 @@ Shadow has logged 962 claim-boundary violations across 57 contract names. The us
 
 - Contract: `completion-artifact`
 - Fires logged: 11
-- Latest seen: 2026-08-27T21:29:21-05:00 CT
+- Latest seen: 2026-09-04T22:31:31-05:00 CT
 - Buyer failure: A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.
 - Missing receipt: artifact path, commit hash, deploy receipt, message id, or queue record
 - Runtime control: Block final completion language unless the named artifact exists and the worktree/state agrees.
 - Audit prompt: Find every place the agent used completion language without an independently readable artifact.
-- Redacted example: Completion/commit language while the repo still has uncommitted work: core/contracts.py, tests/test_contracts.py, scripts/tmp_dump_headers.py. Commit and push, or state that work remains uncommitted.
+- Redacted example: Completion/commit language while the repo still has uncommitted work: scripts/improve.py, drafts/outreach_packet_20260831_colleen-avarene.md, scripts/tmp_dump_headers.py, scripts/tmp_fable_review.py, tests/test_arbor_base_sweep_utils.py. Commit and push, or state that work remains uncommitted.
 
 ### The Agent Cited A Commit Hash Before Proving It Resolved
 
