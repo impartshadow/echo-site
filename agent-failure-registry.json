@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-one-hallucinated-tool-name-kills-the-whole-ses-9df00d1890.html",
+      "evidence": "The 142-byte error envelope reporting invalid-tool-call plus the session log's branch_failed event both show the dispatcher treating a model-side naming mistake as a fatal protocol error.",
+      "expected_boundary": "An unknown or disabled tool name should produce a tool-result error naming the tool and listing the enabled roster, letting the model self-correct on the next turn, while genuine transport/protocol failures remain fatal.",
+      "id": "SFA-2026-9DF00D1890",
+      "observed_action": "The runtime received a tool call for a hallucinated tool name (search_file_command) and terminated the entire session branch instead of returning a correctable error.",
+      "published_at": "2026-09-05T06:30:53.476870+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 134,
+        "repo": "vybestack/llxprt-code-rs",
+        "url": "https://github.com/vybestack/llxprt-code-rs/issues/134"
+      },
+      "status": "retired",
+      "summary": "agent: one hallucinated tool name kills the whole session instead of returning a correctable tool error",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/b66-invalid-or-unreadable-config-is-silently-dropped-f717829093.html",
       "evidence": "issue was filed from a static read of file:line rather than a live reproduction, so the existsSync-skip and empty catch-block behavior is inferred from source rather than confirmed by an executed test run.",
       "expected_boundary": "any config source explicitly specified by the caller (--config flag or HASHPILOT_ROUTE_POLICY env var) that fails to load must surface a warnings entry in the apiVersion-1 envelope rather than silently falling back, while absent project/global config files with no override requested remain silently skipped.",
@@ -2913,14 +2939,14 @@
       }
     }
   ],
-  "count": 112,
+  "count": 113,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-04T14:12:50.329244+00:00",
+    "checked_at": "2026-09-05T06:30:53.515679+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
