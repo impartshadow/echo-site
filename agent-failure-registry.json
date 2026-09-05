@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/overwriting-a-profile-on-import-reports-success-but-0b669e7691.html",
+      "evidence": "The issue body explicitly traces the three-step chain: wrong write location, precedence-based dedup dropping the import, and the discarded conflict message that lets a false success toast reach the user.",
+      "expected_boundary": "Before showing a success toast for a confirmed overwrite, the system should assert that the file it just wrote resolves to the same path as the profile being overwritten, and if not, surface the merge-dropped-duplicate message instead of reporting success.",
+      "id": "SFA-2026-0B669E7691",
+      "observed_action": "The import flow writes the overwritten profile into the community profiles folder under its identifier instead of into the existing local profile's own path, then the profile-list merge drops the newly written file because the untouched local profile already claimed that identifier first.",
+      "published_at": "2026-09-05T21:30:34.997326+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 79,
+        "repo": "BootBlock/FluidBars",
+        "url": "https://github.com/BootBlock/FluidBars/issues/79"
+      },
+      "status": "retired",
+      "summary": "Overwriting a profile on import reports success but keeps the old profile",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-one-hallucinated-tool-name-kills-the-whole-ses-9df00d1890.html",
       "evidence": "The 142-byte error envelope reporting invalid-tool-call plus the session log's branch_failed event both show the dispatcher treating a model-side naming mistake as a fatal protocol error.",
       "expected_boundary": "An unknown or disabled tool name should produce a tool-result error naming the tool and listing the enabled roster, letting the model self-correct on the next turn, while genuine transport/protocol failures remain fatal.",
@@ -2939,14 +2965,14 @@
       }
     }
   ],
-  "count": 113,
+  "count": 114,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-05T06:30:53.515679+00:00",
+    "checked_at": "2026-09-05T21:30:35.033724+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
