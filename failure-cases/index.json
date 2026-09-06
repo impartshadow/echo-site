@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-09-05T21:30:35.003797+00:00",
-  "count": 114,
+  "generated_at": "2026-09-06T06:30:31.074948+00:00",
+  "count": 115,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "bug-describe-reports-success-after-pr-description-pu-121eae245a",
+      "advisory_id": "SFA-2026-121EAE245A",
+      "ts": "2026-09-06T06:30:31.069951+00:00",
+      "title": "[Bug]: /describe reports success after PR description publication fails",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "The-PR-Agent/pr-agent",
+        "issue_number": 3057,
+        "author": "unknown",
+        "url": "https://github.com/The-PR-Agent/pr-agent/issues/3057"
+      },
+      "case": {
+        "observed_action": "PRDescription.run() called git_provider.publish_description() and proceeded to publish a success/final-update comment without checking the returned value.",
+        "expected_boundary": "publish_description() should have an explicit success/failure contract that PRDescription.run() inspects before treating the description write as complete.",
+        "runtime_context": "Cross-provider /describe lifecycle at the GitLab, Azure DevOps, and Bitbucket Cloud provider boundaries, reproduced with mocked API failures against baseline commit [redacted-id].",
+        "evidence": "Mocked failures (RuntimeError from mr.save(), RuntimeError from update_pull_request(), and an HTTP 500 description update) each caused publish_description() to return None or a raw failed response instead of raising, and PRDescription.run() still completed its success path and sent the final update comment."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/bug-describe-reports-success-after-pr-description-pu-121eae245a.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/bug-describe-reports-success-after-pr-description-pu-121eae245a.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20bug-describe-reports-success-after-pr-description-pu-121eae245a&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/bug-describe-reports-success-after-pr-description-pu-121eae245a.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "overwriting-a-profile-on-import-reports-success-but-0b669e7691",

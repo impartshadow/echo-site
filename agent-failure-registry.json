@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-describe-reports-success-after-pr-description-pu-121eae245a.html",
+      "evidence": "Mocked failures (RuntimeError from mr.save(), RuntimeError from update_pull_request(), and an HTTP 500 description update) each caused publish_description() to return None or a raw failed response instead of raising, and PRDescription.run() still completed its success path and sent the final update comment.",
+      "expected_boundary": "publish_description() should have an explicit success/failure contract that PRDescription.run() inspects before treating the description write as complete.",
+      "id": "SFA-2026-121EAE245A",
+      "observed_action": "PRDescription.run() called git_provider.publish_description() and proceeded to publish a success/final-update comment without checking the returned value.",
+      "published_at": "2026-09-06T06:30:31.069951+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 3057,
+        "repo": "The-PR-Agent/pr-agent",
+        "url": "https://github.com/The-PR-Agent/pr-agent/issues/3057"
+      },
+      "status": "retired",
+      "summary": "[Bug]: /describe reports success after PR description publication fails",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/overwriting-a-profile-on-import-reports-success-but-0b669e7691.html",
       "evidence": "The issue body explicitly traces the three-step chain: wrong write location, precedence-based dedup dropping the import, and the discarded conflict message that lets a false success toast reach the user.",
       "expected_boundary": "Before showing a success toast for a confirmed overwrite, the system should assert that the file it just wrote resolves to the same path as the profile being overwritten, and if not, surface the merge-dropped-duplicate message instead of reporting success.",
@@ -2965,14 +2991,14 @@
       }
     }
   ],
-  "count": 114,
+  "count": 115,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-05T21:30:35.033724+00:00",
+    "checked_at": "2026-09-06T06:30:31.097219+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
