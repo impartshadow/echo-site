@@ -113,36 +113,36 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 3.3,
-          "last_activity": "2026-09-05T05:01:28.786684+00:00",
-          "source": "verifier_receipt",
+          "hours_since": 8.3,
+          "last_activity": "2026-09-06T00:06:18.401632+00:00",
+          "source": "action_log",
           "staleness": "ok"
         },
         "loop_id": "brief-production",
         "name": "Research Brief Production",
-        "reason": "fresh evidence is internal-only: verifier_receipt",
+        "reason": "fresh evidence is internal-only: action_log",
         "requires_external_reach": true,
         "verdict": "no_external_reach"
       },
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 3.3,
-          "last_activity": "2026-09-05T05:01:20.246814+00:00",
-          "source": "verifier_receipt",
+          "hours_since": 8.3,
+          "last_activity": "2026-09-06T00:06:18.401632+00:00",
+          "source": "action_log",
           "staleness": "ok"
         },
         "loop_id": "echo",
         "name": "Echo Content",
-        "reason": "fresh evidence is internal-only: verifier_receipt",
+        "reason": "fresh evidence is internal-only: action_log",
         "requires_external_reach": true,
         "verdict": "no_external_reach"
       },
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.9,
-          "last_activity": "2026-09-05T07:25:02.730601+00:00",
+          "hours_since": 0.0,
+          "last_activity": "2026-09-06T08:25:03.194344+00:00",
           "source": "action_log",
           "staleness": "ok"
         },
@@ -155,7 +155,7 @@
       {
         "declared_state": "complete",
         "evidence": {
-          "hours_since": 1058.3,
+          "hours_since": 1082.4,
           "last_activity": "2026-07-23T06:02:47.889895+00:00",
           "source": "verifier_receipt",
           "staleness": "stale"
@@ -169,7 +169,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 3.3,
+          "hours_since": 27.4,
           "last_activity": "2026-09-05T05:01:22.556206+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
@@ -183,23 +183,23 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 3.3,
-          "last_activity": "2026-09-05T05:01:32.220228+00:00",
-          "source": "verifier_receipt",
+          "hours_since": 8.3,
+          "last_activity": "2026-09-06T00:06:18.401632+00:00",
+          "source": "action_log",
           "staleness": "ok"
         },
         "loop_id": "tenant-ops",
         "name": "Tenant Ops Managed AI Service",
-        "reason": "fresh evidence from verifier_receipt",
+        "reason": "fresh evidence from action_log",
         "requires_external_reach": false,
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-09-05T08:21:04.976358+00:00",
+    "generated_at": "2026-09-06T08:27:15.867346+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
-        "evidence_source": "verifier_receipt",
+        "evidence_source": "action_log",
         "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
         "loop_id": "brief-production",
         "missing_receipts": [
@@ -213,7 +213,7 @@
       },
       {
         "action": "produce_or_attach_external_receipt",
-        "evidence_source": "verifier_receipt",
+        "evidence_source": "action_log",
         "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
         "loop_id": "echo",
         "missing_receipts": [
@@ -272,7 +272,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md",
     "purpose": "scarce frontier-model usage ledger that routes high-end model headroom into sellable artifacts, proof surfaces, acquisition machinery, and model-agnostic operating-system upgrades"
   },
-  "generated_at": "2026-09-05T08:21:04.976358+00:00",
+  "generated_at": "2026-09-06T08:27:15.867346+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",

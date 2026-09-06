@@ -1,40 +1,39 @@
 # Frontier Artifact Pack
 
-Generated: 2026-09-05T08:20:07.326894+00:00
+Generated: 2026-09-06T08:26:19.039692+00:00
 
 ## Thesis
-The Karpathy signal is not about code getting cheaper; it is about the human moving from writer to operator, so the scarce asset becomes a runtime that can prove what its agents did, and unverified autonomy will be priced at zero.
+The durable moat in long-running agents is not smarter compaction but claim-before-deliver tick ledgers and explicit goal.complete() receipts, and vendors like Prime Intellect are quietly turning 'no replay after crash' into the baseline buyers will assume Shadow already has.
 
 ## Doctrine
-No loop, agent, or delegation runs without emitting a receipt: input, decision, action, evidence, and cost. If Shadow cannot show the receipt, the action did not happen and it cannot be sold.
+Every autonomous loop must own its liveness: claim work before delivering it, coalesce missed ticks instead of accumulating them, self-schedule compaction only at task boundaries, and mark completion explicitly with a budget receipt (tokens, elapsed, continuations) rather than inferring success from silence.
 
 ## Proof Artifact
-A receipt schema and emitter (`shadow/receipts.py` plus `receipts/YYYY-MM-DD.jsonl`) that every loop run appends to, and a 20-line allocator rule that scores loops by receipt yield per dollar rather than by novelty score, so the two zero-score PyPI fetch failures get auto-classified as a scout blocker instead of surfacing as digests.
+A goal ledger spec and reference implementation in shadow-loop-model: a JSONL goal record with fields {goal_id, token_budget, tokens_used, elapsed_s, continuation_count, claimed_ticks, completed_by, model_route, route_reason}, plus a compact.status()-style check the loop consults at turn boundaries to decide compaction and a logged model-route decision per task class (coding, research, verification, browser, summarization).
 
-Next action: Add a scout-fetch blocker rule to the frontier loop: any digest whose summary matches 'JavaScript is disabled' or 'Client Challenge' gets kind set to 'blocker', target_loop 'scout', score 0, and never reaches the compound prompt; write the two failing PyPI URLs to a retry queue and log the classification as the first receipt in receipts/2026-09-05.jsonl.
+Next action: In the shadow-loop-model repo, write docs/gap-review-prime-agent-2026-09-06.md diffing Shadow's loop against the two fetched Prime Intellect docs (compaction at task boundaries, claimed ticks, coalesced misses, goal.complete() with token/elapsed/continuation counters, kernel-state persistence), mark each gap implement or retire with the source quote as receipt, and open a ticket for the goal-ledger JSONL writer with the exact field list above.
 
 ## Public Angle
-Everyone is shipping agents. Almost nobody can show you the receipt. Here is what one day of Shadow's loop runs looks like when every action has to prove itself: inputs, decisions, cost, and what got refused.
+Everyone is benchmarking how well agents summarize their own memory. Nobody is benchmarking whether the agent replays a tick after a crash. Shadow's rule: claim the tick before you deliver it, coalesce what you missed, and say 'done' explicitly with a token receipt. That is what makes an agent hireable, not the summary.
 
 ## Buyer Offer
-An 'Agent Receipts Audit' for small teams already running Claude Code or agent loops in production: Shadow instruments their loops, delivers one week of receipts and a governability report, priced at $250 to $500 per month recurring, aimed at founders who need to show clients or investors what their agents actually did.
+Sell a 'crash-proof scheduled agent' audit-and-retrofit for teams running cron-driven LLM jobs: we instrument their loop with claim-before-deliver ticks, missed-tick coalescing, explicit completion receipts, and a per-run cost ledger, delivered as a fixed-price setup plus a $99-249/month monitoring retainer that reports replay incidents and budget overruns.
 
 ## Source Signals
-- Andrej Karpathy on X: &quot;It is hard to communicate how much programming has changed due to AI in the last 2 months: not gradually and over time in the &quot;
-- Client Challenge JavaScript is disabled in your browser. Please enable JavaScript to proceed. A required part of this site couldn’t load. This may be due to a b
-- Client Challenge JavaScript is disabled in your browser. Please enable JavaScript to proceed. A required part of this site couldn’t load. This may be due to a b
+- prime-agent/packages/coding-agent/docs/long-running-agents.md at main · PrimeIntellect-ai/prime-agent · GitHub Skip to content Navigation Menu Sign in Appearanc
+- prime-agent/packages/coding-agent/skills/compact/SKILL.md at main · PrimeIntellect-ai/prime-agent · GitHub Skip to content Navigation Menu Sign in Appearance se
 
 ## Scale Packets
-- proof_artifact: promoted (18f251c56880)
-- public_wedge: promoted (37f9bda75e34)
-- buyer_experiment: promoted (308f7f5a0cf2)
-- operator_doctrine: promoted (9906ab1360cf)
+- proof_artifact: promoted (ba4a7db785b4)
+- public_wedge: promoted (27849a1da853)
+- buyer_experiment: promoted (9cd92370d4c8)
+- operator_doctrine: promoted (86ef4408db70)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (18f251c56880)
-- public_wedge: queued_echo_draft (37f9bda75e34)
-- buyer_experiment: queued_buyer_experiment (308f7f5a0cf2)
-- operator_doctrine: already_persisted (9906ab1360cf)
+- proof_artifact: delegated_to_improvement_queue (ba4a7db785b4)
+- public_wedge: queued_echo_draft (27849a1da853)
+- buyer_experiment: queued_buyer_experiment (9cd92370d4c8)
+- operator_doctrine: already_persisted (86ef4408db70)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`
