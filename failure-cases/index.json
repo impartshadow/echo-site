@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-09-07T14:12:37.053540+00:00",
-  "count": 116,
+  "generated_at": "2026-09-07T21:30:32.715197+00:00",
+  "count": 117,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "repair-tool-call-cannot-bridge-a-bare-mcp-catalog-na-c028dd14b8",
+      "advisory_id": "SFA-2026-C028DD14B8",
+      "ts": "2026-09-07T21:30:32.707664+00:00",
+      "title": "repair_tool_call cannot bridge a bare MCP catalog name, and its fuzzy step silently mis-routes hallucinated mcp_* names onto different real tools",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "NousResearch/hermes-agent",
+        "issue_number": 100807,
+        "author": "unknown",
+        "url": "https://github.com/NousResearch/hermes-agent/issues/100807"
+      },
+      "case": {
+        "observed_action": "repair_tool_call fuzzy-matched hallucinated mcp_-prefixed tool names to different real tools via get_close_matches over the full valid-name list, and failed to repair bare catalog names lacking the server prefix",
+        "expected_boundary": "a name repair must either resolve to the exact intended tool or return None, never silently substitute a different real tool, especially across siblings sharing an mcp_<server>_ prefix",
+        "runtime_context": "agent_runtime_helpers.py repair_tool_call step inside conversation_loop.py, invoked when a model-emitted tool name doesn't exactly match agent.valid_tool_names, with one invalid name voiding the entire batch of tool calls in that turn",
+        "evidence": "measured 12 of 12 hallucinated mcp_-prefixed names resolving to a different real tool at ratios 0.78-0.92, plus two bare-name misroutes (drive_search to web_search, calendar_create to kanban_create) and ~10% of interactive sessions hitting the bare-name non-repair failure"
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/repair-tool-call-cannot-bridge-a-bare-mcp-catalog-na-c028dd14b8.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/repair-tool-call-cannot-bridge-a-bare-mcp-catalog-na-c028dd14b8.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20repair-tool-call-cannot-bridge-a-bare-mcp-catalog-na-c028dd14b8&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/repair-tool-call-cannot-bridge-a-bare-mcp-catalog-na-c028dd14b8.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "command-resume-with-32-hex-keys-that-match-no-pendin-66df47bd96",

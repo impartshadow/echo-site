@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/repair-tool-call-cannot-bridge-a-bare-mcp-catalog-na-c028dd14b8.html",
+      "evidence": "measured 12 of 12 hallucinated mcp_-prefixed names resolving to a different real tool at ratios 0.78-0.92, plus two bare-name misroutes (drive_search to web_search, calendar_create to kanban_create) and ~10% of interactive sessions hitting the bare-name non-repair failure",
+      "expected_boundary": "a name repair must either resolve to the exact intended tool or return None, never silently substitute a different real tool, especially across siblings sharing an mcp_<server>_ prefix",
+      "id": "SFA-2026-C028DD14B8",
+      "observed_action": "repair_tool_call fuzzy-matched hallucinated mcp_-prefixed tool names to different real tools via get_close_matches over the full valid-name list, and failed to repair bare catalog names lacking the server prefix",
+      "published_at": "2026-09-07T21:30:32.707664+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 100807,
+        "repo": "NousResearch/hermes-agent",
+        "url": "https://github.com/NousResearch/hermes-agent/issues/100807"
+      },
+      "status": "retired",
+      "summary": "repair_tool_call cannot bridge a bare MCP catalog name, and its fuzzy step silently mis-routes hallucinated mcp_* names onto different real tools",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/command-resume-with-32-hex-keys-that-match-no-pendin-66df47bd96.html",
       "evidence": "Reproduced on main @ ba0c24d: after the mismatched-key resume, state.next still shows ('gate',) and app.invoke returns the unchanged interrupt-pause result, confirming the resume was silently dropped.",
       "expected_boundary": "A resume map classified via is_xxh3_128_hexdigest should be validated against the actual set of pending interrupt ids before being treated as consumed, raising or warning on zero overlap instead of silently no-opping.",
@@ -3017,14 +3043,14 @@
       }
     }
   ],
-  "count": 116,
+  "count": 117,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-07T14:12:37.075091+00:00",
+    "checked_at": "2026-09-07T21:30:32.742514+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
