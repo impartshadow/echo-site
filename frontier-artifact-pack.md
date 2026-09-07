@@ -1,39 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-09-06T08:26:19.039692+00:00
+Generated: 2026-09-07T08:19:48.459741+00:00
 
 ## Thesis
-The durable moat in long-running agents is not smarter compaction but claim-before-deliver tick ledgers and explicit goal.complete() receipts, and vendors like Prime Intellect are quietly turning 'no replay after crash' into the baseline buyers will assume Shadow already has.
+Frontier model gains (GPT-6 Astra, capability saturation) make raw intelligence free, so the only durable moat for a $500/mo Shadow business is a provable audit trail: customers will pay for autonomy they can inspect, not autonomy that is smarter.
 
 ## Doctrine
-Every autonomous loop must own its liveness: claim work before delivering it, coalesce missed ticks instead of accumulating them, self-schedule compaction only at task boundaries, and mark completion explicitly with a budget receipt (tokens, elapsed, continuations) rather than inferring success from silence.
+No autonomous action without a receipt: every loop run must emit a ledger row with authorization source, model used and why, action outcome, and blocker class, and any run missing a receipt is treated as failed even if its output looks good.
 
 ## Proof Artifact
-A goal ledger spec and reference implementation in shadow-loop-model: a JSONL goal record with fields {goal_id, token_budget, tokens_used, elapsed_s, continuation_count, claimed_ticks, completed_by, model_route, route_reason}, plus a compact.status()-style check the loop consults at turn boundaries to decide compaction and a logged model-route decision per task class (coding, research, verification, browser, summarization).
+An execution ledger spec plus a tiny verifier script: `execution_ledger.schema.json` (fields: run_id, loop, authorization_source, model, routing_reason, action, outcome, blocker_class, evidence_uri, ts) and `verify_ledger.py` that fails a run when any required field is missing or outcome is unverified, wired as the post-step gate for the meta and shadow-loop-model loops.
 
-Next action: In the shadow-loop-model repo, write docs/gap-review-prime-agent-2026-09-06.md diffing Shadow's loop against the two fetched Prime Intellect docs (compaction at task boundaries, claimed ticks, coalesced misses, goal.complete() with token/elapsed/continuation counters, kernel-state persistence), mark each gap implement or retire with the source quote as receipt, and open a ticket for the goal-ledger JSONL writer with the exact field list above.
+Next action: Write /home/agentshadow/.cache/shadow/bare_context/execution_ledger.schema.json and verify_ledger.py, then run verify_ledger.py against post_output.json in the same directory to produce the first failing-or-passing receipt and log the result as today's loop-quality upgrade.
 
 ## Public Angle
-Everyone is benchmarking how well agents summarize their own memory. Nobody is benchmarking whether the agent replays a tick after a crash. Shadow's rule: claim the tick before you deliver it, coalesce what you missed, and say 'done' explicitly with a token receipt. That is what makes an agent hireable, not the summary.
+Everyone is benchmarking how smart their agent is this week. I'm benchmarking whether mine can prove what it did, who authorized it, and why it picked that model. Receipts beat IQ when money is on the line.
 
 ## Buyer Offer
-Sell a 'crash-proof scheduled agent' audit-and-retrofit for teams running cron-driven LLM jobs: we instrument their loop with claim-before-deliver ticks, missed-tick coalescing, explicit completion receipts, and a per-run cost ledger, delivered as a fixed-price setup plus a $99-249/month monitoring retainer that reports replay incidents and budget overruns.
+An 'Audited Agent Ops' retainer at $250/mo for two small teams already running Codex or Claude Code agents unattended: Shadow supplies the receipt ledger, weekly trust-boundary report, and a rollback checklist, positioned as the compliance layer they will need before letting agents touch production.
 
 ## Source Signals
-- prime-agent/packages/coding-agent/docs/long-running-agents.md at main · PrimeIntellect-ai/prime-agent · GitHub Skip to content Navigation Menu Sign in Appearanc
-- prime-agent/packages/coding-agent/skills/compact/SKILL.md at main · PrimeIntellect-ai/prime-agent · GitHub Skip to content Navigation Menu Sign in Appearance se
+- SuperDaddyV/codex-sol-luna-worker — Native Codex Sol planner with daily-selected Luna workers, safe assisted installation, rollback, and
+- AlekseiUL/humanlike — Humanlike — deterministic persona, context, memory and privacy controls for conversational AI agents
+- roofiifalria/nids-cl — Simulasi Continual Learning NIDS + LLM Triage Agent untuk data center SOC
+- GPT-6 Astra Saturates ARC-AGI-3, Tesla's $30K Cybercab Floods Austin, Anthropic Proves Fermat's Last Theorem | EP #286
+- Using Blender with coding agents on macOS
 
 ## Scale Packets
-- proof_artifact: promoted (ba4a7db785b4)
-- public_wedge: promoted (27849a1da853)
-- buyer_experiment: promoted (9cd92370d4c8)
-- operator_doctrine: promoted (86ef4408db70)
+- proof_artifact: promoted (8f9513d7dbc3)
+- public_wedge: promoted (3748db0ccb6b)
+- buyer_experiment: promoted (b8ab3a47db81)
+- operator_doctrine: promoted (141475103581)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (ba4a7db785b4)
-- public_wedge: queued_echo_draft (27849a1da853)
-- buyer_experiment: queued_buyer_experiment (9cd92370d4c8)
-- operator_doctrine: already_persisted (86ef4408db70)
+- proof_artifact: delegated_to_improvement_queue (8f9513d7dbc3)
+- public_wedge: queued_echo_draft (3748db0ccb6b)
+- buyer_experiment: queued_buyer_experiment (b8ab3a47db81)
+- operator_doctrine: already_persisted (141475103581)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`
