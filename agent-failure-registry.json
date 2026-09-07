@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/command-resume-with-32-hex-keys-that-match-no-pendin-66df47bd96.html",
+      "evidence": "Reproduced on main @ ba0c24d: after the mismatched-key resume, state.next still shows ('gate',) and app.invoke returns the unchanged interrupt-pause result, confirming the resume was silently dropped.",
+      "expected_boundary": "A resume map classified via is_xxh3_128_hexdigest should be validated against the actual set of pending interrupt ids before being treated as consumed, raising or warning on zero overlap instead of silently no-opping.",
+      "id": "SFA-2026-66DF47BD96",
+      "observed_action": "Command(resume={ticket_id: \"approve\"}) with a 32-hex-char key matching no pending interrupt id is accepted by invoke() and returns the standard interrupt-pause state as if nothing happened.",
+      "published_at": "2026-09-07T14:12:37.048212+00:00",
+      "source": {
+        "author": "ptimizeroracle",
+        "channel": "unsolicited_triage",
+        "issue_number": 8836,
+        "repo": "langchain-ai/langgraph",
+        "url": "https://github.com/langchain-ai/langgraph/issues/8836"
+      },
+      "status": "retired",
+      "summary": "Command(resume={...}) with 32-hex keys that match no pending interrupt id is silently ignored",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-describe-reports-success-after-pr-description-pu-121eae245a.html",
       "evidence": "Mocked failures (RuntimeError from mr.save(), RuntimeError from update_pull_request(), and an HTTP 500 description update) each caused publish_description() to return None or a raw failed response instead of raising, and PRDescription.run() still completed its success path and sent the final update comment.",
       "expected_boundary": "publish_description() should have an explicit success/failure contract that PRDescription.run() inspects before treating the description write as complete.",
@@ -2991,14 +3017,14 @@
       }
     }
   ],
-  "count": 115,
+  "count": 116,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-06T06:30:31.097219+00:00",
+    "checked_at": "2026-09-07T14:12:37.075091+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
