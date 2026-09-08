@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-mode-model-can-hallucinate-a-fake-tool-call-ob-291083e288.html",
+      "evidence": "Model I/O trace showed outputText starting with 'tool_get_settings' followed by a fabricated Observation reporting chunk size 4096 and top-k 1, values that never match the real GetSettingsTool.call() output and don't change even after the user changed the actual setting.",
+      "expected_boundary": "Text classified as a plain answer should never contain an unexecuted tool-call name or an Observation line that the harness itself didn't produce from a real tool invocation.",
+      "id": "SFA-2026-291083E288",
+      "observed_action": "AgentLoop.run classified a model output beginning with the bare word 'tool_get_settings' as answerMode and streamed the fabricated Observation directly to the UI as the final answer.",
+      "published_at": "2026-09-08T06:30:52.965175+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 46,
+        "repo": "LucknowAI/loxi_llm",
+        "url": "https://github.com/LucknowAI/loxi_llm/issues/46"
+      },
+      "status": "retired",
+      "summary": "Agent mode: model can hallucinate a fake tool call + Observation instead of actually calling the tool",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/repair-tool-call-cannot-bridge-a-bare-mcp-catalog-na-c028dd14b8.html",
       "evidence": "measured 12 of 12 hallucinated mcp_-prefixed names resolving to a different real tool at ratios 0.78-0.92, plus two bare-name misroutes (drive_search to web_search, calendar_create to kanban_create) and ~10% of interactive sessions hitting the bare-name non-repair failure",
       "expected_boundary": "a name repair must either resolve to the exact intended tool or return None, never silently substitute a different real tool, especially across siblings sharing an mcp_<server>_ prefix",
@@ -3043,14 +3069,14 @@
       }
     }
   ],
-  "count": 117,
+  "count": 118,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-07T21:30:32.742514+00:00",
+    "checked_at": "2026-09-08T06:30:52.992222+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,

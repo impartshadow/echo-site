@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-09-07T21:30:32.715197+00:00",
-  "count": 117,
+  "generated_at": "2026-09-08T06:30:52.969912+00:00",
+  "count": 118,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "agent-mode-model-can-hallucinate-a-fake-tool-call-ob-291083e288",
+      "advisory_id": "SFA-2026-291083E288",
+      "ts": "2026-09-08T06:30:52.965175+00:00",
+      "title": "Agent mode: model can hallucinate a fake tool call + Observation instead of actually calling the tool",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "LucknowAI/loxi_llm",
+        "issue_number": 46,
+        "author": "unknown",
+        "url": "https://github.com/LucknowAI/loxi_llm/issues/46"
+      },
+      "case": {
+        "observed_action": "AgentLoop.run classified a model output beginning with the bare word 'tool_get_settings' as answerMode and streamed the fabricated Observation directly to the UI as the final answer.",
+        "expected_boundary": "Text classified as a plain answer should never contain an unexecuted tool-call name or an Observation line that the harness itself didn't produce from a real tool invocation.",
+        "runtime_context": "Loaded Llama 3.2 3B (Q4_K_M) running in Agent mode with Tools enabled, using a lazy grammar that only constrains output after the model spontaneously emits the ```tool_call trigger fence.",
+        "evidence": "Model I/O trace showed outputText starting with 'tool_get_settings' followed by a fabricated Observation reporting chunk size 4096 and top-k 1, values that never match the real GetSettingsTool.call() output and don't change even after the user changed the actual setting."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/agent-mode-model-can-hallucinate-a-fake-tool-call-ob-291083e288.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/agent-mode-model-can-hallucinate-a-fake-tool-call-ob-291083e288.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20agent-mode-model-can-hallucinate-a-fake-tool-call-ob-291083e288&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/agent-mode-model-can-hallucinate-a-fake-tool-call-ob-291083e288.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "repair-tool-call-cannot-bridge-a-bare-mcp-catalog-na-c028dd14b8",
