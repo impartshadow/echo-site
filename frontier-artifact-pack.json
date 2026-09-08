@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-09-07T08:19:48.459741+00:00",
+  "generated_at": "2026-09-08T08:22:13.422726+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-09-07T08:19:27.311557+00:00",
-  "thesis": "Frontier model gains (GPT-6 Astra, capability saturation) make raw intelligence free, so the only durable moat for a $500/mo Shadow business is a provable audit trail: customers will pay for autonomy they can inspect, not autonomy that is smarter.",
-  "doctrine": "No autonomous action without a receipt: every loop run must emit a ledger row with authorization source, model used and why, action outcome, and blocker class, and any run missing a receipt is treated as failed even if its output looks good.",
-  "proof_artifact": "An execution ledger spec plus a tiny verifier script: `execution_ledger.schema.json` (fields: run_id, loop, authorization_source, model, routing_reason, action, outcome, blocker_class, evidence_uri, ts) and `verify_ledger.py` that fails a run when any required field is missing or outcome is unverified, wired as the post-step gate for the meta and shadow-loop-model loops.",
-  "proof_next_action": "Write /home/agentshadow/.cache/shadow/bare_context/execution_ledger.schema.json and verify_ledger.py, then run verify_ledger.py against post_output.json in the same directory to produce the first failing-or-passing receipt and log the result as today's loop-quality upgrade.",
-  "public_angle": "Everyone is benchmarking how smart their agent is this week. I'm benchmarking whether mine can prove what it did, who authorized it, and why it picked that model. Receipts beat IQ when money is on the line.",
-  "buyer_offer": "An 'Audited Agent Ops' retainer at $250/mo for two small teams already running Codex or Claude Code agents unattended: Shadow supplies the receipt ledger, weekly trust-boundary report, and a rollback checklist, positioned as the compliance layer they will need before letting agents touch production.",
+  "cycle_ts": "2026-09-08T08:21:55.226779+00:00",
+  "thesis": "The moat is no longer prompts or models but the receipt trail: whoever can prove what their agents did, why, and what it cost will be the only ones allowed to run unattended for paying customers.",
+  "doctrine": "Every loop run must emit a machine-checkable receipt (inputs, decision, model used, verifier result, cost) before its output counts; unreceipted work is treated as a draft, never as done.",
+  "proof_artifact": "A loop_receipt.json schema plus a tiny verifier script that gates loop outputs: it checks the receipt exists, the claimed artifact path exists, a verifier ran, and the model/route decision was logged with the observed reason, then writes pass/fail to a receipts ledger.",
+  "proof_next_action": "Create /home/agentshadow/.cache/shadow/bare_context/loop_receipt.schema.json and verify_receipt.py, then run verify_receipt.py against post_output.json in the same directory to produce the first receipt entry in receipts.jsonl.",
+  "public_angle": "Markdown repos with zero runtime code are getting starred because prompts are cheap to share. Receipts are not. I'm publishing my agent's run receipts for a week: what it did, what it verified, what it cost. Judge the loop, not the prompt.",
+  "buyer_offer": "A $99/month 'Agent Receipts' audit feed for small teams running unattended agents (Claude Code, OpenClaw, AutoAgent-style loops): Shadow ingests their run logs, produces daily receipts with pass/fail verification and cost per outcome, and flags runs that changed things without evidence.",
   "source_titles": [
-    "SuperDaddyV/codex-sol-luna-worker \u2014 Native Codex Sol planner with daily-selected Luna workers, safe assisted installation, rollback, and",
-    "AlekseiUL/humanlike \u2014 Humanlike \u2014 deterministic persona, context, memory and privacy controls for conversational AI agents",
-    "roofiifalria/nids-cl \u2014 Simulasi Continual Learning NIDS + LLM Triage Agent untuk data center SOC",
-    "GPT-6 Astra Saturates ARC-AGI-3, Tesla's $30K Cybercab Floods Austin, Anthropic Proves Fermat's Last Theorem | EP #286",
-    "Using Blender with coding agents on macOS"
+    "Alex Prompter on X: &quot;Some of the most starred repos on GitHub right now contain zero runtime code. They&#x27;re markdown files, skill configs, and prompt c",
+    "Andrej Karpathy Releases Document on AI Agent Architecture Replacing Manual Prompting with Self-Improving Loops / X Trending Log in Sign up Trending Andrej Karp",
+    "Andrej Karpathy on X: &quot;https://t.co/Lb6T42n5jl&quot; / X Post Log in Sign up Post Andrej Karpathy @karpathy 2025 LLM Year in Review 2025 has been a strong",
+    "Ronin on X: &quot;Do you understand what just got open sourced??? an agent that improves other agents. autonomously. NO human in the loop [ literally how it hel",
+    "Karpathy&#x27;s LLM Knowledge Bases Turn Raw Files into Evolving Wikis / X Trending Log in Sign up Trending Karpathy&#x27;s LLM Knowledge Bases Turn Raw Files i"
   ],
   "packets": [
     {
-      "id": "8f9513d7dbc3",
+      "id": "2bda7fdb7038",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "3748db0ccb6b",
+      "id": "0e6f1c1072b8",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "b8ab3a47db81",
+      "id": "2813df01cbd1",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "141475103581",
+      "id": "3023da44f84f",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Write /home/agentshadow/.cache/shadow/bare_context/execution_ledger.schema.json and verify_ledger.py, then run verify_ledger.py against post_output.json in the same directory to produce the first failing-or-passing receipt and log the result as today's loop-quality upgrade.",
-      "packet_id": "8f9513d7dbc3"
+      "next_action": "Create /home/agentshadow/.cache/shadow/bare_context/loop_receipt.schema.json and verify_receipt.py, then run verify_receipt.py against post_output.json in the same directory to produce the first receipt entry in receipts.jsonl.",
+      "packet_id": "2bda7fdb7038"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_3748db0ccb6b_1788769188",
-      "packet_id": "3748db0ccb6b"
+      "draft_id": "frontier_0e6f1c1072b8_1788855733",
+      "packet_id": "0e6f1c1072b8"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "44d960caed78",
-      "packet_id": "b8ab3a47db81"
+      "experiment_id": "bef02067f87e",
+      "packet_id": "2813df01cbd1"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "141475103581"
+      "packet_id": "3023da44f84f"
     }
   ],
   "receipts": {

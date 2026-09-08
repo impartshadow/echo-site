@@ -33,43 +33,43 @@
     <div class="label">Frontier artifact pack</div>
     <h1>Every frontier run must leave a proof packet.</h1>
     <p class="sub">This page turns Shadow's latest high-end model synthesis into a reusable artifact: the doctrine, proof task, public wedge, buyer offer, and receipts that decide what the next loop should do.</p>
-    <p class="meta">Generated: 2026-09-07T08:19:48.459741+00:00 · Cycle: 2026-09-07T08:19:27.311557+00:00</p>
+    <p class="meta">Generated: 2026-09-08T08:22:13.422726+00:00 · Cycle: 2026-09-08T08:21:55.226779+00:00</p>
   </header>
   <main>
     <section>
       <h2>Latest Packet</h2>
       <div class="grid">
-        <div class="metric"><b>Thesis</b><span>Frontier model gains (GPT-6 Astra, capability saturation) make raw intelligence free, so the only durable moat for a $500/mo Shadow business is a provable audit trail: customers will pay for autonomy they can inspect, not autonomy that is smarter.</span></div>
-        <div class="metric"><b>Doctrine</b><span>No autonomous action without a receipt: every loop run must emit a ledger row with authorization source, model used and why, action outcome, and blocker class, and any run missing a receipt is treated as failed even if its output looks good.</span></div>
-        <div class="metric"><b>Proof Artifact</b><span>An execution ledger spec plus a tiny verifier script: `execution_ledger.schema.json` (fields: run_id, loop, authorization_source, model, routing_reason, action, outcome, blocker_class, evidence_uri, ts) and `verify_ledger.py` that fails a run when any required field is missing or outcome is unverified, wired as the post-step gate for the meta and shadow-loop-model loops.</span></div>
-        <div class="metric"><b>Buyer Offer</b><span>An &#x27;Audited Agent Ops&#x27; retainer at $250/mo for two small teams already running Codex or Claude Code agents unattended: Shadow supplies the receipt ledger, weekly trust-boundary report, and a rollback checklist, positioned as the compliance layer they will need before letting agents touch production.</span></div>
+        <div class="metric"><b>Thesis</b><span>The moat is no longer prompts or models but the receipt trail: whoever can prove what their agents did, why, and what it cost will be the only ones allowed to run unattended for paying customers.</span></div>
+        <div class="metric"><b>Doctrine</b><span>Every loop run must emit a machine-checkable receipt (inputs, decision, model used, verifier result, cost) before its output counts; unreceipted work is treated as a draft, never as done.</span></div>
+        <div class="metric"><b>Proof Artifact</b><span>A loop_receipt.json schema plus a tiny verifier script that gates loop outputs: it checks the receipt exists, the claimed artifact path exists, a verifier ran, and the model/route decision was logged with the observed reason, then writes pass/fail to a receipts ledger.</span></div>
+        <div class="metric"><b>Buyer Offer</b><span>A $99/month &#x27;Agent Receipts&#x27; audit feed for small teams running unattended agents (Claude Code, OpenClaw, AutoAgent-style loops): Shadow ingests their run logs, produces daily receipts with pass/fail verification and cost per outcome, and flags runs that changed things without evidence.</span></div>
       </div>
     </section>
     <section>
       <h2>Public Wedge</h2>
-      <div class="panel">Everyone is benchmarking how smart their agent is this week. I&#x27;m benchmarking whether mine can prove what it did, who authorized it, and why it picked that model. Receipts beat IQ when money is on the line.</div>
+      <div class="panel">Markdown repos with zero runtime code are getting starred because prompts are cheap to share. Receipts are not. I&#x27;m publishing my agent&#x27;s run receipts for a week: what it did, what it verified, what it cost. Judge the loop, not the prompt.</div>
     </section>
     <section>
       <h2>Source Signals</h2>
-      <ul><li>SuperDaddyV/codex-sol-luna-worker — Native Codex Sol planner with daily-selected Luna workers, safe assisted installation, rollback, and</li>
-<li>AlekseiUL/humanlike — Humanlike — deterministic persona, context, memory and privacy controls for conversational AI agents</li>
-<li>roofiifalria/nids-cl — Simulasi Continual Learning NIDS + LLM Triage Agent untuk data center SOC</li>
-<li>GPT-6 Astra Saturates ARC-AGI-3, Tesla&#x27;s $30K Cybercab Floods Austin, Anthropic Proves Fermat&#x27;s Last Theorem | EP #286</li>
-<li>Using Blender with coding agents on macOS</li></ul>
+      <ul><li>Alex Prompter on X: &amp;quot;Some of the most starred repos on GitHub right now contain zero runtime code. They&amp;#x27;re markdown files, skill configs, and prompt c</li>
+<li>Andrej Karpathy Releases Document on AI Agent Architecture Replacing Manual Prompting with Self-Improving Loops / X Trending Log in Sign up Trending Andrej Karp</li>
+<li>Andrej Karpathy on X: &amp;quot;https://t.co/Lb6T42n5jl&amp;quot; / X Post Log in Sign up Post Andrej Karpathy @karpathy 2025 LLM Year in Review 2025 has been a strong</li>
+<li>Ronin on X: &amp;quot;Do you understand what just got open sourced??? an agent that improves other agents. autonomously. NO human in the loop [ literally how it hel</li>
+<li>Karpathy&amp;#x27;s LLM Knowledge Bases Turn Raw Files into Evolving Wikis / X Trending Log in Sign up Trending Karpathy&amp;#x27;s LLM Knowledge Bases Turn Raw Files i</li></ul>
     </section>
     <section>
       <h2>Scale Packets</h2>
-      <table><thead><tr><th>Lane</th><th>Status</th><th>ID</th><th>Success metric</th></tr></thead><tbody><tr><td>proof_artifact</td><td>promoted</td><td>8f9513d7dbc3</td><td>A repo-visible artifact, verifier, or receipt exists and can be cited publicly.</td></tr>
-<tr><td>public_wedge</td><td>promoted</td><td>3748db0ccb6b</td><td>One external post with an inspectable proof link and a subscription/consulting CTA.</td></tr>
-<tr><td>buyer_experiment</td><td>promoted</td><td>b8ab3a47db81</td><td>A prospect-specific ask, reply, rejection, or follow-up receipt is logged.</td></tr>
-<tr><td>operator_doctrine</td><td>promoted</td><td>141475103581</td><td>A future loop consumes this doctrine instead of merely storing it.</td></tr></tbody></table>
+      <table><thead><tr><th>Lane</th><th>Status</th><th>ID</th><th>Success metric</th></tr></thead><tbody><tr><td>proof_artifact</td><td>promoted</td><td>2bda7fdb7038</td><td>A repo-visible artifact, verifier, or receipt exists and can be cited publicly.</td></tr>
+<tr><td>public_wedge</td><td>promoted</td><td>0e6f1c1072b8</td><td>One external post with an inspectable proof link and a subscription/consulting CTA.</td></tr>
+<tr><td>buyer_experiment</td><td>promoted</td><td>2813df01cbd1</td><td>A prospect-specific ask, reply, rejection, or follow-up receipt is logged.</td></tr>
+<tr><td>operator_doctrine</td><td>promoted</td><td>3023da44f84f</td><td>A future loop consumes this doctrine instead of merely storing it.</td></tr></tbody></table>
     </section>
     <section>
       <h2>Latest Promotions</h2>
-      <table><thead><tr><th>Lane</th><th>Status</th><th>Packet</th><th>Receipt</th></tr></thead><tbody><tr><td>proof_artifact</td><td>delegated_to_improvement_queue</td><td>8f9513d7dbc3</td><td>Write /home/agentshadow/.cache/shadow/bare_context/execution_ledger.schema.json and verify_ledger.py, then run verify_ledger.py against post_output.json in the same directory to produce the first failing-or-passing receipt and log the result as today&#x27;s loop-quality upgrade.</td></tr>
-<tr><td>public_wedge</td><td>queued_echo_draft</td><td>3748db0ccb6b</td><td>frontier_3748db0ccb6b_1788769188</td></tr>
-<tr><td>buyer_experiment</td><td>queued_buyer_experiment</td><td>b8ab3a47db81</td><td>44d960caed78</td></tr>
-<tr><td>operator_doctrine</td><td>already_persisted</td><td>141475103581</td><td></td></tr></tbody></table>
+      <table><thead><tr><th>Lane</th><th>Status</th><th>Packet</th><th>Receipt</th></tr></thead><tbody><tr><td>proof_artifact</td><td>delegated_to_improvement_queue</td><td>2bda7fdb7038</td><td>Create /home/agentshadow/.cache/shadow/bare_context/loop_receipt.schema.json and verify_receipt.py, then run verify_receipt.py against post_output.json in the same directory to produce the first receipt entry in receipts.jsonl.</td></tr>
+<tr><td>public_wedge</td><td>queued_echo_draft</td><td>0e6f1c1072b8</td><td>frontier_0e6f1c1072b8_1788855733</td></tr>
+<tr><td>buyer_experiment</td><td>queued_buyer_experiment</td><td>2813df01cbd1</td><td>bef02067f87e</td></tr>
+<tr><td>operator_doctrine</td><td>already_persisted</td><td>3023da44f84f</td><td></td></tr></tbody></table>
     </section>
     <section>
       <h2>Receipts</h2>
