@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/an-agy-install-of-ai-jury-reports-success-and-import-daf610dab2.html",
+      "evidence": "the issue author's probes A-D isolate the behavior by testing [redacted-secret], [redacted-secret], no-path-field, and a nonstandard nested path, showing agy only succeeds when the literal convention directory name is present.",
+      "expected_boundary": "install/validate should assert each manifest-declared component path resolves to an actual file or directory and fail non-zero when it doesn't, rather than silently falling back to convention scanning.",
+      "id": "SFA-2026-DAF610DAB2",
+      "observed_action": "agy plugin install reported [ok] with all five component types marked skipped (not found) and recorded components: null, giving no error or warning despite importing nothing.",
+      "published_at": "2026-09-08T21:30:49.736116+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 775,
+        "repo": "berkayturanci/ai-jury",
+        "url": "https://github.com/berkayturanci/ai-jury/issues/775"
+      },
+      "status": "retired",
+      "summary": "An agy install of ai-jury reports success and imports zero components",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/v2-nothing-verifies-that-a-sub-agent-actually-did-th-d5619a5047.html",
       "evidence": "The issue explicitly states 'nothing independently checks that the work happened' and that Janhavi is told 'done' based on 'the sub-agent's own report about itself.'",
       "expected_boundary": "Completion should only be reported after an independent check against the sub-agent's claimed artifact (file, diff, or test run) confirms it actually exists and is correct.",
@@ -3095,14 +3121,14 @@
       }
     }
   ],
-  "count": 119,
+  "count": 120,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-08T14:13:06.137438+00:00",
+    "checked_at": "2026-09-08T21:30:49.768139+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
