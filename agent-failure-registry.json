@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/v2-nothing-verifies-that-a-sub-agent-actually-did-th-d5619a5047.html",
+      "evidence": "The issue explicitly states 'nothing independently checks that the work happened' and that Janhavi is told 'done' based on 'the sub-agent's own report about itself.'",
+      "expected_boundary": "Completion should only be reported after an independent check against the sub-agent's claimed artifact (file, diff, or test run) confirms it actually exists and is correct.",
+      "id": "SFA-2026-D5619A5047",
+      "observed_action": "The v2 orchestrator reports task completion to Janhavi based solely on the sub-agent's self-reported claim of success.",
+      "published_at": "2026-09-08T14:13:06.100242+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 18,
+        "repo": "JanhaviDadhania/bismuth",
+        "url": "https://github.com/JanhaviDadhania/bismuth/issues/18"
+      },
+      "status": "retired",
+      "summary": "v2: nothing verifies that a sub-agent actually did the work",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-mode-model-can-hallucinate-a-fake-tool-call-ob-291083e288.html",
       "evidence": "Model I/O trace showed outputText starting with 'tool_get_settings' followed by a fabricated Observation reporting chunk size 4096 and top-k 1, values that never match the real GetSettingsTool.call() output and don't change even after the user changed the actual setting.",
       "expected_boundary": "Text classified as a plain answer should never contain an unexecuted tool-call name or an Observation line that the harness itself didn't produce from a real tool invocation.",
@@ -3069,14 +3095,14 @@
       }
     }
   ],
-  "count": 118,
+  "count": 119,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-08T06:30:52.992222+00:00",
+    "checked_at": "2026-09-08T14:13:06.137438+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
