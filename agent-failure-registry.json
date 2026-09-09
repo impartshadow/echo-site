@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-cron-search-and-count-silently-ignore-metadata-f-6a208c27ad.html",
+      "evidence": "The issue reproduction shows two crons with distinct metadata values both returned/counted by a metadata-filtered search and count call, confirming the filter is a no-op.",
+      "expected_boundary": "Cron search and count endpoints should apply the same tenant-scoped metadata containment filter that cron creation stores, matching the LangGraph SDK contract.",
+      "id": "SFA-2026-6A208C27AD",
+      "observed_action": "CronSearchRequest and CronCountRequest omit a metadata field, so callers' metadata filters are silently dropped and Pydantic ignores the extra input without error.",
+      "published_at": "2026-09-09T06:30:51.028482+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 582,
+        "repo": "aegra/aegra",
+        "url": "https://github.com/aegra/aegra/issues/582"
+      },
+      "status": "retired",
+      "summary": "[BUG] Cron search and count silently ignore metadata filters",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/an-agy-install-of-ai-jury-reports-success-and-import-daf610dab2.html",
       "evidence": "the issue author's probes A-D isolate the behavior by testing [redacted-secret], [redacted-secret], no-path-field, and a nonstandard nested path, showing agy only succeeds when the literal convention directory name is present.",
       "expected_boundary": "install/validate should assert each manifest-declared component path resolves to an actual file or directory and fail non-zero when it doesn't, rather than silently falling back to convention scanning.",
@@ -3121,14 +3147,14 @@
       }
     }
   ],
-  "count": 120,
+  "count": 121,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-08T21:30:49.768139+00:00",
+    "checked_at": "2026-09-09T06:30:51.058212+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
