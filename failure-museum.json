@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-09-08T03:33:12-05:00",
+  "generated_at_ct": "2026-09-09T03:31:57-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 838,
-  "distinct_contracts": 53,
+  "total_violations": 758,
+  "distinct_contracts": 55,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -13,7 +13,7 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "block",
-      "count": 59,
+      "count": 53,
       "latest_seen_ct": "2026-08-23T08:23:54-05:00",
       "example_violation": "[recurrence-escalation 12x/7d] Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
@@ -23,10 +23,23 @@
       "audit_prompt": "Find definitive status answers that lack a same-turn tool or data receipt."
     },
     {
+      "contract": "dox-guard",
+      "failure_mode": "FM-023",
+      "severity_seen": "block",
+      "count": 8,
+      "latest_seen_ct": "2026-09-08T08:18:49-05:00",
+      "example_violation": "run_shell command contains 4 personal identifier(s) [categories: deny-list]. PII must not appear in shell commands that could reach third parties (email, curl POST, browser scripts).",
+      "title": "The Agent Tried To Put Private Identity Data Into A Tool Boundary",
+      "buyer_failure": "An outbound or automation agent risks leaking personal identifiers through shell commands, browser scripts, or third-party calls.",
+      "missing_receipt": "redaction proof and approved outbound identity context",
+      "control": "Enforce identity and credential separation at the client layer, not just prompt text.",
+      "audit_prompt": "Inspect tool calls for personal identifiers, private domains, tokens, or account-mixing risks."
+    },
+    {
       "contract": "completion-artifact",
       "failure_mode": "FM-027",
       "severity_seen": "block",
-      "count": 7,
+      "count": 6,
       "latest_seen_ct": "2026-09-04T22:31:31-05:00",
       "example_violation": "Completion/commit language while the repo still has uncommitted work: scripts/improve.py, drafts/outreach_packet_20260831_colleen-avarene.md, scripts/tmp_dump_headers.py, scripts/tmp_fable_review.py, tests/test_arbor_base_sweep_utils.py. Commit and push, or state that work remains uncommitted.",
       "title": "The Agent Said Done While The Artifact Was Still Missing",
@@ -47,35 +60,9 @@
       "missing_receipt": "git rev-parse output plus git cat-file or remote branch containment proof",
       "control": "Require a live repository read before any commit or push claim reaches the operator.",
       "audit_prompt": "Search transcripts for commit-like hashes and verify each one against the repository."
-    },
-    {
-      "contract": "dox-guard",
-      "failure_mode": "FM-023",
-      "severity_seen": "block",
-      "count": 1,
-      "latest_seen_ct": "2026-08-20T14:00:52-05:00",
-      "example_violation": "Outbound tool 'Write' would transmit 1 personal identifier(s) off the owner<->Shadow conversation. Identifiers must not leave this 2-way channel via email, social posts, webhooks, or publish-path file writes.",
-      "title": "The Agent Tried To Put Private Identity Data Into A Tool Boundary",
-      "buyer_failure": "An outbound or automation agent risks leaking personal identifiers through shell commands, browser scripts, or third-party calls.",
-      "missing_receipt": "redaction proof and approved outbound identity context",
-      "control": "Enforce identity and credential separation at the client layer, not just prompt text.",
-      "audit_prompt": "Inspect tool calls for personal identifiers, private domains, tokens, or account-mixing risks."
     }
   ],
   "daily_counts": {
-    "2026-08-08": {
-      "factual-claim-verification": 16,
-      "spawn-lifecycle-claim-guard": 37,
-      "completion-artifact": 1,
-      "state-assertion-grounding": 8,
-      "verification-vocabulary-gate": 14,
-      "watchdog-reply-resolution-guard": 1,
-      "terminal-state-evidence-gate": 3,
-      "stale-state-assertion-guard": 18,
-      "concurrence-grounding": 2,
-      "numeric-parameter-assertion-guard": 1,
-      "blocker-surfacing-gate": 1
-    },
     "2026-08-09": {
       "factual-claim-verification": 7,
       "spawn-lifecycle-claim-guard": 6,
@@ -345,6 +332,16 @@
       "privacy-exposure-taxonomy": 1,
       "state-assertion-grounding": 1,
       "stale-state-assertion-guard": 2
+    },
+    "2026-09-08": {
+      "thin-context-brief-gate": 4,
+      "capability-activation-live-user-receipt-gate": 1,
+      "terminal-state-evidence-gate": 3,
+      "pressure-framing-guard": 1,
+      "dox-guard": 7,
+      "unbuilt-guarantee-guard": 2,
+      "attribute-correction-verification-guard": 2,
+      "state-assertion-grounding": 2
     }
   },
   "cta": {
