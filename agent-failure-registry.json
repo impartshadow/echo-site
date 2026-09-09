@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/delegated-agents-silently-drop-a-declared-outputsche-0f448b5224.html",
+      "evidence": "The issue quotes agent.ts's own doc comment stating structured output is honored only for the standalone shape and that workers always emit z.string(), confirming the divergence is documented but unchecked at definition time.",
+      "expected_boundary": "At the point an agent definition is bound to a specific runner (standalone vs delegated/skill-forced), the system should assert that the runner can honor any declared outputSchema and fail loudly if not.",
+      "id": "SFA-2026-0F448B5224",
+      "observed_action": "The worker/delegation execution path coerces a declared outputSchema down to z.string() while the standalone path honors it, with no warning at agent-definition time.",
+      "published_at": "2026-09-09T21:31:05.893813+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 1668,
+        "repo": "fixpoint-labs/flow-state-dev",
+        "url": "https://github.com/fixpoint-labs/flow-state-dev/issues/1668"
+      },
+      "status": "retired",
+      "summary": "Delegated agents silently drop a declared outputSchema",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/github-copilot-camelcase-subagentstart-hook-is-silen-18882d7d4b.html",
       "evidence": "The user confirmed the hook fires and additionalContext reaches the subagent only after renaming the event key from subagentStart to SubagentStart, with no corresponding log entry for the lowercase-first form.",
       "expected_boundary": "Every value in the vscode.ChatHookType enum should have a corresponding entry in the hook-name mapping tables used by parseHooksJson, enforced by a test at the enum-to-table boundary.",
@@ -3173,14 +3199,14 @@
       }
     }
   ],
-  "count": 122,
+  "count": 123,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-09T14:12:54.960417+00:00",
+    "checked_at": "2026-09-09T21:31:05.925958+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
