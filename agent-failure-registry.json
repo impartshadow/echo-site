@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/github-copilot-camelcase-subagentstart-hook-is-silen-18882d7d4b.html",
+      "evidence": "The user confirmed the hook fires and additionalContext reaches the subagent only after renaming the event key from subagentStart to SubagentStart, with no corresponding log entry for the lowercase-first form.",
+      "expected_boundary": "Every value in the vscode.ChatHookType enum should have a corresponding entry in the hook-name mapping tables used by parseHooksJson, enforced by a test at the enum-to-table boundary.",
+      "id": "SFA-2026-18882D7D4B",
+      "observed_action": "VS Code's GitHub Copilot hook parser silently drops a hook configured with the documented event name subagentStart instead of executing it or reporting an error.",
+      "published_at": "2026-09-09T14:12:54.932232+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 335244,
+        "repo": "microsoft/vscode",
+        "url": "https://github.com/microsoft/vscode/issues/335244"
+      },
+      "status": "retired",
+      "summary": "GitHub Copilot: camelCase subagentStart hook is silently ignored",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-cron-search-and-count-silently-ignore-metadata-f-6a208c27ad.html",
       "evidence": "The issue reproduction shows two crons with distinct metadata values both returned/counted by a metadata-filtered search and count call, confirming the filter is a no-op.",
       "expected_boundary": "Cron search and count endpoints should apply the same tenant-scoped metadata containment filter that cron creation stores, matching the LangGraph SDK contract.",
@@ -3147,14 +3173,14 @@
       }
     }
   ],
-  "count": 121,
+  "count": 122,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-09T06:30:51.058212+00:00",
+    "checked_at": "2026-09-09T14:12:54.960417+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
