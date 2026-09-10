@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/backend-models-base-url-is-silently-dropped-litellm-97680238a4.html",
+      "evidence": "the issue's own source trace of backend.py:170-178 and llm.py:22-90, plus a direct litellm call with the same api_key and base_url succeeding, isolates the drop to _build_kwargs's fixed parameter list.",
+      "expected_boundary": "every key present in the parsed backend.models[] config entry should either be consumed by a named _build_kwargs parameter or explicitly forwarded, with a test enforcing that the declared parameter set stays a superset of the documented yaml schema.",
+      "id": "SFA-2026-97680238A4",
+      "observed_action": "turbo-agent forwarded the yaml-configured base_url through call_model's **p spread but _build_kwargs dropped it before calling litellm.acompletion, causing all concurrent candidates to hit the wrong host and fail with a misleading connection error.",
+      "published_at": "2026-09-10T06:30:53.246629+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 8,
+        "repo": "llm-as-a-verifier/TurboAgent",
+        "url": "https://github.com/llm-as-a-verifier/TurboAgent/issues/8"
+      },
+      "status": "retired",
+      "summary": "backend.models[].base_url is silently dropped \u2014 litellm defaults to api.openai.com",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/delegated-agents-silently-drop-a-declared-outputsche-0f448b5224.html",
       "evidence": "The issue quotes agent.ts's own doc comment stating structured output is honored only for the standalone shape and that workers always emit z.string(), confirming the divergence is documented but unchecked at definition time.",
       "expected_boundary": "At the point an agent definition is bound to a specific runner (standalone vs delegated/skill-forced), the system should assert that the runner can honor any declared outputSchema and fail loudly if not.",
@@ -3199,14 +3225,14 @@
       }
     }
   ],
-  "count": 123,
+  "count": 124,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-09T21:31:05.925958+00:00",
+    "checked_at": "2026-09-10T06:30:53.275052+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
