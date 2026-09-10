@@ -1,17 +1,17 @@
 # Agent Failure Museum
 
-Generated: 2026-09-09T03:31:57-05:00 CT
+Generated: 2026-09-10T04:46:01-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 758 claim-boundary violations across 55 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 723 claim-boundary violations across 49 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
 ### The Agent Answered From Memory When The Question Required A Live Read
 
 - Contract: `state-assertion-grounding`
-- Fires logged: 53
+- Fires logged: 52
 - Latest seen: 2026-08-23T08:23:54-05:00 CT
 - Buyer failure: An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.
 - Missing receipt: same-turn read from the relevant file, process table, API, inbox, queue, or log
@@ -33,13 +33,13 @@ Shadow has logged 758 claim-boundary violations across 55 contract names. The us
 ### The Agent Said Done While The Artifact Was Still Missing
 
 - Contract: `completion-artifact`
-- Fires logged: 6
-- Latest seen: 2026-09-04T22:31:31-05:00 CT
+- Fires logged: 7
+- Latest seen: 2026-09-10T04:33:00-05:00 CT
 - Buyer failure: A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.
 - Missing receipt: artifact path, commit hash, deploy receipt, message id, or queue record
 - Runtime control: Block final completion language unless the named artifact exists and the worktree/state agrees.
 - Audit prompt: Find every place the agent used completion language without an independently readable artifact.
-- Redacted example: Completion/commit language while the repo still has uncommitted work: scripts/improve.py, drafts/outreach_packet_20260831_colleen-avarene.md, scripts/tmp_dump_headers.py, scripts/tmp_fable_review.py, tests/test_arbor_base_sweep_utils.py. Commit and push, or state that work remains uncommitted.
+- Redacted example: Completion/commit language while the repo still has uncommitted work: core/authority_ledger.py, core/contracts.py, docs/agent-failure-flagship.html, docs/agent-failure-flagship.json, docs/agent-failure-flagship.md, docs/autopsy.html, docs/autopsy.xml, docs/contract-red-team.json, ... +10 more. Commit and push, or state that work remains uncommitted.
 
 ### The Agent Cited A Commit Hash Before Proving It Resolved
 

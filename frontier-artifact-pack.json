@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-09-09T08:30:44.998297+00:00",
+  "generated_at": "2026-09-10T09:44:58.983075+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-09-09T08:29:29.389663+00:00",
-  "thesis": "Agent orchestration will commoditize; the durable business is proving which autonomous actions were authorized, what happened, and whether humans can safely stop reviewing them.",
-  "doctrine": "Route every autonomous action through the smallest authorized execution path that emits a terminal, evidence-backed receipt tied to a revenue-relevant outcome.",
-  "proof_artifact": "Ship a canonical execution-receipt schema that records authorization_source, action_outcome, blocker_classification, evidence, and revenue_link for commitment-to-closure work.",
-  "proof_next_action": "Extend the existing receipt owner in core/work_lifecycle.py with the five execution-receipt fields and add focused tests for completed, failed, and hard-blocked actions.",
-  "public_angle": "The agent economy does not need another supervisor dashboard. It needs receipts strong enough that a human can stop supervising.",
-  "buyer_offer": "Sell a Delegation Check that traces one production AI workflow, exposes actions lacking authority or outcome proof, and converts qualified teams into the $400 Workflow Control Map.",
+  "cycle_ts": "2026-09-10T09:44:41.471752+00:00",
+  "thesis": "Agent-to-agent commerce will not be won by the smartest agent but by the one whose every outbound action ships with a machine-checkable receipt, because at A2A scale nobody reviews, they only verify.",
+  "doctrine": "No loop output counts as done until it carries a self-gated receipt: what was executed, what evidence proves it, and a confidence score that decides whether the result auto-ships, retries, or escalates.",
+  "proof_artifact": "A receipt-gate module (receipt_gate.py) that wraps every loop's terminal step: it emits a JSON receipt {loop, action, evidence_refs, confidence, gate_decision}, applies a threshold (ship >=0.8, retry 0.5-0.8, escalate <0.5), and logs the decision to a receipts ledger the portfolio allocator reads to reweight loop selection by verified-outcome rate rather than output volume.",
+  "proof_next_action": "Create receipt_gate.py in the Shadow loops directory with the receipt schema and threshold gate, then wire it as the final step of the frontier compound loop so this run's output is the first receipt written to receipts.jsonl.",
+  "public_angle": "Everyone is benchmarking how smart their agents are. I stopped. I now score mine on one number: what fraction of actions shipped with a receipt I never had to read. Here is the gate, and the first week of ledger data.",
+  "buyer_offer": "Sell a 'Verified Autonomy Audit' to small teams running unattended agents: Shadow instruments their loops with receipt gates for a fixed $250 setup plus $50/month ledger hosting, positioned as the thing that lets them stop reading agent logs.",
   "source_titles": [
-    "Show HN: Agent Farm \u2013 An IDE designed for AI and humans to work together | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login Show",
-    "Welcome to September 7, 2026",
-    "Show HN: Pinchwork \u2013 A task marketplace where AI agents hire each other | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login Show",
-    "Show HN: Moadim.io \u2013 A scheduler for agents | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login Show HN: Moadim.io \u2013 A scheduler",
-    "llm 0.35"
+    "EnvCraft: Synthesizing Executable Environments in Agentic RL for Claw-like Agent",
+    "CUSP: Decomposable Collective Uncertainty for Multi-Agent Multimodal Reasoning",
+    "Autonomous Trust: Self-Gating Evaluation as a Prerequisite for Agent-to-Agent Communication at Scale",
+    "The convergent laboratory: when AI reasoning, autonomous experiments, high performance and quantum computing reshape chemistry",
+    "Simulation: the new Scaling Law \u2014 Joon Sung Park, Simile AI"
   ],
   "packets": [
     {
-      "id": "d70d9d18b4ea",
+      "id": "d89248b989e7",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "1aeeacba73c6",
+      "id": "249e078673d7",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "1e567900d320",
+      "id": "22146da9d53d",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "cea717fc6f95",
+      "id": "0230ebc86046",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Extend the existing receipt owner in core/work_lifecycle.py with the five execution-receipt fields and add focused tests for completed, failed, and hard-blocked actions.",
-      "packet_id": "d70d9d18b4ea"
+      "next_action": "Create receipt_gate.py in the Shadow loops directory with the receipt schema and threshold gate, then wire it as the final step of the frontier compound loop so this run's output is the first receipt written to receipts.jsonl.",
+      "packet_id": "d89248b989e7"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_1aeeacba73c6_1788942644",
-      "packet_id": "1aeeacba73c6"
+      "draft_id": "frontier_249e078673d7_1789033498",
+      "packet_id": "249e078673d7"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "bac66feb9957",
-      "packet_id": "1e567900d320"
+      "experiment_id": "3d72c7340fa6",
+      "packet_id": "22146da9d53d"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "cea717fc6f95"
+      "packet_id": "0230ebc86046"
     }
   ],
   "receipts": {
