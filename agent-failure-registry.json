@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/only-the-first-tool-call-in-a-stream-delta-is-read-s-0e5825acc5.html",
+      "evidence": "The model receives a tool result for a call it never explicitly re-requested and never receives an answer for the dropped call, causing hallucinated results or repeated requests that consume the iteration budget.",
+      "expected_boundary": "Every entry in a delta's tool_calls array should produce a corresponding ToolCallDelta, tracked independently by wire index rather than a single current_tool_call slot.",
+      "id": "SFA-2026-0E5825ACC5",
+      "observed_action": "The stream parser extracts only index 0 of a chunk's tool_calls array via .next() and silently discards any remaining entries.",
+      "published_at": "2026-09-10T21:31:05.147351+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 177,
+        "repo": "kurealnum/marceline",
+        "url": "https://github.com/kurealnum/marceline/issues/177"
+      },
+      "status": "retired",
+      "summary": "Only the first tool call in a stream delta is read, so parallel tool calls are silently dropped",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/worker-asset-upload-sometimes-silently-fails-3072c4f66f.html",
       "evidence": "issue logs show 'Uploaded 9719 of 11805 assets' immediately followed by 'Success: Deploy command completed' and '\u2728 Success! Build completed.' with no record of the remaining ~2000 assets ever finishing.",
       "expected_boundary": "the deploy command should compare final uploaded-asset count against total asset count and fail non-zero before emitting any success message.",
@@ -3251,14 +3277,14 @@
       }
     }
   ],
-  "count": 125,
+  "count": 126,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-10T14:12:55.339604+00:00",
+    "checked_at": "2026-09-10T21:31:05.176857+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
