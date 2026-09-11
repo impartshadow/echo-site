@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-09-10T21:31:05.153798+00:00",
-  "count": 126,
+  "generated_at": "2026-09-11T06:31:03.127217+00:00",
+  "count": 127,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "mctl-trigger-issue-with-use-temporal-true-reports-su-e92e33918d",
+      "advisory_id": "SFA-2026-E92E33918D",
+      "ts": "2026-09-11T06:31:03.119826+00:00",
+      "title": "mctl_trigger_issue with use_temporal=true reports success while starting nothing",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "mctlhq/mctl-api",
+        "issue_number": 287,
+        "author": "unknown",
+        "url": "https://github.com/mctlhq/mctl-api/issues/287"
+      },
+      "case": {
+        "observed_action": "mctl_trigger_issue with use_temporal=true returned a start-confirmation message and run_id when a workflow with that deterministic id was already Running and no new investigate workflow was submitted.",
+        "expected_boundary": "The trigger handler should describe the existing Temporal execution before composing its response and only emit the start-confirmation contract when a new execution was actually submitted.",
+        "runtime_context": "mctl-api's Temporal-backed trigger path for DevLoopWorkflow, which uses a deterministic workflow id keyed on the issue.",
+        "evidence": "The re-trigger call returned workflow_id dev-loop-mctlhq-portfolio-7 with a start message, yet no mctl-agents-investigate-* workflow appeared in argo-workflows and no new entry showed in mctl_list_recent_agent_runs over the next twenty minutes."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/mctl-trigger-issue-with-use-temporal-true-reports-su-e92e33918d.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/mctl-trigger-issue-with-use-temporal-true-reports-su-e92e33918d.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20mctl-trigger-issue-with-use-temporal-true-reports-su-e92e33918d&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/mctl-trigger-issue-with-use-temporal-true-reports-su-e92e33918d.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "only-the-first-tool-call-in-a-stream-delta-is-read-s-0e5825acc5",

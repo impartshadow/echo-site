@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/mctl-trigger-issue-with-use-temporal-true-reports-su-e92e33918d.html",
+      "evidence": "The re-trigger call returned workflow_id dev-loop-mctlhq-portfolio-7 with a start message, yet no mctl-agents-investigate-* workflow appeared in argo-workflows and no new entry showed in mctl_list_recent_agent_runs over the next twenty minutes.",
+      "expected_boundary": "The trigger handler should describe the existing Temporal execution before composing its response and only emit the start-confirmation contract when a new execution was actually submitted.",
+      "id": "SFA-2026-E92E33918D",
+      "observed_action": "mctl_trigger_issue with use_temporal=true returned a start-confirmation message and run_id when a workflow with that deterministic id was already Running and no new investigate workflow was submitted.",
+      "published_at": "2026-09-11T06:31:03.119826+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 287,
+        "repo": "mctlhq/mctl-api",
+        "url": "https://github.com/mctlhq/mctl-api/issues/287"
+      },
+      "status": "retired",
+      "summary": "mctl_trigger_issue with use_temporal=true reports success while starting nothing",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/only-the-first-tool-call-in-a-stream-delta-is-read-s-0e5825acc5.html",
       "evidence": "The model receives a tool result for a call it never explicitly re-requested and never receives an answer for the dropped call, causing hallucinated results or repeated requests that consume the iteration budget.",
       "expected_boundary": "Every entry in a delta's tool_calls array should produce a corresponding ToolCallDelta, tracked independently by wire index rather than a single current_tool_call slot.",
@@ -3277,14 +3303,14 @@
       }
     }
   ],
-  "count": 126,
+  "count": 127,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-10T21:31:05.176857+00:00",
+    "checked_at": "2026-09-11T06:31:03.150517+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
