@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Failure census preview — aegra/aegra</title>
+<style>
+body{font-family:Georgia,serif;max-width:44rem;margin:2rem auto;padding:0 1rem;color:#1a1a1a;line-height:1.55}
+h1{font-size:1.5rem} h2{font-size:1.15rem;margin-bottom:.2rem}
+.meta{color:#666;font-size:.9rem} .evidence{color:#444;font-size:.95rem}
+section{border-top:1px solid #ddd;padding-top:.8rem;margin-top:1rem}
+.offer{background:#f6f4ef;border:1px solid #ddd;padding:1rem;margin-top:2rem}
+</style></head><body>
+<h1>Failure census preview — aegra/aegra</h1>
+<p class="meta">Generated 2026-09-12 from 10 public issues.
+This is page one of a failure census: the dominant agent-failure classes in this
+project's own tracker, each with the deterministic check that would catch it.</p>
+<p>Aegra&#x27;s dominant failure mode is silent partial compliance: it accepts requests matching the LangGraph SDK/Agent Protocol surface, returns 200, but quietly drops or ignores the semantically important part (filters, durability, interrupts, projections, retries) rather than failing loudly. The interrupt-handling and auth-filter clusters show this recurring even after prior fixes, because each streaming path or route reimplements the same logic independently instead of sharing one enforced contract.</p>
+<section><h2>silent-field-drop</h2><p>Aegra accepts request fields the LangGraph SDK sends (metadata filters, durability, if_not_exists, stream_resumable, select projections) but silently ignores them instead of rejecting or honoring them, so callers get a 200 response with wrong or incomplete results.</p><p class="evidence">Evidence: &ldquo;does not declare them and currently accepts the request while silently dropping them&rdquo; — <a href="https://github.com/aegra/aegra/issues/582">#582</a> <a href="https://github.com/aegra/aegra/issues/503">#503</a> <a href="https://github.com/aegra/aegra/issues/564">#564</a> <a href="https://github.com/aegra/aegra/issues/490">#490</a></p><p><strong>The deterministic check:</strong> Reject unknown/unhandled request fields with a 4xx (fail-closed schema validation) instead of allowing Pydantic to discard them; add contract tests asserting every documented SDK field either maps to behavior or raises.</p></section>
+<section><h2>auth-filter-not-enforced</h2><p>Authorization handler filters that scope which threads/assistants/crons a user can see are computed but never actually applied to the underlying query on several routes, letting users read or delete data they shouldn&#x27;t.</p><p class="evidence">Evidence: &ldquo;the filter dict itself is never merged into the underlying query&rdquo; — <a href="https://github.com/aegra/aegra/issues/485">#485</a> <a href="https://github.com/aegra/aegra/issues/490">#490</a></p><p><strong>The deterministic check:</strong> Integration test per resource route asserting a handler-returned filter (e.g. owner-scoped) actually narrows/blocks cross-user access on GET/DELETE by-id and search endpoints, not just list endpoints.</p></section>
+<section><h2>interrupt-config-laundering</h2><p>Run-level interrupt_before/interrupt_after are stuffed into an untyped config dict that LangGraph doesn&#x27;t read as config, so interrupts are silently dropped on one or more streaming code paths even after being &#x27;fixed&#x27; once.</p><p class="evidence">Evidence: &ldquo;config keys by that name, it only accepts them as explicit kwargs&rdquo; — <a href="https://github.com/aegra/aegra/issues/482">#482</a> <a href="https://github.com/aegra/aegra/issues/481">#481</a> <a href="https://github.com/aegra/aegra/issues/442">#442</a></p><p><strong>The deterministic check:</strong> Unit test per streaming producer (v1 graph_streaming, v2 native_stream) asserting interrupt_before/after are passed as explicit astream/astream_events kwargs, not left in the config dict — run against every producer, not just the one touched by the latest patch.</p></section>
+<section><h2>durability-not-wired</h2><p>The durability/checkpoint-frequency setting is documented and requested by clients but never actually passed into graph execution, so every run gets full per-step checkpointing regardless of what was configured.</p><p class="evidence">Evidence: &ldquo;never passes `durability` to `graph.astream()` / `graph.astream_events()`&rdquo; — <a href="https://github.com/aegra/aegra/issues/500">#500</a> <a href="https://github.com/aegra/aegra/issues/503">#503</a></p><p><strong>The deterministic check:</strong> Assert graph.astream/astream_events calls always receive an explicit durability kwarg derived from the request/server default, with a test that fails if the call site omits it.</p></section>
+<section><h2>no-retry-transient-failure</h2><p>The Redis SSE broker&#x27;s write path has no retry on transient Redis errors, so momentary network blips silently drop stream events even though Redis itself is healthy.</p><p class="evidence">Evidence: &ldquo;the write path (`RedisRunBroker.put`) has **no retry**, while the read path does&rdquo; — <a href="https://github.com/aegra/aegra/issues/439">#439</a></p><p><strong>The deterministic check:</strong> Require symmetric retry/backoff policy on all Redis broker read and write paths, verified by a test that injects a single transient RedisError and asserts the event is still delivered, not dropped.</p></section>
+<div class="offer">
+<p><strong>This preview used only public issues.</strong> The full failure census
+runs the same classification over seven days of your private agent logs and
+traces — every failure classified, frequency-ranked, with the deterministic
+check per class. $400, one-week turnaround.
+Email <a href="mailto:impartshadow@gmail.com">impartshadow@gmail.com</a> with subject &ldquo;census&rdquo;.</p>
+<p class="meta">Free tier: I triage one public agent failure every day —
+<a href="https://impartshadow.github.io/echo-site/failure-cases/">the case log</a>.</p>
+</div>
+</body></html>
