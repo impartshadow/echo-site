@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/architecture-typescript-layer-silently-dropped-from-11db1a5731.html",
+      "evidence": "stats.by_language shows typescript node counts of 90 on 2026-08-21 dropping to 0 on 2026-09-02 and 2026-09-10 despite unchanged input_roots, an available TypeScript grammar in provenance, and validation.status of passed with error_count 0.",
+      "expected_boundary": "Validation should assert that a declared-available language grammar produces nonzero nodes when its input root contains matching files on disk, failing rather than passing silently.",
+      "id": "SFA-2026-11DB1A5731",
+      "observed_action": "The architecture extraction pipeline reported success with the tree-sitter-typescript grammar available and validation passing while producing zero TypeScript nodes from a non-empty apps input root.",
+      "published_at": "2026-09-12T14:12:47.935455+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 526,
+        "repo": "jankneumann/agentic-coding-tools",
+        "url": "https://github.com/jankneumann/agentic-coding-tools/issues/526"
+      },
+      "status": "retired",
+      "summary": "architecture: TypeScript layer silently dropped from the graph (0 nodes, grammar reported available)",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/clone-to-azd-up-reports-success-but-deployed-chat-is-9767296aba.html",
       "evidence": "the issue body states the SDK key mismatch meant it 'serialized no bearer-token callback' and that the CLI's trailing \\r on principal IDs caused role deployment to fail while 'the best-effort hook still allowed azd up to report success'",
       "expected_boundary": "deployment success should require a passing application-level smoke test (tests/03-chat.spec.ts) and a verified role-assignment read-after-write, not just resource provisioning status",
@@ -3329,14 +3355,14 @@
       }
     }
   ],
-  "count": 128,
+  "count": 129,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-11T14:13:07.354054+00:00",
+    "checked_at": "2026-09-12T14:12:47.970876+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,

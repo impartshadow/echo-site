@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-09-12T08:50:27.013713+00:00",
-  "count": 128,
+  "generated_at": "2026-09-12T14:12:47.943351+00:00",
+  "count": 129,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "architecture-typescript-layer-silently-dropped-from-11db1a5731",
+      "advisory_id": "SFA-2026-11DB1A5731",
+      "ts": "2026-09-12T14:12:47.935455+00:00",
+      "title": "architecture: TypeScript layer silently dropped from the graph (0 nodes, grammar reported available)",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "jankneumann/agentic-coding-tools",
+        "issue_number": 526,
+        "author": "unknown",
+        "url": "https://github.com/jankneumann/agentic-coding-tools/issues/526"
+      },
+      "case": {
+        "observed_action": "The architecture extraction pipeline reported success with the tree-sitter-typescript grammar available and validation passing while producing zero TypeScript nodes from a non-empty apps input root.",
+        "expected_boundary": "Validation should assert that a declared-available language grammar produces nonzero nodes when its input root contains matching files on disk, failing rather than passing silently.",
+        "runtime_context": "Multi-language architecture graph extractor with tree-sitter grammars for Python, TypeScript, and SQL running over declared input_roots including apps/kanban-viz.",
+        "evidence": "stats.by_language shows typescript node counts of 90 on 2026-08-21 dropping to 0 on 2026-09-02 and 2026-09-10 despite unchanged input_roots, an available TypeScript grammar in provenance, and validation.status of passed with error_count 0."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/architecture-typescript-layer-silently-dropped-from-11db1a5731.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/architecture-typescript-layer-silently-dropped-from-11db1a5731.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20architecture-typescript-layer-silently-dropped-from-11db1a5731&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/architecture-typescript-layer-silently-dropped-from-11db1a5731.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "clone-to-azd-up-reports-success-but-deployed-chat-is-9767296aba",
