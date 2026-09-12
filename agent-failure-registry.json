@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/queued-user-messages-are-silently-dropped-and-missin-d57385ab48.html",
+      "evidence": "A full-text search of local session history for the exact phrase 'one-time setup' surfaced only a later message quoting the screenshot, not the original queued instruction, showing it was absent from durable storage.",
+      "expected_boundary": "Every message that enters the queue should be durably persisted before or atomically with being marked queued, so it can be delivered exactly once or recovered on failure.",
+      "id": "SFA-2026-D57385AB48",
+      "observed_action": "The app displayed '3 queued messages' in the UI but never delivered the queued instruction to the agent and never wrote it to the durable turns history.",
+      "published_at": "2026-09-12T21:31:03.837795+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 3590,
+        "repo": "github/app",
+        "url": "https://github.com/github/app/issues/3590"
+      },
+      "status": "retired",
+      "summary": "Queued user messages are silently dropped and missing from durable session history",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/architecture-typescript-layer-silently-dropped-from-11db1a5731.html",
       "evidence": "stats.by_language shows typescript node counts of 90 on 2026-08-21 dropping to 0 on 2026-09-02 and 2026-09-10 despite unchanged input_roots, an available TypeScript grammar in provenance, and validation.status of passed with error_count 0.",
       "expected_boundary": "Validation should assert that a declared-available language grammar produces nonzero nodes when its input root contains matching files on disk, failing rather than passing silently.",
@@ -3355,14 +3381,14 @@
       }
     }
   ],
-  "count": 129,
+  "count": 130,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-12T14:12:47.970876+00:00",
+    "checked_at": "2026-09-12T21:31:03.868108+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
