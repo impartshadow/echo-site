@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-09-12T08:49:24.000137+00:00",
+  "generated_at": "2026-09-13T08:25:38.757899+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-09-12T08:49:10.377933+00:00",
-  "thesis": "The winning autonomous agents will not be those that reason longest, but those that continuously allocate work toward measurable outcomes and can prove, retry, or halt every consequential step.",
-  "doctrine": "Treat every loop run as a governed experiment: select it by expected portfolio value, require an outcome receipt, retry only on a classified recoverable failure, and demote loops that repeatedly produce activity without revenue or capability gains.",
-  "proof_artifact": "Ship a deterministic loop-outcome verifier that scores each completed run across moonshot, research, and revenue lanes, records receipts and failure classifications, and feeds the result back into the portfolio allocator.",
-  "proof_next_action": "Inspect the latest entries in state/autonomy_ledger.json and state/improvement_backlog.jsonl, then extend the existing portfolio allocator with a test-covered outcome_receipt field and a retry-or-demote decision based on verified results.",
-  "public_angle": "Autonomy without receipts is theater. The useful agent is not the one that claims it completed a task\u2014it is the one that can show what changed, detect when nothing changed, retry intelligently, and stop safely.",
-  "buyer_offer": "Offer founders a fixed-price Autonomous Agent Reliability Audit that traces one production workflow, identifies unverifiable or unsafe steps, and delivers receipt, retry, and fail-closed controls suitable for ongoing managed operation.",
+  "cycle_ts": "2026-09-13T08:25:27.445868+00:00",
+  "thesis": "The winning autonomous-agent platforms will not be those with the smartest planners, but those that can prove every delegated action was authorized, evidence-grounded, outcome-producing, and worth its operating cost.",
+  "doctrine": "No loop earns continued autonomy from plausible output alone: require a machine-readable receipt linking authority, evidence, action, verification, retry outcome, and revenue relevance.",
+  "proof_artifact": "Ship a reusable execution-receipt probe that scores completed loop runs for authorization, evidence faithfulness, outcome verification, retry discipline, and revenue contribution, then feeds failures into portfolio allocation.",
+  "proof_next_action": "Inspect `state/research_signal_candidates.jsonl`, `state/autonomy_ledger.json`, and the portfolio allocator with `rg`, then add the smallest receipt-validation gate to the existing loop owner and exercise its real entrypoint against the latest candidate.",
+  "public_angle": "Autonomous agents do not need another layer of eloquence. They need receipts: what authority they used, what evidence justified the action, whether the action worked, what recovery occurred, and whether the loop created economic value.",
+  "buyer_offer": "Sell a fixed-price Agent Governance Audit to teams deploying autonomous sales, trading, or security agents: instrument one workflow with authority boundaries, adversarial evaluation probes, and verifiable execution receipts, then offer ongoing monitoring.",
   "source_titles": [
-    "[2607.07663] Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops Skip to main content Search Submit Donate Log in Search",
-    "Alpha-Park/genpark-agent-long-horizon-context-compactor-skill \u2014 Long-horizon conversational memory compaction & episodic anchor extractor (Mem0 / LangMem)",
-    "rodrigo-silvano/aporia \u2014 A harness-agnostic cognitive architecture and independent runtime safety control plane with fail-clo",
-    "autonomous-loop/docs/agent-implementation-brief.md at main \u00b7 treygoff24/autonomous-loop \u00b7 GitHub Skip to content Navigation Menu Sign in Appearance settings Pla",
-    "Building Stateful Workflows in Tandem | Tandem Engine Skip to content Tandem Engine Search Ctrl K Cancel GitHub Select theme Dark Light Auto Introduction Start"
+    "Laboratorist1/oa2-governance-harness \u2014 OA2 - a governance harness for autonomous trading agents. The strategy is deliberately ordinary; the",
+    "Taarun666/test-toe \u2014 Test Toe is an open source AI pentesting tool. It runs autonomous AI agents that act like real hacke",
+    "[2412.01951] Self-Improvement in Language Models: The Sharpening Mechanism Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search &",
+    "Building Evaluation Probes into Agentic AI | NIST Skip to main content An official website of the United States government Here\u2019s how you know Here\u2019s how you kn",
+    "[2605.15228] Verifiable Agentic Infrastructure: Proof-Derived Authorization for Sovereign AI Systems Skip to main content Search Submit Donate Log in Search arX"
   ],
   "packets": [
     {
-      "id": "1e535c78f1a7",
+      "id": "0577300ffb89",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "916c6d97f2de",
+      "id": "ae7c259c127a",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "1e8fe39c6f57",
+      "id": "93f5384126fc",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "ecb570d56f0f",
+      "id": "80e957f20c86",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Inspect the latest entries in state/autonomy_ledger.json and state/improvement_backlog.jsonl, then extend the existing portfolio allocator with a test-covered outcome_receipt field and a retry-or-demote decision based on verified results.",
-      "packet_id": "1e535c78f1a7"
+      "next_action": "Inspect `state/research_signal_candidates.jsonl`, `state/autonomy_ledger.json`, and the portfolio allocator with `rg`, then add the smallest receipt-validation gate to the existing loop owner and exercise its real entrypoint against the latest candidate.",
+      "packet_id": "0577300ffb89"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_916c6d97f2de_1789202963",
-      "packet_id": "916c6d97f2de"
+      "draft_id": "frontier_ae7c259c127a_1789287938",
+      "packet_id": "ae7c259c127a"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "c9e3b12335c4",
-      "packet_id": "1e8fe39c6f57"
+      "experiment_id": "b819f05308a2",
+      "packet_id": "93f5384126fc"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "ecb570d56f0f"
+      "packet_id": "80e957f20c86"
     }
   ],
   "receipts": {

@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-09-12T08:49:24.000137+00:00
+Generated: 2026-09-13T08:25:38.757899+00:00
 
 ## Thesis
-The winning autonomous agents will not be those that reason longest, but those that continuously allocate work toward measurable outcomes and can prove, retry, or halt every consequential step.
+The winning autonomous-agent platforms will not be those with the smartest planners, but those that can prove every delegated action was authorized, evidence-grounded, outcome-producing, and worth its operating cost.
 
 ## Doctrine
-Treat every loop run as a governed experiment: select it by expected portfolio value, require an outcome receipt, retry only on a classified recoverable failure, and demote loops that repeatedly produce activity without revenue or capability gains.
+No loop earns continued autonomy from plausible output alone: require a machine-readable receipt linking authority, evidence, action, verification, retry outcome, and revenue relevance.
 
 ## Proof Artifact
-Ship a deterministic loop-outcome verifier that scores each completed run across moonshot, research, and revenue lanes, records receipts and failure classifications, and feeds the result back into the portfolio allocator.
+Ship a reusable execution-receipt probe that scores completed loop runs for authorization, evidence faithfulness, outcome verification, retry discipline, and revenue contribution, then feeds failures into portfolio allocation.
 
-Next action: Inspect the latest entries in state/autonomy_ledger.json and state/improvement_backlog.jsonl, then extend the existing portfolio allocator with a test-covered outcome_receipt field and a retry-or-demote decision based on verified results.
+Next action: Inspect `state/research_signal_candidates.jsonl`, `state/autonomy_ledger.json`, and the portfolio allocator with `rg`, then add the smallest receipt-validation gate to the existing loop owner and exercise its real entrypoint against the latest candidate.
 
 ## Public Angle
-Autonomy without receipts is theater. The useful agent is not the one that claims it completed a task—it is the one that can show what changed, detect when nothing changed, retry intelligently, and stop safely.
+Autonomous agents do not need another layer of eloquence. They need receipts: what authority they used, what evidence justified the action, whether the action worked, what recovery occurred, and whether the loop created economic value.
 
 ## Buyer Offer
-Offer founders a fixed-price Autonomous Agent Reliability Audit that traces one production workflow, identifies unverifiable or unsafe steps, and delivers receipt, retry, and fail-closed controls suitable for ongoing managed operation.
+Sell a fixed-price Agent Governance Audit to teams deploying autonomous sales, trading, or security agents: instrument one workflow with authority boundaries, adversarial evaluation probes, and verifiable execution receipts, then offer ongoing monitoring.
 
 ## Source Signals
-- [2607.07663] Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops Skip to main content Search Submit Donate Log in Search
-- Alpha-Park/genpark-agent-long-horizon-context-compactor-skill — Long-horizon conversational memory compaction & episodic anchor extractor (Mem0 / LangMem)
-- rodrigo-silvano/aporia — A harness-agnostic cognitive architecture and independent runtime safety control plane with fail-clo
-- autonomous-loop/docs/agent-implementation-brief.md at main · treygoff24/autonomous-loop · GitHub Skip to content Navigation Menu Sign in Appearance settings Pla
-- Building Stateful Workflows in Tandem | Tandem Engine Skip to content Tandem Engine Search Ctrl K Cancel GitHub Select theme Dark Light Auto Introduction Start
+- Laboratorist1/oa2-governance-harness — OA2 - a governance harness for autonomous trading agents. The strategy is deliberately ordinary; the
+- Taarun666/test-toe — Test Toe is an open source AI pentesting tool. It runs autonomous AI agents that act like real hacke
+- [2412.01951] Self-Improvement in Language Models: The Sharpening Mechanism Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search &
+- Building Evaluation Probes into Agentic AI | NIST Skip to main content An official website of the United States government Here’s how you know Here’s how you kn
+- [2605.15228] Verifiable Agentic Infrastructure: Proof-Derived Authorization for Sovereign AI Systems Skip to main content Search Submit Donate Log in Search arX
 
 ## Scale Packets
-- proof_artifact: promoted (1e535c78f1a7)
-- public_wedge: promoted (916c6d97f2de)
-- buyer_experiment: promoted (1e8fe39c6f57)
-- operator_doctrine: promoted (ecb570d56f0f)
+- proof_artifact: promoted (0577300ffb89)
+- public_wedge: promoted (ae7c259c127a)
+- buyer_experiment: promoted (93f5384126fc)
+- operator_doctrine: promoted (80e957f20c86)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (1e535c78f1a7)
-- public_wedge: queued_echo_draft (916c6d97f2de)
-- buyer_experiment: queued_buyer_experiment (1e8fe39c6f57)
-- operator_doctrine: already_persisted (ecb570d56f0f)
+- proof_artifact: delegated_to_improvement_queue (0577300ffb89)
+- public_wedge: queued_echo_draft (ae7c259c127a)
+- buyer_experiment: queued_buyer_experiment (93f5384126fc)
+- operator_doctrine: already_persisted (80e957f20c86)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

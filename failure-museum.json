@@ -1,8 +1,8 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-09-12T03:50:26-05:00",
+  "generated_at_ct": "2026-09-13T03:26:45-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 678,
+  "total_violations": 674,
   "distinct_contracts": 54,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
@@ -63,12 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-08-12": {
-      "stale-state-assertion-guard": 1,
-      "absence-claim-gate": 2,
-      "spawn-lifecycle-claim-guard": 1,
-      "factual-claim-verification": 2
-    },
     "2026-08-13": {
       "question-referent-grounding-gate": 2,
       "state-assertion-grounding": 2,
@@ -322,7 +316,9 @@
     "2026-09-12": {
       "autonomous-execution-claim-gate": 1,
       "contradicted-capability-claim-gate": 1,
-      "unresolved-limit-closure-gate": 1
+      "unresolved-limit-closure-gate": 1,
+      "cleanup-claim-mechanism-gate": 1,
+      "factual-claim-verification": 1
     }
   },
   "cta": {
