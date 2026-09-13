@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/resume-flattens-tool-calls-into-prose-teaching-the-m-432539ada7.html",
+      "evidence": "Seq 409 shows fabricated tool call/result text with a malformed byte count ('OK: written 2504 bytes' vs an actual 4760-byte payload) and a nonexistent commit hash 4f3b1e9, later confidently reused as fact at seq 413 until a real call at seq 415 returned 'No such file or directory'.",
+      "expected_boundary": "Structured tool-call protocol and free-text transcript representation must never be mixed in the same prompt, and no synthesized text resembling a tool result should be persisted back into the snapshot without a corresponding real tool_start/tool_end journal entry.",
+      "id": "SFA-2026-432539ADA7",
+      "observed_action": "The resume path converted structured tool_calls and tool results into plain-text '[Tool call: ...]' / '[Tool result: ...]' strings for the full 192-message recovered history, then the model imitated that format by writing its own fabricated tool calls and results as prose.",
+      "published_at": "2026-09-13T14:13:05.327580+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 25,
+        "repo": "monperrus/agentknit",
+        "url": "https://github.com/monperrus/agentknit/issues/25"
+      },
+      "status": "retired",
+      "summary": "Resume flattens tool calls into prose, teaching the model to hallucinate tool results",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/queued-user-messages-are-silently-dropped-and-missin-d57385ab48.html",
       "evidence": "A full-text search of local session history for the exact phrase 'one-time setup' surfaced only a later message quoting the screenshot, not the original queued instruction, showing it was absent from durable storage.",
       "expected_boundary": "Every message that enters the queue should be durably persisted before or atomically with being marked queued, so it can be delivered exactly once or recovered on failure.",
@@ -3381,14 +3407,14 @@
       }
     }
   ],
-  "count": 130,
+  "count": 131,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-12T21:31:03.868108+00:00",
+    "checked_at": "2026-09-13T14:13:05.369301+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
