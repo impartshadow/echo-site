@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/upload-artifact-reports-success-but-produces-no-arti-e9ef8a95a3.html",
+      "evidence": "the run listing shows agent-output-fallback and other artifacts present but no safe-outputs-upload-artifacts artifact, and the downstream job's download-artifact step for that name fails while the overall run and job statuses report success.",
+      "expected_boundary": "upload_artifact should only report success after verifying the file exists at the exact path the safe_outputs job will later download from, and should error otherwise.",
+      "id": "SFA-2026-E9EF8A95A3",
+      "observed_action": "upload_artifact returned {\"result\":\"success\"} and recorded an upload_artifact item even though no safe-outputs-upload-artifacts artifact was ever produced.",
+      "published_at": "2026-09-13T21:31:03.058744+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 60383,
+        "repo": "github/gh-aw",
+        "url": "https://github.com/github/gh-aw/issues/60383"
+      },
+      "status": "retired",
+      "summary": "upload-artifact reports success but produces no artifact (v0.88.7)",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/resume-flattens-tool-calls-into-prose-teaching-the-m-432539ada7.html",
       "evidence": "Seq 409 shows fabricated tool call/result text with a malformed byte count ('OK: written 2504 bytes' vs an actual 4760-byte payload) and a nonexistent commit hash 4f3b1e9, later confidently reused as fact at seq 413 until a real call at seq 415 returned 'No such file or directory'.",
       "expected_boundary": "Structured tool-call protocol and free-text transcript representation must never be mixed in the same prompt, and no synthesized text resembling a tool result should be persisted back into the snapshot without a corresponding real tool_start/tool_end journal entry.",
@@ -3407,14 +3433,14 @@
       }
     }
   ],
-  "count": 131,
+  "count": 132,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-13T14:13:05.369301+00:00",
+    "checked_at": "2026-09-13T21:31:03.094042+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
