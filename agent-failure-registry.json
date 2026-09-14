@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/contextualaiparsetool-can-poll-forever-when-a-parse-250cf91160.html",
+      "evidence": "The issue body quotes the exact polling code showing no deadline or attempt counter around the while True loop, and the KeyError risk from json.loads(result.text)[\"status\"] confirms no raise_for_status() boundary either.",
+      "expected_boundary": "The polling loop should enforce a configurable maximum wall-clock duration or attempt count and raise a clear timeout error once that budget is exhausted, independent of individual request timeouts.",
+      "id": "SFA-2026-250CF91160",
+      "observed_action": "ContextualAIParseTool._run() polls the parse job status endpoint in an unconditional while True loop bounded only by a 30-second per-request timeout, with no cap on total polls or elapsed time.",
+      "published_at": "2026-09-14T21:30:49.122197+00:00",
+      "source": {
+        "author": "anupamking01",
+        "channel": "unsolicited_triage",
+        "issue_number": 7440,
+        "repo": "crewAIInc/crewAI",
+        "url": "https://github.com/crewAIInc/crewAI/issues/7440"
+      },
+      "status": "retired",
+      "summary": "ContextualAIParseTool can poll forever when a parse job never reaches a terminal state",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/upload-artifact-reports-success-but-produces-no-arti-e9ef8a95a3.html",
       "evidence": "the run listing shows agent-output-fallback and other artifacts present but no safe-outputs-upload-artifacts artifact, and the downstream job's download-artifact step for that name fails while the overall run and job statuses report success.",
       "expected_boundary": "upload_artifact should only report success after verifying the file exists at the exact path the safe_outputs job will later download from, and should error otherwise.",
@@ -3433,14 +3459,14 @@
       }
     }
   ],
-  "count": 132,
+  "count": 133,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-13T21:31:03.094042+00:00",
+    "checked_at": "2026-09-14T21:30:49.152567+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
