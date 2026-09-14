@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-09-13T08:25:38.757899+00:00
+Generated: 2026-09-14T09:04:43.094680+00:00
 
 ## Thesis
-The winning autonomous-agent platforms will not be those with the smartest planners, but those that can prove every delegated action was authorized, evidence-grounded, outcome-producing, and worth its operating cost.
+The durable agent advantage will come from governed runtimes that allocate work by expected revenue and independently verify outcomes, not from larger agent swarms or better summaries.
 
 ## Doctrine
-No loop earns continued autonomy from plausible output alone: require a machine-readable receipt linking authority, evidence, action, verification, retry outcome, and revenue relevance.
+Delegate only through explicit authority envelopes, and count work as complete only when a replayable receipt proves the required artifact, checks, and revenue-relevant outcome.
 
 ## Proof Artifact
-Ship a reusable execution-receipt probe that scores completed loop runs for authorization, evidence faithfulness, outcome verification, retry discipline, and revenue contribution, then feeds failures into portfolio allocation.
+Ship a portfolio execution receipt schema and verifier that records loop selection, delegated authority, acceptance criteria, evidence, retries, blockers, cost, and revenue impact.
 
-Next action: Inspect `state/research_signal_candidates.jsonl`, `state/autonomy_ledger.json`, and the portfolio allocator with `rg`, then add the smallest receipt-validation gate to the existing loop owner and exercise its real entrypoint against the latest candidate.
+Next action: Inspect recent research signal candidates and `state/autonomy_ledger.json`, then add the execution-receipt verifier to the existing owner under `core/` with focused contract tests in `harness/contracts/`.
 
 ## Public Angle
-Autonomous agents do not need another layer of eloquence. They need receipts: what authority they used, what evidence justified the action, whether the action worked, what recovery occurred, and whether the loop created economic value.
+Agent teams are easy to demo; the real product is the runtime that can prove who had authority, what changed, why it retried, and whether the result produced value.
 
 ## Buyer Offer
-Sell a fixed-price Agent Governance Audit to teams deploying autonomous sales, trading, or security agents: instrument one workflow with authority boundaries, adversarial evaluation probes, and verifiable execution receipts, then offer ongoing monitoring.
+Sell a fixed-price Agent Reliability Audit that identifies where a prospect's autonomous workflows lack authority boundaries, verification gates, and auditable delivery receipts, then installs the smallest corrective harness.
 
 ## Source Signals
-- Laboratorist1/oa2-governance-harness — OA2 - a governance harness for autonomous trading agents. The strategy is deliberately ordinary; the
-- Taarun666/test-toe — Test Toe is an open source AI pentesting tool. It runs autonomous AI agents that act like real hacke
-- [2412.01951] Self-Improvement in Language Models: The Sharpening Mechanism Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search &
-- Building Evaluation Probes into Agentic AI | NIST Skip to main content An official website of the United States government Here’s how you know Here’s how you kn
-- [2605.15228] Verifiable Agentic Infrastructure: Proof-Derived Authorization for Sovereign AI Systems Skip to main content Search Submit Donate Log in Search arX
+- Maurdekye/orgtree — A multi-provider, multi-agent orchestrator that organizes agents into a visual authority hierarchy.
+- Harness Engineering for Self-Improvement | Lil&#39;Log Lil&#39;Log | Posts Archive Search Tags FAQ Harness Engineering for Self-Improvement Date: July 4, 2026 |
+- GitHub - chriswu727/loop-agent: Autonomous software delivery from product brief to verified implementation. Loop plans, builds, tests, and repairs in a task wor
+- Trustworthy agents in practice \ Anthropic Skip to main content Skip to footer Research Policy Commitments Learn News Try Claude Policy Trustworthy agents in pr
+- Loop engineering without verification is just automation | Sonar [NEW] Sonar Launches SonarQube Hunter Agent to Catch Logic-based Security Flaws Products Produc
 
 ## Scale Packets
-- proof_artifact: promoted (0577300ffb89)
-- public_wedge: promoted (ae7c259c127a)
-- buyer_experiment: promoted (93f5384126fc)
-- operator_doctrine: promoted (80e957f20c86)
+- proof_artifact: promoted (75e1cb01027c)
+- public_wedge: promoted (7a2878e6797c)
+- buyer_experiment: promoted (80e41a0c5377)
+- operator_doctrine: promoted (ceb37500ddeb)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (0577300ffb89)
-- public_wedge: queued_echo_draft (ae7c259c127a)
-- buyer_experiment: queued_buyer_experiment (93f5384126fc)
-- operator_doctrine: already_persisted (80e957f20c86)
+- proof_artifact: delegated_to_improvement_queue (75e1cb01027c)
+- public_wedge: queued_echo_draft (7a2878e6797c)
+- buyer_experiment: queued_buyer_experiment (80e41a0c5377)
+- operator_doctrine: already_persisted (ceb37500ddeb)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

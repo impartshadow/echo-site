@@ -113,8 +113,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 3.6,
-          "last_activity": "2026-09-13T04:49:12.519796+00:00",
+          "hours_since": 4.0,
+          "last_activity": "2026-09-14T05:09:12.907275+00:00",
           "source": "action_log",
           "staleness": "ok"
         },
@@ -127,8 +127,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.5,
-          "last_activity": "2026-09-13T07:59:25.547873+00:00",
+          "hours_since": 0.4,
+          "last_activity": "2026-09-14T08:46:42.543897+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -141,8 +141,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.0,
-          "last_activity": "2026-09-13T08:25:02.126502+00:00",
+          "hours_since": 0.7,
+          "last_activity": "2026-09-14T08:25:03.125380+00:00",
           "source": "action_log",
           "staleness": "ok"
         },
@@ -153,24 +153,10 @@
         "verdict": "no_external_reach"
       },
       {
-        "declared_state": "complete",
-        "evidence": {
-          "hours_since": 72.1,
-          "last_activity": "2026-09-10T08:23:41.619790+00:00",
-          "source": "verifier_receipt",
-          "staleness": "stale"
-        },
-        "loop_id": "shadow-loop-model",
-        "name": "Shadow Loop Model",
-        "reason": "liveness is stale",
-        "requires_external_reach": false,
-        "verdict": "stale"
-      },
-      {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 1.6,
-          "last_activity": "2026-09-13T06:51:36.034429+00:00",
+          "hours_since": 1.5,
+          "last_activity": "2026-09-14T07:36:29.816955+00:00",
           "source": "action_log",
           "staleness": "ok"
         },
@@ -181,10 +167,24 @@
         "verdict": "pass"
       },
       {
+        "declared_state": "complete",
+        "evidence": {
+          "hours_since": 0.4,
+          "last_activity": "2026-09-14T08:46:41.290414+00:00",
+          "source": "verifier_receipt",
+          "staleness": "ok"
+        },
+        "loop_id": "shadow-loop-model",
+        "name": "Shadow Loop Model",
+        "reason": "fresh evidence from verifier_receipt",
+        "requires_external_reach": false,
+        "verdict": "pass"
+      },
+      {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.5,
-          "last_activity": "2026-09-13T07:59:25.547990+00:00",
+          "hours_since": 0.4,
+          "last_activity": "2026-09-14T08:46:42.544043+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -195,7 +195,7 @@
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-09-13T08:26:43.708276+00:00",
+    "generated_at": "2026-09-14T09:09:07.363808+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
@@ -238,26 +238,13 @@
         ],
         "priority": 90,
         "verdict": "no_external_reach"
-      },
-      {
-        "action": "refresh_liveness_or_pause_loop",
-        "evidence_source": "verifier_receipt",
-        "instruction": "Run the loop once, attach a fresh verifier receipt, or pause the loop explicitly.",
-        "loop_id": "shadow-loop-model",
-        "missing_receipts": [
-          "fresh_action_log",
-          "verifier_receipt"
-        ],
-        "priority": 70,
-        "verdict": "stale"
       }
     ],
     "rule": "Declared loop state is not proof. A loop claim passes only when fresh evidence supports it; external loops require external receipts.",
     "schema": "shadow.agent_flight_recorder.v1",
     "summary": {
       "no_external_reach": 3,
-      "pass": 2,
-      "stale": 1
+      "pass": 3
     }
   },
   "frontier_artifact_pack": {
@@ -272,7 +259,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md",
     "purpose": "scarce frontier-model usage ledger that routes high-end model headroom into sellable artifacts, proof surfaces, acquisition machinery, and model-agnostic operating-system upgrades"
   },
-  "generated_at": "2026-09-13T08:26:43.708276+00:00",
+  "generated_at": "2026-09-14T09:09:07.363808+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
