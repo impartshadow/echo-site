@@ -1,8 +1,8 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-09-14T04:09:10-05:00",
+  "generated_at_ct": "2026-09-16T03:29:57-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 663,
+  "total_violations": 632,
   "distinct_contracts": 52,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
@@ -13,7 +13,7 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "block",
-      "count": 42,
+      "count": 40,
       "latest_seen_ct": "2026-08-23T08:23:54-05:00",
       "example_violation": "[recurrence-escalation 12x/7d] Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
@@ -26,9 +26,9 @@
       "contract": "dox-guard",
       "failure_mode": "FM-023",
       "severity_seen": "block",
-      "count": 8,
-      "latest_seen_ct": "2026-09-08T08:18:49-05:00",
-      "example_violation": "run_shell command contains 4 personal identifier(s) [categories: deny-list]. PII must not appear in shell commands that could reach third parties (email, curl POST, browser scripts).",
+      "count": 10,
+      "latest_seen_ct": "2026-09-14T20:45:33-05:00",
+      "example_violation": "run_shell command contains 4 personal identifier(s) [categories: phone]. PII must not appear in shell commands that could reach third parties (email, curl POST, browser scripts).",
       "title": "The Agent Tried To Put Private Identity Data Into A Tool Boundary",
       "buyer_failure": "An outbound or automation agent risks leaking personal identifiers through shell commands, browser scripts, or third-party calls.",
       "missing_receipt": "redaction proof and approved outbound identity context",
@@ -63,18 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-08-14": {
-      "blocker-surfacing-gate": 1,
-      "verification-vocabulary-gate": 3,
-      "state-assertion-grounding": 3,
-      "typed-claim-entailment-gate": 23,
-      "stale-state-assertion-guard": 4,
-      "concurrence-grounding": 1,
-      "fleet-state-claim-grounding-gate": 2,
-      "absence-claim-gate": 1,
-      "spawn-lifecycle-claim-guard": 2,
-      "factual-claim-verification": 1
-    },
     "2026-08-15": {
       "typed-claim-entailment-gate": 63,
       "factual-claim-verification": 5,
@@ -312,7 +300,17 @@
       "factual-claim-verification": 1
     },
     "2026-09-14": {
-      "vendor-availability-external-fetch-required": 1
+      "vendor-availability-external-fetch-required": 1,
+      "cleanup-claim-mechanism-gate": 2,
+      "continuation-grant-guard": 1,
+      "dox-guard": 2,
+      "blocker-surfacing-gate": 1,
+      "stale-state-assertion-guard": 1
+    },
+    "2026-09-16": {
+      "state-assertion-grounding": 1,
+      "stale-state-assertion-guard": 1,
+      "platform-message-id-claim-guard": 1
     }
   },
   "cta": {

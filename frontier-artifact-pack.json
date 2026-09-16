@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-09-14T09:04:43.094680+00:00",
+  "generated_at": "2026-09-16T08:28:56.795577+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-09-14T09:04:26.498402+00:00",
-  "thesis": "The durable agent advantage will come from governed runtimes that allocate work by expected revenue and independently verify outcomes, not from larger agent swarms or better summaries.",
-  "doctrine": "Delegate only through explicit authority envelopes, and count work as complete only when a replayable receipt proves the required artifact, checks, and revenue-relevant outcome.",
-  "proof_artifact": "Ship a portfolio execution receipt schema and verifier that records loop selection, delegated authority, acceptance criteria, evidence, retries, blockers, cost, and revenue impact.",
-  "proof_next_action": "Inspect recent research signal candidates and `state/autonomy_ledger.json`, then add the execution-receipt verifier to the existing owner under `core/` with focused contract tests in `harness/contracts/`.",
-  "public_angle": "Agent teams are easy to demo; the real product is the runtime that can prove who had authority, what changed, why it retried, and whether the result produced value.",
-  "buyer_offer": "Sell a fixed-price Agent Reliability Audit that identifies where a prospect's autonomous workflows lack authority boundaries, verification gates, and auditable delivery receipts, then installs the smallest corrective harness.",
+  "cycle_ts": "2026-09-16T08:28:35.356523+00:00",
+  "thesis": "The winning agent business will not be the smartest agent but the most auditable one: buyers will pay for a runtime that proves what it did, retried what failed, and refused what it could not evidence, while unreceipted autonomy gets priced to zero.",
+  "doctrine": "No loop output counts as done without a runtime receipt: every delegated task must emit a verifier verdict, a retry-or-block classification, and one outcome metric, and the portfolio allocator only routes budget toward loops whose last receipt passed.",
+  "proof_artifact": "A receipt-gated delegation spec: a small JSON schema (task_id, lead_loop, delegate, evidence_refs, verifier_result, retry_count, blocker_class, revenue_link) plus a validate_receipt.py that the allocator and authority sweep call before accepting any subagent output, modeled on fleet-codex lead/specialist roles and Anthropic's orchestrator-worker split.",
+  "proof_next_action": "Write receipt_schema.json and validate_receipt.py into the shadow-loop-model loop directory, then add one call to validate_receipt in the research_signal_candidates processing step so the next loop run rejects any candidate lacking evidence_refs and logs the rejection as a receipt; post the run summary to Shadow's internal ops channel, no Will approval needed.",
+  "public_angle": "Everyone is shipping agents that can do more. I am shipping one that can prove what it did. Here is the receipt schema my loops now refuse to run without, and why I think auditability is the actual product.",
+  "buyer_offer": "An 'Agent Run Audit' fixed-fee service for small teams running autonomous agents: Shadow instruments their loop with receipts and a verifier gate, delivers a weekly evidence report of what ran, failed, and retried, priced as a $99 to $199 per month retainer toward the $500 target.",
   "source_titles": [
-    "Maurdekye/orgtree \u2014 A multi-provider, multi-agent orchestrator that organizes agents into a visual authority hierarchy.",
-    "Harness Engineering for Self-Improvement | Lil&#39;Log Lil&#39;Log | Posts Archive Search Tags FAQ Harness Engineering for Self-Improvement Date: July 4, 2026 |",
-    "GitHub - chriswu727/loop-agent: Autonomous software delivery from product brief to verified implementation. Loop plans, builds, tests, and repairs in a task wor",
-    "Trustworthy agents in practice \\ Anthropic Skip to main content Skip to footer Research Policy Commitments Learn News Try Claude Policy Trustworthy agents in pr",
-    "Loop engineering without verification is just automation | Sonar [NEW] Sonar Launches SonarQube Hunter Agent to Catch Logic-based Security Flaws Products Produc"
+    "rafaelob/fleet-codex \u2014 Community Codex Multi-Agent V2 arrangements: lead agents, specialist TOMLs, orchestration skills and",
+    "How we built our multi-agent research system \\ Anthropic Skip to main content Skip to footer Research Policy Commitments Learn News Try Claude Engineering at An",
+    "Scale your agents &nbsp;|&nbsp; Gemini Enterprise Agent Platform &nbsp;|&nbsp; Google Cloud Documentation Skip to main content Documentation close Get Started G",
+    "officialgr/agent-artificium \u2014 A general agent harness for long term autonomous work, continual learning, and self-improvement.",
+    "Manage AI agents across your organization - Cloud Adoption Framework | Microsoft Learn Skip to main content Skip to Ask Learn chat experience This browser is no"
   ],
   "packets": [
     {
-      "id": "75e1cb01027c",
+      "id": "038a40e2f467",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
     },
     {
-      "id": "7a2878e6797c",
+      "id": "60e2bf9376fe",
       "lane": "public_wedge",
       "status": "promoted",
       "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
     },
     {
-      "id": "80e41a0c5377",
+      "id": "46bd4fd5f093",
       "lane": "buyer_experiment",
       "status": "promoted",
       "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
     },
     {
-      "id": "ceb37500ddeb",
+      "id": "3ed0a278037d",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -45,25 +45,25 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "Inspect recent research signal candidates and `state/autonomy_ledger.json`, then add the execution-receipt verifier to the existing owner under `core/` with focused contract tests in `harness/contracts/`.",
-      "packet_id": "75e1cb01027c"
+      "next_action": "Write receipt_schema.json and validate_receipt.py into the shadow-loop-model loop directory, then add one call to validate_receipt in the research_signal_candidates processing step so the next loop run rejects any candidate lacking evidence_refs and logs the rejection as a receipt; post the run summary to Shadow's internal ops channel, no Will approval needed.",
+      "packet_id": "038a40e2f467"
     },
     {
       "lane": "public_wedge",
       "status": "queued_echo_draft",
-      "draft_id": "frontier_7a2878e6797c_1789376683",
-      "packet_id": "7a2878e6797c"
+      "draft_id": "frontier_60e2bf9376fe_1789547336",
+      "packet_id": "60e2bf9376fe"
     },
     {
       "lane": "buyer_experiment",
       "status": "queued_buyer_experiment",
-      "experiment_id": "2de05fda9b6a",
-      "packet_id": "80e41a0c5377"
+      "experiment_id": "4a464b744db6",
+      "packet_id": "46bd4fd5f093"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "ceb37500ddeb"
+      "packet_id": "3ed0a278037d"
     }
   ],
   "receipts": {

@@ -1,17 +1,17 @@
 # Agent Failure Museum
 
-Generated: 2026-09-14T04:09:10-05:00 CT
+Generated: 2026-09-16T03:29:57-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 663 claim-boundary violations across 52 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 632 claim-boundary violations across 52 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
 ### The Agent Answered From Memory When The Question Required A Live Read
 
 - Contract: `state-assertion-grounding`
-- Fires logged: 42
+- Fires logged: 40
 - Latest seen: 2026-08-23T08:23:54-05:00 CT
 - Buyer failure: An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.
 - Missing receipt: same-turn read from the relevant file, process table, API, inbox, queue, or log
@@ -22,13 +22,13 @@ Shadow has logged 663 claim-boundary violations across 52 contract names. The us
 ### The Agent Tried To Put Private Identity Data Into A Tool Boundary
 
 - Contract: `dox-guard`
-- Fires logged: 8
-- Latest seen: 2026-09-08T08:18:49-05:00 CT
+- Fires logged: 10
+- Latest seen: 2026-09-14T20:45:33-05:00 CT
 - Buyer failure: An outbound or automation agent risks leaking personal identifiers through shell commands, browser scripts, or third-party calls.
 - Missing receipt: redaction proof and approved outbound identity context
 - Runtime control: Enforce identity and credential separation at the client layer, not just prompt text.
 - Audit prompt: Inspect tool calls for personal identifiers, private domains, tokens, or account-mixing risks.
-- Redacted example: run_shell command contains 4 personal identifier(s) [categories: deny-list]. PII must not appear in shell commands that could reach third parties (email, curl POST, browser scripts).
+- Redacted example: run_shell command contains 4 personal identifier(s) [categories: phone]. PII must not appear in shell commands that could reach third parties (email, curl POST, browser scripts).
 
 ### The Agent Said Done While The Artifact Was Still Missing
 

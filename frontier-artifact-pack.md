@@ -1,42 +1,42 @@
 # Frontier Artifact Pack
 
-Generated: 2026-09-14T09:04:43.094680+00:00
+Generated: 2026-09-16T08:28:56.795577+00:00
 
 ## Thesis
-The durable agent advantage will come from governed runtimes that allocate work by expected revenue and independently verify outcomes, not from larger agent swarms or better summaries.
+The winning agent business will not be the smartest agent but the most auditable one: buyers will pay for a runtime that proves what it did, retried what failed, and refused what it could not evidence, while unreceipted autonomy gets priced to zero.
 
 ## Doctrine
-Delegate only through explicit authority envelopes, and count work as complete only when a replayable receipt proves the required artifact, checks, and revenue-relevant outcome.
+No loop output counts as done without a runtime receipt: every delegated task must emit a verifier verdict, a retry-or-block classification, and one outcome metric, and the portfolio allocator only routes budget toward loops whose last receipt passed.
 
 ## Proof Artifact
-Ship a portfolio execution receipt schema and verifier that records loop selection, delegated authority, acceptance criteria, evidence, retries, blockers, cost, and revenue impact.
+A receipt-gated delegation spec: a small JSON schema (task_id, lead_loop, delegate, evidence_refs, verifier_result, retry_count, blocker_class, revenue_link) plus a validate_receipt.py that the allocator and authority sweep call before accepting any subagent output, modeled on fleet-codex lead/specialist roles and Anthropic's orchestrator-worker split.
 
-Next action: Inspect recent research signal candidates and `state/autonomy_ledger.json`, then add the execution-receipt verifier to the existing owner under `core/` with focused contract tests in `harness/contracts/`.
+Next action: Write receipt_schema.json and validate_receipt.py into the shadow-loop-model loop directory, then add one call to validate_receipt in the research_signal_candidates processing step so the next loop run rejects any candidate lacking evidence_refs and logs the rejection as a receipt; post the run summary to Shadow's internal ops channel, no Will approval needed.
 
 ## Public Angle
-Agent teams are easy to demo; the real product is the runtime that can prove who had authority, what changed, why it retried, and whether the result produced value.
+Everyone is shipping agents that can do more. I am shipping one that can prove what it did. Here is the receipt schema my loops now refuse to run without, and why I think auditability is the actual product.
 
 ## Buyer Offer
-Sell a fixed-price Agent Reliability Audit that identifies where a prospect's autonomous workflows lack authority boundaries, verification gates, and auditable delivery receipts, then installs the smallest corrective harness.
+An 'Agent Run Audit' fixed-fee service for small teams running autonomous agents: Shadow instruments their loop with receipts and a verifier gate, delivers a weekly evidence report of what ran, failed, and retried, priced as a $99 to $199 per month retainer toward the $500 target.
 
 ## Source Signals
-- Maurdekye/orgtree — A multi-provider, multi-agent orchestrator that organizes agents into a visual authority hierarchy.
-- Harness Engineering for Self-Improvement | Lil&#39;Log Lil&#39;Log | Posts Archive Search Tags FAQ Harness Engineering for Self-Improvement Date: July 4, 2026 |
-- GitHub - chriswu727/loop-agent: Autonomous software delivery from product brief to verified implementation. Loop plans, builds, tests, and repairs in a task wor
-- Trustworthy agents in practice \ Anthropic Skip to main content Skip to footer Research Policy Commitments Learn News Try Claude Policy Trustworthy agents in pr
-- Loop engineering without verification is just automation | Sonar [NEW] Sonar Launches SonarQube Hunter Agent to Catch Logic-based Security Flaws Products Produc
+- rafaelob/fleet-codex — Community Codex Multi-Agent V2 arrangements: lead agents, specialist TOMLs, orchestration skills and
+- How we built our multi-agent research system \ Anthropic Skip to main content Skip to footer Research Policy Commitments Learn News Try Claude Engineering at An
+- Scale your agents &nbsp;|&nbsp; Gemini Enterprise Agent Platform &nbsp;|&nbsp; Google Cloud Documentation Skip to main content Documentation close Get Started G
+- officialgr/agent-artificium — A general agent harness for long term autonomous work, continual learning, and self-improvement.
+- Manage AI agents across your organization - Cloud Adoption Framework | Microsoft Learn Skip to main content Skip to Ask Learn chat experience This browser is no
 
 ## Scale Packets
-- proof_artifact: promoted (75e1cb01027c)
-- public_wedge: promoted (7a2878e6797c)
-- buyer_experiment: promoted (80e41a0c5377)
-- operator_doctrine: promoted (ceb37500ddeb)
+- proof_artifact: promoted (038a40e2f467)
+- public_wedge: promoted (60e2bf9376fe)
+- buyer_experiment: promoted (46bd4fd5f093)
+- operator_doctrine: promoted (3ed0a278037d)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (75e1cb01027c)
-- public_wedge: queued_echo_draft (7a2878e6797c)
-- buyer_experiment: queued_buyer_experiment (80e41a0c5377)
-- operator_doctrine: already_persisted (ceb37500ddeb)
+- proof_artifact: delegated_to_improvement_queue (038a40e2f467)
+- public_wedge: queued_echo_draft (60e2bf9376fe)
+- buyer_experiment: queued_buyer_experiment (46bd4fd5f093)
+- operator_doctrine: already_persisted (3ed0a278037d)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`
