@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/sub-agent-spawning-the-child-conversation-is-never-c-d85ee861f4.html",
+      "evidence": "the judge found 1 conversation, 1 task, 1 handoff, and 15 events where two conversations (parent and child) were required, and the issue explicitly states the parent claimed to have received child results it could not have received.",
+      "expected_boundary": "spawn_agent should only report success to the calling agent after confirming a durable child conversation record exists, not merely after the registry lookup and tool call return without error.",
+      "id": "SFA-2026-D85EE861F4",
+      "observed_action": "spawn_agent resolved a valid subAgents mapping and agent registry entry for test-subagent-child, yet the parent conversation reported receiving child results while no child conversation was ever created.",
+      "published_at": "2026-09-16T21:30:45.445607+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 84,
+        "repo": "Rikmorn/aesir",
+        "url": "https://github.com/Rikmorn/aesir/issues/84"
+      },
+      "status": "retired",
+      "summary": "Sub-Agent Spawning: the child conversation is never created despite a valid subAgents mapping",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/error-handler-nodes-ignore-node-timeouts-timeout-dro-84cff61ddb.html",
       "evidence": "the reporter's minimal repro shows a slow_handler that sleeps 2.0s completing fully and returning {'x': 1} instead of raising NodeTimeoutError after ~0.3s, while an equivalent regular node with the same default timeout does raise as expected.",
       "expected_boundary": "error handler tasks should receive proc.timeout the same way prepare_single_task and prepare_push_task_send do, so arun_with_retry enforces the configured timeout on handler execution.",
@@ -3485,14 +3511,14 @@
       }
     }
   ],
-  "count": 134,
+  "count": 135,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-16T14:12:46.646766+00:00",
+    "checked_at": "2026-09-16T21:30:45.476980+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
