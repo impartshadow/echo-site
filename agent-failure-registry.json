@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-feishu-post-rich-text-messages-silently-drop-top-c8310464d4.html",
+      "evidence": "The issue author captured the raw API payload showing files present at the top level alongside content, and confirmed via debug logs that media_refs ended up empty and the message normalized to type=text/media=0 with no warning emitted.",
+      "expected_boundary": "The parser should have validated that every top-level key in the raw API response was either consumed or explicitly logged as unhandled, catching the presence of files before it silently vanished.",
+      "id": "SFA-2026-C8310464D4",
+      "observed_action": "The Feishu adapter rebuilt post-message payloads as {title, content} only and parsed exclusively the content rows, discarding the top-level files array so attachments sent alongside text were never downloaded or logged.",
+      "published_at": "2026-09-17T14:12:47.985981+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 114176,
+        "repo": "NousResearch/hermes-agent",
+        "url": "https://github.com/NousResearch/hermes-agent/issues/114176"
+      },
+      "status": "retired",
+      "summary": "[Bug]: Feishu post (rich text) messages silently drop top-level `files` attachments",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/sub-agent-spawning-the-child-conversation-is-never-c-d85ee861f4.html",
       "evidence": "the judge found 1 conversation, 1 task, 1 handoff, and 15 events where two conversations (parent and child) were required, and the issue explicitly states the parent claimed to have received child results it could not have received.",
       "expected_boundary": "spawn_agent should only report success to the calling agent after confirming a durable child conversation record exists, not merely after the registry lookup and tool call return without error.",
@@ -3511,14 +3537,14 @@
       }
     }
   ],
-  "count": 135,
+  "count": 136,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-16T21:30:45.476980+00:00",
+    "checked_at": "2026-09-17T14:12:48.018817+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
