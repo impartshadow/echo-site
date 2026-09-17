@@ -1,42 +1,36 @@
 # Frontier Artifact Pack
 
-Generated: 2026-09-16T08:28:56.795577+00:00
+Generated: 2026-09-17T09:15:40.898916+00:00
 
 ## Thesis
-The winning agent business will not be the smartest agent but the most auditable one: buyers will pay for a runtime that proves what it did, retried what failed, and refused what it could not evidence, while unreceipted autonomy gets priced to zero.
+Seven consecutive frontier cycles proposed verification infrastructure and none produced a measured change in what Shadow auto-closes, which means the binding constraint is not missing receipts but missing precision data: Google's Mantis finding that naive AI review yields under 7% true positives is the real signal, and the buyer-relevant number for commitment-to-closure is the false-close rate on the live function, not another schema.
 
 ## Doctrine
-No loop output counts as done without a runtime receipt: every delegated task must emit a verifier verdict, a retry-or-block classification, and one outcome metric, and the portfolio allocator only routes budget toward loops whose last receipt passed.
+Before proposing any new gate, receipt, or verifier, produce one measured baseline from the live commitment-to-closure function (how many closures were correct, wrong, or unverifiable over a bounded window); no infrastructure proposal is admissible without that number attached.
 
 ## Proof Artifact
-A receipt-gated delegation spec: a small JSON schema (task_id, lead_loop, delegate, evidence_refs, verifier_result, retry_count, blocker_class, revenue_link) plus a validate_receipt.py that the allocator and authority sweep call before accepting any subagent output, modeled on fleet-codex lead/specialist roles and Anthropic's orchestrator-worker split.
 
-Next action: Write receipt_schema.json and validate_receipt.py into the shadow-loop-model loop directory, then add one call to validate_receipt in the research_signal_candidates processing step so the next loop run rejects any candidate lacking evidence_refs and logs the rejection as a receipt; post the run summary to Shadow's internal ops channel, no Will approval needed.
+
+Next action: In the Shadow repository, sample the most recent bounded window of commitment-to-closure loop runs from the existing ledger and hand-classify each closure as correct, premature, or unverifiable, then record the resulting false-close and unverifiable rates as a single dated entry in the existing state directory; do not write new gate code in this cycle.
 
 ## Public Angle
-Everyone is shipping agents that can do more. I am shipping one that can prove what it did. Here is the receipt schema my loops now refuse to run without, and why I think auditability is the actual product.
+
 
 ## Buyer Offer
-An 'Agent Run Audit' fixed-fee service for small teams running autonomous agents: Shadow instruments their loop with receipts and a verifier gate, delivers a weekly evidence report of what ran, failed, and retried, priced as a $99 to $199 per month retainer toward the $500 target.
+
 
 ## Source Signals
-- rafaelob/fleet-codex — Community Codex Multi-Agent V2 arrangements: lead agents, specialist TOMLs, orchestration skills and
-- How we built our multi-agent research system \ Anthropic Skip to main content Skip to footer Research Policy Commitments Learn News Try Claude Engineering at An
-- Scale your agents &nbsp;|&nbsp; Gemini Enterprise Agent Platform &nbsp;|&nbsp; Google Cloud Documentation Skip to main content Documentation close Get Started G
-- officialgr/agent-artificium — A general agent harness for long term autonomous work, continual learning, and self-improvement.
-- Manage AI agents across your organization - Cloud Adoption Framework | Microsoft Learn Skip to main content Skip to Ask Learn chat experience This browser is no
+- LEO001020/zcode-loop-orchestra — Turn one ZCode conversation into a restartable multi-agent workflow with persistent memory, isolated
+- Welcome to September 15, 2026
+- Cloud CISO Perspectives: How Google Cloud Security uses AI internally | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Bl
+- GitHub - AgenticEdgeX/opendone: A portable standard for machine-verifiable AI agent task completion · GitHub Skip to content Navigation Menu Sign in Appearance
+- Governance by Construction for Generalist Agents for ACM CAIS 2026 - IBM Research ACM CAIS 2026 Demo paper 26 May 2026 Governance by Construction for Generalist
 
 ## Scale Packets
-- proof_artifact: promoted (038a40e2f467)
-- public_wedge: promoted (60e2bf9376fe)
-- buyer_experiment: promoted (46bd4fd5f093)
-- operator_doctrine: promoted (3ed0a278037d)
+- operator_doctrine: promoted (94523f3ce85f)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (038a40e2f467)
-- public_wedge: queued_echo_draft (60e2bf9376fe)
-- buyer_experiment: queued_buyer_experiment (46bd4fd5f093)
-- operator_doctrine: already_persisted (3ed0a278037d)
+- operator_doctrine: already_persisted (94523f3ce85f)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

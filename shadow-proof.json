@@ -113,8 +113,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 1.8,
-          "last_activity": "2026-09-16T06:40:22.035480+00:00",
+          "hours_since": 2.0,
+          "last_activity": "2026-09-17T07:19:24.221696+00:00",
           "source": "action_log",
           "staleness": "ok"
         },
@@ -127,8 +127,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 1.8,
-          "last_activity": "2026-09-16T06:40:22.035480+00:00",
+          "hours_since": 2.0,
+          "last_activity": "2026-09-17T07:19:24.221696+00:00",
           "source": "action_log",
           "staleness": "ok"
         },
@@ -141,8 +141,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.1,
-          "last_activity": "2026-09-16T08:25:03.589986+00:00",
+          "hours_since": 0.9,
+          "last_activity": "2026-09-17T08:25:02.572078+00:00",
           "source": "action_log",
           "staleness": "ok"
         },
@@ -155,8 +155,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 1.8,
-          "last_activity": "2026-09-16T06:41:12.749600+00:00",
+          "hours_since": 1.9,
+          "last_activity": "2026-09-17T07:26:00.338762+00:00",
           "source": "action_log",
           "staleness": "ok"
         },
@@ -169,8 +169,8 @@
       {
         "declared_state": "complete",
         "evidence": {
-          "hours_since": 47.7,
-          "last_activity": "2026-09-14T08:46:41.290414+00:00",
+          "hours_since": 7.6,
+          "last_activity": "2026-09-17T01:40:08.552223+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
         },
@@ -181,21 +181,21 @@
         "verdict": "pass"
       },
       {
-        "declared_state": "running",
+        "declared_state": "paused",
         "evidence": {
-          "hours_since": 1.8,
-          "last_activity": "2026-09-16T06:40:22.035480+00:00",
-          "source": "action_log",
+          "hours_since": 7.6,
+          "last_activity": "2026-09-17T01:40:01.840576+00:00",
+          "source": "declared_timestamp",
           "staleness": "ok"
         },
         "loop_id": "tenant-ops",
         "name": "Tenant Ops Managed AI Service",
-        "reason": "fresh evidence from action_log",
+        "reason": "fresh evidence from declared_timestamp",
         "requires_external_reach": false,
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-09-16T08:29:56.463733+00:00",
+    "generated_at": "2026-09-17T09:17:12.383594+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
@@ -259,7 +259,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md",
     "purpose": "scarce frontier-model usage ledger that routes high-end model headroom into sellable artifacts, proof surfaces, acquisition machinery, and model-agnostic operating-system upgrades"
   },
-  "generated_at": "2026-09-16T08:29:56.463733+00:00",
+  "generated_at": "2026-09-17T09:17:12.383594+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",

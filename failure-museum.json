@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-09-16T03:29:57-05:00",
+  "generated_at_ct": "2026-09-17T04:17:15-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 632,
-  "distinct_contracts": 52,
+  "total_violations": 388,
+  "distinct_contracts": 49,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -13,7 +13,7 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "block",
-      "count": 40,
+      "count": 32,
       "latest_seen_ct": "2026-08-23T08:23:54-05:00",
       "example_violation": "[recurrence-escalation 12x/7d] Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
@@ -26,9 +26,9 @@
       "contract": "dox-guard",
       "failure_mode": "FM-023",
       "severity_seen": "block",
-      "count": 10,
-      "latest_seen_ct": "2026-09-14T20:45:33-05:00",
-      "example_violation": "run_shell command contains 4 personal identifier(s) [categories: phone]. PII must not appear in shell commands that could reach third parties (email, curl POST, browser scripts).",
+      "count": 13,
+      "latest_seen_ct": "2026-09-16T22:22:20-05:00",
+      "example_violation": "run_shell command contains 1366 personal identifier(s) [categories: deny-list, email, phone]. PII must not appear in shell commands that could reach third parties (email, curl POST, browser scripts).",
       "title": "The Agent Tried To Put Private Identity Data Into A Tool Boundary",
       "buyer_failure": "An outbound or automation agent risks leaking personal identifiers through shell commands, browser scripts, or third-party calls.",
       "missing_receipt": "redaction proof and approved outbound identity context",
@@ -63,41 +63,8 @@
     }
   ],
   "daily_counts": {
-    "2026-08-15": {
-      "typed-claim-entailment-gate": 63,
-      "factual-claim-verification": 5,
-      "fleet-state-claim-grounding-gate": 4,
-      "stale-state-assertion-guard": 6,
-      "absence-claim-gate": 1,
-      "vendor-availability-external-fetch-required": 1,
-      "platform-message-id-claim-guard": 1,
-      "verification-vocabulary-gate": 6,
-      "concurrence-grounding": 1,
-      "cleanup-claim-mechanism-gate": 1,
-      "capability-scope-assertion-guard": 1,
-      "spawn-lifecycle-claim-guard": 4
-    },
-    "2026-08-16": {
-      "typed-claim-entailment-gate": 115,
-      "state-assertion-grounding": 10,
-      "factual-claim-verification": 5,
-      "numeric-parameter-assertion-guard": 1,
-      "verification-vocabulary-gate": 9,
-      "manual-handoff-guard": 3,
-      "privacy-exposure-taxonomy": 4,
-      "bitwarden-claim-verification-guard": 3,
-      "platform-action-precheck": 2,
-      "recurring-behavior-pre-block": 1,
-      "stale-state-assertion-guard": 2,
-      "continuation-grant-guard": 1,
-      "capability-scope-assertion-guard": 1,
-      "pressure-framing-guard": 2,
-      "crypto-price-claim-guard": 1,
-      "live-state-claim-guard": 1,
-      "restart-resume-injection-echo-guard": 1
-    },
     "2026-08-17": {
-      "typed-claim-entailment-gate": 42,
+      "typed-claim-entailment-gate": 41,
       "fleet-state-claim-grounding-gate": 1,
       "state-assertion-grounding": 2,
       "continuation-grant-guard": 1,
@@ -308,9 +275,18 @@
       "stale-state-assertion-guard": 1
     },
     "2026-09-16": {
-      "state-assertion-grounding": 1,
-      "stale-state-assertion-guard": 1,
-      "platform-message-id-claim-guard": 1
+      "state-assertion-grounding": 3,
+      "stale-state-assertion-guard": 2,
+      "platform-message-id-claim-guard": 1,
+      "capitulation-flip-gate": 1,
+      "dox-guard": 3,
+      "privacy-exposure-taxonomy": 2,
+      "recurring-failure-burn-in-guard": 1,
+      "unbuilt-guarantee-guard": 1,
+      "third-party-outbound-authorization-gate": 1
+    },
+    "2026-09-17": {
+      "ownership-ask-execution-gate": 1
     }
   },
   "cta": {
