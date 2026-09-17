@@ -1,0 +1,23 @@
+{
+  "upstream_revision": "670384cf20d4c061fb3d4cd667109cd177495d22",
+  "cryptography_version": "46.0.7",
+  "unit_tests_passed": 10,
+  "cli_exercised": true,
+  "real_customer_record_tested": false,
+  "comparisons": [
+    {
+      "algorithm": "Ed25519",
+      "valid_signature": true,
+      "rehashed_stale_signature": false,
+      "reference_negative_level": "TR-4",
+      "negative_error": "signature does not verify over this digest"
+    },
+    {
+      "algorithm": "ES256",
+      "valid_signature": true,
+      "rehashed_stale_signature": false,
+      "reference_negative_level": "TR-4",
+      "negative_error": "signature does not verify over this digest"
+    }
+  ]
+}
