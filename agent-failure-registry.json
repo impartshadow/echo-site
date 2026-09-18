@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/fix-agent-hallucinated-create-knowledge-base-from-fi-f044376e2f.html",
+      "evidence": "Both calls failed with 'No files found for the provided file_ids', confirming the id existed nowhere in the task or workspace and was purely model-fabricated.",
+      "expected_boundary": "Tool calls with entity-id arguments should only fire when the id is verifiably sourced from the conversation transcript or a workspace/file listing, not invented by the model.",
+      "id": "SFA-2026-F044376E2F",
+      "observed_action": "The agent called create_knowledge_base_from_file twice with a fabricated file id (file_7a1b2c3d) at the start of a turn responding to an unrelated shift-creation request.",
+      "published_at": "2026-09-18T14:12:43.761355+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 2219,
+        "repo": "xorbitsai/xagent",
+        "url": "https://github.com/xorbitsai/xagent/issues/2219"
+      },
+      "status": "retired",
+      "summary": "fix(agent): hallucinated create_knowledge_base_from_file calls with fabricated file ids on unrelated requests",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/mcp-host-image-attachments-are-silently-dropped-for-d58ab789d7.html",
       "evidence": "Input token counts barely changed across image and non-image turns (11730 vs 12289/12348), no image-related log line or warn/error appeared downstream, and the persisted turn recorded only text content.",
       "expected_boundary": "The provider adapter or wire contract should reject or error on unsupported content types instead of coercing them away with a fallback default.",
@@ -3589,14 +3615,14 @@
       }
     }
   ],
-  "count": 138,
+  "count": 139,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-18T06:30:59.554424+00:00",
+    "checked_at": "2026-09-18T14:12:43.791662+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
