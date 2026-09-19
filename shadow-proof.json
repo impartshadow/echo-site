@@ -66,7 +66,7 @@
     "leader_changed": false,
     "status": {
       "delta": 0,
-      "due_at": "2026-09-19T08:50:25.660598+00:00",
+      "due_at": "2026-09-26T08:56:31.494655+00:00",
       "target_delta": 1,
       "verdict": "running"
     }
@@ -113,7 +113,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 25.2,
+          "hours_since": 49.6,
           "last_activity": "2026-09-17T07:19:24.221696+00:00",
           "source": "action_log",
           "staleness": "ok"
@@ -127,22 +127,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 6.1,
-          "last_activity": "2026-09-18T02:21:50.350350+00:00",
-          "source": "verifier_receipt",
-          "staleness": "ok"
-        },
-        "loop_id": "echo",
-        "name": "Echo Content",
-        "reason": "fresh evidence is internal-only: verifier_receipt",
-        "requires_external_reach": true,
-        "verdict": "no_external_reach"
-      },
-      {
-        "declared_state": "running",
-        "evidence": {
-          "hours_since": 0.1,
-          "last_activity": "2026-09-18T08:25:03.989989+00:00",
+          "hours_since": 0.5,
+          "last_activity": "2026-09-19T08:25:02.964965+00:00",
           "source": "action_log",
           "staleness": "ok"
         },
@@ -155,7 +141,21 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 6.2,
+          "hours_since": 30.6,
+          "last_activity": "2026-09-18T02:21:50.350350+00:00",
+          "source": "verifier_receipt",
+          "staleness": "stale"
+        },
+        "loop_id": "echo",
+        "name": "Echo Content",
+        "reason": "liveness is stale",
+        "requires_external_reach": true,
+        "verdict": "stale"
+      },
+      {
+        "declared_state": "running",
+        "evidence": {
+          "hours_since": 30.6,
           "last_activity": "2026-09-18T02:18:46.714933+00:00",
           "source": "declared_timestamp",
           "staleness": "ok"
@@ -169,7 +169,7 @@
       {
         "declared_state": "complete",
         "evidence": {
-          "hours_since": 6.1,
+          "hours_since": 30.6,
           "last_activity": "2026-09-18T02:21:49.039449+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
@@ -183,10 +183,10 @@
       {
         "declared_state": "paused",
         "evidence": {
-          "hours_since": 6.1,
+          "hours_since": 30.6,
           "last_activity": "2026-09-18T02:21:50.350457+00:00",
           "source": "verifier_receipt",
-          "staleness": "ok"
+          "staleness": "expected_quiet"
         },
         "loop_id": "tenant-ops",
         "name": "Tenant Ops Managed AI Service",
@@ -195,7 +195,7 @@
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-09-18T08:28:53.605735+00:00",
+    "generated_at": "2026-09-19T08:56:31.494655+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
@@ -213,20 +213,6 @@
       },
       {
         "action": "produce_or_attach_external_receipt",
-        "evidence_source": "verifier_receipt",
-        "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
-        "loop_id": "echo",
-        "missing_receipts": [
-          "external_post_receipt",
-          "subscriber_receipt",
-          "reply_receipt",
-          "meeting_receipt"
-        ],
-        "priority": 90,
-        "verdict": "no_external_reach"
-      },
-      {
-        "action": "produce_or_attach_external_receipt",
         "evidence_source": "action_log",
         "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
         "loop_id": "shadow-presence",
@@ -238,13 +224,26 @@
         ],
         "priority": 90,
         "verdict": "no_external_reach"
+      },
+      {
+        "action": "refresh_liveness_or_pause_loop",
+        "evidence_source": "verifier_receipt",
+        "instruction": "Run the loop once, attach a fresh verifier receipt, or pause the loop explicitly.",
+        "loop_id": "echo",
+        "missing_receipts": [
+          "fresh_action_log",
+          "verifier_receipt"
+        ],
+        "priority": 70,
+        "verdict": "stale"
       }
     ],
     "rule": "Declared loop state is not proof. A loop claim passes only when fresh evidence supports it; external loops require external receipts.",
     "schema": "shadow.agent_flight_recorder.v1",
     "summary": {
-      "no_external_reach": 3,
-      "pass": 3
+      "no_external_reach": 2,
+      "pass": 3,
+      "stale": 1
     }
   },
   "frontier_artifact_pack": {
@@ -259,7 +258,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md",
     "purpose": "scarce frontier-model usage ledger that routes high-end model headroom into sellable artifacts, proof surfaces, acquisition machinery, and model-agnostic operating-system upgrades"
   },
-  "generated_at": "2026-09-18T08:28:53.605735+00:00",
+  "generated_at": "2026-09-19T08:56:31.494655+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",

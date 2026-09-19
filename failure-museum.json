@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-09-18T03:28:54-05:00",
+  "generated_at_ct": "2026-09-19T03:56:32-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 346,
-  "distinct_contracts": 49,
+  "total_violations": 359,
+  "distinct_contracts": 57,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -63,12 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-08-18": {
-      "fleet-state-claim-grounding-gate": 5,
-      "third-party-outbound-authorization-gate": 2,
-      "verification-vocabulary-gate": 2,
-      "factual-claim-verification": 1
-    },
     "2026-08-19": {
       "verification-vocabulary-gate": 1,
       "fleet-state-claim-grounding-gate": 1
@@ -286,6 +280,23 @@
       "bitwarden-claim-verification-guard": 1,
       "state-io-consolidation-guard": 1,
       "privacy-exposure-taxonomy": 1
+    },
+    "2026-09-18": {
+      "state-io-consolidation-guard": 1,
+      "terminal-state-evidence-gate": 1,
+      "runtime-activation-claim-gate": 1,
+      "self-signed-change-execution-gate": 1,
+      "verify-before-report": 2,
+      "continuation-ambiguity-guard": 1,
+      "cleanup-claim-mechanism-gate": 1,
+      "factual-claim-verification": 2,
+      "cl-channel_shadow_hq_system_bot": 2,
+      "cl-don_t_just_blindly_take": 2,
+      "cl-from_claude_where_i_majority": 2,
+      "cl-if_title_seems_relevant_can": 2,
+      "cl-stop_just_cold_including_stripe": 2,
+      "cl-ugh_that_s_what_i": 1,
+      "cl-yeah_i_just_wanted_make": 2
     }
   },
   "cta": {
