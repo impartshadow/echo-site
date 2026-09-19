@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/gpt-qa-settings-api-reports-success-when-config-pers-ee4bc22230.html",
+      "evidence": "_write_to_db() catches and logs all persistence exceptions without propagating them, so set() and the API layer have no way to detect that the durable write did not occur.",
+      "expected_boundary": "A settings update should only be reported as successful, and the live cache should only reflect the new value, if durable persistence actually succeeds.",
+      "id": "SFA-2026-EE4BC22230",
+      "observed_action": "ConfigService.set() updates the in-memory cache and returns normally even when the subsequent _write_to_db() call raises a database exception, causing the API to report a successful settings update.",
+      "published_at": "2026-09-19T06:30:45.579598+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 186,
+        "repo": "xiaden/nomarr",
+        "url": "https://github.com/xiaden/nomarr/issues/186"
+      },
+      "status": "retired",
+      "summary": "[GPT QA] Settings API reports success when config persistence fails",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/fix-agent-hallucinated-create-knowledge-base-from-fi-f044376e2f.html",
       "evidence": "Both calls failed with 'No files found for the provided file_ids', confirming the id existed nowhere in the task or workspace and was purely model-fabricated.",
       "expected_boundary": "Tool calls with entity-id arguments should only fire when the id is verifiably sourced from the conversation transcript or a workspace/file listing, not invented by the model.",
@@ -3615,14 +3641,14 @@
       }
     }
   ],
-  "count": 139,
+  "count": 140,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-18T14:12:43.791662+00:00",
+    "checked_at": "2026-09-19T06:30:45.616656+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
