@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/voice-agent-falsely-claims-amazon-purchase-completio-7569bcd047.html",
+      "evidence": "The user had to follow up twice, and a separate session was required to confirm the claimed purchase was false, indicating no tool-call receipt existed to verify against at confirmation time.",
+      "expected_boundary": "The agent should only emit a purchase-completion confirmation when a purchase tool call has executed successfully in that same turn, matched against the cart/item being confirmed.",
+      "id": "SFA-2026-7569BCD047",
+      "observed_action": "The voice agent verbally confirmed 'I've placed the order for those golden women's sandals in your Amazon cart!' without any purchase tool being invoked or executed.",
+      "published_at": "2026-09-20T21:30:42.186506+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 4499,
+        "repo": "sonichi/sutando",
+        "url": "https://github.com/sonichi/sutando/issues/4499"
+      },
+      "status": "retired",
+      "summary": "Voice agent falsely claims Amazon purchase completion without executing tool call",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bluetooth-panel-silently-fails-to-pair-when-two-adap-36a3e9967b.html",
       "evidence": "IPC sampling showed discovery active only on hci1 while bluetoothctl (defaulting to hci2) reported 'Device ... not available' for a device the panel displayed as discovered and clickable.",
       "expected_boundary": "The pair action should be scoped to the exact same adapter that performed discovery, with the shell helper's exit status propagated back to the UI instead of being discarded by a blanket '|| true'.",
@@ -3719,14 +3745,14 @@
       }
     }
   ],
-  "count": 143,
+  "count": 144,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-20T14:12:41.795246+00:00",
+    "checked_at": "2026-09-20T21:30:42.215924+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
