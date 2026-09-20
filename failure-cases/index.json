@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-09-19T14:13:01.208190+00:00",
-  "count": 141,
+  "generated_at": "2026-09-20T06:31:02.703833+00:00",
+  "count": 142,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "eval-agenthandle-wait-number-silently-ignores-the-ti-54efb367e8",
+      "advisory_id": "SFA-2026-54EFB367E8",
+      "ts": "2026-09-20T06:31:02.697481+00:00",
+      "title": "eval: AgentHandle.wait(number) silently ignores the timeout argument",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "can1357/oh-my-pi",
+        "issue_number": 12549,
+        "author": "unknown",
+        "url": "https://github.com/can1357/oh-my-pi/issues/12549"
+      },
+      "case": {
+        "observed_action": "AgentHandle.wait() was called with a raw positional number (3600000) instead of an options object",
+        "expected_boundary": "wait() should validate its argument shape and throw a TypeError for non-object input rather than silently destructuring undefined fields",
+        "runtime_context": "OMP JavaScript Eval backend on Windows, omp 18.2.6, Bun 1.3.10, host-side wait suspends the Eval watchdog for the duration of the call",
+        "evidence": "the parent call remained blocked from 16:42:04.991Z until manually interrupted at 17:32:51.233Z despite the child completing and disposing at 17:07:11.853Z"
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/eval-agenthandle-wait-number-silently-ignores-the-ti-54efb367e8.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/eval-agenthandle-wait-number-silently-ignores-the-ti-54efb367e8.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20eval-agenthandle-wait-number-silently-ignores-the-ti-54efb367e8&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/eval-agenthandle-wait-number-silently-ignores-the-ti-54efb367e8.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "the-surface-still-sends-agents-to-reticle-run-the-ha-e1ee90fef8",

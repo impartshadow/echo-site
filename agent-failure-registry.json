@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/eval-agenthandle-wait-number-silently-ignores-the-ti-54efb367e8.html",
+      "evidence": "the parent call remained blocked from 16:42:04.991Z until manually interrupted at 17:32:51.233Z despite the child completing and disposing at 17:07:11.853Z",
+      "expected_boundary": "wait() should validate its argument shape and throw a TypeError for non-object input rather than silently destructuring undefined fields",
+      "id": "SFA-2026-54EFB367E8",
+      "observed_action": "AgentHandle.wait() was called with a raw positional number (3600000) instead of an options object",
+      "published_at": "2026-09-20T06:31:02.697481+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 12549,
+        "repo": "can1357/oh-my-pi",
+        "url": "https://github.com/can1357/oh-my-pi/issues/12549"
+      },
+      "status": "retired",
+      "summary": "eval: AgentHandle.wait(number) silently ignores the timeout argument",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/the-surface-still-sends-agents-to-reticle-run-the-ha-e1ee90fef8.html",
       "evidence": "Three independent call sites (dynamic-tools.ts:111, error-recovery.ts:187, documented-names.test.ts:45) assert reticle_run is reachable, and a comment at dynamic-tools.ts:179 shows the removed-hatch case was already known at one call site without the adjacent string being updated.",
       "expected_boundary": "Any generated remedy string that names a fallback tool must only name tools actually present on the live surface, verified at the point the string is emitted.",
@@ -3667,14 +3693,14 @@
       }
     }
   ],
-  "count": 141,
+  "count": 142,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-19T14:13:01.233683+00:00",
+    "checked_at": "2026-09-20T06:31:02.728145+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
