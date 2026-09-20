@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-09-19T03:56:32-05:00",
+  "generated_at_ct": "2026-09-20T04:44:15-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 359,
-  "distinct_contracts": 57,
+  "total_violations": 383,
+  "distinct_contracts": 59,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -13,7 +13,7 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "block",
-      "count": 31,
+      "count": 34,
       "latest_seen_ct": "2026-08-23T08:23:54-05:00",
       "example_violation": "[recurrence-escalation 12x/7d] Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
@@ -26,9 +26,9 @@
       "contract": "dox-guard",
       "failure_mode": "FM-023",
       "severity_seen": "block",
-      "count": 13,
-      "latest_seen_ct": "2026-09-16T22:22:20-05:00",
-      "example_violation": "run_shell command contains 1366 personal identifier(s) [categories: deny-list, email, phone]. PII must not appear in shell commands that could reach third parties (email, curl POST, browser scripts).",
+      "count": 14,
+      "latest_seen_ct": "2026-09-19T21:40:00-05:00",
+      "example_violation": "run_shell command contains 1 personal identifier(s) [categories: phone]. PII must not appear in shell commands that could reach third parties (email, curl POST, browser scripts).",
       "title": "The Agent Tried To Put Private Identity Data Into A Tool Boundary",
       "buyer_failure": "An outbound or automation agent risks leaking personal identifiers through shell commands, browser scripts, or third-party calls.",
       "missing_receipt": "redaction proof and approved outbound identity context",
@@ -39,9 +39,9 @@
       "contract": "completion-artifact",
       "failure_mode": "FM-027",
       "severity_seen": "block",
-      "count": 7,
-      "latest_seen_ct": "2026-09-17T07:04:53-05:00",
-      "example_violation": "Completion/commit language while the repo still has uncommitted work: research/accelerando/2026-09-15-project-handoff/baseline.json, research/accelerando/2026-09-15-project-handoff/diagnosis-events.json, research/accelerando/2026-09-15-project-handoff/fresh-handoff-events.json, research/accelerando/2026-09-15-project-handoff/native-resume-events.json, research/accelerando/2026-09-15-vertical/settlement-check-2026-09-",
+      "count": 9,
+      "latest_seen_ct": "2026-09-20T04:21:29-05:00",
+      "example_violation": "Completion/commit language while the repo still has uncommitted work: contracts/runtime_activation_claim_gate.py, docs/contract-red-team.json, docs/contract-red-team.md, tests/test_runtime_activation_claim_gate.py, core/control_plane_reply_guard.py, research/accelerando/2026-09-15-project-handoff/baseline.json, research/accelerando/2026-09-15-project-handoff/diagnosis-events.json, research/accelerando/2026-09-15-proj",
       "title": "The Agent Said Done While The Artifact Was Still Missing",
       "buyer_failure": "A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.",
       "missing_receipt": "artifact path, commit hash, deploy receipt, message id, or queue record",
@@ -52,9 +52,9 @@
       "contract": "commit-hash-verification",
       "failure_mode": "FM-027",
       "severity_seen": "block",
-      "count": 1,
-      "latest_seen_ct": "2026-08-28T16:12:45-05:00",
-      "example_violation": "Cited commit hash(es) do not exist in git: e9d4c57b. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.",
+      "count": 2,
+      "latest_seen_ct": "2026-09-19T08:06:23-05:00",
+      "example_violation": "Cited commit hash(es) do not exist in git: 0e01cab8. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.",
       "title": "The Agent Cited A Commit Hash Before Proving It Resolved",
       "buyer_failure": "A coding agent says a fix was committed or pushed, but the hash is invented, stale, or not reachable from the expected branch.",
       "missing_receipt": "git rev-parse output plus git cat-file or remote branch containment proof",
@@ -63,10 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-08-19": {
-      "verification-vocabulary-gate": 1,
-      "fleet-state-claim-grounding-gate": 1
-    },
     "2026-08-20": {
       "factual-claim-verification": 1,
       "completion-artifact": 1,
@@ -297,6 +293,28 @@
       "cl-stop_just_cold_including_stripe": 2,
       "cl-ugh_that_s_what_i": 1,
       "cl-yeah_i_just_wanted_make": 2
+    },
+    "2026-09-19": {
+      "cleanup-claim-mechanism-gate": 2,
+      "terminal-state-evidence-gate": 1,
+      "runtime-activation-claim-gate": 1,
+      "continuation-ambiguity-guard": 1,
+      "self-narration-state-claim-guard": 2,
+      "commit-hash-verification": 1,
+      "verify-before-report": 1,
+      "stale-state-assertion-guard": 1,
+      "pressure-framing-guard": 2,
+      "state-assertion-grounding": 3,
+      "harness-scaffold-egress-guard": 1,
+      "dox-guard": 1,
+      "completion-artifact": 1
+    },
+    "2026-09-20": {
+      "harness-scaffold-egress-guard": 4,
+      "capability-scope-assertion-guard": 1,
+      "completion-artifact": 1,
+      "stale-state-assertion-guard": 1,
+      "factual-claim-verification": 1
     }
   },
   "cta": {

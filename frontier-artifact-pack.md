@@ -1,17 +1,17 @@
 # Frontier Artifact Pack
 
-Generated: 2026-09-19T08:55:16.155975+00:00
+Generated: 2026-09-20T09:39:43.546652+00:00
 
 ## Thesis
-The reliability-science paper and the verification-agent survey both point the same way: buyers of governed AI work will price a function by its stated error rate before they price its harness, so the scarce asset for Shadow is not another verifier but one measured false-close rate on commitment-to-closure; the deferred commercial hypothesis is that a team will pay for a workflow whose consistency and false-close numbers are stated up front, and it stays untested until Shadow can state its own.
+The continual-learning survey, the verification-agent digest, and the reliability-science paper all point at the same commodity direction, more machinery for checking agents, while Shadow's own ledger shows the false-close audit has now been proposed in two consecutive cycles with no execution record, so the scarce move is not another synthesis but converting one repeated proposal into a completed measurement or a recorded reason it cannot be done; the deferred commercial hypothesis, that a buyer prices a governed function by its stated false-close rate before its harness, stays untested and unfunded until that number exists.
 
 ## Doctrine
-Convert a repeated diagnosis into one bounded, checkable attempt before allowing any further synthesis on the same topic: the Sept 18 cycle proposed a hand false-close audit, the Sept 18 moonshot went to SPI instead, and no evidence shows the audit ran, so this cycle's only legitimate output is to run it or record why it cannot be run. Comparison: building a verification agent (beneficiary Shadow's infra, return unproven after nine cycles), adopting an incumbent like a formal runtime monitor (no live function large enough to justify it), doing nothing (leaves the buyer-relevant number unknown), or the operational action of a hand audit (beneficiary Will, return is either a defensible low rate that reduces review burden or a concrete defect list, cost under one session). The hand audit wins on cost and decision relevance.
+A proposal that recurs across loop cycles without an execution record is a stall signal, not a plan: the next cycle must either execute it under standing authority or write down the specific blocker, and may not re-propose it in different words.
 
 ## Proof Artifact
-A single false-close audit record, not a schema: enumerate every commitment the live closure function has marked closed, verify each against its authoritative source by hand, and record per closure the verdict (true close, false close, stale resurface) and the failure class of each miss, then the aggregate counts. Stopping condition: if fewer than about twenty closed commitments exist, the record states that the function is too small to yield a rate and reports the count instead. Continue condition: a false-close rate above zero with a repeated failure class authorizes one targeted fix to the closure step; a zero rate over twenty-plus closures authorizes widening what Shadow auto-closes by one commitment class. Hypothesis label: whether either result changes Will's review burden is unmeasured until the next review cycle.
 
-Next action: In the Shadow repository, list the closed-commitment records the closure function already writes under its state directory, hand-verify each closure against its source (the originating message, calendar item, or task), and commit an audit record alongside the other state records with per-closure verdicts, failure classes, and aggregate counts; if the closed count is under roughly twenty, commit the count and the too-small verdict instead of a rate. Do not add code, schemas, or monitors in this step.
+
+Next action: In the Shadow repository, locate the record the live commitment-to-closure function writes when it marks a commitment closed, count the closed entries, and append one line to the recent-bets ledger stating either the count with 'too small to yield a rate' if under roughly twenty, or the per-closure hand-verified verdicts (true close, false close, stale resurface) with aggregate counts; if no such record can be found, append that finding instead, since it means the function is not yet producing auditable closures.
 
 ## Public Angle
 
@@ -27,12 +27,10 @@ Next action: In the Shadow repository, list the closed-commitment records the cl
 - Architecting Resilient Agentic Workflows for Autonomous System Orchestration in Distributed Cloud Environments | martinuke0's Blog Home Home Blog Journal Search
 
 ## Scale Packets
-- proof_artifact: promoted (396a8b7fe2e3)
-- operator_doctrine: promoted (81fb84d5f088)
+- operator_doctrine: promoted (7995699f877f)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (396a8b7fe2e3)
-- operator_doctrine: already_persisted (81fb84d5f088)
+- operator_doctrine: already_persisted (7995699f877f)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`
