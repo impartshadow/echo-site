@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-heartbeat-reports-success-when-heartbeat-md-work-0ff6e49126.html",
+      "evidence": "The checklist's state file showed lastChecks.email stuck at the previous day's 8:05 AM CDT with empty processedMessageIds and notifiedMessageIds despite three scheduler runs reporting success and a purchase-request email arriving at 1:09 PM CDT going unsurfaced.",
+      "expected_boundary": "A heartbeat should only be marked successful when the HEARTBEAT.md checklist's declared postcondition (e.g. an updated lastChecks.email timestamp and processed-message record) is verified after the turn, not merely when the turn completes without error.",
+      "id": "SFA-2026-0FF6E49126",
+      "observed_action": "The 30-minute heartbeat scheduler fired three times and the automation history recorded each run as a successful heartbeat.",
+      "published_at": "2026-09-21T21:30:48.271724+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 155179,
+        "repo": "openclaw/openclaw",
+        "url": "https://github.com/openclaw/openclaw/issues/155179"
+      },
+      "status": "retired",
+      "summary": "[Bug]: Heartbeat reports success when HEARTBEAT.md work is skipped",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-reports-a-memory-save-failed-when-the-backend-74699f8d2d.html",
       "evidence": "Disk showed the episode file containing 'Pickle' and 'Brompton' and the backend API returned 1 episode, while the agent's response claimed both user_memory/profile/user.md and episodic/episodes.md were empty.",
       "expected_boundary": "The agent should never issue a persistence-success-or-failure claim about the backend unless a tool call in that turn actually queried backend state.",
@@ -3771,14 +3797,14 @@
       }
     }
   ],
-  "count": 145,
+  "count": 146,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-21T14:12:58.769436+00:00",
+    "checked_at": "2026-09-21T21:30:48.301146+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
