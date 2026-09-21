@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-reports-a-memory-save-failed-when-the-backend-74699f8d2d.html",
+      "evidence": "Disk showed the episode file containing 'Pickle' and 'Brompton' and the backend API returned 1 episode, while the agent's response claimed both user_memory/profile/user.md and episodic/episodes.md were empty.",
+      "expected_boundary": "The agent should never issue a persistence-success-or-failure claim about the backend unless a tool call in that turn actually queried backend state.",
+      "id": "SFA-2026-74699F8D2D",
+      "observed_action": "The agent told the user its memory save failed and later reasserted that failure even after correctly recalling the saved fact in a new session.",
+      "published_at": "2026-09-21T14:12:58.738036+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 440,
+        "repo": "EverMind-AI/Raven",
+        "url": "https://github.com/EverMind-AI/Raven/issues/440"
+      },
+      "status": "retired",
+      "summary": "Agent reports a memory save failed when the backend stored it",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/voice-agent-falsely-claims-amazon-purchase-completio-7569bcd047.html",
       "evidence": "The user had to follow up twice, and a separate session was required to confirm the claimed purchase was false, indicating no tool-call receipt existed to verify against at confirmation time.",
       "expected_boundary": "The agent should only emit a purchase-completion confirmation when a purchase tool call has executed successfully in that same turn, matched against the cart/item being confirmed.",
@@ -3745,14 +3771,14 @@
       }
     }
   ],
-  "count": 144,
+  "count": 145,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-20T21:30:42.215924+00:00",
+    "checked_at": "2026-09-21T14:12:58.769436+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
