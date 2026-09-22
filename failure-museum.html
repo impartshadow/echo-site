@@ -27,14 +27,14 @@ code{background:#151b1e;padding:2px 5px;border-radius:4px}
 <body><main>
   <div class="label">Agent failure museum</div>
   <h1>Unsupported Agent Claims, Turned Into Runtime Contracts</h1>
-  <p class="sub">Shadow has logged 383 claim-boundary violations across 59 contract names. Each museum card maps a concrete agent failure class to the receipt a production runtime should demand.</p>
+  <p class="sub">Shadow has logged 412 claim-boundary violations across 63 contract names. Each museum card maps a concrete agent failure class to the receipt a production runtime should demand.</p>
   <a class="cta" href="failure-intake.html">Send one real agent failure</a>
   <h2>Museum Cards</h2>
   <section class="grid">
     <article class="card">
       <div class="k">state-assertion-grounding</div>
       <h3>The Agent Answered From Memory When The Question Required A Live Read</h3>
-      <div class="metric">34</div>
+      <div class="metric">33</div>
       <p class="k">fires logged · latest 2026-08-23T08:23:54-05:00 CT</p>
       <p><strong>Buyer failure:</strong> An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.</p>
       <p><strong>Missing receipt:</strong> same-turn read from the relevant file, process table, API, inbox, queue, or log</p>
@@ -46,7 +46,7 @@ code{background:#151b1e;padding:2px 5px;border-radius:4px}
     <article class="card">
       <div class="k">dox-guard</div>
       <h3>The Agent Tried To Put Private Identity Data Into A Tool Boundary</h3>
-      <div class="metric">14</div>
+      <div class="metric">13</div>
       <p class="k">fires logged · latest 2026-09-19T21:40:00-05:00 CT</p>
       <p><strong>Buyer failure:</strong> An outbound or automation agent risks leaking personal identifiers through shell commands, browser scripts, or third-party calls.</p>
       <p><strong>Missing receipt:</strong> redaction proof and approved outbound identity context</p>
@@ -59,29 +59,29 @@ code{background:#151b1e;padding:2px 5px;border-radius:4px}
       <div class="k">completion-artifact</div>
       <h3>The Agent Said Done While The Artifact Was Still Missing</h3>
       <div class="metric">9</div>
-      <p class="k">fires logged · latest 2026-09-20T04:21:29-05:00 CT</p>
+      <p class="k">fires logged · latest 2026-09-21T03:16:18-05:00 CT</p>
       <p><strong>Buyer failure:</strong> A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.</p>
       <p><strong>Missing receipt:</strong> artifact path, commit hash, deploy receipt, message id, or queue record</p>
       <p><strong>Runtime control:</strong> Block final completion language unless the named artifact exists and the worktree/state agrees.</p>
       <p><strong>Audit prompt:</strong> Find every place the agent used completion language without an independently readable artifact.</p>
-      <p class="example">Completion/commit language while the repo still has uncommitted work: contracts/runtime_activation_claim_gate.py, docs/contract-red-team.json, docs/contract-red-team.md, tests/test_runtime_activation_claim_gate.py, core/control_plane_reply_guard.py, research/accelerando/2026-09-15-project-handoff/baseline.json, research/accelerando/2026-09-15-project-handoff/diagnosis-events.json, research/accelerando/2026-09-15-proj</p>
+      <p class="example">Completion/commit language while the repo still has uncommitted work: core/discord.py, core/discord_bot.py, docs/agent-failure-flagship.html, docs/agent-failure-flagship.json, docs/agent-failure-flagship.md, docs/autopsy.html, docs/autopsy.xml, docs/contract-red-team.json, ... +18 more. Commit and push, or state that work remains uncommitted.</p>
     </article>
 
     <article class="card">
       <div class="k">commit-hash-verification</div>
       <h3>The Agent Cited A Commit Hash Before Proving It Resolved</h3>
-      <div class="metric">2</div>
-      <p class="k">fires logged · latest 2026-09-19T08:06:23-05:00 CT</p>
+      <div class="metric">3</div>
+      <p class="k">fires logged · latest 2026-09-20T20:45:19-05:00 CT</p>
       <p><strong>Buyer failure:</strong> A coding agent says a fix was committed or pushed, but the hash is invented, stale, or not reachable from the expected branch.</p>
       <p><strong>Missing receipt:</strong> git rev-parse output plus git cat-file or remote branch containment proof</p>
       <p><strong>Runtime control:</strong> Require a live repository read before any commit or push claim reaches the operator.</p>
       <p><strong>Audit prompt:</strong> Search transcripts for commit-like hashes and verify each one against the repository.</p>
-      <p class="example">Cited commit hash(es) do not exist in git: 0e01cab8. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.</p>
+      <p class="example">Cited commit hash(es) do not exist in git: 980f06afe454071d9d1d446084d6335cc101ebae. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.</p>
     </article>
 </section>
   <h2>Commercial Use</h2>
   <p>Use this page as the public proof surface for the failure-audit offer. If an agent said <code>done</code>, <code>sent</code>, <code>deployed</code>, <code>verified</code>, or <code>fixed</code> and a human had to check the world afterward, the failure belongs in the intake.</p>
   <p><a href="agent-failure-flagship.html">Read the flagship thesis</a> · <a href="failure-museum.json">Inspect the machine contract</a></p>
-  <p class="k">Generated 2026-09-20T04:44:15-05:00 CT from state/contract_violations.jsonl</p>
+  <p class="k">Generated 2026-09-22T03:08:36-05:00 CT from state/contract_violations.jsonl</p>
 </main></body>
 </html>
