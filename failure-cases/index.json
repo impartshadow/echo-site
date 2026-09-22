@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-09-21T21:30:48.277718+00:00",
-  "count": 146,
+  "generated_at": "2026-09-22T06:30:58.965554+00:00",
+  "count": 147,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "approve-path-reports-success-even-when-the-upload-en-98db6cac97",
+      "advisory_id": "SFA-2026-98DB6CAC97",
+      "ts": "2026-09-22T06:30:58.958004+00:00",
+      "title": "Approve path reports success even when the upload enqueue failed",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "sandeepkesarkar/fieldkit",
+        "issue_number": 76,
+        "author": "unknown",
+        "url": "https://github.com/sandeepkesarkar/fieldkit/issues/76"
+      },
+      "case": {
+        "observed_action": "The approve path prints 'Approved: <project>' and treats the approval as fully successful even when _enqueue_facebook_upload() or _enqueue_instagram_upload() raised an exception internally.",
+        "expected_boundary": "The enqueue functions should communicate failure across the call boundary to _run() so the success message and Telegram confirmation reflect actual queue state, and the admin gets alerted on any raised (not just refused) enqueue.",
+        "runtime_context": "check_approval.py's approve path in fieldkit's photo-agent, where FR-013 requires one platform's failure not to block the other platform or the owner's approval.",
+        "evidence": "The issue body quotes the exact except block ('_log.error(\"Failed to enqueue FB upload for project=%s: %s\", project_name, exc)') and states plainly that 'nothing downstream learns that the enqueue failed.'"
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/approve-path-reports-success-even-when-the-upload-en-98db6cac97.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/approve-path-reports-success-even-when-the-upload-en-98db6cac97.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20approve-path-reports-success-even-when-the-upload-en-98db6cac97&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/approve-path-reports-success-even-when-the-upload-en-98db6cac97.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "bug-heartbeat-reports-success-when-heartbeat-md-work-0ff6e49126",

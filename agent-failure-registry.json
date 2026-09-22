@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/approve-path-reports-success-even-when-the-upload-en-98db6cac97.html",
+      "evidence": "The issue body quotes the exact except block ('_log.error(\"Failed to enqueue FB upload for project=%s: %s\", project_name, exc)') and states plainly that 'nothing downstream learns that the enqueue failed.'",
+      "expected_boundary": "The enqueue functions should communicate failure across the call boundary to _run() so the success message and Telegram confirmation reflect actual queue state, and the admin gets alerted on any raised (not just refused) enqueue.",
+      "id": "SFA-2026-98DB6CAC97",
+      "observed_action": "The approve path prints 'Approved: <project>' and treats the approval as fully successful even when _enqueue_facebook_upload() or _enqueue_instagram_upload() raised an exception internally.",
+      "published_at": "2026-09-22T06:30:58.958004+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 76,
+        "repo": "sandeepkesarkar/fieldkit",
+        "url": "https://github.com/sandeepkesarkar/fieldkit/issues/76"
+      },
+      "status": "retired",
+      "summary": "Approve path reports success even when the upload enqueue failed",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-heartbeat-reports-success-when-heartbeat-md-work-0ff6e49126.html",
       "evidence": "The checklist's state file showed lastChecks.email stuck at the previous day's 8:05 AM CDT with empty processedMessageIds and notifiedMessageIds despite three scheduler runs reporting success and a purchase-request email arriving at 1:09 PM CDT going unsurfaced.",
       "expected_boundary": "A heartbeat should only be marked successful when the HEARTBEAT.md checklist's declared postcondition (e.g. an updated lastChecks.email timestamp and processed-message record) is verified after the turn, not merely when the turn completes without error.",
@@ -3797,14 +3823,14 @@
       }
     }
   ],
-  "count": 146,
+  "count": 147,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-21T21:30:48.301146+00:00",
+    "checked_at": "2026-09-22T06:30:58.992501+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
