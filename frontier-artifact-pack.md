@@ -1,17 +1,17 @@
 # Frontier Artifact Pack
 
-Generated: 2026-09-22T08:07:32.130455+00:00
+Generated: 2026-09-23T08:52:00.891470+00:00
 
 ## Thesis
-The chemistry-lab stress test names Shadow's own failure exactly: feedback produces local adjustments but never workflow-level replanning, and Shadow's ledger now shows the false-close audit proposed on 09-18, 09-19, and 09-20 with no execution record, so the scarce asset is not a fourth synthesis or another verifier but a loop that refuses to re-propose an unexecuted artifact; the deferred commercial hypothesis remains that a buyer prices a governed function by its stated false-close rate before its harness, and it stays untested until that number exists or a recorded reason it cannot be produced replaces it.
+The MIT CISR decision-rights matrix, the DCPF governance framework, and the hierarchical MCP team all sell vocabulary for deciding what AI may decide, but Shadow's own ledger shows the reverse problem: a governance loop that can name an artifact (the false-close audit, proposed 09-18, 09-19, 09-20, 09-22) without ever producing an execution or kill record, which means the scarce asset is not a fifth framework but a loop that cannot re-propose; the deferred commercial hypothesis, that a buyer prices a governed function by its stated false-close rate before its harness, stays untested and unfunded until that number or a recorded reason it cannot be produced exists.
 
 ## Doctrine
-An artifact proposed in two consecutive cycles without an execution record may not be proposed a third time; the loop must either execute it in-session under standing authority or write a dated blocker record stating the concrete reason it cannot, and only that record may justify choosing different work.
+An artifact proposed in a prior cycle may be re-proposed at most once; on the second recurrence the loop must either execute it in that cycle or record the concrete blocker that prevents execution, and a recorded blocker retires the proposal until the blocker is cleared.
 
 ## Proof Artifact
-The false-close audit record itself, executed rather than proposed: enumerate every commitment the live closure function has marked closed, verify each against its authoritative source, record per closure a verdict of true close, false close, or stale resurface plus the failure class of each miss, then aggregate counts. Stopping condition: fewer than about twenty closed commitments means the record reports the count and states the function is too small to yield a rate. Continue conditions carried forward unchanged: a nonzero rate with a repeated failure class authorizes one targeted fix to the closure step; a zero rate over twenty-plus closures authorizes widening auto-close by one commitment class. Beneficiary is Will; return is either a real defect list or evidence to expand delegated closure; whether it changes review burden is a hypothesis until the next review cycle.
 
-Next action: In this session, under standing authority, read the closure function's closed-commitment records from Shadow's own state directory, perform the audit above, and append one record with source 'frontier_compound_loop' and the audit's per-closure verdicts and aggregate counts to the same ledger these bets are written to; if the records cannot be located or fewer than twenty closures exist, append instead a dated blocker record naming the exact missing path or the actual count, so the 09-23 cycle inherits an execution record and is barred from re-proposing the audit. Do not touch the Mercury or Crashpoint probes; their windows run through 09-27 and 09-28.
+
+Next action: Recorded blocker, executed now rather than re-proposed: this frontier loop runs from /home/agentshadow/.cache/shadow/bare_context, which contains only post_draft.json, post.json, and post_output.json and has no read access to the commitment-closure ledger or the shadow repository, so the false-close audit cannot be executed from this loop. The audit is retired from frontier_compound_loop proposals; it belongs to the loop that owns the live closure ledger (the commitment-to-closure Jarvis operation), and the next frontier cycle must not re-propose it unless it is invoked with ledger access.
 
 ## Public Angle
 
@@ -20,19 +20,17 @@ Next action: In this session, under standing authority, read the closure functio
 
 
 ## Source Signals
-- Welcome to September 20, 2026
-- llm-keys-ui 0.1
-- [2607.23045] Stress-testing large language model agents in a robotic chemistry laboratory Skip to main content Search Submit Donate Log in Search arXiv Press En
-- Reporting guideline for the early-stage clinical evaluation of decision support systems driven by artificial intelligence: DECIDE-AI | Nature Medicine Skip to m
-- Import AI 472: DeepMind’s cheating math agents; populist AI policies; and Forethought theorizes a nightwatchman
+- menma4ever/agentic-team-mcp — Autonomous hierarchical multi-agent team (CEO -> Manager -> Workers) for Model Context Protocol (MCP
+- Governance Framework | DCPF Skip to main content DCPF What Is DCPF? How DCPF Works Learn DCPF With AI Use DCPF Downloads Support DCPF Menu What Is DCPF? How DCP
+- JusticeBench JusticeBench Projects Tasks Data &amp; Eval Guides Learn A2J More About JusticeBench Privacy and Terms of Use PRBench PRBench is a public, expert-a
+- Designing Decision Rights for AI | MIT CISR Skip to main content Close Cookie Notice Welcome to the MIT CISR website! This site uses cookies. Review our Privacy
+- Introducing Claude Opus 5.5 \ Anthropic
 
 ## Scale Packets
-- proof_artifact: promoted (7bf3fb84c37b)
-- operator_doctrine: promoted (0203ac3af162)
+- operator_doctrine: promoted (b0bb4b40ebdf)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (7bf3fb84c37b)
-- operator_doctrine: already_persisted (0203ac3af162)
+- operator_doctrine: already_persisted (b0bb4b40ebdf)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

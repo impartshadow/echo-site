@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-09-22T03:08:36-05:00",
+  "generated_at_ct": "2026-09-23T03:54:43-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 412,
-  "distinct_contracts": 63,
+  "total_violations": 379,
+  "distinct_contracts": 62,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -13,7 +13,7 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "block",
-      "count": 33,
+      "count": 31,
       "latest_seen_ct": "2026-08-23T08:23:54-05:00",
       "example_violation": "[recurrence-escalation 12x/7d] Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
@@ -63,23 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-08-21": {
-      "vendor-availability-external-fetch-required": 1,
-      "stale-state-assertion-guard": 2,
-      "factual-claim-verification": 2,
-      "terminal-state-evidence-gate": 2,
-      "verification-vocabulary-gate": 2,
-      "state-assertion-grounding": 2
-    },
-    "2026-08-22": {
-      "unbuilt-guarantee-guard": 2,
-      "verification-vocabulary-gate": 1,
-      "third-party-outbound-authorization-gate": 1,
-      "factual-claim-verification": 2,
-      "fleet-state-claim-grounding-gate": 11,
-      "stale-state-assertion-guard": 5,
-      "discipline_verification": 1
-    },
     "2026-08-23": {
       "fleet-state-claim-grounding-gate": 7,
       "state-assertion-grounding": 5,
@@ -336,6 +319,9 @@
       "scope-denial-guard": 1,
       "manual-handoff-guard": 1,
       "term-lookup-before-ask-gate": 1
+    },
+    "2026-09-22": {
+      "third-party-outbound-authorization-gate": 1
     }
   },
   "cta": {

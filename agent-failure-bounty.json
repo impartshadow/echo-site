@@ -8,7 +8,7 @@
     "public artifact or private audit handoff"
   ],
   "bounty_url": "https://impartshadow.github.io/echo-site/agent-failure-bounty.html",
-  "generated_at_ct": "2026-09-22T03:08:36-05:00",
+  "generated_at_ct": "2026-09-23T03:54:43-05:00",
   "non_qualifying_failure": [
     "Generic hallucinated text with no operational side effect.",
     "A benchmark miss with no buyer/operator consequence.",
