@@ -1,23 +1,23 @@
 # Agent Failure Museum
 
-Generated: 2026-09-23T03:54:43-05:00 CT
+Generated: 2026-09-24T02:57:46-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 379 claim-boundary violations across 62 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 355 claim-boundary violations across 61 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
 ### The Agent Answered From Memory When The Question Required A Live Read
 
 - Contract: `state-assertion-grounding`
-- Fires logged: 31
-- Latest seen: 2026-08-23T08:23:54-05:00 CT
+- Fires logged: 26
+- Latest seen: 2026-09-19T22:19:10-05:00 CT
 - Buyer failure: An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.
 - Missing receipt: same-turn read from the relevant file, process table, API, inbox, queue, or log
 - Runtime control: Require a current-state read for definitive yes/no status answers.
 - Audit prompt: Find definitive status answers that lack a same-turn tool or data receipt.
-- Redacted example: [recurrence-escalation 12x/7d] Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)
+- Redacted example: Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)
 
 ### The Agent Tried To Put Private Identity Data Into A Tool Boundary
 

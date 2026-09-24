@@ -1,17 +1,17 @@
 # Frontier Artifact Pack
 
-Generated: 2026-09-23T08:52:00.891470+00:00
+Generated: 2026-09-24T07:56:41.920687+00:00
 
 ## Thesis
-The MIT CISR decision-rights matrix, the DCPF governance framework, and the hierarchical MCP team all sell vocabulary for deciding what AI may decide, but Shadow's own ledger shows the reverse problem: a governance loop that can name an artifact (the false-close audit, proposed 09-18, 09-19, 09-20, 09-22) without ever producing an execution or kill record, which means the scarce asset is not a fifth framework but a loop that cannot re-propose; the deferred commercial hypothesis, that a buyer prices a governed function by its stated false-close rate before its harness, stays untested and unfunded until that number or a recorded reason it cannot be produced exists.
+Agent memory is becoming commodity infrastructure; the defensible layer is an operator that converts remembered outcomes into changed decisions, while the commercial hypothesis that buyers will pay for evidence-backed closure remains untested.
 
 ## Doctrine
-An artifact proposed in a prior cycle may be re-proposed at most once; on the second recurrence the loop must either execute it in that cycle or record the concrete blocker that prevents execution, and a recorded blocker retires the proposal until the blocker is cleared.
+Before proposing work, reconcile the idea against code, execution receipts, and stopping conditions; if the bounded test already ran, advance or retire the decision instead of rediscovering the artifact.
 
 ## Proof Artifact
+Patch the research-signal compiler to suppress artifact proposals already present in git and attach their latest execution outcome; regression-test the four repeated false-close proposals against the shipped audit and its 20/20 true-close result.
 
-
-Next action: Recorded blocker, executed now rather than re-proposed: this frontier loop runs from /home/agentshadow/.cache/shadow/bare_context, which contains only post_draft.json, post.json, and post_output.json and has no read access to the commitment-closure ledger or the shadow repository, so the false-close audit cannot be executed from this loop. The audit is retired from frontier_compound_loop proposals; it belongs to the loop that owns the live closure ledger (the commitment-to-closure Jarvis operation), and the next frontier cycle must not re-propose it unless it is invoked with ledger access.
+Next action: In tests/test_research_signal_compiler.py, add a failing fixture proving the compiler advances from the existing scripts/commitment_false_close_audit.py receipt instead of proposing another verifier, then patch scripts/research_signal_compiler.py; this beats adopting another memory/runtime framework, manually rerunning audits, or doing nothing because Will benefits from less repeated review, the expected return is one fewer stale research cycle, and continuation requires the fixture to change loop selection while preserving existing response windows.
 
 ## Public Angle
 
@@ -20,17 +20,19 @@ Next action: Recorded blocker, executed now rather than re-proposed: this fronti
 
 
 ## Source Signals
-- menma4ever/agentic-team-mcp — Autonomous hierarchical multi-agent team (CEO -> Manager -> Workers) for Model Context Protocol (MCP
-- Governance Framework | DCPF Skip to main content DCPF What Is DCPF? How DCPF Works Learn DCPF With AI Use DCPF Downloads Support DCPF Menu What Is DCPF? How DCP
-- JusticeBench JusticeBench Projects Tasks Data &amp; Eval Guides Learn A2J More About JusticeBench Privacy and Terms of Use PRBench PRBench is a public, expert-a
-- Designing Decision Rights for AI | MIT CISR Skip to main content Close Cookie Notice Welcome to the MIT CISR website! This site uses cookies. Review our Privacy
-- Introducing Claude Opus 5.5 \ Anthropic
+- Mem2ActBench: A Benchmark for Evaluating Long-Term Memory Utilization in Task-Oriented Autonomous Agents - ACL Anthology ACL Anthology About Announcements Commu
+- Previewing the Model Hardware Standard \ Anthropic
+- disler/self-compact-pi-agent — A Pi coding-agent extension that lets a long-running agent watch its own context and compact itself
+- Predictable task execution - Agentic AI Lens View a markdown version of this page Predictable task execution - Agentic AI Lens Documentation AWS Well-Architecte
+- Reduce autonomous agentic AI risk | Microsoft Learn Skip to main content Skip to Ask Learn chat experience This browser is no longer supported. Upgrade to Micro
 
 ## Scale Packets
-- operator_doctrine: promoted (b0bb4b40ebdf)
+- proof_artifact: promoted (e3d3d18ddec0)
+- operator_doctrine: promoted (52dada03386c)
 
 ## Latest Promotions
-- operator_doctrine: already_persisted (b0bb4b40ebdf)
+- proof_artifact: delegated_to_improvement_queue (e3d3d18ddec0)
+- operator_doctrine: already_persisted (52dada03386c)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`
