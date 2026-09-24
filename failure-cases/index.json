@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-09-23T14:12:47.429138+00:00",
-  "count": 148,
+  "generated_at": "2026-09-24T06:30:49.417772+00:00",
+  "count": 149,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "bug-streaming-chatagent-silently-drops-tool-calls-wh-37976a693f",
+      "advisory_id": "SFA-2026-37976A693F",
+      "ts": "2026-09-24T06:30:49.410881+00:00",
+      "title": "[BUG] Streaming ChatAgent silently drops tool calls whose name is not a registered internal tool (hallucinated names and external_tools)",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "camel-ai/camel",
+        "issue_number": 4366,
+        "author": "unknown",
+        "url": "https://github.com/camel-ai/camel/issues/4366"
+      },
+      "case": {
+        "observed_action": "With stream=True, a tool call naming an unregistered or external tool was dropped, so the step yielded 0 responses, msgs == [], info == {}, and memory kept a dangling user message.",
+        "expected_boundary": "Every model-emitted tool call must end in exactly one recorded disposition (executed, 'not found' error result, or external_tool_call_requests), as non-streaming step() already does.",
+        "runtime_context": "camel-ai/camel ChatAgent 0.2.91a7 at commit 8c791b7b, streaming step path with a tool registered via external_tools or a hallucinated tool name.",
+        "evidence": "The issue's verbatim run shows streaming yielded 0 responses with memory of only system and user messages, while non-streaming on the same input recorded the tool error and the external request."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/bug-streaming-chatagent-silently-drops-tool-calls-wh-37976a693f.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/bug-streaming-chatagent-silently-drops-tool-calls-wh-37976a693f.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20bug-streaming-chatagent-silently-drops-tool-calls-wh-37976a693f&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/bug-streaming-chatagent-silently-drops-tool-calls-wh-37976a693f.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "knowledge-sources-accept-chunk-settings-that-silentl-f989fdcff9",
