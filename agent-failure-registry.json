@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/toolnode-silently-drops-command-update-when-a-tool-r-cfd396b266.html",
+      "evidence": "The repro prints ['HumanMessage:None','AIMessage:sup','ToolMessage:delegate_x','HumanMessage:x','AIMessage:sup'] for goto as str but drops the AIMessage and ToolMessage for the Send list, and the production loop hit GraphRecursionError after 60 delegations and about 15M tokens.",
+      "expected_boundary": "Every field populated on an input Command (update, resume) must survive into the combined output regardless of the goto type, or the node must raise.",
+      "id": "SFA-2026-CFD396B266",
+      "observed_action": "ToolNode._combine_tool_outputs rebuilt a PARENT Command with a Send-list goto carrying only graph and goto, silently discarding update and resume.",
+      "published_at": "2026-09-24T14:12:58.050826+00:00",
+      "source": {
+        "author": "elizandropacheco",
+        "channel": "unsolicited_triage",
+        "issue_number": 9072,
+        "repo": "langchain-ai/langgraph",
+        "url": "https://github.com/langchain-ai/langgraph/issues/9072"
+      },
+      "status": "retired",
+      "summary": "ToolNode silently drops Command.update when a tool returns Command(graph=PARENT, goto=[Send(...)])",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-streaming-chatagent-silently-drops-tool-calls-wh-37976a693f.html",
       "evidence": "The issue's verbatim run shows streaming yielded 0 responses with memory of only system and user messages, while non-streaming on the same input recorded the tool error and the external request.",
       "expected_boundary": "Every model-emitted tool call must end in exactly one recorded disposition (executed, 'not found' error result, or external_tool_call_requests), as non-streaming step() already does.",
@@ -3875,14 +3901,14 @@
       }
     }
   ],
-  "count": 149,
+  "count": 150,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-24T06:30:49.445838+00:00",
+    "checked_at": "2026-09-24T14:12:58.083420+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
