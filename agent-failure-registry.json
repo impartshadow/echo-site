@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/0-64-25-turn-end-notifications-silently-dropped-when-57a98ee186.html",
+      "evidence": "In one 24-hour events.jsonl window, 100 of 100 delayed decisions had an empty identity but a populated surface_id, and 0 notifications were created, while `cmux notify` delivered reliably on the same panes.",
+      "expected_boundary": "Every `delayed` notification decision must resolve within a bounded time into a delivery (falling back to the known surface_id) or an explicit visible drop record.",
+      "id": "SFA-2026-57A98EE186",
+      "observed_action": "notify_target_async logged 100 turn-end notifications as `delayed` when agent identity resolved empty, and none were ever delivered, retried, or surfaced to the user.",
+      "published_at": "2026-09-25T21:30:54.720980+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 13986,
+        "repo": "manaflow-ai/cmux",
+        "url": "https://github.com/manaflow-ai/cmux/issues/13986"
+      },
+      "status": "retired",
+      "summary": "0.64.25 turn-end notifications silently dropped when agent identity resolves empty",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/subagent-reports-success-with-repetitive-output-and-d9cb7d229a.html",
       "evidence": "The last handoff still marks migration and verification as pending and tmp/verify2616-consolidated/[redacted-secret]/handoff.md is absent, despite GOAL and repeated phrases like 'The verification is complete' and 'Sixteen'.",
       "expected_boundary": "GOAL should only be returned when the requested deliverable exists and the completion claim is backed by commands, logs or changed-file evidence, otherwise the worker should report a concrete failure or blocker.",
@@ -3927,14 +3953,14 @@
       }
     }
   ],
-  "count": 151,
+  "count": 152,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-25T06:30:48.312123+00:00",
+    "checked_at": "2026-09-25T21:30:54.757640+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
