@@ -1,27 +1,38 @@
 {
   "schema": "shadow.violation_decay.v1",
-  "generated_at": "2026-09-24T07:57:46.374439+00:00",
-  "as_of": "2026-09-24T02:14:22+00:00",
+  "generated_at": "2026-09-25T08:40:30.561074+00:00",
+  "as_of": "2026-09-25T01:37:19+00:00",
   "source": "state/contract_violations.jsonl",
   "window_days": 7,
   "min_age_days": 14,
   "totals": {
-    "violations": 332,
+    "violations": 328,
     "contracts_in_log": 59,
     "failure_modes": 18,
     "severities": {
-      "block": 224,
+      "block": 219,
       "unknown": 9,
-      "warn": 99
+      "warn": 100
     },
-    "eligible_contracts": 31,
+    "eligible_contracts": 32,
     "cooled_contracts": 20,
-    "hotter_contracts": 9,
-    "net_cooling_events": 103,
-    "net_hotter_events": 16
+    "hotter_contracts": 7,
+    "net_cooling_events": 116,
+    "net_hotter_events": 12
   },
-  "headline": "personal-token-send-guard cooled from 15 to 0 weekly hits; terminal-state-evidence-gate is the hottest remaining governance gap.",
+  "headline": "verification-vocabulary-gate cooled from 16 to 0 weekly hits; terminal-state-evidence-gate is the hottest remaining governance gap.",
   "cooled": [
+    {
+      "contract": "verification-vocabulary-gate",
+      "total": 16,
+      "first_seen": "2026-08-27T02:34:37+00:00",
+      "last_seen": "2026-09-03T01:58:14+00:00",
+      "first_window_count": 16,
+      "recent_window_count": 0,
+      "delta": -16,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
     {
       "contract": "personal-token-send-guard",
       "total": 15,
@@ -45,25 +56,14 @@
       "status": "cooled"
     },
     {
-      "contract": "verification-vocabulary-gate",
-      "total": 17,
-      "first_seen": "2026-08-25T02:38:22+00:00",
-      "last_seen": "2026-09-03T01:58:14+00:00",
-      "first_window_count": 11,
-      "recent_window_count": 0,
+      "contract": "privacy-exposure-taxonomy",
+      "total": 20,
+      "first_seen": "2026-08-28T00:26:27+00:00",
+      "last_seen": "2026-09-21T08:13:50+00:00",
+      "first_window_count": 13,
+      "recent_window_count": 2,
       "delta": -11,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "stale-state-assertion-guard",
-      "total": 31,
-      "first_seen": "2026-08-25T01:52:20+00:00",
-      "last_seen": "2026-09-23T12:14:03+00:00",
-      "first_window_count": 15,
-      "recent_window_count": 5,
-      "delta": -10,
-      "pct_change": -66.7,
+      "pct_change": -84.6,
       "status": "cooled"
     },
     {
@@ -83,16 +83,38 @@
       "first_seen": "2026-09-08T13:08:57+00:00",
       "last_seen": "2026-09-20T02:40:00+00:00",
       "first_window_count": 9,
-      "recent_window_count": 2,
+      "recent_window_count": 1,
+      "delta": -8,
+      "pct_change": -88.9,
+      "status": "cooled"
+    },
+    {
+      "contract": "factual-claim-verification",
+      "total": 28,
+      "first_seen": "2026-08-26T13:08:28+00:00",
+      "last_seen": "2026-09-21T08:17:01+00:00",
+      "first_window_count": 14,
+      "recent_window_count": 7,
       "delta": -7,
-      "pct_change": -77.8,
+      "pct_change": -50.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "stale-state-assertion-guard",
+      "total": 28,
+      "first_seen": "2026-08-26T23:05:19+00:00",
+      "last_seen": "2026-09-23T12:14:03+00:00",
+      "first_window_count": 12,
+      "recent_window_count": 5,
+      "delta": -7,
+      "pct_change": -58.3,
       "status": "cooled"
     },
     {
       "contract": "state-assertion-grounding",
-      "total": 26,
+      "total": 28,
       "first_seen": "2026-08-26T13:08:28+00:00",
-      "last_seen": "2026-09-20T03:19:10+00:00",
+      "last_seen": "2026-09-25T01:37:19+00:00",
       "first_window_count": 11,
       "recent_window_count": 5,
       "delta": -6,
@@ -108,28 +130,6 @@
       "recent_window_count": 0,
       "delta": -6,
       "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "factual-claim-verification",
-      "total": 29,
-      "first_seen": "2026-08-25T01:52:20+00:00",
-      "last_seen": "2026-09-21T08:17:01+00:00",
-      "first_window_count": 11,
-      "recent_window_count": 7,
-      "delta": -4,
-      "pct_change": -36.4,
-      "status": "cooled"
-    },
-    {
-      "contract": "privacy-exposure-taxonomy",
-      "total": 21,
-      "first_seen": "2026-08-25T01:06:10+00:00",
-      "last_seen": "2026-09-21T08:13:50+00:00",
-      "first_window_count": 6,
-      "recent_window_count": 2,
-      "delta": -4,
-      "pct_change": -66.7,
       "status": "cooled"
     },
     {
@@ -184,9 +184,9 @@
       "first_seen": "2026-08-26T13:08:28+00:00",
       "last_seen": "2026-09-21T08:16:18+00:00",
       "first_window_count": 1,
-      "recent_window_count": 3,
-      "delta": 2,
-      "pct_change": 200.0,
+      "recent_window_count": 2,
+      "delta": 1,
+      "pct_change": 100.0,
       "status": "hotter"
     },
     {
@@ -195,31 +195,20 @@
       "first_seen": "2026-08-28T00:26:27+00:00",
       "last_seen": "2026-09-21T08:16:18+00:00",
       "first_window_count": 1,
-      "recent_window_count": 3,
-      "delta": 2,
-      "pct_change": 200.0,
+      "recent_window_count": 2,
+      "delta": 1,
+      "pct_change": 100.0,
       "status": "hotter"
     },
     {
-      "contract": "pressure-framing-guard",
-      "total": 10,
-      "first_seen": "2026-08-27T02:59:35+00:00",
-      "last_seen": "2026-09-21T02:55:29+00:00",
-      "first_window_count": 4,
-      "recent_window_count": 5,
+      "contract": "runtime-activation-claim-gate",
+      "total": 4,
+      "first_seen": "2026-09-10T08:17:25+00:00",
+      "last_seen": "2026-09-19T12:53:09+00:00",
+      "first_window_count": 1,
+      "recent_window_count": 2,
       "delta": 1,
-      "pct_change": 25.0,
-      "status": "hotter"
-    },
-    {
-      "contract": "completion-artifact",
-      "total": 9,
-      "first_seen": "2026-08-25T23:16:32+00:00",
-      "last_seen": "2026-09-21T08:16:18+00:00",
-      "first_window_count": 3,
-      "recent_window_count": 4,
-      "delta": 1,
-      "pct_change": 33.3,
+      "pct_change": 100.0,
       "status": "hotter"
     },
     {
@@ -247,6 +236,17 @@
   ],
   "all_trends": [
     {
+      "contract": "verification-vocabulary-gate",
+      "total": 16,
+      "first_seen": "2026-08-27T02:34:37+00:00",
+      "last_seen": "2026-09-03T01:58:14+00:00",
+      "first_window_count": 16,
+      "recent_window_count": 0,
+      "delta": -16,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
       "contract": "personal-token-send-guard",
       "total": 15,
       "first_seen": "2026-09-09T10:24:19+00:00",
@@ -269,25 +269,14 @@
       "status": "cooled"
     },
     {
-      "contract": "verification-vocabulary-gate",
-      "total": 17,
-      "first_seen": "2026-08-25T02:38:22+00:00",
-      "last_seen": "2026-09-03T01:58:14+00:00",
-      "first_window_count": 11,
-      "recent_window_count": 0,
+      "contract": "privacy-exposure-taxonomy",
+      "total": 20,
+      "first_seen": "2026-08-28T00:26:27+00:00",
+      "last_seen": "2026-09-21T08:13:50+00:00",
+      "first_window_count": 13,
+      "recent_window_count": 2,
       "delta": -11,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "stale-state-assertion-guard",
-      "total": 31,
-      "first_seen": "2026-08-25T01:52:20+00:00",
-      "last_seen": "2026-09-23T12:14:03+00:00",
-      "first_window_count": 15,
-      "recent_window_count": 5,
-      "delta": -10,
-      "pct_change": -66.7,
+      "pct_change": -84.6,
       "status": "cooled"
     },
     {
@@ -307,16 +296,38 @@
       "first_seen": "2026-09-08T13:08:57+00:00",
       "last_seen": "2026-09-20T02:40:00+00:00",
       "first_window_count": 9,
-      "recent_window_count": 2,
+      "recent_window_count": 1,
+      "delta": -8,
+      "pct_change": -88.9,
+      "status": "cooled"
+    },
+    {
+      "contract": "factual-claim-verification",
+      "total": 28,
+      "first_seen": "2026-08-26T13:08:28+00:00",
+      "last_seen": "2026-09-21T08:17:01+00:00",
+      "first_window_count": 14,
+      "recent_window_count": 7,
       "delta": -7,
-      "pct_change": -77.8,
+      "pct_change": -50.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "stale-state-assertion-guard",
+      "total": 28,
+      "first_seen": "2026-08-26T23:05:19+00:00",
+      "last_seen": "2026-09-23T12:14:03+00:00",
+      "first_window_count": 12,
+      "recent_window_count": 5,
+      "delta": -7,
+      "pct_change": -58.3,
       "status": "cooled"
     },
     {
       "contract": "state-assertion-grounding",
-      "total": 26,
+      "total": 28,
       "first_seen": "2026-08-26T13:08:28+00:00",
-      "last_seen": "2026-09-20T03:19:10+00:00",
+      "last_seen": "2026-09-25T01:37:19+00:00",
       "first_window_count": 11,
       "recent_window_count": 5,
       "delta": -6,
@@ -332,28 +343,6 @@
       "recent_window_count": 0,
       "delta": -6,
       "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "factual-claim-verification",
-      "total": 29,
-      "first_seen": "2026-08-25T01:52:20+00:00",
-      "last_seen": "2026-09-21T08:17:01+00:00",
-      "first_window_count": 11,
-      "recent_window_count": 7,
-      "delta": -4,
-      "pct_change": -36.4,
-      "status": "cooled"
-    },
-    {
-      "contract": "privacy-exposure-taxonomy",
-      "total": 21,
-      "first_seen": "2026-08-25T01:06:10+00:00",
-      "last_seen": "2026-09-21T08:13:50+00:00",
-      "first_window_count": 6,
-      "recent_window_count": 2,
-      "delta": -4,
-      "pct_change": -66.7,
       "status": "cooled"
     },
     {
@@ -467,6 +456,28 @@
       "status": "cooled"
     },
     {
+      "contract": "pressure-framing-guard",
+      "total": 10,
+      "first_seen": "2026-08-27T02:59:35+00:00",
+      "last_seen": "2026-09-21T02:55:29+00:00",
+      "first_window_count": 4,
+      "recent_window_count": 4,
+      "delta": 0,
+      "pct_change": 0.0,
+      "status": "flat"
+    },
+    {
+      "contract": "completion-artifact",
+      "total": 9,
+      "first_seen": "2026-08-25T23:16:32+00:00",
+      "last_seen": "2026-09-21T08:16:18+00:00",
+      "first_window_count": 3,
+      "recent_window_count": 3,
+      "delta": 0,
+      "pct_change": 0.0,
+      "status": "flat"
+    },
+    {
       "contract": "state-io-consolidation-guard",
       "total": 4,
       "first_seen": "2026-09-03T11:25:34+00:00",
@@ -489,25 +500,47 @@
       "status": "flat"
     },
     {
-      "contract": "pressure-framing-guard",
-      "total": 10,
-      "first_seen": "2026-08-27T02:59:35+00:00",
-      "last_seen": "2026-09-21T02:55:29+00:00",
-      "first_window_count": 4,
-      "recent_window_count": 5,
+      "contract": "third-party-outbound-authorization-gate",
+      "total": 3,
+      "first_seen": "2026-08-28T21:13:18+00:00",
+      "last_seen": "2026-09-22T17:02:25+00:00",
+      "first_window_count": 1,
+      "recent_window_count": 1,
+      "delta": 0,
+      "pct_change": 0.0,
+      "status": "flat"
+    },
+    {
+      "contract": "unbuilt-guarantee-guard",
+      "total": 7,
+      "first_seen": "2026-08-26T13:08:28+00:00",
+      "last_seen": "2026-09-21T08:16:18+00:00",
+      "first_window_count": 1,
+      "recent_window_count": 2,
       "delta": 1,
-      "pct_change": 25.0,
+      "pct_change": 100.0,
       "status": "hotter"
     },
     {
-      "contract": "completion-artifact",
-      "total": 9,
-      "first_seen": "2026-08-25T23:16:32+00:00",
+      "contract": "live-state-claim-guard",
+      "total": 4,
+      "first_seen": "2026-08-28T00:26:27+00:00",
       "last_seen": "2026-09-21T08:16:18+00:00",
-      "first_window_count": 3,
-      "recent_window_count": 4,
+      "first_window_count": 1,
+      "recent_window_count": 2,
       "delta": 1,
-      "pct_change": 33.3,
+      "pct_change": 100.0,
+      "status": "hotter"
+    },
+    {
+      "contract": "runtime-activation-claim-gate",
+      "total": 4,
+      "first_seen": "2026-09-10T08:17:25+00:00",
+      "last_seen": "2026-09-19T12:53:09+00:00",
+      "first_window_count": 1,
+      "recent_window_count": 2,
+      "delta": 1,
+      "pct_change": 100.0,
       "status": "hotter"
     },
     {
@@ -530,39 +563,6 @@
       "recent_window_count": 2,
       "delta": 1,
       "pct_change": 100.0,
-      "status": "hotter"
-    },
-    {
-      "contract": "third-party-outbound-authorization-gate",
-      "total": 3,
-      "first_seen": "2026-08-28T21:13:18+00:00",
-      "last_seen": "2026-09-22T17:02:25+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 2,
-      "delta": 1,
-      "pct_change": 100.0,
-      "status": "hotter"
-    },
-    {
-      "contract": "unbuilt-guarantee-guard",
-      "total": 7,
-      "first_seen": "2026-08-26T13:08:28+00:00",
-      "last_seen": "2026-09-21T08:16:18+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 3,
-      "delta": 2,
-      "pct_change": 200.0,
-      "status": "hotter"
-    },
-    {
-      "contract": "live-state-claim-guard",
-      "total": 4,
-      "first_seen": "2026-08-28T00:26:27+00:00",
-      "last_seen": "2026-09-21T08:16:18+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 3,
-      "delta": 2,
-      "pct_change": 200.0,
       "status": "hotter"
     },
     {
