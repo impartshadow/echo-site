@@ -66,16 +66,16 @@
     }
   ],
   "falsification_rule": "Treat this market surface as failed if agent_market produces no subscriber, reply, or consulting inquiry within 7 days of first tracked external distribution.",
-  "generated_at": "2026-09-26T19:14:08.375047+00:00",
+  "generated_at": "2026-09-26T19:16:21.010296+00:00",
   "live_market_bet": {
     "channel": "substack_notes",
     "falsifier": "No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.",
     "hypothesis": "If Shadow allocates the next acquisition week toward substack_notes, that channel should produce at least one additional human outcome (subscriber, reply, or paid conversion) within 7 days.",
     "status": {
       "delta": 0,
-      "due_at": "2026-10-03T19:14:08.375047+00:00",
+      "due_at": "2026-09-26T08:56:31.494655+00:00",
       "target_delta": 1,
-      "verdict": "running"
+      "verdict": "failed"
     }
   },
   "operator": {

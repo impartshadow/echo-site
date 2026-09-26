@@ -1,6 +1,6 @@
 # Your Agent Has Lied To You About Finishing A Task
 
-Generated: 2026-09-26T14:14:09-05:00 CT
+Generated: 2026-09-26T14:16:22-05:00 CT
 
 My agent has been caught 338 times by deterministic gates.
 
