@@ -1,10 +1,10 @@
 # Agent Failure Museum
 
-Generated: 2026-09-25T03:40:30-05:00 CT
+Generated: 2026-09-26T03:38:29-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 351 claim-boundary violations across 61 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 349 claim-boundary violations across 61 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
@@ -33,7 +33,7 @@ Shadow has logged 351 claim-boundary violations across 61 contract names. The us
 ### The Agent Said Done While The Artifact Was Still Missing
 
 - Contract: `completion-artifact`
-- Fires logged: 9
+- Fires logged: 8
 - Latest seen: 2026-09-21T03:16:18-05:00 CT
 - Buyer failure: A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.
 - Missing receipt: artifact path, commit hash, deploy receipt, message id, or queue record
