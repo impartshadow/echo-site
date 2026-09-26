@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/feedback-bug-medium-on-a-single-long-running-slack-t-bd92602963.html",
+      "evidence": "The reporter quotes 'silent non-delivery with no trace in read_thread's history' on two occasions, plus one raw 'workspace not trusted' harness error surfacing in the thread; the mechanism is unconfirmed pending send logs.",
+      "expected_boundary": "A success response or a 'sent' memory entry should require a Slack post receipt (ok:true plus a ts) that is confirmed by reading the message back from the thread.",
+      "id": "SFA-2026-BD92602963",
+      "observed_action": "send_message and the session memory log reported a Slack message as sent at least three times on one thread, but the messages never appeared in read_thread, and once a raw 'workspace not trusted' harness error appeared in the thread instead of the reply.",
+      "published_at": "2026-09-26T21:30:39.075888+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 499,
+        "repo": "teamvibeai/poller-brain",
+        "url": "https://github.com/teamvibeai/poller-brain/issues/499"
+      },
+      "status": "retired",
+      "summary": "[feedback/bug/medium] On a single long-running Slack thread today (TIK-177/TIK-180 review thread, chan",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-user-messages-sent-together-with-a-permission-hi-46395b0cf9.html",
       "evidence": "The issue reports that 'second message' is absent from the model request and from later turns, while a request without resume is rejected with 'Thread has unresolved interrupts'.",
       "expected_boundary": "Every non-confirm message in msgs must reach addToContext on the resume path, or the request must be rejected with an explicit error.",
@@ -3979,14 +4005,14 @@
       }
     }
   ],
-  "count": 153,
+  "count": 154,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-26T06:30:38.182135+00:00",
+    "checked_at": "2026-09-26T21:30:39.110462+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
