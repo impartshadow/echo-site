@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-user-messages-sent-together-with-a-permission-hi-46395b0cf9.html",
+      "evidence": "The issue reports that 'second message' is absent from the model request and from later turns, while a request without resume is rejected with 'Thread has unresolved interrupts'.",
+      "expected_boundary": "Every non-confirm message in msgs must reach addToContext on the resume path, or the request must be rejected with an explicit error.",
+      "id": "SFA-2026-46395B0CF9",
+      "observed_action": "An AG-UI request with both a resume[] answer and a new user message resumed the paused agent but silently discarded the user message from context, with no error.",
+      "published_at": "2026-09-26T06:30:38.149848+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 3294,
+        "repo": "agentscope-ai/agentscope-java",
+        "url": "https://github.com/agentscope-ai/agentscope-java/issues/3294"
+      },
+      "status": "retired",
+      "summary": "[Bug]: User messages sent together with a permission-HITL resume are silently dropped",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/0-64-25-turn-end-notifications-silently-dropped-when-57a98ee186.html",
       "evidence": "In one 24-hour events.jsonl window, 100 of 100 delayed decisions had an empty identity but a populated surface_id, and 0 notifications were created, while `cmux notify` delivered reliably on the same panes.",
       "expected_boundary": "Every `delayed` notification decision must resolve within a bounded time into a delivery (falling back to the known surface_id) or an explicit visible drop record.",
@@ -3953,14 +3979,14 @@
       }
     }
   ],
-  "count": 152,
+  "count": 153,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-25T21:30:54.757640+00:00",
+    "checked_at": "2026-09-26T06:30:38.182135+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
