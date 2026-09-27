@@ -1,6 +1,6 @@
 # Violation Decay Case Study
 
-Generated: 2026-09-26T19:16:22.334269+00:00
+Generated: 2026-09-27T08:33:49.924171+00:00
 
 ## Claim
 personal-token-send-guard cooled from 15 to 0 weekly hits; terminal-state-evidence-gate is the hottest remaining governance gap.
