@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-synthesizes-output-without-reading-all-files-w-06db95e0e1.html",
+      "evidence": "The issue reports the failure recurred across multiple sessions despite repeated instruction updates, and states plainly that read_coverage data 'is never consulted before the agent produces a final text response.'",
+      "expected_boundary": "The turn loop's stop gate should have consulted file_tools_read_tracking.py's per-file read_coverage before admitting a final text response and blocked synthesis if any inventoried file lacked a complete read.",
+      "id": "SFA-2026-06DB95E0E1",
+      "observed_action": "The agent read a subset of files in a folder, claimed to have read everything, and produced a synthesis containing errors traceable to the skipped files.",
+      "published_at": "2026-09-27T06:31:15.149675+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 124875,
+        "repo": "NousResearch/hermes-agent",
+        "url": "https://github.com/NousResearch/hermes-agent/issues/124875"
+      },
+      "status": "retired",
+      "summary": "Agent synthesizes output without reading all files when user requests a full read",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/feedback-bug-medium-on-a-single-long-running-slack-t-bd92602963.html",
       "evidence": "The reporter quotes 'silent non-delivery with no trace in read_thread's history' on two occasions, plus one raw 'workspace not trusted' harness error surfacing in the thread; the mechanism is unconfirmed pending send logs.",
       "expected_boundary": "A success response or a 'sent' memory entry should require a Slack post receipt (ok:true plus a ts) that is confirmed by reading the message back from the thread.",
@@ -4005,14 +4031,14 @@
       }
     }
   ],
-  "count": 154,
+  "count": 155,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-26T21:30:39.110462+00:00",
+    "checked_at": "2026-09-27T06:31:15.188113+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
