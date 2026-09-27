@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/test-tests-fuzz-collects-zero-tests-and-reports-succ-57e8386e1d.html",
+      "evidence": "issue #1010 shows six malformed indexer shapes crashing the wallet scan with exit 70, the exact class of bug an active fuzz harness against base58check/bech32/Esplora-JSON/DER-parsing paths should surface automatically",
+      "expected_boundary": "pytest collection at tests/fuzz should fail loudly when it finds no test items, rather than reporting a passing exit code for an empty suite",
+      "id": "SFA-2026-57E8386E1D",
+      "observed_action": "running `uv run --locked pytest tests/fuzz -q` collects zero tests and exits with a success status",
+      "published_at": "2026-09-27T21:30:43.640725+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 1018,
+        "repo": "BreachSAFE/qureddy",
+        "url": "https://github.com/BreachSAFE/qureddy/issues/1018"
+      },
+      "status": "retired",
+      "summary": "[test] tests/fuzz collects zero tests and reports success",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/screenshot-silently-discards-relative-paths-reports-4752e50676.html",
       "evidence": "the user's own repro shows `\u2713 Screenshot saved to canvas.png` with exit code 0, yet `ls /tmp/canvas.png` and a full filesystem search both find no such file, while an absolute path works correctly.",
       "expected_boundary": "the CLI should stat the target path and confirm the file was actually written before emitting any success message or JSON response.",
@@ -4057,14 +4083,14 @@
       }
     }
   ],
-  "count": 156,
+  "count": 157,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-27T14:12:42.571093+00:00",
+    "checked_at": "2026-09-27T21:30:43.673586+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
