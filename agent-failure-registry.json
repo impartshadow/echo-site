@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/screenshot-silently-discards-relative-paths-reports-4752e50676.html",
+      "evidence": "the user's own repro shows `\u2713 Screenshot saved to canvas.png` with exit code 0, yet `ls /tmp/canvas.png` and a full filesystem search both find no such file, while an absolute path works correctly.",
+      "expected_boundary": "the CLI should stat the target path and confirm the file was actually written before emitting any success message or JSON response.",
+      "id": "SFA-2026-4752E50676",
+      "observed_action": "terminal-browser's screenshot command printed a success message and exited 0 for a relative path without writing any file to disk.",
+      "published_at": "2026-09-27T14:12:42.538076+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 124,
+        "repo": "zenbu-labs/terminal-browser",
+        "url": "https://github.com/zenbu-labs/terminal-browser/issues/124"
+      },
+      "status": "retired",
+      "summary": "screenshot silently discards relative paths: reports success, writes no file",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-synthesizes-output-without-reading-all-files-w-06db95e0e1.html",
       "evidence": "The issue reports the failure recurred across multiple sessions despite repeated instruction updates, and states plainly that read_coverage data 'is never consulted before the agent produces a final text response.'",
       "expected_boundary": "The turn loop's stop gate should have consulted file_tools_read_tracking.py's per-file read_coverage before admitting a final text response and blocked synthesis if any inventoried file lacked a complete read.",
@@ -4031,14 +4057,14 @@
       }
     }
   ],
-  "count": 155,
+  "count": 156,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-27T06:31:15.188113+00:00",
+    "checked_at": "2026-09-27T14:12:42.571093+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
