@@ -1,18 +1,18 @@
 # Agent Failure Museum
 
-Generated: 2026-09-27T03:33:49-05:00 CT
+Generated: 2026-09-28T02:55:46-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 338 claim-boundary violations across 61 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 330 claim-boundary violations across 63 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
 ### The Agent Answered From Memory When The Question Required A Live Read
 
 - Contract: `state-assertion-grounding`
-- Fires logged: 26
-- Latest seen: 2026-09-24T20:37:19-05:00 CT
+- Fires logged: 27
+- Latest seen: 2026-09-27T12:04:07-05:00 CT
 - Buyer failure: An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.
 - Missing receipt: same-turn read from the relevant file, process table, API, inbox, queue, or log
 - Runtime control: Require a current-state read for definitive yes/no status answers.
@@ -33,7 +33,7 @@ Shadow has logged 338 claim-boundary violations across 61 contract names. The us
 ### The Agent Said Done While The Artifact Was Still Missing
 
 - Contract: `completion-artifact`
-- Fires logged: 8
+- Fires logged: 6
 - Latest seen: 2026-09-21T03:16:18-05:00 CT
 - Buyer failure: A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.
 - Missing receipt: artifact path, commit hash, deploy receipt, message id, or queue record
