@@ -82,8 +82,9 @@ function buildPlan() {
   if (!risks.length) risks.push("Unknown action boundary: public stack does not show where claims are verified before side effects.");
   const actions = [
     "Map irreversible verbs in the workflow: send, deploy, publish, delete, update, charge, invite, notify.",
-    "Add pre-action gates for authority, canonical tool path, recipient/resource identity, and blast-radius limit.",
-    "Require post-action receipts: URL, message ID, commit SHA, artifact hash, ledger row, or provider receipt.",
+    "Split artifact review from effect authorization: final-answer approval cannot undo side effects that already happened.",
+    "Stage reversible effects behind an explicit commit boundary; authorize non-stagable effects at the effect boundary with the payload in view.",
+    "Require boundary-generated readback outside the agent's write scope: provider message ID, URL, commit SHA, artifact hash, or ledger row.",
     "Log denied actions and missing receipts to an append-only violation ledger.",
     "Run a seven-day census to rank the first three gates before building broader governance."
   ];
