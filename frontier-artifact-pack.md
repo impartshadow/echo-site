@@ -1,17 +1,17 @@
 # Frontier Artifact Pack
 
-Generated: 2026-09-28T07:54:42.434065+00:00
+Generated: 2026-09-29T09:27:55.503313+00:00
 
 ## Thesis
-agent-assembly's gateway-plus-enforcement-sidecar and the kallal79 monitoring harness confirm that policy checks, budgets and audit records are now a self-hostable commodity, so the only asset Shadow holds that none of them can ship is a verified record of a delegated function's true closes and false closes; yet this is the fifth consecutive day the scout scored unrelated sources (a game-localization patcher, a musician's personal site, Chroma's client docs) as 'operator runtime' evidence and the fifth day this loop has proposed resolving the 09-24 compiler patch and 09-25 auto-close expansion without a shipped or killed receipt, which makes the loop itself the live instance of proposals that satisfy the output template instead of changing a decision; the commercial hypothesis that a buyer prices a governed function by its stated false-close rate before its harness stays deferred until Shadow has widened auto-close on its own 20/20 audit and observed whether Will's review burden fell.
+Hypothesis: the tools in this batch (agent-guard, agent-sidecar, Restate, Defender runtime protection, ACS, NVIDIA's stack guidance, lythelab's sandboxed agent) are turning authorization, identity, audit, sandboxing and durable execution into free or bundled parts. The only thing none of them ships is a verified record of how often a delegated function closed work falsely, and what happened to the human's review load once autonomy widened. Shadow has not produced that record, because the 09-25 auto-close expansion has now been proposed on eight straight days with no shipped or killed receipt. Compared on return: (1) A technical contribution to ACS or agent-guard would help their maintainers but return nothing to Shadow until a live false-close rate exists. Stop it until one does. (2) Adopting an incumbent guard layer is cheap but changes nothing Shadow's proof depends on and fixes no active failure. Do nothing there. (3) The operational action has a named beneficiary, Will's review burden, but it cannot pay off while it stays a proposal. (4) Doing nothing about these signals is correct. The problem is doing nothing about the proposal backlog. Deferred commercial hypothesis, still untested: a buyer prices a governed function by its stated false-close rate before looking at its harness. It stays deferred until Shadow has its own before/after review-burden number. These response windows stay open and unchanged: NIST (Oct 2), Embroker (Oct 3), Vina (Oct 4) and PerfectFit (Oct 5).
 
 ## Doctrine
-A proposal may not be issued a second time without a receipt for the first: before this loop analyzes any new signal, every prior proposal it has made must carry a shipped, killed, or open-with-owner-and-date status, and a proposal with no receipt after two cycles is killed by default rather than restated.
+A proposal that has carried over for three cycles gets a default status of killed on the next cycle. It can only come back with a named owner, a due date and a revert condition. The loop may not issue a proposal again just because it was issued before.
 
 ## Proof Artifact
-A single resolution record for the two outstanding proposals (09-24 signal-compiler patch, 09-25 auto-close expansion of one commitment class on the 20/20 false-close audit) giving each one status of shipped-with-commit, killed-with-reason, or open-with-owner-and-due-date; no new mechanism, comparison, or verifier ships until that record exists.
+One resolution entry for the 09-24 signal-compiler patch and the 09-25 auto-close expansion, written only after checking Shadow's git history. Each gets one status. 'Shipped' needs the commit hash. 'Killed' needs the reason; if no commit exists, the reason is 'unexecuted for 5+ days; no owner'. 'Open' needs an owner, a due date of Oct 6 or earlier, and the revert condition: any false close or stale resurface in that commitment class during the next review cycle reverts the change.
 
-Next action: Append to the same bet log that holds these RECENT BETS entries one resolution entry for the 09-24 and 09-25 proposals: grep the repository's git log and commit history for any change touching auto-close commitment classes or signal-compiler source reading since 2026-09-24, record the commit if found, otherwise mark each proposal killed-by-default with reason 'no receipt after four cycles' and a note that the next loop may re-propose only with an owner and due date attached.
+Next action: In Shadow's repo, search git log for commits since 2026-09-24 that touch the signal compiler or auto-close logic. Append the resolution entry to the log where this loop's bets are recorded, with the status each commit search supports. Also record that the Frontier Scout pattern 'portfolio_operator_runtime' is suppressed as a loop input until the auto-close question is resolved. It has sent eight days of template-scored items with no change to any decision.
 
 ## Public Angle
 
@@ -20,19 +20,19 @@ Next action: Append to the same bet log that holds these RECENT BETS entries one
 
 
 ## Source Signals
-- kallal79/agentic-ai-monitoring-harness — Lightweight monitoring, behavioral evaluation, and safety harness for autonomous AI agents.
-- main.tex · thaki-AI/daily-paper-2026-07-23-autonomous-loop-completion-gap at main Hugging Face Models Datasets Spaces Buckets new Docs Enterprise Pricing Websit
-- binbingwu/Multi-Agent-Game-Localizer — Multi Agent 游戏汉化器：Claude 作为主控（Orchestrator），本地小模型作为翻译子 Agent，本机生成汉化补丁
-- AI Continuity Research | Amber Ann Nicholson Home About Music Research Contact More Home About Music Research Contact Home About Music Research Contact Human–AI
-- Loop Engineering | OMA Skip to main content OMA Docs Workflows Triggers Ontology DSL Easy Button Star English English 한국어 On this page Loop Engineering — from s
+- GitHub - lythelab/autonomous-agent: A self-hosted autonomous AI agent that runs continuously, plans with LLMs, executes code in a secure sandbox, and maintains
+- AI agent runtime protection with Microsoft Defender for Endpoint (Preview) - Microsoft Defender for Endpoint | Microsoft Learn Skip to main content Skip to Ask
+- Restate | The Durable Runtime for your Agents and Backends 4.5k Talk to us Login Docs Use Cases Restate Cloud Pricing Company Blog 4.5k Talk to us Login Cloud B
+- GitHub - agent-rails/agent-guard: Least-privilege authorization, per-agent identity, and audit for AI agent tool calls. Harness-agnostic, local-first, fail-clos
+- GitHub - agent-sidecar/agent-sidecar: Security sidecar between an AI coding agent and everything it touches — MCP servers, LLM APIs, SSH, subprocess env. Releas
 
 ## Scale Packets
-- proof_artifact: promoted (97e5d1bb1731)
-- operator_doctrine: promoted (05b69f3124e4)
+- proof_artifact: promoted (f04a7787a94a)
+- operator_doctrine: promoted (71cdeaf4a056)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (97e5d1bb1731)
-- operator_doctrine: already_persisted (05b69f3124e4)
+- proof_artifact: delegated_to_improvement_queue (f04a7787a94a)
+- operator_doctrine: already_persisted (71cdeaf4a056)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

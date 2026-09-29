@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-09-28T02:55:46-05:00",
+  "generated_at_ct": "2026-09-29T04:28:57-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 330,
-  "distinct_contracts": 63,
+  "total_violations": 322,
+  "distinct_contracts": 65,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -13,8 +13,8 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "warn",
-      "count": 27,
-      "latest_seen_ct": "2026-09-27T12:04:07-05:00",
+      "count": 26,
+      "latest_seen_ct": "2026-09-29T04:23:57-05:00",
       "example_violation": "Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
       "buyer_failure": "An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.",
@@ -53,8 +53,8 @@
       "failure_mode": "FM-027",
       "severity_seen": "block",
       "count": 3,
-      "latest_seen_ct": "2026-09-20T20:45:19-05:00",
-      "example_violation": "Cited commit hash(es) do not exist in git: 980f06afe454071d9d1d446084d6335cc101ebae. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.",
+      "latest_seen_ct": "2026-09-28T20:03:55-05:00",
+      "example_violation": "Cited commit hash(es) do not exist in git: 25a3da83ea21763ff6e952955a02735a2b35bd25. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.",
       "title": "The Agent Cited A Commit Hash Before Proving It Resolved",
       "buyer_failure": "A coding agent says a fix was committed or pushed, but the hash is invented, stale, or not reachable from the expected branch.",
       "missing_receipt": "git rev-parse output plus git cat-file or remote branch containment proof",
@@ -63,17 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-08-28": {
-      "state-assertion-grounding": 2,
-      "verification-vocabulary-gate": 2,
-      "stale-state-assertion-guard": 2,
-      "factual-claim-verification": 1,
-      "pressure-framing-guard": 2,
-      "fleet-state-claim-grounding-gate": 3,
-      "commit-hash-verification": 1,
-      "script-behavior-assertion-guard": 1,
-      "third-party-outbound-authorization-gate": 1
-    },
     "2026-08-29": {
       "state-assertion-grounding": 2,
       "verification-vocabulary-gate": 5,
@@ -297,6 +286,17 @@
       "state-assertion-grounding": 1,
       "factual-claim-verification": 1,
       "class-coverage-fix-gate": 1
+    },
+    "2026-09-28": {
+      "live-state-claim-guard": 1,
+      "unmet-target-lede-gate": 1,
+      "commit-hash-verification": 1
+    },
+    "2026-09-29": {
+      "state-assertion-grounding": 1,
+      "attribute-correction-verification-guard": 1,
+      "unlocated-source-premise-gate": 1,
+      "owned-work-status-answer-gate": 1
     }
   },
   "cta": {
