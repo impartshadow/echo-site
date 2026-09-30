@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/make-sync-reports-success-after-per-repo-failures-8ea4ccb7f5.html",
+      "evidence": "adapter.sh:555-564 prints 'pull failed (continuing)'/'fetch failed (continuing)' then unconditionally reaches 'Sync complete.' and exit 0, and sync.py's sync_repo returns False on failure but that result never reaches main()'s exit code or closing message.",
+      "expected_boundary": "The exit code and closing message should be a function of aggregated per-repo outcomes, not of whether the loop over repos merely completed.",
+      "id": "SFA-2026-8EA4CCB7F5",
+      "observed_action": "Both the ros2_colcon and single_project sync adapters print a success message and exit 0 even when individual repo operations (git pull/fetch, sync_repo) failed.",
+      "published_at": "2026-09-30T14:12:57.378385+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 365,
+        "repo": "rolker/agent_workspace",
+        "url": "https://github.com/rolker/agent_workspace/issues/365"
+      },
+      "status": "retired",
+      "summary": "make sync reports success after per-repo failures",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/production-outage-lies-about-verification-and-usage-0642ce4202.html",
       "evidence": "Production logs showing 30-second connection checkout timeouts, 30-60 second business-data request latency, a worker timeout/forced termination, and the agent's own later admission that it had not performed the authenticated data-loading test before deployment.",
       "expected_boundary": "Verification claims must be backed by an actual test of the authenticated production data-loading workflow, and capability-denial claims must follow a real attempt to access the local transcript records, not precede it.",
@@ -4109,14 +4135,14 @@
       }
     }
   ],
-  "count": 158,
+  "count": 159,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-29T06:30:43.765590+00:00",
+    "checked_at": "2026-09-30T14:12:57.415156+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,

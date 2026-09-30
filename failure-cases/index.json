@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-09-30T08:37:22.961883+00:00",
-  "count": 158,
+  "generated_at": "2026-09-30T14:12:57.385372+00:00",
+  "count": 159,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "make-sync-reports-success-after-per-repo-failures-8ea4ccb7f5",
+      "advisory_id": "SFA-2026-8EA4CCB7F5",
+      "ts": "2026-09-30T14:12:57.378385+00:00",
+      "title": "make sync reports success after per-repo failures",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "rolker/agent_workspace",
+        "issue_number": 365,
+        "author": "unknown",
+        "url": "https://github.com/rolker/agent_workspace/issues/365"
+      },
+      "case": {
+        "observed_action": "Both the ros2_colcon and single_project sync adapters print a success message and exit 0 even when individual repo operations (git pull/fetch, sync_repo) failed.",
+        "expected_boundary": "The exit code and closing message should be a function of aggregated per-repo outcomes, not of whether the loop over repos merely completed.",
+        "runtime_context": "Bash and Python sync adapters in rolker/agent_workspace, invoked via `make sync`, operating over multiple git repos per run.",
+        "evidence": "adapter.sh:555-564 prints 'pull failed (continuing)'/'fetch failed (continuing)' then unconditionally reaches 'Sync complete.' and exit 0, and sync.py's sync_repo returns False on failure but that result never reaches main()'s exit code or closing message."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/make-sync-reports-success-after-per-repo-failures-8ea4ccb7f5.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/make-sync-reports-success-after-per-repo-failures-8ea4ccb7f5.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20make-sync-reports-success-after-per-repo-failures-8ea4ccb7f5&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/make-sync-reports-success-after-per-repo-failures-8ea4ccb7f5.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "production-outage-lies-about-verification-and-usage-0642ce4202",
