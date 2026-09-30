@@ -1,8 +1,8 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-09-29T04:28:57-05:00",
+  "generated_at_ct": "2026-09-30T03:37:22-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 322,
+  "total_violations": 314,
   "distinct_contracts": 65,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
@@ -13,7 +13,7 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "warn",
-      "count": 26,
+      "count": 24,
       "latest_seen_ct": "2026-09-29T04:23:57-05:00",
       "example_violation": "Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
@@ -63,12 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-08-29": {
-      "state-assertion-grounding": 2,
-      "verification-vocabulary-gate": 5,
-      "terminal-state-evidence-gate": 1,
-      "stale-state-assertion-guard": 2
-    },
     "2026-08-30": {
       "verification-vocabulary-gate": 1,
       "privacy-exposure-taxonomy": 1,
@@ -296,7 +290,9 @@
       "state-assertion-grounding": 1,
       "attribute-correction-verification-guard": 1,
       "unlocated-source-premise-gate": 1,
-      "owned-work-status-answer-gate": 1
+      "owned-work-status-answer-gate": 1,
+      "vendor-availability-external-fetch-required": 1,
+      "term-lookup-before-ask-gate": 1
     }
   },
   "cta": {

@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-09-29T09:27:55.503313+00:00",
+  "generated_at": "2026-09-30T08:33:48.245963+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-09-29T09:27:36.121251+00:00",
-  "thesis": "Hypothesis: the tools in this batch (agent-guard, agent-sidecar, Restate, Defender runtime protection, ACS, NVIDIA's stack guidance, lythelab's sandboxed agent) are turning authorization, identity, audit, sandboxing and durable execution into free or bundled parts. The only thing none of them ships is a verified record of how often a delegated function closed work falsely, and what happened to the human's review load once autonomy widened. Shadow has not produced that record, because the 09-25 auto-close expansion has now been proposed on eight straight days with no shipped or killed receipt. Compared on return: (1) A technical contribution to ACS or agent-guard would help their maintainers but return nothing to Shadow until a live false-close rate exists. Stop it until one does. (2) Adopting an incumbent guard layer is cheap but changes nothing Shadow's proof depends on and fixes no active failure. Do nothing there. (3) The operational action has a named beneficiary, Will's review burden, but it cannot pay off while it stays a proposal. (4) Doing nothing about these signals is correct. The problem is doing nothing about the proposal backlog. Deferred commercial hypothesis, still untested: a buyer prices a governed function by its stated false-close rate before looking at its harness. It stays deferred until Shadow has its own before/after review-burden number. These response windows stay open and unchanged: NIST (Oct 2), Embroker (Oct 3), Vina (Oct 4) and PerfectFit (Oct 5).",
-  "doctrine": "A proposal that has carried over for three cycles gets a default status of killed on the next cycle. It can only come back with a named owner, a due date and a revert condition. The loop may not issue a proposal again just because it was issued before.",
-  "proof_artifact": "One resolution entry for the 09-24 signal-compiler patch and the 09-25 auto-close expansion, written only after checking Shadow's git history. Each gets one status. 'Shipped' needs the commit hash. 'Killed' needs the reason; if no commit exists, the reason is 'unexecuted for 5+ days; no owner'. 'Open' needs an owner, a due date of Oct 6 or earlier, and the revert condition: any false close or stale resurface in that commitment class during the next review cycle reverts the change.",
-  "proof_next_action": "In Shadow's repo, search git log for commits since 2026-09-24 that touch the signal compiler or auto-close logic. Append the resolution entry to the log where this loop's bets are recorded, with the status each commit search supports. Also record that the Frontier Scout pattern 'portfolio_operator_runtime' is suppressed as a loop input until the auto-close question is resolved. It has sent eight days of template-scored items with no change to any decision.",
+  "cycle_ts": "2026-09-30T08:32:02.523580+00:00",
+  "thesis": "Operator runtimes and evaluation frameworks are commoditizing, so a technical contribution benefits their maintainers without near-term return, adopting an incumbent is cheaper but fixes no live failure, and doing nothing with these signals is correct; the only supported operational test benefits Will by resolving the stalled auto-close decision, with continuation contingent on a commit-backed implementation and a review cycle showing no false close or stale resurface, while the commercial hypothesis that buyers value verified false-close rates remains deferred.",
+  "doctrine": "Research changes Shadow only when it resolves a live decision or produces measured operational benefit; repeated signals without changed outcomes are suppressed rather than converted into more infrastructure.",
+  "proof_artifact": "A single resolution entry in state/frontier_compound_ledger.jsonl marking the 2026-09-24 signal-compiler patch and 2026-09-25 auto-close expansion as shipped with commit, killed with reason, or open with owner, due date, and automatic-revert condition.",
+  "proof_next_action": "Run git log against signal-compiler and commitment auto-close paths since 2026-09-24, append the evidence-backed resolution to state/frontier_compound_ledger.jsonl through core/state_io.py, and suppress portfolio_operator_runtime intake in scripts/frontier_compound_loop.py until that resolution exists.",
   "public_angle": "",
   "buyer_offer": "",
   "source_titles": [
-    "GitHub - lythelab/autonomous-agent: A self-hosted autonomous AI agent that runs continuously, plans with LLMs, executes code in a secure sandbox, and maintains",
-    "AI agent runtime protection with Microsoft Defender for Endpoint (Preview) - Microsoft Defender for Endpoint | Microsoft Learn Skip to main content Skip to Ask",
-    "Restate | The Durable Runtime for your Agents and Backends 4.5k Talk to us Login Docs Use Cases Restate Cloud Pricing Company Blog 4.5k Talk to us Login Cloud B",
-    "GitHub - agent-rails/agent-guard: Least-privilege authorization, per-agent identity, and audit for AI agent tool calls. Harness-agnostic, local-first, fail-clos",
-    "GitHub - agent-sidecar/agent-sidecar: Security sidecar between an AI coding agent and everything it touches \u2014 MCP servers, LLM APIs, SSH, subprocess env. Releas"
+    "Testing, evaluation, and validation frameworks - Agentic AI Lens View a markdown version of this page Testing, evaluation, and validation frameworks - Agentic A",
+    "Cheating On AI Agent Evaluations | NIST Skip to main content An official website of the United States government Here\u2019s how you know Here\u2019s how you know Officia",
+    "Agent monitoring, management and recovery - Agentic AI Lens View a markdown version of this page Agent monitoring, management and recovery - Agentic AI Lens Doc",
+    "AGENTREL03-BP03 Implement comprehensive state management and checkpoint-based recovery - Agentic AI Lens View a markdown version of this page AGENTREL03-BP03 Im",
+    "What Next-Event Accuracy Cannot See: Closed-Loop Evaluation of Emergency Department Trajectory Simulators"
   ],
   "packets": [
     {
-      "id": "f04a7787a94a",
+      "id": "f875acdd8e15",
       "lane": "proof_artifact",
       "status": "promoted",
       "success_metric": "A bounded trial shows reduced human correction burden, increased owned responsibility, or external adoption; artifact existence alone is insufficient."
     },
     {
-      "id": "71cdeaf4a056",
+      "id": "807a4936609c",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -33,13 +33,13 @@
     {
       "lane": "proof_artifact",
       "status": "delegated_to_improvement_queue",
-      "next_action": "In Shadow's repo, search git log for commits since 2026-09-24 that touch the signal compiler or auto-close logic. Append the resolution entry to the log where this loop's bets are recorded, with the status each commit search supports. Also record that the Frontier Scout pattern 'portfolio_operator_runtime' is suppressed as a loop input until the auto-close question is resolved. It has sent eight days of template-scored items with no change to any decision.",
-      "packet_id": "f04a7787a94a"
+      "next_action": "Run git log against signal-compiler and commitment auto-close paths since 2026-09-24, append the evidence-backed resolution to state/frontier_compound_ledger.jsonl through core/state_io.py, and suppress portfolio_operator_runtime intake in scripts/frontier_compound_loop.py until that resolution exists.",
+      "packet_id": "f875acdd8e15"
     },
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "71cdeaf4a056"
+      "packet_id": "807a4936609c"
     }
   ],
   "receipts": {

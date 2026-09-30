@@ -113,8 +113,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 48.6,
-          "last_activity": "2026-09-27T08:51:39.632493+00:00",
+          "hours_since": 1.0,
+          "last_activity": "2026-09-30T07:34:30.345983+00:00",
           "source": "action_log",
           "staleness": "ok"
         },
@@ -127,8 +127,22 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.1,
-          "last_activity": "2026-09-29T09:25:02.726442+00:00",
+          "hours_since": 1.0,
+          "last_activity": "2026-09-30T07:34:30.345983+00:00",
+          "source": "action_log",
+          "staleness": "ok"
+        },
+        "loop_id": "echo",
+        "name": "Echo Content",
+        "reason": "fresh evidence is internal-only: action_log",
+        "requires_external_reach": true,
+        "verdict": "no_external_reach"
+      },
+      {
+        "declared_state": "running",
+        "evidence": {
+          "hours_since": 0.2,
+          "last_activity": "2026-09-30T08:25:02.293536+00:00",
           "source": "action_log",
           "staleness": "ok"
         },
@@ -141,21 +155,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 48.6,
-          "last_activity": "2026-09-27T08:51:39.632493+00:00",
-          "source": "action_log",
-          "staleness": "stale"
-        },
-        "loop_id": "echo",
-        "name": "Echo Content",
-        "reason": "liveness is stale",
-        "requires_external_reach": true,
-        "verdict": "stale"
-      },
-      {
-        "declared_state": "running",
-        "evidence": {
-          "hours_since": 25.8,
+          "hours_since": 49.0,
           "last_activity": "2026-09-28T07:38:08.460086+00:00",
           "source": "action_log",
           "staleness": "ok"
@@ -169,7 +169,7 @@
       {
         "declared_state": "complete",
         "evidence": {
-          "hours_since": 127.7,
+          "hours_since": 150.9,
           "last_activity": "2026-09-24T01:44:02.374763+00:00",
           "source": "verifier_receipt",
           "staleness": "expected_quiet"
@@ -183,7 +183,7 @@
       {
         "declared_state": "paused",
         "evidence": {
-          "hours_since": 127.7,
+          "hours_since": 150.9,
           "last_activity": "2026-09-24T01:44:03.569704+00:00",
           "source": "verifier_receipt",
           "staleness": "expected_quiet"
@@ -195,7 +195,7 @@
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-09-29T09:28:55.902052+00:00",
+    "generated_at": "2026-09-30T08:37:19.149326+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
@@ -215,7 +215,7 @@
         "action": "produce_or_attach_external_receipt",
         "evidence_source": "action_log",
         "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
-        "loop_id": "shadow-presence",
+        "loop_id": "echo",
         "missing_receipts": [
           "external_post_receipt",
           "subscriber_receipt",
@@ -226,24 +226,25 @@
         "verdict": "no_external_reach"
       },
       {
-        "action": "refresh_liveness_or_pause_loop",
+        "action": "produce_or_attach_external_receipt",
         "evidence_source": "action_log",
-        "instruction": "Run the loop once, attach a fresh verifier receipt, or pause the loop explicitly.",
-        "loop_id": "echo",
+        "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
+        "loop_id": "shadow-presence",
         "missing_receipts": [
-          "fresh_action_log",
-          "verifier_receipt"
+          "external_post_receipt",
+          "subscriber_receipt",
+          "reply_receipt",
+          "meeting_receipt"
         ],
-        "priority": 70,
-        "verdict": "stale"
+        "priority": 90,
+        "verdict": "no_external_reach"
       }
     ],
     "rule": "Declared loop state is not proof. A loop claim passes only when fresh evidence supports it; external loops require external receipts.",
     "schema": "shadow.agent_flight_recorder.v1",
     "summary": {
-      "no_external_reach": 2,
-      "pass": 3,
-      "stale": 1
+      "no_external_reach": 3,
+      "pass": 3
     }
   },
   "frontier_artifact_pack": {
@@ -258,7 +259,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md",
     "purpose": "scarce frontier-model usage ledger that routes high-end model headroom into sellable artifacts, proof surfaces, acquisition machinery, and model-agnostic operating-system upgrades"
   },
-  "generated_at": "2026-09-29T09:28:55.902052+00:00",
+  "generated_at": "2026-09-30T08:37:19.149326+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
