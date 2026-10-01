@@ -1,8 +1,8 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-09-30T03:37:22-05:00",
+  "generated_at_ct": "2026-10-01T04:24:08-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 314,
+  "total_violations": 313,
   "distinct_contracts": 65,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
@@ -26,9 +26,9 @@
       "contract": "dox-guard",
       "failure_mode": "FM-023",
       "severity_seen": "block",
-      "count": 13,
-      "latest_seen_ct": "2026-09-19T21:40:00-05:00",
-      "example_violation": "run_shell command contains 1 personal identifier(s) [categories: phone]. PII must not appear in shell commands that could reach third parties (email, curl POST, browser scripts).",
+      "count": 14,
+      "latest_seen_ct": "2026-09-30T07:03:39-05:00",
+      "example_violation": "run_shell command contains 3 personal identifier(s) [categories: deny-list]. PII must not appear in shell commands that could reach third parties (email, curl POST, browser scripts).",
       "title": "The Agent Tried To Put Private Identity Data Into A Tool Boundary",
       "buyer_failure": "An outbound or automation agent risks leaking personal identifiers through shell commands, browser scripts, or third-party calls.",
       "missing_receipt": "redaction proof and approved outbound identity context",
@@ -63,11 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-08-30": {
-      "verification-vocabulary-gate": 1,
-      "privacy-exposure-taxonomy": 1,
-      "factual-claim-verification": 2
-    },
     "2026-08-31": {
       "factual-claim-verification": 3,
       "harness-scaffold-egress-guard": 12,
@@ -293,6 +288,11 @@
       "owned-work-status-answer-gate": 1,
       "vendor-availability-external-fetch-required": 1,
       "term-lookup-before-ask-gate": 1
+    },
+    "2026-09-30": {
+      "pressure-framing-guard": 1,
+      "stale-state-assertion-guard": 1,
+      "dox-guard": 1
     }
   },
   "cta": {

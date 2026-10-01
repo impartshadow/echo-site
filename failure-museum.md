@@ -1,10 +1,10 @@
 # Agent Failure Museum
 
-Generated: 2026-09-30T03:37:22-05:00 CT
+Generated: 2026-10-01T04:24:08-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 314 claim-boundary violations across 65 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 313 claim-boundary violations across 65 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
@@ -22,13 +22,13 @@ Shadow has logged 314 claim-boundary violations across 65 contract names. The us
 ### The Agent Tried To Put Private Identity Data Into A Tool Boundary
 
 - Contract: `dox-guard`
-- Fires logged: 13
-- Latest seen: 2026-09-19T21:40:00-05:00 CT
+- Fires logged: 14
+- Latest seen: 2026-09-30T07:03:39-05:00 CT
 - Buyer failure: An outbound or automation agent risks leaking personal identifiers through shell commands, browser scripts, or third-party calls.
 - Missing receipt: redaction proof and approved outbound identity context
 - Runtime control: Enforce identity and credential separation at the client layer, not just prompt text.
 - Audit prompt: Inspect tool calls for personal identifiers, private domains, tokens, or account-mixing risks.
-- Redacted example: run_shell command contains 1 personal identifier(s) [categories: phone]. PII must not appear in shell commands that could reach third parties (email, curl POST, browser scripts).
+- Redacted example: run_shell command contains 3 personal identifier(s) [categories: deny-list]. PII must not appear in shell commands that could reach third parties (email, curl POST, browser scripts).
 
 ### The Agent Said Done While The Artifact Was Still Missing
 
