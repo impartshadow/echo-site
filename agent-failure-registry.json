@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/experimentrunner-assert-scores-only-checks-the-inter-a84f58aa49.html",
+      "evidence": "The issue reporter verified by direct reproduction against the repo's own test fixture that a multi-metric expected_score passes even when other named metrics silently produced no score at all.",
+      "expected_boundary": "The assertion should fail closed when set(expected) - set(actual) is non-empty, treating any expected metric key absent from actual as a failure rather than silently skipping it.",
+      "id": "SFA-2026-A84F58AA49",
+      "observed_action": "ExperimentRunner._assert_scores compares expected and actual score dicts only on their key intersection, so it passes a multi-metric assertion whenever any single present key clears its bar.",
+      "published_at": "2026-10-02T06:30:51.612864+00:00",
+      "source": {
+        "author": "shaurya416",
+        "channel": "unsolicited_triage",
+        "issue_number": 7739,
+        "repo": "crewAIInc/crewAI",
+        "url": "https://github.com/crewAIInc/crewAI/issues/7739"
+      },
+      "status": "retired",
+      "summary": "ExperimentRunner._assert_scores only checks the intersection of expected/actual dict keys, so a multi-metric expected_score passes even when other metrics silently produced no score",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/make-sync-reports-success-after-per-repo-failures-8ea4ccb7f5.html",
       "evidence": "adapter.sh:555-564 prints 'pull failed (continuing)'/'fetch failed (continuing)' then unconditionally reaches 'Sync complete.' and exit 0, and sync.py's sync_repo returns False on failure but that result never reaches main()'s exit code or closing message.",
       "expected_boundary": "The exit code and closing message should be a function of aggregated per-repo outcomes, not of whether the loop over repos merely completed.",
@@ -4135,14 +4161,14 @@
       }
     }
   ],
-  "count": 159,
+  "count": 160,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-09-30T14:12:57.415156+00:00",
+    "checked_at": "2026-10-02T06:30:51.647155+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
