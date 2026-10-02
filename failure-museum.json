@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-10-01T04:24:08-05:00",
+  "generated_at_ct": "2026-10-02T04:09:26-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 313,
-  "distinct_contracts": 65,
+  "total_violations": 278,
+  "distinct_contracts": 64,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -13,7 +13,7 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "warn",
-      "count": 24,
+      "count": 23,
       "latest_seen_ct": "2026-09-29T04:23:57-05:00",
       "example_violation": "Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
@@ -63,19 +63,7 @@
     }
   ],
   "daily_counts": {
-    "2026-08-31": {
-      "factual-claim-verification": 3,
-      "harness-scaffold-egress-guard": 12,
-      "personal-help-provenance-carveout": 9,
-      "stale-state-assertion-guard": 4,
-      "continuation-grant-guard": 1,
-      "dead-source-citation-guard": 1,
-      "numeric-parameter-assertion-guard": 1,
-      "verification-vocabulary-gate": 1,
-      "state-assertion-grounding": 1
-    },
     "2026-09-01": {
-      "harness-scaffold-egress-guard": 4,
       "factual-claim-verification": 4,
       "state-assertion-grounding": 4,
       "verification-vocabulary-gate": 2
@@ -293,6 +281,10 @@
       "pressure-framing-guard": 1,
       "stale-state-assertion-guard": 1,
       "dox-guard": 1
+    },
+    "2026-10-01": {
+      "pressure-framing-guard": 1,
+      "deferred-first-step-gate": 1
     }
   },
   "cta": {
