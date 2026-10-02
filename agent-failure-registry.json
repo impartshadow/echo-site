@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/link-dogfood-agent-skills-falsely-reports-success-on-bf7ac3f56f.html",
+      "evidence": "On non-unix, after fs::remove_dir_all deletes the prior materialized copy at line 1470, the missing #[cfg(not(unix))] arm means .agents/skills ends up absent from disk while the install report still claims it was added.",
+      "expected_boundary": "Following the ensure_dir_symlink precedent (#6440), any non-unix build should hit an explicit #[cfg(not(unix))] arm that returns a skip message instead of falling through to the success path.",
+      "id": "SFA-2026-BF7AC3F56F",
+      "observed_action": "link_dogfood_agent_skills pushes '.agents/skills (dogfood symlink)' into report.added and returns Ok(()) on non-unix targets even though the #[cfg(unix)] symlink call compiled away to nothing.",
+      "published_at": "2026-10-02T21:30:50.885972+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 8984,
+        "repo": "rjwalters/loom",
+        "url": "https://github.com/rjwalters/loom/issues/8984"
+      },
+      "status": "retired",
+      "summary": "link_dogfood_agent_skills falsely reports success on non-unix (no #6440-style fallback)",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/cross-session-context-isolation-agent-can-t-recall-i-6fef4dc4b3.html",
       "evidence": "Dudinke has no record of being queried by Yami, confirming the 'checked with Dudinke and found nothing' claim was fabricated rather than an actual verification step.",
       "expected_boundary": "Pending in-flight tasks accepted via send_message should be persisted to a session-independent store and read before the agent answers 'what are you working on' from any other session for the same agent group.",
@@ -4187,14 +4213,14 @@
       }
     }
   ],
-  "count": 161,
+  "count": 162,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-02T14:12:49.721769+00:00",
+    "checked_at": "2026-10-02T21:30:50.928617+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
