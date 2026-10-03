@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/in-memory-runtime-runs-left-running-by-a-dead-proces-b58d81b161.html",
+      "evidence": "Production observation of RSS climbing 1.87G to 7.2G with n_running=9 and active=0 available=4 max=4 within five minutes of a fresh process start, each of the nine being an orphaned run from an earlier kill.",
+      "expected_boundary": "On startup, the runtime should reconcile any run left in a non-terminal 'running' state by a prior process instance before accepting new work on that thread, matching the Postgres runtime's rollback behavior.",
+      "id": "SFA-2026-B58D81B161",
+      "observed_action": "langgraph-runtime-inmem's start_pool() reloads assistants and crons from the pickle on restart but never resets or reconciles run status, so a run stuck at 'running' from a killed process persists forever.",
+      "published_at": "2026-10-03T14:12:47.361794+00:00",
+      "source": {
+        "author": "Namang1",
+        "channel": "unsolicited_triage",
+        "issue_number": 9078,
+        "repo": "langchain-ai/langgraph",
+        "url": "https://github.com/langchain-ai/langgraph/issues/9078"
+      },
+      "status": "retired",
+      "summary": "In-memory runtime: runs left `running` by a dead process survive restart and permanently wedge their thread; `Threads.sweep_ttl` is a stub so `checkpointer.ttl` never frees anything",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/link-dogfood-agent-skills-falsely-reports-success-on-bf7ac3f56f.html",
       "evidence": "On non-unix, after fs::remove_dir_all deletes the prior materialized copy at line 1470, the missing #[cfg(not(unix))] arm means .agents/skills ends up absent from disk while the install report still claims it was added.",
       "expected_boundary": "Following the ensure_dir_symlink precedent (#6440), any non-unix build should hit an explicit #[cfg(not(unix))] arm that returns a skip message instead of falling through to the success path.",
@@ -4213,14 +4239,14 @@
       }
     }
   ],
-  "count": 162,
+  "count": 163,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-02T21:30:50.928617+00:00",
+    "checked_at": "2026-10-03T14:12:47.395944+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
