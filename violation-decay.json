@@ -1,23 +1,23 @@
 {
   "schema": "shadow.violation_decay.v1",
-  "generated_at": "2026-10-02T09:09:26.830968+00:00",
-  "as_of": "2026-10-01T23:39:32+00:00",
+  "generated_at": "2026-10-03T08:33:21.975940+00:00",
+  "as_of": "2026-10-03T00:57:32+00:00",
   "source": "state/contract_violations.jsonl",
   "window_days": 7,
   "min_age_days": 14,
   "totals": {
-    "violations": 271,
-    "contracts_in_log": 62,
-    "failure_modes": 20,
+    "violations": 270,
+    "contracts_in_log": 64,
+    "failure_modes": 22,
     "severities": {
-      "block": 189,
+      "block": 188,
       "warn": 82
     },
-    "eligible_contracts": 37,
-    "cooled_contracts": 35,
-    "hotter_contracts": 1,
-    "net_cooling_events": 130,
-    "net_hotter_events": 1
+    "eligible_contracts": 49,
+    "cooled_contracts": 47,
+    "hotter_contracts": 2,
+    "net_cooling_events": 148,
+    "net_hotter_events": 3
   },
   "headline": "personal-token-send-guard cooled from 15 to 0 weekly hits; pressure-framing-guard is the hottest remaining governance gap.",
   "cooled": [
@@ -55,17 +55,6 @@
       "status": "cooled"
     },
     {
-      "contract": "state-assertion-grounding",
-      "total": 23,
-      "first_seen": "2026-09-01T22:50:16+00:00",
-      "last_seen": "2026-09-29T09:23:57+00:00",
-      "first_window_count": 11,
-      "recent_window_count": 3,
-      "delta": -8,
-      "pct_change": -72.7,
-      "status": "cooled"
-    },
-    {
       "contract": "dox-guard",
       "total": 14,
       "first_seen": "2026-09-08T13:08:57+00:00",
@@ -74,6 +63,28 @@
       "recent_window_count": 1,
       "delta": -8,
       "pct_change": -88.9,
+      "status": "cooled"
+    },
+    {
+      "contract": "state-assertion-grounding",
+      "total": 19,
+      "first_seen": "2026-09-02T21:11:41+00:00",
+      "last_seen": "2026-09-29T09:23:57+00:00",
+      "first_window_count": 8,
+      "recent_window_count": 2,
+      "delta": -6,
+      "pct_change": -75.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "factual-claim-verification",
+      "total": 15,
+      "first_seen": "2026-09-05T22:51:14+00:00",
+      "last_seen": "2026-09-27T22:59:58+00:00",
+      "first_window_count": 7,
+      "recent_window_count": 1,
+      "delta": -6,
+      "pct_change": -85.7,
       "status": "cooled"
     },
     {
@@ -110,17 +121,6 @@
       "status": "cooled"
     },
     {
-      "contract": "verification-vocabulary-gate",
-      "total": 6,
-      "first_seen": "2026-09-02T00:23:27+00:00",
-      "last_seen": "2026-09-03T01:58:14+00:00",
-      "first_window_count": 6,
-      "recent_window_count": 0,
-      "delta": -6,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
       "contract": "stale-state-assertion-guard",
       "total": 17,
       "first_seen": "2026-09-03T00:55:45+00:00",
@@ -132,14 +132,14 @@
       "status": "cooled"
     },
     {
-      "contract": "factual-claim-verification",
-      "total": 19,
-      "first_seen": "2026-09-01T12:24:02+00:00",
-      "last_seen": "2026-09-27T22:59:58+00:00",
+      "contract": "continuation-ambiguity-guard",
+      "total": 5,
+      "first_seen": "2026-09-18T00:47:58+00:00",
+      "last_seen": "2026-09-21T08:16:18+00:00",
       "first_window_count": 5,
-      "recent_window_count": 1,
-      "delta": -4,
-      "pct_change": -80.0,
+      "recent_window_count": 0,
+      "delta": -5,
+      "pct_change": -100.0,
       "status": "cooled"
     },
     {
@@ -157,9 +157,20 @@
   "hotter": [
     {
       "contract": "pressure-framing-guard",
-      "total": 8,
+      "total": 9,
       "first_seen": "2026-09-08T11:49:16+00:00",
-      "last_seen": "2026-10-01T11:47:31+00:00",
+      "last_seen": "2026-10-03T00:57:32+00:00",
+      "first_window_count": 1,
+      "recent_window_count": 3,
+      "delta": 2,
+      "pct_change": 200.0,
+      "status": "hotter"
+    },
+    {
+      "contract": "capitulation-flip-gate",
+      "total": 5,
+      "first_seen": "2026-09-16T11:40:13+00:00",
+      "last_seen": "2026-10-02T11:20:56+00:00",
       "first_window_count": 1,
       "recent_window_count": 2,
       "delta": 1,
@@ -202,17 +213,6 @@
       "status": "cooled"
     },
     {
-      "contract": "state-assertion-grounding",
-      "total": 23,
-      "first_seen": "2026-09-01T22:50:16+00:00",
-      "last_seen": "2026-09-29T09:23:57+00:00",
-      "first_window_count": 11,
-      "recent_window_count": 3,
-      "delta": -8,
-      "pct_change": -72.7,
-      "status": "cooled"
-    },
-    {
       "contract": "dox-guard",
       "total": 14,
       "first_seen": "2026-09-08T13:08:57+00:00",
@@ -221,6 +221,28 @@
       "recent_window_count": 1,
       "delta": -8,
       "pct_change": -88.9,
+      "status": "cooled"
+    },
+    {
+      "contract": "state-assertion-grounding",
+      "total": 19,
+      "first_seen": "2026-09-02T21:11:41+00:00",
+      "last_seen": "2026-09-29T09:23:57+00:00",
+      "first_window_count": 8,
+      "recent_window_count": 2,
+      "delta": -6,
+      "pct_change": -75.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "factual-claim-verification",
+      "total": 15,
+      "first_seen": "2026-09-05T22:51:14+00:00",
+      "last_seen": "2026-09-27T22:59:58+00:00",
+      "first_window_count": 7,
+      "recent_window_count": 1,
+      "delta": -6,
+      "pct_change": -85.7,
       "status": "cooled"
     },
     {
@@ -257,17 +279,6 @@
       "status": "cooled"
     },
     {
-      "contract": "verification-vocabulary-gate",
-      "total": 6,
-      "first_seen": "2026-09-02T00:23:27+00:00",
-      "last_seen": "2026-09-03T01:58:14+00:00",
-      "first_window_count": 6,
-      "recent_window_count": 0,
-      "delta": -6,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
       "contract": "stale-state-assertion-guard",
       "total": 17,
       "first_seen": "2026-09-03T00:55:45+00:00",
@@ -279,14 +290,14 @@
       "status": "cooled"
     },
     {
-      "contract": "factual-claim-verification",
-      "total": 19,
-      "first_seen": "2026-09-01T12:24:02+00:00",
-      "last_seen": "2026-09-27T22:59:58+00:00",
+      "contract": "continuation-ambiguity-guard",
+      "total": 5,
+      "first_seen": "2026-09-18T00:47:58+00:00",
+      "last_seen": "2026-09-21T08:16:18+00:00",
       "first_window_count": 5,
-      "recent_window_count": 1,
-      "delta": -4,
-      "pct_change": -80.0,
+      "recent_window_count": 0,
+      "delta": -5,
+      "pct_change": -100.0,
       "status": "cooled"
     },
     {
@@ -323,6 +334,17 @@
       "status": "cooled"
     },
     {
+      "contract": "verification-vocabulary-gate",
+      "total": 4,
+      "first_seen": "2026-09-02T11:08:12+00:00",
+      "last_seen": "2026-09-03T01:58:14+00:00",
+      "first_window_count": 4,
+      "recent_window_count": 0,
+      "delta": -4,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
       "contract": "unbuilt-guarantee-guard",
       "total": 6,
       "first_seen": "2026-09-07T12:33:32+00:00",
@@ -345,6 +367,17 @@
       "status": "cooled"
     },
     {
+      "contract": "verify-before-report",
+      "total": 3,
+      "first_seen": "2026-09-18T11:35:30+00:00",
+      "last_seen": "2026-09-19T13:06:23+00:00",
+      "first_window_count": 3,
+      "recent_window_count": 0,
+      "delta": -3,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
       "contract": "completion-artifact",
       "total": 6,
       "first_seen": "2026-09-05T03:31:31+00:00",
@@ -353,6 +386,17 @@
       "recent_window_count": 0,
       "delta": -2,
       "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "live-state-claim-guard",
+      "total": 4,
+      "first_seen": "2026-09-18T00:47:58+00:00",
+      "last_seen": "2026-09-28T10:29:50+00:00",
+      "first_window_count": 3,
+      "recent_window_count": 1,
+      "delta": -2,
+      "pct_change": -66.7,
       "status": "cooled"
     },
     {
@@ -400,6 +444,17 @@
       "status": "cooled"
     },
     {
+      "contract": "scope-denial-guard",
+      "total": 2,
+      "first_seen": "2026-09-18T02:37:05+00:00",
+      "last_seen": "2026-09-21T08:17:01+00:00",
+      "first_window_count": 2,
+      "recent_window_count": 0,
+      "delta": -2,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
       "contract": "third-party-outbound-authorization-gate",
       "total": 2,
       "first_seen": "2026-09-17T03:22:20+00:00",
@@ -433,6 +488,61 @@
       "status": "cooled"
     },
     {
+      "contract": "cl-don_t_just_blindly_take",
+      "total": 3,
+      "first_seen": "2026-09-18T22:36:47+00:00",
+      "last_seen": "2026-10-02T11:37:07+00:00",
+      "first_window_count": 2,
+      "recent_window_count": 1,
+      "delta": -1,
+      "pct_change": -50.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "cl-from_claude_where_i_majority",
+      "total": 3,
+      "first_seen": "2026-09-18T22:36:47+00:00",
+      "last_seen": "2026-10-02T11:37:07+00:00",
+      "first_window_count": 2,
+      "recent_window_count": 1,
+      "delta": -1,
+      "pct_change": -50.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "cl-if_title_seems_relevant_can",
+      "total": 3,
+      "first_seen": "2026-09-18T22:36:47+00:00",
+      "last_seen": "2026-10-02T11:37:07+00:00",
+      "first_window_count": 2,
+      "recent_window_count": 1,
+      "delta": -1,
+      "pct_change": -50.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "cl-stop_just_cold_including_stripe",
+      "total": 3,
+      "first_seen": "2026-09-18T22:36:47+00:00",
+      "last_seen": "2026-10-02T11:37:07+00:00",
+      "first_window_count": 2,
+      "recent_window_count": 1,
+      "delta": -1,
+      "pct_change": -50.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "cl-yeah_i_just_wanted_make",
+      "total": 3,
+      "first_seen": "2026-09-18T22:36:47+00:00",
+      "last_seen": "2026-10-02T11:37:07+00:00",
+      "first_window_count": 2,
+      "recent_window_count": 1,
+      "delta": -1,
+      "pct_change": -50.0,
+      "status": "cooled"
+    },
+    {
       "contract": "manual-handoff-guard",
       "total": 3,
       "first_seen": "2026-09-03T02:23:29+00:00",
@@ -455,6 +565,17 @@
       "status": "cooled"
     },
     {
+      "contract": "absence-claim-gate",
+      "total": 1,
+      "first_seen": "2026-09-18T02:37:05+00:00",
+      "last_seen": "2026-09-18T02:37:05+00:00",
+      "first_window_count": 1,
+      "recent_window_count": 0,
+      "delta": -1,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
       "contract": "autonomous-execution-claim-gate",
       "total": 1,
       "first_seen": "2026-09-12T07:54:32+00:00",
@@ -466,10 +587,32 @@
       "status": "cooled"
     },
     {
+      "contract": "bitwarden-claim-verification-guard",
+      "total": 1,
+      "first_seen": "2026-09-18T02:52:34+00:00",
+      "last_seen": "2026-09-18T02:52:34+00:00",
+      "first_window_count": 1,
+      "recent_window_count": 0,
+      "delta": -1,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
       "contract": "capability-activation-live-user-receipt-gate",
       "total": 1,
       "first_seen": "2026-09-08T11:44:21+00:00",
       "last_seen": "2026-09-08T11:44:21+00:00",
+      "first_window_count": 1,
+      "recent_window_count": 0,
+      "delta": -1,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "cl-ugh_that_s_what_i",
+      "total": 1,
+      "first_seen": "2026-09-18T22:36:47+00:00",
+      "last_seen": "2026-09-18T22:36:47+00:00",
       "first_window_count": 1,
       "recent_window_count": 0,
       "delta": -1,
@@ -555,24 +698,24 @@
     },
     {
       "contract": "capitulation-flip-gate",
-      "total": 4,
+      "total": 5,
       "first_seen": "2026-09-16T11:40:13+00:00",
-      "last_seen": "2026-09-27T14:25:45+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 1,
-      "delta": 0,
-      "pct_change": 0.0,
-      "status": "flat"
-    },
-    {
-      "contract": "pressure-framing-guard",
-      "total": 8,
-      "first_seen": "2026-09-08T11:49:16+00:00",
-      "last_seen": "2026-10-01T11:47:31+00:00",
+      "last_seen": "2026-10-02T11:20:56+00:00",
       "first_window_count": 1,
       "recent_window_count": 2,
       "delta": 1,
       "pct_change": 100.0,
+      "status": "hotter"
+    },
+    {
+      "contract": "pressure-framing-guard",
+      "total": 9,
+      "first_seen": "2026-09-08T11:49:16+00:00",
+      "last_seen": "2026-10-03T00:57:32+00:00",
+      "first_window_count": 1,
+      "recent_window_count": 3,
+      "delta": 2,
+      "pct_change": 200.0,
       "status": "hotter"
     }
   ]
