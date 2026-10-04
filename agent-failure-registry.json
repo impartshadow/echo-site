@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/dl-can-report-a-mount-that-devpod-silently-dropped-6650eeafe3.html",
+      "evidence": "Across eight measured compose workspaces, seven up runs requesting the same mount produced two successful binds and five silent drops, and deleting the cached override files before rerunning fixed all five.",
+      "expected_boundary": "A success notice about container state should only be emitted after verifying that state against the live container, not before the operation that produces it has completed.",
+      "id": "SFA-2026-6650EEAFE3",
+      "observed_action": "dl prints a mount-success notice based on the --mount argv it sends to devpod, before devpod up has run and before the resulting container is inspected.",
+      "published_at": "2026-10-04T06:30:59.918879+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 651,
+        "repo": "blooop/devlaunch",
+        "url": "https://github.com/blooop/devlaunch/issues/651"
+      },
+      "status": "retired",
+      "summary": "dl can report a --mount that devpod silently dropped",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/in-memory-runtime-runs-left-running-by-a-dead-proces-b58d81b161.html",
       "evidence": "Production observation of RSS climbing 1.87G to 7.2G with n_running=9 and active=0 available=4 max=4 within five minutes of a fresh process start, each of the nine being an orphaned run from an earlier kill.",
       "expected_boundary": "On startup, the runtime should reconcile any run left in a non-terminal 'running' state by a prior process instance before accepting new work on that thread, matching the Postgres runtime's rollback behavior.",
@@ -4239,14 +4265,14 @@
       }
     }
   ],
-  "count": 163,
+  "count": 164,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-03T14:12:47.395944+00:00",
+    "checked_at": "2026-10-04T06:30:59.951942+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
