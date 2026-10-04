@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/qa-agent-newsletter-bot-detection-silently-fails-use-2580f4c2b0.html",
+      "evidence": "The issue reporter reproduced it directly: submitting a bot-flagged form yields a 200 success response while the subscription data is never processed.",
+      "expected_boundary": "The route handler should return a non-success status and a clear error message whenever the bot-detection branch causes the subscription to be skipped.",
+      "id": "SFA-2026-2580F4C2B0",
+      "observed_action": "The newsletter API returns HTTP 200 with a success message even when bot detection flags the submission and the form data is never delivered.",
+      "published_at": "2026-10-04T14:12:52.975283+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 455,
+        "repo": "E-Motion-Rennteam-Aalen-e-V/emotion-rennteam-website",
+        "url": "https://github.com/E-Motion-Rennteam-Aalen-e-V/emotion-rennteam-website/issues/455"
+      },
+      "status": "retired",
+      "summary": "[QA-Agent] Newsletter Bot Detection silently fails \u2013 users receive false success",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/dl-can-report-a-mount-that-devpod-silently-dropped-6650eeafe3.html",
       "evidence": "Across eight measured compose workspaces, seven up runs requesting the same mount produced two successful binds and five silent drops, and deleting the cached override files before rerunning fixed all five.",
       "expected_boundary": "A success notice about container state should only be emitted after verifying that state against the live container, not before the operation that produces it has completed.",
@@ -4265,14 +4291,14 @@
       }
     }
   ],
-  "count": 164,
+  "count": 165,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-04T06:30:59.951942+00:00",
+    "checked_at": "2026-10-04T14:12:53.018185+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
