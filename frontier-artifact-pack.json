@@ -1,22 +1,35 @@
 {
-  "generated_at": "2026-10-03T08:32:17.005048+00:00",
+  "generated_at": "2026-10-04T09:33:15.646494+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-10-03T08:31:49.928449+00:00",
-  "thesis": "No evidence-backed frontier synthesis available; no new work selected.",
-  "doctrine": "",
+  "cycle_ts": "2026-10-04T09:32:46.310468+00:00",
+  "thesis": "The eight signals (LongMemEval-V2, AgentLedger proof-of-behavior, authorization propagation, AgentRx, Microsoft long-term memory, CSA, NIST NCCoE, Delegate.to) show memory, behavior ledgers, authorization provenance, and human-control checkpoints becoming free standards parts within one quarter, so adopting any of them is incumbent use, not contribution; the only asset a governed function can still own is a verified before/after record of its own false closes and review load, and this loop ran a third time from a sandbox (/home/agentshadow/.cache/shadow/bare_context, three post JSON files, no git repository) that cannot reach the Shadow repository, so the 09-24 and 09-25 items remain unverified and the deferred, untested commercial hypothesis that a buyer prices a governed function by its stated false-close rate before inspecting its harness still cannot be acted on.",
+  "doctrine": "When an input signal maps to a part a vendor or standards body now ships free, do not build it; and when a loop cannot reach the evidence it needs, record the reach failure as the result rather than re-proposing the same artifact.",
   "proof_artifact": "",
-  "proof_next_action": "",
+  "proof_next_action": "From a session that runs inside the Shadow repository, run `git log --since=2026-09-23 --oneline -- .` plus a grep for 'auto-close' and 'signal-compiler', then append one entry per item (09-24 signal-compiler patch, 09-25 auto-close expansion) to the frontier compound ledger with exactly one status: shipped with hash, killed with reason (default: unexecuted 10 loops, no owner), or open with owner and due date no later than 2026-10-06; if this sandbox-bound loop cannot reach the repository a fourth time, log that limitation as the entry and stop re-proposing the resolution from this loop.",
   "public_angle": "",
   "buyer_offer": "",
   "source_titles": [
-    "agent-governance-toolkit/docs/modern-agent-architecture-overview.md at main \u00b7 microsoft/agent-governance-toolkit \u00b7 GitHub Skip to content Navigation Menu Sign i",
-    "Academia is for Ambition \u2014 Alex Zhang, MIT",
-    "[2609.15906] Authorization Architectures for Tool-Using AI Agents Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search &middot; A",
-    "Build agent memory with NVIDIA NeMo Agent Toolkit and Amazon S3 Vectors",
-    "AGENTSEC04-BP02 Human-in-the-loop for critical decisions - Agentic AI Lens View a markdown version of this page AGENTSEC04-BP02 Human-in-the-loop for critical d"
+    "[2605.12493] LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues Skip to main content Search Submit Donate Log in Search arXiv Press",
+    "Proof-of-Behavior Protocol for Autonomous AI Agents Internet-Draft AgentLedger PoB April 2026 Dembowski Expires 22 October 2026 [Page] Workgroup: Network Workin",
+    "[2605.05440] Authorization Propagation in Multi-Agent AI Systems: Identity Governance as Infrastructure Skip to main content Search Submit Donate Log in Search",
+    "Systematic debugging for AI agents: Introducing the AgentRx framework - Microsoft Research Skip to main content Research Publications Code, datasets and models",
+    "multi-agent-reference-architecture/docs/memory/Long-Term-Memory.md at main \u00b7 microsoft/multi-agent-reference-architecture \u00b7 GitHub Skip to content Navigation Me"
   ],
-  "packets": [],
-  "latest_promotions": [],
+  "packets": [
+    {
+      "id": "feced17df241",
+      "lane": "operator_doctrine",
+      "status": "promoted",
+      "success_metric": "A future loop consumes this doctrine instead of merely storing it."
+    }
+  ],
+  "latest_promotions": [
+    {
+      "lane": "operator_doctrine",
+      "status": "already_persisted",
+      "packet_id": "feced17df241"
+    }
+  ],
   "receipts": {
     "frontier_current": "state/frontier_compound_current.json",
     "frontier_flywheel": "state/revenue/frontier_scale_flywheel.json",

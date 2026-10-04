@@ -1,6 +1,6 @@
 # Violation Decay Case Study
 
-Generated: 2026-10-03T08:33:21.975940+00:00
+Generated: 2026-10-04T09:34:25.082722+00:00
 
 ## Claim
 personal-token-send-guard cooled from 15 to 0 weekly hits; pressure-framing-guard is the hottest remaining governance gap.
@@ -9,11 +9,11 @@ This is not a generic benchmark. It is a trend read over Shadow's production
 contract-violation log: `state/contract_violations.jsonl`.
 
 ## Totals
-- Violations logged: 270
-- Distinct contracts in log: 64
+- Violations logged: 252
+- Distinct contracts in log: 61
 - Distinct failure modes: 22
-- Eligible contracts: 49
-- Cooled contracts: 47
+- Eligible contracts: 46
+- Cooled contracts: 44
 - Hotter contracts: 2
 
 ## Cooled Guardrails
@@ -21,16 +21,16 @@ contract-violation log: `state/contract_violations.jsonl`.
 |---|---:|---:|---:|---:|---:|
 | `personal-token-send-guard` | 15 | 15 | 0 | -15 | -100.0% |
 | `raw-gmail-send-guard` | 12 | 12 | 0 | -12 | -100.0% |
-| `privacy-exposure-taxonomy` | 15 | 11 | 0 | -11 | -100.0% |
 | `dox-guard` | 14 | 9 | 1 | -8 | -88.9% |
-| `state-assertion-grounding` | 19 | 8 | 2 | -6 | -75.0% |
 | `factual-claim-verification` | 15 | 7 | 1 | -6 | -85.7% |
 | `terminal-state-evidence-gate` | 11 | 6 | 0 | -6 | -100.0% |
 | `thin-context-brief-gate` | 8 | 6 | 0 | -6 | -100.0% |
-| `cleanup-claim-mechanism-gate` | 7 | 6 | 0 | -6 | -100.0% |
-| `stale-state-assertion-guard` | 17 | 6 | 1 | -5 | -83.3% |
+| `state-assertion-grounding` | 18 | 7 | 2 | -5 | -71.4% |
+| `stale-state-assertion-guard` | 15 | 6 | 1 | -5 | -83.3% |
+| `cleanup-claim-mechanism-gate` | 8 | 6 | 1 | -5 | -83.3% |
 | `continuation-ambiguity-guard` | 5 | 5 | 0 | -5 | -100.0% |
 | `vendor-availability-external-fetch-required` | 8 | 5 | 1 | -4 | -80.0% |
+| `ownership-ask-execution-gate` | 4 | 4 | 0 | -4 | -100.0% |
 
 ## Remaining Hot Spots
 | Contract | Total | First 7d | Recent 7d | Delta | Change |
