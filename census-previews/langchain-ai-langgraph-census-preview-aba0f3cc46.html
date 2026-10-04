@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Failure census preview — langchain-ai/langgraph</title>
+<style>
+body{font-family:Georgia,serif;max-width:44rem;margin:2rem auto;padding:0 1rem;color:#1a1a1a;line-height:1.55}
+h1{font-size:1.5rem} h2{font-size:1.15rem;margin-bottom:.2rem}
+.meta{color:#666;font-size:.9rem} .evidence{color:#444;font-size:.95rem}
+section{border-top:1px solid #ddd;padding-top:.8rem;margin-top:1rem}
+.offer{background:#f6f4ef;border:1px solid #ddd;padding:1rem;margin-top:2rem}
+</style></head><body>
+<h1>Failure census preview — langchain-ai/langgraph</h1>
+<p class="meta">Generated 2026-10-04 from 7 public issues.
+This is page one of a failure census: the dominant agent-failure classes in this
+project's own tracker, each with the deterministic check that would catch it.</p>
+<p>The highest-severity cluster is silent state loss under concurrency or failure: parent-graph Command fan-outs and crash-time run state both get dropped or corrupted without any error surfaced to the caller. A second cluster covers data-integrity edges in the Command/error primitives themselves (unpicklable state, exception identity) that only appear under specific serialization or resume paths. The remaining cluster is lower-severity documentation and test-harness gaps where configuration is accepted but silently ignored or inflexible rather than validated.</p>
+<section><h2>parent-graph-command-handling</h2><p>When tools return Command objects targeting the parent graph, especially with fan-out via Send, the runner silently drops one tool&#x27;s update/goto instead of merging or erroring, and which one survives is nondeterministic.</p><p class="evidence">Evidence: &ldquo;are dropped without an error, and which one survives changes from run to run.&rdquo; — <a href="https://github.com/langchain-ai/langgraph/issues/9072">#9072</a></p><p><strong>The deterministic check:</strong> Assert that the number of ParentCommand updates emitted by the Pregel runner for a single supersteps equals the number of sibling tool calls that returned Command(graph=PARENT, ...); fail loudly if any are discarded instead of merged.</p></section>
+<section><h2>command-serialization-safety</h2><p>Command objects can carry live resources like locks or connections in their update field, and calling repr/print on them crashes or forces an expensive deepcopy instead of failing gracefully.</p><p class="evidence">Evidence: &ldquo;In stateful workflows, node updates or resume values may hold resources&rdquo; — <a href="https://github.com/langchain-ai/langgraph/issues/9175">#9175</a></p><p><strong>The deterministic check:</strong> Unit test that Command.__repr__ on a state dict containing an unpicklable object (e.g. threading.Lock) returns a bounded, non-crashing string without invoking asdict()/deepcopy on the full object graph.</p></section>
+<section><h2>error-identity-loss-on-resume</h2><p>After a node raises and the graph is resumed, the original exception type/instance passed to the error handler and surfaced via get_state() gets degraded into a plain string, losing type information needed for recovery logic.</p><p class="evidence">Evidence: &ldquo;get a str instead of the exception after resume&rdquo; — <a href="https://github.com/langchain-ai/langgraph/issues/9085">#9085</a></p><p><strong>The deterministic check:</strong> Regression test asserting isinstance(error.error, ValueError) still holds (not a str) when the error handler is invoked after a checkpointed resume, matching behavior on first run.</p></section>
+<section><h2>runtime-state-leak-on-restart</h2><p>The in-memory runtime never resets runs that were left &#x27;running&#x27; by a killed process and never implements the TTL sweep, so restarts accumulate permanently wedged threads and unbounded memory until the process is OOM-killed.</p><p class="evidence">Evidence: &ldquo;by a dead process survive restart and permanently wedge their thread&rdquo; — <a href="https://github.com/langchain-ai/langgraph/issues/9078">#9078</a></p><p><strong>The deterministic check:</strong> Startup integration test: kill the process mid-run, restart, and assert the run&#x27;s status is reconciled away from &#x27;running&#x27; and that Threads.sweep_ttl actually deletes entries older than checkpointer.ttl.</p></section>
+<section><h2>docs-and-test-config-gaps</h2><p>Documentation and test suites don&#x27;t account for real-world deployment variance — model-provider string resolution for OpenAI-compatible gateways, config keys that are silently ignored outside their expected scope, and hardcoded localhost assumptions in checkpoint tests.</p><p class="evidence">Evidence: &ldquo;passes `max_concurrency` inside `configurable`, where it is silently ignored&rdquo; — <a href="https://github.com/langchain-ai/langgraph/issues/8957">#8957</a> <a href="https://github.com/langchain-ai/langgraph/issues/8920">#8920</a> <a href="https://github.com/langchain-ai/langgraph/issues/9050">#9050</a></p><p><strong>The deterministic check:</strong> Add a config-schema validation step that raises on unrecognized keys inside `configurable` (e.g. max_concurrency) instead of silently ignoring them, and parameterize Redis test fixtures on REDIS_HOST/REDIS_PORT env vars instead of hardcoding localhost.</p></section>
+<div class="offer">
+<p><strong>This preview used only public issues.</strong> The full failure census
+runs the same classification over seven days of your private agent logs and
+traces — every failure classified, frequency-ranked, with the deterministic
+check per class. $400, one-week turnaround.
+Email <a href="mailto:impartshadow@gmail.com">impartshadow@gmail.com</a> with subject &ldquo;census&rdquo;.</p>
+<p class="meta">Free tier: I triage one public agent failure every day —
+<a href="https://impartshadow.github.io/echo-site/failure-cases/">the case log</a>.</p>
+</div>
+</body></html>
