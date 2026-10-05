@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/beads-mcp-update-silently-ignores-labels-and-reports-b246d1ffb5.html",
+      "evidence": "The issue reproduction shows notes stored but labels null after a call with labels=[\"x\"], and get_tool_info(\"update\") omits notes/design/acceptance_criteria/external_ref fields that the implementation actually accepts.",
+      "expected_boundary": "Unknown or unsupported parameters passed to update() should cause a hard rejection at the MCP deserialization boundary instead of being silently discarded with a success response.",
+      "id": "SFA-2026-B246D1FFB5",
+      "observed_action": "update() accepted a labels parameter, silently dropped it since UpdateIssueParams has no labels field, and still returned {\"action\": \"updated\"} as if the change succeeded.",
+      "published_at": "2026-10-05T14:13:00.802497+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 6873,
+        "repo": "gastownhall/beads",
+        "url": "https://github.com/gastownhall/beads/issues/6873"
+      },
+      "status": "retired",
+      "summary": "beads-mcp: `update` silently ignores `labels`, and reports success",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/pane-move-reports-success-and-kills-the-codex-agent-4d62a0e2c9.html",
       "evidence": "After the move, `herdr pane list` shows the pane present with agent=none while `herdr agent list` omits the agent entirely instead of marking it dead.",
       "expected_boundary": "The move operation should preserve or explicitly report termination of any agent bound to the pane being moved, not report success while agent_count_for_pane changes on an invalidated key.",
@@ -4343,14 +4369,14 @@
       }
     }
   ],
-  "count": 167,
+  "count": 168,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-05T06:33:03.787121+00:00",
+    "checked_at": "2026-10-05T14:13:00.836843+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
