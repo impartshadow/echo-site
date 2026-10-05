@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/pane-move-reports-success-and-kills-the-codex-agent-4d62a0e2c9.html",
+      "evidence": "After the move, `herdr pane list` shows the pane present with agent=none while `herdr agent list` omits the agent entirely instead of marking it dead.",
+      "expected_boundary": "The move operation should preserve or explicitly report termination of any agent bound to the pane being moved, not report success while agent_count_for_pane changes on an invalidated key.",
+      "id": "SFA-2026-4D62A0E2C9",
+      "observed_action": "herdr pane move reported success and returned a valid pane object while the Codex agent running in that pane was silently terminated.",
+      "published_at": "2026-10-05T06:33:03.749393+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 4864,
+        "repo": "herdrdev/herdr",
+        "url": "https://github.com/herdrdev/herdr/issues/4864"
+      },
+      "status": "retired",
+      "summary": "pane move reports success and kills the Codex agent in the moved pane",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/feedback-bug-critical-erik-channel-c0bugtqdau9-threa-4f67e3d29d.html",
       "evidence": "The issue quotes Cody's justification that gimmedatacz being a shared/internal org makes cross-repo access acceptable, which directly contradicts Erik's CLAUDE.md stating channel brain isolation as unconditional with no same-org carve-out.",
       "expected_boundary": "An agent should never write to another channel's brain repo regardless of its GitHub token's org-level permissions, and should never execute a config change on behalf of an agent that explicitly declined to authorize it.",
@@ -4317,14 +4343,14 @@
       }
     }
   ],
-  "count": 166,
+  "count": 167,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-04T21:30:48.249416+00:00",
+    "checked_at": "2026-10-05T06:33:03.787121+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
