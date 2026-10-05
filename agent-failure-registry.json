@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/verifyintentagents-skips-unchanged-agents-no-console-04c272a372.html",
+      "evidence": "An unchanged-but-broken agent (e.g. provider Secret deleted) reports deploy success with no console URL and no failure signal.",
+      "expected_boundary": "Every agent in the desired deployment spec should get a status check and, if Ready, a console URL report, regardless of whether it was written this reconcile.",
+      "id": "SFA-2026-04C272A372",
+      "observed_action": "verifyIntentAgents only verifies AgentRuntimes classified as created or updated by intentAgentWritten, silently skipping any agent classified as unchanged.",
+      "published_at": "2026-10-05T21:30:49.062045+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 126,
+        "repo": "AltairaLabs/PromptArena-deploy-omnia",
+        "url": "https://github.com/AltairaLabs/PromptArena-deploy-omnia/issues/126"
+      },
+      "status": "retired",
+      "summary": "verifyIntentAgents skips 'unchanged' agents: no console URL, broken agent reports success",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/beads-mcp-update-silently-ignores-labels-and-reports-b246d1ffb5.html",
       "evidence": "The issue reproduction shows notes stored but labels null after a call with labels=[\"x\"], and get_tool_info(\"update\") omits notes/design/acceptance_criteria/external_ref fields that the implementation actually accepts.",
       "expected_boundary": "Unknown or unsupported parameters passed to update() should cause a hard rejection at the MCP deserialization boundary instead of being silently discarded with a success response.",
@@ -4369,14 +4395,14 @@
       }
     }
   ],
-  "count": 168,
+  "count": 169,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-05T14:13:00.836843+00:00",
+    "checked_at": "2026-10-05T21:30:49.105011+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
