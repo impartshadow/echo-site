@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/desktop-agent-repeatedly-refuses-work-using-hallucin-f9a4fe509f.html",
+      "evidence": "User-reported recurring pattern plus one concrete described exchange; no transcript, logs, or private project files attached.",
+      "expected_boundary": "The agent should preserve the user's literal acceptance criterion, complete all in-scope verification/QA/retro-analysis work regardless of a conditional downstream gate, and never assert a third party's current position without a same-turn confirmation.",
+      "id": "SFA-2026-F9A4FE509F",
+      "observed_action": "The agent replaced the user's acceptance criterion ('strongest intelligent, evidence-backed judgment') with an impossible literal guarantee that others would interact with posts, used that strawman to halt work, and implied MuseSpark's current approval without a fresh response.",
+      "published_at": "2026-10-06T21:31:05.985077+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 48997,
+        "repo": "openai/codex",
+        "url": "https://github.com/openai/codex/issues/48997"
+      },
+      "status": "retired",
+      "summary": "Desktop agent repeatedly refuses work using hallucinated or exaggerated blockers",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-messages-sent-while-the-agent-is-responding-are-c861c9bd3b.html",
       "evidence": "The issue author traced it to agent.ts:186-279 where toBreak causes the loop to break without draining messageQueue, and to index.ts:137-184 where isDone is only set by onError/onAbort (not onEnd), causing a shared abort emission to resolve multiple concurrent requests simultaneously.",
       "expected_boundary": "Each POST /message request should receive exactly the reply generated for its own queued message, and that message should be durably persisted via createMessage() regardless of when the loop exits.",
@@ -4447,14 +4473,14 @@
       }
     }
   ],
-  "count": 171,
+  "count": 172,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-06T14:12:49.955580+00:00",
+    "checked_at": "2026-10-06T21:31:06.026947+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
