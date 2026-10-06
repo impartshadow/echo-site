@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/fix-core-agent-prompt-silently-ignores-memory-capsul-41c3d440ef.html",
+      "evidence": "the issue author read the source directly and quotes the match arm pattern `_ => String::new()` as the mechanism that silently swallows compilation errors.",
+      "expected_boundary": "the memory-compilation call site should distinguish a legitimately empty capsule from a compilation failure and surface the failure via logging or an event before falling back.",
+      "id": "SFA-2026-41C3D440EF",
+      "observed_action": "agent_prompt catches MemoryStore::compile_capsule and MemoryScope compilation errors with a `_ => String::new()` match arm that discards the error.",
+      "published_at": "2026-10-06T06:30:59.843743+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 4415,
+        "repo": "Growth-Circle/cadis",
+        "url": "https://github.com/Growth-Circle/cadis/issues/4415"
+      },
+      "status": "retired",
+      "summary": "fix(core): agent_prompt silently ignores memory capsule compilation errors",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/verifyintentagents-skips-unchanged-agents-no-console-04c272a372.html",
       "evidence": "An unchanged-but-broken agent (e.g. provider Secret deleted) reports deploy success with no console URL and no failure signal.",
       "expected_boundary": "Every agent in the desired deployment spec should get a status check and, if Ready, a console URL report, regardless of whether it was written this reconcile.",
@@ -4395,14 +4421,14 @@
       }
     }
   ],
-  "count": 169,
+  "count": 170,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-05T21:30:49.105011+00:00",
+    "checked_at": "2026-10-06T06:30:59.881475+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
