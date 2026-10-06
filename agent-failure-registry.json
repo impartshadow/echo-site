@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-messages-sent-while-the-agent-is-responding-are-c861c9bd3b.html",
+      "evidence": "The issue author traced it to agent.ts:186-279 where toBreak causes the loop to break without draining messageQueue, and to index.ts:137-184 where isDone is only set by onError/onAbort (not onEnd), causing a shared abort emission to resolve multiple concurrent requests simultaneously.",
+      "expected_boundary": "Each POST /message request should receive exactly the reply generated for its own queued message, and that message should be durably persisted via createMessage() regardless of when the loop exits.",
+      "id": "SFA-2026-C861C9BD3B",
+      "observed_action": "A message sent to BabyPandaAgent while it is mid-turn is rendered locally but never answered or persisted, and only surfaces later under the wrong subsequent request's reply.",
+      "published_at": "2026-10-06T14:12:49.925498+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 26,
+        "repo": "ArmaanAmoli/BabyPanda",
+        "url": "https://github.com/ArmaanAmoli/BabyPanda/issues/26"
+      },
+      "status": "retired",
+      "summary": "Bug: messages sent while the agent is responding are silently dropped",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/fix-core-agent-prompt-silently-ignores-memory-capsul-41c3d440ef.html",
       "evidence": "the issue author read the source directly and quotes the match arm pattern `_ => String::new()` as the mechanism that silently swallows compilation errors.",
       "expected_boundary": "the memory-compilation call site should distinguish a legitimately empty capsule from a compilation failure and surface the failure via logging or an event before falling back.",
@@ -4421,14 +4447,14 @@
       }
     }
   ],
-  "count": 170,
+  "count": 171,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-06T06:30:59.881475+00:00",
+    "checked_at": "2026-10-06T14:12:49.955580+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
