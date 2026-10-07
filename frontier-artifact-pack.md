@@ -1,17 +1,17 @@
 # Frontier Artifact Pack
 
-Generated: 2026-10-06T09:05:16.939517+00:00
+Generated: 2026-10-07T08:47:21.212669+00:00
 
 ## Thesis
-Closed-loop evaluation, comparative value estimation, self-audited harness evals, Bedrock AgentCore scoring, Microsoft's runbook limitations, and the harness-engineering demo all confirm agent evaluation and operator runtimes are free incumbent parts this quarter, so no verifier, gate, allocator wiring, or ledger field from these eight signals yields a return; the only non-commodity asset remains Shadow's own verified before/after record of false closes and review load, and the decision-changing learning from this run is that the frontier compound loop has now executed five consecutive times from a sandbox with no git repository, meaning its output cannot change any decision until the loop itself is repaired; the deferred, untested commercial hypothesis that a buyer prices a governed function by its stated false-close rate before inspecting its harness stays unactionable.
+All eight signals arrived with an identical machine-written summary and the same pattern tag, which means Shadow's research intake is no longer reading sources but sorting everything into one bucket, so the incumbent tide (IETF NHE architecture, AgentCore multi-agent scoring, proxy-confidence auditing, 109-incident security dataset) makes operator runtimes and agent evaluation free parts this quarter while the only non-commodity asset remains Shadow's own verified before/after record of false closes and review load; this loop has now run a sixth consecutive time inside /home/agentshadow/.cache/shadow/bare_context, a sandbox holding three post JSON files with no git repository and filesystem access restricted to that directory, so nothing it outputs can touch the allocator, authority sweep, or ledger, and the deferred, untested commercial hypothesis that a buyer prices a governed function by its stated false-close rate before inspecting its harness stays unactionable until the loop is re-pointed at the repository.
 
 ## Doctrine
-A research loop that cannot read or write the live ledger is observation only; its first job is to report its own blindness and route repair to the loop owner, not to re-synthesize signals into proposals nobody can verify.
+A loop whose output cannot reach the decision it is meant to change must report its own disconnection as the finding and stop producing recommendations until the path is verified, because repeated synthesis from a dead sandbox is activity that looks like learning and counts as neither.
 
 ## Proof Artifact
 
 
-Next action: The owner of the frontier_compound_loop scheduler changes the loop's working directory from the bare_context sandbox to a Shadow repository checkout, then re-runs the loop once and confirms it can run git log; until that confirmation, no further research synthesis from this loop is recorded as a bet.
+Next action: 
 
 ## Public Angle
 
@@ -20,17 +20,17 @@ Next action: The owner of the frontier_compound_loop scheduler changes the loop'
 
 
 ## Source Signals
-- Finding the Move Is Not Winning the Game: XiangqiBench for Closed-Loop Evaluation of LLM Agents
-- derailed-dash/harness-engineering-demo — Interactive workbench comparing unharnessed vibe coding vs autonomous harnessed agent loops using Go
-- Feedback Loop · Agentic Design Patterns Introduction Preface How to read this book Task Setting Four Phases Agent-Led Interview Grilling Design It Twice Tracer-
+- Welcome to October 5, 2026
+- mars2021y-gif/autonomous-ai-agent-security-incidents-2026 — Autonomous AI Agent Security Incidents of 2026: Benchmark dataset (109 incidents), falsification mat
 - Evaluating multi-agent systems for explainability and helpfulness with Amazon Bedrock AgentCore
-- Choosing Before Acting: Comparative Value Estimation for Long-Horizon Tool-Use Agents
+- Proxy Confidence: Auditing Black-Box LLM Agents with a Surrogate's Log-Probabilities
+- EMPIRICAL COMPARISON OF AGENT COMMUNICATION PROTOCOLS FOR TASK ORCHESTRATION | Radio Electronics, Computer Science, Control Skip to main content Skip to main na
 
 ## Scale Packets
-- operator_doctrine: promoted (14a13648e19f)
+- operator_doctrine: promoted (68cd06521d45)
 
 ## Latest Promotions
-- operator_doctrine: already_persisted (14a13648e19f)
+- operator_doctrine: already_persisted (68cd06521d45)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

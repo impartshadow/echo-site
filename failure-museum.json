@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-10-06T04:07:03-05:00",
+  "generated_at_ct": "2026-10-07T03:50:06-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 262,
-  "distinct_contracts": 62,
+  "total_violations": 260,
+  "distinct_contracts": 63,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -63,13 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-09-05": {
-      "stale-state-assertion-guard": 2,
-      "privacy-exposure-taxonomy": 1,
-      "factual-claim-verification": 1,
-      "terminal-state-evidence-gate": 1,
-      "numeric-parameter-assertion-guard": 1
-    },
     "2026-09-06": {
       "privacy-exposure-taxonomy": 1,
       "terminal-state-evidence-gate": 2,
@@ -289,6 +282,12 @@
       "numeric-parameter-assertion-guard": 1,
       "stale-state-assertion-guard": 1,
       "cleanup-claim-mechanism-gate": 1,
+      "deferred-first-step-gate": 1
+    },
+    "2026-10-06": {
+      "capitulation-flip-gate": 1,
+      "self-diagnosis-execution-gate": 1,
+      "verify-before-report": 1,
       "deferred-first-step-gate": 1
     }
   },

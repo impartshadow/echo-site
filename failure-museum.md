@@ -1,10 +1,10 @@
 # Agent Failure Museum
 
-Generated: 2026-10-06T04:07:03-05:00 CT
+Generated: 2026-10-07T03:50:06-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 262 claim-boundary violations across 62 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 260 claim-boundary violations across 63 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
