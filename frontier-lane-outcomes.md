@@ -1,6 +1,6 @@
 # Frontier Lane Outcomes
 
-Generated: 2026-10-06T09:05:16.982234+00:00 · window: 7 days
+Generated: 2026-10-07T08:47:21.325474+00:00 · window: 7 days
 
 Lane priority follows external evidence, not internal opinion. A lane with zero external replies, subscribers, or buyer conversations in the window is downranked automatically — in public.
 
