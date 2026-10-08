@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/chatcompletioncache-omits-tool-choice-from-the-cache-196e2ed072.html",
+      "evidence": "The reproduction shows three distinct tool_choice values ('required', 'none', and a forced Tool) all returning the cached answer for 'required' with the underlying client called only once instead of three times, and zero warnings were captured despite the module already using the warnings mechanism elsewhere.",
+      "expected_boundary": "The cache key must incorporate every parameter that create()/create_stream() forward to the underlying client and that can change the model's response, including tool_choice in all three of its forms (Tool, 'auto'/'required'/'none').",
+      "id": "SFA-2026-196E2ED072",
+      "observed_action": "ChatCompletionCache._check_cache builds its cache key from messages, tools, json_output, and extra_create_args while silently omitting the tool_choice parameter that create() and create_stream() both accept and forward to the underlying client.",
+      "published_at": "2026-10-08T21:30:51.251590+00:00",
+      "source": {
+        "author": "vasilisnasopoulos",
+        "channel": "unsolicited_triage",
+        "issue_number": 8211,
+        "repo": "microsoft/autogen",
+        "url": "https://github.com/microsoft/autogen/issues/8211"
+      },
+      "status": "retired",
+      "summary": "ChatCompletionCache omits tool_choice from the cache key, so 'must call a tool' and 'must not' share one entry",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/cookies-set-silently-ignores-http-only-and-same-site-a58cf233f8.html",
       "evidence": "The reporter demonstrated that identical cookie-set commands produce different httpOnly/sameSite results depending solely on whether camelCase or kebab-case flag spelling was used, confirmed via cookies --json.",
       "expected_boundary": "The CLI's argument parser should reject any unrecognized or unconsumed flag token with a non-zero exit instead of advancing past it silently.",
@@ -4499,14 +4525,14 @@
       }
     }
   ],
-  "count": 173,
+  "count": 174,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-08T06:31:02.618239+00:00",
+    "checked_at": "2026-10-08T21:30:51.300030+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
