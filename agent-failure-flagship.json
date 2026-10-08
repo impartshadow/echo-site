@@ -1,9 +1,9 @@
 {
   "title": "Your Agent Has Lied To You About Finishing A Task",
-  "generated_at_ct": "2026-10-07T03:50:06-05:00",
+  "generated_at_ct": "2026-10-08T04:13:26-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 260,
-  "distinct_contracts": 63,
+  "total_violations": 254,
+  "distinct_contracts": 62,
   "focus_contracts": [
     {
       "contract": "completion-artifact",
@@ -21,8 +21,8 @@
     },
     {
       "contract": "state-assertion-grounding",
-      "total": 15,
-      "first_7d": 4,
+      "total": 14,
+      "first_7d": 3,
       "last_7d": 0,
       "change": "-100%"
     },

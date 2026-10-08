@@ -1,27 +1,14 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-10-07T03:50:06-05:00",
+  "generated_at_ct": "2026-10-08T04:13:26-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 260,
-  "distinct_contracts": 63,
+  "total_violations": 254,
+  "distinct_contracts": 62,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
   "position": "A public museum of claim-boundary failures: every card maps an unsupported agent claim to the receipt a runtime contract should demand.",
   "cases": [
-    {
-      "contract": "state-assertion-grounding",
-      "failure_mode": "FM-014",
-      "severity_seen": "warn",
-      "count": 15,
-      "latest_seen_ct": "2026-09-29T04:23:57-05:00",
-      "example_violation": "Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
-      "title": "The Agent Answered From Memory When The Question Required A Live Read",
-      "buyer_failure": "An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.",
-      "missing_receipt": "same-turn read from the relevant file, process table, API, inbox, queue, or log",
-      "control": "Require a current-state read for definitive yes/no status answers.",
-      "audit_prompt": "Find definitive status answers that lack a same-turn tool or data receipt."
-    },
     {
       "contract": "dox-guard",
       "failure_mode": "FM-023",
@@ -34,6 +21,19 @@
       "missing_receipt": "redaction proof and approved outbound identity context",
       "control": "Enforce identity and credential separation at the client layer, not just prompt text.",
       "audit_prompt": "Inspect tool calls for personal identifiers, private domains, tokens, or account-mixing risks."
+    },
+    {
+      "contract": "state-assertion-grounding",
+      "failure_mode": "FM-014",
+      "severity_seen": "warn",
+      "count": 14,
+      "latest_seen_ct": "2026-09-29T04:23:57-05:00",
+      "example_violation": "Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
+      "title": "The Agent Answered From Memory When The Question Required A Live Read",
+      "buyer_failure": "An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.",
+      "missing_receipt": "same-turn read from the relevant file, process table, API, inbox, queue, or log",
+      "control": "Require a current-state read for definitive yes/no status answers.",
+      "audit_prompt": "Find definitive status answers that lack a same-turn tool or data receipt."
     },
     {
       "contract": "completion-artifact",
@@ -63,14 +63,7 @@
     }
   ],
   "daily_counts": {
-    "2026-09-06": {
-      "privacy-exposure-taxonomy": 1,
-      "terminal-state-evidence-gate": 2,
-      "platform-action-precheck": 1,
-      "state-assertion-grounding": 1
-    },
     "2026-09-07": {
-      "unconfirmed-user-closure-gate": 1,
       "unbuilt-guarantee-guard": 1,
       "privacy-exposure-taxonomy": 1,
       "state-assertion-grounding": 1,
