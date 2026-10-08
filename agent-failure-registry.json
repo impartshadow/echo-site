@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/cookies-set-silently-ignores-http-only-and-same-site-a58cf233f8.html",
+      "evidence": "The reporter demonstrated that identical cookie-set commands produce different httpOnly/sameSite results depending solely on whether camelCase or kebab-case flag spelling was used, confirmed via cookies --json.",
+      "expected_boundary": "The CLI's argument parser should reject any unrecognized or unconsumed flag token with a non-zero exit instead of advancing past it silently.",
+      "id": "SFA-2026-A58CF233F8",
+      "observed_action": "agent-browser's cookies set command accepted --http-only and --same-site Strict, printed success, and exited 0 while silently discarding both flags.",
+      "published_at": "2026-10-08T06:31:02.581504+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 1908,
+        "repo": "265866/agent-browser",
+        "url": "https://github.com/265866/agent-browser/issues/1908"
+      },
+      "status": "retired",
+      "summary": "cookies set silently ignores --http-only and --same-site and reports success",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/desktop-agent-repeatedly-refuses-work-using-hallucin-f9a4fe509f.html",
       "evidence": "User-reported recurring pattern plus one concrete described exchange; no transcript, logs, or private project files attached.",
       "expected_boundary": "The agent should preserve the user's literal acceptance criterion, complete all in-scope verification/QA/retro-analysis work regardless of a conditional downstream gate, and never assert a third party's current position without a same-turn confirmation.",
@@ -4473,14 +4499,14 @@
       }
     }
   ],
-  "count": 172,
+  "count": 173,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-06T21:31:06.026947+00:00",
+    "checked_at": "2026-10-08T06:31:02.618239+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,

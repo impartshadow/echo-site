@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-10-07T08:50:06.549729+00:00",
-  "count": 172,
+  "generated_at": "2026-10-08T06:31:02.589763+00:00",
+  "count": 173,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "cookies-set-silently-ignores-http-only-and-same-site-a58cf233f8",
+      "advisory_id": "SFA-2026-A58CF233F8",
+      "ts": "2026-10-08T06:31:02.581504+00:00",
+      "title": "cookies set silently ignores --http-only and --same-site and reports success",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "265866/agent-browser",
+        "issue_number": 1908,
+        "author": "unknown",
+        "url": "https://github.com/265866/agent-browser/issues/1908"
+      },
+      "case": {
+        "observed_action": "agent-browser's cookies set command accepted --http-only and --same-site Strict, printed success, and exited 0 while silently discarding both flags.",
+        "expected_boundary": "The CLI's argument parser should reject any unrecognized or unconsumed flag token with a non-zero exit instead of advancing past it silently.",
+        "runtime_context": "CLI flag parsing in cli/src/commands.rs for the cookies set subcommand, triggered by an AI agent following the repository's own kebab-case flag convention.",
+        "evidence": "The reporter demonstrated that identical cookie-set commands produce different httpOnly/sameSite results depending solely on whether camelCase or kebab-case flag spelling was used, confirmed via cookies --json."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/cookies-set-silently-ignores-http-only-and-same-site-a58cf233f8.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/cookies-set-silently-ignores-http-only-and-same-site-a58cf233f8.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20cookies-set-silently-ignores-http-only-and-same-site-a58cf233f8&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/cookies-set-silently-ignores-http-only-and-same-site-a58cf233f8.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "desktop-agent-repeatedly-refuses-work-using-hallucin-f9a4fe509f",
