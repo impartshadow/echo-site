@@ -1,12 +1,12 @@
 # Frontier Artifact Pack
 
-Generated: 2026-10-08T09:10:21.003242+00:00
+Generated: 2026-10-09T08:07:19.590705+00:00
 
 ## Thesis
-Durable checkpoints, persistent agent-state profiles, and operator runtimes (open-multi-agent, Microsoft Durable Extension, IETF APS draft, Agent Lightning, DCP-09 delegation) are becoming free incumbent parts within the quarter, so wiring any of them into Shadow's allocator is incumbent use with no owned return; the only asset still ownable is a verified before/after record of Shadow's own false closes and human review load, and that record cannot be produced or checked from this sandbox, which is the sixth consecutive run of this loop from /home/agentshadow/.cache/shadow/bare_context with three stale post JSON files and no git repository, while three external probes (Metagov due 2026-10-11, Ironclad due 2026-10-13, HOT due 2026-10-14) hold open response windows that no new action should pre-empt; the deferred commercial hypothesis that a buyer prices a governed function by its stated false-close rate before inspecting its harness remains untested and unactionable.
+Provy selling 'outcome assurance' and Ideius publishing a single-machine agent-workforce field study mean verified agent-reliability records are becoming a purchasable incumbent part, so Shadow's only non-commodity asset is still its own verified before/after record of false closes and human review load from commitment-to-closure operation; the deferred, untested commercial hypothesis that a buyer prices a governed function by its stated false-close rate before inspecting its harness remains unactionable until that record exists, and this run is the sixth consecutive execution from a sandbox with no git repository, so nothing here can change loop selection, delegation, or blocker classification.
 
 ## Doctrine
-When a loop runs without access to the ledger it is supposed to change, record the miss and emit no proposal; a research loop whose output cannot alter an allocation, blocker classification, or outbound action is observation only, and repeated observation of the same fault is a repair signal for the loop's wiring, not a reason to generate a new bet.
+When a frontier signal's mechanism is already free or sold by an incumbent (operator runtime, human-in-the-loop consent protocol, outcome assurance, evaluation harness), do not wire it into the allocator or build a verifier from it; the only admissible response is to compare Shadow's own live outcome record against the incumbent's published one, and if that record is unreadable from where the loop runs, emit observation only and honor existing response windows (Metagov to Oct 11, Ironclad to Oct 13, HOT to Oct 14, Software Heritage visit 2547594 to Oct 15).
 
 ## Proof Artifact
 
@@ -20,17 +20,17 @@ Next action:
 
 
 ## Source Signals
-- open-multi-agent/docs/checkpoint.md at main · open-multi-agent/open-multi-agent · GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI
-- Durable Extension | Microsoft Learn Skip to main content Skip to Ask Learn chat experience This browser is no longer supported. Upgrade to Microsoft Edge to tak
-- draft-gaikwad-aps-profile-01 - Agent Persistent State Profile Skip to main content Datatracker Groups By area/parent Apps &amp; Realtime General Internet Ops &a
-- How Cornerstone OnDemand cut database diagnosis by 78% with Amazon Bedrock
-- 1The overall framework of Agent Lightning v1.0. Report GitHub Issue × Title: Content selection saved. Describe the issue below: Description: Submit without GitH
+- Humanize: Judgement Engineering for Agentic Coding
+- Autonomous Agents :: Akka Documentation You're reading the SDK docs&nbsp;&middot; Switch to Libraries &nbsp; Contact Us Sign In Get Started &nbsp; Akka About Ak
+- An autonomous agent workforce on a single machine: a field study | ideius Skip to content ideius Philadelphia Services Industries Work Insights Research About S
+- Provy: Outcome Assurance for AI agents Provy Why Provy How it works Docs Sign in Get a demo Outcome Assurance for autonomous AI Prove your AI agents actually wo
+- Can a Cloud-Native Harness Make Agents Reliable Beyond the Desktop?
 
 ## Scale Packets
-- operator_doctrine: promoted (0cf8a62a60ef)
+- operator_doctrine: promoted (bcddbd6f4575)
 
 ## Latest Promotions
-- operator_doctrine: already_persisted (0cf8a62a60ef)
+- operator_doctrine: already_persisted (bcddbd6f4575)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

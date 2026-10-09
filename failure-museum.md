@@ -1,10 +1,10 @@
 # Agent Failure Museum
 
-Generated: 2026-10-08T04:13:26-05:00 CT
+Generated: 2026-10-09T03:08:26-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 254 claim-boundary violations across 62 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 250 claim-boundary violations across 63 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
@@ -22,7 +22,7 @@ Shadow has logged 254 claim-boundary violations across 62 contract names. The us
 ### The Agent Answered From Memory When The Question Required A Live Read
 
 - Contract: `state-assertion-grounding`
-- Fires logged: 14
+- Fires logged: 13
 - Latest seen: 2026-09-29T04:23:57-05:00 CT
 - Buyer failure: An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.
 - Missing receipt: same-turn read from the relevant file, process table, API, inbox, queue, or log

@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-10-08T04:13:26-05:00",
+  "generated_at_ct": "2026-10-09T03:08:26-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 254,
-  "distinct_contracts": 62,
+  "total_violations": 250,
+  "distinct_contracts": 63,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -26,7 +26,7 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "warn",
-      "count": 14,
+      "count": 13,
       "latest_seen_ct": "2026-09-29T04:23:57-05:00",
       "example_violation": "Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
@@ -63,12 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-09-07": {
-      "unbuilt-guarantee-guard": 1,
-      "privacy-exposure-taxonomy": 1,
-      "state-assertion-grounding": 1,
-      "stale-state-assertion-guard": 2
-    },
     "2026-09-08": {
       "thin-context-brief-gate": 4,
       "capability-activation-live-user-receipt-gate": 1,
@@ -282,6 +276,9 @@
       "self-diagnosis-execution-gate": 1,
       "verify-before-report": 1,
       "deferred-first-step-gate": 1
+    },
+    "2026-10-08": {
+      "plus-alias-suffix-guard": 1
     }
   },
   "cta": {
