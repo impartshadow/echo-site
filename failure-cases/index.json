@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-10-09T08:08:26.840775+00:00",
-  "count": 175,
+  "generated_at": "2026-10-09T21:31:10.777177+00:00",
+  "count": 176,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "architect-e2e-install-gate-reports-success-when-its-699b530fe3",
+      "advisory_id": "SFA-2026-699B530FE3",
+      "ts": "2026-10-09T21:31:10.768481+00:00",
+      "title": "[architect] E2E install gate reports success when its post-install patch silently fails",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "tuna-os/tromso",
+        "issue_number": 370,
+        "author": "unknown",
+        "url": "https://github.com/tuna-os/tromso/issues/370"
+      },
+      "case": {
+        "observed_action": "fisherman-install.sh logs ERROR/WARNING via echo for every post-install patch failure path (LUKS extraction, mount, luksOpen, partition scan, deployment etc/ lookup) but never sets a non-zero exit status, then unconditionally prints 'post-install patch complete' and exits 0.",
+        "expected_boundary": "the script's exit code must equal the true outcome of the install plus patch sequence, since test-plain-install.yml and test-luks-install.yml key their pass/fail gate directly off that exit code under set -euo pipefail.",
+        "runtime_context": "the install step of tromso's only two automated e2e coverage paths for the install flow, running inside QEMU-based CI gates with no bats/pytest coverage of this script as a backstop.",
+        "evidence": "a reproduction with a stubbed FISHERMAN_BIN and fake lsblk/mount on PATH shows fisherman exiting non-zero, the hostname never being written, a WARNING printed for the missing deployment etc/, and the script still printing 'post-install patch complete' and returning exit code 0."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/architect-e2e-install-gate-reports-success-when-its-699b530fe3.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/architect-e2e-install-gate-reports-success-when-its-699b530fe3.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20architect-e2e-install-gate-reports-success-when-its-699b530fe3&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/architect-e2e-install-gate-reports-success-when-its-699b530fe3.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "windows-automatic-consolidation-silently-fails-with-c2fe38593c",

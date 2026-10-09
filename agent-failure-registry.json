@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/architect-e2e-install-gate-reports-success-when-its-699b530fe3.html",
+      "evidence": "a reproduction with a stubbed FISHERMAN_BIN and fake lsblk/mount on PATH shows fisherman exiting non-zero, the hostname never being written, a WARNING printed for the missing deployment etc/, and the script still printing 'post-install patch complete' and returning exit code 0.",
+      "expected_boundary": "the script's exit code must equal the true outcome of the install plus patch sequence, since test-plain-install.yml and test-luks-install.yml key their pass/fail gate directly off that exit code under set -euo pipefail.",
+      "id": "SFA-2026-699B530FE3",
+      "observed_action": "fisherman-install.sh logs ERROR/WARNING via echo for every post-install patch failure path (LUKS extraction, mount, luksOpen, partition scan, deployment etc/ lookup) but never sets a non-zero exit status, then unconditionally prints 'post-install patch complete' and exits 0.",
+      "published_at": "2026-10-09T21:31:10.768481+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 370,
+        "repo": "tuna-os/tromso",
+        "url": "https://github.com/tuna-os/tromso/issues/370"
+      },
+      "status": "retired",
+      "summary": "[architect] E2E install gate reports success when its post-install patch silently fails",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/windows-automatic-consolidation-silently-fails-with-c2fe38593c.html",
       "evidence": "two independent failing runs left the isolated store at 0 facts/0 lessons/0 write-audit events with no consolidation warning, while a standalone probe.mjs reproduced the exact failure as spawn pi ENOENT with pid null",
       "expected_boundary": "the exec helper should distinguish a failed process launch (ENOENT, no PID) from a completed process that exited non-zero or produced empty output, and surface that distinction rather than coercing both into an identical silent-skip code path",
@@ -4551,14 +4577,14 @@
       }
     }
   ],
-  "count": 175,
+  "count": 176,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-09T06:31:21.194771+00:00",
+    "checked_at": "2026-10-09T21:31:10.810655+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
