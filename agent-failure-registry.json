@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/windows-automatic-consolidation-silently-fails-with-c2fe38593c.html",
+      "evidence": "two independent failing runs left the isolated store at 0 facts/0 lessons/0 write-audit events with no consolidation warning, while a standalone probe.mjs reproduced the exact failure as spawn pi ENOENT with pid null",
+      "expected_boundary": "the exec helper should distinguish a failed process launch (ENOENT, no PID) from a completed process that exited non-zero or produced empty output, and surface that distinction rather than coercing both into an identical silent-skip code path",
+      "id": "SFA-2026-C2FE38593C",
+      "observed_action": "pi-memory called pi.exec('pi', ...) with shell:false to launch consolidation on Windows script-based Pi installations",
+      "published_at": "2026-10-09T06:31:21.152995+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 38,
+        "repo": "samfoy/pi-memory",
+        "url": "https://github.com/samfoy/pi-memory/issues/38"
+      },
+      "status": "retired",
+      "summary": "Windows: automatic consolidation silently fails with spawn pi ENOENT",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/chatcompletioncache-omits-tool-choice-from-the-cache-196e2ed072.html",
       "evidence": "The reproduction shows three distinct tool_choice values ('required', 'none', and a forced Tool) all returning the cached answer for 'required' with the underlying client called only once instead of three times, and zero warnings were captured despite the module already using the warnings mechanism elsewhere.",
       "expected_boundary": "The cache key must incorporate every parameter that create()/create_stream() forward to the underlying client and that can change the model's response, including tool_choice in all three of its forms (Tool, 'auto'/'required'/'none').",
@@ -4525,14 +4551,14 @@
       }
     }
   ],
-  "count": 174,
+  "count": 175,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-08T21:30:51.300030+00:00",
+    "checked_at": "2026-10-09T06:31:21.194771+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
