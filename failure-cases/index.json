@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-10-10T14:12:47.708603+00:00",
-  "count": 177,
+  "generated_at": "2026-10-10T21:31:14.071731+00:00",
+  "count": 178,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "isolationsession-a-second-deprovision-reports-succes-e68a6b4000",
+      "advisory_id": "SFA-2026-E68A6B4000",
+      "ts": "2026-10-10T21:31:14.061960+00:00",
+      "title": "IsolationSession: a second deprovision reports success instead of stale_id",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "microsoft/mxc",
+        "issue_number": 1429,
+        "author": "unknown",
+        "url": "https://github.com/microsoft/mxc/issues/1429"
+      },
+      "case": {
+        "observed_action": "A second deprovision call on an already-deprovisioned sandboxId returns exit code 0 with an empty error object instead of failing.",
+        "expected_boundary": "deprovision should fail with error.code 'stale_id' and nativeCode '0x80070490' once the agent user it targets no longer exists, matching start/stop/exec behavior.",
+        "runtime_context": "IsolationSessionBackend::deprovision in src/mxc-sdk/src/backends/isolation_session/common/state_aware.rs calls deprovision_agent_user, whose StalePromotion::Eligible classification in manager.rs would promote ERROR_NOT_FOUND to stale_id but never fires.",
+        "evidence": "The issue reporter traced the promotion logic as correctly wired and concluded the underlying RemoveUser call is likely returning success for an agent user that no longer exists, leaving nothing to promote."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/isolationsession-a-second-deprovision-reports-succes-e68a6b4000.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/isolationsession-a-second-deprovision-reports-succes-e68a6b4000.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20isolationsession-a-second-deprovision-reports-succes-e68a6b4000&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/isolationsession-a-second-deprovision-reports-succes-e68a6b4000.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "bug-json-schema-field-constraints-pattern-minimum-si-46de9ed305",
