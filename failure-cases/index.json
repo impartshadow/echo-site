@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-10-10T09:05:34.109968+00:00",
-  "count": 176,
+  "generated_at": "2026-10-10T14:12:47.708603+00:00",
+  "count": 177,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "bug-json-schema-field-constraints-pattern-minimum-si-46de9ed305",
+      "advisory_id": "SFA-2026-46DE9ED305",
+      "ts": "2026-10-10T14:12:47.701747+00:00",
+      "title": "[BUG] JSON Schema field constraints (pattern/minimum/...) silently dropped on nullable list-form type fields",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "crewAIInc/crewAI",
+        "issue_number": 7955,
+        "author": "linhongyu510",
+        "url": "https://github.com/crewAIInc/crewAI/issues/7955"
+      },
+      "case": {
+        "observed_action": "crewAI's create_model_from_schema builds a Pydantic field from a list-form nullable JSON Schema type and silently omits all declared constraints (pattern, minimum, etc.)",
+        "expected_boundary": "every constraint keyword present on a property's JSON Schema should be attached to the generated Pydantic field and enforced on validation, regardless of whether the type is declared as a plain type or a nullable union",
+        "runtime_context": "tool/MCP input validation inside crewai/utilities/pydantic_schema_utils.py, where the isinstance(type_, type) guard fails for Union types produced by list-form nullable type declarations",
+        "evidence": "repro code shows M(code=\"123\") and M2(age=-3) are both accepted despite violating the pattern and minimum constraints declared in the schema"
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/bug-json-schema-field-constraints-pattern-minimum-si-46de9ed305.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/bug-json-schema-field-constraints-pattern-minimum-si-46de9ed305.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20bug-json-schema-field-constraints-pattern-minimum-si-46de9ed305&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/bug-json-schema-field-constraints-pattern-minimum-si-46de9ed305.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "architect-e2e-install-gate-reports-success-when-its-699b530fe3",

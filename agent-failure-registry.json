@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-json-schema-field-constraints-pattern-minimum-si-46de9ed305.html",
+      "evidence": "repro code shows M(code=\"123\") and M2(age=-3) are both accepted despite violating the pattern and minimum constraints declared in the schema",
+      "expected_boundary": "every constraint keyword present on a property's JSON Schema should be attached to the generated Pydantic field and enforced on validation, regardless of whether the type is declared as a plain type or a nullable union",
+      "id": "SFA-2026-46DE9ED305",
+      "observed_action": "crewAI's create_model_from_schema builds a Pydantic field from a list-form nullable JSON Schema type and silently omits all declared constraints (pattern, minimum, etc.)",
+      "published_at": "2026-10-10T14:12:47.701747+00:00",
+      "source": {
+        "author": "linhongyu510",
+        "channel": "unsolicited_triage",
+        "issue_number": 7955,
+        "repo": "crewAIInc/crewAI",
+        "url": "https://github.com/crewAIInc/crewAI/issues/7955"
+      },
+      "status": "retired",
+      "summary": "[BUG] JSON Schema field constraints (pattern/minimum/...) silently dropped on nullable list-form type fields",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/architect-e2e-install-gate-reports-success-when-its-699b530fe3.html",
       "evidence": "a reproduction with a stubbed FISHERMAN_BIN and fake lsblk/mount on PATH shows fisherman exiting non-zero, the hostname never being written, a WARNING printed for the missing deployment etc/, and the script still printing 'post-install patch complete' and returning exit code 0.",
       "expected_boundary": "the script's exit code must equal the true outcome of the install plus patch sequence, since test-plain-install.yml and test-luks-install.yml key their pass/fail gate directly off that exit code under set -euo pipefail.",
@@ -4577,14 +4603,14 @@
       }
     }
   ],
-  "count": 176,
+  "count": 177,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-09T21:31:10.810655+00:00",
+    "checked_at": "2026-10-10T14:12:47.740303+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
