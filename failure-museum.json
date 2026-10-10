@@ -1,8 +1,8 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-10-09T03:08:26-05:00",
+  "generated_at_ct": "2026-10-10T04:05:34-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 250,
+  "total_violations": 229,
   "distinct_contracts": 63,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
@@ -10,23 +10,10 @@
   "position": "A public museum of claim-boundary failures: every card maps an unsupported agent claim to the receipt a runtime contract should demand.",
   "cases": [
     {
-      "contract": "dox-guard",
-      "failure_mode": "FM-023",
-      "severity_seen": "block",
-      "count": 15,
-      "latest_seen_ct": "2026-10-05T05:57:58-05:00",
-      "example_violation": "run_shell command contains 1 personal identifier(s) [categories: phone]. PII must not appear in shell commands that could reach third parties (email, curl POST, browser scripts).",
-      "title": "The Agent Tried To Put Private Identity Data Into A Tool Boundary",
-      "buyer_failure": "An outbound or automation agent risks leaking personal identifiers through shell commands, browser scripts, or third-party calls.",
-      "missing_receipt": "redaction proof and approved outbound identity context",
-      "control": "Enforce identity and credential separation at the client layer, not just prompt text.",
-      "audit_prompt": "Inspect tool calls for personal identifiers, private domains, tokens, or account-mixing risks."
-    },
-    {
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "warn",
-      "count": 13,
+      "count": 11,
       "latest_seen_ct": "2026-09-29T04:23:57-05:00",
       "example_violation": "Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
@@ -34,6 +21,19 @@
       "missing_receipt": "same-turn read from the relevant file, process table, API, inbox, queue, or log",
       "control": "Require a current-state read for definitive yes/no status answers.",
       "audit_prompt": "Find definitive status answers that lack a same-turn tool or data receipt."
+    },
+    {
+      "contract": "dox-guard",
+      "failure_mode": "FM-023",
+      "severity_seen": "block",
+      "count": 8,
+      "latest_seen_ct": "2026-10-05T05:57:58-05:00",
+      "example_violation": "run_shell command contains 1 personal identifier(s) [categories: phone]. PII must not appear in shell commands that could reach third parties (email, curl POST, browser scripts).",
+      "title": "The Agent Tried To Put Private Identity Data Into A Tool Boundary",
+      "buyer_failure": "An outbound or automation agent risks leaking personal identifiers through shell commands, browser scripts, or third-party calls.",
+      "missing_receipt": "redaction proof and approved outbound identity context",
+      "control": "Enforce identity and credential separation at the client layer, not just prompt text.",
+      "audit_prompt": "Inspect tool calls for personal identifiers, private domains, tokens, or account-mixing risks."
     },
     {
       "contract": "completion-artifact",
@@ -63,16 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-09-08": {
-      "thin-context-brief-gate": 4,
-      "capability-activation-live-user-receipt-gate": 1,
-      "terminal-state-evidence-gate": 3,
-      "pressure-framing-guard": 1,
-      "dox-guard": 7,
-      "unbuilt-guarantee-guard": 2,
-      "attribute-correction-verification-guard": 2,
-      "state-assertion-grounding": 2
-    },
     "2026-09-09": {
       "personal-token-send-guard": 10,
       "raw-gmail-send-guard": 12
@@ -279,6 +269,9 @@
     },
     "2026-10-08": {
       "plus-alias-suffix-guard": 1
+    },
+    "2026-10-09": {
+      "chat-remark-validation-guard": 1
     }
   },
   "cta": {
