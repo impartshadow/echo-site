@@ -1,48 +1,26 @@
 {
   "schema": "shadow.violation_decay.v1",
-  "generated_at": "2026-10-10T09:05:34.087578+00:00",
+  "generated_at": "2026-10-11T07:57:38.544797+00:00",
   "as_of": "2026-10-09T16:19:57+00:00",
   "source": "state/contract_violations.jsonl",
   "window_days": 7,
   "min_age_days": 14,
   "totals": {
-    "violations": 222,
-    "contracts_in_log": 62,
+    "violations": 199,
+    "contracts_in_log": 61,
     "failure_modes": 22,
     "severities": {
-      "block": 147,
+      "block": 124,
       "warn": 75
     },
-    "eligible_contracts": 48,
+    "eligible_contracts": 47,
     "cooled_contracts": 46,
-    "hotter_contracts": 1,
-    "net_cooling_events": 137,
-    "net_hotter_events": 1
+    "hotter_contracts": 0,
+    "net_cooling_events": 116,
+    "net_hotter_events": 0
   },
-  "headline": "personal-token-send-guard cooled from 15 to 0 weekly hits; runtime-activation-claim-gate is the hottest remaining governance gap.",
+  "headline": "state-assertion-grounding cooled from 7 to 0 weekly hits.",
   "cooled": [
-    {
-      "contract": "personal-token-send-guard",
-      "total": 15,
-      "first_seen": "2026-09-09T10:24:19+00:00",
-      "last_seen": "2026-09-10T12:33:29+00:00",
-      "first_window_count": 15,
-      "recent_window_count": 0,
-      "delta": -15,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "raw-gmail-send-guard",
-      "total": 12,
-      "first_seen": "2026-09-09T10:24:19+00:00",
-      "last_seen": "2026-09-10T02:23:02+00:00",
-      "first_window_count": 12,
-      "recent_window_count": 0,
-      "delta": -12,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
     {
       "contract": "state-assertion-grounding",
       "total": 11,
@@ -81,6 +59,17 @@
       "total": 5,
       "first_seen": "2026-09-18T00:47:58+00:00",
       "last_seen": "2026-09-21T08:16:18+00:00",
+      "first_window_count": 5,
+      "recent_window_count": 0,
+      "delta": -5,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "personal-token-send-guard",
+      "total": 5,
+      "first_seen": "2026-09-10T11:05:06+00:00",
+      "last_seen": "2026-09-10T12:33:29+00:00",
       "first_window_count": 5,
       "recent_window_count": 0,
       "delta": -5,
@@ -152,44 +141,21 @@
       "delta": -4,
       "pct_change": -100.0,
       "status": "cooled"
-    }
-  ],
-  "hotter": [
+    },
     {
-      "contract": "runtime-activation-claim-gate",
-      "total": 6,
-      "first_seen": "2026-09-10T08:17:25+00:00",
-      "last_seen": "2026-10-05T10:58:11+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 2,
-      "delta": 1,
-      "pct_change": 100.0,
-      "status": "hotter"
+      "contract": "platform-message-id-claim-guard",
+      "total": 4,
+      "first_seen": "2026-09-16T07:54:21+00:00",
+      "last_seen": "2026-09-21T08:17:01+00:00",
+      "first_window_count": 4,
+      "recent_window_count": 0,
+      "delta": -4,
+      "pct_change": -100.0,
+      "status": "cooled"
     }
   ],
+  "hotter": [],
   "all_trends": [
-    {
-      "contract": "personal-token-send-guard",
-      "total": 15,
-      "first_seen": "2026-09-09T10:24:19+00:00",
-      "last_seen": "2026-09-10T12:33:29+00:00",
-      "first_window_count": 15,
-      "recent_window_count": 0,
-      "delta": -15,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "raw-gmail-send-guard",
-      "total": 12,
-      "first_seen": "2026-09-09T10:24:19+00:00",
-      "last_seen": "2026-09-10T02:23:02+00:00",
-      "first_window_count": 12,
-      "recent_window_count": 0,
-      "delta": -12,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
     {
       "contract": "state-assertion-grounding",
       "total": 11,
@@ -228,6 +194,17 @@
       "total": 5,
       "first_seen": "2026-09-18T00:47:58+00:00",
       "last_seen": "2026-09-21T08:16:18+00:00",
+      "first_window_count": 5,
+      "recent_window_count": 0,
+      "delta": -5,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "personal-token-send-guard",
+      "total": 5,
+      "first_seen": "2026-09-10T11:05:06+00:00",
+      "last_seen": "2026-09-10T12:33:29+00:00",
       "first_window_count": 5,
       "recent_window_count": 0,
       "delta": -5,
@@ -543,6 +520,17 @@
       "status": "cooled"
     },
     {
+      "contract": "runtime-activation-claim-gate",
+      "total": 5,
+      "first_seen": "2026-09-17T12:04:53+00:00",
+      "last_seen": "2026-10-05T10:58:11+00:00",
+      "first_window_count": 3,
+      "recent_window_count": 2,
+      "delta": -1,
+      "pct_change": -33.3,
+      "status": "cooled"
+    },
+    {
       "contract": "third-party-outbound-authorization-gate",
       "total": 3,
       "first_seen": "2026-09-17T03:22:20+00:00",
@@ -684,17 +672,6 @@
       "delta": 0,
       "pct_change": 0.0,
       "status": "flat"
-    },
-    {
-      "contract": "runtime-activation-claim-gate",
-      "total": 6,
-      "first_seen": "2026-09-10T08:17:25+00:00",
-      "last_seen": "2026-10-05T10:58:11+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 2,
-      "delta": 1,
-      "pct_change": 100.0,
-      "status": "hotter"
     }
   ]
 }

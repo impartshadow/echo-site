@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-10-10T04:05:34-05:00",
+  "generated_at_ct": "2026-10-11T02:57:38-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 229,
-  "distinct_contracts": 63,
+  "total_violations": 206,
+  "distinct_contracts": 62,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -63,12 +63,7 @@
     }
   ],
   "daily_counts": {
-    "2026-09-09": {
-      "personal-token-send-guard": 10,
-      "raw-gmail-send-guard": 12
-    },
     "2026-09-10": {
-      "runtime-activation-claim-gate": 1,
       "factual-claim-verification": 5,
       "vendor-availability-external-fetch-required": 3,
       "completion-artifact": 1,

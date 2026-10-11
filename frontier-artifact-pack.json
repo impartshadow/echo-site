@@ -1,22 +1,35 @@
 {
-  "generated_at": "2026-10-10T09:04:31.836549+00:00",
+  "generated_at": "2026-10-11T07:55:30.869888+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-10-10T09:04:03.419197+00:00",
-  "thesis": "No evidence-backed frontier synthesis available; no new work selected.",
-  "doctrine": "",
+  "cycle_ts": "2026-10-11T07:55:03.037732+00:00",
+  "thesis": "Every one of these eight signals (AgentBench, MAST taxonomies, pass@k reliability science, Diagrid verifiable execution, OWASP APTS safety controls, recover-bench, tool-to-agent retrieval, operator-runtime commentary) is converging on free, incumbent-supplied agent evaluation and runtime assurance, so the only asset a governed function can still own is its own audited before/after record of false closes, review load, and recoveries on real commitments; the deferred, untested commercial hypothesis remains that a buyer prices a governed function by that record before inspecting its harness, and it stays unactionable until Shadow's live commitment-to-closure function can produce the record, which this sandbox (no git repository, three stale post JSON files) cannot verify.",
+  "doctrine": "When a research signal names a verifier, benchmark, taxonomy, or runtime control that an incumbent ships for free, Shadow adopts or ignores it but never rebuilds it; a signal earns code only when it maps to a demonstrated failure in the live function's own outcome ledger, and the frontier compound loop records 'no decision changed' rather than manufacturing wiring when it runs outside the repository.",
   "proof_artifact": "",
   "proof_next_action": "",
   "public_angle": "",
   "buyer_offer": "",
   "source_titles": [
-    "Synthesis Through Simulation: Generating Coherent Enterprise Data via Scalable Agent-System Interaction",
-    "Plan-and-Patch: Diffusion Language Models for Agentic Planning",
-    "draft-atakora-wimse-sadp-delegation-01 - Capability-Bound Delegation Chains with Scoped Context Disclosure for AI Agents Skip to main content Datatracker Groups",
-    "delegation-chain-spec/SPEC.md at main \u00b7 agentic-control-plane/delegation-chain-spec \u00b7 GitHub Skip to content Navigation Menu Sign in Appearance settings Platfor",
-    "Agent Looping | Microsoft Learn Skip to main content Skip to Ask Learn chat experience This browser is no longer supported. Upgrade to Microsoft Edge to take ad"
+    "Welcome to October 9, 2026",
+    "GitHub - OmnionixAI/AgentBench: A comprehensive evaluation framework and benchmark suite designed to rigorously assess the performance, reliability, and reasoni",
+    "[2511.01854] Tool-to-Agent Retrieval: Bridging Tools and Agents for Scalable LLM Multi-Agent Systems Skip to main content Search Submit Donate Log in Search arX",
+    "Verifiable execution | Diagrid Docs Skip to main content AI Agents Workflows Dapr APIs Platform Overview Start here Overview Install the CLI Quickstart: build a",
+    "APTS/standard/2_Safety_Controls/README.md at main \u00b7 OWASP/APTS \u00b7 GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI CODE CREATION Gi"
   ],
-  "packets": [],
-  "latest_promotions": [],
+  "packets": [
+    {
+      "id": "3f0c93d65d3e",
+      "lane": "operator_doctrine",
+      "status": "promoted",
+      "success_metric": "A future loop consumes this doctrine instead of merely storing it."
+    }
+  ],
+  "latest_promotions": [
+    {
+      "lane": "operator_doctrine",
+      "status": "already_persisted",
+      "packet_id": "3f0c93d65d3e"
+    }
+  ],
   "receipts": {
     "frontier_current": "state/frontier_compound_current.json",
     "frontier_flywheel": "state/revenue/frontier_scale_flywheel.json",
