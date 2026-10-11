@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-encode-bnez-silently-ignores-extra-operands-8c312815f9.html",
+      "evidence": "encode_bnez([Reg(\"a0\"), Symbol(\"foo\"), Reg(\"a1\")]) returned Ok(WordWithReloc { word: 0x00051063, reloc: Branch/\"foo\"/0 }) instead of Err, silently dropping the extra operand.",
+      "expected_boundary": "encode_bnez must enforce exactly two operands (rs, label) and return Err when given three or more, matching llvm-mc's rejection of the same input.",
+      "id": "SFA-2026-8C312815F9",
+      "observed_action": "encode_bnez accepted a third operand (Reg(\"a0\")) and returned Ok with a valid encoded word instead of rejecting the malformed three-operand bnez instruction.",
+      "published_at": "2026-10-11T14:12:41.430068+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 1091,
+        "repo": "fermat-hkrc/claudes-c-compiler",
+        "url": "https://github.com/fermat-hkrc/claudes-c-compiler/issues/1091"
+      },
+      "status": "retired",
+      "summary": "Bug: encode_bnez silently ignores extra operands",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/runstate-add-input-input-is-silently-dropped-under-s-f4b98bd37f.html",
       "evidence": "The repro script shows add_input is 'accepted' under stop_at_tool_names but the staged string 'please also do Z' never appears in model.calls input or in resumed.to_input_list(), with no error raised.",
       "expected_boundary": "add_input should reject input whenever the resumed run will end on a completed tool result without another model call, regardless of which stop mechanism (stop_on_first_tool vs stop_at_tool_names) produced that terminal state.",
@@ -4655,14 +4681,14 @@
       }
     }
   ],
-  "count": 179,
+  "count": 180,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-11T06:31:03.519967+00:00",
+    "checked_at": "2026-10-11T14:12:41.474373+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
