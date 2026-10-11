@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/runstate-add-input-input-is-silently-dropped-under-s-f4b98bd37f.html",
+      "evidence": "The repro script shows add_input is 'accepted' under stop_at_tool_names but the staged string 'please also do Z' never appears in model.calls input or in resumed.to_input_list(), with no error raised.",
+      "expected_boundary": "add_input should reject input whenever the resumed run will end on a completed tool result without another model call, regardless of which stop mechanism (stop_on_first_tool vs stop_at_tool_names) produced that terminal state.",
+      "id": "SFA-2026-F4B98BD37F",
+      "observed_action": "RunState.add_input() accepts new input when the pending interruption resolves via a completed stop_at_tool_names sibling tool, instead of rejecting it as it does under stop_on_first_tool.",
+      "published_at": "2026-10-11T06:31:03.479715+00:00",
+      "source": {
+        "author": "digit50",
+        "channel": "unsolicited_triage",
+        "issue_number": 5339,
+        "repo": "openai/openai-agents-python",
+        "url": "https://github.com/openai/openai-agents-python/issues/5339"
+      },
+      "status": "retired",
+      "summary": "RunState.add_input input is silently dropped under stop_at_tool_names",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/isolationsession-a-second-deprovision-reports-succes-e68a6b4000.html",
       "evidence": "The issue reporter traced the promotion logic as correctly wired and concluded the underlying RemoveUser call is likely returning success for an agent user that no longer exists, leaving nothing to promote.",
       "expected_boundary": "deprovision should fail with error.code 'stale_id' and nativeCode '0x80070490' once the agent user it targets no longer exists, matching start/stop/exec behavior.",
@@ -4629,14 +4655,14 @@
       }
     }
   ],
-  "count": 178,
+  "count": 179,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-10T21:31:14.105482+00:00",
+    "checked_at": "2026-10-11T06:31:03.519967+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
