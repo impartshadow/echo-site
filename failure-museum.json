@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-10-11T02:57:38-05:00",
+  "generated_at_ct": "2026-10-12T04:07:48-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 206,
-  "distinct_contracts": 62,
+  "total_violations": 190,
+  "distinct_contracts": 61,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -13,8 +13,8 @@
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "warn",
-      "count": 11,
-      "latest_seen_ct": "2026-09-29T04:23:57-05:00",
+      "count": 12,
+      "latest_seen_ct": "2026-10-11T19:43:30-05:00",
       "example_violation": "Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
       "buyer_failure": "An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.",
@@ -39,7 +39,7 @@
       "contract": "completion-artifact",
       "failure_mode": "FM-027",
       "severity_seen": "block",
-      "count": 5,
+      "count": 4,
       "latest_seen_ct": "2026-09-21T03:16:18-05:00",
       "example_violation": "Completion/commit language while the repo still has uncommitted work: core/discord.py, core/discord_bot.py, docs/agent-failure-flagship.html, docs/agent-failure-flagship.json, docs/agent-failure-flagship.md, docs/autopsy.html, docs/autopsy.xml, docs/contract-red-team.json, ... +18 more. Commit and push, or state that work remains uncommitted.",
       "title": "The Agent Said Done While The Artifact Was Still Missing",
@@ -63,14 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-09-10": {
-      "factual-claim-verification": 5,
-      "vendor-availability-external-fetch-required": 3,
-      "completion-artifact": 1,
-      "personal-token-send-guard": 5,
-      "thin-context-brief-gate": 2,
-      "stale-state-assertion-guard": 2
-    },
     "2026-09-11": {
       "iterative-cleanup-stop-bar-gate": 1,
       "self-signed-change-execution-gate": 1
@@ -267,6 +259,10 @@
     },
     "2026-10-09": {
       "chat-remark-validation-guard": 1
+    },
+    "2026-10-11": {
+      "pressure-framing-guard": 1,
+      "state-assertion-grounding": 1
     }
   },
   "cta": {
