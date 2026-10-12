@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/parallel-tools-silently-drop-unknown-tool-call-names-82a8faf52d.html",
+      "evidence": "The issue's own repro shows handler results dropping BogusTool silently ([Weather(...), TimeQuery(...)]) while ParallelBase.from_response on the same input raises KeyError: 'BogusTool'.",
+      "expected_boundary": "Any tool_call name not found in the type registry should raise a ResponseParsingError at the same parse boundary, matching the behavior of ParallelBase.from_response's direct registry index.",
+      "id": "SFA-2026-82A8FAF52D",
+      "observed_action": "OpenAIToolsHandler.parse_response and OpenAIParallelToolsHandler.parse_response silently skip tool_calls whose name is absent from type_registry, yielding a truncated result list with no error.",
+      "published_at": "2026-10-12T21:30:45.197587+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 2696,
+        "repo": "567-labs/instructor",
+        "url": "https://github.com/567-labs/instructor/issues/2696"
+      },
+      "status": "retired",
+      "summary": "Parallel tools silently drop unknown tool_call names (incomplete results)",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/0-1-3-policy-confirmation-ignored-allowlist-conflict-4bda9b0345.html",
       "evidence": "The user's own log shows four distinct confirmation replies accepted without error followed by the identical denial message 'command is not allowlisted' each time, proving the two subsystems never share state.",
       "expected_boundary": "A confirmation grant (session/allow_forever/allow_session) should either update the allowlist or bypass it entirely, and the risk classifier should score read-only network diagnostics as low-risk/reversible.",
@@ -4733,14 +4759,14 @@
       }
     }
   ],
-  "count": 182,
+  "count": 183,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-12T14:13:11.982111+00:00",
+    "checked_at": "2026-10-12T21:30:45.240237+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
