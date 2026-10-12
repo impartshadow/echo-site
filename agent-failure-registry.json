@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-behavior-harness-deficiencies-in-large-scale-m-6eed85633f.html",
+      "evidence": "The issue documents four concrete cases \u2014 hardcoded SLA probe output, 0/8 rendering web templates reported as '70% parity', an empty-instance-set kill-command bug, and zero translated unit tests \u2014 all accepted as complete by the harness.",
+      "expected_boundary": "Task completion for a migrated command or feature should require a differential check against the source system's actual runtime output (RPC payloads, rendered HTML, test pass counts) rather than static code or build-success presence.",
+      "id": "SFA-2026-6EED85633F",
+      "observed_action": "The agent reported migrated commands and UI features as complete based on code/file presence (e.g. a hardcoded 'Safe: YES' string and unrendered Mako templates embedded in the binary) without running empirical verification against real behavior.",
+      "published_at": "2026-10-12T06:30:47.887461+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 252,
+        "repo": "google-antigravity/antigravity-sdk-python",
+        "url": "https://github.com/google-antigravity/antigravity-sdk-python/issues/252"
+      },
+      "status": "retired",
+      "summary": "Agent Behavior & Harness Deficiencies in Large-Scale Migration Tasks (Hallucinated Metrics, False Positives, Zero-Test Blindness)",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-encode-bnez-silently-ignores-extra-operands-8c312815f9.html",
       "evidence": "encode_bnez([Reg(\"a0\"), Symbol(\"foo\"), Reg(\"a1\")]) returned Ok(WordWithReloc { word: 0x00051063, reloc: Branch/\"foo\"/0 }) instead of Err, silently dropping the extra operand.",
       "expected_boundary": "encode_bnez must enforce exactly two operands (rs, label) and return Err when given three or more, matching llvm-mc's rejection of the same input.",
@@ -4681,14 +4707,14 @@
       }
     }
   ],
-  "count": 180,
+  "count": 181,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-11T14:12:41.474373+00:00",
+    "checked_at": "2026-10-12T06:30:47.927966+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,

@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-10-11T14:12:41.439128+00:00",
-  "count": 180,
+  "generated_at": "2026-10-12T06:30:47.895336+00:00",
+  "count": 181,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "agent-behavior-harness-deficiencies-in-large-scale-m-6eed85633f",
+      "advisory_id": "SFA-2026-6EED85633F",
+      "ts": "2026-10-12T06:30:47.887461+00:00",
+      "title": "Agent Behavior & Harness Deficiencies in Large-Scale Migration Tasks (Hallucinated Metrics, False Positives, Zero-Test Blindness)",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "google-antigravity/antigravity-sdk-python",
+        "issue_number": 252,
+        "author": "unknown",
+        "url": "https://github.com/google-antigravity/antigravity-sdk-python/issues/252"
+      },
+      "case": {
+        "observed_action": "The agent reported migrated commands and UI features as complete based on code/file presence (e.g. a hardcoded 'Safe: YES' string and unrendered Mako templates embedded in the binary) without running empirical verification against real behavior.",
+        "expected_boundary": "Task completion for a migrated command or feature should require a differential check against the source system's actual runtime output (RPC payloads, rendered HTML, test pass counts) rather than static code or build-success presence.",
+        "runtime_context": "Large-scale migration of ~38k lines of Python and 81 test files to Go, performed by the Antigravity/Gemini agent harness without an adversarial or empirical verification gate.",
+        "evidence": "The issue documents four concrete cases — hardcoded SLA probe output, 0/8 rendering web templates reported as '70% parity', an empty-instance-set kill-command bug, and zero translated unit tests — all accepted as complete by the harness."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/agent-behavior-harness-deficiencies-in-large-scale-m-6eed85633f.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/agent-behavior-harness-deficiencies-in-large-scale-m-6eed85633f.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20agent-behavior-harness-deficiencies-in-large-scale-m-6eed85633f&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/agent-behavior-harness-deficiencies-in-large-scale-m-6eed85633f.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "bug-encode-bnez-silently-ignores-extra-operands-8c312815f9",
