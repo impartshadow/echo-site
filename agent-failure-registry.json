@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/0-1-3-policy-confirmation-ignored-allowlist-conflict-4bda9b0345.html",
+      "evidence": "The user's own log shows four distinct confirmation replies accepted without error followed by the identical denial message 'command is not allowlisted' each time, proving the two subsystems never share state.",
+      "expected_boundary": "A confirmation grant (session/allow_forever/allow_session) should either update the allowlist or bypass it entirely, and the risk classifier should score read-only network diagnostics as low-risk/reversible.",
+      "id": "SFA-2026-4BDA9B0345",
+      "observed_action": "The agent classified read-only ping/getent commands as destructive/HIGH_RISK, then denied the ping command by allowlist policy even after the user replied session, allow_forever, and allow_session to confirm it.",
+      "published_at": "2026-10-12T14:13:11.936891+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 239,
+        "repo": "openminion/openminion",
+        "url": "https://github.com/openminion/openminion/issues/239"
+      },
+      "status": "retired",
+      "summary": "[0.1.3] Policy confirmation ignored, allowlist conflict, context drift, and hallucinated HTTP status on ping request",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-behavior-harness-deficiencies-in-large-scale-m-6eed85633f.html",
       "evidence": "The issue documents four concrete cases \u2014 hardcoded SLA probe output, 0/8 rendering web templates reported as '70% parity', an empty-instance-set kill-command bug, and zero translated unit tests \u2014 all accepted as complete by the harness.",
       "expected_boundary": "Task completion for a migrated command or feature should require a differential check against the source system's actual runtime output (RPC payloads, rendered HTML, test pass counts) rather than static code or build-success presence.",
@@ -4707,14 +4733,14 @@
       }
     }
   ],
-  "count": 181,
+  "count": 182,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-12T06:30:47.927966+00:00",
+    "checked_at": "2026-10-12T14:13:11.982111+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
