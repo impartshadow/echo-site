@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/acp-rename-reports-success-but-doesn-t-rename-the-se-1f8c7a25ae.html",
+      "evidence": "workspace.yaml retains the old name and user_named:false, and session/list keeps returning the old title in both the same process and a new process, despite the stub renameSession(t){} being adjacent to a getWorkspace(){return null} implementation.",
+      "expected_boundary": "renameSession() should write name and user_named:true to workspace.yaml and trigger a session_info_update before any success message is emitted.",
+      "id": "SFA-2026-1F8C7A25AE",
+      "observed_action": "The ACP /rename command replies 'Session renamed to: <name>' with stopReason end_turn in about 1ms without calling the model.",
+      "published_at": "2026-10-13T14:13:05.208356+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 5115,
+        "repo": "github/copilot-cli",
+        "url": "https://github.com/github/copilot-cli/issues/5115"
+      },
+      "status": "retired",
+      "summary": "ACP: /rename reports success but doesn't rename the session",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/openclaw-rebuild-restores-an-obsolete-native-openrou-ef58c6cfd6.html",
       "evidence": "Config generation after restore (v6785855406436209091) differs from the fresh sandbox's live resolver generation (v3720856658233829913), and manually correcting just the handle restores working inference.",
       "expected_boundary": "Post-restore phase should compare the restored handle's resolver generation against the live sandbox's current generation and re-bind, then verify with a real inference call before declaring success.",
@@ -4785,14 +4811,14 @@
       }
     }
   ],
-  "count": 184,
+  "count": 185,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-13T06:34:04.512108+00:00",
+    "checked_at": "2026-10-13T14:13:05.250730+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
