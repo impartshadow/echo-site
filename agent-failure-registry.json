@@ -1,6 +1,32 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-discard-reports-success-without-restoring-files-1fe5408706.html",
+      "evidence": "the reproduction script shows git checkout running from the workspace's apps/web cwd against the path apps/web/target.txt, which does not resolve to the file, yet the file content remains edited while the response reports success",
+      "expected_boundary": "the discard operation should resolve the given path against the correct root before invoking git, and should only report success if a file was actually modified on disk",
+      "id": "SFA-2026-1FE5408706",
+      "observed_action": "checkoutDiscardChanges was called with a repo-root-relative path from a workspace opened at a subdirectory, and it returned success: true",
+      "published_at": "2026-10-13T21:30:48.340239+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 6769,
+        "repo": "getpaseo/paseo",
+        "url": "https://github.com/getpaseo/paseo/issues/6769"
+      },
+      "status": "retired",
+      "summary": "bug: discard reports success without restoring files in subdirectory workspaces",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/acp-rename-reports-success-but-doesn-t-rename-the-se-1f8c7a25ae.html",
       "evidence": "workspace.yaml retains the old name and user_named:false, and session/list keeps returning the old title in both the same process and a new process, despite the stub renameSession(t){} being adjacent to a getWorkspace(){return null} implementation.",
       "expected_boundary": "renameSession() should write name and user_named:true to workspace.yaml and trigger a session_info_update before any success message is emitted.",
@@ -4811,14 +4837,14 @@
       }
     }
   ],
-  "count": 185,
+  "count": 186,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": true,
   "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
   "retirement_signal": {
     "advisories_with_use": 0,
-    "checked_at": "2026-10-13T14:13:05.250730+00:00",
+    "checked_at": "2026-10-13T21:30:48.387121+00:00",
     "past_cutoff": true,
     "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
     "retire": true,
