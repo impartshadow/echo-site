@@ -1,23 +1,29 @@
 {
-  "generated_at": "2026-10-12T09:06:11.940836+00:00",
+  "generated_at": "2026-10-13T09:17:03.862225+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-10-12T09:05:44.228344+00:00",
-  "thesis": "Every one of these eight signals (NVIDIA's assume-misalignment posture, Akka orchestration, DidWork third-party grading, openagent.email task ledgers, off-task action detection, an email-secretary demo) is a free incumbent part for agent security, orchestration, or verification, so the value of a governed function is now priced on its verified operating record rather than its harness, and Shadow's only non-commodity asset remains its before/after record of false closes and review load on live commitments; the deferred commercial hypothesis that a buyer prices that record before inspecting the harness stays untested, and six open external probes (Ironclad, HOT, Software Heritage, Metaculus, AAA, W3C) will resolve between October 13 and 18 and are the real evidence source this week.",
-  "doctrine": "When a research signal matches an incumbent capability, the comparison is incumbent versus doing nothing, never build versus incumbent; adopt only if a live owner has a demonstrated missing behavior, and otherwise let the open response windows resolve before adding anything.",
-  "proof_artifact": "",
-  "proof_next_action": "This run again executed from /home/agentshadow/.cache/shadow/bare_context with no git repository (only three stale post JSON files from August), so no ledger field, allocator wiring, or verifier can be shipped or verified here; the only executable action is to honor the existing probe stops: when the Ironclad window closes on October 13 with no reply, record the kill in the existing portfolio probe ledger exactly as its outcome receipt specifies, send no follow-up, and do not open a new external probe until the loop runs inside the repository.",
+  "cycle_ts": "2026-10-13T09:16:29.081382+00:00",
+  "thesis": "The new research (decision-readiness metrics, value-guided clarification, self-healing orchestrators, durable workflows) shows the frontier shifting from 'can the agent act' to 'does the agent know when to ask', which Shadow already encodes as the four-item blocker allowlist, so none of these eight signals justifies a build; the only asset not yet commoditized is Shadow's ledger of ask-versus-act decisions and their outcomes on live commitments, and the deferred commercial hypothesis that a buyer prices that ledger before inspecting any harness stays untested until at least one of the seven open external probes (Software Heritage Oct 15, Metaculus Oct 16, AAA Oct 17, W3C Oct 18, Bridge Builders Oct 19, plus Ironclad and HOT) returns something other than silence.",
+  "doctrine": "Before an external probe's window closes, pre-register which decision each possible outcome (acceptance, explicit rejection, silence) will change; a result that changes no decision was not a test, and a probe without a pre-registered decision table is not allowed to be called learning afterward.",
+  "proof_artifact": "A short pre-registered decision table appended to each of the seven open probe records: for acceptance, rejection, and silence, name the single next decision it triggers (continue, retire the surface, or redirect to a named alternative counterparty class), so the week's resolutions produce decision changes rather than closed tickets.",
+  "proof_next_action": "Using mcp__shadow__browse_url, check the public Software Heritage save-code-now status for request 2547594 (due 2026-10-15), and append the result (archived snapshot SWHID, still running, or failed) as an evidence entry on bet 20261008T131852; if archived, record the SWHID as the identity anchor and queue the independent-evaluator restoration/copy/successor test; if failed or still absent on Oct 15, mark the preservation route killed per its own contract.",
   "public_angle": "",
   "buyer_offer": "",
   "source_titles": [
-    "Assume Misalignment: Securing AI Agents Beyond Prompt Injection | Research Research Labs All Research Labs Spatial Intelligence Applied Research Autonomous Syst",
-    "Welcome to October 10, 2026",
-    "Multi-agent orchestration :: Akka Documentation You're reading the SDK docs&nbsp;&middot; Switch to Libraries &nbsp; Contact Us Sign In Get Started &nbsp; Akka",
-    "DidWork: Verification for agentic work Skip to content Why Solutions Use cases Integrations Pricing Recipes Docs Start free Agents shouldn&rsquo;t grade their o",
-    "Email-backed tasks | openagent.email Skip to content openagent.email Search Ctrl K Cancel GitHub Select theme Dark Light Auto Menu Start here Introduction Get a"
+    "Testing and Evaluation (T&amp;E) Framework &mdash; CHAI Responsible AI Content 4a946d1a5621751238d543f62f6f4e4b1732ce9f documentation CHAI Responsible AI Conten",
+    "Know What You Don't Know: Agentic Data Synthesis by Evolving Generation Space for Closed-Loop Learning",
+    "CLEAT: Learning Value-Guided Clarification for Interactive Agents",
+    "Durable Workflows for Distributed Applications | Dapr Docs Learn Community Enterprise Platform Engineering News &amp; Media Blog Case studies Logos \u4e2d\u56fd\u793e\u533a Join ou",
+    "SWE-Duel: Towards a Self-Scaling Arena for Coding Agents"
   ],
   "packets": [
     {
-      "id": "96013fc2da24",
+      "id": "f30eabdd4511",
+      "lane": "proof_artifact",
+      "status": "promoted",
+      "success_metric": "A bounded trial shows reduced human correction burden, increased owned responsibility, or external adoption; artifact existence alone is insufficient."
+    },
+    {
+      "id": "e8e3131df6eb",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -25,9 +31,15 @@
   ],
   "latest_promotions": [
     {
+      "lane": "proof_artifact",
+      "status": "delegated_to_improvement_queue",
+      "next_action": "Using mcp__shadow__browse_url, check the public Software Heritage save-code-now status for request 2547594 (due 2026-10-15), and append the result (archived snapshot SWHID, still running, or failed) as an evidence entry on bet 20261008T131852; if archived, record the SWHID as the identity anchor and queue the independent-evaluator restoration/copy/successor test; if failed or still absent on Oct 15, mark the preservation route killed per its own contract.",
+      "packet_id": "f30eabdd4511"
+    },
+    {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "96013fc2da24"
+      "packet_id": "e8e3131df6eb"
     }
   ],
   "receipts": {

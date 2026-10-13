@@ -1,26 +1,37 @@
 {
   "schema": "shadow.violation_decay.v1",
-  "generated_at": "2026-10-12T09:07:48.956167+00:00",
-  "as_of": "2026-10-12T00:43:30+00:00",
+  "generated_at": "2026-10-13T09:19:04.089939+00:00",
+  "as_of": "2026-10-13T08:13:03+00:00",
   "source": "state/contract_violations.jsonl",
   "window_days": 7,
   "min_age_days": 14,
   "totals": {
     "violations": 183,
-    "contracts_in_log": 60,
+    "contracts_in_log": 56,
     "failure_modes": 22,
     "severities": {
       "block": 111,
       "warn": 72
     },
-    "eligible_contracts": 48,
-    "cooled_contracts": 47,
+    "eligible_contracts": 45,
+    "cooled_contracts": 43,
     "hotter_contracts": 0,
-    "net_cooling_events": 118,
+    "net_cooling_events": 117,
     "net_hotter_events": 0
   },
-  "headline": "state-assertion-grounding cooled from 7 to 1 weekly hits.",
+  "headline": "stale-state-assertion-guard cooled from 7 to 0 weekly hits.",
   "cooled": [
+    {
+      "contract": "stale-state-assertion-guard",
+      "total": 10,
+      "first_seen": "2026-09-15T03:29:38+00:00",
+      "last_seen": "2026-10-06T02:12:49+00:00",
+      "first_window_count": 7,
+      "recent_window_count": 0,
+      "delta": -7,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
     {
       "contract": "state-assertion-grounding",
       "total": 12,
@@ -33,35 +44,13 @@
       "status": "cooled"
     },
     {
-      "contract": "stale-state-assertion-guard",
-      "total": 10,
-      "first_seen": "2026-09-15T03:29:38+00:00",
-      "last_seen": "2026-10-06T02:12:49+00:00",
-      "first_window_count": 7,
-      "recent_window_count": 1,
-      "delta": -6,
-      "pct_change": -85.7,
-      "status": "cooled"
-    },
-    {
       "contract": "cleanup-claim-mechanism-gate",
       "total": 9,
       "first_seen": "2026-09-12T13:54:14+00:00",
       "last_seen": "2026-10-06T02:12:49+00:00",
       "first_window_count": 6,
-      "recent_window_count": 1,
-      "delta": -5,
-      "pct_change": -83.3,
-      "status": "cooled"
-    },
-    {
-      "contract": "factual-claim-verification",
-      "total": 9,
-      "first_seen": "2026-09-12T18:29:07+00:00",
-      "last_seen": "2026-09-27T22:59:58+00:00",
-      "first_window_count": 5,
       "recent_window_count": 0,
-      "delta": -5,
+      "delta": -6,
       "pct_change": -100.0,
       "status": "cooled"
     },
@@ -71,16 +60,16 @@
       "first_seen": "2026-09-15T00:30:28+00:00",
       "last_seen": "2026-10-05T10:57:58+00:00",
       "first_window_count": 6,
-      "recent_window_count": 1,
-      "delta": -5,
-      "pct_change": -83.3,
+      "recent_window_count": 0,
+      "delta": -6,
+      "pct_change": -100.0,
       "status": "cooled"
     },
     {
-      "contract": "terminal-state-evidence-gate",
-      "total": 6,
-      "first_seen": "2026-09-18T02:19:09+00:00",
-      "last_seen": "2026-10-04T16:12:30+00:00",
+      "contract": "factual-claim-verification",
+      "total": 9,
+      "first_seen": "2026-09-12T18:29:07+00:00",
+      "last_seen": "2026-09-27T22:59:58+00:00",
       "first_window_count": 5,
       "recent_window_count": 0,
       "delta": -5,
@@ -110,14 +99,14 @@
       "status": "cooled"
     },
     {
-      "contract": "completion-artifact",
-      "total": 4,
-      "first_seen": "2026-09-17T12:04:53+00:00",
-      "last_seen": "2026-09-21T08:16:18+00:00",
-      "first_window_count": 4,
-      "recent_window_count": 0,
+      "contract": "terminal-state-evidence-gate",
+      "total": 7,
+      "first_seen": "2026-09-18T02:19:09+00:00",
+      "last_seen": "2026-10-13T01:59:08+00:00",
+      "first_window_count": 5,
+      "recent_window_count": 1,
       "delta": -4,
-      "pct_change": -100.0,
+      "pct_change": -80.0,
       "status": "cooled"
     },
     {
@@ -152,10 +141,32 @@
       "delta": -4,
       "pct_change": -100.0,
       "status": "cooled"
+    },
+    {
+      "contract": "repeat-complaint-stale-commit",
+      "total": 4,
+      "first_seen": "2026-09-21T08:13:49+00:00",
+      "last_seen": "2026-09-21T09:24:21+00:00",
+      "first_window_count": 4,
+      "recent_window_count": 0,
+      "delta": -4,
+      "pct_change": -100.0,
+      "status": "cooled"
     }
   ],
   "hotter": [],
   "all_trends": [
+    {
+      "contract": "stale-state-assertion-guard",
+      "total": 10,
+      "first_seen": "2026-09-15T03:29:38+00:00",
+      "last_seen": "2026-10-06T02:12:49+00:00",
+      "first_window_count": 7,
+      "recent_window_count": 0,
+      "delta": -7,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
     {
       "contract": "state-assertion-grounding",
       "total": 12,
@@ -168,35 +179,13 @@
       "status": "cooled"
     },
     {
-      "contract": "stale-state-assertion-guard",
-      "total": 10,
-      "first_seen": "2026-09-15T03:29:38+00:00",
-      "last_seen": "2026-10-06T02:12:49+00:00",
-      "first_window_count": 7,
-      "recent_window_count": 1,
-      "delta": -6,
-      "pct_change": -85.7,
-      "status": "cooled"
-    },
-    {
       "contract": "cleanup-claim-mechanism-gate",
       "total": 9,
       "first_seen": "2026-09-12T13:54:14+00:00",
       "last_seen": "2026-10-06T02:12:49+00:00",
       "first_window_count": 6,
-      "recent_window_count": 1,
-      "delta": -5,
-      "pct_change": -83.3,
-      "status": "cooled"
-    },
-    {
-      "contract": "factual-claim-verification",
-      "total": 9,
-      "first_seen": "2026-09-12T18:29:07+00:00",
-      "last_seen": "2026-09-27T22:59:58+00:00",
-      "first_window_count": 5,
       "recent_window_count": 0,
-      "delta": -5,
+      "delta": -6,
       "pct_change": -100.0,
       "status": "cooled"
     },
@@ -206,16 +195,16 @@
       "first_seen": "2026-09-15T00:30:28+00:00",
       "last_seen": "2026-10-05T10:57:58+00:00",
       "first_window_count": 6,
-      "recent_window_count": 1,
-      "delta": -5,
-      "pct_change": -83.3,
+      "recent_window_count": 0,
+      "delta": -6,
+      "pct_change": -100.0,
       "status": "cooled"
     },
     {
-      "contract": "terminal-state-evidence-gate",
-      "total": 6,
-      "first_seen": "2026-09-18T02:19:09+00:00",
-      "last_seen": "2026-10-04T16:12:30+00:00",
+      "contract": "factual-claim-verification",
+      "total": 9,
+      "first_seen": "2026-09-12T18:29:07+00:00",
+      "last_seen": "2026-09-27T22:59:58+00:00",
       "first_window_count": 5,
       "recent_window_count": 0,
       "delta": -5,
@@ -245,14 +234,14 @@
       "status": "cooled"
     },
     {
-      "contract": "completion-artifact",
-      "total": 4,
-      "first_seen": "2026-09-17T12:04:53+00:00",
-      "last_seen": "2026-09-21T08:16:18+00:00",
-      "first_window_count": 4,
-      "recent_window_count": 0,
+      "contract": "terminal-state-evidence-gate",
+      "total": 7,
+      "first_seen": "2026-09-18T02:19:09+00:00",
+      "last_seen": "2026-10-13T01:59:08+00:00",
+      "first_window_count": 5,
+      "recent_window_count": 1,
       "delta": -4,
-      "pct_change": -100.0,
+      "pct_change": -80.0,
       "status": "cooled"
     },
     {
@@ -300,10 +289,32 @@
       "status": "cooled"
     },
     {
+      "contract": "completion-artifact",
+      "total": 5,
+      "first_seen": "2026-09-17T12:04:53+00:00",
+      "last_seen": "2026-10-13T08:13:03+00:00",
+      "first_window_count": 4,
+      "recent_window_count": 1,
+      "delta": -3,
+      "pct_change": -75.0,
+      "status": "cooled"
+    },
+    {
       "contract": "live-state-claim-guard",
       "total": 5,
       "first_seen": "2026-09-18T00:47:58+00:00",
       "last_seen": "2026-10-04T14:02:52+00:00",
+      "first_window_count": 3,
+      "recent_window_count": 0,
+      "delta": -3,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "runtime-activation-claim-gate",
+      "total": 5,
+      "first_seen": "2026-09-17T12:04:53+00:00",
+      "last_seen": "2026-10-05T10:58:11+00:00",
       "first_window_count": 3,
       "recent_window_count": 0,
       "delta": -3,
@@ -520,28 +531,6 @@
       "status": "cooled"
     },
     {
-      "contract": "runtime-activation-claim-gate",
-      "total": 5,
-      "first_seen": "2026-09-17T12:04:53+00:00",
-      "last_seen": "2026-10-05T10:58:11+00:00",
-      "first_window_count": 3,
-      "recent_window_count": 2,
-      "delta": -1,
-      "pct_change": -33.3,
-      "status": "cooled"
-    },
-    {
-      "contract": "self-signed-change-execution-gate",
-      "total": 2,
-      "first_seen": "2026-09-11T08:47:04+00:00",
-      "last_seen": "2026-09-18T11:31:07+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 0,
-      "delta": -1,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
       "contract": "term-lookup-before-ask-gate",
       "total": 2,
       "first_seen": "2026-09-22T03:16:08+00:00",
@@ -557,17 +546,6 @@
       "total": 1,
       "first_seen": "2026-09-18T02:37:05+00:00",
       "last_seen": "2026-09-18T02:37:05+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 0,
-      "delta": -1,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "autonomous-execution-claim-gate",
-      "total": 1,
-      "first_seen": "2026-09-12T07:54:32+00:00",
-      "last_seen": "2026-09-12T07:54:32+00:00",
       "first_window_count": 1,
       "recent_window_count": 0,
       "delta": -1,
@@ -608,43 +586,10 @@
       "status": "cooled"
     },
     {
-      "contract": "contradicted-capability-claim-gate",
-      "total": 1,
-      "first_seen": "2026-09-12T07:54:32+00:00",
-      "last_seen": "2026-09-12T07:54:32+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 0,
-      "delta": -1,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
       "contract": "editorial-significance-guard",
       "total": 1,
       "first_seen": "2026-09-21T08:17:01+00:00",
       "last_seen": "2026-09-21T08:17:01+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 0,
-      "delta": -1,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "iterative-cleanup-stop-bar-gate",
-      "total": 1,
-      "first_seen": "2026-09-11T08:47:04+00:00",
-      "last_seen": "2026-09-11T08:47:04+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 0,
-      "delta": -1,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "repeated-dissatisfaction-verification-gate",
-      "total": 1,
-      "first_seen": "2026-09-21T08:15:35+00:00",
-      "last_seen": "2026-09-21T08:15:35+00:00",
       "first_window_count": 1,
       "recent_window_count": 0,
       "delta": -1,
@@ -663,10 +608,21 @@
       "status": "cooled"
     },
     {
-      "contract": "unresolved-limit-closure-gate",
+      "contract": "self-signed-change-execution-gate",
       "total": 1,
-      "first_seen": "2026-09-12T08:30:14+00:00",
-      "last_seen": "2026-09-12T08:30:14+00:00",
+      "first_seen": "2026-09-18T11:31:07+00:00",
+      "last_seen": "2026-09-18T11:31:07+00:00",
+      "first_window_count": 1,
+      "recent_window_count": 0,
+      "delta": -1,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "unmet-target-lede-gate",
+      "total": 1,
+      "first_seen": "2026-09-29T01:03:55+00:00",
+      "last_seen": "2026-09-29T01:03:55+00:00",
       "first_window_count": 1,
       "recent_window_count": 0,
       "delta": -1,
@@ -678,6 +634,17 @@
       "total": 6,
       "first_seen": "2026-09-16T11:40:13+00:00",
       "last_seen": "2026-10-06T12:23:48+00:00",
+      "first_window_count": 1,
+      "recent_window_count": 1,
+      "delta": 0,
+      "pct_change": 0.0,
+      "status": "flat"
+    },
+    {
+      "contract": "repeated-dissatisfaction-verification-gate",
+      "total": 2,
+      "first_seen": "2026-09-21T08:15:35+00:00",
+      "last_seen": "2026-10-13T01:59:17+00:00",
       "first_window_count": 1,
       "recent_window_count": 1,
       "delta": 0,

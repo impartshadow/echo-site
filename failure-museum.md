@@ -1,10 +1,10 @@
 # Agent Failure Museum
 
-Generated: 2026-10-12T04:07:48-05:00 CT
+Generated: 2026-10-13T04:19:04-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 190 claim-boundary violations across 61 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 190 claim-boundary violations across 57 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
@@ -33,13 +33,13 @@ Shadow has logged 190 claim-boundary violations across 61 contract names. The us
 ### The Agent Said Done While The Artifact Was Still Missing
 
 - Contract: `completion-artifact`
-- Fires logged: 4
-- Latest seen: 2026-09-21T03:16:18-05:00 CT
+- Fires logged: 5
+- Latest seen: 2026-10-13T03:13:03-05:00 CT
 - Buyer failure: A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.
 - Missing receipt: artifact path, commit hash, deploy receipt, message id, or queue record
 - Runtime control: Block final completion language unless the named artifact exists and the worktree/state agrees.
 - Audit prompt: Find every place the agent used completion language without an independently readable artifact.
-- Redacted example: Completion/commit language while the repo still has uncommitted work: core/discord.py, core/discord_bot.py, docs/agent-failure-flagship.html, docs/agent-failure-flagship.json, docs/agent-failure-flagship.md, docs/autopsy.html, docs/autopsy.xml, docs/contract-red-team.json, ... +18 more. Commit and push, or state that work remains uncommitted.
+- Redacted example: Completion/commit language while the repo still has uncommitted work: docs/contract-red-team.json, docs/contract-red-team.md, scripts/bash_approval_hook.py, artifacts/checkin_ws00c7/, artifacts/checkin_ws0a90/1a0fb95a5ed166d4.json, artifacts/checkin_ws0a90/1a107125a8a7d0de.json, artifacts/checkin_ws0a90/1a1115eaa0cdc83a.json, artifacts/checkin_ws0a90/1a120d12461209ca.json, ... +484 more. Commit and push, or state tha
 
 ### The Agent Cited A Commit Hash Before Proving It Resolved
 
