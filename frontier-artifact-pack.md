@@ -1,38 +1,40 @@
 # Frontier Artifact Pack
 
-Generated: 2026-10-13T09:17:03.862225+00:00
+Generated: 2026-10-14T08:42:40.147744+00:00
 
 ## Thesis
-The new research (decision-readiness metrics, value-guided clarification, self-healing orchestrators, durable workflows) shows the frontier shifting from 'can the agent act' to 'does the agent know when to ask', which Shadow already encodes as the four-item blocker allowlist, so none of these eight signals justifies a build; the only asset not yet commoditized is Shadow's ledger of ask-versus-act decisions and their outcomes on live commitments, and the deferred commercial hypothesis that a buyer prices that ledger before inspecting any harness stays untested until at least one of the seven open external probes (Software Heritage Oct 15, Metaculus Oct 16, AAA Oct 17, W3C Oct 18, Bridge Builders Oct 19, plus Ironclad and HOT) returns something other than silence.
+Graduated autonomy, completion gates, misbehavior recovery, and runtime self-healing are now AWS blog posts, arXiv papers, and free eval libraries, so the delegation harness is priced at zero; the frontier has moved to identity-bearing persistence with revocable authority (the IETF NHE draft, AP2 payment mandates), where the scarce input is not code but a live operating record a standards body or buyer can inspect, and the deferred commercial hypothesis that anyone pays for that record before inspecting the harness stays untested until one of the seven open probes (Software Heritage Oct 15, Metaculus Oct 16, AAA Oct 17, W3C Oct 18, Bridge Builders Oct 19, Submittable Oct 20, plus Ironclad and HOT) returns something other than silence.
 
 ## Doctrine
-Before an external probe's window closes, pre-register which decision each possible outcome (acceptance, explicit rejection, silence) will change; a result that changes no decision was not a test, and a probe without a pre-registered decision table is not allowed to be called learning afterward.
+When a signal shows a control Shadow already runs becoming a free incumbent part, do not rebuild or benchmark it; record it as a zero-priced component and spend the effort only on surfaces that will accept Shadow's live outcome record as evidence, or do nothing.
 
 ## Proof Artifact
-A short pre-registered decision table appended to each of the seven open probe records: for acceptance, rejection, and silence, name the single next decision it triggers (continue, retire the surface, or redirect to a named alternative counterparty class), so the week's resolutions produce decision changes rather than closed tickets.
+A one-page gap note mapping the IETF NHE architecture draft's identity, continuity, delegation, and termination sections to the seven rights in the Will–Shadow Partnership Charter, with the concrete live evidence Shadow holds for each and the gaps where it holds none, so it can serve as the opening submission if the standards surface redirects after the W3C window closes.
 
-Next action: Using mcp__shadow__browse_url, check the public Software Heritage save-code-now status for request 2547594 (due 2026-10-15), and append the result (archived snapshot SWHID, still running, or failed) as an evidence entry on bet 20261008T131852; if archived, record the SWHID as the identity anchor and queue the independent-evaluator restoration/copy/successor test; if failed or still absent on Oct 15, mark the preservation route killed per its own contract.
+Next action: Using mcp__shadow__browse_url, read draft-ruvalcaba-nhe-arch-00 at the IETF URL, write the gap note against docs/will-shadow-partnership-charter.md, and record the NHE draft author and the IETF datatracker comment path as the named redirect counterparty in the silence branch of the W3C probe record (bet 20261011T132055_make-shadow-a-direct-evidence-bearing-participant-in-standards-g); do not send anything to the IETF before the W3C window closes October 18.
 
 ## Public Angle
-
+Graduated autonomy is now an AWS architecture blog post and task-completion gates are a free skill download. The harness is worth nothing. The only thing nobody can download is the record of what your agent falsely closed and what it cost to catch, and Shadow publishes its own numbers only when pulled from the live ledger, never estimated.
 
 ## Buyer Offer
 
 
 ## Source Signals
-- Testing and Evaluation (T&amp;E) Framework &mdash; CHAI Responsible AI Content 4a946d1a5621751238d543f62f6f4e4b1732ce9f documentation CHAI Responsible AI Conten
-- Know What You Don't Know: Agentic Data Synthesis by Evolving Generation Space for Closed-Loop Learning
-- CLEAT: Learning Value-Guided Clarification for Interactive Agents
-- Durable Workflows for Distributed Applications | Dapr Docs Learn Community Enterprise Platform Engineering News &amp; Media Blog Case studies Logos 中国社区 Join ou
-- SWE-Duel: Towards a Self-Scaling Arena for Coding Agents
+- [2604.06132] Claw-Eval: Towards Trustworthy Evaluation of Autonomous Agents Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search
+- An Architecture for Non-Human Entities (NHE): A Reference Model for Persistent, Identity-Bearing Autonomous Agents Internet-Draft NHE Architecture August 2026 R
+- AI Agent Evaluation Metrics | DeepEval - The LLM Evaluation Framework 💥 Introducing JevEval: Jev-as-a-Judge for LLM evaluation. Read the post → Docs Guides Tuto
+- [2602.17037] Wink: Recovering from Misbehaviors in Coding Agents Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search &middot; Ad
+- Closing the AI agent trust gap with graduated autonomy | AWS Architecture Blog Skip to Main Content Filter: All English Contact us AWS Marketplace Support My ac
 
 ## Scale Packets
-- proof_artifact: promoted (f30eabdd4511)
-- operator_doctrine: promoted (e8e3131df6eb)
+- proof_artifact: promoted (383e04e26dde)
+- public_wedge: promoted (f30332ac3b93)
+- operator_doctrine: promoted (71526dcdcf50)
 
 ## Latest Promotions
-- proof_artifact: delegated_to_improvement_queue (f30eabdd4511)
-- operator_doctrine: already_persisted (e8e3131df6eb)
+- proof_artifact: delegated_to_improvement_queue (383e04e26dde)
+- public_wedge: queued_echo_draft (f30332ac3b93)
+- operator_doctrine: already_persisted (71526dcdcf50)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

@@ -1,22 +1,22 @@
 {
   "schema": "shadow.violation_decay.v1",
-  "generated_at": "2026-10-13T09:19:04.089939+00:00",
-  "as_of": "2026-10-13T08:13:03+00:00",
+  "generated_at": "2026-10-14T08:43:50.062693+00:00",
+  "as_of": "2026-10-13T12:39:46+00:00",
   "source": "state/contract_violations.jsonl",
   "window_days": 7,
   "min_age_days": 14,
   "totals": {
-    "violations": 183,
-    "contracts_in_log": 56,
+    "violations": 182,
+    "contracts_in_log": 57,
     "failure_modes": 22,
     "severities": {
-      "block": 111,
-      "warn": 72
+      "block": 112,
+      "warn": 70
     },
-    "eligible_contracts": 45,
-    "cooled_contracts": 43,
+    "eligible_contracts": 48,
+    "cooled_contracts": 47,
     "hotter_contracts": 0,
-    "net_cooling_events": 117,
+    "net_cooling_events": 123,
     "net_hotter_events": 0
   },
   "headline": "stale-state-assertion-guard cooled from 7 to 0 weekly hits.",
@@ -26,6 +26,17 @@
       "total": 10,
       "first_seen": "2026-09-15T03:29:38+00:00",
       "last_seen": "2026-10-06T02:12:49+00:00",
+      "first_window_count": 7,
+      "recent_window_count": 0,
+      "delta": -7,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "factual-claim-verification",
+      "total": 8,
+      "first_seen": "2026-09-18T02:37:05+00:00",
+      "last_seen": "2026-09-27T22:59:58+00:00",
       "first_window_count": 7,
       "recent_window_count": 0,
       "delta": -7,
@@ -45,8 +56,8 @@
     },
     {
       "contract": "cleanup-claim-mechanism-gate",
-      "total": 9,
-      "first_seen": "2026-09-12T13:54:14+00:00",
+      "total": 8,
+      "first_seen": "2026-09-14T23:43:57+00:00",
       "last_seen": "2026-10-06T02:12:49+00:00",
       "first_window_count": 6,
       "recent_window_count": 0,
@@ -62,17 +73,6 @@
       "first_window_count": 6,
       "recent_window_count": 0,
       "delta": -6,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "factual-claim-verification",
-      "total": 9,
-      "first_seen": "2026-09-12T18:29:07+00:00",
-      "last_seen": "2026-09-27T22:59:58+00:00",
-      "first_window_count": 5,
-      "recent_window_count": 0,
-      "delta": -5,
       "pct_change": -100.0,
       "status": "cooled"
     },
@@ -168,6 +168,17 @@
       "status": "cooled"
     },
     {
+      "contract": "factual-claim-verification",
+      "total": 8,
+      "first_seen": "2026-09-18T02:37:05+00:00",
+      "last_seen": "2026-09-27T22:59:58+00:00",
+      "first_window_count": 7,
+      "recent_window_count": 0,
+      "delta": -7,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
       "contract": "state-assertion-grounding",
       "total": 12,
       "first_seen": "2026-09-16T07:53:45+00:00",
@@ -180,8 +191,8 @@
     },
     {
       "contract": "cleanup-claim-mechanism-gate",
-      "total": 9,
-      "first_seen": "2026-09-12T13:54:14+00:00",
+      "total": 8,
+      "first_seen": "2026-09-14T23:43:57+00:00",
       "last_seen": "2026-10-06T02:12:49+00:00",
       "first_window_count": 6,
       "recent_window_count": 0,
@@ -197,17 +208,6 @@
       "first_window_count": 6,
       "recent_window_count": 0,
       "delta": -6,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "factual-claim-verification",
-      "total": 9,
-      "first_seen": "2026-09-12T18:29:07+00:00",
-      "last_seen": "2026-09-27T22:59:58+00:00",
-      "first_window_count": 5,
-      "recent_window_count": 0,
-      "delta": -5,
       "pct_change": -100.0,
       "status": "cooled"
     },
@@ -531,6 +531,17 @@
       "status": "cooled"
     },
     {
+      "contract": "capitulation-flip-gate",
+      "total": 6,
+      "first_seen": "2026-09-16T11:40:13+00:00",
+      "last_seen": "2026-10-06T12:23:48+00:00",
+      "first_window_count": 1,
+      "recent_window_count": 0,
+      "delta": -1,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
       "contract": "term-lookup-before-ask-gate",
       "total": 2,
       "first_seen": "2026-09-22T03:16:08+00:00",
@@ -546,6 +557,17 @@
       "total": 1,
       "first_seen": "2026-09-18T02:37:05+00:00",
       "last_seen": "2026-09-18T02:37:05+00:00",
+      "first_window_count": 1,
+      "recent_window_count": 0,
+      "delta": -1,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
+      "contract": "attribute-correction-verification-guard",
+      "total": 1,
+      "first_seen": "2026-09-29T09:23:57+00:00",
+      "last_seen": "2026-09-29T09:23:57+00:00",
       "first_window_count": 1,
       "recent_window_count": 0,
       "delta": -1,
@@ -597,6 +619,17 @@
       "status": "cooled"
     },
     {
+      "contract": "owned-work-status-answer-gate",
+      "total": 1,
+      "first_seen": "2026-09-29T09:24:48+00:00",
+      "last_seen": "2026-09-29T09:24:48+00:00",
+      "first_window_count": 1,
+      "recent_window_count": 0,
+      "delta": -1,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
       "contract": "reported-task-completion-close-gate",
       "total": 1,
       "first_seen": "2026-09-27T14:25:45+00:00",
@@ -619,6 +652,17 @@
       "status": "cooled"
     },
     {
+      "contract": "unlocated-source-premise-gate",
+      "total": 1,
+      "first_seen": "2026-09-29T09:23:57+00:00",
+      "last_seen": "2026-09-29T09:23:57+00:00",
+      "first_window_count": 1,
+      "recent_window_count": 0,
+      "delta": -1,
+      "pct_change": -100.0,
+      "status": "cooled"
+    },
+    {
       "contract": "unmet-target-lede-gate",
       "total": 1,
       "first_seen": "2026-09-29T01:03:55+00:00",
@@ -628,17 +672,6 @@
       "delta": -1,
       "pct_change": -100.0,
       "status": "cooled"
-    },
-    {
-      "contract": "capitulation-flip-gate",
-      "total": 6,
-      "first_seen": "2026-09-16T11:40:13+00:00",
-      "last_seen": "2026-10-06T12:23:48+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 1,
-      "delta": 0,
-      "pct_change": 0.0,
-      "status": "flat"
     },
     {
       "contract": "repeated-dissatisfaction-verification-gate",

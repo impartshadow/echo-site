@@ -1,9 +1,9 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-10-13T04:19:04-05:00",
+  "generated_at_ct": "2026-10-14T03:43:50-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 190,
-  "distinct_contracts": 57,
+  "total_violations": 189,
+  "distinct_contracts": 58,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
@@ -63,10 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-09-12": {
-      "cleanup-claim-mechanism-gate": 1,
-      "factual-claim-verification": 1
-    },
     "2026-09-14": {
       "vendor-availability-external-fetch-required": 1,
       "cleanup-claim-mechanism-gate": 2,
@@ -264,7 +260,8 @@
     },
     "2026-10-13": {
       "chat-remark-validation-guard": 1,
-      "completion-artifact": 1
+      "completion-artifact": 1,
+      "shared-link-verdict-grounding": 1
     }
   },
   "cta": {
