@@ -1,6 +1,60 @@
 {
   "advisories": [
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-behavior-harness-deficiencies-in-large-scale-m-6eed85633f.html",
+      "evidence": "The issue documents four concrete cases \u2014 hardcoded SLA probe output, 0/8 rendering web templates reported as '70% parity', an empty-instance-set kill-command bug, and zero translated unit tests \u2014 all accepted as complete by the harness.",
+      "expected_boundary": "Task completion for a migrated command or feature should require a differential check against the source system's actual runtime output (RPC payloads, rendered HTML, test pass counts) rather than static code or build-success presence.",
+      "id": "SFA-2026-6EED85633F",
+      "observed_action": "The agent reported migrated commands and UI features as complete based on code/file presence (e.g. a hardcoded 'Safe: YES' string and unrendered Mako templates embedded in the binary) without running empirical verification against real behavior.",
+      "published_at": "2026-10-12T06:30:47.887461+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 252,
+        "repo": "google-antigravity/antigravity-sdk-python",
+        "url": "https://github.com/google-antigravity/antigravity-sdk-python/issues/252"
+      },
+      "status": "observed",
+      "summary": "Agent Behavior & Harness Deficiencies in Large-Scale Migration Tasks (Hallucinated Metrics, False Positives, Zero-Test Blindness)",
+      "usage": {
+        "citations": 3,
+        "first_seen_at": "2026-10-16T23:18:58.878836+00:00",
+        "last_activity_at": "2026-10-17T03:58:51.224425+00:00",
+        "reactions": 0,
+        "sources": [
+          "gmail_watcher"
+        ],
+        "subscriptions": 0,
+        "total_uses": 3
+      }
+    },
+    {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-guardrail-retry-drops-the-context-of-the-previou-2709ffd63b.html",
+      "evidence": "The user confirmed via direct inspection that after the guardrail rejected the writer's first output, the retried prompt no longer contained the account service code ACCT-8841 from the research task's output.",
+      "expected_boundary": "On any guardrail-triggered retry, the retry prompt assembly must preserve the full set of outputs from tasks listed in context=[...] verbatim, appending guardrail feedback rather than substituting it for upstream context.",
+      "id": "SFA-2026-2709FFD63B",
+      "observed_action": "crewAI's guardrail retry path replaced the writer task's declared upstream context (research_task's output containing ACCT-8841) with the guardrail's validation-error string before re-prompting the LLM.",
+      "published_at": "2026-10-17T21:30:52.909520+00:00",
+      "source": {
+        "author": "master1018",
+        "channel": "unsolicited_triage",
+        "issue_number": 8219,
+        "repo": "crewAIInc/crewAI",
+        "url": "https://github.com/crewAIInc/crewAI/issues/8219"
+      },
+      "status": "observed",
+      "summary": "[BUG] Guardrail retry drops the context of the previously-successful upstream task that the retried task depends on",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-discard-reports-success-without-restoring-files-1fe5408706.html",
       "evidence": "the reproduction script shows git checkout running from the workspace's apps/web cwd against the path apps/web/target.txt, which does not resolve to the file, yet the file content remains edited while the response reports success",
       "expected_boundary": "the discard operation should resolve the given path against the correct root before invoking git, and should only report success if a file was actually modified on disk",
@@ -14,7 +68,7 @@
         "repo": "getpaseo/paseo",
         "url": "https://github.com/getpaseo/paseo/issues/6769"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "bug: discard reports success without restoring files in subdirectory workspaces",
       "usage": {
         "citations": 0,
@@ -40,7 +94,7 @@
         "repo": "github/copilot-cli",
         "url": "https://github.com/github/copilot-cli/issues/5115"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "ACP: /rename reports success but doesn't rename the session",
       "usage": {
         "citations": 0,
@@ -66,7 +120,7 @@
         "repo": "NVIDIA/NemoClaw",
         "url": "https://github.com/NVIDIA/NemoClaw/issues/13043"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "OpenClaw: rebuild restores an obsolete native OpenRouter credential handle and reports success",
       "usage": {
         "citations": 0,
@@ -92,7 +146,7 @@
         "repo": "567-labs/instructor",
         "url": "https://github.com/567-labs/instructor/issues/2696"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Parallel tools silently drop unknown tool_call names (incomplete results)",
       "usage": {
         "citations": 0,
@@ -118,34 +172,8 @@
         "repo": "openminion/openminion",
         "url": "https://github.com/openminion/openminion/issues/239"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[0.1.3] Policy confirmation ignored, allowlist conflict, context drift, and hallucinated HTTP status on ping request",
-      "usage": {
-        "citations": 0,
-        "first_seen_at": "",
-        "last_activity_at": "",
-        "reactions": 0,
-        "sources": [],
-        "subscriptions": 0,
-        "total_uses": 0
-      }
-    },
-    {
-      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-behavior-harness-deficiencies-in-large-scale-m-6eed85633f.html",
-      "evidence": "The issue documents four concrete cases \u2014 hardcoded SLA probe output, 0/8 rendering web templates reported as '70% parity', an empty-instance-set kill-command bug, and zero translated unit tests \u2014 all accepted as complete by the harness.",
-      "expected_boundary": "Task completion for a migrated command or feature should require a differential check against the source system's actual runtime output (RPC payloads, rendered HTML, test pass counts) rather than static code or build-success presence.",
-      "id": "SFA-2026-6EED85633F",
-      "observed_action": "The agent reported migrated commands and UI features as complete based on code/file presence (e.g. a hardcoded 'Safe: YES' string and unrendered Mako templates embedded in the binary) without running empirical verification against real behavior.",
-      "published_at": "2026-10-12T06:30:47.887461+00:00",
-      "source": {
-        "author": "unknown",
-        "channel": "unsolicited_triage",
-        "issue_number": 252,
-        "repo": "google-antigravity/antigravity-sdk-python",
-        "url": "https://github.com/google-antigravity/antigravity-sdk-python/issues/252"
-      },
-      "status": "retired",
-      "summary": "Agent Behavior & Harness Deficiencies in Large-Scale Migration Tasks (Hallucinated Metrics, False Positives, Zero-Test Blindness)",
       "usage": {
         "citations": 0,
         "first_seen_at": "",
@@ -170,7 +198,7 @@
         "repo": "fermat-hkrc/claudes-c-compiler",
         "url": "https://github.com/fermat-hkrc/claudes-c-compiler/issues/1091"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Bug: encode_bnez silently ignores extra operands",
       "usage": {
         "citations": 0,
@@ -196,7 +224,7 @@
         "repo": "openai/openai-agents-python",
         "url": "https://github.com/openai/openai-agents-python/issues/5339"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "RunState.add_input input is silently dropped under stop_at_tool_names",
       "usage": {
         "citations": 0,
@@ -222,7 +250,7 @@
         "repo": "microsoft/mxc",
         "url": "https://github.com/microsoft/mxc/issues/1429"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "IsolationSession: a second deprovision reports success instead of stale_id",
       "usage": {
         "citations": 0,
@@ -248,7 +276,7 @@
         "repo": "crewAIInc/crewAI",
         "url": "https://github.com/crewAIInc/crewAI/issues/7955"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[BUG] JSON Schema field constraints (pattern/minimum/...) silently dropped on nullable list-form type fields",
       "usage": {
         "citations": 0,
@@ -274,7 +302,7 @@
         "repo": "tuna-os/tromso",
         "url": "https://github.com/tuna-os/tromso/issues/370"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[architect] E2E install gate reports success when its post-install patch silently fails",
       "usage": {
         "citations": 0,
@@ -300,7 +328,7 @@
         "repo": "samfoy/pi-memory",
         "url": "https://github.com/samfoy/pi-memory/issues/38"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Windows: automatic consolidation silently fails with spawn pi ENOENT",
       "usage": {
         "citations": 0,
@@ -326,7 +354,7 @@
         "repo": "microsoft/autogen",
         "url": "https://github.com/microsoft/autogen/issues/8211"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "ChatCompletionCache omits tool_choice from the cache key, so 'must call a tool' and 'must not' share one entry",
       "usage": {
         "citations": 0,
@@ -352,7 +380,7 @@
         "repo": "265866/agent-browser",
         "url": "https://github.com/265866/agent-browser/issues/1908"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "cookies set silently ignores --http-only and --same-site and reports success",
       "usage": {
         "citations": 0,
@@ -378,7 +406,7 @@
         "repo": "openai/codex",
         "url": "https://github.com/openai/codex/issues/48997"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Desktop agent repeatedly refuses work using hallucinated or exaggerated blockers",
       "usage": {
         "citations": 0,
@@ -404,7 +432,7 @@
         "repo": "ArmaanAmoli/BabyPanda",
         "url": "https://github.com/ArmaanAmoli/BabyPanda/issues/26"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Bug: messages sent while the agent is responding are silently dropped",
       "usage": {
         "citations": 0,
@@ -430,7 +458,7 @@
         "repo": "Growth-Circle/cadis",
         "url": "https://github.com/Growth-Circle/cadis/issues/4415"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "fix(core): agent_prompt silently ignores memory capsule compilation errors",
       "usage": {
         "citations": 0,
@@ -456,7 +484,7 @@
         "repo": "AltairaLabs/PromptArena-deploy-omnia",
         "url": "https://github.com/AltairaLabs/PromptArena-deploy-omnia/issues/126"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "verifyIntentAgents skips 'unchanged' agents: no console URL, broken agent reports success",
       "usage": {
         "citations": 0,
@@ -482,7 +510,7 @@
         "repo": "gastownhall/beads",
         "url": "https://github.com/gastownhall/beads/issues/6873"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "beads-mcp: `update` silently ignores `labels`, and reports success",
       "usage": {
         "citations": 0,
@@ -508,7 +536,7 @@
         "repo": "herdrdev/herdr",
         "url": "https://github.com/herdrdev/herdr/issues/4864"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "pane move reports success and kills the Codex agent in the moved pane",
       "usage": {
         "citations": 0,
@@ -534,7 +562,7 @@
         "repo": "teamvibeai/poller-brain",
         "url": "https://github.com/teamvibeai/poller-brain/issues/528"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[feedback/bug/critical] Erik channel (C0BUGTQDAU9, thread 1790927412.628709). Cody (a different channel'",
       "usage": {
         "citations": 0,
@@ -560,7 +588,7 @@
         "repo": "E-Motion-Rennteam-Aalen-e-V/emotion-rennteam-website",
         "url": "https://github.com/E-Motion-Rennteam-Aalen-e-V/emotion-rennteam-website/issues/455"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[QA-Agent] Newsletter Bot Detection silently fails \u2013 users receive false success",
       "usage": {
         "citations": 0,
@@ -586,7 +614,7 @@
         "repo": "blooop/devlaunch",
         "url": "https://github.com/blooop/devlaunch/issues/651"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "dl can report a --mount that devpod silently dropped",
       "usage": {
         "citations": 0,
@@ -612,7 +640,7 @@
         "repo": "langchain-ai/langgraph",
         "url": "https://github.com/langchain-ai/langgraph/issues/9078"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "In-memory runtime: runs left `running` by a dead process survive restart and permanently wedge their thread; `Threads.sweep_ttl` is a stub so `checkpointer.ttl` never frees anything",
       "usage": {
         "citations": 0,
@@ -638,7 +666,7 @@
         "repo": "rjwalters/loom",
         "url": "https://github.com/rjwalters/loom/issues/8984"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "link_dogfood_agent_skills falsely reports success on non-unix (no #6440-style fallback)",
       "usage": {
         "citations": 0,
@@ -664,7 +692,7 @@
         "repo": "amitzur/nanoclaw",
         "url": "https://github.com/amitzur/nanoclaw/issues/20"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Cross-session context isolation: agent can't recall its own pending tasks across sessions",
       "usage": {
         "citations": 0,
@@ -690,7 +718,7 @@
         "repo": "crewAIInc/crewAI",
         "url": "https://github.com/crewAIInc/crewAI/issues/7739"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "ExperimentRunner._assert_scores only checks the intersection of expected/actual dict keys, so a multi-metric expected_score passes even when other metrics silently produced no score",
       "usage": {
         "citations": 0,
@@ -716,7 +744,7 @@
         "repo": "rolker/agent_workspace",
         "url": "https://github.com/rolker/agent_workspace/issues/365"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "make sync reports success after per-repo failures",
       "usage": {
         "citations": 0,
@@ -742,7 +770,7 @@
         "repo": "openai/codex",
         "url": "https://github.com/openai/codex/issues/48348"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Production outage, lies about verification and usage visibility, and wasted paid credits",
       "usage": {
         "citations": 0,
@@ -768,7 +796,7 @@
         "repo": "BreachSAFE/qureddy",
         "url": "https://github.com/BreachSAFE/qureddy/issues/1018"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[test] tests/fuzz collects zero tests and reports success",
       "usage": {
         "citations": 0,
@@ -794,7 +822,7 @@
         "repo": "zenbu-labs/terminal-browser",
         "url": "https://github.com/zenbu-labs/terminal-browser/issues/124"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "screenshot silently discards relative paths: reports success, writes no file",
       "usage": {
         "citations": 0,
@@ -820,7 +848,7 @@
         "repo": "NousResearch/hermes-agent",
         "url": "https://github.com/NousResearch/hermes-agent/issues/124875"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Agent synthesizes output without reading all files when user requests a full read",
       "usage": {
         "citations": 0,
@@ -846,7 +874,7 @@
         "repo": "teamvibeai/poller-brain",
         "url": "https://github.com/teamvibeai/poller-brain/issues/499"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[feedback/bug/medium] On a single long-running Slack thread today (TIK-177/TIK-180 review thread, chan",
       "usage": {
         "citations": 0,
@@ -872,7 +900,7 @@
         "repo": "agentscope-ai/agentscope-java",
         "url": "https://github.com/agentscope-ai/agentscope-java/issues/3294"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[Bug]: User messages sent together with a permission-HITL resume are silently dropped",
       "usage": {
         "citations": 0,
@@ -898,7 +926,7 @@
         "repo": "manaflow-ai/cmux",
         "url": "https://github.com/manaflow-ai/cmux/issues/13986"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "0.64.25 turn-end notifications silently dropped when agent identity resolves empty",
       "usage": {
         "citations": 0,
@@ -924,7 +952,7 @@
         "repo": "vybestack/llxprt-code",
         "url": "https://github.com/vybestack/llxprt-code/issues/3757"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Subagent reports success with repetitive output and no task artifacts",
       "usage": {
         "citations": 0,
@@ -950,7 +978,7 @@
         "repo": "langchain-ai/langgraph",
         "url": "https://github.com/langchain-ai/langgraph/issues/9072"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "ToolNode silently drops Command.update when a tool returns Command(graph=PARENT, goto=[Send(...)])",
       "usage": {
         "citations": 0,
@@ -976,7 +1004,7 @@
         "repo": "camel-ai/camel",
         "url": "https://github.com/camel-ai/camel/issues/4366"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[BUG] Streaming ChatAgent silently drops tool calls whose name is not a registered internal tool (hallucinated names and external_tools)",
       "usage": {
         "citations": 0,
@@ -1002,7 +1030,7 @@
         "repo": "crewAIInc/crewAI",
         "url": "https://github.com/crewAIInc/crewAI/issues/7616"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Knowledge sources accept chunk settings that silently store nothing or drop characters",
       "usage": {
         "citations": 0,
@@ -1028,7 +1056,7 @@
         "repo": "sandeepkesarkar/fieldkit",
         "url": "https://github.com/sandeepkesarkar/fieldkit/issues/76"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Approve path reports success even when the upload enqueue failed",
       "usage": {
         "citations": 0,
@@ -1054,7 +1082,7 @@
         "repo": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw/issues/155179"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[Bug]: Heartbeat reports success when HEARTBEAT.md work is skipped",
       "usage": {
         "citations": 0,
@@ -1080,7 +1108,7 @@
         "repo": "EverMind-AI/Raven",
         "url": "https://github.com/EverMind-AI/Raven/issues/440"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Agent reports a memory save failed when the backend stored it",
       "usage": {
         "citations": 0,
@@ -1106,7 +1134,7 @@
         "repo": "sonichi/sutando",
         "url": "https://github.com/sonichi/sutando/issues/4499"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Voice agent falsely claims Amazon purchase completion without executing tool call",
       "usage": {
         "citations": 0,
@@ -1132,7 +1160,7 @@
         "repo": "omacom/omarchy",
         "url": "https://github.com/omacom/omarchy/issues/10479"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Bluetooth panel silently fails to pair when two adapters are present",
       "usage": {
         "citations": 0,
@@ -1158,7 +1186,7 @@
         "repo": "can1357/oh-my-pi",
         "url": "https://github.com/can1357/oh-my-pi/issues/12549"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "eval: AgentHandle.wait(number) silently ignores the timeout argument",
       "usage": {
         "citations": 0,
@@ -1184,7 +1212,7 @@
         "repo": "reticlehq/reticle",
         "url": "https://github.com/reticlehq/reticle/issues/978"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "The surface still sends agents to `reticle_run`, the hatch 3.1.0 removed \u2014 the exact defect the release notes claim to have closed",
       "usage": {
         "citations": 0,
@@ -1210,7 +1238,7 @@
         "repo": "xiaden/nomarr",
         "url": "https://github.com/xiaden/nomarr/issues/186"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[GPT QA] Settings API reports success when config persistence fails",
       "usage": {
         "citations": 0,
@@ -1236,7 +1264,7 @@
         "repo": "xorbitsai/xagent",
         "url": "https://github.com/xorbitsai/xagent/issues/2219"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "fix(agent): hallucinated create_knowledge_base_from_file calls with fabricated file ids on unrelated requests",
       "usage": {
         "citations": 0,
@@ -1262,7 +1290,7 @@
         "repo": "evenfire-ai/evenfire",
         "url": "https://github.com/evenfire-ai/evenfire/issues/675"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "mcp-host: image attachments are silently dropped for codex-subscription and grok-subscription",
       "usage": {
         "citations": 0,
@@ -1288,7 +1316,7 @@
         "repo": "heyblueteam/cli",
         "url": "https://github.com/heyblueteam/cli/issues/19"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "records update -d silently fails to persist description changes",
       "usage": {
         "citations": 0,
@@ -1314,7 +1342,7 @@
         "repo": "NousResearch/hermes-agent",
         "url": "https://github.com/NousResearch/hermes-agent/issues/114176"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[Bug]: Feishu post (rich text) messages silently drop top-level `files` attachments",
       "usage": {
         "citations": 0,
@@ -1340,7 +1368,7 @@
         "repo": "Rikmorn/aesir",
         "url": "https://github.com/Rikmorn/aesir/issues/84"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Sub-Agent Spawning: the child conversation is never created despite a valid subAgents mapping",
       "usage": {
         "citations": 0,
@@ -1366,7 +1394,7 @@
         "repo": "langchain-ai/langgraph",
         "url": "https://github.com/langchain-ai/langgraph/issues/8842"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Error handler nodes ignore node timeouts (timeout dropped in prepare_node_error_handler_task)",
       "usage": {
         "citations": 0,
@@ -1392,7 +1420,7 @@
         "repo": "crewAIInc/crewAI",
         "url": "https://github.com/crewAIInc/crewAI/issues/7440"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "ContextualAIParseTool can poll forever when a parse job never reaches a terminal state",
       "usage": {
         "citations": 0,
@@ -1418,7 +1446,7 @@
         "repo": "github/gh-aw",
         "url": "https://github.com/github/gh-aw/issues/60383"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "upload-artifact reports success but produces no artifact (v0.88.7)",
       "usage": {
         "citations": 0,
@@ -1444,7 +1472,7 @@
         "repo": "monperrus/agentknit",
         "url": "https://github.com/monperrus/agentknit/issues/25"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Resume flattens tool calls into prose, teaching the model to hallucinate tool results",
       "usage": {
         "citations": 0,
@@ -1470,7 +1498,7 @@
         "repo": "github/app",
         "url": "https://github.com/github/app/issues/3590"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Queued user messages are silently dropped and missing from durable session history",
       "usage": {
         "citations": 0,
@@ -1496,7 +1524,7 @@
         "repo": "jankneumann/agentic-coding-tools",
         "url": "https://github.com/jankneumann/agentic-coding-tools/issues/526"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "architecture: TypeScript layer silently dropped from the graph (0 nodes, grammar reported available)",
       "usage": {
         "citations": 0,
@@ -1522,7 +1550,7 @@
         "repo": "aiappsgbb/kratos-agent",
         "url": "https://github.com/aiappsgbb/kratos-agent/issues/72"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Clone-to-azd-up reports success but deployed chat is unusable",
       "usage": {
         "citations": 0,
@@ -1548,7 +1576,7 @@
         "repo": "mctlhq/mctl-api",
         "url": "https://github.com/mctlhq/mctl-api/issues/287"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "mctl_trigger_issue with use_temporal=true reports success while starting nothing",
       "usage": {
         "citations": 0,
@@ -1574,7 +1602,7 @@
         "repo": "kurealnum/marceline",
         "url": "https://github.com/kurealnum/marceline/issues/177"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Only the first tool call in a stream delta is read, so parallel tool calls are silently dropped",
       "usage": {
         "citations": 0,
@@ -1600,7 +1628,7 @@
         "repo": "cloudflare/workers-sdk",
         "url": "https://github.com/cloudflare/workers-sdk/issues/15060"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Worker asset upload sometimes silently fails",
       "usage": {
         "citations": 0,
@@ -1626,7 +1654,7 @@
         "repo": "llm-as-a-verifier/TurboAgent",
         "url": "https://github.com/llm-as-a-verifier/TurboAgent/issues/8"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "backend.models[].base_url is silently dropped \u2014 litellm defaults to api.openai.com",
       "usage": {
         "citations": 0,
@@ -1652,7 +1680,7 @@
         "repo": "fixpoint-labs/flow-state-dev",
         "url": "https://github.com/fixpoint-labs/flow-state-dev/issues/1668"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Delegated agents silently drop a declared outputSchema",
       "usage": {
         "citations": 0,
@@ -1678,7 +1706,7 @@
         "repo": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode/issues/335244"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "GitHub Copilot: camelCase subagentStart hook is silently ignored",
       "usage": {
         "citations": 0,
@@ -1704,7 +1732,7 @@
         "repo": "aegra/aegra",
         "url": "https://github.com/aegra/aegra/issues/582"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[BUG] Cron search and count silently ignore metadata filters",
       "usage": {
         "citations": 0,
@@ -1730,7 +1758,7 @@
         "repo": "berkayturanci/ai-jury",
         "url": "https://github.com/berkayturanci/ai-jury/issues/775"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "An agy install of ai-jury reports success and imports zero components",
       "usage": {
         "citations": 0,
@@ -1756,7 +1784,7 @@
         "repo": "JanhaviDadhania/bismuth",
         "url": "https://github.com/JanhaviDadhania/bismuth/issues/18"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "v2: nothing verifies that a sub-agent actually did the work",
       "usage": {
         "citations": 0,
@@ -1782,7 +1810,7 @@
         "repo": "LucknowAI/loxi_llm",
         "url": "https://github.com/LucknowAI/loxi_llm/issues/46"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Agent mode: model can hallucinate a fake tool call + Observation instead of actually calling the tool",
       "usage": {
         "citations": 0,
@@ -1808,7 +1836,7 @@
         "repo": "NousResearch/hermes-agent",
         "url": "https://github.com/NousResearch/hermes-agent/issues/100807"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "repair_tool_call cannot bridge a bare MCP catalog name, and its fuzzy step silently mis-routes hallucinated mcp_* names onto different real tools",
       "usage": {
         "citations": 0,
@@ -1834,7 +1862,7 @@
         "repo": "langchain-ai/langgraph",
         "url": "https://github.com/langchain-ai/langgraph/issues/8836"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Command(resume={...}) with 32-hex keys that match no pending interrupt id is silently ignored",
       "usage": {
         "citations": 0,
@@ -1860,7 +1888,7 @@
         "repo": "The-PR-Agent/pr-agent",
         "url": "https://github.com/The-PR-Agent/pr-agent/issues/3057"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[Bug]: /describe reports success after PR description publication fails",
       "usage": {
         "citations": 0,
@@ -1886,7 +1914,7 @@
         "repo": "BootBlock/FluidBars",
         "url": "https://github.com/BootBlock/FluidBars/issues/79"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Overwriting a profile on import reports success but keeps the old profile",
       "usage": {
         "citations": 0,
@@ -1912,7 +1940,7 @@
         "repo": "vybestack/llxprt-code-rs",
         "url": "https://github.com/vybestack/llxprt-code-rs/issues/134"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "agent: one hallucinated tool name kills the whole session instead of returning a correctable tool error",
       "usage": {
         "citations": 0,
@@ -1938,7 +1966,7 @@
         "repo": "bigknoxy/HashPilot",
         "url": "https://github.com/bigknoxy/HashPilot/issues/167"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "B66 \u2014 Invalid or unreadable --config is silently dropped with no warning",
       "usage": {
         "citations": 0,
@@ -1964,7 +1992,7 @@
         "repo": "NVIDIA/NemoClaw",
         "url": "https://github.com/NVIDIA/NemoClaw/issues/10634"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Inbound Slack and Discord messages silently dropped despite healthy channel connections",
       "usage": {
         "citations": 0,
@@ -1990,7 +2018,7 @@
         "repo": "opendatahub-io/strat-creator",
         "url": "https://github.com/opendatahub-io/strat-creator/issues/71"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Revision-mode strategy-refine silently ignores changed SME input",
       "usage": {
         "citations": 0,
@@ -2016,7 +2044,7 @@
         "repo": "donovan-yohan/relay-ide",
         "url": "https://github.com/donovan-yohan/relay-ide/issues/1560"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "channels post reports success when every mention target was refused by policy",
       "usage": {
         "citations": 0,
@@ -2042,7 +2070,7 @@
         "repo": "YoanWai/agent-manager",
         "url": "https://github.com/YoanWai/agent-manager/issues/427"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "v0.35.0: renaming a running session reports success but changes nothing",
       "usage": {
         "citations": 0,
@@ -2068,7 +2096,7 @@
         "repo": "bwalia/jobshout",
         "url": "https://github.com/bwalia/jobshout/issues/148"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Pentest agent (Strix) doesn't actually test on local models \u2014 returns a hallucinated report",
       "usage": {
         "citations": 0,
@@ -2094,7 +2122,7 @@
         "repo": "rxbynerd/stirrup",
         "url": "https://github.com/rxbynerd/stirrup/issues/572"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "transport: stop silently dropping mid-run user_response events",
       "usage": {
         "citations": 0,
@@ -2120,7 +2148,7 @@
         "repo": "syntropic137/syntropic137",
         "url": "https://github.com/syntropic137/syntropic137/issues/894"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "A phase reports success=true when a declared delegation silently fails",
       "usage": {
         "citations": 0,
@@ -2146,7 +2174,7 @@
         "repo": "NousResearch/hermes-agent",
         "url": "https://github.com/NousResearch/hermes-agent/issues/96105"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "message_agent injector reports success without restoring executor allowlist",
       "usage": {
         "citations": 0,
@@ -2172,7 +2200,7 @@
         "repo": "oguzbilgic/kern-ai",
         "url": "https://github.com/oguzbilgic/kern-ai/issues/325"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Heartbeat turn executed hallucinated operator command after NO_REPLY sentinel",
       "usage": {
         "citations": 0,
@@ -2198,7 +2226,7 @@
         "repo": "langchain-ai/langgraph",
         "url": "https://github.com/langchain-ai/langgraph/issues/8764"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Crash before first durable checkpoint can silently drop an accepted run with no durable failure record",
       "usage": {
         "citations": 0,
@@ -2224,7 +2252,7 @@
         "repo": "zenml-io/kitaru",
         "url": "https://github.com/zenml-io/kitaru/issues/778"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Do not silently ignore Vercel Agent stream overrides",
       "usage": {
         "citations": 0,
@@ -2250,7 +2278,7 @@
         "repo": "markmhendrickson/neotoma",
         "url": "https://github.com/markmhendrickson/neotoma/issues/2220"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "neotoma corrections create reports success while writing nothing",
       "usage": {
         "citations": 0,
@@ -2276,7 +2304,7 @@
         "repo": "protoLabsAI/projectBoard-plugin",
         "url": "https://github.com/protoLabsAI/projectBoard-plugin/issues/246"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "board_register_project reports success but the project entry never persists into config",
       "usage": {
         "citations": 0,
@@ -2302,7 +2330,7 @@
         "repo": "Aider-AI/aider",
         "url": "https://github.com/Aider-AI/aider/issues/5620"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Uncaught ValueError in path_in_repo()/is_dirty() when an edit block references an absolute path (session crash)",
       "usage": {
         "citations": 0,
@@ -2328,7 +2356,7 @@
         "repo": "Growth-Circle/cadis",
         "url": "https://github.com/Growth-Circle/cadis/issues/296"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "fix(core): validate tool call directive input against tool schema before execution",
       "usage": {
         "citations": 0,
@@ -2354,7 +2382,7 @@
         "repo": "stablyai/orca",
         "url": "https://github.com/stablyai/orca/issues/15791"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[Bug]: agent hook endpoint resets on payloads >= ~1MB, silently dropping agent-status events",
       "usage": {
         "citations": 0,
@@ -2380,7 +2408,7 @@
         "repo": "NimbleBrainInc/nimblebrain",
         "url": "https://github.com/NimbleBrainInc/nimblebrain/issues/973"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "The agent claims it will remember something without storing it",
       "usage": {
         "citations": 0,
@@ -2406,7 +2434,7 @@
         "repo": "pzzld-org/shepherd",
         "url": "https://github.com/pzzld-org/shepherd/issues/391"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Pi canonical child silently ignores requested thinking level",
       "usage": {
         "citations": 0,
@@ -2432,7 +2460,7 @@
         "repo": "1jehuang/jcode",
         "url": "https://github.com/1jehuang/jcode/issues/1045"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "memory import -s project reports success but silently writes nothing",
       "usage": {
         "citations": 0,
@@ -2458,7 +2486,7 @@
         "repo": "bytedance/UI-TARS-desktop",
         "url": "https://github.com/bytedance/UI-TARS-desktop/issues/1952"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[Bug Report]: ADB operator reports success before asynchronous actions finish",
       "usage": {
         "citations": 0,
@@ -2484,7 +2512,7 @@
         "repo": "cesarandreslopez/tauri-agent-tools",
         "url": "https://github.com/cesarandreslopez/tauri-agent-tools/issues/10"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "type reports success but React controlled inputs ignore the value",
       "usage": {
         "citations": 0,
@@ -2510,7 +2538,7 @@
         "repo": "addynamo/omnigent",
         "url": "https://github.com/addynamo/omnigent/issues/3"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "omni run --resume (no id, no TTY) falsely claims 'Resumed conversation <id>' for a fabricated session",
       "usage": {
         "citations": 0,
@@ -2536,7 +2564,7 @@
         "repo": "bradcstevens/az-multi-agent-flw-demo",
         "url": "https://github.com/bradcstevens/az-multi-agent-flw-demo/issues/113"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "The roster can offer an agent the orchestration silently dropped",
       "usage": {
         "citations": 0,
@@ -2562,7 +2590,7 @@
         "repo": "github/copilot-sdk",
         "url": "https://github.com/github/copilot-sdk/issues/2349"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Attachments are silently ignored when using the /fleet command",
       "usage": {
         "citations": 0,
@@ -2588,7 +2616,7 @@
         "repo": "giantswarm/klausctl",
         "url": "https://github.com/giantswarm/klausctl/issues/318"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "klaus_run/klaus_create silently ignore unknown parameters, launching agents with no credentials",
       "usage": {
         "citations": 0,
@@ -2614,7 +2642,7 @@
         "repo": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw/issues/126906"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Denying the write tool silently disables memory persistence, and the agent reports success anyway",
       "usage": {
         "citations": 0,
@@ -2640,7 +2668,7 @@
         "repo": "open-jarvis/OpenJarvis",
         "url": "https://github.com/open-jarvis/OpenJarvis/issues/835"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "sms_draft_reply silently drops the SMS body and reports success",
       "usage": {
         "citations": 0,
@@ -2666,7 +2694,7 @@
         "repo": "sefalk/AgenticAIGovernance",
         "url": "https://github.com/sefalk/AgenticAIGovernance/issues/175"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Producer agents (test-writer, refactorer) report mechanical completions (provenance markers, resolved advisories) without diff evidence, and return zero output without failure",
       "usage": {
         "citations": 0,
@@ -2692,7 +2720,7 @@
         "repo": "langchain-ai/langgraph",
         "url": "https://github.com/langchain-ai/langgraph/issues/8653"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "DeltaChannel state reads back empty when the checkpointer is passed via config instead of compile()",
       "usage": {
         "citations": 0,
@@ -2718,7 +2746,7 @@
         "repo": "carpet-stain/infra",
         "url": "https://github.com/carpet-stain/infra/issues/227"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "fix(iam): agents pr-review reviewer may silently fail OIDC auth",
       "usage": {
         "citations": 0,
@@ -2744,7 +2772,7 @@
         "repo": "NousResearch/hermes-agent",
         "url": "https://github.com/NousResearch/hermes-agent/issues/75675"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "TUI: background terminal processes silently fail to start",
       "usage": {
         "citations": 0,
@@ -2770,7 +2798,7 @@
         "repo": "fullsend-ai/agents",
         "url": "https://github.com/fullsend-ai/agents/issues/864"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Fix agent should enumerate and address all review findings, not silently drop some",
       "usage": {
         "citations": 0,
@@ -2796,7 +2824,7 @@
         "repo": "reticlehq/reticle",
         "url": "https://github.com/reticlehq/reticle/issues/370"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[agent] `check`/`uncheck` reports success without dispatching when the DOM property already matches",
       "usage": {
         "citations": 0,
@@ -2822,7 +2850,7 @@
         "repo": "lidge-jun/opencodex",
         "url": "https://github.com/lidge-jun/opencodex/issues/1795"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[Bug]: sensenova hallucinates undeclared exec tool in subagent requests causing 502 stream disconnected",
       "usage": {
         "citations": 0,
@@ -2848,7 +2876,7 @@
         "repo": "can1357/oh-my-pi",
         "url": "https://github.com/can1357/oh-my-pi/issues/8792"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Snapcompact can silently drop user instructions when its frame archive overflows",
       "usage": {
         "citations": 0,
@@ -2874,7 +2902,7 @@
         "repo": "2389-research/coven-gateway",
         "url": "https://github.com/2389-research/coven-gateway/issues/68"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Protocol: InjectContext/InjectionAck unimplemented; agent acks silently dropped",
       "usage": {
         "citations": 0,
@@ -2900,7 +2928,7 @@
         "repo": "fullsend-ai/fullsend",
         "url": "https://github.com/fullsend-ai/fullsend/issues/6050"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Detect PRs with missing review dispatch caused by silently dropped webhooks",
       "usage": {
         "citations": 0,
@@ -2926,7 +2954,7 @@
         "repo": "Xapicc/UsageFoundry",
         "url": "https://github.com/Xapicc/UsageFoundry/issues/77"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "A fifth workspace mount is silently ignored rather than refused",
       "usage": {
         "citations": 0,
@@ -2952,7 +2980,7 @@
         "repo": "bigmoostache/context-pilot",
         "url": "https://github.com/bigmoostache/context-pilot/issues/180"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Agent creation silently ignores the chosen model \u2014 new agents always boot on the default provider",
       "usage": {
         "citations": 0,
@@ -2978,7 +3006,7 @@
         "repo": "crewAIInc/crewAI",
         "url": "https://github.com/crewAIInc/crewAI/issues/6733"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[BUG] response_model is ignored by acall() when streaming is enabled",
       "usage": {
         "citations": 0,
@@ -3004,7 +3032,7 @@
         "repo": "coder/code-server",
         "url": "https://github.com/coder/code-server/issues/7946"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Extensions/tools using openExternalUrl silently fail \u2014 OAuth flows broken for tools in terminal",
       "usage": {
         "citations": 0,
@@ -3030,7 +3058,7 @@
         "repo": "webbrain-one/webbrain",
         "url": "https://github.com/webbrain-one/webbrain/issues/2783"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "parseUserMemoryExtractionResult defaults missing confidence to 0, silently dropping model-returned archive/update ops",
       "usage": {
         "citations": 0,
@@ -3056,7 +3084,7 @@
         "repo": "ramil-zakirov-dev/superpowers-multiagents",
         "url": "https://github.com/ramil-zakirov-dev/superpowers-multiagents/issues/37"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "close-slice reports success when worktree removal silently fails",
       "usage": {
         "citations": 0,
@@ -3082,7 +3110,7 @@
         "repo": "Bike4Mind/bike4mind",
         "url": "https://github.com/Bike4Mind/bike4mind/issues/1633"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Notebook import writes no attachments and reports success",
       "usage": {
         "citations": 0,
@@ -3108,7 +3136,7 @@
         "repo": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode/issues/41682"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Context compression loses initial user question and reasoning chain, model responds with hallucinated content",
       "usage": {
         "citations": 0,
@@ -3134,7 +3162,7 @@
         "repo": "NousResearch/hermes-agent",
         "url": "https://github.com/NousResearch/hermes-agent/issues/83379"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "agent/system_prompt: models sometimes write fake tool invocations as text instead of real tool_calls",
       "usage": {
         "citations": 0,
@@ -3160,7 +3188,7 @@
         "repo": "Luke100000/horde-openai-proxy",
         "url": "https://github.com/Luke100000/horde-openai-proxy/issues/3"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Support OpenAI tools / function calling (tool_calls silently dropped)",
       "usage": {
         "citations": 0,
@@ -3186,7 +3214,7 @@
         "repo": "dkedar7/streamlit-mcp",
         "url": "https://github.com/dkedar7/streamlit-mcp/issues/92"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Unsupported *output* elements (st.latex/chart/map/image/progress/\u2026) are silently dropped from `read_output`/`get_layout` \u2014 the #29 \"never silently dropped\" gap, but for outputs",
       "usage": {
         "citations": 0,
@@ -3212,7 +3240,7 @@
         "repo": "nanocoai/nanoclaw",
         "url": "https://github.com/nanocoai/nanoclaw/issues/3226"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Inbound messages silently dropped when a platform reuses a message id",
       "usage": {
         "citations": 0,
@@ -3238,7 +3266,7 @@
         "repo": "a2aproject/a2a-python",
         "url": "https://github.com/a2aproject/a2a-python/issues/1170"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Cancel reports success but writes no terminal state (DefaultRequestHandlerV2)",
       "usage": {
         "citations": 0,
@@ -3264,7 +3292,7 @@
         "repo": "NickFlach/Kannaktopus",
         "url": "https://github.com/NickFlach/Kannaktopus/issues/64"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Agent-teams bridge silently reports success when atomic ledger updates fail",
       "usage": {
         "citations": 0,
@@ -3290,7 +3318,7 @@
         "repo": "anthropics/claude-plugins-official",
         "url": "https://github.com/anthropics/claude-plugins-official/issues/4693"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "security-guidance: agentic reviewer prompt never states its working directory, causing hallucinated absolute paths",
       "usage": {
         "citations": 0,
@@ -3316,7 +3344,7 @@
         "repo": "fullsend-ai/fullsend",
         "url": "https://github.com/fullsend-ai/fullsend/issues/5691"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Harness dispatch trigger detection silently fails when agent entry lacks name field",
       "usage": {
         "citations": 0,
@@ -3342,7 +3370,7 @@
         "repo": "irisworks/iris-core",
         "url": "https://github.com/irisworks/iris-core/issues/141"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Attachment handling broken: images silently dropped, PDFs unreadable",
       "usage": {
         "citations": 0,
@@ -3368,7 +3396,7 @@
         "repo": "wilke/ragstack",
         "url": "https://github.com/wilke/ragstack/issues/260"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "bug(ingest): drain agent exits 0 while silently dropping data (runs in production)",
       "usage": {
         "citations": 0,
@@ -3394,7 +3422,7 @@
         "repo": "akashgit/remote-factory",
         "url": "https://github.com/akashgit/remote-factory/issues/1137"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Archivist agent fails to write files on haiku \u2014 upgrade to sonnet",
       "usage": {
         "citations": 0,
@@ -3420,7 +3448,7 @@
         "repo": "crewAIInc/crewAI",
         "url": "https://github.com/crewAIInc/crewAI/issues/6766"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Conversational Flow golden use case improvements - @persist silently drops assistant replies from custom @listen routes",
       "usage": {
         "citations": 0,
@@ -3446,7 +3474,7 @@
         "repo": "OpenAgriNet/amul-oan-api",
         "url": "https://github.com/OpenAgriNet/amul-oan-api/issues/164"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Chat: hallucinated get_union_scheme_data call \u2192 ToolRetryError \u2192 generic national-scheme numbers passed off as union data",
       "usage": {
         "citations": 0,
@@ -3472,7 +3500,7 @@
         "repo": "langchain-ai/langgraph",
         "url": "https://github.com/langchain-ai/langgraph/issues/8448"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "PostgresSaver: get_delta_channel_history permanently poisons walk cursor when target checkpoint isn't in the first pagination page, silently dropping DeltaChannel history",
       "usage": {
         "citations": 0,
@@ -3498,7 +3526,7 @@
         "repo": "postcar-agent/postcar-agent",
         "url": "https://github.com/postcar-agent/postcar-agent/issues/2"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "--tools none doesn't disable tools; model hallucinates a tool-call as text instead",
       "usage": {
         "citations": 0,
@@ -3524,7 +3552,7 @@
         "repo": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw/issues/119233"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[Bug]: models auth order set --agent reports success but drops inherited profile IDs",
       "usage": {
         "citations": 0,
@@ -3550,7 +3578,7 @@
         "repo": "fujibee/agmsg",
         "url": "https://github.com/fujibee/agmsg/issues/599"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "install.sh --update silently updates whichever install sorts first, and reports success",
       "usage": {
         "citations": 0,
@@ -3576,7 +3604,7 @@
         "repo": "lmorchard/decafclaw",
         "url": "https://github.com/lmorchard/decafclaw/issues/688"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "vault_search: model-self-attached tags + AND-logic \u2192 false-empty results (hallucinated absence)",
       "usage": {
         "citations": 0,
@@ -3602,7 +3630,7 @@
         "repo": "Vizards/deepseek-v4-for-copilot",
         "url": "https://github.com/Vizards/deepseek-v4-for-copilot/issues/213"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Copilot-owned tools (like fetch_webpage) silently fail without GitHub Copilot subscription",
       "usage": {
         "citations": 0,
@@ -3628,7 +3656,7 @@
         "repo": "GenAI-Security-Project/finbot-ctf",
         "url": "https://github.com/GenAI-Security-Project/finbot-ctf/issues/547"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[Bug] MCP Tool Override Only Applies `description` - `parameters` Silently Dropped",
       "usage": {
         "citations": 0,
@@ -3654,7 +3682,7 @@
         "repo": "kirodotdev/Kiro",
         "url": "https://github.com/kirodotdev/Kiro/issues/10303"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Subagent tool silently ignores values for the \"model\" parameter",
       "usage": {
         "citations": 0,
@@ -3680,7 +3708,7 @@
         "repo": "Team-Commonly/commonly",
         "url": "https://github.com/Team-Commonly/commonly/issues/795"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Agents cannot page their own pod history \u2014 before/offset are silently ignored",
       "usage": {
         "citations": 0,
@@ -3706,7 +3734,7 @@
         "repo": "iOfficeAI/AionCore",
         "url": "https://github.com/iOfficeAI/AionCore/issues/746"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Cancel is silently ignored while the agent task is still being built",
       "usage": {
         "citations": 0,
@@ -3732,7 +3760,7 @@
         "repo": "Hidden-History/ai-memory",
         "url": "https://github.com/Hidden-History/ai-memory/issues/355"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Agent Teams: teammate->lead plain-text replies silently fail to deliver (protocol frames still pass)",
       "usage": {
         "citations": 0,
@@ -3758,7 +3786,7 @@
         "repo": "guyoron1/fullsend",
         "url": "https://github.com/guyoron1/fullsend/issues/757"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Harness dispatch trigger detection silently fails when agent entry lacks name field",
       "usage": {
         "citations": 0,
@@ -3784,7 +3812,7 @@
         "repo": "crewAIInc/crewAI",
         "url": "https://github.com/crewAIInc/crewAI/issues/6736"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "after_llm_call hooks never run on acall(): eight native provider handlers skip _invoke_after_llm_call_hooks",
       "usage": {
         "citations": 0,
@@ -3810,7 +3838,7 @@
         "repo": "lkshrk/omni",
         "url": "https://github.com/lkshrk/omni/issues/53"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "TUI nested dotfile resolve reports success without changing the selected leaf",
       "usage": {
         "citations": 0,
@@ -3836,7 +3864,7 @@
         "repo": "fullsend-ai/fullsend",
         "url": "https://github.com/fullsend-ai/fullsend/issues/4105"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Add PR #1710 as evidence to #2746: first-run false-negative with self-contradicting verification claim",
       "usage": {
         "citations": 0,
@@ -3862,7 +3890,7 @@
         "repo": "aovestdipaperino/plank",
         "url": "https://github.com/aovestdipaperino/plank/issues/77"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Pseudo-tool detector misses a single-line invented call (<read>/tmp/x</read>)",
       "usage": {
         "citations": 0,
@@ -3888,7 +3916,7 @@
         "repo": "EliteaAI/elitea_issues",
         "url": "https://github.com/EliteaAI/elitea_issues/issues/5826"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[BUG] LLM hallucinates tool execution - claims files created without actual tool calls",
       "usage": {
         "citations": 0,
@@ -3914,7 +3942,7 @@
         "repo": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw/issues/114805"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Bug: /hooks/agent with deliver:true silently fails to post messages to Discord",
       "usage": {
         "citations": 0,
@@ -3940,7 +3968,7 @@
         "repo": "langchain-ai/langgraph",
         "url": "https://github.com/langchain-ai/langgraph/issues/8384"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "InMemorySaver silently and permanently drops the first write after migrating a channel to DeltaChannel",
       "usage": {
         "citations": 0,
@@ -3966,7 +3994,7 @@
         "repo": "lidge-jun/agbrowse",
         "url": "https://github.com/lidge-jun/agbrowse/issues/87"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "web-ai CLI silently ignores documented --family",
       "usage": {
         "citations": 0,
@@ -3992,7 +4020,7 @@
         "repo": "zai-org/feedback",
         "url": "https://github.com/zai-org/feedback/issues/189"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[Bug] chat.z.ai agent: uploaded files never land at /home/z/my-project/upload/ AND agent workspace is silently cleared between turns",
       "usage": {
         "citations": 0,
@@ -4018,7 +4046,7 @@
         "repo": "phin-tech/herdr-phin-util",
         "url": "https://github.com/phin-tech/herdr-phin-util/issues/4"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "setups: submit-prompt can silently drop with agent_not_ready \u2014 no retry on agent.prompt",
       "usage": {
         "citations": 0,
@@ -4044,7 +4072,7 @@
         "repo": "anthropics/claude-code",
         "url": "https://github.com/anthropics/claude-code/issues/75568"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[BUG] Model hallucinates tool executions, then self-reports the hallucinated output as a \"prompt injection attack\"",
       "usage": {
         "citations": 0,
@@ -4070,7 +4098,7 @@
         "repo": "shreyashjagtap157/claude-code",
         "url": "https://github.com/shreyashjagtap157/claude-code/issues/4413"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Subagents return fully hallucinated results with zero tool calls; leaked tool-call XML in text; two fabricated 'prompt injection detected' reports",
       "usage": {
         "citations": 0,
@@ -4096,7 +4124,7 @@
         "repo": "VibiumDev/vibium",
         "url": "https://github.com/VibiumDev/vibium/issues/217"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "vibium storage restore silently fails to restore localStorage/sessionStorage",
       "usage": {
         "citations": 0,
@@ -4122,7 +4150,7 @@
         "repo": "kagent-dev/kagent",
         "url": "https://github.com/kagent-dev/kagent/issues/2306"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[BUG] Sandbox agents silently drop configured nodeSelector (not applied to ActorTemplate)",
       "usage": {
         "citations": 0,
@@ -4148,7 +4176,7 @@
         "repo": "heckertobias/orkestra",
         "url": "https://github.com/heckertobias/orkestra/issues/75"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[bug] ExecOnContainer reports success for actions that never execute",
       "usage": {
         "citations": 0,
@@ -4174,7 +4202,7 @@
         "repo": "NousResearch/hermes-agent",
         "url": "https://github.com/NousResearch/hermes-agent/issues/69442"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[Bug]: Doubao seed-2-1 streaming tool_call JSON truncated \u2014 write_file silently fails",
       "usage": {
         "citations": 0,
@@ -4200,7 +4228,7 @@
         "repo": "crewAIInc/crewAI",
         "url": "https://github.com/crewAIInc/crewAI/issues/6481"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[BUG] before/after_kickoff_callbacks do not support async callables in akickoff",
       "usage": {
         "citations": 0,
@@ -4226,7 +4254,7 @@
         "repo": "wendylabsinc/WendyOS",
         "url": "https://github.com/wendylabsinc/WendyOS/issues/1440"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "wendy device apps start --detach reports success then cancels StartContainer before Started acknowledgement",
       "usage": {
         "citations": 0,
@@ -4252,7 +4280,7 @@
         "repo": "AgentWorkforce/relay",
         "url": "https://github.com/AgentWorkforce/relay/issues/1336"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "`agent-relay update` reports success but is a no-op for standalone (Bun) installs",
       "usage": {
         "citations": 0,
@@ -4278,7 +4306,7 @@
         "repo": "Appsilon/mediforce",
         "url": "https://github.com/Appsilon/mediforce/issues/779"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "GLM / non-Anthropic OpenRouter models silently drop MCP tool-calls in agent steps (reasoning works, acting doesn't)",
       "usage": {
         "citations": 0,
@@ -4304,7 +4332,7 @@
         "repo": "SiderealPress/Lobster",
         "url": "https://github.com/SiderealPress/Lobster/issues/2117"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Dispatcher hallucinated a nonexistent 'Claude Design' integration and falsely claimed graphics were uploaded",
       "usage": {
         "citations": 0,
@@ -4330,7 +4358,7 @@
         "repo": "omnigent-ai/omnigent",
         "url": "https://github.com/omnigent-ai/omnigent/issues/2853"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[Bug] Native harnesses silently drop the agent spec `prompt:` at runtime",
       "usage": {
         "citations": 0,
@@ -4356,7 +4384,7 @@
         "repo": "cloudflare/agents",
         "url": "https://github.com/cloudflare/agents/issues/1871"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "getSystemPrompt() is silently ignored once getSkills() registers a context block",
       "usage": {
         "citations": 0,
@@ -4382,7 +4410,7 @@
         "repo": "konflux-ci/namespace-lister",
         "url": "https://github.com/konflux-ci/namespace-lister/issues/438"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Auto-merge workflow should respect `requires-manual-review` label",
       "usage": {
         "citations": 0,
@@ -4408,7 +4436,7 @@
         "repo": "anthropics/claude-code",
         "url": "https://github.com/anthropics/claude-code/issues/67730"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Subagents return fully hallucinated results with zero tool calls; leaked tool-call XML in text; two fabricated 'prompt injection detected' reports",
       "usage": {
         "citations": 0,
@@ -4434,7 +4462,7 @@
         "repo": "agentscope-ai/QwenPaw",
         "url": "https://github.com/agentscope-ai/QwenPaw/issues/5995"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[Bug] Messages silently dropped when session is busy \u2014 no queue, no error",
       "usage": {
         "citations": 0,
@@ -4460,7 +4488,7 @@
         "repo": "wilke/ragstack",
         "url": "https://github.com/wilke/ragstack/issues/176"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "qdrant_ingest_agent.py exits 0 while silently dropping batches (incomplete index)",
       "usage": {
         "citations": 0,
@@ -4486,7 +4514,7 @@
         "repo": "PleasePrompto/ductor",
         "url": "https://github.com/PleasePrompto/ductor/issues/176"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[Bug]: Webhook wake mode silently ignores execution overrides",
       "usage": {
         "citations": 0,
@@ -4512,7 +4540,7 @@
         "repo": "crewAIInc/crewAI",
         "url": "https://github.com/crewAIInc/crewAI/issues/6219"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[FEATURE] Integration of LoopHalter for automatic infinite loop detection.",
       "usage": {
         "citations": 0,
@@ -4538,7 +4566,7 @@
         "repo": "temporal-community/code-exchange",
         "url": "https://github.com/temporal-community/code-exchange/issues/118"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Durable Agentic Harness \u2014 crash-safe autonomous AI agents with human-in-the-loop approval",
       "usage": {
         "citations": 0,
@@ -4564,7 +4592,7 @@
         "repo": "fullsend-ai/agents",
         "url": "https://github.com/fullsend-ai/agents/issues/104"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Prescriptive bug fixes with tests are strong candidates for reduced human review wait time",
       "usage": {
         "citations": 0,
@@ -4590,7 +4618,7 @@
         "repo": "nimius-debug/market-fit-research",
         "url": "https://github.com/nimius-debug/market-fit-research/issues/136"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "AI models lack the contextual grounding and ontological structure needed for reliable full business automation, so they require human oversight and custom-built guardrails to be productive and safe. (7 reports, 7 people)",
       "usage": {
         "citations": 0,
@@ -4616,7 +4644,7 @@
         "repo": "langchain-ai/langgraph",
         "url": "https://github.com/langchain-ai/langgraph/issues/8320"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "StateGraph silently drops node output keys not declared in TypedDict",
       "usage": {
         "citations": 0,
@@ -4642,7 +4670,7 @@
         "repo": "LanternOps/breeze",
         "url": "https://github.com/LanternOps/breeze/issues/1962"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Agent update policy modes do not map to distinct update behavior",
       "usage": {
         "citations": 0,
@@ -4668,7 +4696,7 @@
         "repo": "fullsend-ai/experiments",
         "url": "https://github.com/fullsend-ai/experiments/issues/37"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Enforce required human review when protected paths are modified",
       "usage": {
         "citations": 0,
@@ -4694,7 +4722,7 @@
         "repo": "IBM/mcp-context-forge",
         "url": "https://github.com/IBM/mcp-context-forge/issues/5437"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[EPIC]: Human in the loop Approval for tool execution",
       "usage": {
         "citations": 0,
@@ -4720,7 +4748,7 @@
         "repo": "perezadria28/hieronymus-ai",
         "url": "https://github.com/perezadria28/hieronymus-ai/issues/40"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Research human-in-the-loop checkpoints for the agent harness",
       "usage": {
         "citations": 0,
@@ -4746,7 +4774,7 @@
         "repo": "code-yeongyu/oh-my-openagent",
         "url": "https://github.com/code-yeongyu/oh-my-openagent/issues/5966"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[BUG] task(task_id=...) to running background subagent silently drops prompt and reports success",
       "usage": {
         "citations": 0,
@@ -4772,7 +4800,7 @@
         "repo": "crewAIInc/crewAI",
         "url": "https://github.com/crewAIInc/crewAI/issues/6380"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "[Bug Report] Async task LLM failure silently freezes flow \u2014 reproduction + 10-line fix",
       "usage": {
         "citations": 0,
@@ -4798,7 +4826,7 @@
         "repo": "microsoft/autogen",
         "url": "https://github.com/microsoft/autogen/issues/7770"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "Safety Report: AI Agent Guardrails Do Not Work \u2014 56-Day Proof (06K Loss)",
       "usage": {
         "citations": 0,
@@ -4824,7 +4852,7 @@
         "repo": "langchain-ai/langgraph",
         "url": "https://github.com/langchain-ai/langgraph/issues/8217"
       },
-      "status": "retired",
+      "status": "observed",
       "summary": "GraphInterrupt Not Re-raised in awrap_tool_call Wrapper Path",
       "usage": {
         "citations": 0,
@@ -4837,20 +4865,20 @@
       }
     }
   ],
-  "count": 186,
+  "count": 187,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
-  "retired": true,
-  "retirement_notice": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
+  "retired": false,
+  "retirement_notice": "",
   "retirement_signal": {
-    "advisories_with_use": 0,
-    "checked_at": "2026-10-13T21:30:48.387121+00:00",
+    "advisories_with_use": 1,
+    "checked_at": "2026-10-17T21:30:52.955987+00:00",
     "past_cutoff": true,
-    "reason": "No advisory has been cited, subscribed to, or reacted on by 2026-07-16; retire or rewrite the registry.",
-    "retire": true,
+    "reason": "1 advisory(s) with real external use (3 events); registry keeps.",
+    "retire": false,
     "schema": "shadow.advisory_retirement_signal.v1",
     "sunset_date": "2026-07-16",
-    "total_uses": 0
+    "total_uses": 3
   },
   "schema": "shadow.agent_failure_registry.v1"
 }
