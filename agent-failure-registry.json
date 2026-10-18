@@ -29,6 +29,32 @@
       }
     },
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/curator-pause-reports-success-without-verifying-the-1afc627820.html",
+      "evidence": "Snippet 1 and snippet 2 in the issue both show set_paused(True) silently failing via a swallowed OSError logged only at DEBUG, is_paused() correctly reporting False afterward, yet the CLI path still prints 'curator: paused' with rc 0 and no state file ever created.",
+      "expected_boundary": "Before printing success or choosing an exit code, _set_paused must read back the persisted state (via is_paused() or a fresh file read) and confirm it matches the requested pause value, failing loudly above DEBUG level if it does not.",
+      "id": "SFA-2026-1AFC627820",
+      "observed_action": "hermes_cli/curator.py's _set_paused prints 'curator: paused' and returns exit code 0 unconditionally after calling set_paused, even when the underlying atomic_json_write failed and the pause flag was never persisted to disk.",
+      "published_at": "2026-10-18T21:31:04.531657+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 139438,
+        "repo": "NousResearch/hermes-agent",
+        "url": "https://github.com/NousResearch/hermes-agent/issues/139438"
+      },
+      "status": "observed",
+      "summary": "curator pause reports success without verifying the state write",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/stack-ai-say-reports-success-when-nothing-was-spoken-7a6a1afe3a.html",
       "evidence": "the issue reproduction shows the exact 200 OK / 45-byte ID3-no-frames response being accepted as valid speech because say.py's check is 'body is not empty' rather than 'body contains audio frames'.",
       "expected_boundary": "say.py should treat a response as successful only when the body contains at least one decodable MP3 frame and the requested language's voice model file is confirmed present on disk before the request is sent.",
@@ -4917,14 +4943,14 @@
       }
     }
   ],
-  "count": 189,
+  "count": 190,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": false,
   "retirement_notice": "",
   "retirement_signal": {
     "advisories_with_use": 1,
-    "checked_at": "2026-10-18T14:12:47.157947+00:00",
+    "checked_at": "2026-10-18T21:31:04.573310+00:00",
     "past_cutoff": true,
     "reason": "1 advisory(s) with real external use (3 events); registry keeps.",
     "retire": false,
