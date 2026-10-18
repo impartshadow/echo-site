@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-10-17T21:30:52.919476+00:00",
-  "count": 187,
+  "generated_at": "2026-10-18T06:30:45.906576+00:00",
+  "count": 188,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "server-composes-the-custom-auth-store-filter-with-th-8c03eccfbf",
+      "advisory_id": "SFA-2026-8C03ECCFBF",
+      "ts": "2026-10-18T06:30:45.891192+00:00",
+      "title": "Server composes the custom-auth store filter with the client filter as a top-level `$and` no backend supports — search silently empty (InMemory/Postgres) or raises (SQLite); with a preset `$and`-valued field it returns rows that fail the auth condition",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "langchain-ai/langgraph",
+        "issue_number": 9342,
+        "author": "ShiinaYuki",
+        "url": "https://github.com/langchain-ai/langgraph/issues/9342"
+      },
+      "case": {
+        "observed_action": "langgraph_api/api/store.py composes the client-supplied store filter and the auth handler's row filter into a single top-level {\"$and\": [client, auth]} dict and passes it straight to the configured Store backend",
+        "expected_boundary": "the filter-composition step in search_items should validate that the merged dict only uses operators the Store filter grammar actually defines before dispatching to any backend, rejecting or rewriting unsupported top-level keys like $and",
+        "runtime_context": "langgraph dev (InMemoryStore) and PostgresStore silently return zero or wrong rows while SqliteStore raises, all from the same auth.on.store.search resource-policy pattern combined with any non-empty client-side search filter",
+        "evidence": "the issue author traced the composition to langgraph_api/api/store.py:182-187 and verified on InMemoryStore and PostgresStore that a row with a field literally named $and whose value matches the merged list is returned even though the row fails the real auth condition"
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/server-composes-the-custom-auth-store-filter-with-th-8c03eccfbf.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/server-composes-the-custom-auth-store-filter-with-th-8c03eccfbf.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20server-composes-the-custom-auth-store-filter-with-th-8c03eccfbf&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/server-composes-the-custom-auth-store-filter-with-th-8c03eccfbf.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "bug-guardrail-retry-drops-the-context-of-the-previou-2709ffd63b",

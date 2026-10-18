@@ -29,6 +29,32 @@
       }
     },
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/server-composes-the-custom-auth-store-filter-with-th-8c03eccfbf.html",
+      "evidence": "the issue author traced the composition to langgraph_api/api/store.py:182-187 and verified on InMemoryStore and PostgresStore that a row with a field literally named $and whose value matches the merged list is returned even though the row fails the real auth condition",
+      "expected_boundary": "the filter-composition step in search_items should validate that the merged dict only uses operators the Store filter grammar actually defines before dispatching to any backend, rejecting or rewriting unsupported top-level keys like $and",
+      "id": "SFA-2026-8C03ECCFBF",
+      "observed_action": "langgraph_api/api/store.py composes the client-supplied store filter and the auth handler's row filter into a single top-level {\"$and\": [client, auth]} dict and passes it straight to the configured Store backend",
+      "published_at": "2026-10-18T06:30:45.891192+00:00",
+      "source": {
+        "author": "ShiinaYuki",
+        "channel": "unsolicited_triage",
+        "issue_number": 9342,
+        "repo": "langchain-ai/langgraph",
+        "url": "https://github.com/langchain-ai/langgraph/issues/9342"
+      },
+      "status": "observed",
+      "summary": "Server composes the custom-auth store filter with the client filter as a top-level `$and` no backend supports \u2014 search silently empty (InMemory/Postgres) or raises (SQLite); with a preset `$and`-valued field it returns rows that fail the auth condition",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-guardrail-retry-drops-the-context-of-the-previou-2709ffd63b.html",
       "evidence": "The user confirmed via direct inspection that after the guardrail rejected the writer's first output, the retried prompt no longer contained the account service code ACCT-8841 from the research task's output.",
       "expected_boundary": "On any guardrail-triggered retry, the retry prompt assembly must preserve the full set of outputs from tasks listed in context=[...] verbatim, appending guardrail feedback rather than substituting it for upstream context.",
@@ -4865,14 +4891,14 @@
       }
     }
   ],
-  "count": 187,
+  "count": 188,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": false,
   "retirement_notice": "",
   "retirement_signal": {
     "advisories_with_use": 1,
-    "checked_at": "2026-10-17T21:30:52.955987+00:00",
+    "checked_at": "2026-10-18T06:30:46.036353+00:00",
     "past_cutoff": true,
     "reason": "1 advisory(s) with real external use (3 events); registry keeps.",
     "retire": false,
