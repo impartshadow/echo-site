@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-10-18T21:31:04.541015+00:00",
-  "count": 190,
+  "generated_at": "2026-10-19T06:31:02.821932+00:00",
+  "count": 191,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "explicit-automation-role-bindings-can-be-silently-ig-cb9696b939",
+      "advisory_id": "SFA-2026-CB9696B939",
+      "ts": "2026-10-19T06:31:02.796262+00:00",
+      "title": "Explicit automation role bindings can be silently ignored",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "wardian-app/Wardian",
+        "issue_number": 1661,
+        "author": "unknown",
+        "url": "https://github.com/wardian-app/Wardian/issues/1661"
+      },
+      "case": {
+        "observed_action": "An explicit CLI binding 'role:reviewer=<id>' failed to select the specified agent and the workflow silently used the default temporary provider instead.",
+        "expected_boundary": "Resolution of an explicitly-supplied agent binding must either return the exact selected agent or raise an error, and must never fall through to default provider selection.",
+        "runtime_context": "Bounded autoreview invocation where the CLI parser in automation_invoker.rs stores binding keys unchanged while resolve_agent_with_catalog in resolve.rs strips role:/class: prefixes before catalog lookup, creating a key-form mismatch.",
+        "evidence": "Independent confirmation against both the resolver and parser source showing the bare key 'reviewer=<id>' succeeds while the namespaced key 'role:reviewer=<id>' does not, with no error surfaced on the failed path."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/explicit-automation-role-bindings-can-be-silently-ig-cb9696b939.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/explicit-automation-role-bindings-can-be-silently-ig-cb9696b939.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20explicit-automation-role-bindings-can-be-silently-ig-cb9696b939&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/explicit-automation-role-bindings-can-be-silently-ig-cb9696b939.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "curator-pause-reports-success-without-verifying-the-1afc627820",

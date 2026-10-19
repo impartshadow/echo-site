@@ -29,6 +29,32 @@
       }
     },
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/explicit-automation-role-bindings-can-be-silently-ig-cb9696b939.html",
+      "evidence": "Independent confirmation against both the resolver and parser source showing the bare key 'reviewer=<id>' succeeds while the namespaced key 'role:reviewer=<id>' does not, with no error surfaced on the failed path.",
+      "expected_boundary": "Resolution of an explicitly-supplied agent binding must either return the exact selected agent or raise an error, and must never fall through to default provider selection.",
+      "id": "SFA-2026-CB9696B939",
+      "observed_action": "An explicit CLI binding 'role:reviewer=<id>' failed to select the specified agent and the workflow silently used the default temporary provider instead.",
+      "published_at": "2026-10-19T06:31:02.796262+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 1661,
+        "repo": "wardian-app/Wardian",
+        "url": "https://github.com/wardian-app/Wardian/issues/1661"
+      },
+      "status": "observed",
+      "summary": "Explicit automation role bindings can be silently ignored",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/curator-pause-reports-success-without-verifying-the-1afc627820.html",
       "evidence": "Snippet 1 and snippet 2 in the issue both show set_paused(True) silently failing via a swallowed OSError logged only at DEBUG, is_paused() correctly reporting False afterward, yet the CLI path still prints 'curator: paused' with rc 0 and no state file ever created.",
       "expected_boundary": "Before printing success or choosing an exit code, _set_paused must read back the persisted state (via is_paused() or a fresh file read) and confirm it matches the requested pause value, failing loudly above DEBUG level if it does not.",
@@ -4943,14 +4969,14 @@
       }
     }
   ],
-  "count": 190,
+  "count": 191,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": false,
   "retirement_notice": "",
   "retirement_signal": {
     "advisories_with_use": 1,
-    "checked_at": "2026-10-18T21:31:04.573310+00:00",
+    "checked_at": "2026-10-19T06:31:02.903857+00:00",
     "past_cutoff": true,
     "reason": "1 advisory(s) with real external use (3 events); registry keeps.",
     "retire": false,
