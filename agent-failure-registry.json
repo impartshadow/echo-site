@@ -29,6 +29,32 @@
       }
     },
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/fix-extension-run-silently-ignores-an-unknown-page-05b3eafc02.html",
+      "evidence": "the host filters document.info/document.tree results to nothing instead of failing, producing a module-level error about a missing layer rather than a page-not-found error",
+      "expected_boundary": "the extension run handler should validate --page against the document's actual page set before invoking the module, matching the behavior of tree/search/import",
+      "id": "SFA-2026-05B3EAFC02",
+      "observed_action": "extension run accepted an unknown --page value and let the module execute against a silently empty document instead of rejecting the request",
+      "published_at": "2026-10-19T14:12:58.705614+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 205,
+        "repo": "agkomyint/pentoolgg",
+        "url": "https://github.com/agkomyint/pentoolgg/issues/205"
+      },
+      "status": "observed",
+      "summary": "fix: extension run silently ignores an unknown --page",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/explicit-automation-role-bindings-can-be-silently-ig-cb9696b939.html",
       "evidence": "Independent confirmation against both the resolver and parser source showing the bare key 'reviewer=<id>' succeeds while the namespaced key 'role:reviewer=<id>' does not, with no error surfaced on the failed path.",
       "expected_boundary": "Resolution of an explicitly-supplied agent binding must either return the exact selected agent or raise an error, and must never fall through to default provider selection.",
@@ -4969,14 +4995,14 @@
       }
     }
   ],
-  "count": 191,
+  "count": 192,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": false,
   "retirement_notice": "",
   "retirement_signal": {
     "advisories_with_use": 1,
-    "checked_at": "2026-10-19T06:31:02.903857+00:00",
+    "checked_at": "2026-10-19T14:12:58.749947+00:00",
     "past_cutoff": true,
     "reason": "1 advisory(s) with real external use (3 events); registry keeps.",
     "retire": false,
