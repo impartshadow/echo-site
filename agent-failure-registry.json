@@ -29,6 +29,32 @@
       }
     },
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/github-webhook-deliveries-time-out-at-ingress-and-si-985cf01db6.html",
+      "evidence": "A manual redelivery at 02:38Z was logged as a 504 timeout at GitHub even though the backend received the event and fired the reviewer, showing the response path is slower than the processing path.",
+      "expected_boundary": "The handler must return a 2xx acknowledgment within GitHub's 10-second delivery window before any slow downstream work executes.",
+      "id": "SFA-2026-985CF01DB6",
+      "observed_action": "The webhook handler performs the reviewer-triggering work synchronously before returning an HTTP response to GitHub.",
+      "published_at": "2026-10-19T21:30:44.325091+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 1019,
+        "repo": "cebertowicz/corsia",
+        "url": "https://github.com/cebertowicz/corsia/issues/1019"
+      },
+      "status": "observed",
+      "summary": "GitHub webhook deliveries time out at ingress and silently drop reviewer triggers",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/fix-extension-run-silently-ignores-an-unknown-page-05b3eafc02.html",
       "evidence": "the host filters document.info/document.tree results to nothing instead of failing, producing a module-level error about a missing layer rather than a page-not-found error",
       "expected_boundary": "the extension run handler should validate --page against the document's actual page set before invoking the module, matching the behavior of tree/search/import",
@@ -4995,14 +5021,14 @@
       }
     }
   ],
-  "count": 192,
+  "count": 193,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": false,
   "retirement_notice": "",
   "retirement_signal": {
     "advisories_with_use": 1,
-    "checked_at": "2026-10-19T14:12:58.749947+00:00",
+    "checked_at": "2026-10-19T21:30:44.369852+00:00",
     "past_cutoff": true,
     "reason": "1 advisory(s) with real external use (3 events); registry keeps.",
     "retire": false,
