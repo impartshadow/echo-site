@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Failure census preview — agkomyint/pentoolgg</title>
+<style>
+body{font-family:Georgia,serif;max-width:44rem;margin:2rem auto;padding:0 1rem;color:#1a1a1a;line-height:1.55}
+h1{font-size:1.5rem} h2{font-size:1.15rem;margin-bottom:.2rem}
+.meta{color:#666;font-size:.9rem} .evidence{color:#444;font-size:.95rem}
+section{border-top:1px solid #ddd;padding-top:.8rem;margin-top:1rem}
+.offer{background:#f6f4ef;border:1px solid #ddd;padding:1rem;margin-top:2rem}
+</style></head><body>
+<h1>Failure census preview — agkomyint/pentoolgg</h1>
+<p class="meta">Generated 2026-10-20 from 11 public issues.
+This is page one of a failure census: the dominant agent-failure classes in this
+project's own tracker, each with the deterministic check that would catch it.</p>
+<p>The dominant pattern across this page of issues is Pentool&#x27;s CLI/Studio layer accepting invalid or unsupported input and reporting success (exit 0, ok:true, &#x27;healthy&#x27;) instead of validating and failing loudly. This shows up as ignored flags, no-op edits reported as successful, inconsistent enforcement of the same rule across different code paths, and exporters/importers that quietly drop data. All four clusters are variations of one root cause: validation and state-change checks are implemented per-command rather than through a shared, consistently-applied contract.</p>
+<section><h2>silent-flag-ignore</h2><p>CLI flags meant to filter or redirect output (--page, --preview-out, --cell) are accepted syntactically but silently ignored, so the command exits 0 and produces output as if the flag were never passed, with no warning that the request wasn&#x27;t honored.</p><p class="evidence">Evidence: &ldquo;is accepted but silently ignored: the image is written&rdquo; — <a href="https://github.com/agkomyint/pentoolgg/issues/219">#219</a> <a href="https://github.com/agkomyint/pentoolgg/issues/205">#205</a> <a href="https://github.com/agkomyint/pentoolgg/issues/164">#164</a> <a href="https://github.com/agkomyint/pentoolgg/issues/180">#180</a></p><p><strong>The deterministic check:</strong> For every filtering/output-path flag (--page, --preview-out, --cell), validate the argument against the same allowed-value set used by sibling commands and fail with [invalid-input]/[missing-resource] before performing the read/write, rather than falling back to a default silently.</p></section>
+<section><h2>false-success-reporting</h2><p>Health-check and edit commands return ok:true (or success exit codes) even when the underlying state is broken, unchanged, or references a nonexistent target, giving agents no signal that nothing actually happened or that the configuration is unhealthy.</p><p class="evidence">Evidence: &ldquo;library doctor reports healthy when an enabled library path is missing&rdquo; — <a href="https://github.com/agkomyint/pentoolgg/issues/233">#233</a> <a href="https://github.com/agkomyint/pentoolgg/issues/154">#154</a></p><p><strong>The deterministic check:</strong> Before returning ok:true, diff pre/post document state or confirm every referenced path/resource resolves; if no state changed or a referenced path/primitive is missing, return a warning/error field instead of a bare success.</p></section>
+<section><h2>cross-surface-validation-inconsistency</h2><p>The same constraint (actor identity, migration target cap, page/kind filtering) is enforced on one code path but not on another equivalent one, so identical-looking commands behave differently depending on document state, version, or whether they went through the CLI vs. the API.</p><p class="evidence">Evidence: &ldquo;plain documents silently accept --actor-kind agent without --actor-id&rdquo; — <a href="https://github.com/agkomyint/pentoolgg/issues/221">#221</a> <a href="https://github.com/agkomyint/pentoolgg/issues/217">#217</a> <a href="https://github.com/agkomyint/pentoolgg/issues/151">#151</a></p><p><strong>The deterministic check:</strong> Extract each validation rule (actor-id required for actor-kind agent; migration target range; --page/--kind enum) into one shared contract function called from every entry point (CLI command, HTTP API handler, every document version branch) so no path can diverge from the others.</p></section>
+<section><h2>silent-data-loss-in-import-export</h2><p>Import and export pipelines drop geometry, table content, or material overrides during format conversion without flagging the loss anywhere in their success output, leaving users to discover missing data only by manually diffing source and result.</p><p class="evidence">Evidence: &ldquo;PDF text extraction contains only the surrounding paragraph&rdquo; — <a href="https://github.com/agkomyint/pentoolgg/issues/249">#249</a> <a href="https://github.com/agkomyint/pentoolgg/issues/155">#155</a></p><p><strong>The deterministic check:</strong> After export/import, programmatically re-extract the output and assert every placed resource (table, normal, UV set, smoothing group, material override) present in the source document is represented in the result; if not, fail the call or populate an &#x27;unsupported&#x27;/&#x27;dropped&#x27; report field instead of reporting success.</p></section>
+<div class="offer">
+<p><strong>This preview used only public issues.</strong> The full failure census
+runs the same classification over seven days of your private agent logs and
+traces — every failure classified, frequency-ranked, with the deterministic
+check per class. $400, one-week turnaround.
+Email <a href="mailto:impartshadow@gmail.com">impartshadow@gmail.com</a> with subject &ldquo;census&rdquo;.</p>
+<p class="meta">Free tier: I triage one public agent failure every day —
+<a href="https://impartshadow.github.io/echo-site/failure-cases/">the case log</a>.</p>
+</div>
+</body></html>
