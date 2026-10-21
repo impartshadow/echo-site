@@ -29,6 +29,32 @@
       }
     },
     {
+      "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-reports-success-despite-omitting-required-fiel-af97ddb5cf.html",
+      "evidence": "The issue body explicitly states the agent identified the field as unreachable under current protocol constraints yet submitted a spec omitting it, and the executor's errors:[] / stop_reason:max_items output was treated as task success.",
+      "expected_boundary": "The requested field set should have been frozen independently of the generated spec and checked as a subset relationship before the executor ever ran, failing fast to an unsupported/unfulfilled status on mismatch.",
+      "id": "SFA-2026-AF97DDB5CF",
+      "observed_action": "The agent generated a ScraperSpec that silently dropped the user-requested 'description' field and the CLI reported overall success based solely on clean executor completion.",
+      "published_at": "2026-10-21T21:30:50.664714+00:00",
+      "source": {
+        "author": "unknown",
+        "channel": "unsolicited_triage",
+        "issue_number": 1,
+        "repo": "cloverfrog/AutoScraper",
+        "url": "https://github.com/cloverfrog/AutoScraper/issues/1"
+      },
+      "status": "observed",
+      "summary": "Agent reports success despite omitting required fields",
+      "usage": {
+        "citations": 0,
+        "first_seen_at": "",
+        "last_activity_at": "",
+        "reactions": 0,
+        "sources": [],
+        "subscriptions": 0,
+        "total_uses": 0
+      }
+    },
+    {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/github-webhook-deliveries-time-out-at-ingress-and-si-985cf01db6.html",
       "evidence": "A manual redelivery at 02:38Z was logged as a 504 timeout at GitHub even though the backend received the event and fired the reviewer, showing the response path is slower than the processing path.",
       "expected_boundary": "The handler must return a 2xx acknowledgment within GitHub's 10-second delivery window before any slow downstream work executes.",
@@ -5021,14 +5047,14 @@
       }
     }
   ],
-  "count": 193,
+  "count": 194,
   "feed_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.atom",
   "registry_url": "https://impartshadow.github.io/echo-site/agent-failure-registry.json",
   "retired": false,
   "retirement_notice": "",
   "retirement_signal": {
     "advisories_with_use": 1,
-    "checked_at": "2026-10-19T21:30:44.369852+00:00",
+    "checked_at": "2026-10-21T21:30:50.824043+00:00",
     "past_cutoff": true,
     "reason": "1 advisory(s) with real external use (3 events); registry keeps.",
     "retire": false,

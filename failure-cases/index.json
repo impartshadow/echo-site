@@ -1,8 +1,44 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-10-19T21:30:44.333165+00:00",
-  "count": 193,
+  "generated_at": "2026-10-21T21:30:50.705923+00:00",
+  "count": 194,
   "cases": [
+    {
+      "schema": "shadow.public_failure_artifact.v1",
+      "id": "agent-reports-success-despite-omitting-required-fiel-af97ddb5cf",
+      "advisory_id": "SFA-2026-AF97DDB5CF",
+      "ts": "2026-10-21T21:30:50.664714+00:00",
+      "title": "Agent reports success despite omitting required fields",
+      "source": {
+        "channel": "unsolicited_triage",
+        "repo": "cloverfrog/AutoScraper",
+        "issue_number": 1,
+        "author": "unknown",
+        "url": "https://github.com/cloverfrog/AutoScraper/issues/1"
+      },
+      "case": {
+        "observed_action": "The agent generated a ScraperSpec that silently dropped the user-requested 'description' field and the CLI reported overall success based solely on clean executor completion.",
+        "expected_boundary": "The requested field set should have been frozen independently of the generated spec and checked as a subset relationship before the executor ever ran, failing fast to an unsupported/unfulfilled status on mismatch.",
+        "runtime_context": "AutoScraper's autoscraper-agent CLI generating and executing a ScraperSpec against a live site with a protocol that currently forbids detail-page crawling.",
+        "evidence": "The issue body explicitly states the agent identified the field as unreachable under current protocol constraints yet submitted a spec omitting it, and the executor's errors:[] / stop_reason:max_items output was treated as task success."
+      },
+      "evidence_gaps": [],
+      "artifact": {
+        "path": "docs/failure-cases/agent-reports-success-despite-omitting-required-fiel-af97ddb5cf.html",
+        "url": "https://impartshadow.github.io/echo-site/failure-cases/agent-reports-success-despite-omitting-required-fiel-af97ddb5cf.html"
+      },
+      "commercial_action": {
+        "label": "Request a private agent failure audit",
+        "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20agent-reports-success-despite-omitting-required-fiel-af97ddb5cf&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/agent-reports-success-despite-omitting-required-fiel-af97ddb5cf.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
+        "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
+        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+      },
+      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "public_safety": {
+        "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
+        "status": "public-safe stub; deeper diagnosis still requires evidence review"
+      }
+    },
     {
       "schema": "shadow.public_failure_artifact.v1",
       "id": "github-webhook-deliveries-time-out-at-ingress-and-si-985cf01db6",
