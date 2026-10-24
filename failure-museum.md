@@ -1,10 +1,10 @@
 # Agent Failure Museum
 
-Generated: 2026-10-14T03:43:50-05:00 CT
+Generated: 2026-10-24T03:37:53-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 189 claim-boundary violations across 58 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 283 claim-boundary violations across 73 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
@@ -19,6 +19,17 @@ Shadow has logged 189 claim-boundary violations across 58 contract names. The us
 - Audit prompt: Find definitive status answers that lack a same-turn tool or data receipt.
 - Redacted example: Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)
 
+### The Agent Said Done While The Artifact Was Still Missing
+
+- Contract: `completion-artifact`
+- Fires logged: 8
+- Latest seen: 2026-10-23T21:45:40-05:00 CT
+- Buyer failure: A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.
+- Missing receipt: artifact path, commit hash, deploy receipt, message id, or queue record
+- Runtime control: Block final completion language unless the named artifact exists and the worktree/state agrees.
+- Audit prompt: Find every place the agent used completion language without an independently readable artifact.
+- Redacted example: Completion/commit language while the repo still has uncommitted work: core/model_routing_policy.py, docs/agent-failure-flagship.html, docs/agent-failure-flagship.json, docs/agent-failure-flagship.md, docs/autopsy.html, docs/autopsy.xml, docs/failure-museum.html, docs/failure-museum.json, ... +1107 more. Commit and push, or state that work remains uncommitted.
+
 ### The Agent Tried To Put Private Identity Data Into A Tool Boundary
 
 - Contract: `dox-guard`
@@ -29,17 +40,6 @@ Shadow has logged 189 claim-boundary violations across 58 contract names. The us
 - Runtime control: Enforce identity and credential separation at the client layer, not just prompt text.
 - Audit prompt: Inspect tool calls for personal identifiers, private domains, tokens, or account-mixing risks.
 - Redacted example: run_shell command contains 1 personal identifier(s) [categories: phone]. PII must not appear in shell commands that could reach third parties (email, curl POST, browser scripts).
-
-### The Agent Said Done While The Artifact Was Still Missing
-
-- Contract: `completion-artifact`
-- Fires logged: 5
-- Latest seen: 2026-10-13T03:13:03-05:00 CT
-- Buyer failure: A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.
-- Missing receipt: artifact path, commit hash, deploy receipt, message id, or queue record
-- Runtime control: Block final completion language unless the named artifact exists and the worktree/state agrees.
-- Audit prompt: Find every place the agent used completion language without an independently readable artifact.
-- Redacted example: Completion/commit language while the repo still has uncommitted work: docs/contract-red-team.json, docs/contract-red-team.md, scripts/bash_approval_hook.py, artifacts/checkin_ws00c7/, artifacts/checkin_ws0a90/1a0fb95a5ed166d4.json, artifacts/checkin_ws0a90/1a107125a8a7d0de.json, artifacts/checkin_ws0a90/1a1115eaa0cdc83a.json, artifacts/checkin_ws0a90/1a120d12461209ca.json, ... +484 more. Commit and push, or state tha
 
 ### The Agent Cited A Commit Hash Before Proving It Resolved
 
