@@ -1,17 +1,28 @@
 # Agent Failure Museum
 
-Generated: 2026-10-24T03:37:53-05:00 CT
+Generated: 2026-10-30T03:24:43-05:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 283 claim-boundary violations across 73 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 164 claim-boundary violations across 61 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
+
+### The Agent Said Done While The Artifact Was Still Missing
+
+- Contract: `completion-artifact`
+- Fires logged: 5
+- Latest seen: 2026-10-26T20:07:55-05:00 CT
+- Buyer failure: A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.
+- Missing receipt: artifact path, commit hash, deploy receipt, message id, or queue record
+- Runtime control: Block final completion language unless the named artifact exists and the worktree/state agrees.
+- Audit prompt: Find every place the agent used completion language without an independently readable artifact.
+- Redacted example: Completion/commit language while the repo still has uncommitted work: artifacts/activation_316e8074/, artifacts/activation_458c0373/, artifacts/activation_4c322f0d/, artifacts/activation_a930c67b/, artifacts/activation_b25cd412/, artifacts/checkin_restart_fm052/, artifacts/checkin_ws00c7/, artifacts/checkin_ws0945/1a13046b34654e1c-live.json, ... +1470 more. Commit and push, or state that work remains uncommitted.
 
 ### The Agent Answered From Memory When The Question Required A Live Read
 
 - Contract: `state-assertion-grounding`
-- Fires logged: 12
+- Fires logged: 5
 - Latest seen: 2026-10-11T19:43:30-05:00 CT
 - Buyer failure: An operator asks whether a system is running, queued, sent, or fixed; the agent answers from context instead of inspecting current state.
 - Missing receipt: same-turn read from the relevant file, process table, API, inbox, queue, or log
@@ -19,21 +30,10 @@ Shadow has logged 283 claim-boundary violations across 73 contract names. The us
 - Audit prompt: Find definitive status answers that lack a same-turn tool or data receipt.
 - Redacted example: Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)
 
-### The Agent Said Done While The Artifact Was Still Missing
-
-- Contract: `completion-artifact`
-- Fires logged: 8
-- Latest seen: 2026-10-23T21:45:40-05:00 CT
-- Buyer failure: A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.
-- Missing receipt: artifact path, commit hash, deploy receipt, message id, or queue record
-- Runtime control: Block final completion language unless the named artifact exists and the worktree/state agrees.
-- Audit prompt: Find every place the agent used completion language without an independently readable artifact.
-- Redacted example: Completion/commit language while the repo still has uncommitted work: core/model_routing_policy.py, docs/agent-failure-flagship.html, docs/agent-failure-flagship.json, docs/agent-failure-flagship.md, docs/autopsy.html, docs/autopsy.xml, docs/failure-museum.html, docs/failure-museum.json, ... +1107 more. Commit and push, or state that work remains uncommitted.
-
 ### The Agent Tried To Put Private Identity Data Into A Tool Boundary
 
 - Contract: `dox-guard`
-- Fires logged: 8
+- Fires logged: 2
 - Latest seen: 2026-10-05T05:57:58-05:00 CT
 - Buyer failure: An outbound or automation agent risks leaking personal identifiers through shell commands, browser scripts, or third-party calls.
 - Missing receipt: redaction proof and approved outbound identity context
@@ -44,7 +44,7 @@ Shadow has logged 283 claim-boundary violations across 73 contract names. The us
 ### The Agent Cited A Commit Hash Before Proving It Resolved
 
 - Contract: `commit-hash-verification`
-- Fires logged: 3
+- Fires logged: 1
 - Latest seen: 2026-09-28T20:03:55-05:00 CT
 - Buyer failure: A coding agent says a fix was committed or pushed, but the hash is invented, stale, or not reachable from the expected branch.
 - Missing receipt: git rev-parse output plus git cat-file or remote branch containment proof

@@ -1,6 +1,6 @@
 # Agent Failure Challenges
 
-Generated: 2026-10-24T03:37:53-05:00 CT
+Generated: 2026-10-30T03:24:43-05:00 CT
 
 Shadow is turning agent reliability into an adversarial market: builders bring concrete challenge failures, Shadow converts the best ones into receipt gates, public-safe artifacts, or paid audits.
 

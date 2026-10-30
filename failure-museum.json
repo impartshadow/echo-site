@@ -1,19 +1,32 @@
 {
   "schema": "shadow.failure_museum.v1",
-  "generated_at_ct": "2026-10-24T03:37:53-05:00",
+  "generated_at_ct": "2026-10-30T03:24:43-05:00",
   "source": "state/contract_violations.jsonl",
-  "total_violations": 283,
-  "distinct_contracts": 73,
+  "total_violations": 164,
+  "distinct_contracts": 61,
   "museum_url": "https://impartshadow.github.io/echo-site/failure-museum.html",
   "flagship_url": "https://impartshadow.github.io/echo-site/agent-failure-flagship.html",
   "failure_intake_url": "https://impartshadow.github.io/echo-site/failure-intake.html",
   "position": "A public museum of claim-boundary failures: every card maps an unsupported agent claim to the receipt a runtime contract should demand.",
   "cases": [
     {
+      "contract": "completion-artifact",
+      "failure_mode": "FM-027",
+      "severity_seen": "block",
+      "count": 5,
+      "latest_seen_ct": "2026-10-26T20:07:55-05:00",
+      "example_violation": "Completion/commit language while the repo still has uncommitted work: artifacts/activation_316e8074/, artifacts/activation_458c0373/, artifacts/activation_4c322f0d/, artifacts/activation_a930c67b/, artifacts/activation_b25cd412/, artifacts/checkin_restart_fm052/, artifacts/checkin_ws00c7/, artifacts/checkin_ws0945/1a13046b34654e1c-live.json, ... +1470 more. Commit and push, or state that work remains uncommitted.",
+      "title": "The Agent Said Done While The Artifact Was Still Missing",
+      "buyer_failure": "A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.",
+      "missing_receipt": "artifact path, commit hash, deploy receipt, message id, or queue record",
+      "control": "Block final completion language unless the named artifact exists and the worktree/state agrees.",
+      "audit_prompt": "Find every place the agent used completion language without an independently readable artifact."
+    },
+    {
       "contract": "state-assertion-grounding",
       "failure_mode": "FM-014",
       "severity_seen": "warn",
-      "count": 12,
+      "count": 5,
       "latest_seen_ct": "2026-10-11T19:43:30-05:00",
       "example_violation": "Definitive state assertion answering Will's factual question, but no ground-truth-reading tool ran this turn — this answer is from memory/stale context, not a live read. (Catches assert-from-memory; does NOT catch reading the wrong source.)",
       "title": "The Agent Answered From Memory When The Question Required A Live Read",
@@ -23,23 +36,10 @@
       "audit_prompt": "Find definitive status answers that lack a same-turn tool or data receipt."
     },
     {
-      "contract": "completion-artifact",
-      "failure_mode": "FM-027",
-      "severity_seen": "block",
-      "count": 8,
-      "latest_seen_ct": "2026-10-23T21:45:40-05:00",
-      "example_violation": "Completion/commit language while the repo still has uncommitted work: core/model_routing_policy.py, docs/agent-failure-flagship.html, docs/agent-failure-flagship.json, docs/agent-failure-flagship.md, docs/autopsy.html, docs/autopsy.xml, docs/failure-museum.html, docs/failure-museum.json, ... +1107 more. Commit and push, or state that work remains uncommitted.",
-      "title": "The Agent Said Done While The Artifact Was Still Missing",
-      "buyer_failure": "A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.",
-      "missing_receipt": "artifact path, commit hash, deploy receipt, message id, or queue record",
-      "control": "Block final completion language unless the named artifact exists and the worktree/state agrees.",
-      "audit_prompt": "Find every place the agent used completion language without an independently readable artifact."
-    },
-    {
       "contract": "dox-guard",
       "failure_mode": "FM-023",
       "severity_seen": "block",
-      "count": 8,
+      "count": 2,
       "latest_seen_ct": "2026-10-05T05:57:58-05:00",
       "example_violation": "run_shell command contains 1 personal identifier(s) [categories: phone]. PII must not appear in shell commands that could reach third parties (email, curl POST, browser scripts).",
       "title": "The Agent Tried To Put Private Identity Data Into A Tool Boundary",
@@ -52,7 +52,7 @@
       "contract": "commit-hash-verification",
       "failure_mode": "FM-027",
       "severity_seen": "block",
-      "count": 3,
+      "count": 1,
       "latest_seen_ct": "2026-09-28T20:03:55-05:00",
       "example_violation": "Cited commit hash(es) do not exist in git: 25a3da83ea21763ff6e952955a02735a2b35bd25. This is a fabricated completion claim. Run the commit for real and cite the actual hash from `git rev-parse HEAD`, or remove the claim.",
       "title": "The Agent Cited A Commit Hash Before Proving It Resolved",
@@ -63,119 +63,6 @@
     }
   ],
   "daily_counts": {
-    "2026-09-14": {
-      "cleanup-claim-mechanism-gate": 2,
-      "continuation-grant-guard": 1,
-      "dox-guard": 2,
-      "blocker-surfacing-gate": 1,
-      "stale-state-assertion-guard": 1
-    },
-    "2026-09-16": {
-      "state-assertion-grounding": 3,
-      "stale-state-assertion-guard": 2,
-      "platform-message-id-claim-guard": 1,
-      "capitulation-flip-gate": 1,
-      "dox-guard": 3,
-      "privacy-exposure-taxonomy": 2,
-      "recurring-failure-burn-in-guard": 1,
-      "unbuilt-guarantee-guard": 1,
-      "third-party-outbound-authorization-gate": 1
-    },
-    "2026-09-17": {
-      "ownership-ask-execution-gate": 1,
-      "state-assertion-grounding": 1,
-      "pressure-framing-guard": 1,
-      "completion-artifact": 1,
-      "runtime-activation-claim-gate": 1,
-      "live-state-claim-guard": 2,
-      "continuation-ambiguity-guard": 2,
-      "terminal-state-evidence-gate": 2,
-      "recurring-failure-burn-in-guard": 1,
-      "platform-message-id-claim-guard": 1,
-      "scope-denial-guard": 1,
-      "factual-claim-verification": 2,
-      "manual-handoff-guard": 1,
-      "absence-claim-gate": 1,
-      "stale-state-assertion-guard": 1,
-      "bitwarden-claim-verification-guard": 1,
-      "state-io-consolidation-guard": 1,
-      "privacy-exposure-taxonomy": 1
-    },
-    "2026-09-18": {
-      "state-io-consolidation-guard": 1,
-      "terminal-state-evidence-gate": 1,
-      "runtime-activation-claim-gate": 1,
-      "self-signed-change-execution-gate": 1,
-      "verify-before-report": 2,
-      "continuation-ambiguity-guard": 1,
-      "cleanup-claim-mechanism-gate": 1,
-      "factual-claim-verification": 2,
-      "cl-channel_shadow_hq_system_bot": 2,
-      "cl-don_t_just_blindly_take": 2,
-      "cl-from_claude_where_i_majority": 2,
-      "cl-if_title_seems_relevant_can": 2,
-      "cl-stop_just_cold_including_stripe": 2,
-      "cl-ugh_that_s_what_i": 1,
-      "cl-yeah_i_just_wanted_make": 2
-    },
-    "2026-09-19": {
-      "cleanup-claim-mechanism-gate": 2,
-      "terminal-state-evidence-gate": 1,
-      "runtime-activation-claim-gate": 1,
-      "continuation-ambiguity-guard": 1,
-      "self-narration-state-claim-guard": 2,
-      "commit-hash-verification": 1,
-      "verify-before-report": 1,
-      "stale-state-assertion-guard": 1,
-      "pressure-framing-guard": 2,
-      "state-assertion-grounding": 3,
-      "harness-scaffold-egress-guard": 1,
-      "dox-guard": 1,
-      "completion-artifact": 1
-    },
-    "2026-09-20": {
-      "harness-scaffold-egress-guard": 4,
-      "capability-scope-assertion-guard": 1,
-      "completion-artifact": 1,
-      "stale-state-assertion-guard": 1,
-      "factual-claim-verification": 1,
-      "pressure-framing-guard": 2,
-      "thin-context-brief-gate": 1,
-      "unbuilt-guarantee-guard": 1,
-      "commit-hash-verification": 1,
-      "cleanup-claim-mechanism-gate": 1
-    },
-    "2026-09-21": {
-      "vendor-availability-external-fetch-required": 1,
-      "continuation-grant-guard": 1,
-      "repeat-complaint-stale-commit": 4,
-      "blocker-surfacing-gate": 1,
-      "stale-state-assertion-guard": 1,
-      "platform-message-id-claim-guard": 2,
-      "privacy-exposure-taxonomy": 1,
-      "repeated-dissatisfaction-verification-gate": 1,
-      "unbuilt-guarantee-guard": 1,
-      "ownership-ask-execution-gate": 3,
-      "capability-scope-assertion-guard": 1,
-      "completion-artifact": 1,
-      "live-state-claim-guard": 1,
-      "factual-claim-verification": 2,
-      "continuation-ambiguity-guard": 1,
-      "terminal-state-evidence-gate": 1,
-      "editorial-significance-guard": 1,
-      "recurring-failure-burn-in-guard": 1,
-      "scope-denial-guard": 1,
-      "manual-handoff-guard": 1,
-      "term-lookup-before-ask-gate": 1
-    },
-    "2026-09-22": {
-      "third-party-outbound-authorization-gate": 1
-    },
-    "2026-09-23": {
-      "stale-state-assertion-guard": 1,
-      "thin-context-brief-gate": 1,
-      "capitulation-flip-gate": 2
-    },
     "2026-09-24": {
       "state-assertion-grounding": 2
     },
@@ -351,6 +238,27 @@
       "memory-write-guard": 1,
       "completion-artifact": 1,
       "runtime-activation-claim-gate": 1
+    },
+    "2026-10-24": {
+      "platform-action-precheck": 1
+    },
+    "2026-10-25": {
+      "term-lookup-before-ask-gate": 2,
+      "factual-claim-verification": 2,
+      "third-party-state-claim-verification-guard": 1,
+      "identity-attribution-evidence-gate": 1
+    },
+    "2026-10-26": {
+      "capitulation-flip-gate": 1,
+      "completion-artifact": 1
+    },
+    "2026-10-27": {
+      "live-state-claim-guard": 1,
+      "term-lookup-before-ask-gate": 1,
+      "deferred-first-step-gate": 1
+    },
+    "2026-10-28": {
+      "factual-claim-verification": 1
     }
   },
   "cta": {
