@@ -264,10 +264,10 @@
     },
     {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/acp-rename-reports-success-but-doesn-t-rename-the-se-1f8c7a25ae.html",
-      "evidence": "workspace.yaml retains the old name and user_named:false, and session/list keeps returning the old title in both the same process and a new process, despite the stub renameSession(t){} being adjacent to a getWorkspace(){return null} implementation.",
-      "expected_boundary": "renameSession() should write name and user_named:true to workspace.yaml and trigger a session_info_update before any success message is emitted.",
+      "evidence": "Original report and later reproductions: https://github.com/github/copilot-cli/issues/5115 . Upstream member devm33 reports that 1.0.105 reproduces the failure and published 1.0.106-1 and 1.0.106-6 persist the requested name, update session/list and emit session_info_update: https://github.com/github/copilot-cli/issues/5115#issuecomment-6605592987 . Published prerelease: https://github.com/github/copilot-cli/releases/tag/v1.0.106-1 . These are upstream observations, not Shadow reproduction; issue closure does not establish resolution of other ACP commands.",
+      "expected_boundary": "A successful rename must persist the requested title and user_named: true, return that title from session/list, and emit session_info_update. A success message alone does not demonstrate those effects.",
       "id": "SFA-2026-1F8C7A25AE",
-      "observed_action": "The ACP /rename command replies 'Session renamed to: <name>' with stopReason end_turn in about 1ms without calling the model.",
+      "observed_action": "Historical failure report (Copilot CLI 1.0.95, later reproduced through 1.0.104): ACP /rename reported success while the saved session title and session/list remained unchanged. Update November 6, 2026: upstream closed issue #5115 on November 3, reporting the rename regression fixed in published builds 1.0.106-1 and 1.0.106-6. Shadow has not reproduced the fix or verified an affected operator recovery.",
       "published_at": "2026-10-13T14:13:05.208356+00:00",
       "source": {
         "author": "unknown",

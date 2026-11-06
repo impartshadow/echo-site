@@ -1,6 +1,6 @@
 {
   "schema": "shadow.public_failure_case_index.v1",
-  "generated_at": "2026-11-01T09:03:23.692835+00:00",
+  "generated_at": "2026-11-06T17:10:56.831047+00:00",
   "count": 194,
   "cases": [
     {
@@ -341,12 +341,15 @@
         "url": "https://github.com/github/copilot-cli/issues/5115"
       },
       "case": {
-        "observed_action": "The ACP /rename command replies 'Session renamed to: <name>' with stopReason end_turn in about 1ms without calling the model.",
-        "expected_boundary": "renameSession() should write name and user_named:true to workspace.yaml and trigger a session_info_update before any success message is emitted.",
-        "runtime_context": "GitHub Copilot CLI 1.0.95 running in ACP mode (copilot --acp --stdio) on Windows 11, driven by a Node ACP client using @agentclientprotocol/sdk.",
-        "evidence": "workspace.yaml retains the old name and user_named:false, and session/list keeps returning the old title in both the same process and a new process, despite the stub renameSession(t){} being adjacent to a getWorkspace(){return null} implementation."
+        "observed_action": "Historical failure report (Copilot CLI 1.0.95, later reproduced through 1.0.104): ACP /rename reported success while the saved session title and session/list remained unchanged. Update November 6, 2026: upstream closed issue #5115 on November 3, reporting the rename regression fixed in published builds 1.0.106-1 and 1.0.106-6. Shadow has not reproduced the fix or verified an affected operator recovery.",
+        "expected_boundary": "A successful rename must persist the requested title and user_named: true, return that title from session/list, and emit session_info_update. A success message alone does not demonstrate those effects.",
+        "runtime_context": "Historical report: Copilot CLI 1.0.95 over ACP on Windows 11; the reporter later reproduced the rename failure on 1.0.104. Upstream identifies 1.0.106-1 as the first public fixed build, a prerelease published October 31, 2026. The release exists; its existence is separate from verification of the fix in a particular environment.",
+        "evidence": "Original report and later reproductions: https://github.com/github/copilot-cli/issues/5115 . Upstream member devm33 reports that 1.0.105 reproduces the failure and published 1.0.106-1 and 1.0.106-6 persist the requested name, update session/list and emit session_info_update: https://github.com/github/copilot-cli/issues/5115#issuecomment-6605592987 . Published prerelease: https://github.com/github/copilot-cli/releases/tag/v1.0.106-1 . These are upstream observations, not Shadow reproduction; issue closure does not establish resolution of other ACP commands."
       },
-      "evidence_gaps": [],
+      "evidence_gaps": [
+        "Independent verification in an affected operator environment is absent.",
+        "The original report also references other ACP session commands; this disposition is scoped to rename and does not establish that deletion, cleanup or prune work."
+      ],
       "artifact": {
         "path": "docs/failure-cases/acp-rename-reports-success-but-doesn-t-rename-the-se-1f8c7a25ae.html",
         "url": "https://impartshadow.github.io/echo-site/failure-cases/acp-rename-reports-success-but-doesn-t-rename-the-se-1f8c7a25ae.html"
@@ -355,13 +358,15 @@
         "label": "Request a private agent failure audit",
         "audit_request_url": "mailto:impartshadow@gmail.com?subject=Private%20agent%20failure%20audit%3A%20acp-rename-reports-success-but-doesn-t-rename-the-se-1f8c7a25ae&body=Artifact%3A%20https%3A//impartshadow.github.io/echo-site/failure-cases/acp-rename-reports-success-but-doesn-t-rename-the-se-1f8c7a25ae.html%0A%0AFailure%20summary%3A%0AProduction%20context%3A%0AObserved%20agent%20action%3A%0AExpected%20boundary%3A%0AAvailable%20evidence%3A%0AWhat%20outcome%20would%20make%20this%20useful%20within%207%20days%3A",
         "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
-        "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
+        "routing_rule": "For this historical case, check the upstream fixed-version disposition first. A private audit is relevant only to a distinct current failure with context and evidence; this case alone does not establish an unresolved operator need."
       },
-      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "next_proof_step": "Upstream reports rename fixed. No new diagnosis or audit is required merely because this historical case exists. Reopen only for a current affected version with a minimal redacted trace showing the rename result, persisted title, session/list and title notification. No unsolicited follow-up or new contribution campaign.",
       "public_safety": {
         "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
         "status": "public-safe stub; deeper diagnosis still requires evidence review"
-      }
+      },
+      "updated_at": "2026-11-06T17:10:56.831047+00:00",
+      "correction_source": "https://github.com/github/copilot-cli/issues/5115#issuecomment-6605592987"
     },
     {
       "schema": "shadow.public_failure_artifact.v1",
