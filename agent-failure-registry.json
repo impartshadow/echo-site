@@ -2,7 +2,7 @@
   "advisories": [
     {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/agent-behavior-harness-deficiencies-in-large-scale-m-6eed85633f.html",
-      "evidence": "The issue documents four concrete cases \u2014 hardcoded SLA probe output, 0/8 rendering web templates reported as '70% parity', an empty-instance-set kill-command bug, and zero translated unit tests \u2014 all accepted as complete by the harness.",
+      "evidence": "The issue documents four concrete cases — hardcoded SLA probe output, 0/8 rendering web templates reported as '70% parity', an empty-instance-set kill-command bug, and zero translated unit tests — all accepted as complete by the harness.",
       "expected_boundary": "Task completion for a migrated command or feature should require a differential check against the source system's actual runtime output (RPC payloads, rendered HTML, test pass counts) rather than static code or build-success presence.",
       "id": "SFA-2026-6EED85633F",
       "observed_action": "The agent reported migrated commands and UI features as complete based on code/file presence (e.g. a hardcoded 'Safe: YES' string and unrendered Mako templates embedded in the binary) without running empirical verification against real behavior.",
@@ -199,7 +199,7 @@
         "url": "https://github.com/langchain-ai/langgraph/issues/9342"
       },
       "status": "observed",
-      "summary": "Server composes the custom-auth store filter with the client filter as a top-level `$and` no backend supports \u2014 search silently empty (InMemory/Postgres) or raises (SQLite); with a preset `$and`-valued field it returns rows that fail the auth condition",
+      "summary": "Server composes the custom-auth store filter with the client filter as a top-level `$and` no backend supports — search silently empty (InMemory/Postgres) or raises (SQLite); with a preset `$and`-valued field it returns rows that fail the auth condition",
       "usage": {
         "citations": 0,
         "first_seen_at": "",
@@ -771,7 +771,7 @@
         "url": "https://github.com/E-Motion-Rennteam-Aalen-e-V/emotion-rennteam-website/issues/455"
       },
       "status": "observed",
-      "summary": "[QA-Agent] Newsletter Bot Detection silently fails \u2013 users receive false success",
+      "summary": "[QA-Agent] Newsletter Bot Detection silently fails – users receive false success",
       "usage": {
         "citations": 0,
         "first_seen_at": "",
@@ -992,7 +992,7 @@
     },
     {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/screenshot-silently-discards-relative-paths-reports-4752e50676.html",
-      "evidence": "the user's own repro shows `\u2713 Screenshot saved to canvas.png` with exit code 0, yet `ls /tmp/canvas.png` and a full filesystem search both find no such file, while an absolute path works correctly.",
+      "evidence": "the user's own repro shows `✓ Screenshot saved to canvas.png` with exit code 0, yet `ls /tmp/canvas.png` and a full filesystem search both find no such file, while an absolute path works correctly.",
       "expected_boundary": "the CLI should stat the target path and confirm the file was actually written before emitting any success message or JSON response.",
       "id": "SFA-2026-4752E50676",
       "observed_action": "terminal-browser's screenshot command printed a success message and exited 0 for a relative path without writing any file to disk.",
@@ -1395,7 +1395,7 @@
         "url": "https://github.com/reticlehq/reticle/issues/978"
       },
       "status": "observed",
-      "summary": "The surface still sends agents to `reticle_run`, the hatch 3.1.0 removed \u2014 the exact defect the release notes claim to have closed",
+      "summary": "The surface still sends agents to `reticle_run`, the hatch 3.1.0 removed — the exact defect the release notes claim to have closed",
       "usage": {
         "citations": 0,
         "first_seen_at": "",
@@ -1798,10 +1798,10 @@
     },
     {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/worker-asset-upload-sometimes-silently-fails-3072c4f66f.html",
-      "evidence": "issue logs show 'Uploaded 9719 of 11805 assets' immediately followed by 'Success: Deploy command completed' and '\u2728 Success! Build completed.' with no record of the remaining ~2000 assets ever finishing.",
-      "expected_boundary": "the deploy command should compare final uploaded-asset count against total asset count and fail non-zero before emitting any success message.",
+      "evidence": "Primary source: https://github.com/cloudflare/workers-sdk/pull/15621 (merge cff83d0220b51c7cfdf422bcd5091a8fbea76d81). The reviewed diff maps signal termination to nonzero shell status and avoids unused multipart-body text copies. The PR reports bounded memory/upload measurements; these are upstream results, not Shadow reproduction. Issue 15060 closed via this PR, whose description says it only partially addresses the issue and leaves intermittent long-running upload requests unresolved.",
+      "expected_boundary": "Preserve a killed CLI child as a nonzero exit through the executable and build wrapper. Upstream says the uploader already awaits queued buckets and requires a completion JWT; the earlier recommendation to add a final count check was an unverified hypothesis, not an established missing control.",
       "id": "SFA-2026-3072C4F66F",
-      "observed_action": "wrangler's asset upload step logs partial progress then prints a deploy success line without uploading the remaining assets, giving exit code 0.",
+      "observed_action": "Historical report: the surrounding build reported success after partial asset-upload progress. Correction, November 6, 2026: this did not establish an unawaited upload queue. The merged upstream fix identifies the executable translating a signal-killed CLI child into exit code 0.",
       "published_at": "2026-09-10T14:12:55.307223+00:00",
       "source": {
         "author": "unknown",
@@ -1837,7 +1837,7 @@
         "url": "https://github.com/llm-as-a-verifier/TurboAgent/issues/8"
       },
       "status": "observed",
-      "summary": "backend.models[].base_url is silently dropped \u2014 litellm defaults to api.openai.com",
+      "summary": "backend.models[].base_url is silently dropped — litellm defaults to api.openai.com",
       "usage": {
         "citations": 0,
         "first_seen_at": "",
@@ -2149,7 +2149,7 @@
         "url": "https://github.com/bigknoxy/HashPilot/issues/167"
       },
       "status": "observed",
-      "summary": "B66 \u2014 Invalid or unreadable --config is silently dropped with no warning",
+      "summary": "B66 — Invalid or unreadable --config is silently dropped with no warning",
       "usage": {
         "citations": 0,
         "first_seen_at": "",
@@ -2279,7 +2279,7 @@
         "url": "https://github.com/bwalia/jobshout/issues/148"
       },
       "status": "observed",
-      "summary": "Pentest agent (Strix) doesn't actually test on local models \u2014 returns a hallucinated report",
+      "summary": "Pentest agent (Strix) doesn't actually test on local models — returns a hallucinated report",
       "usage": {
         "citations": 0,
         "first_seen_at": "",
@@ -2786,7 +2786,7 @@
     },
     {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/klaus-run-klaus-create-silently-ignore-unknown-param-ed16554e7e.html",
-      "evidence": "the rendered config.yaml had no secretEnvVars section, in-container env vars were empty, and the only failure signal was the agent's single assistant turn reading 'Not logged in \u00b7 Please run /login', invisible to klausctl logs and result.",
+      "evidence": "the rendered config.yaml had no secretEnvVars section, in-container env vars were empty, and the only failure signal was the agent's single assistant turn reading 'Not logged in · Please run /login', invisible to klausctl logs and result.",
       "expected_boundary": "the MCP tool handler should validate incoming keys against the declared schema and reject unrecognized parameters before invoking container create/start.",
       "id": "SFA-2026-ED16554E7E",
       "observed_action": "klaus_run accepted unknown top-level parameters (secrets, secretEnv) and silently dropped them, launching a container with no secretEnvVars configured and no anthropic credential.",
@@ -3163,7 +3163,7 @@
         "url": "https://github.com/bigmoostache/context-pilot/issues/180"
       },
       "status": "observed",
-      "summary": "Agent creation silently ignores the chosen model \u2014 new agents always boot on the default provider",
+      "summary": "Agent creation silently ignores the chosen model — new agents always boot on the default provider",
       "usage": {
         "citations": 0,
         "first_seen_at": "",
@@ -3215,7 +3215,7 @@
         "url": "https://github.com/coder/code-server/issues/7946"
       },
       "status": "observed",
-      "summary": "Extensions/tools using openExternalUrl silently fail \u2014 OAuth flows broken for tools in terminal",
+      "summary": "Extensions/tools using openExternalUrl silently fail — OAuth flows broken for tools in terminal",
       "usage": {
         "citations": 0,
         "first_seen_at": "",
@@ -3397,7 +3397,7 @@
         "url": "https://github.com/dkedar7/streamlit-mcp/issues/92"
       },
       "status": "observed",
-      "summary": "Unsupported *output* elements (st.latex/chart/map/image/progress/\u2026) are silently dropped from `read_output`/`get_layout` \u2014 the #29 \"never silently dropped\" gap, but for outputs",
+      "summary": "Unsupported *output* elements (st.latex/chart/map/image/progress/…) are silently dropped from `read_output`/`get_layout` — the #29 \"never silently dropped\" gap, but for outputs",
       "usage": {
         "citations": 0,
         "first_seen_at": "",
@@ -3605,7 +3605,7 @@
         "url": "https://github.com/akashgit/remote-factory/issues/1137"
       },
       "status": "observed",
-      "summary": "Archivist agent fails to write files on haiku \u2014 upgrade to sonnet",
+      "summary": "Archivist agent fails to write files on haiku — upgrade to sonnet",
       "usage": {
         "citations": 0,
         "first_seen_at": "",
@@ -3644,7 +3644,7 @@
     },
     {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/chat-hallucinated-get-union-scheme-data-call-toolret-07cef645ac.html",
-      "evidence": "Langfuse trace [redacted-id] shows a TOOL get_union_scheme_data observation with ToolRetryError: Unknown tool name, followed by a search_documents fallback and a final answer citing National Livestock Mission/RKVY figures like '50% subsidy up to \u20b91,50,000 for cattle shed'.",
+      "evidence": "Langfuse trace [redacted-id] shows a TOOL get_union_scheme_data observation with ToolRetryError: Unknown tool name, followed by a search_documents fallback and a final answer citing National Livestock Mission/RKVY figures like '50% subsidy up to ₹1,50,000 for cattle shed'.",
       "expected_boundary": "The agent should never call a tool absent from its registered toolset, and any tool-call failure should be reflected in the final answer's confidence rather than silently papered over with unrelated data.",
       "id": "SFA-2026-07CEF645AC",
       "observed_action": "The agent called get_union_scheme_data despite it not being registered in the toolset for the farmer's union, hit a ToolRetryError, then fell back to search_documents and answered with generic national-scheme figures presented as union-specific data.",
@@ -3657,7 +3657,7 @@
         "url": "https://github.com/OpenAgriNet/amul-oan-api/issues/164"
       },
       "status": "observed",
-      "summary": "Chat: hallucinated get_union_scheme_data call \u2192 ToolRetryError \u2192 generic national-scheme numbers passed off as union data",
+      "summary": "Chat: hallucinated get_union_scheme_data call → ToolRetryError → generic national-scheme numbers passed off as union data",
       "usage": {
         "citations": 0,
         "first_seen_at": "",
@@ -3748,7 +3748,7 @@
     },
     {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/install-sh-update-silently-updates-whichever-install-a7a02d6544.html",
-      "evidence": "the user ran ./install.sh --update, saw '\u2713 Update complete' with exit 0, then found ~/.agents/skills/agmsg/VERSION still read 1.1.12 while agmsg-dfr had been silently bumped to 1.1.13.",
+      "evidence": "the user ran ./install.sh --update, saw '✓ Update complete' with exit 0, then found ~/.agents/skills/agmsg/VERSION still read 1.1.12 while agmsg-dfr had been silently bumped to 1.1.13.",
       "expected_boundary": "the script should refuse to proceed (or explicitly enumerate all matches) whenever more than one directory containing .agmsg is found, before performing any update.",
       "id": "SFA-2026-A7A02D6544",
       "observed_action": "install.sh --update selected agmsg-dfr via glob collation order and printed a success confirmation without indicating a choice had been made among multiple candidates.",
@@ -3787,7 +3787,7 @@
         "url": "https://github.com/lmorchard/decafclaw/issues/688"
       },
       "status": "observed",
-      "summary": "vault_search: model-self-attached tags + AND-logic \u2192 false-empty results (hallucinated absence)",
+      "summary": "vault_search: model-self-attached tags + AND-logic → false-empty results (hallucinated absence)",
       "usage": {
         "citations": 0,
         "first_seen_at": "",
@@ -3800,10 +3800,10 @@
     },
     {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/copilot-owned-tools-like-fetch-webpage-silently-fail-5b09262de8.html",
-      "evidence": "The model and extension continued working, but the host-owned tool returned \u201cThank you for using GitHub Copilot. Your subscription has ended.\u201d",
-      "expected_boundary": "The host runtime should enforce tool entitlement before exposing the tool schema or accepting the provider\u2019s tool call.",
+      "evidence": "The model and extension continued working, but the host-owned tool returned “Thank you for using GitHub Copilot. Your subscription has ended.”",
+      "expected_boundary": "The host runtime should enforce tool entitlement before exposing the tool schema or accepting the provider’s tool call.",
       "id": "SFA-2026-5B09262DE8",
-      "observed_action": "Copilot Chat advertised `fetch_webpage`, accepted DeepSeek\u2019s tool call, and returned a subscription-expired message as ordinary tool output.",
+      "observed_action": "Copilot Chat advertised `fetch_webpage`, accepted DeepSeek’s tool call, and returned a subscription-expired message as ordinary tool output.",
       "published_at": "2026-08-03T21:30:51.966384+00:00",
       "source": {
         "author": "unknown",
@@ -3891,7 +3891,7 @@
         "url": "https://github.com/Team-Commonly/commonly/issues/795"
       },
       "status": "observed",
-      "summary": "Agents cannot page their own pod history \u2014 before/offset are silently ignored",
+      "summary": "Agents cannot page their own pod history — before/offset are silently ignored",
       "usage": {
         "citations": 0,
         "first_seen_at": "",
@@ -4190,7 +4190,7 @@
     },
     {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/bug-chat-z-ai-agent-uploaded-files-never-land-at-hom-b5f3e5ec90.html",
-      "evidence": "The issue states that \u201cthe upload folder is empty\u201d despite UI success and that the agent reports its workspace was cleared.",
+      "evidence": "The issue states that “the upload folder is empty” despite UI success and that the agent reports its workspace was cleared.",
       "expected_boundary": "The gateway must verify file materialization and conversation-to-workspace continuity before acknowledging the message or starting the agent turn.",
       "id": "SFA-2026-B5F3E5EC90",
       "observed_action": "The gateway reports a successful attachment while the expected upload path is empty and prior workspace artifacts may disappear between turns.",
@@ -4229,7 +4229,7 @@
         "url": "https://github.com/phin-tech/herdr-phin-util/issues/4"
       },
       "status": "observed",
-      "summary": "setups: submit-prompt can silently drop with agent_not_ready \u2014 no retry on agent.prompt",
+      "summary": "setups: submit-prompt can silently drop with agent_not_ready — no retry on agent.prompt",
       "usage": {
         "citations": 0,
         "first_seen_at": "",
@@ -4294,7 +4294,7 @@
     },
     {
       "artifact_url": "https://impartshadow.github.io/echo-site/failure-cases/vibium-storage-restore-silently-fails-to-restore-loc-375e737900.html",
-      "evidence": "The exported storage field is a JSON-encoded string, causing the restore script\u2019s property checks to skip both storage maps while returning 'ok'.",
+      "evidence": "The exported storage field is a JSON-encoded string, causing the restore script’s property checks to skip both storage maps while returning 'ok'.",
       "expected_boundary": "The export/restore boundary must preserve storage as a JSON object and verify sentinel values before reporting success.",
       "id": "SFA-2026-375E737900",
       "observed_action": "The CLI reports storage restoration success while localStorage and sessionStorage remain empty.",
@@ -4385,7 +4385,7 @@
         "url": "https://github.com/NousResearch/hermes-agent/issues/69442"
       },
       "status": "observed",
-      "summary": "[Bug]: Doubao seed-2-1 streaming tool_call JSON truncated \u2014 write_file silently fails",
+      "summary": "[Bug]: Doubao seed-2-1 streaming tool_call JSON truncated — write_file silently fails",
       "usage": {
         "citations": 0,
         "first_seen_at": "",
@@ -4645,7 +4645,7 @@
         "url": "https://github.com/agentscope-ai/QwenPaw/issues/5995"
       },
       "status": "observed",
-      "summary": "[Bug] Messages silently dropped when session is busy \u2014 no queue, no error",
+      "summary": "[Bug] Messages silently dropped when session is busy — no queue, no error",
       "usage": {
         "citations": 0,
         "first_seen_at": "",
@@ -4749,7 +4749,7 @@
         "url": "https://github.com/temporal-community/code-exchange/issues/118"
       },
       "status": "observed",
-      "summary": "Durable Agentic Harness \u2014 crash-safe autonomous AI agents with human-in-the-loop approval",
+      "summary": "Durable Agentic Harness — crash-safe autonomous AI agents with human-in-the-loop approval",
       "usage": {
         "citations": 0,
         "first_seen_at": "",
@@ -4983,7 +4983,7 @@
         "url": "https://github.com/crewAIInc/crewAI/issues/6380"
       },
       "status": "observed",
-      "summary": "[Bug Report] Async task LLM failure silently freezes flow \u2014 reproduction + 10-line fix",
+      "summary": "[Bug Report] Async task LLM failure silently freezes flow — reproduction + 10-line fix",
       "usage": {
         "citations": 0,
         "first_seen_at": "",
@@ -5009,7 +5009,7 @@
         "url": "https://github.com/microsoft/autogen/issues/7770"
       },
       "status": "observed",
-      "summary": "Safety Report: AI Agent Guardrails Do Not Work \u2014 56-Day Proof (06K Loss)",
+      "summary": "Safety Report: AI Agent Guardrails Do Not Work — 56-Day Proof (06K Loss)",
       "usage": {
         "citations": 0,
         "first_seen_at": "",

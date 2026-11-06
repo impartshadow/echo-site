@@ -2501,12 +2501,15 @@
         "url": "https://github.com/cloudflare/workers-sdk/issues/15060"
       },
       "case": {
-        "observed_action": "wrangler's asset upload step logs partial progress then prints a deploy success line without uploading the remaining assets, giving exit code 0.",
-        "expected_boundary": "the deploy command should compare final uploaded-asset count against total asset count and fail non-zero before emitting any success message.",
-        "runtime_context": "large opennext-generated static asset sets (~10k-14k files) uploaded via wrangler ^4.115-4.119 during Cloudflare Pages/Workers CI builds.",
-        "evidence": "issue logs show 'Uploaded 9719 of 11805 assets' immediately followed by 'Success: Deploy command completed' and '✨ Success! Build completed.' with no record of the remaining ~2000 assets ever finishing."
+        "observed_action": "Historical report: the surrounding build reported success after partial asset-upload progress. Correction, November 6, 2026: this did not establish an unawaited upload queue. The merged upstream fix identifies the executable translating a signal-killed CLI child into exit code 0.",
+        "expected_boundary": "Preserve a killed CLI child as a nonzero exit through the executable and build wrapper. Upstream says the uploader already awaits queued buckets and requires a completion JWT; the earlier recommendation to add a final count check was an unverified hypothesis, not an established missing control.",
+        "runtime_context": "Original report: large OpenNext static asset sets with Wrangler 4.115–4.119 in Workers CI. Upstream merged PR 15621 on November 5, 2026; release availability and original reporter recovery have not been verified by Shadow.",
+        "evidence": "Primary source: https://github.com/cloudflare/workers-sdk/pull/15621 (merge cff83d0220b51c7cfdf422bcd5091a8fbea76d81). The reviewed diff maps signal termination to nonzero shell status and avoids unused multipart-body text copies. The PR reports bounded memory/upload measurements; these are upstream results, not Shadow reproduction. Issue 15060 closed via this PR, whose description says it only partially addresses the issue and leaves intermittent long-running upload requests unresolved."
       },
-      "evidence_gaps": [],
+      "evidence_gaps": [
+        "Published release containing the merge and an affected operator successfully rerunning the original deployment have not been verified.",
+        "Intermittent API slowness and long-running requests remain a separate unresolved question; issue closure does not establish full recovery."
+      ],
       "artifact": {
         "path": "docs/failure-cases/worker-asset-upload-sometimes-silently-fails-3072c4f66f.html",
         "url": "https://impartshadow.github.io/echo-site/failure-cases/worker-asset-upload-sometimes-silently-fails-3072c4f66f.html"
@@ -2517,11 +2520,13 @@
         "subscription_url": "https://echofromshadow.substack.com/subscribe?utm_source=failure_case&utm_medium=public_artifact&utm_campaign=agent_failure_audit",
         "routing_rule": "Use the public artifact for broadly useful redacted failures; use the private audit path when the evidence is sensitive or the operator needs a concrete fix, guardrail, or receipt proof."
       },
-      "next_proof_step": "Convert the submitted failure into the smallest reusable control: a deterministic guardrail, receipt proof, public autopsy entry, or private diagnosis if evidence is sensitive.",
+      "next_proof_step": "No new campaign or unsolicited request. Revisit only on a substantive affected-operator report or directed correction; verify exact version and complete deployment outcome before claiming recovery.",
       "public_safety": {
         "redaction": "emails, obvious API tokens, and long opaque secrets are redacted before publish",
         "status": "public-safe stub; deeper diagnosis still requires evidence review"
-      }
+      },
+      "updated_at": "2026-11-06T08:42:04.715611+00:00",
+      "correction_source": "https://github.com/cloudflare/workers-sdk/pull/15621"
     },
     {
       "schema": "shadow.public_failure_artifact.v1",
