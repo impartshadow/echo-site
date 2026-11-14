@@ -1,8 +1,8 @@
 {
   "schema": "shadow.artifact_offer_funnel.v1",
-  "generated_at": "2026-07-24T08:33:24.709819+00:00",
+  "generated_at": "2026-09-03T08:21:02.967877+00:00",
   "public_base": "https://impartshadow.github.io/echo-site",
-  "artifact_count": 24,
+  "artifact_count": 29,
   "registry": [
     {
       "artifact": "agent-failure-flagship",
@@ -89,7 +89,7 @@
       "url": "https://impartshadow.github.io/echo-site/agent-failure-audit.html",
       "target_buyer": "teams running production LLM agents",
       "offer_links": 3,
-      "age_days": 17.6,
+      "age_days": 58.6,
       "reach_mentions": 0,
       "stale_no_offer": false,
       "distribution_priority": 0.65
@@ -99,7 +99,7 @@
       "url": "https://impartshadow.github.io/echo-site/failure-distribution-packet.html",
       "target_buyer": "distribution partners",
       "offer_links": 3,
-      "age_days": 18.2,
+      "age_days": 59.2,
       "reach_mentions": 0,
       "stale_no_offer": false,
       "distribution_priority": 0.65
@@ -109,7 +109,7 @@
       "url": "https://impartshadow.github.io/echo-site/sample-failure-census.html",
       "target_buyer": "buyers evaluating the $400 census",
       "offer_links": 3,
-      "age_days": 17.6,
+      "age_days": 58.6,
       "reach_mentions": 0,
       "stale_no_offer": false,
       "distribution_priority": 0.65
@@ -145,16 +145,6 @@
       "distribution_priority": 0.6
     },
     {
-      "artifact": "institutional-mandate-lease",
-      "url": "https://impartshadow.github.io/echo-site/institutional-mandate-lease.html",
-      "target_buyer": "agent operators",
-      "offer_links": 0,
-      "age_days": 0.9,
-      "reach_mentions": 0,
-      "stale_no_offer": false,
-      "distribution_priority": 0.577
-    },
-    {
       "artifact": "agent-failure-bounty",
       "url": "https://impartshadow.github.io/echo-site/agent-failure-bounty.html",
       "target_buyer": "agent builders with unexplained failures",
@@ -175,41 +165,51 @@
       "distribution_priority": 0.567
     },
     {
-      "artifact": "model-succession-trial",
-      "url": "https://impartshadow.github.io/echo-site/model-succession-trial.html",
-      "target_buyer": "agent operators",
-      "offer_links": 0,
-      "age_days": 1.9,
-      "reach_mentions": 0,
-      "stale_no_offer": false,
-      "distribution_priority": 0.552
-    },
-    {
-      "artifact": "constitutional-challenge",
-      "url": "https://impartshadow.github.io/echo-site/constitutional-challenge.html",
-      "target_buyer": "agent operators",
-      "offer_links": 0,
-      "age_days": 4.9,
-      "reach_mentions": 0,
-      "stale_no_offer": false,
-      "distribution_priority": 0.477
-    },
-    {
       "artifact": "failure-trace-lab-intake",
       "url": "https://impartshadow.github.io/echo-site/failure-trace-lab-intake.html",
       "target_buyer": "inbound triage prospects",
       "offer_links": 1,
-      "age_days": 18.2,
+      "age_days": 59.2,
       "reach_mentions": 0,
       "stale_no_offer": false,
       "distribution_priority": 0.383
+    },
+    {
+      "artifact": "delegation-check-openfoodfacts-nutrient-extraction",
+      "url": "https://impartshadow.github.io/echo-site/delegation-check-openfoodfacts-nutrient-extraction.html",
+      "target_buyer": "agent operators",
+      "offer_links": 0,
+      "age_days": 11.1,
+      "reach_mentions": 0,
+      "stale_no_offer": true,
+      "distribution_priority": 0.323
+    },
+    {
+      "artifact": "agentic-workflow-audit",
+      "url": "https://impartshadow.github.io/echo-site/agentic-workflow-audit.html",
+      "target_buyer": "agent operators",
+      "offer_links": 0,
+      "age_days": 37.8,
+      "reach_mentions": 0,
+      "stale_no_offer": true,
+      "distribution_priority": 0.25
     },
     {
       "artifact": "autonomy-gears",
       "url": "https://impartshadow.github.io/echo-site/autonomy-gears.html",
       "target_buyer": "agent operators",
       "offer_links": 0,
-      "age_days": 20.8,
+      "age_days": 61.8,
+      "reach_mentions": 0,
+      "stale_no_offer": true,
+      "distribution_priority": 0.25
+    },
+    {
+      "artifact": "constitutional-challenge",
+      "url": "https://impartshadow.github.io/echo-site/constitutional-challenge.html",
+      "target_buyer": "agent operators",
+      "offer_links": 0,
+      "age_days": 45.8,
       "reach_mentions": 0,
       "stale_no_offer": true,
       "distribution_priority": 0.25
@@ -219,7 +219,37 @@
       "url": "https://impartshadow.github.io/echo-site/consulting-audit.html",
       "target_buyer": "consulting buyers for the $2k install",
       "offer_links": 0,
-      "age_days": 14.3,
+      "age_days": 55.2,
+      "reach_mentions": 0,
+      "stale_no_offer": true,
+      "distribution_priority": 0.25
+    },
+    {
+      "artifact": "institution-recognition-accord",
+      "url": "https://impartshadow.github.io/echo-site/institution-recognition-accord.html",
+      "target_buyer": "agent operators",
+      "offer_links": 0,
+      "age_days": 27.7,
+      "reach_mentions": 0,
+      "stale_no_offer": true,
+      "distribution_priority": 0.25
+    },
+    {
+      "artifact": "institutional-mandate-lease",
+      "url": "https://impartshadow.github.io/echo-site/institutional-mandate-lease.html",
+      "target_buyer": "agent operators",
+      "offer_links": 0,
+      "age_days": 41.8,
+      "reach_mentions": 0,
+      "stale_no_offer": true,
+      "distribution_priority": 0.25
+    },
+    {
+      "artifact": "model-succession-trial",
+      "url": "https://impartshadow.github.io/echo-site/model-succession-trial.html",
+      "target_buyer": "agent operators",
+      "offer_links": 0,
+      "age_days": 42.8,
       "reach_mentions": 0,
       "stale_no_offer": true,
       "distribution_priority": 0.25
@@ -229,7 +259,17 @@
       "url": "https://impartshadow.github.io/echo-site/paid-agentic-infrastructure-blueprint.html",
       "target_buyer": "agent operators",
       "offer_links": 0,
-      "age_days": 24.6,
+      "age_days": 65.6,
+      "reach_mentions": 0,
+      "stale_no_offer": true,
+      "distribution_priority": 0.25
+    },
+    {
+      "artifact": "tenant-ops-managed-ai",
+      "url": "https://impartshadow.github.io/echo-site/tenant-ops-managed-ai.html",
+      "target_buyer": "agent operators",
+      "offer_links": 0,
+      "age_days": 31.1,
       "reach_mentions": 0,
       "stale_no_offer": true,
       "distribution_priority": 0.25
@@ -239,7 +279,17 @@
       "url": "https://impartshadow.github.io/echo-site/upgrade.html",
       "target_buyer": "existing tenants considering paid tier",
       "offer_links": 0,
-      "age_days": 21.8,
+      "age_days": 62.8,
+      "reach_mentions": 0,
+      "stale_no_offer": true,
+      "distribution_priority": 0.25
+    },
+    {
+      "artifact": "workflow-implementation-checkout",
+      "url": "https://impartshadow.github.io/echo-site/workflow-implementation-checkout.html",
+      "target_buyer": "agent operators",
+      "offer_links": 0,
+      "age_days": 37.8,
       "reach_mentions": 0,
       "stale_no_offer": true,
       "distribution_priority": 0.25
@@ -249,19 +299,32 @@
     "agent-failure-challenges",
     "tenant-proof",
     "violation-decay",
+    "delegation-check-openfoodfacts-nutrient-extraction",
+    "agentic-workflow-audit",
+    "autonomy-gears",
+    "constitutional-challenge",
+    "consulting-audit",
+    "institution-recognition-accord",
     "institutional-mandate-lease",
     "model-succession-trial",
-    "constitutional-challenge",
-    "autonomy-gears",
-    "consulting-audit",
     "paid-agentic-infrastructure-blueprint",
-    "upgrade"
+    "tenant-ops-managed-ai",
+    "upgrade",
+    "workflow-implementation-checkout"
   ],
   "stale_no_offer_flagged": [
+    "delegation-check-openfoodfacts-nutrient-extraction",
+    "agentic-workflow-audit",
     "autonomy-gears",
+    "constitutional-challenge",
     "consulting-audit",
+    "institution-recognition-accord",
+    "institutional-mandate-lease",
+    "model-succession-trial",
     "paid-agentic-infrastructure-blueprint",
-    "upgrade"
+    "tenant-ops-managed-ai",
+    "upgrade",
+    "workflow-implementation-checkout"
   ],
   "next_distribution_action": {
     "artifact": "agent-failure-flagship",

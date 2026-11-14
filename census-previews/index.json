@@ -1,5 +1,77 @@
 [
   {
+    "id": "teamvibeai-poller-brain-census-preview-5947fbe195",
+    "repo": "teamvibeai/poller-brain",
+    "url": "https://impartshadow.github.io/echo-site/census-previews/teamvibeai-poller-brain-census-preview-5947fbe195.html",
+    "ts": "2026-10-21T21:52:51.745837+00:00"
+  },
+  {
+    "id": "agkomyint-pentoolgg-census-preview-3fd1ea9ecf",
+    "repo": "agkomyint/pentoolgg",
+    "url": "https://impartshadow.github.io/echo-site/census-previews/agkomyint-pentoolgg-census-preview-3fd1ea9ecf.html",
+    "ts": "2026-10-20T21:52:49.393941+00:00"
+  },
+  {
+    "id": "567-labs-instructor-census-preview-2fe7beb5f1",
+    "repo": "567-labs/instructor",
+    "url": "https://impartshadow.github.io/echo-site/census-previews/567-labs-instructor-census-preview-2fe7beb5f1.html",
+    "ts": "2026-10-15T12:53:04.675116+00:00"
+  },
+  {
+    "id": "langchain-ai-langgraph-census-preview-aba0f3cc46",
+    "repo": "langchain-ai/langgraph",
+    "url": "https://impartshadow.github.io/echo-site/census-previews/langchain-ai-langgraph-census-preview-aba0f3cc46.html",
+    "ts": "2026-10-04T06:52:13.970018+00:00"
+  },
+  {
+    "id": "aegra-aegra-census-preview-6ab3efde36",
+    "repo": "aegra/aegra",
+    "url": "https://impartshadow.github.io/echo-site/census-previews/aegra-aegra-census-preview-6ab3efde36.html",
+    "ts": "2026-09-12T18:51:46.204715+00:00"
+  },
+  {
+    "id": "eliteaai-elitea-issues-census-preview-75853e178f",
+    "repo": "EliteaAI/elitea_issues",
+    "url": "https://impartshadow.github.io/echo-site/census-previews/eliteaai-elitea-issues-census-preview-75853e178f.html",
+    "ts": "2026-08-25T15:51:34.584013+00:00"
+  },
+  {
+    "id": "bike4mind-bike4mind-census-preview-dcf27c9b22",
+    "repo": "Bike4Mind/bike4mind",
+    "url": "https://impartshadow.github.io/echo-site/census-previews/bike4mind-bike4mind-census-preview-dcf27c9b22.html",
+    "ts": "2026-08-21T21:51:07.131545+00:00"
+  },
+  {
+    "id": "reticlehq-reticle-census-preview-2adba0c431",
+    "repo": "reticlehq/reticle",
+    "url": "https://impartshadow.github.io/echo-site/census-previews/reticlehq-reticle-census-preview-2adba0c431.html",
+    "ts": "2026-08-20T21:51:18.542583+00:00"
+  },
+  {
+    "id": "xapicc-usagefoundry-census-preview-232ab6ca2a",
+    "repo": "Xapicc/UsageFoundry",
+    "url": "https://impartshadow.github.io/echo-site/census-previews/xapicc-usagefoundry-census-preview-232ab6ca2a.html",
+    "ts": "2026-08-19T21:51:11.972081+00:00"
+  },
+  {
+    "id": "nousresearch-hermes-agent-census-preview-c1b4aa946e",
+    "repo": "NousResearch/hermes-agent",
+    "url": "https://impartshadow.github.io/echo-site/census-previews/nousresearch-hermes-agent-census-preview-c1b4aa946e.html",
+    "ts": "2026-08-16T00:50:49.696652+00:00"
+  },
+  {
+    "id": "wilke-ragstack-census-preview-02fce9b6a6",
+    "repo": "wilke/ragstack",
+    "url": "https://impartshadow.github.io/echo-site/census-previews/wilke-ragstack-census-preview-02fce9b6a6.html",
+    "ts": "2026-08-06T21:50:38.689990+00:00"
+  },
+  {
+    "id": "siderealpress-lobster-census-preview-a492e7aed4",
+    "repo": "SiderealPress/Lobster",
+    "url": "https://impartshadow.github.io/echo-site/census-previews/siderealpress-lobster-census-preview-a492e7aed4.html",
+    "ts": "2026-08-04T00:00:37.924117+00:00"
+  },
+  {
     "id": "langchain-ai-langgraph-census-preview-28d1bf5cd8",
     "repo": "langchain-ai/langgraph",
     "url": "https://impartshadow.github.io/echo-site/census-previews/langchain-ai-langgraph-census-preview-28d1bf5cd8.html",

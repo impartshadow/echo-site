@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Failure census preview — EliteaAI/elitea_issues</title>
+<style>
+body{font-family:Georgia,serif;max-width:44rem;margin:2rem auto;padding:0 1rem;color:#1a1a1a;line-height:1.55}
+h1{font-size:1.5rem} h2{font-size:1.15rem;margin-bottom:.2rem}
+.meta{color:#666;font-size:.9rem} .evidence{color:#444;font-size:.95rem}
+section{border-top:1px solid #ddd;padding-top:.8rem;margin-top:1rem}
+.offer{background:#f6f4ef;border:1px solid #ddd;padding:1rem;margin-top:2rem}
+</style></head><body>
+<h1>Failure census preview — EliteaAI/elitea_issues</h1>
+<p class="meta">Generated 2026-08-25 from 6 public issues.
+This is page one of a failure census: the dominant agent-failure classes in this
+project's own tracker, each with the deterministic check that would catch it.</p>
+<p>The dominant pattern across these issues is loss of ground truth: either observability data silently fails to reach Analytics/execution-history despite correct billing, or execution state (tool_call_id, error status, run status) silently diverges from what actually happened, letting failures pass through as apparent success. A smaller subset concerns runs lacking hard lifecycle bounds (heartbeat, cancel, timeout) to recover from crashes.</p>
+<section><h2>silent-observability-gap</h2><p>LLM calls and agent runs happen and get billed correctly, but the audit trail feeding Analytics/execution history silently drops rows for certain trigger paths, leaving no way to diagnose failures or verify spend.</p><p class="evidence">Evidence: &ldquo;does not show up anywhere in Elitea&#x27;s Analytics&rdquo; — <a href="https://github.com/EliteaAI/elitea_issues/issues/6309">#6309</a> <a href="https://github.com/EliteaAI/elitea_issues/issues/6364">#6364</a> <a href="https://github.com/EliteaAI/elitea_issues/issues/6363">#6363</a></p><p><strong>The deterministic check:</strong> assert that every LLM call event recorded in the LiteLLM/usage ledger has a corresponding row in the analytics ingestion table, keyed by request_id, before the billing period closes</p></section>
+<section><h2>unnormalized-resume-state</h2><p>Chat interface resume paths reconstruct AIMessage objects from checkpoint data without applying the same tool_call_id normalization used elsewhere, so a None tool_call_id survives into tool execution and fails validation.</p><p class="evidence">Evidence: &ldquo;reconstructs `AIMessage` objects from checkpoint data&rdquo; — <a href="https://github.com/EliteaAI/elitea_issues/issues/6353">#6353</a></p><p><strong>The deterministic check:</strong> assert tool_call_id is not None on every ToolMessage constructed in resume paths (MCP auth, parallel sub-agent, HITL) before invoking tool execution</p></section>
+<section><h2>silent-failure-passthrough</h2><p>Provider and MCP tool failures are detected and logged but execution continues as if nothing went wrong, so agents and pipelines see successful output where an actual error occurred.</p><p class="evidence">Evidence: &ldquo;the agent or pipeline sees an error where it previously saw successful output&rdquo; — <a href="https://github.com/EliteaAI/elitea_issues/issues/6401">#6401</a></p><p><strong>The deterministic check:</strong> assert that any tool/provider response classified as status Error/Failed or isError=true raises ToolException before the middleware returns control to the calling agent</p></section>
+<section><h2>unbounded-run-lifecycle</h2><p>Evaluation runs previously had no durability guarantees against worker crashes, no cancellation support, and no time budget, so a stuck or crashed run could stay &#x27;running&#x27; forever.</p><p class="evidence">Evidence: &ldquo;a stuck or crashed run could stay &quot;running&quot; forever with no way to recover or stop it&rdquo; — <a href="https://github.com/EliteaAI/elitea_issues/issues/6398">#6398</a></p><p><strong>The deterministic check:</strong> assert every run row has a heartbeat updated within a bounded interval or is auto-transitioned to a terminal status by the reaper, and every run has time_budget_seconds enforced server-side</p></section>
+<div class="offer">
+<p><strong>This preview used only public issues.</strong> The full failure census
+runs the same classification over seven days of your private agent logs and
+traces — every failure classified, frequency-ranked, with the deterministic
+check per class. $400, one-week turnaround.
+Email <a href="mailto:impartshadow@gmail.com">impartshadow@gmail.com</a> with subject &ldquo;census&rdquo;.</p>
+<p class="meta">Free tier: I triage one public agent failure every day —
+<a href="https://impartshadow.github.io/echo-site/failure-cases/">the case log</a>.</p>
+</div>
+</body></html>

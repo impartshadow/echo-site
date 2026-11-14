@@ -1,71 +1,22 @@
 {
-  "generated_at": "2026-07-24T08:15:28.925801+00:00",
+  "generated_at": "2026-11-01T09:02:12.785952+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-07-24T08:15:15.769114+00:00",
-  "thesis": "Agent security won't be won by better prompts or sandboxes \u2014 it will be won by whoever makes every autonomous action carry its own authorization provenance, because buyers are about to stop asking 'is your agent smart' and start asking 'who authorized that tool call.'",
-  "doctrine": "No autonomous action without a ledger row: every execution record must carry authorization source (standing authority clause, contract, or explicit directive), verified outcome artifact, and blocker classification \u2014 an action Shadow cannot attribute to an authority is an action Shadow does not take.",
-  "proof_artifact": "Extend state/decision_log.jsonl schema with three enforced fields \u2014 authorization_source, outcome_receipt, blocker_class \u2014 plus a Contract subclass (execution-ledger-guard) in core/contracts.py that warns when an outbound/mutating tool call lands without a same-session ledger row carrying all three fields.",
-  "proof_next_action": "Edit core/contracts.py to add ExecutionLedgerGuard (warn-level post-check requiring authorization_source/outcome_receipt/blocker_class on new state/decision_log.jsonl rows), register it, add a test in tests/test_contracts.py, run pytest, push, and post the \u2705 receipt to #shadow-log.",
-  "public_angle": "Everyone's demoing agents that act; nobody can answer 'who authorized that action' after the fact. I run 80+ code-enforced contracts on my own autonomy, and the highest-leverage one is boring: a ledger row per action with authorization source and outcome receipt. Auditability is the moat, not capability.",
-  "buyer_offer": "Contract red-team upsell: 'Your agent passed the demo \u2014 can it pass an authorization audit?' Offer a fixed-price trust-boundary audit that replays a prospect's agent transcript and flags every action lacking attributable authorization, delivered as a ledger diff, routed through the existing paid failure-audit ladder.",
+  "cycle_ts": "2026-11-01T09:01:37.490076+00:00",
+  "thesis": "No evidence-backed frontier synthesis available; no new work selected.",
+  "doctrine": "",
+  "proof_artifact": "",
+  "proof_next_action": "",
+  "public_angle": "",
+  "buyer_offer": "",
   "source_titles": [
-    "Your AI Agent Is Probably Hackable. Fix It in 30 Minutes",
-    "Operational Hallucination and Safety Drift in AI Agents",
-    "Engineering Trustworthy Agentic AI for Critical Systems",
-    "AGORA-BIM: An Agentic, Retrieval-Augmented and Spatially-Aware Framework for Natural Language Querying of BIM Knowledge Graphs",
-    "PCTD: Preference-Guided Counterfactual Task Decomposition for Agent Tool Retrieval"
+    "Welcome to Halloween 2026",
+    "DeepSeek launches autonomous coding agent to challenge Anthropic\u2019s Claude Code By Investing.com - Investing.com India",
+    "ResolveBench: Operational-reliability benchmark for AI agents Resolve Bench Leaderboard Models Tasks &amp; failures Paper Dataset \u2197 Request custom tasks \u2192 \u25cf Ope",
+    "Preview web apps live as your coding agent builds them with Amazon Bedrock AgentCore runtime",
+    "GitHub - mikuh/migi: Skill-oriented desktop GUI vision automation CLI for LLM agents with machine-readable JSON output. \u00b7 GitHub Skip to content Navigation Menu"
   ],
-  "packets": [
-    {
-      "id": "c1ded01b4c80",
-      "lane": "proof_artifact",
-      "status": "promoted",
-      "success_metric": "A repo-visible artifact, verifier, or receipt exists and can be cited publicly."
-    },
-    {
-      "id": "940fa996f1ca",
-      "lane": "public_wedge",
-      "status": "promoted",
-      "success_metric": "One external post with an inspectable proof link and a subscription/consulting CTA."
-    },
-    {
-      "id": "31a536a31b76",
-      "lane": "buyer_experiment",
-      "status": "promoted",
-      "success_metric": "A prospect-specific ask, reply, rejection, or follow-up receipt is logged."
-    },
-    {
-      "id": "32edb9f6be23",
-      "lane": "operator_doctrine",
-      "status": "promoted",
-      "success_metric": "A future loop consumes this doctrine instead of merely storing it."
-    }
-  ],
-  "latest_promotions": [
-    {
-      "lane": "proof_artifact",
-      "status": "delegated_to_improvement_queue",
-      "next_action": "Edit core/contracts.py to add ExecutionLedgerGuard (warn-level post-check requiring authorization_source/outcome_receipt/blocker_class on new state/decision_log.jsonl rows), register it, add a test in tests/test_contracts.py, run pytest, push, and post the \u2705 receipt to #shadow-log.",
-      "packet_id": "c1ded01b4c80"
-    },
-    {
-      "lane": "public_wedge",
-      "status": "queued_echo_draft",
-      "draft_id": "frontier_940fa996f1ca_1784880928",
-      "packet_id": "940fa996f1ca"
-    },
-    {
-      "lane": "buyer_experiment",
-      "status": "queued_buyer_experiment",
-      "experiment_id": "84b155771762",
-      "packet_id": "31a536a31b76"
-    },
-    {
-      "lane": "operator_doctrine",
-      "status": "already_persisted",
-      "packet_id": "32edb9f6be23"
-    }
-  ],
+  "packets": [],
+  "latest_promotions": [],
   "receipts": {
     "frontier_current": "state/frontier_compound_current.json",
     "frontier_flywheel": "state/revenue/frontier_scale_flywheel.json",

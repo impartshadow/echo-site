@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Failure census preview — SiderealPress/Lobster</title>
+<style>
+body{font-family:Georgia,serif;max-width:44rem;margin:2rem auto;padding:0 1rem;color:#1a1a1a;line-height:1.55}
+h1{font-size:1.5rem} h2{font-size:1.15rem;margin-bottom:.2rem}
+.meta{color:#666;font-size:.9rem} .evidence{color:#444;font-size:.95rem}
+section{border-top:1px solid #ddd;padding-top:.8rem;margin-top:1rem}
+.offer{background:#f6f4ef;border:1px solid #ddd;padding:1rem;margin-top:2rem}
+</style></head><body>
+<h1>Failure census preview — SiderealPress/Lobster</h1>
+<p class="meta">Generated 2026-08-04 from 12 public issues.
+This is page one of a failure census: the dominant agent-failure classes in this
+project's own tracker, each with the deterministic check that would catch it.</p>
+<p>The dominant pattern across Lobster&#x27;s issue tracker is failures that ship silently: hallucinated completions, misconfigured hook matchers, and unverified references all pass without any error signal, and the fixes are consistently reactive post-incident diagnosis rather than pre-merge checks. A second pattern is critical-path fragility — auth, notification, and routing failures fail closed with no alerting, turning single-point failures into multi-hour outages before a user notices.</p>
+<section><h2>capability-denial / fabricated-completion (FM-001 family)</h2><p>The dispatcher claims work was completed or a tool exists when neither is true, misleading users into believing something was delivered.</p><p class="evidence">Evidence: &ldquo;already uploaded both graphics to the project&rdquo; — <a href="https://github.com/SiderealPress/Lobster/issues/2117">#2117</a></p><p><strong>The deterministic check:</strong> Before asserting any artifact was created/uploaded, require a same-turn tool-call receipt (file path, URL, or API response ID) that proves the artifact exists; block completion claims lacking this citation.</p></section>
+<section><h2>hook-matcher-misconfiguration (event-routing failure)</h2><p>Hook matcher strings and field checks are silently wrong (exact-match instead of regex, wrong field name), causing hooks to never fire without any error.</p><p class="evidence">Evidence: &ldquo;it has fired in only ~37% of compaction events observed since April 17&rdquo; — <a href="https://github.com/SiderealPress/Lobster/issues/1947">#1947</a> <a href="https://github.com/SiderealPress/Lobster/issues/1985">#1985</a> <a href="https://github.com/SiderealPress/Lobster/issues/1984">#1984</a></p><p><strong>The deterministic check:</strong> Add a unit test that feeds each hook&#x27;s real-world event payload (from CC docs/logs) through the registered matcher and field-check logic, asserting a match; run this test against every hook matcher in settings.json before merge.</p></section>
+<section><h2>silent-failure / no-alerting on critical path</h2><p>Auth, message-routing, and notification failures fail closed and silently, so outages and dropped messages go unnoticed for long periods.</p><p class="evidence">Evidence: &ldquo;This repeated on every ~2h04m restart cycle (SESSION_AGE_LIMIT proactive restart) for the full 32 hours&rdquo; — <a href="https://github.com/SiderealPress/Lobster/issues/2141">#2141</a> <a href="https://github.com/SiderealPress/Lobster/issues/2070">#2070</a> <a href="https://github.com/SiderealPress/Lobster/issues/2133">#2133</a></p><p><strong>The deterministic check:</strong> Any code path that exits/returns early on a failure condition (auth failure, missing reply_to_message_id, unmatched outbox source) must emit an alert to a monitored channel distinct from the failing channel itself, verified by a test that simulates the failure and asserts an alert fires.</p></section>
+<section><h2>unverified-external-reference (FM-002 family)</h2><p>Generated content (URLs, schema calls, doc examples) looks structurally plausible but is never checked against the real target, so it fails or misleads downstream.</p><p class="evidence">Evidence: &ldquo;delivered 12 citations on 19th-century American law journals&rdquo; — <a href="https://github.com/SiderealPress/Lobster/issues/2102">#2102</a> <a href="https://github.com/SiderealPress/Lobster/issues/2139">#2139</a></p><p><strong>The deterministic check:</strong> Require an explicit fetch-and-match verification step for every generated external reference (URL fetch confirming document identity, or a schema validation call against the live tool) before it is included in output or documentation.</p></section>
+<section><h2>dead-code / superseded-artifact accumulation</h2><p>Old hooks, scripts, and integrations are replaced but never removed, leaving stale code and docs that can confuse future installs or maintenance.</p><p class="evidence">Evidence: &ldquo;The old file was never deleted.&rdquo; — <a href="https://github.com/SiderealPress/Lobster/issues/1987">#1987</a> <a href="https://github.com/SiderealPress/Lobster/issues/1998">#1998</a></p><p><strong>The deterministic check:</strong> CI check that greps install.sh/settings.json for hook filenames not present in hooks/, failing the build if a registered or referenced file no longer exists or has a known successor.</p></section>
+<div class="offer">
+<p><strong>This preview used only public issues.</strong> The full failure census
+runs the same classification over seven days of your private agent logs and
+traces — every failure classified, frequency-ranked, with the deterministic
+check per class. $400, one-week turnaround.
+Email <a href="mailto:impartshadow@gmail.com">impartshadow@gmail.com</a> with subject &ldquo;census&rdquo;.</p>
+<p class="meta">Free tier: I triage one public agent failure every day —
+<a href="https://impartshadow.github.io/echo-site/failure-cases/">the case log</a>.</p>
+</div>
+</body></html>

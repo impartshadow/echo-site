@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Failure census preview — 567-labs/instructor</title>
+<style>
+body{font-family:Georgia,serif;max-width:44rem;margin:2rem auto;padding:0 1rem;color:#1a1a1a;line-height:1.55}
+h1{font-size:1.5rem} h2{font-size:1.15rem;margin-bottom:.2rem}
+.meta{color:#666;font-size:.9rem} .evidence{color:#444;font-size:.95rem}
+section{border-top:1px solid #ddd;padding-top:.8rem;margin-top:1rem}
+.offer{background:#f6f4ef;border:1px solid #ddd;padding:1rem;margin-top:2rem}
+</style></head><body>
+<h1>Failure census preview — 567-labs/instructor</h1>
+<p class="meta">Generated 2026-10-15 from 7 public issues.
+This is page one of a failure census: the dominant agent-failure classes in this
+project's own tracker, each with the deterministic check that would catch it.</p>
+<p>The dominant pattern across this page of issues is silence: parsers, mergers, and stream handlers encounter data or config they don&#x27;t recognize and drop it instead of failing loudly, while request builders overwrite caller-supplied settings without surfacing the conflict. None of these are provider API bugs — they are instructor&#x27;s own internal normalization and dispatch layers losing information between input and output.</p>
+<section><h2>silent-data-corruption</h2><p>Parsing and schema-generation code paths quietly drop, mangle, or misclassify data instead of raising an error, so bad or incomplete results pass through undetected.</p><p class="evidence">Evidence: &ldquo;Unknown tool names should raise a clear parsing&rdquo; — <a href="https://github.com/567-labs/instructor/issues/2696">#2696</a> <a href="https://github.com/567-labs/instructor/issues/2756">#2756</a> <a href="https://github.com/567-labs/instructor/issues/2526">#2526</a> <a href="https://github.com/567-labs/instructor/issues/2613">#2613</a></p><p><strong>The deterministic check:</strong> Assert that every field/key/tool_call present in the raw input is present (or explicitly accounted for) in the parsed output; fail the parse with a typed error if the input and output key/name sets don&#x27;t match exactly.</p></section>
+<section><h2>tool-config-override</h2><p>Provider request builders overwrite or ignore caller-supplied configuration (tools, auth parameters) instead of merging with it, silently disabling features the caller explicitly requested.</p><p class="evidence">Evidence: &ldquo;explicitly ignores the `api_key` argument and only wires up classic credential parameters&rdquo; — <a href="https://github.com/567-labs/instructor/issues/2713">#2713</a> <a href="https://github.com/567-labs/instructor/issues/2408">#2408</a></p><p><strong>The deterministic check:</strong> Before sending the provider request, diff the caller-supplied config against the finally-sent payload; fail the build if any caller-supplied key (tools, api_key, tool_choice) was dropped or replaced without an explicit override flag.</p></section>
+<section><h2>streaming-event-drop</h2><p>The streaming/partial-parsing layer only forwards a hardcoded subset of provider event types, so unrecognized event types (like reasoning summaries) vanish with no error or fallback.</p><p class="evidence">Evidence: &ldquo;These events are silently dropped and never surfaced to the caller.&rdquo; — <a href="https://github.com/567-labs/instructor/issues/2291">#2291</a></p><p><strong>The deterministic check:</strong> Add an exhaustive match/else branch over the provider&#x27;s documented streaming event union; raise or log on any event type not in the explicit handled set instead of falling through silently.</p></section>
+<div class="offer">
+<p><strong>This preview used only public issues.</strong> The full failure census
+runs the same classification over seven days of your private agent logs and
+traces — every failure classified, frequency-ranked, with the deterministic
+check per class. $400, one-week turnaround.
+Email <a href="mailto:impartshadow@gmail.com">impartshadow@gmail.com</a> with subject &ldquo;census&rdquo;.</p>
+<p class="meta">Free tier: I triage one public agent failure every day —
+<a href="https://impartshadow.github.io/echo-site/failure-cases/">the case log</a>.</p>
+</div>
+</body></html>

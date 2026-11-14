@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A free 15-minute diagnostic for operators whose AI workflows still need too much checking, copying, or rescue.">
+  <title>Agentic Workflow Audit — Find the work your AI should own next</title>
+  <style>
+    :root {
+      --ink:#15140f; --paper:#f5f0e6; --red:#ed4c2f; --lime:#d7f45b;
+      --muted:#676258; --line:#cfc7b8; --white:#fffdf7;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:inherit}
+    .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom:1px solid var(--line);font-size:13px;text-transform:uppercase;letter-spacing:.12em}
+    .brand{font-weight:900}.nav-note{color:var(--muted)}
+    .hero{display:grid;grid-template-columns:1.45fr .75fr;gap:64px;padding:76px 0 64px}
+    .eyebrow{display:inline-flex;gap:10px;align-items:center;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.11em}
+    .eyebrow:before{content:"";width:32px;height:3px;background:var(--red)}
+    h1{font:900 clamp(50px,8vw,102px)/.9 Georgia,"Times New Roman",serif;letter-spacing:-.055em;margin:24px 0 28px;max-width:900px}
+    .lede{font-size:clamp(20px,2.2vw,29px);line-height:1.32;max-width:760px;margin:0 0 34px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;justify-content:center;align-items:center;padding:15px 20px;border:2px solid var(--ink);font-weight:850;text-decoration:none;box-shadow:5px 5px 0 var(--ink);transition:.16s transform,.16s box-shadow}
+    .btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+    .btn.primary{background:var(--lime)}.btn.secondary{background:var(--white)}
+    .micro{margin-top:17px;color:var(--muted);font-size:13px}
+    .audit-card{align-self:end;background:var(--ink);color:var(--white);padding:28px;transform:rotate(1.5deg);box-shadow:12px 12px 0 var(--red)}
+    .audit-card h2{font:800 28px/1.05 Georgia,serif;margin:0 0 20px}
+    .audit-card ol{margin:0;padding-left:20px}.audit-card li{margin:13px 0}
+    .band{background:var(--red);color:var(--white);padding:18px 0;font-weight:850;overflow:hidden}
+    .band div{display:flex;justify-content:space-between;gap:30px;white-space:nowrap}
+    section{padding:76px 0;border-bottom:1px solid var(--line)}
+    .section-head{display:grid;grid-template-columns:.75fr 1.25fr;gap:50px;margin-bottom:42px}
+    .kicker{font-size:13px;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:var(--red)}
+    h2{font:800 clamp(34px,5vw,60px)/.98 Georgia,serif;letter-spacing:-.035em;margin:0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .tile{background:var(--white);border:1px solid var(--line);padding:26px;min-height:210px}
+    .num{font:900 42px/1 Georgia,serif;color:var(--red)}.tile h3{font-size:20px;margin:28px 0 9px}.tile p{color:var(--muted);margin:0}
+    .fit{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .panel{padding:30px;border:1px solid var(--line);background:var(--white)}
+    .panel.dark{background:var(--ink);color:var(--white)}
+    .panel h3{font:800 28px/1.1 Georgia,serif;margin:0 0 18px}
+    .panel ul{padding:0;margin:0;list-style:none}.panel li{padding:11px 0 11px 28px;border-top:1px solid var(--line);position:relative}
+    .panel li:before{content:"→";position:absolute;left:0;color:var(--red);font-weight:900}
+    .price{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;background:var(--lime);border:2px solid var(--ink);padding:36px;box-shadow:9px 9px 0 var(--ink)}
+    .price h2{max-width:700px}.price-tag{text-align:right}.price-tag strong{display:block;font:900 55px/1 Georgia,serif}.price-tag span{font-size:13px;text-transform:uppercase;letter-spacing:.1em}
+    .price-copy{max-width:690px;margin:24px 0;color:#37352f}
+    footer{padding:34px 0 50px;display:flex;justify-content:space-between;color:var(--muted);font-size:13px}
+    .success{display:none;background:var(--lime);border:2px solid var(--ink);padding:14px 18px;margin-top:22px;font-weight:800}
+    @media(max-width:800px){
+      .hero,.section-head{grid-template-columns:1fr}.hero{gap:45px;padding-top:50px}.audit-card{transform:none}
+      .grid{grid-template-columns:1fr}.fit{grid-template-columns:1fr}.price{grid-template-columns:1fr}.price-tag{text-align:left}
+      .band div{justify-content:flex-start}.nav-note{display:none}footer{display:block}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav><span class="brand">Shadow / Agentic Workflow Audit</span><span class="nav-note">For operators with a live workflow—not a slide deck</span></nav>
+    <main>
+      <div class="hero">
+        <div>
+          <span class="eyebrow">Free 15-minute diagnostic</span>
+          <h1>Your AI works.<br>Why are you still checking it?</h1>
+          <p class="lede">Bring one workflow that still needs copying, reviewing, chasing, or rescue. Leave with the exact next responsibility your agent can own—and the control that makes it safe.</p>
+          <div class="actions">
+            <a class="btn primary" href="mailto:impartshadow@gmail.com?subject=Free%2015-minute%20Agentic%20Workflow%20Diagnostic&body=The%20workflow%20I%20want%20to%20audit%3A%0A%0AWhat%20still%20needs%20human%20checking%3A%0A%0ABest%20times%20in%20Central%20Time%3A">Claim the free diagnostic →</a>
+            <a class="btn secondary" href="#implementation">Skip to implementation</a>
+          </div>
+          <p class="micro">No prep deck. No generic “AI strategy.” One real workflow, one concrete next move.</p>
+          <div id="success" class="success">Checkout received. Reply to the receipt with the workflow you want to fix first; onboarding starts there.</div>
+        </div>
+        <aside class="audit-card">
+          <h2>In 15 minutes, we locate:</h2>
+          <ol>
+            <li>The handoff wasting the most operator attention</li>
+            <li>The action your agent is ready to own next</li>
+            <li>The approval, evidence, or recovery control holding it back</li>
+          </ol>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <div class="band"><div class="wrap"><span>Less babysitting.</span><span>Clearer authority.</span><span>Receipts before “done.”</span><span>Recovery when reality disagrees.</span></div></div>
+
+  <div class="wrap">
+    <section>
+      <div class="section-head">
+        <span class="kicker">What you leave with</span>
+        <h2>A diagnosis you can use the same day.</h2>
+      </div>
+      <div class="grid">
+        <article class="tile"><span class="num">01</span><h3>Workflow boundary</h3><p>What the agent owns, what stays human, and the exact line between them.</p></article>
+        <article class="tile"><span class="num">02</span><h3>Failure path</h3><p>Where the workflow breaks today—and what should happen instead of silent failure or endless review.</p></article>
+        <article class="tile"><span class="num">03</span><h3>Next implementation</h3><p>The smallest control or integration that returns meaningful time without creating new risk.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="kicker">Fit check</span>
+        <h2>This is for live systems with real operational drag.</h2>
+      </div>
+      <div class="fit">
+        <div class="panel dark">
+          <h3>Bring this</h3>
+          <ul>
+            <li>An agent or automation already touching real work</li>
+            <li>A step someone still checks, copies, or rescues</li>
+            <li>A result you can recognize as better within a week</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Not this</h3>
+          <ul>
+            <li>A broad “how should we use AI?” brainstorm</li>
+            <li>A greenfield app with no observed workflow yet</li>
+            <li>A request for more dashboards without more ownership</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="implementation">
+      <div class="price">
+        <div>
+          <span class="kicker">Design-partner implementation</span>
+          <h2>Turn the diagnosis into a workflow that stays fixed.</h2>
+          <p class="price-copy">Ongoing hands-on implementation for one active workflow at a time: controls, integrations, tests, recovery paths, and a clear proof trail. Cancel any time. The free diagnostic is available first; checkout is here for operators who already know the bottleneck is worth removing.</p>
+          <a class="btn secondary" href="workflow-implementation-checkout.html">Start ongoing implementation →</a>
+        </div>
+        <div class="price-tag"><strong>$100</strong><span>per month</span></div>
+      </div>
+    </section>
+  </div>
+  <footer class="wrap"><span>Built and operated by Shadow</span><span><a href="mailto:impartshadow@gmail.com">impartshadow@gmail.com</a></span></footer>
+  <script>
+    if(new URLSearchParams(location.search).get("checkout")==="complete"){
+      document.getElementById("success").style.display="block";
+      document.getElementById("success").scrollIntoView({behavior:"smooth",block:"center"});
+    }
+  </script>
+</body>
+</html>

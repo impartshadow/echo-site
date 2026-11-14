@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Failure census preview — NousResearch/hermes-agent</title>
+<style>
+body{font-family:Georgia,serif;max-width:44rem;margin:2rem auto;padding:0 1rem;color:#1a1a1a;line-height:1.55}
+h1{font-size:1.5rem} h2{font-size:1.15rem;margin-bottom:.2rem}
+.meta{color:#666;font-size:.9rem} .evidence{color:#444;font-size:.95rem}
+section{border-top:1px solid #ddd;padding-top:.8rem;margin-top:1rem}
+.offer{background:#f6f4ef;border:1px solid #ddd;padding:1rem;margin-top:2rem}
+</style></head><body>
+<h1>Failure census preview — NousResearch/hermes-agent</h1>
+<p class="meta">Generated 2026-08-16 from 6 public issues.
+This is page one of a failure census: the dominant agent-failure classes in this
+project's own tracker, each with the deterministic check that would catch it.</p>
+<p>Across these six open issues, the recurring theme is a mismatch between what Hermes reports and what actually happened: components claim success (install pin, cron scheduling) or apply a static classification (reasoning-effort ladder, SSRF/private-IP check, modifier-key allowlist) without verifying it against the live, model- or environment-specific ground truth. A secondary pattern is missing user-facing signal during degraded states — long silent hangs with no interim feedback and no breaker escalation. Four of six issues are guard/mapping logic that trusts a fixed table or exit code instead of confirming the real-world outcome.</p>
+<section><h2>unverified-success-report</h2><p>Tools and scripts report success to the user or the model without checking that the underlying action actually took effect — a commit pin that silently failed, and a cron job that can never fire because no gateway is running.</p><p class="evidence">Evidence: &ldquo;the installer still prints success and exits 0&rdquo; — <a href="https://github.com/NousResearch/hermes-agent/issues/87268">#87268</a> <a href="https://github.com/NousResearch/hermes-agent/issues/87033">#87033</a></p><p><strong>The deterministic check:</strong> Before returning success, the tool must assert the side effect actually landed (git HEAD == requested SHA; cron job has a live gateway/scheduler process to register with) and propagate any existing CLI-level warning (e.g. hermes_cli/cron.py&#x27;s gateway check) into the tool result surfaced to the model — not just the human-facing CLI.</p></section>
+<section><h2>overzealous-guard-false-positive</h2><p>Safety/input guards use brittle heuristics that misclassify legitimate cases as dangerous — an SSRF guard blocks real public sites because a VPN&#x27;s DNS answers land in a reserved range, and a new input-safety gate swallows nearly all OS modifier-key chords instead of only the ones it&#x27;s meant to catch.</p><p class="evidence">Evidence: &ldquo;classifies it as private/internal and blocks it&rdquo; — <a href="https://github.com/NousResearch/hermes-agent/issues/87106">#87106</a> <a href="https://github.com/NousResearch/hermes-agent/issues/87140">#87140</a></p><p><strong>The deterministic check:</strong> Guards must be tested against a fixed table of known-legitimate cases that must NOT be blocked (e.g. 198.18.0.0/15 resolving public hostnames, standard OS chords like Cmd+N/Cmd+T/Cmd+,) as a regression suite, and default to allow-with-log rather than hard-block when classification confidence is low or the allowlist is incomplete.</p></section>
+<section><h2>silent-hang-no-feedback</h2><p>When a backend/provider wedges or a request stalls, the UI gives the user zero indication anything is wrong for very long periods, and the internal failure-detection ceiling never shortens or trips a breaker across repeated identical failures.</p><p class="evidence">Evidence: &ldquo;15 minutes of silence per attempt&rdquo; — <a href="https://github.com/NousResearch/hermes-agent/issues/87167">#87167</a></p><p><strong>The deterministic check:</strong> Emit a UI-visible wait/heartbeat indicator once a request exceeds a fixed short threshold (e.g. 30s) independent of the final stale-stream kill ceiling, and assert the circuit breaker&#x27;s failure counter increments and eventually opens after N consecutive same-endpoint timeouts rather than resetting on each new user-triggered retry.</p></section>
+<section><h2>wire-protocol-mapping-bug</h2><p>Internal ladder names get remapped to the wrong wire-level value for a given backend model, sending a lower-capability parameter than the model actually supports even though a correct passthrough path already exists for a similar value.</p><p class="evidence">Evidence: &ldquo;xAI rejects `max`/`ultra` with `400 Invalid reasoning effort`&rdquo; — <a href="https://github.com/NousResearch/hermes-agent/issues/87279">#87279</a></p><p><strong>The deterministic check:</strong> Unit test asserting `max`/`ultra` reasoning-effort aliases resolve per-model to that model&#x27;s actual ceiling (e.g. grok-4.6 -&gt; `xhigh`) via a maintained per-model ceiling table, not a single hardcoded fallback value shared across all models in the family.</p></section>
+<div class="offer">
+<p><strong>This preview used only public issues.</strong> The full failure census
+runs the same classification over seven days of your private agent logs and
+traces — every failure classified, frequency-ranked, with the deterministic
+check per class. $400, one-week turnaround.
+Email <a href="mailto:impartshadow@gmail.com">impartshadow@gmail.com</a> with subject &ldquo;census&rdquo;.</p>
+<p class="meta">Free tier: I triage one public agent failure every day —
+<a href="https://impartshadow.github.io/echo-site/failure-cases/">the case log</a>.</p>
+</div>
+</body></html>

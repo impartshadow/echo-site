@@ -1,6 +1,6 @@
 {
   "schema": "shadow.consulting_audit_offer.v1",
-  "generated_at_ct": "2026-07-09T21:23:42-05:00",
+  "generated_at_ct": "2026-09-27T21:02:40-05:00",
   "strategy": "Convert teams already using AI by expanding one workflow's safe delegation boundary.",
   "abandoned_queue_count": 253,
   "offer": {
@@ -121,8 +121,9 @@
     ],
     "optimization_plan": [
       "Map every irreversible verb in the agent path: send, deploy, publish, delete, update, charge, invite, and notify.",
-      "Add pre-action gates for authority, canonical tool path, recipient/resource identity, and blast-radius limit.",
-      "Require post-action receipts for every completion claim: resolvable URL, message ID, commit SHA, artifact hash, or ledger row.",
+      "Split artifact review from effect authorization: reviewing the final answer does not authorize side effects that already happened.",
+      "Stage reversible effects behind an explicit commit boundary; for non-stagable effects, authorize at the effect boundary using the payload, recipient/resource identity, and blast-radius limit.",
+      "Require boundary-generated readback for every completed effect: provider message ID, resolvable URL, commit SHA, artifact hash, or ledger row outside the agent's write scope.",
       "Write denied actions and missing receipts to an append-only violation log so repeated corrections become product data.",
       "Run a seven-day census over traces/logs to rank the three highest-return gates before building broader governance."
     ],

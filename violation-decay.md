@@ -1,48 +1,41 @@
 # Violation Decay Case Study
 
-Generated: 2026-07-24T08:25:24.781076+00:00
+Generated: 2026-11-01T09:03:23.659269+00:00
 
 ## Claim
-dox-guard cooled from 28 to 0 weekly hits; platform-action-precheck is the hottest remaining governance gap.
+raw-gmail-send-guard cooled from 6 to 0 weekly hits; platform-action-precheck is the hottest remaining governance gap.
 
 This is not a generic benchmark. It is a trend read over Shadow's production
 contract-violation log: `state/contract_violations.jsonl`.
 
 ## Totals
-- Violations logged: 1637
-- Distinct contracts in log: 57
-- Distinct failure modes: 21
-- Eligible contracts: 45
-- Cooled contracts: 35
-- Hotter contracts: 9
+- Violations logged: 153
+- Distinct contracts in log: 55
+- Distinct failure modes: 23
+- Eligible contracts: 34
+- Cooled contracts: 32
+- Hotter contracts: 1
 
 ## Cooled Guardrails
 | Contract | Total | First 7d | Recent 7d | Delta | Change |
 |---|---:|---:|---:|---:|---:|
-| `dox-guard` | 31 | 28 | 0 | -28 | -100.0% |
-| `completion-artifact` | 75 | 22 | 3 | -19 | -86.4% |
-| `persistent-correction` | 182 | 39 | 21 | -18 | -46.2% |
-| `behavioral-haiku-guard` | 43 | 22 | 6 | -16 | -72.7% |
-| `sensitive-write-router` | 11 | 11 | 0 | -11 | -100.0% |
-| `state-io-consolidation-guard` | 13 | 9 | 0 | -9 | -100.0% |
-| `balar-clarification` | 12 | 8 | 0 | -8 | -100.0% |
-| `cl-stop_editing_github_inbound_check` | 8 | 7 | 0 | -7 | -100.0% |
-| `cl-stop_editing_gmail_summary_py` | 8 | 7 | 0 | -7 | -100.0% |
-| `patterned-stop` | 7 | 7 | 0 | -7 | -100.0% |
-| `api-first-routing-guard` | 6 | 6 | 0 | -6 | -100.0% |
-| `personal-token-send-guard` | 5 | 5 | 0 | -5 | -100.0% |
+| `raw-gmail-send-guard` | 6 | 6 | 0 | -6 | -100.0% |
+| `third-party-state-claim-verification-guard` | 6 | 5 | 1 | -4 | -80.0% |
+| `chat-remark-validation-guard` | 5 | 4 | 0 | -4 | -100.0% |
+| `gui-control-pre-denial-gate` | 4 | 4 | 0 | -4 | -100.0% |
+| `pressure-framing-guard` | 4 | 3 | 0 | -3 | -100.0% |
+| `stale-state-assertion-guard` | 11 | 2 | 0 | -2 | -100.0% |
+| `deferred-first-step-gate` | 7 | 3 | 1 | -2 | -66.7% |
+| `runtime-activation-claim-gate` | 5 | 2 | 0 | -2 | -100.0% |
+| `cleanup-claim-mechanism-gate` | 3 | 2 | 0 | -2 | -100.0% |
+| `bitwarden-claim-verification-guard` | 2 | 2 | 0 | -2 | -100.0% |
+| `dox-guard` | 2 | 2 | 0 | -2 | -100.0% |
+| `unbuilt-guarantee-guard` | 2 | 2 | 0 | -2 | -100.0% |
 
 ## Remaining Hot Spots
 | Contract | Total | First 7d | Recent 7d | Delta | Change |
 |---|---:|---:|---:|---:|---:|
-| `platform-action-precheck` | 146 | 20 | 64 | +44 | +220.0% |
-| `state-assertion-grounding` | 170 | 37 | 76 | +39 | +105.4% |
-| `factual-claim-verification` | 118 | 15 | 44 | +29 | +193.3% |
-| `self-verification` | 93 | 13 | 30 | +17 | +130.8% |
-| `partial-evidence-flag` | 253 | 38 | 52 | +14 | +36.8% |
-| `stale-state-assertion-guard` | 83 | 15 | 27 | +12 | +80.0% |
-| `concurrence-grounding` | 38 | 12 | 15 | +3 | +25.0% |
-| `pressure-framing-guard` | 16 | 3 | 6 | +3 | +100.0% |
+| `platform-action-precheck` | 4 | 1 | 3 | +2 | +200.0% |
 
 ## Buyer Use
 This is the case-study metric behind the Fabricated-Completion Audit:
