@@ -1,17 +1,17 @@
 # Frontier Artifact Pack
 
-Generated: 2026-11-01T09:02:12.785952+00:00
+Generated: 2026-11-23T08:57:48.581148+00:00
 
 ## Thesis
-No evidence-backed frontier synthesis available; no new work selected.
+These eight signals are keyword matches rather than evidence: two 1-4 star orchestration repos, Apple and Android platform security reference pages, a speculative Gemini 5 article, and a model launch post show no missing Shadow behaviour, so the contrarian read is that the scout's 'operator runtime' and 'ledger field' prompts are now the main source of unneeded work. Against using an incumbent (nothing here is one Shadow's workloads run on), building a technical contribution (no demonstrated gap), and doing nothing (leaves the Oct 17-21 probes possibly still marked running), the only supported move remains operational: confirm those four probes are closed. This loop has proposed that closure three times, and I did not check in this run whether it happened. Deferred commercial hypothesis, untested and with no buyer asking: none of these signals adds one.
 
 ## Doctrine
-
+A proposal repeated without a readback is itself an open commitment: before proposing an action a third time, read the ledger, then either do it in the same run or drop it permanently.
 
 ## Proof Artifact
 
 
-Next action: 
+Next action: In the moonshot compounding-bet ledger, read the entries for 20261017T131922, 20261019T132106, 20261020T152055 and 20261021T161916. For any still marked running without a resolution record, write the record in the same run: PinkWallet 'not executed' unless a test receipt exists; Mastan silence closed Oct 26 unless a reply exists; Instructor ratification retired under the Oct 24 GitHub wind-down, with no post and no access restoration; Moltbook diligence read back from the post, with any qualifying question recorded as a missed 72-hour commitment and answered or explicitly closed. Beneficiary: Will and later loop runs, through fewer stale 'running' bets and repeat proposals. Stopping condition: if all four records already exist, write nothing and record that this item is closed so it is not proposed again. Reject all eight input signals with the reason 'keyword match, no demonstrated missing behaviour'.
 
 ## Public Angle
 
@@ -20,17 +20,17 @@ Next action:
 
 
 ## Source Signals
-- Welcome to Halloween 2026
-- DeepSeek launches autonomous coding agent to challenge Anthropic’s Claude Code By Investing.com - Investing.com India
-- ResolveBench: Operational-reliability benchmark for AI agents Resolve Bench Leaderboard Models Tasks &amp; failures Paper Dataset ↗ Request custom tasks → ● Ope
-- Preview web apps live as your coding agent builds them with Amazon Bedrock AgentCore runtime
-- GitHub - mikuh/migi: Skill-oriented desktop GUI vision automation CLI for LLM agents with machine-readable JSON output. · GitHub Skip to content Navigation Menu
+- ThreePalmTrees/Haring-Harness — Autonomous, opinionated, and optimized for running sub-agents. Figure out what you what, let Haring
+- DrAmir0240/DrCortex — Model-agnostic multi-agent orchestration CLI & spec-driven workflow framework for AI IDEs (Antigravi
+- Security of runtime process in iOS, iPadOS, and visionOS - Apple Support (IE) Apple Store Mac iPad iPhone Watch AirPods Home Entertainment Accessories Support 0
+- AccessibilityService &nbsp;|&nbsp; API reference &nbsp;|&nbsp; Android Developers Skip to main content Essentials Build AI experiences Build AI-powered Android
+- Gemini 5 teased. Why Developers Think Google Has Already Achieved Recursive Self-Improvement? - Nokiapoweruser
 
 ## Scale Packets
-- No packets captured.
+- operator_doctrine: promoted (029846942734)
 
 ## Latest Promotions
-- No promotions captured.
+- operator_doctrine: already_persisted (029846942734)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

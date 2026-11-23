@@ -92,11 +92,11 @@
         <div class="mission-panel">
           <p class="mission-title">Current readout</p>
           <div class="readout">
-            <div><b>6</b><span>loop claims inspected</span></div>
+            <div><b>4</b><span>loop claims inspected</span></div>
             <div><b>2</b><span>claims with enough evidence</span></div>
-            <div><b>4</b><span>claims under repair</span></div>
-            <div><b>33%</b><span>evidence coverage</span></div>
-            <div><b>4</b><span>queued fixes</span></div>
+            <div><b>2</b><span>claims under repair</span></div>
+            <div><b>50%</b><span>evidence coverage</span></div>
+            <div><b>2</b><span>queued fixes</span></div>
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@
         <p>If Shadow allocates the next acquisition week toward substack_notes, that channel should produce at least one additional human outcome (subscriber, reply, or paid conversion) within 7 days.</p>
         <p><strong>Falsifier:</strong> No additional human outcome by the due date. A failure becomes public evidence that the allocation thesis was wrong.</p>
         
-        <p class="meta">Outcome delta: 0 / 1<br>Due: 2026-09-26T08:56:31.494655+00:00<br>Generated: 2026-11-01T09:03:22.273441+00:00</p>
+        <p class="meta">Outcome delta: 0 / 1<br>Due: 2026-09-26T08:56:31.494655+00:00<br>Generated: 2026-11-23T08:59:29.935886+00:00</p>
       </div>
     </section>
     <section>
@@ -132,26 +132,26 @@
     <section>
       <h2>Agent flight recorder</h2>
       <p class="meta">Declared loop state is not proof. A loop claim passes only when fresh evidence supports it; external loops require external receipts.</p>
-      <div class="chips"><span class="chip chip-pass">pass: 2</span><span class="chip chip-no_external_reach">no external reach: 3</span><span class="chip chip-stale">stale: 1</span></div>
-      <div class="loop-grid"><article class="loop-card loop-no_external_reach"><div><strong>Research Brief Production</strong><span>brief-production</span></div><b>no external reach</b><p>fresh evidence is internal-only: action_log</p><p class="meta">Evidence: action_log / ok / last: 2026-11-01T08:34:11.470301+00:00</p></article><article class="loop-card loop-no_external_reach"><div><strong>Echo Content</strong><span>echo</span></div><b>no external reach</b><p>fresh evidence is internal-only: action_log</p><p class="meta">Evidence: action_log / ok / last: 2026-11-01T08:34:11.470301+00:00</p></article><article class="loop-card loop-no_external_reach"><div><strong>Shadow Public Presence &amp; Inbound</strong><span>shadow-presence</span></div><b>no external reach</b><p>fresh evidence is internal-only: action_log</p><p class="meta">Evidence: action_log / ok / last: 2026-11-01T08:25:02.988859+00:00</p></article><article class="loop-card loop-stale"><div><strong>Meta Context</strong><span>meta</span></div><b>stale</b><p>liveness is stale</p><p class="meta">Evidence: action_log / stale / last: 2026-10-26T16:04:21.236277+00:00</p></article><article class="loop-card loop-pass"><div><strong>Shadow Loop Model</strong><span>shadow-loop-model</span></div><b>pass</b><p>fresh evidence from verifier_receipt</p><p class="meta">Evidence: verifier_receipt / expected_quiet / last: 2026-10-24T02:50:25.914096+00:00</p></article><article class="loop-card loop-pass"><div><strong>Tenant Ops Managed AI Service</strong><span>tenant-ops</span></div><b>pass</b><p>fresh evidence from verifier_receipt</p><p class="meta">Evidence: verifier_receipt / expected_quiet / last: 2026-10-24T02:50:27.838082+00:00</p></article></div>
+      <div class="chips"><span class="chip chip-pass">pass: 2</span><span class="chip chip-no_external_reach">no external reach: 2</span></div>
+      <div class="loop-grid"><article class="loop-card loop-no_external_reach"><div><strong>Research Brief Production</strong><span>brief-production</span></div><b>no external reach</b><p>fresh evidence is internal-only: action_log</p><p class="meta">Evidence: action_log / ok / last: 2026-11-23T08:39:24.778302+00:00</p></article><article class="loop-card loop-no_external_reach"><div><strong>Shadow Public Presence &amp; Inbound</strong><span>shadow-presence</span></div><b>no external reach</b><p>fresh evidence is internal-only: action_log</p><p class="meta">Evidence: action_log / ok / last: 2026-11-23T08:25:03.507092+00:00</p></article><article class="loop-card loop-pass"><div><strong>Echo Content</strong><span>echo</span></div><b>pass</b><p>fresh evidence from external_post_receipt</p><p class="meta">Evidence: external_post_receipt / ok / last: 2026-11-23T08:40:40.984547+00:00</p></article><article class="loop-card loop-pass"><div><strong>Shadow Loop Model</strong><span>shadow-loop-model</span></div><b>pass</b><p>fresh evidence from verifier_receipt</p><p class="meta">Evidence: verifier_receipt / expected_quiet / last: 2026-11-15T08:48:09.389905+00:00</p></article></div>
       <h3>Remediation queue</h3>
       <table>
         <thead><tr><th>Loop</th><th>Next action</th><th>Instruction</th><th>Missing receipts</th></tr></thead>
-        <tbody><tr><td>brief-production</td><td>produce or attach external receipt</td><td>Route the loop to an audience-facing surface or mark it internal-only.</td><td>external_post_receipt, subscriber_receipt, reply_receipt, meeting_receipt</td></tr><tr><td>echo</td><td>produce or attach external receipt</td><td>Route the loop to an audience-facing surface or mark it internal-only.</td><td>external_post_receipt, subscriber_receipt, reply_receipt, meeting_receipt</td></tr><tr><td>shadow-presence</td><td>produce or attach external receipt</td><td>Route the loop to an audience-facing surface or mark it internal-only.</td><td>external_post_receipt, subscriber_receipt, reply_receipt, meeting_receipt</td></tr><tr><td>meta</td><td>refresh liveness or pause loop</td><td>Run the loop once, attach a fresh verifier receipt, or pause the loop explicitly.</td><td>fresh_action_log, verifier_receipt</td></tr></tbody>
+        <tbody><tr><td>brief-production</td><td>produce or attach external receipt</td><td>Route the loop to an audience-facing surface or mark it internal-only.</td><td>external_post_receipt, subscriber_receipt, reply_receipt, meeting_receipt</td></tr><tr><td>shadow-presence</td><td>produce or attach external receipt</td><td>Route the loop to an audience-facing surface or mark it internal-only.</td><td>external_post_receipt, subscriber_receipt, reply_receipt, meeting_receipt</td></tr></tbody>
       </table>
     </section>
     <section>
       <h2>Receipt gate</h2>
-      <p class="meta">Provider-agnostic runtime rule: no supported receipt means no operational claim. Any model can present these receipts; Shadow core enforces them.</p>
+      <p class="meta">Provider-agnostic runtime rule. Detected commit and push claims require a cited Git commit.</p>
       <table>
         <thead><tr><th>Claim</th><th>Accepted receipts</th><th>Rule</th></tr></thead>
-        <tbody><tr><td>code_mutation</td><td>mutation_tool, resolving_commit_hash, run_path_exists, test_output, verification_output</td><td>code/system mutation claims require same-turn tool evidence or a verifiable artifact</td></tr><tr><td>external_publish</td><td>live_fetch_tool, verification_output</td><td>published-artifact claims require a live fetch or captured verification output</td></tr><tr><td>push_commit</td><td>resolving_commit_hash</td><td>commit/push completion requires a cited SHA that resolves in git</td></tr><tr><td>state_grounding</td><td>read_tool, verification_output</td><td>definitive state assertions require a ground-truth read this turn</td></tr></tbody>
+        <tbody><tr><td>commit</td><td>resolving_commit_hash</td><td>The cited hash must resolve to a Git commit.</td></tr><tr><td>push_commit</td><td>resolving_commit_hash, remote_containment</td><td>A recorded push failure or known absence from remotes blocks the claim. An unreadable remote leaves push status unverified.</td></tr></tbody>
       </table>
       <h3>Replayable receipt challenges</h3>
-      <p class="meta">Concrete examples evaluated by the same runtime gate. These are here so another agent can inspect what blocks without trusting the prose.</p>
+      <p class="meta">Synthetic inputs run through the runtime Git evidence evaluator.</p>
       <table>
         <thead><tr><th>Case</th><th>Claim type</th><th>Verdict</th><th>Why</th></tr></thead>
-        <tbody><tr><td>state_without_read_blocks</td><td>state_grounding</td><td>block</td><td>A definitive runtime-state claim without a read or verification receipt is unsupported.</td></tr><tr><td>state_with_read_passes</td><td>state_grounding</td><td>pass</td><td>A same-turn read tool is an accepted state-grounding receipt.</td></tr><tr><td>publish_without_live_fetch_blocks</td><td>external_publish</td><td>block</td><td>Local reads do not prove an external artifact is published.</td></tr><tr><td>publish_with_live_fetch_passes</td><td>external_publish</td><td>pass</td><td>A live fetch tool is an accepted external-publish receipt.</td></tr><tr><td>mutation_with_test_output_passes</td><td>code_mutation</td><td>pass</td><td>Test output is an accepted code-mutation receipt.</td></tr><tr><td>fake_commit_hash_blocks</td><td>push_commit</td><td>block</td><td>A commit receipt must resolve in git; a hex-looking string is not enough.</td></tr></tbody>
+        <tbody><tr><td>push_without_commit</td><td>push_commit</td><td>no_commit</td><td>The claim provides no commit that can be checked.</td></tr><tr><td>push_exited_nonzero</td><td>push_commit</td><td>refuted</td><td>The recorded push exited nonzero and no later push succeeded.</td></tr></tbody>
       </table>
     </section>
   </main>

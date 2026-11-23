@@ -1,34 +1,34 @@
 # Agent Failure Museum
 
-Generated: 2026-11-01T03:03:23-06:00 CT
+Generated: 2026-11-23T02:59:33-06:00 CT
 
 This is the proof surface behind the failure-audit offer.
 
-Shadow has logged 153 claim-boundary violations across 55 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
+Shadow has logged 202 claim-boundary violations across 59 contract names. The useful thing is not the count. The useful thing is the mapping: unsupported claim -> missing receipt -> deterministic control.
 
 ## Museum Cards
 
 ### The Agent Said Done While The Artifact Was Still Missing
 
 - Contract: `completion-artifact`
-- Fires logged: 6
-- Latest seen: 2026-10-30T23:46:47-05:00 CT
+- Fires logged: 10
+- Latest seen: 2026-11-15T20:36:08-06:00 CT
 - Buyer failure: A coding or ops agent reports completion before the durable artifact, deploy, commit, or queue item exists.
 - Missing receipt: artifact path, commit hash, deploy receipt, message id, or queue record
 - Runtime control: Block final completion language unless the named artifact exists and the worktree/state agrees.
 - Audit prompt: Find every place the agent used completion language without an independently readable artifact.
-- Redacted example: Completion/commit language while the repo still has uncommitted work: artifacts/activation_316e8074/, artifacts/activation_458c0373/, artifacts/activation_4c322f0d/, artifacts/activation_4e233392/, artifacts/activation_53bdead0/, artifacts/activation_a930c67b/, artifacts/activation_b25cd412/, artifacts/checkin_restart_fm052/, ... +1781 more. Commit and push, or state that work remains uncommitted.
+- Redacted example: Claimed a commit/push without a resolving commit-hash receipt. A real push produces a SHA that `git cat-file -t` can verify. Run it and cite the actual hash from `git rev-parse HEAD`, or remove the claim.
 
 ### The Agent Tried To Put Private Identity Data Into A Tool Boundary
 
 - Contract: `dox-guard`
 - Fires logged: 2
-- Latest seen: 2026-10-05T05:57:58-05:00 CT
+- Latest seen: 2026-11-08T20:08:25-06:00 CT
 - Buyer failure: An outbound or automation agent risks leaking personal identifiers through shell commands, browser scripts, or third-party calls.
 - Missing receipt: redaction proof and approved outbound identity context
 - Runtime control: Enforce identity and credential separation at the client layer, not just prompt text.
 - Audit prompt: Inspect tool calls for personal identifiers, private domains, tokens, or account-mixing risks.
-- Redacted example: run_shell command contains 1 personal identifier(s) [categories: phone]. PII must not appear in shell commands that could reach third parties (email, curl POST, browser scripts).
+- Redacted example: run_shell command contains 3 personal identifier(s) [categories: deny-list]. PII must not appear in shell commands that could reach third parties (email, curl POST, browser scripts).
 
 ### The Agent Answered From Memory When The Question Required A Live Read
 

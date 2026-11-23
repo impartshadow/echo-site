@@ -113,8 +113,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.5,
-          "last_activity": "2026-11-01T08:34:11.470301+00:00",
+          "hours_since": 0.3,
+          "last_activity": "2026-11-23T08:39:24.778302+00:00",
           "source": "action_log",
           "staleness": "ok"
         },
@@ -127,22 +127,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.5,
-          "last_activity": "2026-11-01T08:34:11.470301+00:00",
-          "source": "action_log",
-          "staleness": "ok"
-        },
-        "loop_id": "echo",
-        "name": "Echo Content",
-        "reason": "fresh evidence is internal-only: action_log",
-        "requires_external_reach": true,
-        "verdict": "no_external_reach"
-      },
-      {
-        "declared_state": "running",
-        "evidence": {
           "hours_since": 0.6,
-          "last_activity": "2026-11-01T08:25:02.988859+00:00",
+          "last_activity": "2026-11-23T08:25:03.507092+00:00",
           "source": "action_log",
           "staleness": "ok"
         },
@@ -155,22 +141,22 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 137.0,
-          "last_activity": "2026-10-26T16:04:21.236277+00:00",
-          "source": "action_log",
-          "staleness": "stale"
+          "hours_since": 0.3,
+          "last_activity": "2026-11-23T08:40:40.984547+00:00",
+          "source": "external_post_receipt",
+          "staleness": "ok"
         },
-        "loop_id": "meta",
-        "name": "Meta Context",
-        "reason": "liveness is stale",
-        "requires_external_reach": false,
-        "verdict": "stale"
+        "loop_id": "echo",
+        "name": "Echo Content",
+        "reason": "fresh evidence from external_post_receipt",
+        "requires_external_reach": true,
+        "verdict": "pass"
       },
       {
         "declared_state": "complete",
         "evidence": {
-          "hours_since": 198.2,
-          "last_activity": "2026-10-24T02:50:25.914096+00:00",
+          "hours_since": 192.2,
+          "last_activity": "2026-11-15T08:48:09.389905+00:00",
           "source": "verifier_receipt",
           "staleness": "expected_quiet"
         },
@@ -179,23 +165,9 @@
         "reason": "fresh evidence from verifier_receipt",
         "requires_external_reach": false,
         "verdict": "pass"
-      },
-      {
-        "declared_state": "paused",
-        "evidence": {
-          "hours_since": 198.2,
-          "last_activity": "2026-10-24T02:50:27.838082+00:00",
-          "source": "verifier_receipt",
-          "staleness": "expected_quiet"
-        },
-        "loop_id": "tenant-ops",
-        "name": "Tenant Ops Managed AI Service",
-        "reason": "fresh evidence from verifier_receipt",
-        "requires_external_reach": false,
-        "verdict": "pass"
       }
     ],
-    "generated_at": "2026-11-01T09:03:22.273441+00:00",
+    "generated_at": "2026-11-23T08:59:29.935886+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
@@ -215,20 +187,6 @@
         "action": "produce_or_attach_external_receipt",
         "evidence_source": "action_log",
         "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
-        "loop_id": "echo",
-        "missing_receipts": [
-          "external_post_receipt",
-          "subscriber_receipt",
-          "reply_receipt",
-          "meeting_receipt"
-        ],
-        "priority": 90,
-        "verdict": "no_external_reach"
-      },
-      {
-        "action": "produce_or_attach_external_receipt",
-        "evidence_source": "action_log",
-        "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
         "loop_id": "shadow-presence",
         "missing_receipts": [
           "external_post_receipt",
@@ -238,26 +196,13 @@
         ],
         "priority": 90,
         "verdict": "no_external_reach"
-      },
-      {
-        "action": "refresh_liveness_or_pause_loop",
-        "evidence_source": "action_log",
-        "instruction": "Run the loop once, attach a fresh verifier receipt, or pause the loop explicitly.",
-        "loop_id": "meta",
-        "missing_receipts": [
-          "fresh_action_log",
-          "verifier_receipt"
-        ],
-        "priority": 70,
-        "verdict": "stale"
       }
     ],
     "rule": "Declared loop state is not proof. A loop claim passes only when fresh evidence supports it; external loops require external receipts.",
     "schema": "shadow.agent_flight_recorder.v1",
     "summary": {
-      "no_external_reach": 3,
-      "pass": 2,
-      "stale": 1
+      "no_external_reach": 2,
+      "pass": 2
     }
   },
   "frontier_artifact_pack": {
@@ -272,149 +217,62 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md",
     "purpose": "scarce frontier-model usage ledger that routes high-end model headroom into sellable artifacts, proof surfaces, acquisition machinery, and model-agnostic operating-system upgrades"
   },
-  "generated_at": "2026-11-01T09:03:22.273441+00:00",
+  "generated_at": "2026-11-23T08:59:29.935886+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
   "receipt_gate": {
     "challenge_cases": [
       {
-        "actual": "block",
-        "claim": "Confirmed: the bot is running.",
-        "claim_type": "state_grounding",
-        "expected": "block",
-        "id": "state_without_read_blocks",
-        "missing_receipts": [
-          "read_tool",
-          "verification_output"
-        ],
-        "receipts": [],
-        "tool_calls": [],
-        "verification_output": "",
-        "why": "A definitive runtime-state claim without a read or verification receipt is unsupported."
-      },
-      {
-        "actual": "pass",
-        "claim": "Confirmed from a live process read: the bot is running.",
-        "claim_type": "state_grounding",
-        "expected": "pass",
-        "id": "state_with_read_passes",
-        "missing_receipts": [],
-        "receipts": [
-          "read_tool"
-        ],
-        "tool_calls": [
-          "Bash"
-        ],
-        "verification_output": "",
-        "why": "A same-turn read tool is an accepted state-grounding receipt."
-      },
-      {
-        "actual": "block",
-        "claim": "The public post is live.",
-        "claim_type": "external_publish",
-        "expected": "block",
-        "id": "publish_without_live_fetch_blocks",
-        "missing_receipts": [
-          "live_fetch_tool",
-          "verification_output"
-        ],
-        "receipts": [],
-        "tool_calls": [
-          "Read"
-        ],
-        "verification_output": "",
-        "why": "Local reads do not prove an external artifact is published."
-      },
-      {
-        "actual": "pass",
-        "claim": "The public post is live after a live fetch.",
-        "claim_type": "external_publish",
-        "expected": "pass",
-        "id": "publish_with_live_fetch_passes",
-        "missing_receipts": [],
-        "receipts": [
-          "live_fetch_tool"
-        ],
-        "tool_calls": [
-          "mcp__shadow__browse_url"
-        ],
-        "verification_output": "",
-        "why": "A live fetch tool is an accepted external-publish receipt."
-      },
-      {
-        "actual": "pass",
-        "claim": "Patched the handler. 3 passed in 0.2s.",
-        "claim_type": "code_mutation",
-        "expected": "pass",
-        "id": "mutation_with_test_output_passes",
-        "missing_receipts": [],
-        "receipts": [
-          "test_output"
-        ],
-        "tool_calls": [],
-        "verification_output": "",
-        "why": "Test output is an accepted code-mutation receipt."
-      },
-      {
-        "actual": "block",
-        "claim": "Committed and pushed abcdef1.",
+        "actual": "no_commit",
+        "claim": "Committed and pushed.",
         "claim_type": "push_commit",
-        "expected": "block",
-        "id": "fake_commit_hash_blocks",
-        "missing_receipts": [
-          "resolving_commit_hash"
+        "expected": "no_commit",
+        "id": "push_without_commit",
+        "tool_call_results": [],
+        "why": "The claim provides no commit that can be checked."
+      },
+      {
+        "actual": "refuted",
+        "claim": "Committed and pushed.",
+        "claim_type": "push_commit",
+        "expected": "refuted",
+        "id": "push_exited_nonzero",
+        "tool_call_results": [
+          {
+            "exit_code": 1,
+            "params": {
+              "command": "git push origin main"
+            },
+            "tool": "run_shell"
+          }
         ],
-        "receipts": [],
-        "tool_calls": [],
-        "verification_output": "",
-        "why": "A commit receipt must resolve in git; a hex-looking string is not enough."
+        "why": "The recorded push exited nonzero and no later push succeeded."
       }
     ],
     "model_dependency": false,
-    "name": "EvidenceGate",
+    "name": "Git completion evidence",
     "policies": [
-      {
-        "accepted_receipts": [
-          "mutation_tool",
-          "resolving_commit_hash",
-          "run_path_exists",
-          "test_output",
-          "verification_output"
-        ],
-        "claim_type": "code_mutation",
-        "description": "code/system mutation claims require same-turn tool evidence or a verifiable artifact",
-        "enforcement": "runtime_blocking_when_claim_detected"
-      },
-      {
-        "accepted_receipts": [
-          "live_fetch_tool",
-          "verification_output"
-        ],
-        "claim_type": "external_publish",
-        "description": "published-artifact claims require a live fetch or captured verification output",
-        "enforcement": "runtime_blocking_when_claim_detected"
-      },
       {
         "accepted_receipts": [
           "resolving_commit_hash"
         ],
-        "claim_type": "push_commit",
-        "description": "commit/push completion requires a cited SHA that resolves in git",
+        "claim_type": "commit",
+        "description": "The cited hash must resolve to a Git commit.",
         "enforcement": "runtime_blocking_when_claim_detected"
       },
       {
         "accepted_receipts": [
-          "read_tool",
-          "verification_output"
+          "resolving_commit_hash",
+          "remote_containment"
         ],
-        "claim_type": "state_grounding",
-        "description": "definitive state assertions require a ground-truth read this turn",
-        "enforcement": "runtime_blocking_when_claim_detected"
+        "claim_type": "push_commit",
+        "description": "A recorded push failure or known absence from remotes blocks the claim. An unreadable remote leaves push status unverified.",
+        "enforcement": "runtime_blocking_when_refuted_or_missing_commit"
       }
     ],
     "provider_agnostic": true,
-    "rule": "No supported receipt means no operational claim.",
+    "rule": "Detected commit and push claims require a cited Git commit.",
     "schema": "shadow.receipt_gate.v1",
     "source_module": "core.evidence_gate"
   },

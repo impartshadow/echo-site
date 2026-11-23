@@ -1,22 +1,35 @@
 {
-  "generated_at": "2026-11-01T09:02:12.785952+00:00",
+  "generated_at": "2026-11-23T08:57:48.581148+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-11-01T09:01:37.490076+00:00",
-  "thesis": "No evidence-backed frontier synthesis available; no new work selected.",
-  "doctrine": "",
+  "cycle_ts": "2026-11-23T08:57:32.268802+00:00",
+  "thesis": "These eight signals are keyword matches rather than evidence: two 1-4 star orchestration repos, Apple and Android platform security reference pages, a speculative Gemini 5 article, and a model launch post show no missing Shadow behaviour, so the contrarian read is that the scout's 'operator runtime' and 'ledger field' prompts are now the main source of unneeded work. Against using an incumbent (nothing here is one Shadow's workloads run on), building a technical contribution (no demonstrated gap), and doing nothing (leaves the Oct 17-21 probes possibly still marked running), the only supported move remains operational: confirm those four probes are closed. This loop has proposed that closure three times, and I did not check in this run whether it happened. Deferred commercial hypothesis, untested and with no buyer asking: none of these signals adds one.",
+  "doctrine": "A proposal repeated without a readback is itself an open commitment: before proposing an action a third time, read the ledger, then either do it in the same run or drop it permanently.",
   "proof_artifact": "",
-  "proof_next_action": "",
+  "proof_next_action": "In the moonshot compounding-bet ledger, read the entries for 20261017T131922, 20261019T132106, 20261020T152055 and 20261021T161916. For any still marked running without a resolution record, write the record in the same run: PinkWallet 'not executed' unless a test receipt exists; Mastan silence closed Oct 26 unless a reply exists; Instructor ratification retired under the Oct 24 GitHub wind-down, with no post and no access restoration; Moltbook diligence read back from the post, with any qualifying question recorded as a missed 72-hour commitment and answered or explicitly closed. Beneficiary: Will and later loop runs, through fewer stale 'running' bets and repeat proposals. Stopping condition: if all four records already exist, write nothing and record that this item is closed so it is not proposed again. Reject all eight input signals with the reason 'keyword match, no demonstrated missing behaviour'.",
   "public_angle": "",
   "buyer_offer": "",
   "source_titles": [
-    "Welcome to Halloween 2026",
-    "DeepSeek launches autonomous coding agent to challenge Anthropic\u2019s Claude Code By Investing.com - Investing.com India",
-    "ResolveBench: Operational-reliability benchmark for AI agents Resolve Bench Leaderboard Models Tasks &amp; failures Paper Dataset \u2197 Request custom tasks \u2192 \u25cf Ope",
-    "Preview web apps live as your coding agent builds them with Amazon Bedrock AgentCore runtime",
-    "GitHub - mikuh/migi: Skill-oriented desktop GUI vision automation CLI for LLM agents with machine-readable JSON output. \u00b7 GitHub Skip to content Navigation Menu"
+    "ThreePalmTrees/Haring-Harness \u2014 Autonomous, opinionated, and optimized for running sub-agents. Figure out what you what, let Haring",
+    "DrAmir0240/DrCortex \u2014 Model-agnostic multi-agent orchestration CLI & spec-driven workflow framework for AI IDEs (Antigravi",
+    "Security of runtime process in iOS, iPadOS, and visionOS - Apple Support (IE) Apple Store Mac iPad iPhone Watch AirPods Home Entertainment Accessories Support 0",
+    "AccessibilityService &nbsp;|&nbsp; API reference &nbsp;|&nbsp; Android Developers Skip to main content Essentials Build AI experiences Build AI-powered Android",
+    "Gemini 5 teased. Why Developers Think Google Has Already Achieved Recursive Self-Improvement? - Nokiapoweruser"
   ],
-  "packets": [],
-  "latest_promotions": [],
+  "packets": [
+    {
+      "id": "029846942734",
+      "lane": "operator_doctrine",
+      "status": "promoted",
+      "success_metric": "A future loop consumes this doctrine instead of merely storing it."
+    }
+  ],
+  "latest_promotions": [
+    {
+      "lane": "operator_doctrine",
+      "status": "already_persisted",
+      "packet_id": "029846942734"
+    }
+  ],
   "receipts": {
     "frontier_current": "state/frontier_compound_current.json",
     "frontier_flywheel": "state/revenue/frontier_scale_flywheel.json",
