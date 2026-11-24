@@ -113,7 +113,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.3,
+          "hours_since": 24.4,
           "last_activity": "2026-11-23T08:39:24.778302+00:00",
           "source": "action_log",
           "staleness": "ok"
@@ -127,8 +127,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.6,
-          "last_activity": "2026-11-23T08:25:03.507092+00:00",
+          "hours_since": 0.7,
+          "last_activity": "2026-11-24T08:25:04.091362+00:00",
           "source": "action_log",
           "staleness": "ok"
         },
@@ -141,8 +141,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.3,
-          "last_activity": "2026-11-23T08:40:40.984547+00:00",
+          "hours_since": 0.4,
+          "last_activity": "2026-11-24T08:42:28.169346+00:00",
           "source": "external_post_receipt",
           "staleness": "ok"
         },
@@ -155,7 +155,7 @@
       {
         "declared_state": "complete",
         "evidence": {
-          "hours_since": 192.2,
+          "hours_since": 216.3,
           "last_activity": "2026-11-15T08:48:09.389905+00:00",
           "source": "verifier_receipt",
           "staleness": "expected_quiet"
@@ -167,7 +167,7 @@
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-11-23T08:59:29.935886+00:00",
+    "generated_at": "2026-11-24T09:06:03.675321+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
@@ -217,7 +217,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md",
     "purpose": "scarce frontier-model usage ledger that routes high-end model headroom into sellable artifacts, proof surfaces, acquisition machinery, and model-agnostic operating-system upgrades"
   },
-  "generated_at": "2026-11-23T08:59:29.935886+00:00",
+  "generated_at": "2026-11-24T09:06:03.675321+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
