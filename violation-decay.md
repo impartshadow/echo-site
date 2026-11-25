@@ -1,15 +1,15 @@
 # Violation Decay Case Study
 
-Generated: 2026-11-24T09:06:05.312001+00:00
+Generated: 2026-11-25T09:10:15.059496+00:00
 
 ## Claim
-platform-action-precheck cooled from 3 to 0 weekly hits; live-state-claim-guard is the hottest remaining governance gap.
+term-lookup-before-ask-gate cooled from 3 to 0 weekly hits; live-state-claim-guard is the hottest remaining governance gap.
 
 This is not a generic benchmark. It is a trend read over Shadow's production
 contract-violation log: `state/contract_violations.jsonl`.
 
 ## Totals
-- Violations logged: 72
+- Violations logged: 71
 - Distinct contracts in log: 24
 - Distinct failure modes: 14
 - Eligible contracts: 10
@@ -19,9 +19,9 @@ contract-violation log: `state/contract_violations.jsonl`.
 ## Cooled Guardrails
 | Contract | Total | First 7d | Recent 7d | Delta | Change |
 |---|---:|---:|---:|---:|---:|
-| `platform-action-precheck` | 3 | 3 | 0 | -3 | -100.0% |
 | `term-lookup-before-ask-gate` | 3 | 3 | 0 | -3 | -100.0% |
 | `completion-artifact` | 6 | 3 | 1 | -2 | -66.7% |
+| `platform-action-precheck` | 2 | 2 | 0 | -2 | -100.0% |
 | `propguard-provenance-detector` | 7 | 4 | 3 | -1 | -25.0% |
 | `deferred-first-step-gate` | 1 | 1 | 0 | -1 | -100.0% |
 | `identity-attribution-evidence-gate` | 1 | 1 | 0 | -1 | -100.0% |

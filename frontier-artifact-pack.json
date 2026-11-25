@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-11-24T09:04:08.033523+00:00",
+  "generated_at": "2026-11-25T09:08:20.622805+00:00",
   "source": "frontier_artifact_pack",
-  "cycle_ts": "2026-11-24T09:03:51.962552+00:00",
-  "thesis": "These eight signals show no missing Shadow behaviour, so the scout's templated 'operator runtime' and 'model router' prompts are now the main source of unneeded work. Three are arXiv papers on unrelated domains (clinical agents, molecular dynamics, video review), three are Gemini API reference pages, one is a speculative Gemini 5 article, and one is a zero-star memory repo. Using an incumbent does not apply because no Shadow workload runs on the Gemini Files or document APIs. A technical contribution has no demonstrated gap to fill. Doing nothing costs nothing here. The only supported move is still operational: confirm the four Oct 17-21 probes are closed. I tried to check that in this run and both read-only ledger searches were denied permission, so their status remains unverified. No commercial hypothesis is added; none of these signals has a buyer behind it.",
-  "doctrine": "A proposal repeated across runs without a read-back is itself an open commitment: verify the ledger before proposing again, and if verification is unavailable, say so and add nothing new on top.",
+  "cycle_ts": "2026-11-25T09:08:06.807368+00:00",
+  "thesis": "These eight signals show no missing Shadow behaviour: the scout's templated 'recursive execution quality' and 'operator runtime' prompts are attached to two newsletters, two arXiv papers (local-model data-engineering agents, an agentic-workflow failure taxonomy), an OpenAI research post, a model launch write-up, an n8n docs page and a personal OpenClaw case study, and I read none of the sources in this run, so no mechanism is accepted or rejected on its merits. Using an incumbent does not apply (no Shadow workload runs on n8n or OpenClaw), a technical contribution has no demonstrated gap to fill, and doing nothing costs nothing. The only supported move is still operational: confirm the four Oct 17-21 probes are closed. I tried again in this run and three read-only checks (shell grep for the bet IDs, memory search, directory listing) were all denied permission, so their status is still unverified. This is the second consecutive run blocked that way, so the loop itself cannot perform the check in this environment and repeating the proposal here is the wasted work. No commercial hypothesis is added; none of these signals has a buyer behind it.",
+  "doctrine": "When a loop cannot read the state it keeps proposing to fix, it should say so once and stop re-proposing; the closure belongs to a session with ledger access, not to this one.",
   "proof_artifact": "",
-  "proof_next_action": "In the next run with shell or file access, search the moonshot bet ledger for ids 20261017T131922, 20261019T132106, 20261020T152055 and 20261021T161916 and read each status. Write a resolution record only where one is missing: what was read back, the outcome class (acceptance, rejection, silence, blocked, or not executed), and the one decision it changes. Retire the Instructor item as superseded by the Oct 24 wind-down, with no post. If all four records already exist, write nothing and drop this item from future proposals. The beneficiaries are Will and later loop runs, through fewer stale 'running' bets. Stop once all four have a recorded outcome.",
+  "proof_next_action": "",
   "public_angle": "",
   "buyer_offer": "",
   "source_titles": [
-    "MedicalRSI: Medical Recursive Self-Improving Agents via Clinical Model-Harness Co-Evolution",
-    "ChatAtom: A Multi-Agent LLM System for Molecular Dynamics Simulation and Visualization",
-    "What Helps Language-Model Agents Review Violent Video? A Controlled Comparison with a Human Evidence Reference",
-    "Document understanding - Gemini API | Google AI Studio &gt; ## AI Agent Context &gt; - Full documentation index: https://aistudio.google.com/llms.txt &gt; - Gem",
-    "Document understanding - Gemini API | Google AI Studio &gt; ## AI Agent Context &gt; - Full documentation index: https://aistudio.google.com/llms.txt &gt; - Gem"
+    "Welcome to November 23, 2026",
+    "OpenClaw Personal AI Assistant - Case Study | Neil Johnson Skip to content Home About Blog Projects Contact Ongoing OpenClaw Personal AI Assistant Self-Hoster &",
+    "Human-in-the-loop for tools | Build | n8n Docs For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by ap",
+    "[2610.11482] Evaluating Local Language Model Agents for Data Engineering: An Empirical Software Engineering Study of Mobility Workflows Skip to main content Sea",
+    "[2610.17418] Why Agentic Workflows Fail: A Taxonomy Derived from Literature and Empirical Data Skip to main content Search Submit Donate Log in Search arXiv Pre"
   ],
   "packets": [
     {
-      "id": "d67b846ae490",
+      "id": "e1b722aa94ff",
       "lane": "operator_doctrine",
       "status": "promoted",
       "success_metric": "A future loop consumes this doctrine instead of merely storing it."
@@ -27,7 +27,7 @@
     {
       "lane": "operator_doctrine",
       "status": "already_persisted",
-      "packet_id": "d67b846ae490"
+      "packet_id": "e1b722aa94ff"
     }
   ],
   "receipts": {
