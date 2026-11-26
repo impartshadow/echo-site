@@ -113,22 +113,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 48.5,
-          "last_activity": "2026-11-23T08:39:24.778302+00:00",
-          "source": "action_log",
-          "staleness": "ok"
-        },
-        "loop_id": "brief-production",
-        "name": "Research Brief Production",
-        "reason": "fresh evidence is internal-only: action_log",
-        "requires_external_reach": true,
-        "verdict": "no_external_reach"
-      },
-      {
-        "declared_state": "running",
-        "evidence": {
-          "hours_since": 0.8,
-          "last_activity": "2026-11-25T08:25:03.715552+00:00",
+          "hours_since": 18.0,
+          "last_activity": "2026-11-25T15:25:04.145869+00:00",
           "source": "action_log",
           "staleness": "ok"
         },
@@ -141,8 +127,22 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.4,
-          "last_activity": "2026-11-25T08:45:42.424395+00:00",
+          "hours_since": 72.8,
+          "last_activity": "2026-11-23T08:39:24.778302+00:00",
+          "source": "action_log",
+          "staleness": "stale"
+        },
+        "loop_id": "brief-production",
+        "name": "Research Brief Production",
+        "reason": "liveness is stale",
+        "requires_external_reach": true,
+        "verdict": "stale"
+      },
+      {
+        "declared_state": "running",
+        "evidence": {
+          "hours_since": 0.8,
+          "last_activity": "2026-11-26T08:40:05.297110+00:00",
           "source": "external_post_receipt",
           "staleness": "ok"
         },
@@ -155,10 +155,10 @@
       {
         "declared_state": "complete",
         "evidence": {
-          "hours_since": 240.4,
-          "last_activity": "2026-11-15T08:48:09.389905+00:00",
+          "hours_since": 7.2,
+          "last_activity": "2026-11-26T02:13:13.315467+00:00",
           "source": "verifier_receipt",
-          "staleness": "expected_quiet"
+          "staleness": "ok"
         },
         "loop_id": "shadow-loop-model",
         "name": "Shadow Loop Model",
@@ -167,22 +167,8 @@
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-11-25T09:10:13.594090+00:00",
+    "generated_at": "2026-11-26T09:27:10.760586+00:00",
     "remediation_queue": [
-      {
-        "action": "produce_or_attach_external_receipt",
-        "evidence_source": "action_log",
-        "instruction": "Route the loop to an audience-facing surface or mark it internal-only.",
-        "loop_id": "brief-production",
-        "missing_receipts": [
-          "external_post_receipt",
-          "subscriber_receipt",
-          "reply_receipt",
-          "meeting_receipt"
-        ],
-        "priority": 90,
-        "verdict": "no_external_reach"
-      },
       {
         "action": "produce_or_attach_external_receipt",
         "evidence_source": "action_log",
@@ -196,13 +182,26 @@
         ],
         "priority": 90,
         "verdict": "no_external_reach"
+      },
+      {
+        "action": "refresh_liveness_or_pause_loop",
+        "evidence_source": "action_log",
+        "instruction": "Run the loop once, attach a fresh verifier receipt, or pause the loop explicitly.",
+        "loop_id": "brief-production",
+        "missing_receipts": [
+          "fresh_action_log",
+          "verifier_receipt"
+        ],
+        "priority": 70,
+        "verdict": "stale"
       }
     ],
     "rule": "Declared loop state is not proof. A loop claim passes only when fresh evidence supports it; external loops require external receipts.",
     "schema": "shadow.agent_flight_recorder.v1",
     "summary": {
-      "no_external_reach": 2,
-      "pass": 2
+      "no_external_reach": 1,
+      "pass": 2,
+      "stale": 1
     }
   },
   "frontier_artifact_pack": {
@@ -217,7 +216,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md",
     "purpose": "scarce frontier-model usage ledger that routes high-end model headroom into sellable artifacts, proof surfaces, acquisition machinery, and model-agnostic operating-system upgrades"
   },
-  "generated_at": "2026-11-25T09:10:13.594090+00:00",
+  "generated_at": "2026-11-26T09:27:10.760586+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
