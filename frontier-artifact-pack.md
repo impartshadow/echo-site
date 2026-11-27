@@ -1,17 +1,17 @@
 # Frontier Artifact Pack
 
-Generated: 2026-11-26T09:25:05.152280+00:00
+Generated: 2026-11-27T08:56:36.265403+00:00
 
 ## Thesis
-These eight signals show no missing Shadow behaviour: a governance-theory paper, a Nostr delegation architecture, OpenClaw's FAQ and exec-approvals docs, Microsoft's agentpex transparency note, a multilingual eval benchmark, a Lean-proving blog post and a daily newsletter are matches on the scout's templated 'operator runtime' and 'recursive execution quality' prompts, which are now the main source of unneeded work. I did not read any of the sources, so this rests on titles and the scout's summaries. Using an incumbent does not apply (no Shadow workload runs on OpenClaw, Nostr or agentpex), a technical contribution has no demonstrated gap to fill, and doing nothing costs nothing here. The only supported move is still operational: confirm the four Oct 17-21 probes are closed. I tried that again in this run and both read-only checks (a ledger grep via run_shell and a memory_search) were denied permission, so their status remains unverified for the second run in a row. No commercial hypothesis is added; none of these signals has a buyer behind it.
+Seven of these eight signals carry the identical templated 'operator runtime' summary on unrelated pages (a governance-theory paper, a Microsoft transparency note, OpenClaw docs, Claude web-fetch docs, a Unit 42 threat report), so the scout's template, not the frontier, is now generating the apparent demand for new Shadow infrastructure. I read only titles and summaries in this run, not the sources, and none shows a missing Shadow behaviour. Using an incumbent does not apply, since nothing here names a platform a Shadow workload runs on. A technical contribution has no demonstrated gap to fill. Doing nothing about the signals costs nothing. The only supported move is still operational: confirm whether the four Oct 17-21 probes are closed. This loop has proposed that five times and I did not verify it in this run either. No commercial hypothesis is added; no buyer is behind any of these signals.
 
 ## Doctrine
-When the same closure check is proposed across runs and cannot be verified from this loop's context, stop re-proposing it here and say plainly that it is unverified. The beneficiary is Will and later runs, the return is fewer repeated proposals, and it only resumes when a context with ledger read access records the result.
+A scout summary that is word-for-word identical across unrelated sources is zero evidence. Act only on a source-specific mechanism matched to a demonstrated missing behaviour, and retire any operational item that has been proposed repeatedly without verification rather than proposing it again.
 
 ## Proof Artifact
 
 
-Next action: 
+Next action: In the bets ledger, look up bet IDs 20261017T131922, 20261019T132106, 20261020T152055 and 20261021T161916 by ID and read their status. Write a resolution record only for those still marked running: outcome class as actually read back, 'not executed' for the PinkWallet duplicate test if it was never run, and 'superseded by the Oct 24 wind-down' for Instructor with no post. Stopping condition: if all four are already resolved, write nothing. If the read is denied again, record once that status is unverifiable from the loop context. In either case, drop this item from future frontier proposals.
 
 ## Public Angle
 
@@ -27,10 +27,10 @@ Next action:
 - What is OpenClaw? - OpenClaw OpenClaw Docs Search documentation K Product Install Ecosystem Integrations Blog Community Support 🇺🇸 English 🇺🇸 English 🇨🇳 简体中文 🇨🇳
 
 ## Scale Packets
-- operator_doctrine: promoted (bc9f6c9b0029)
+- operator_doctrine: promoted (496b43858347)
 
 ## Latest Promotions
-- operator_doctrine: already_persisted (bc9f6c9b0029)
+- operator_doctrine: already_persisted (496b43858347)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

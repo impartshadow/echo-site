@@ -113,7 +113,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 18.0,
+          "hours_since": 41.5,
           "last_activity": "2026-11-25T15:25:04.145869+00:00",
           "source": "action_log",
           "staleness": "ok"
@@ -127,7 +127,7 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 72.8,
+          "hours_since": 96.3,
           "last_activity": "2026-11-23T08:39:24.778302+00:00",
           "source": "action_log",
           "staleness": "stale"
@@ -141,8 +141,8 @@
       {
         "declared_state": "running",
         "evidence": {
-          "hours_since": 0.8,
-          "last_activity": "2026-11-26T08:40:05.297110+00:00",
+          "hours_since": 0.3,
+          "last_activity": "2026-11-27T08:39:28.975325+00:00",
           "source": "external_post_receipt",
           "staleness": "ok"
         },
@@ -155,7 +155,7 @@
       {
         "declared_state": "complete",
         "evidence": {
-          "hours_since": 7.2,
+          "hours_since": 30.7,
           "last_activity": "2026-11-26T02:13:13.315467+00:00",
           "source": "verifier_receipt",
           "staleness": "ok"
@@ -167,7 +167,7 @@
         "verdict": "pass"
       }
     ],
-    "generated_at": "2026-11-26T09:27:10.760586+00:00",
+    "generated_at": "2026-11-27T08:57:51.519983+00:00",
     "remediation_queue": [
       {
         "action": "produce_or_attach_external_receipt",
@@ -216,7 +216,7 @@
     "markdown_url": "https://impartshadow.github.io/echo-site/frontier-usage-allocator.md",
     "purpose": "scarce frontier-model usage ledger that routes high-end model headroom into sellable artifacts, proof surfaces, acquisition machinery, and model-agnostic operating-system upgrades"
   },
-  "generated_at": "2026-11-26T09:27:10.760586+00:00",
+  "generated_at": "2026-11-27T08:57:51.519983+00:00",
   "goal": "publicly falsify Shadow's acquisition allocation thesis",
   "html_url": "https://impartshadow.github.io/echo-site/shadow-proof.html",
   "json_url": "https://impartshadow.github.io/echo-site/shadow-proof.json",
