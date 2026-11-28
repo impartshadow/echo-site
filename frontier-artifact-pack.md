@@ -1,17 +1,17 @@
 # Frontier Artifact Pack
 
-Generated: 2026-11-27T08:56:36.265403+00:00
+Generated: 2026-11-28T09:18:53.778182+00:00
 
 ## Thesis
-Seven of these eight signals carry the identical templated 'operator runtime' summary on unrelated pages (a governance-theory paper, a Microsoft transparency note, OpenClaw docs, Claude web-fetch docs, a Unit 42 threat report), so the scout's template, not the frontier, is now generating the apparent demand for new Shadow infrastructure. I read only titles and summaries in this run, not the sources, and none shows a missing Shadow behaviour. Using an incumbent does not apply, since nothing here names a platform a Shadow workload runs on. A technical contribution has no demonstrated gap to fill. Doing nothing about the signals costs nothing. The only supported move is still operational: confirm whether the four Oct 17-21 probes are closed. This loop has proposed that five times and I did not verify it in this run either. No commercial hypothesis is added; no buyer is behind any of these signals.
+Seven of these eight signals carry the same templated 'operator runtime' summary on unrelated pages (a governance-theory paper, an untitled arXiv page, a coding-harness paper, a Microsoft transparency note, a Nostr identity paper, two OpenClaw docs pages), so the apparent demand for new Shadow infrastructure comes from the scout's template rather than the frontier. I read only titles and summaries in this run, not the sources, and none shows a missing Shadow behaviour. Using an incumbent does not apply: OpenClaw exec approvals and NostrAgent are not platforms a Shadow workload runs on, and nothing shows Shadow's existing approval path failing. A technical contribution has no demonstrated gap to fill, and doing nothing about the signals costs nothing. The only supported move is operational: this loop has now proposed confirming closure of the four Oct 17-21 probes six times without verifying it, and I did not verify it in this run either. No commercial hypothesis is added; no buyer is behind any of these signals.
 
 ## Doctrine
-A scout summary that is word-for-word identical across unrelated sources is zero evidence. Act only on a source-specific mechanism matched to a demonstrated missing behaviour, and retire any operational item that has been proposed repeatedly without verification rather than proposing it again.
+When the loop proposes the same operational closure a second time without verification, it stops being a thesis and goes out as the single next action with a stopping condition, so one run either closes it or records why it cannot.
 
 ## Proof Artifact
+Resolution records for the four elapsed bets, written only where missing after verification: 20261017T131922 (PinkWallet; 'not executed' unless the duplicate-submission test was actually run), 20261019T132106 (Mastan exchange; silence closed Oct 26 unless a reply exists), 20261020T152055 (Instructor ratification; retired as superseded by the Oct 24 wind-down, with no post and no restoration of comment access), 20261021T161916 (Moltbook diligence ask; read back the post, and answer or explicitly close any qualifying question). Each record states what was read back, the outcome class, and the one decision it changes. Beneficiary: Will and later loop runs, through fewer stale 'running' bets and no further repeat proposals. If all four records already exist, write nothing.
 
-
-Next action: In the bets ledger, look up bet IDs 20261017T131922, 20261019T132106, 20261020T152055 and 20261021T161916 by ID and read their status. Write a resolution record only for those still marked running: outcome class as actually read back, 'not executed' for the PinkWallet duplicate test if it was never run, and 'superseded by the Oct 24 wind-down' for Instructor with no post. Stopping condition: if all four are already resolved, write nothing. If the read is denied again, record once that status is unverifiable from the loop context. In either case, drop this item from future frontier proposals.
+Next action: In Shadow's bets ledger, look up the four IDs 20261017T131922, 20261019T132106, 20261020T152055 and 20261021T161916 and read their current status (read-only first). For any still marked running, write the resolution record described in the artifact. If the ledger read is denied, as it was on Nov 24, record that denial once as the blocker on those four bets. Stopping condition: once all four have a resolution record or a recorded read blocker, drop this item from future loop proposals. No outbound post, no GitHub activity and no new probe is part of this action.
 
 ## Public Angle
 
@@ -22,15 +22,17 @@ Next action: In the bets ledger, look up bet IDs 20261017T131922, 20261019T13210
 ## Source Signals
 - Irreducible Governance Structure for Autonomous Agent Systems: Fair Allocation, Strategy-Proofness, and Multi-Scale Composition
 - Welcome to November 23, 2026
+- 1Introduction Skip to main content Report GitHub Issue × Title: Content selection saved. Describe the issue below: Description: Submit without GitHub Submit in
+- AGL-SKILL: Coding Harnesses as Agentic Optimizers Skip to main content Report GitHub Issue × Title: Content selection saved. Describe the issue below: Descripti
 - agentpex/transparency-note.md at main · microsoft/agentpex · GitHub Skip to content Navigation Menu Sign in Products Platform GitHub Repository hosting, code re
-- [2609.22944] NostrAgent: A Decentralized Identity and Delegation Architecture for Sovereign Agentic Systems Skip to main content Search Submit Donate Log in Sea
-- What is OpenClaw? - OpenClaw OpenClaw Docs Search documentation K Product Install Ecosystem Integrations Blog Community Support 🇺🇸 English 🇺🇸 English 🇨🇳 简体中文 🇨🇳
 
 ## Scale Packets
-- operator_doctrine: promoted (496b43858347)
+- proof_artifact: promoted (003ad67bc22c)
+- operator_doctrine: promoted (065a47bd9b0d)
 
 ## Latest Promotions
-- operator_doctrine: already_persisted (496b43858347)
+- proof_artifact: delegated_to_improvement_queue (003ad67bc22c)
+- operator_doctrine: already_persisted (065a47bd9b0d)
 
 ## Receipts
 - State: `state/revenue/frontier_artifact_pack.json`

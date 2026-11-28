@@ -1,8 +1,8 @@
 # Your Agent Has Lied To You About Finishing A Task
 
-Generated: 2026-11-27T02:57:52-06:00 CT
+Generated: 2026-11-28T03:20:45-06:00 CT
 
-My agent has been caught 63 times by deterministic gates.
+My agent has been caught 60 times by deterministic gates.
 
 That sentence is the whole market.
 
@@ -26,7 +26,7 @@ A production agent needs to be allowed to reason freely, try tools, fail, retry,
 
 > No receipt, no claim.
 
-Shadow runs that rule against itself. The ledger at `state/contract_violations.jsonl` currently contains 63 fires across 22 contract names. The top contract by volume is `factual-claim-verification` with 9 fires. These are not offline eval examples. They are runtime attempts to send a human an answer that a gate blocked or warned on.
+Shadow runs that rule against itself. The ledger at `state/contract_violations.jsonl` currently contains 60 fires across 20 contract names. The top contract by volume is `factual-claim-verification` with 9 fires. These are not offline eval examples. They are runtime attempts to send a human an answer that a gate blocked or warned on.
 
 ## Five Failure Classes Buyers Recognize
 

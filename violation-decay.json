@@ -1,23 +1,23 @@
 {
   "schema": "shadow.violation_decay.v1",
-  "generated_at": "2026-11-27T08:57:52.987228+00:00",
+  "generated_at": "2026-11-28T09:20:45.514746+00:00",
   "as_of": "2026-11-16T02:36:08+00:00",
   "source": "state/contract_violations.jsonl",
   "window_days": 7,
   "min_age_days": 14,
   "totals": {
-    "violations": 63,
-    "contracts_in_log": 22,
+    "violations": 60,
+    "contracts_in_log": 20,
     "failure_modes": 14,
     "severities": {
-      "block": 33,
-      "warn": 30
+      "block": 31,
+      "warn": 29
     },
-    "eligible_contracts": 7,
-    "cooled_contracts": 5,
-    "hotter_contracts": 2,
-    "net_cooling_events": 7,
-    "net_hotter_events": 7
+    "eligible_contracts": 4,
+    "cooled_contracts": 3,
+    "hotter_contracts": 1,
+    "net_cooling_events": 5,
+    "net_hotter_events": 4
   },
   "headline": "completion-artifact cooled from 3 to 1 weekly hits; factual-claim-verification is the hottest remaining governance gap.",
   "cooled": [
@@ -53,28 +53,6 @@
       "delta": -1,
       "pct_change": -25.0,
       "status": "cooled"
-    },
-    {
-      "contract": "deferred-first-step-gate",
-      "total": 1,
-      "first_seen": "2026-10-27T11:22:33+00:00",
-      "last_seen": "2026-10-27T11:22:33+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 0,
-      "delta": -1,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "term-lookup-before-ask-gate",
-      "total": 1,
-      "first_seen": "2026-10-27T11:05:38+00:00",
-      "last_seen": "2026-10-27T11:05:38+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 0,
-      "delta": -1,
-      "pct_change": -100.0,
-      "status": "cooled"
     }
   ],
   "hotter": [
@@ -87,17 +65,6 @@
       "recent_window_count": 5,
       "delta": 4,
       "pct_change": 400.0,
-      "status": "hotter"
-    },
-    {
-      "contract": "live-state-claim-guard",
-      "total": 6,
-      "first_seen": "2026-10-27T09:54:36+00:00",
-      "last_seen": "2026-11-14T14:42:35+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 4,
-      "delta": 3,
-      "pct_change": 300.0,
       "status": "hotter"
     }
   ],
@@ -134,39 +101,6 @@
       "delta": -1,
       "pct_change": -25.0,
       "status": "cooled"
-    },
-    {
-      "contract": "deferred-first-step-gate",
-      "total": 1,
-      "first_seen": "2026-10-27T11:22:33+00:00",
-      "last_seen": "2026-10-27T11:22:33+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 0,
-      "delta": -1,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "term-lookup-before-ask-gate",
-      "total": 1,
-      "first_seen": "2026-10-27T11:05:38+00:00",
-      "last_seen": "2026-10-27T11:05:38+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 0,
-      "delta": -1,
-      "pct_change": -100.0,
-      "status": "cooled"
-    },
-    {
-      "contract": "live-state-claim-guard",
-      "total": 6,
-      "first_seen": "2026-10-27T09:54:36+00:00",
-      "last_seen": "2026-11-14T14:42:35+00:00",
-      "first_window_count": 1,
-      "recent_window_count": 4,
-      "delta": 3,
-      "pct_change": 300.0,
-      "status": "hotter"
     },
     {
       "contract": "factual-claim-verification",
